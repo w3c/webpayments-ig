@@ -16,9 +16,9 @@ stakeholders and the different payment methods.
 
 The purpose of the directories in this repository are explained below:
 
-* latest - this is where the bleeding edge (aka latest) Editor's drafts are 
-           kept.
-* ED - The latest time-stamped Editor's drafts are placed here.
-* WD - The latest time-stamped Working Drafts are placed here.
+* [latest](latest) - this is where the bleeding edge (aka latest) 
+                     Editor's drafts are kept.
+* [ED](ED) - The latest time-stamped Editor's drafts are placed here.
+* [WD](WD) - The latest time-stamped Working Drafts are placed here.
 
 
