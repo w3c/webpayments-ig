@@ -11,3 +11,14 @@ The overall objective of this group is to identify and leverage the conditions
 for greater uptake and wider use of Web Payments through the identification of 
 standardization needs to increase interoperability between the different 
 stakeholders and the different payment methods.
+
+# Repository Layout
+
+The purpose of the directories in this repository are explained below:
+
+* latest - this is where the bleeding edge (aka latest) Editor's drafts are 
+           kept.
+* ED - The latest time-stamped Editor's drafts are placed here.
+* WD - The latest time-stamped Working Drafts are placed here.
+
+
