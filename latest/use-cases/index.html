@@ -107,6 +107,73 @@ Introduction goes here.
   </section>
 
   <section> 
+    <h2>Terminology</h2>
+    <p>
+This document attempts to communicate the concepts outlined in the Web
+Payments space by using specific terms to discuss particular concepts. This
+terminology is included below and linked to throughout the document to aid
+the reader:
+    </p>
+    <dl>
+      <dt><tdef>entity</tdef></dt>
+      <dd>
+A person, organization, or software agent that is capable of interacting with
+the world.
+      </dd>
+      <dt><tdef>payer</tdef></dt>
+      <dd>
+An <tref>entity</tref> that provides a source of funds as required by a 
+<tref>transaction</tref>.
+      </dd>
+      <dt><tdef>payee</tdef></dt>
+      <dd>
+An <tref>entity</tref> that receives funds as required by a 
+<tref>transaction</tref>.
+      </dd>
+      <dt><tdef>merchant</tdef></dt>
+      <dd>
+An <tref>entity</tref> receiving payment for goods, services, or other things 
+of value; abstractly known as a <tref>payee</tref>.
+      </dd>
+      <dt><tdef>customer</tdef></dt>
+      <dd>
+An <tref>entity</tref> paying to receive goods, services, or other things 
+of value; abstractly known as a <tref>payer</tref>.
+      </dd>
+      <dt><tdef>transaction</tdef></dt>
+      <dd>
+An instance of an exchange of value such as buying or selling something.
+      </dd>
+      <dt><tdef>payment instrument</tdef></dt>
+      <dd>
+A mechanism used to transfer value from a <tref>payer</tref> to a 
+<tref>payee</tref>.
+      </dd>
+      <dt><tdef>payment processor</tdef></dt>
+      <dd>
+Submits and processes payments using a particular 
+<tref>payment instrument</tref> to a payment network.
+      </dd>
+      <dt><tdef>credential</tdef></dt>
+      <dd>
+A qualification, achievement, personal quality, aspect of an 
+<tref>entity</tref>'s background, or verifiable statement by an entity about 
+another entity.
+      </dd>
+      <dt><tdef>payment agent</tdef></dt>
+      <dd>
+A piece of software operating on an <tref title="entity">entity's</tref>
+behalf that is capable of executing 
+<tref title="transaction">transactions</tref>.
+      </dd>
+      <dt><tdef></tdef></dt>
+      <dd>
+
+      </dd>
+    </dl>
+  </section>
+
+  <section> 
     <h2>High Priority Use Cases</h2> 
     <p>
 The following use cases have been identified by the Web Payments Interest
@@ -116,31 +183,32 @@ Group as high-priority items.
     <section>
       <h3>Purchase Request</h3>
       <p>
-A buyer selects a product or service to purchase on a website. The website 
-generates a payment request that is sent to the buyer's payment processor 
-for processing.
+A <tref>customer</tref> selects a product or service to purchase on a website. 
+The website generates a payment request that is sent to the customer's 
+<tref>payment processor</tref> for processing.
       </p>
 
       <section>
         <h4>Examples</h4>
         <ul>
           <li>
-Customer POV: Penny logs into the HobbyCo website, providing her payment 
-processor credential in the process. Penny selects a model train for purchase. 
-The store generates a payment request which is then forwarded to her preferred 
-payment processor.
+Customer POV: Penny logs into the HobbyCo website, providing her 
+<tref>payment processor</tref> <tref>credential</tref> in the process. Penny 
+selects a model train for purchase. The store generates a payment request which 
+is then forwarded to her preferred payment processor.
           </li>
           <li>
-Merchant POV: A FarmCo customer selects a 10 kg bag of grass seed for purchase. 
-FarmCo performs a few database lookups to determine the current market price 
-of grass seed and generates an invoice for the purchase of the selected 
-product. The invoice is transmitted to the customer's Payment Agent, which 
-then transmits the invoice to the customer's payment processor for processing.
+Merchant POV: A FarmCo <tref>customer</tref> selects a 10 kg bag of grass 
+seed for purchase. FarmCo performs a few database lookups to determine the 
+current market price of grass seed and generates an invoice for the purchase 
+of the selected product. The invoice is transmitted to the customer's 
+<tref>payment agent</tref>, which then transmits the invoice to the 
+customer's <tref>payment processor</tref> for processing.
           </li>
           <li>
-Payment Processor POV: A PayCo customer receives a payment request to send 
-funds to RetailCo. Upon approval by the customer, the transmission of funds 
-are initiated from the customer's financial account to RetailCo's 
+Payment Processor POV: A PayCo <tref>customer</tref> receives a payment request 
+to send funds to RetailCo. Upon approval by the customer, the transmission of 
+funds are initiated from the customer's financial account to RetailCo's 
 financial account.
           </li>
         </ul>
@@ -150,19 +218,21 @@ financial account.
         <h4>Details</h4>
         <p>
 All payments start somewhere and they typically follow the same basic flow: 
-1) a payer requests a product or service, 2) the payee advertises the final 
-price for the product or service, and 3) the payer initiates payment to the 
-payee. This use case explores the initiation of a payment from the customer, 
-merchant, and payment processor perspectives. 
+1) a <tref>payer</tref> requests a product or service, 2) the 
+<tref>payee</tref> advertises the final price for the product or service, and 
+3) the payer initiates payment to the payee. This use case explores the 
+initiation of a payment from the <tref>customer</tref>, <tref>merchant</tref>, 
+and <tref>payment processor</tref> perspectives. 
         </p>
         <p>
 A payment request contains all of the details necessary to perform a purchase 
 including: 1) an optional list of requested products or services,
 2) the exchange value (price) for the products/services, 3) the acceptable 
-payment instruments, and 4) a cryptographically verifiable signature on 
-the important data in the request. The payment request is an extensible, 
-cryptographically verifiable, self-contained document that can be used 
-interchangeably with any payment processor.
+<tref title="payment instrument">payment instruments</tref>, and 
+4) a cryptographically verifiable signature on the important data in the 
+request. The payment request is an extensible, cryptographically verifiable, 
+self-contained document that can be used interchangeably with any 
+<tref>payment processor</tref>.
         </p>
       </section>
         
@@ -181,18 +251,22 @@ The messaging format should be cryptographically verifiable (e.g. via
 digital signatures, PKI).
           </li>
           <li>
-The messaging format should enable the receiver of funds to specify 
+The messaging format should enable the <tref>payee</tref> to specify 
 acceptable payment instruments.
           </li>
           <li>
 A protocol that is capable of transmitting the payment request from the 
-origination point of the payment request to the payer's payment processor.
+origination point of the payment request to the payer's 
+<tref>payment processor</tref>.
           </li>
           <li>
-A protocol that is capable of discovering the payer's payment processor(s).
+A protocol that is capable of discovering the 
+<tref title="payer">payer's</tref> 
+<tref title="payment processor">payment processor(s)</tref>.
           </li>
           <li>
-A protocol that is capable of discovering the payer's payment instrument(s).
+A protocol that is capable of discovering the <tref title="payer">payer's</tref>
+<tref title="payment instrument">payment instrument(s)</tref>.
           </li>
         </ul>
       </section>
@@ -201,9 +275,10 @@ A protocol that is capable of discovering the payer's payment instrument(s).
     <section>
       <h3>Choice of Payment Instrument</h3>
       <p>
-When a payee intends to make a payment, they are given a choice to pick among 
-the intersection of the payment instruments they have available to them and 
-the payment instruments that are accepted by the merchant/payee.
+When a <tref>payee</tref> intends to make a payment, they are given a choice 
+to pick among the intersection of the 
+<tref title="payment instrument">payment instruments</tref> they have available 
+to them and the payment instruments that are accepted by the payee.
       </p>
 
       <section>
@@ -213,7 +288,7 @@ the payment instruments that are accepted by the merchant/payee.
 Daniel wants to pay the taxi fare with his credit card. The cab company promotes
 the payment via its web site which offers, on Daniel's smartphone, to choose 
 between several instruments offering different payment means: 1) the basic 
-credit card (Visa, MasterCard, etc.) channel; 2) or an indirect aggregators 
+credit card (Visa, MasterCard, etc.) channel; 2) or an indirect aggregator 
 (PayPal, Google checkout); 3) or the personal wallet detected as available on 
 Daniel's phone.
           </li>
@@ -230,19 +305,21 @@ selects the "operator billing" payment option.
         <h4>Details</h4>
         <ul>
           <li>
-Each payment instrument is registered with a set of attributes in order to 
-filter, sort, and display them. 
+Each <tref>payment instrument</tref> is registered with a set of attributes in 
+order to filter, sort, and display them. 
           </li>
           <li>
-Each payment processor is registered and 'subscribes' to a the payment 
-instrument it is able to provide.
+Each <tref>payment processor</tref> is registered and 'subscribes' to a the 
+<tref>payment instrument</tref> it is able to provide.
           </li>
           <li>
-Each merchant provides a list of acceptable payment instruments.
+Each <tref>merchant</tref> provides a list of acceptable 
+<tref title="payment instrument">payment instruments</tref>.
           </li>
           <li>
-Over time, each buyer iteratively builds a list of preferred payment 
-instruments for their commonly used merchants.
+Over time, each <tref>customer</tref> iteratively builds a list of preferred 
+payment instruments for their commonly used 
+<tref title="merchant">merchants</tref>.
           </li>
         </ul>
       </section>
@@ -251,8 +328,9 @@ instruments for their commonly used merchants.
         <h4>Requirements</h4>
         <ul>
           <li>
-The browser and the host are able to negotiate a payment instrument with 
-respect to their preferences and support capabilities.
+The browser and the host are able to negotiate a 
+<tref>payment instrument</tref> with respect to their preferences and 
+support capabilities.
           </li>
         </ul>
       </section>
@@ -261,10 +339,10 @@ respect to their preferences and support capabilities.
     <section>
       <h3>Push-based Payments</h3>
       <p>
-When a customer wants to make a purchase, the merchant presents the customer 
-with an electronic invoice which in turn can be presented to a payment 
-processor.  The payment processor then provides a validated proof-of-payment 
-to the merchant.
+When a <tref>customer</tref> wants to make a purchase, the 
+<tref>merchant</tref> presents the customer with an electronic invoice which 
+in turn can be presented to a <tref>payment processor</tref>.  The payment 
+processor then provides a validated proof-of-payment to the merchant.
       </p>
 
       <section>
@@ -272,7 +350,8 @@ to the merchant.
         <ul>
           <li>
 Customer POV: John goes to CandyCart.com and clicks “buy” to purchase 
-chocolates. John is redirected to the CandyCart.com’s payment processor's 
+chocolates. John is redirected to the CandyCart.com’s 
+<tref title="payment processor">payment processor's</tref> 
 website which presents him with a payment UI. John completes the purchase, 
 and is redirected to CandyCart.com’s website, to which he can now post a 
 digital receipt confirming the purchase.  
@@ -283,25 +362,27 @@ system notifies his mobile application what methods of purchase can be used,
 and also sends his mobile application an electronic invoice for the 
 transaction.  The mobile app presents Frances with options for payment, and 
 Frances chooses to pay with his tokenized credit card.  The token and invoice 
-are sent to the payment processor from the mobile app.  The payment processor 
-responds with a signed proof of payment electronic document.
+are sent to the <tref>payment processor</tref> from the mobile app.  The 
+payment processor responds with a signed proof of payment electronic document.
           </li>
           <li>
-Merchant POV: A customer scans or clicks 5 items to purchase.  The merchant 
-system presents an electronic invoice (either total only or with a breakdown 
-of the transaction), including the merchant's identifier, to the customer's 
-device.  The customer's device returns a digest of the invoice, having been 
-created with the payment processor's private key.
+Merchant POV: A <tref>customer</tref> scans or clicks 5 items to purchase.  
+The <tref>merchant</tref> system presents an electronic invoice (either total 
+only or with a breakdown of the transaction), including the merchant's 
+identifier, to the <tref title="customer">customer's</tref> device. 
+The customer's device returns a digest of the invoice, having been created 
+with the 
+<tref title="payment processor">payment processor's</tref> private key.
           </li>
           <li>
-Payment Processor POV: A customer sends an electronic invoice, including 
-the merchant and customer identifiers, to the payment processor.  The payment 
-processor checks the customer and merchant for validity, posts the requested 
-amount to the merchant's acquirer, which returns a digest on the 
-merchant/customer/amount/time tuple for proof of payment.  The payment 
-processor then returns a signed digest of the invoice plus the acquirer 
-digest proving payment to the customer's device, which it in turn posts to 
-the merchant system to prove payment.  
+Payment Processor POV: A <tref>customer</tref> sends an electronic invoice, 
+including the <tref>merchant</tref> and customer identifiers, to the 
+<tref>payment processor</tref>.  The payment processor checks the customer and 
+merchant for validity, posts the requested amount to the merchant's acquirer, 
+which returns a digest on the merchant/customer/amount/time tuple for proof of 
+payment.  The payment processor then returns a signed digest of the invoice 
+plus the acquirer digest proving payment to the customer's device, which it 
+in turn posts to the merchant system to prove payment.
           </li>
         </ul>
       </section>
@@ -309,12 +390,13 @@ the merchant system to prove payment.
       <section>
         <h4>Details</h4>
         <p>
-For this use case, the customer asks the payment processor for payment 
+For this use case, the <tref>customer</tref> asks the 
+<tref>payment processor</tref> for payment 
 directly, preventing the need for sensitive customer information to be shared 
-with the merchant, keeping the merchant out of "PCI scope."  No direct 
-communication between merchant and payment provider is required for this use 
-case. It may be possible to create an electronic receipt format that satisfies 
-the requirements for this use case as well as others. 
+with the <tref>merchant</tref>, keeping the merchant out of "PCI scope."  
+No direct communication between merchant and payment provider is required for 
+this use case. It may be possible to create an electronic receipt format 
+that satisfies the requirements for this use case as well as others. 
         </p>
       </section>
         
@@ -325,13 +407,15 @@ the requirements for this use case as well as others.
 All acquirers must have an available public key.
           </li>
           <li>
-All payment processors must have an available public key.
+All <tref title="payment processor">payment processors</tref> must have an 
+available public key.
           </li>
           <li>
-All merchants must have a global identifier.
+All <tref title="merchant">merchants</tref> must have a global identifier.
           </li>
           <li>
-All customers must be recognized by the payment processor. 
+All <tref title="customer">customers</tref> must be recognized by the 
+<tref>payment processor</tref>.
           </li>
         </ul>
       </section>
@@ -352,7 +436,6 @@ All customers must be recognized by the payment processor.
 
     </p>
   </section>
-
 
   <section> 
     <h2>Acknowledgements</h2>
