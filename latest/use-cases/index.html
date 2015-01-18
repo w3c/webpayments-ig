@@ -183,7 +183,7 @@ Group as high-priority items.
     </p>
     
     <section>
-      <h3>Purchase Request</h3>
+      <h3>Payment Request</h3>
       <p>
 A <tref>customer</tref> selects a product or service to purchase on a website. 
 The website generates a payment request that is sent to the customer's 
@@ -228,16 +228,43 @@ and <tref>payment processor</tref> perspectives.
         </p>
         <p>
 A payment request contains all of the details necessary to perform a purchase 
-including: 1) an optional list of requested products or services,
-2) the exchange value (price) for the products/services, 3) the acceptable 
-<tref title="payment instrument">payment instruments</tref>, and 
-4) a cryptographically verifiable signature on the important data in the 
-request. The payment request is an extensible, cryptographically verifiable, 
+including:
+        </p>
+        <ol>
+          <li>
+an optional list of requested products or services (see the Offers use case 
+<span class="issue">not yet integrated</span>),
+          </li>
+          <li>
+the exchange value (price) for the products/services 
+(see the Offers use case <span class="issue">not yet integrated</span>), 
+          </li>
+          <li>
+the acceptable 
+<tref title="payment instrument">payment instruments</tref> (see the 
+<a href="#choice-of-payment-instrument">choice of payment instrument</a>
+use case), and 
+          </li>
+          <li>
+a cryptographically verifiable signature on the important data in the 
+payment request (see Digital Signatures use case 
+<span class="issue">not yet integrated</span>). 
+          </li>
+        </ol>
+        <p>
+The payment request is an extensible, cryptographically verifiable, 
 self-contained document that can be used interchangeably with any 
 <tref>payment processor</tref>.
         </p>
-      </section>
+        <p class="issue">
+Stephane Boyera has raised a concern that this use case pulls in a bit too 
+much about the choice of payment instrument and the type of payments (push-based,
+token-based, credit-card info exchange). He suggests that it may be better to
+break this into a meta-use case.
+        </p>
         
+      </section>
+
       <section>
         <h4>Requirements</h4>
         <ul>
