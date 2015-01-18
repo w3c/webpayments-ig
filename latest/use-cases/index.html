@@ -36,6 +36,8 @@
           editors:  [
               { name: "Manu Sporny", url: "https://manu.sporny.org/",
                 company: "Digital Bazaar, Inc.", companyURL: "http://digitalbazaar.com/" },
+              { name: "Katie Haritos-Shea", url: "https://www.linkedin.com/in/katieharitosshea",
+                company: "W3C Invited Expert", companyURL: "http://www.w3.org/Payments/IG/" },
           ],
  
           // authors, add as many as you like. 
@@ -426,8 +428,87 @@ All <tref title="customer">customers</tref> must be recognized by the
   <section> 
     <h2>Medium Priority Use Cases</h2> 
     <p>
-
+The following use cases have been identified by the Web Payments Interest
+Group as medium-priority items.
     </p>
+
+    <section>
+      <h3>Pre-authorization</h3>
+      <p>
+<tref title="transaction">Transactions</tref> over a certain amount may require 
+a preliminary check on the availability of funds to complete the transaction. 
+These transactions may also have a provision to perform a hold on the funds 
+until the product or service is delivered and the transaction is complete.
+      </p>
+
+      <section>
+        <h4>Examples</h4>
+        <ul>
+          <li>
+Customer POV: George pulls up to a pump at a petrol station. His in-vehicle 
+application recognizes the station location and the pump, and asks if he wants 
+to approve a fill up. He answers "yes" and is prompted for which method of 
+payment he would like to use. He makes his selection, exits the vehicle, 
+lifts the nozzle, selects the grade of fuel, and fills his car. When he 
+returns to his vehicle, an electronic receipt for the purchase is displayed 
+by his in-vehicle application.
+          </li>
+          <li>
+Customer POV: Doris uses her mobile application to approve fuel fill-up for 
+her van. She realizes after exiting her vehicle that the site is not ADA 
+compliant, and so she cannot access the pumps. She uses her mobile application 
+to cancel the transaction.
+          </li>
+          <li>
+Merchant POV: FuelCo's in-store control system gets a message from a
+<tref>payment processor</tref> that pump 14 should be approved for a fill-up. 
+The message includes a single use cryptogram that can be used to prove 
+authorization. The equipment arms the pump and allows the fueling to proceed. 
+On completion, the merchant system sends the actual amount to pay along with 
+the single use cryptogram back to the payment processor.
+          </li>
+        </ul>
+      </section>
+      
+      <section>
+        <h4>Details</h4>
+        <p>
+Delivering services or products that are difficult to "undo", such 
+as performing an oil change, dispensing fuel, or renting a car, are examples 
+of situations which may require a two-part transaction.
+        </p>
+        <p>
+This use case highlights the need for a two part transaction. The
+first part either checks availability or reserves funds, and the second 
+completes the transaction with the actual amount. There are many different 
+ways these two segments can be completed.
+        </p>
+      </section>
+        
+      <section>
+        <h4>Requirements</h4>
+        <ul>
+          <li>
+A protocol and data format that enables a device to directly send a 
+pre-authorization request to a <tref>customer</tref>, process it through
+the customer's <tref>payment processor</tref>, and receive the proof of
+pre-authorization from either the customer device or the customer's 
+payment processor.
+          </li>
+          <li>
+A protocol and data format that enables the pre-authorization request to be
+processed entirely with the <tref title="merchant">merchant's</tref> payment
+processing system.
+          </li>
+          <li>
+A protocol that enables the merchant to request a specific hold amount, the
+amount to be approved or denied by the customer, and the hold of the funds to
+be either approved of denied by the <tref>payment processor</tref>.
+          </li>
+        </ul>
+      </section>
+    </section>
+
   </section>
 
   <section> 
