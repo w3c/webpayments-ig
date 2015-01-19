@@ -304,10 +304,12 @@ A protocol that is capable of discovering the <tref title="payer">payer's</tref>
     <section>
       <h3>Choice of Payment Instrument</h3>
       <p>
-When a <tref>payee</tref> intends to make a payment, they are given a choice 
+When a <tref>payer</tref> intends to make a payment, they are given a choice 
 to pick among the intersection of the 
 <tref title="payment instrument">payment instruments</tref> they have available 
-to them and the payment instruments that are accepted by the payee.
+to them and the payment instruments that are accepted by the payee. Optionally,
+new payment instruments may be offered to them by the <tref>payee</tref> and
+provided as options by their <tref>payment agent</tref>.
       </p>
 
       <section>
@@ -326,6 +328,14 @@ Amantha downloads the latest version of her favorite game. It's only a couple
 of euros that she'd like to pay on top of her telecom operator's bill. The game 
 store web site accepts payment via credit card and operator billing. Amantha 
 selects the "operator billing" payment option.
+          </li>
+          <li>
+Ricardo would like to pay for clothes at ThreadCo, a brick-and-mortar retailer,
+using software on his mobile phone. He taps his phone to checkout and notices 
+that the purchase would be less expensive if he uses a department store 
+digital credit card to complete the purchase. He applies for the card using a 
+provided link, is approved for the digital credit card card, and completes the 
+checkout process using his new card.
           </li>
         </ul>
       </section>
@@ -346,6 +356,11 @@ Each <tref>merchant</tref> provides a list of acceptable
 <tref title="payment instrument">payment instruments</tref>.
           </li>
           <li>
+A <tref>payment agent</tref> may attempt to optimize payment instruments on
+behalf of the <tref>customer</tref> by selecting for payment speed, 
+loyalty benefits, price, or other conveniences.
+          </li>
+          <li>
 Over time, each <tref>customer</tref> iteratively builds a list of preferred 
 payment instruments for their commonly used 
 <tref title="merchant">merchants</tref>.
@@ -360,6 +375,15 @@ payment instruments for their commonly used
 The browser and the host are able to negotiate a 
 <tref>payment instrument</tref> with respect to their preferences and 
 support capabilities.
+          </li>
+          <li>
+A data format that expresses the list of available payment instruments that
+the <tref>merchant</tref> accepts.
+          </li>
+          <li>
+A protocol that enables the <tref>payment agent</tref> to suggest new 
+<tref>payment instruments</tref> to the <tref>customer</tref> based on
+customer preferences (speed, points, price, etc.).
           </li>
         </ul>
       </section>
