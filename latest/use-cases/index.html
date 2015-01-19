@@ -406,7 +406,8 @@ customer preferences (speed, points, price, etc.).
 When a <tref>customer</tref> wants to make a purchase, the 
 <tref>merchant</tref> presents the customer with an electronic invoice which 
 in turn can be presented to a <tref>payment processor</tref>.  The payment 
-processor then provides a validated proof-of-payment to the merchant.
+processor then provides a validated proof-of-payment to the merchant via 
+the customer's device or directly to the merchant.
       </p>
 
       <section>
@@ -414,39 +415,45 @@ processor then provides a validated proof-of-payment to the merchant.
         <ul>
           <li>
 Customer POV: John goes to CandyCart.com and clicks “buy” to purchase 
-chocolates. John is redirected to the CandyCart.com’s 
-<tref title="payment processor">payment processor's</tref> 
-website which presents him with a payment UI. John completes the purchase, 
-and is redirected to CandyCart.com’s website, to which he can now post a 
-digital receipt confirming the purchase.  
+chocolates. His browser re-directs him to his <tref>payment processor</tref>
+which asks him to approve the purchase. He approves the purchase, his
+payment processor transmits the funds to the receiving account, and his
+browser is re-directed back to CandyCart.com with the proof of payment.
           </li>
           <li>
-Customer POV: Francis purchases items in a local novelty store.  The store 
-system notifies his mobile application what methods of purchase can be used, 
-and also sends his mobile application an electronic invoice for the 
-transaction.  The mobile app presents Frances with options for payment, and 
-Frances chooses to pay with his tokenized credit card.  The token and invoice 
-are sent to the <tref>payment processor</tref> from the mobile app.  The 
-payment processor responds with a signed proof of payment electronic document.
-          </li>
-          <li>
-Merchant POV: A <tref>customer</tref> scans or clicks 5 items to purchase.  
-The <tref>merchant</tref> system presents an electronic invoice (either total 
+Merchant POV: A <tref>customer</tref> selects 5 items to purchase.  
+The <tref>merchant</tref> system presents an electronic invoice (either a total 
 only or with a breakdown of the transaction), including the merchant's 
 identifier, to the <tref title="customer">customer's</tref> device. 
-The customer's device returns a digest of the invoice, having been created 
-with the 
+The customer's device returns a proof of payment that is digitally signed
+with the customer's
 <tref title="payment processor">payment processor's</tref> private key.
           </li>
           <li>
-Payment Processor POV: A <tref>customer</tref> sends an electronic invoice, 
+3-Corner Payment Processor POV: A <tref>customer</tref> sends an electronic invoice, 
 including the <tref>merchant</tref> and customer identifiers, to the 
-<tref>payment processor</tref>.  The payment processor checks the customer and 
-merchant for validity, posts the requested amount to the merchant's acquirer, 
-which returns a digest on the merchant/customer/amount/time tuple for proof of 
-payment.  The payment processor then returns a signed digest of the invoice 
-plus the acquirer digest proving payment to the customer's device, which it 
-in turn posts to the merchant system to prove payment.
+<tref>payment processor</tref>. The customer and the merchant use the
+same payment processor. The payment processor checks the customer and 
+merchant for validity, posts the requested amount to the merchant's account, 
+and then generates a proof of payment for the merchant. The payment processor 
+then returns a signed digest of the invoice plus a digest of the proof of 
+payment to the customer's device. The customer's device delivers the 
+proof-of-payment to the merchant system to prove that funds have been 
+transferred.
+          </li>
+          <li>
+4-Corner Payment Processor POV: A <tref>customer</tref> sends an electronic 
+invoice, including the <tref>merchant</tref> and customer identifiers, to the 
+<tref>payment processor</tref>. The customer and the merchant use different
+payment processors. The payment processor checks the customer and 
+merchant for validity, and initiates a transfer of the requested amount 
+to the merchant's account via a payment clearing mechanism. Once the
+payment processor has received a verification that the payment message was
+received by the acquirer, it then generates a proof of payment for the merchant. 
+The payment processor then returns a signed digest of the invoice plus a digest 
+of the proof of payment to the customer's device. The customer's device 
+delivers the proof-of-payment to the merchant system to prove that funds 
+have been transferred.
           </li>
         </ul>
       </section>
@@ -455,9 +462,9 @@ in turn posts to the merchant system to prove payment.
         <h4>Details</h4>
         <p>
 For this use case, the <tref>customer</tref> asks the 
-<tref>payment processor</tref> for payment 
+<tref>payment processor</tref> to initiate payment to the <tref>merchant</tref>
 directly, preventing the need for sensitive customer information to be shared 
-with the <tref>merchant</tref>, keeping the merchant out of "PCI scope."  
+with the <tref>merchant</tref>, which keeps the merchant out of "PCI scope."
 No direct communication between merchant and payment provider is required for 
 this use case. It may be possible to create an electronic receipt format 
 that satisfies the requirements for this use case as well as others. 
