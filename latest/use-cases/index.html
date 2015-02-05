@@ -302,6 +302,65 @@ A protocol that is capable of discovering the <tref title="payer">payer's</tref>
     </section>
 
     <section>
+      <h3>Proof of Payment, Hold, or Funds</h3>
+      <p>
+A <tref>payer</tref> intiates a transaction for a good or service from a <tref>payee</tref> resulting in a standardized, cryptographically signed, machine-readable proof-of-payment, proof-of-hold, or proof-of-funds. Entities involved in the transaction (<tref>payer</tref> or any <tref>payee</tref>) may then use the proof to assess whether or not the <tref>payer</tref> should have access to the good or service.
+      </p>
+
+      <section>
+        <h4>Examples</h4>
+        <ul>
+          <li>
+Customer POV: Jeff buys a lot of heavy metal music through the "Buy this track" function on his car radio. When he buys a new car, he wants to transfer his collection and provides all of the proof-of-payment data to show that he has already paid for the songs.
+          </li>
+          <li>
+Customer POV: Willie buys e-tickets for a football game, but his mobile phone is stolen while standing in the queue. Since he has a receipt and identifies himself, he can still get in to watch the match.
+          </li>
+          <li>
+Customer POV: Renne checks into a hotel and is asked for a deposit for any damages to the room. She uses her phone to provide a proof-of-hold until she checks out of the hotel, at which time the hold on her funds will be released.
+          </li>
+          <li>
+Merchant POV: Rockinradio, smoothSounds, and classicClassic are independent specialised music retailers. They accept proof-of-purchase from each other to provide a track that is in their online catalogue even if it was originally bought from another provider.
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <h3>Refunds</h3>
+      <p>
+The funds that are transmitted from <tref>payer</tref> to <tref>payee</tref> are reversed after a decision by a <tref>merchant</tref>, <tref>regulatory authority</tref>, or <tref>payment processor</tref>.
+      </p>
+
+      <section>
+        <h4>Examples</h4>
+        <ul>
+          <li>
+Customer POV: Pele buys a slice of pizza at a local restaurant and is accidentally charged for five slices of pizza. He notices the mistake after he pays and requests a refund, which the restaurant manager approves. The overcharged funds are returned to his account.
+          </li>
+          <li>
+Merchant POV: A customer claims that a blender that they purchased online was faulty and returns the product to the merchant. The merchant provides the customer with a refund in the form of store credit based on the return policy.
+          </li>
+          <li>
+Regulator POV: A financial crimes regulator identifies a criminal syndicate that is operating via a number of fake identities. The fake identities are flagged and an electronic message is sent to all payment processors to reverse all payments sent to the fake identities.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Requirements</h4>
+        <ul>
+          <li>
+A protocol for transmitting a proof of purchase/hold/funds and reversing the transmission of funds when requested by a proper authority.
+          </li>
+          <li>
+A way of identifying a particular individual, organization, or financial account and reversing all transactions to that entity.
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
       <h3>Choice of Payment Instrument</h3>
       <p>
 When a <tref>payer</tref> intends to make a payment, they are given a choice
@@ -395,6 +454,59 @@ the <tref>merchant</tref> accepts.
 A protocol that enables the <tref>payment agent</tref> to suggest new
 <tref>payment instruments</tref> to the <tref>customer</tref> based on
 customer preferences (speed, points, price, etc.).
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <h3>Registration-less Purchases</h3>
+      <p>
+The buyer goes to a merchant website and clicks a buy button to complete a purchase without having to go through any registration process. During the purchase the buyer chooses which information to share with the merchant which the merchant then uses to uniquely identify the buyer if they perform any repeat purchases.
+      </p>
+
+      <section>
+        <h4>Examples</h4>
+        <ul>
+          <li>
+Customer POV: Lilith finds a song that she really likes through one of her favorite music blogs. Without registering with the blog, or the artists website, she initiates a purchase and is sent to the artist's website to show the proof of purchase and download the song. At no point did Lilith have to register for a user account, enter her credit card number, or email address.
+          </li>
+          <li>
+Merchant POV: A proof of purchase for a song is shown to a merchant website. The proof of purchase is validated and the merchant website provides a download for the customer.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Details</h4>
+        <p>
+There are a large number of "paywall" websites on the Web that require registration to use. In many cases, if the site isn't regularly visited by the customer, they abandon the transaction when they see the paywall requirement. Providing a mechanism to sell an inexpensive item to a customer without requiring registration would be of great benefit to not only the merchants selling goods and services, but customers that would like to avoid lengthy registration processes.
+        </p>
+      </section>
+
+      <section>
+        <h4>Requirements</h4>
+        <ul>
+          <li>
+A Web-native data format that can express a proof of purchase / digital receipt.
+          </li>
+          <li>
+The data format should be extensible (e.g. Linked Data, JSON-LD).
+          </li>
+          <li>
+The data format should be cryptographically verifiable so that merchants can be certain that funds have or will be transferred and that the receipt is valid.
+          </li>
+          <li>
+A data format for expressing credentials that may need to be a part of the delivery of a proof of purchase. For example, a proof of purchase coupled with a shipping address.
+          </li>
+          <li>
+A protocol for requesting a proof of purchase from a payer.
+          </li>
+          <li>
+A protocol for delivering a proof of purchase to a payee.
+          </li>
+          <li>
+A protocol for transmitting credentials that works in concert with the delivery of a proof of purchase.
           </li>
         </ul>
       </section>
