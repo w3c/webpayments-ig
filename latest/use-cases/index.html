@@ -302,65 +302,6 @@ A protocol that is capable of discovering the <tref title="payer">payer's</tref>
     </section>
 
     <section>
-      <h3>Proof of Payment, Hold, or Funds</h3>
-      <p>
-A <tref>payer</tref> intiates a transaction for a good or service from a <tref>payee</tref> resulting in a standardized, cryptographically signed, machine-readable proof-of-payment, proof-of-hold, or proof-of-funds. Entities involved in the transaction (<tref>payer</tref> or any <tref>payee</tref>) may then use the proof to assess whether or not the <tref>payer</tref> should have access to the good or service.
-      </p>
-
-      <section>
-        <h4>Examples</h4>
-        <ul>
-          <li>
-Customer POV: Jeff buys a lot of heavy metal music through the "Buy this track" function on his car radio. When he buys a new car, he wants to transfer his collection and provides all of the proof-of-payment data to show that he has already paid for the songs.
-          </li>
-          <li>
-Customer POV: Willie buys e-tickets for a football game, but his mobile phone is stolen while standing in the queue. Since he has a receipt and identifies himself, he can still get in to watch the match.
-          </li>
-          <li>
-Customer POV: Renne checks into a hotel and is asked for a deposit for any damages to the room. She uses her phone to provide a proof-of-hold until she checks out of the hotel, at which time the hold on her funds will be released.
-          </li>
-          <li>
-Merchant POV: Rockinradio, smoothSounds, and classicClassic are independent specialised music retailers. They accept proof-of-purchase from each other to provide a track that is in their online catalogue even if it was originally bought from another provider.
-          </li>
-        </ul>
-      </section>
-    </section>
-
-    <section>
-      <h3>Refunds</h3>
-      <p>
-The funds that are transmitted from <tref>payer</tref> to <tref>payee</tref> are reversed after a decision by a <tref>merchant</tref>, <tref>regulatory authority</tref>, or <tref>payment processor</tref>.
-      </p>
-
-      <section>
-        <h4>Examples</h4>
-        <ul>
-          <li>
-Customer POV: Pele buys a slice of pizza at a local restaurant and is accidentally charged for five slices of pizza. He notices the mistake after he pays and requests a refund, which the restaurant manager approves. The overcharged funds are returned to his account.
-          </li>
-          <li>
-Merchant POV: A customer claims that a blender that they purchased online was faulty and returns the product to the merchant. The merchant provides the customer with a refund in the form of store credit based on the return policy.
-          </li>
-          <li>
-Regulator POV: A financial crimes regulator identifies a criminal syndicate that is operating via a number of fake identities. The fake identities are flagged and an electronic message is sent to all payment processors to reverse all payments sent to the fake identities.
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h4>Requirements</h4>
-        <ul>
-          <li>
-A protocol for transmitting a proof of purchase/hold/funds and reversing the transmission of funds when requested by a proper authority.
-          </li>
-          <li>
-A way of identifying a particular individual, organization, or financial account and reversing all transactions to that entity.
-          </li>
-        </ul>
-      </section>
-    </section>
-
-    <section>
       <h3>Choice of Payment Instrument</h3>
       <p>
 When a <tref>payer</tref> intends to make a payment, they are given a choice
@@ -599,6 +540,113 @@ All <tref title="merchant">merchants</tref> must have a global identifier.
           <li>
 All <tref title="customer">customers</tref> must be recognized by the
 <tref>payment processor</tref>.
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <h3>Non-interactive Purchases</h3>
+      <p>
+A payer visits a payee's website and initiates a payment. The payer's payment processor presents them with an option to assign a pay-as-you-go token with a specific spending limit (and/or other limitations) for future purchases with the payee. An option is also presented to require the display of a receipt when a purchase occurs (and/or other interactions), or to perform the purchase in the background with no interactive purchase process required.
+      </p>
+
+      <section>
+        <h4>Examples</h4>
+        <ul>
+          <li>
+Customer POV: Yanos visit's his favorite financial news site, which requires articles to be purchased if the customer does not have a subscription. Yanos initiates a purchase. The website, in the payment request, requests a multi-use payment token from Yanos' payment processor to spend up to $15 a month on Yanos' behalf when he purchases certain for-pay articles. Yanos' payment processor asks him if he would just like to perform a one-time purchase, or grant the payment token to the news site. Yanos doesn't want to be bothered to approve a $0.50 purchase, as he does many of them on the website, so he authorizes the initial payment and also authorizes the multi-use payment token. The multi-use payment token is delivered to the financial news site along with proof-of-purchase for the initial article he intended to buy.
+          </li>
+          <li>
+Merchant POV: An online video game company following a freemium business model would like to enable in-app purchases for their content. In order to do so, they would like to request a multi-use payment token from their customer. They enable a button in their game that requests a multi-use payment token and when a customer approves it, the company stores it in their systems. The multi-use payment token is only good for 3 months and has a spending limit that is set by the customer.
+          </li>
+          <li>
+Payment Processor POV: A payee's payment processor receives a request for a multi-use payment token from a payer via the payee's device. The payment processor ensures that the details of the payment token are acceptable to the payee, enables them to add constraints to the payment token, and upon approval, grants a unique identifier for the payment token to be returned to the merchant. The payment token is always linked between a payer's source account and a payee's destination account such that the theft of the payment token does not result in the ability of the thief to move money from the payer's source account to an arbitrary payee.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Motivations</h4>
+
+        <p>
+There are a number of types of purchases that don't require the full attention of the payer when they happen. For example, an in-game purchase for an item that costs $0.05 is not necessary until a pre-set limit set by the payer is reached. It is important to not make the payment experience cumbersome for markets that perform micro-payments, or require the processing of many repetitive payments. If the payment authorization step can be automated to the point of disappearing without creating a bad customer experience or generating fraud, then it should be eliminated.
+        </p>
+      </section>
+
+      <section>
+        <h4>Requirements</h4>
+        <ul>
+          <li>
+A data format to express a request for a multi-use payment token that is capable of expressing an amount, a recharge frequency, and an optional expiration date.
+          </li>
+          <li>
+A data format to express a multi-use payment token that is capable of expressing a unique id, an optional amount, a recharge frequency, and an optional expiration date.
+          </li>
+          <li>
+A protocol to request a multi-use payment token from a payment processor.
+          </li>
+          <li>
+A protocol to specify that a payment request should be fulfilled using a multi-use payment token (or perhaps we don't have the merchant deal with this information at all - which would be preferable.)
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <h3>Proof of Payment, Hold, or Funds</h3>
+      <p>
+A <tref>payer</tref> intiates a transaction for a good or service from a <tref>payee</tref> resulting in a standardized, cryptographically signed, machine-readable proof-of-payment, proof-of-hold, or proof-of-funds. Entities involved in the transaction (<tref>payer</tref> or any <tref>payee</tref>) may then use the proof to assess whether or not the <tref>payer</tref> should have access to the good or service.
+      </p>
+
+      <section>
+        <h4>Examples</h4>
+        <ul>
+          <li>
+Customer POV: Jeff buys a lot of heavy metal music through the "Buy this track" function on his car radio. When he buys a new car, he wants to transfer his collection and provides all of the proof-of-payment data to show that he has already paid for the songs.
+          </li>
+          <li>
+Customer POV: Willie buys e-tickets for a football game, but his mobile phone is stolen while standing in the queue. Since he has a receipt and identifies himself, he can still get in to watch the match.
+          </li>
+          <li>
+Customer POV: Renne checks into a hotel and is asked for a deposit for any damages to the room. She uses her phone to provide a proof-of-hold until she checks out of the hotel, at which time the hold on her funds will be released.
+          </li>
+          <li>
+Merchant POV: Rockinradio, smoothSounds, and classicClassic are independent specialised music retailers. They accept proof-of-purchase from each other to provide a track that is in their online catalogue even if it was originally bought from another provider.
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <h3>Refunds</h3>
+      <p>
+The funds that are transmitted from <tref>payer</tref> to <tref>payee</tref> are reversed after a decision by a <tref>merchant</tref>, <tref>regulatory authority</tref>, or <tref>payment processor</tref>.
+      </p>
+
+      <section>
+        <h4>Examples</h4>
+        <ul>
+          <li>
+Customer POV: Pele buys a slice of pizza at a local restaurant and is accidentally charged for five slices of pizza. He notices the mistake after he pays and requests a refund, which the restaurant manager approves. The overcharged funds are returned to his account.
+          </li>
+          <li>
+Merchant POV: A customer claims that a blender that they purchased online was faulty and returns the product to the merchant. The merchant provides the customer with a refund in the form of store credit based on the return policy.
+          </li>
+          <li>
+Regulator POV: A financial crimes regulator identifies a criminal syndicate that is operating via a number of fake identities. The fake identities are flagged and an electronic message is sent to all payment processors to reverse all payments sent to the fake identities.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Requirements</h4>
+        <ul>
+          <li>
+A protocol for transmitting a proof of purchase/hold/funds and reversing the transmission of funds when requested by a proper authority.
+          </li>
+          <li>
+A way of identifying a particular individual, organization, or financial account and reversing all transactions to that entity.
           </li>
         </ul>
       </section>
