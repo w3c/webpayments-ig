@@ -444,7 +444,7 @@ customer preferences (speed, points, price, etc.).
     </section>
 
     <section>
-      <h3>Registration-less Payments</h3>
+      <h3>Making a Payment Without Registering</h3>
       <p>
 A <tref>payer</tref> goes to a <tref>payee</tref> storefront and initiates a payment without having to go through any registration process. During the payment process, the <tref>payer</tref> chooses which information to share with the <tref>payee</tref> which the <tref>payee</tref> then uses to identify the <tref>payer</tref> if future payments are made.
       </p>
@@ -497,7 +497,7 @@ A protocol for transmitting credentials that works in concert with the delivery 
     </section>
 
     <section>
-      <h3>Payer-initiated Payment</h3>
+      <h3>Payer-initiated Funds Transfer</h3>
       <p>
 When a <tref>customer</tref> wants to make a purchase, the
 <tref>merchant</tref> presents the customer with an electronic invoice which
@@ -589,7 +589,7 @@ All <tref title="customer">customers</tref> must be recognized by the
     </section>
 
     <section>
-      <h3>Non-interactive Purchases</h3>
+      <h3>Limiting Payee-initiated Payments</h3>
       <p>
 A payer visits a payee's website and initiates a payment. The payer's payment processor presents them with an option to assign a pay-as-you-go token with a specific spending limit (and/or other limitations) for future purchases with the payee. An option is also presented to require the display of a receipt when a purchase occurs (and/or other interactions), or to perform the purchase in the background with no interactive purchase process required.
       </p>
@@ -705,7 +705,57 @@ Group as medium-priority items.
     </p>
 
     <section>
-      <h3>Pre-authorization</h3>
+      <h3>Applying Coupons and Loyalty Cards to a Payment</h3>
+      <p>
+A <tref>payee</tref> can associate a membership card, coupon, or similar token with a transaction to receive a discount or other benefits.
+      </p>
+
+      <section>
+        <h4>Examples</h4>
+        <ul>
+          <li>
+Customer POV: Cory shops for groceries at his local ChowMart. When he starts the checkout process via the automated kiosk, the machine asks him to tap his phone to transmit his ChowSavingsCard info to get discounts on items he's purchasing. He taps his phone, selects his card and taps his phone again to transmit the card information to the kiosk, which shows him how much of a discount he is receiving because of the card.
+          </li>
+          <li>
+Merchant POV: ChickenHut requests loyalty cards from frequent customers in order to provide discounts. When customers tap their phone, a cryptographically verifiable token that was issued by ChickenHut is transmitted from the phone to the point of sale device and verified for authenticity.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Motivations</h4>
+        <p>
+Coupons and loyalty cards are two discount mechanisms that may be used by a customer before performing a final payment. While coupons and loyalty cards vary wildly in their associated benefits, a merchant or manufacturer must ensure that each one is authentic. In order to ensure the authenticity of a coupon, loyalty card, or information stored therein, it is important that all information is cryptographically verifiable. It is also important for the point-of-sale devices to be able to add information to the locally-stored loyalty cards for use in off-line scenarios.
+        </p>
+      </section>
+
+      <section>
+        <h4>Requirements</h4>
+        <ul>
+          <li>
+A data format for expressing a coupon.
+          </li>
+          <li>
+A data format for expressing a loyalty card.
+          </li>
+          <li>
+The data format should be extensible (e.g. Linked Data, JSON-LD). 
+          </li>
+          <li>
+The data format should be cryptographically verifiable (e.g. via digital signatures, PKI).
+          </li>
+          <li>
+A protocol for transmitting the coupon or loyalty card from the payer to the payee.
+          </li>
+          <li>
+A protocol for adding cryptographically verifiable information to a loyalty card.
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <h3>Performing a Payment in Multiple Phases</h3>
       <p>
 <tref title="transaction">Transactions</tref> over a certain amount may require
 a preliminary check on the availability of funds to complete the transaction.
@@ -794,15 +844,14 @@ be either approved of denied by the <tref>payment processor</tref>.
     <h2>Acknowledgements</h2>
 
     <p>
-The editors are thankful to the following contributions from ...
+The editors are thankful to the following contributions from members of the Web Payments Interest Group, Web Payments Community Group,
+and the Web community.
 (in alphabetical order):
     </p>
     <p>
-List of contributors/reviewers.
     </p>
 
   </section>
 
   </body>
 </html>
-
