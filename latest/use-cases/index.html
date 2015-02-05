@@ -183,7 +183,7 @@ Group as high-priority items.
     </p>
 
     <section>
-      <h3>Payment Request</h3>
+      <h3>Initiating a Payment</h3>
       <p>
 A <tref>customer</tref> selects a product or service to purchase on a website.
 The website generates a payment request that is sent to the customer's
@@ -302,7 +302,50 @@ A protocol that is capable of discovering the <tref title="payer">payer's</tref>
     </section>
 
     <section>
-      <h3>Choice of Payment Instrument</h3>
+      <h3>Partially Blinding Payment Information</h3>
+      <p>
+Leveraging variable degrees of pseudo-anonymity per requirements of the payment transaction.
+      </p>
+
+      <section>
+        <h4>Examples</h4>
+
+        <ul>
+          <li>
+Customer POV: Tibor orders 3 pounds of assorted chocolates from an online candy store. The store only needs Tibor's verified shipping address and a proof of payment to send him the chocolates. The verified shipping address and the proof of payment are made in a single request to Tibor's Payment Agent and both are delivered to the online candy store. Tibor's privacy is protected from the candy store, which did not require Tibor's name, email address, or any other personally identifying information to complete the transaction.
+          </li>
+          <li>
+Merchant POV: An online candy store gets an order for 3 pounds of chocolate. The store requests a verified shipping address and a proof of payment from the customer in order to send the goods. After receiving both, the store ships the goods to the customer, not exposing themselves to any risk of accidentally leaking their customer's personal information of payment data. 
+          </li>
+          <li>
+Payment Processor POV: PayCo is required to keep a certain amount of information on their customers for anti-money laundering / know your customer regulatory purposes. When a customer performs a transaction with a merchant, they would like to reduce the amount of information that's transmitted to the merchant while ensuring that they stay compliant with regulations. This enables the customer to stay pseudo-anonymous when dealing with merchants, but ensure that law enforcement have recourse in the event of illegal activity.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Motivations</h4>
+        <p>
+Protecting an individual's privacy when performing transactions on the Web is an important concern. This use case attempts to ensure that transaction privacy is a fundamental part of any Web-based payment mechanism.
+        </p>
+      </section>
+
+      <section>
+        <h4>Requirements</h4>
+
+        <ul>
+          <li>
+A payment protocol that is capable of transmitting a proof of purchase that does not contain any personally identifiable information.
+          </li>
+          <li>
+A credential protocol that is capable of transmitting the minimum aspects of an entity's identity, such as a shipping address, or e-mail address, to complete a transaction.
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <h3>Choosing a Payment Instrument</h3>
       <p>
 When a <tref>payer</tref> intends to make a payment, they are given a choice
 to pick among the intersection of the
@@ -454,7 +497,7 @@ A protocol for transmitting credentials that works in concert with the delivery 
     </section>
 
     <section>
-      <h3>Push-based Payments</h3>
+      <h3>Payer-initiated Payment</h3>
       <p>
 When a <tref>customer</tref> wants to make a purchase, the
 <tref>merchant</tref> presents the customer with an electronic invoice which
