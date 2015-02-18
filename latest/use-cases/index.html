@@ -196,7 +196,11 @@ A <tref>customer</tref> selects a product or service to purchase on a website.
 The website generates a payment request that is sent to the customer's
 <tref>payment agent</tref> for processing.
       </p>
-
+      <section>
+        <h4>Basic Flow</h4>
+        <img style="display: block; margin-left: auto; margin-right: auto;
+  max-height:100%; max-width:75%;" src="images/payment-initiation.svg">
+      </section>
       <section>
         <h4>Examples</h4>
         <ul>
@@ -231,7 +235,10 @@ The proof of hold proves that the customer has a valid
 <tref>payment scheme</tref>, and also proves that the customer has
 given consent for the payment. The merchant forwards the message to MerchCo.
 The transmission of funds are initiated from the customer's financial account
-to the merchant's financial account.
+to the merchant's financial account. 
+<span class="issue">this flow isn't represented in the basic flow above, 
+is that ok? Or should we have all possible alternate flows for the use
+case documented?</span>
           </li>
         </ul>
       </section>
@@ -315,7 +322,7 @@ A protocol that is capable of discovering the
           </li>
           <li>
 A protocol that is capable of discovering the <tref title="payer">payer's</tref>
-<tref title="payment instrument">payment instrument(s)</tref> and the 
+<tref title="payment instrument">payment instrument(s)</tref> and the
 corresponding <tref title="payment scheme">payment scheme(s)</tref>.
           </li>
         </ul>
