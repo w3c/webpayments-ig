@@ -235,8 +235,8 @@ The proof of hold proves that the customer has a valid
 <tref>payment scheme</tref>, and also proves that the customer has
 given consent for the payment. The merchant forwards the message to MerchCo.
 The transmission of funds are initiated from the customer's financial account
-to the merchant's financial account. 
-<span class="issue">this flow isn't represented in the basic flow above, 
+to the merchant's financial account.
+<span class="issue">this flow isn't represented in the basic flow above,
 is that ok? Or should we have all possible alternate flows for the use
 case documented?</span>
           </li>
@@ -292,6 +292,40 @@ break this into a meta-use case.
 
       </section>
 
+      <section>
+        <h4>Pre-conditions</h4>
+        <ul>
+          <li>
+The <tref>customer</tref> has access to one or more of their
+<tref title="payment agent">payment agents</tref>.
+          </li>
+          <li>
+The <tref>customer</tref> and <tref>merchant</tref> have a communication
+channel over which they can pass messages.
+          </li>
+          <li>
+The <tref>customer</tref> has a mechanism that they can use to initiate
+the payment process with the <tref>merchant</tref>.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Post-conditions</h4>
+        <ul>
+          <li>
+The <tref>merchant</tref> has delivered a payment request to the
+<tref title="customer">customer's</tref> <tref>payment agent</tref>, or
+          </li>
+          <li>
+The <tref title="customer">customer's</tref> <tref>payment agent</tref> has
+delivered a 
+<a href="#proof-of-payment-hold-or-funds">proof of hold</a> or 
+<a href="#proof-of-payment-hold-or-funds">proof of funds</a> 
+to the <tref>merchant</tref>.
+          </li>
+        </ul>
+      </section>
       <!-- section>
         <h4>Requirements</h4>
         <ul>
