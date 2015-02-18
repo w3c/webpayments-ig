@@ -304,7 +304,8 @@ A protocol that is capable of discovering the <tref title="payer">payer's</tref>
     <section>
       <h3>Partially Omitting Personal Information</h3>
       <p>
-Leveraging variable degrees of pseudo-anonymity per requirements of the payment transaction.
+Leveraging variable degrees of pseudo-anonymity based on the requirements of the 
+payment transaction.
       </p>
 
       <section>
@@ -315,7 +316,7 @@ Leveraging variable degrees of pseudo-anonymity per requirements of the payment 
 Customer POV: Tibor orders 3 pounds of assorted chocolates from an online candy store. The store only needs Tibor's verified shipping address and a proof of payment to send him the chocolates. The verified shipping address and the proof of payment are made in a single request to Tibor's Payment Agent and both are delivered to the online candy store. Tibor's privacy is protected from the candy store, which did not require Tibor's name, email address, or any other personally identifying information to complete the transaction.
           </li>
           <li>
-Merchant POV: An online candy store gets an order for 3 pounds of chocolate. The store requests a verified shipping address and a proof of payment from the customer in order to send the goods. After receiving both, the store ships the goods to the customer, not exposing themselves to any risk of accidentally leaking their customer's personal information of payment data. 
+Merchant POV: An online candy store gets an order for 3 pounds of chocolate. The store requests a verified shipping address and a proof of payment from the customer in order to send the goods. After receiving both, the store ships the goods to the customer, not exposing themselves to any risk of accidentally leaking their customer's personal information of payment data.
           </li>
           <li>
 Payment Processor POV: PayCo is required to keep a certain amount of information on their customers for anti-money laundering / know your customer regulatory purposes. When a customer performs a transaction with a merchant, they would like to reduce the amount of information that's transmitted to the merchant while ensuring that they stay compliant with regulations. This enables the customer to stay pseudo-anonymous when dealing with merchants, but ensure that law enforcement have recourse in the event of illegal activity.
@@ -739,7 +740,7 @@ A data format for expressing a coupon.
 A data format for expressing a loyalty card.
           </li>
           <li>
-The data format should be extensible (e.g. Linked Data, JSON-LD). 
+The data format should be extensible (e.g. Linked Data, JSON-LD).
           </li>
           <li>
 The data format should be cryptographically verifiable (e.g. via digital signatures, PKI).
