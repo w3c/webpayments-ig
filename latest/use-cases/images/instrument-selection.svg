@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="47cm" height="19cm" viewBox="-15 9 931 361" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="106.674" y="275.417" width="165" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="106.674" y="275.417" width="165" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="189.174" y="299.317">
+      <tspan x="189.174" y="299.317">Payer</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="213.247" y="328.162" width="165" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="213.247" y="328.162" width="165" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="295.747" y="352.062">
+      <tspan x="295.747" y="352.062">Payment Agent</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="647.6" y="15.9" width="86.4" height="195.1"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="647.6" y="15.9" width="86.4" height="195.1"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="690.8" y="117.35">
+      <tspan x="690.8" y="117.35">Payee</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x1="647.6" y1="64.675" x2="333.564" y2="64.4987"/>
+    <polygon style="fill: #000000" points="333.567,59.4987 323.564,64.4931 333.561,69.4987 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" points="333.567,59.4987 323.564,64.4931 333.561,69.4987 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" points="734,15.9 774.98,15.6926 774.98,64.483 746,64.6188 "/>
+    <polygon style="fill: #000000" points="745.976,59.6188 736,64.6656 746.023,69.6187 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" points="745.976,59.6188 736,64.6656 746.023,69.6187 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="347.1" y="21.5639">
+    <tspan x="347.1" y="21.5639">2. Payment Request, including </tspan>
+    <tspan x="347.1" y="37.5639">    payee-supported payment instruments</tspan>
+    <tspan x="347.1" y="53.5639">    sent to User Agent (e.g. browser)</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="432.8" y="127.15">
+    <tspan x="432.8" y="127.15"></tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="781.014" y="34.2893">
+    <tspan x="781.014" y="34.2893">1. Payee generates a</tspan>
+    <tspan x="781.014" y="50.2893">    Payment Request</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="443.3" y="294.15">
+    <tspan x="443.3" y="294.15"></tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="531.735" y="54.5835">
+    <tspan x="531.735" y="54.5835"></tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="785.586" y="102.667">
+    <tspan x="785.586" y="102.667"></tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="869.025" y="118.93">
+    <tspan x="869.025" y="118.93"></tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="816.699" y="99.8383">
+    <tspan x="816.699" y="99.8383"></tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="429.912" y="35.4916">
+    <tspan x="429.912" y="35.4916"></tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="375.464" y="151.457">
+    <tspan x="375.464" y="151.457"></tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="156.564" y="44.4919" width="165" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="156.564" y="44.4919" width="165" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="239.064" y="68.3919">
+      <tspan x="239.064" y="68.3919">User Agent</tspan>
+    </text>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="474.459" y="2.25756">
+    <tspan x="474.459" y="2.25756"></tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x1="239.042" y1="96.4919" x2="238.733" y2="259.665"/>
+    <polygon style="fill: #000000" points="244.042,96.5014 239.06,86.4919 234.042,96.4824 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" points="244.042,96.5014 239.06,86.4919 234.042,96.4824 "/>
+    <polygon style="fill: #000000" points="233.733,259.656 238.714,269.665 243.733,259.675 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" points="233.733,259.656 238.714,269.665 243.733,259.675 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="-5.24186" y="210.663">
+    <tspan x="-5.24186" y="210.663">4. Payer selects their preferred</tspan>
+    <tspan x="-5.24186" y="226.663">    payment instrument from an</tspan>
+    <tspan x="-5.24186" y="242.663">    intersection of payee-supported</tspan>
+    <tspan x="-5.24186" y="258.663">    instruments and payer-supported</tspan>
+    <tspan x="-5.24186" y="274.663">    instruments</tspan>
+    <tspan x="-5.24186" y="290.663">    </tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="272.227" y="100.545">
+    <tspan x="272.227" y="100.545"></tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x1="295.986" y1="84.9891" x2="295.986" y2="312.698"/>
+    <polygon style="fill: #000000" points="290.986,312.698 295.986,322.698 300.986,312.698 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" points="290.986,312.698 295.986,322.698 300.986,312.698 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="305.602" y="185.914">
+    <tspan x="305.602" y="185.914">5. Payment Request is routed</tspan>
+    <tspan x="305.602" y="201.914">    to the appropriate Payment Agent</tspan>
+    <tspan x="305.602" y="217.914">    based on Payer's selection</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="33.952" y="138.537" width="165" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="33.952" y="138.537" width="165" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="116.452" y="162.437">
+      <tspan x="116.452" y="162.437">Payment Agent</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="39.7502" y="144.053" width="165" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="39.7502" y="144.053" width="165" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="122.25" y="167.953">
+      <tspan x="122.25" y="167.953">Payment Agent</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="47.2456" y="151.053" width="165" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="47.2456" y="151.053" width="165" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="129.746" y="174.953">
+      <tspan x="129.746" y="174.953">Payment Agent</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x1="191.516" y1="100.523" x2="191.859" y2="123.195"/>
+    <polygon style="fill: #000000" points="196.515,100.447 191.364,90.5244 186.516,100.599 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" points="196.515,100.447 191.364,90.5244 186.516,100.599 "/>
+    <polygon style="fill: #000000" points="186.86,123.271 192.011,133.194 196.859,123.119 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" points="186.86,123.271 192.011,133.194 196.859,123.119 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="-14.01" y="108.132">
+    <tspan x="-14.01" y="108.132">3. Payer-supported payment</tspan>
+    <tspan x="-14.01" y="124.132">    instruments are discovered</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="23.7495" y="112.566">
+    <tspan x="23.7495" y="112.566"></tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="14.5571" y="95.5957">
+    <tspan x="14.5571" y="95.5957"></tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="1.1221" y="107.616">
+    <tspan x="1.1221" y="107.616"></tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="148.2" y="209.44">
+    <tspan x="148.2" y="209.44"></tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="167.292" y="237.724">
+    <tspan x="167.292" y="237.724"></tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="690.8" y="113.45">
+    <tspan x="690.8" y="113.45"></tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="39.3059" y="205.197">
+    <tspan x="39.3059" y="205.197"></tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="690.8" y="113.45">
+    <tspan x="690.8" y="113.45"></tspan>
+  </text>
+</svg>

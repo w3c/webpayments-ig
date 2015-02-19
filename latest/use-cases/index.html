@@ -419,6 +419,12 @@ to the appropriate <tref>payment agent</tref>.
       </p>
 
       <section>
+        <h4>Basic Flow</h4>
+        <img style="display: block; margin-left: auto; margin-right: auto;
+  max-height:100%; max-width:75%;" src="images/instrument-selection.svg">
+      </section>
+
+      <section>
         <h4>Examples</h4>
         <ul>
           <li>
@@ -527,6 +533,33 @@ discount cards, and other similar items as types of
 second is to explore how multiple payment instruments may be mixed together
 from different providers to complete a transaction.
         </p>
+      </section>
+
+      <section>
+        <h4>Pre-conditions</h4>
+        <ul>
+          <li>
+A payment request is provided to the software that was used to initiate the
+payment.
+          </li>
+          <li>
+A number of <tref title="payment agent">payment agents</tref> are available
+to the device inititating the payment such that they are able to respond to
+queries related to their supported
+<tref title="payment instrument">payment instruments</tref> and
+associated <tref title="payment scheme">payment schemes</tref>.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Post-conditions</h4>
+        <ul>
+          <li>
+A <tref>payment agent</tref> capable of utilizing the selected
+<tref>payment instrument</tref> is selected to process the payment request.
+          </li>
+        </ul>
       </section>
 
       <!-- section>
