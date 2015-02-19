@@ -319,9 +319,9 @@ The <tref>merchant</tref> has delivered a payment request to the
           </li>
           <li>
 The <tref title="customer">customer's</tref> <tref>payment agent</tref> has
-delivered a 
-<a href="#proof-of-payment-hold-or-funds">proof of hold</a> or 
-<a href="#proof-of-payment-hold-or-funds">proof of funds</a> 
+delivered a
+<a href="#proof-of-payment-hold-or-funds">proof of hold</a> or
+<a href="#proof-of-payment-hold-or-funds">proof of funds</a>
 to the <tref>merchant</tref>.
           </li>
         </ul>
@@ -413,29 +413,43 @@ A credential protocol that is capable of transmitting the minimum aspects of an 
 When a <tref>payer</tref> intends to make a payment, they are given a choice
 to pick among the intersection of the
 <tref title="payment instrument">payment instruments</tref> they have available
-to them and the payment instruments that are accepted by the payee. Optionally,
-new payment instruments may be offered to them by the <tref>payee</tref> and
-provided as options by their <tref>payment agent</tref>.
+to them and the payment instruments that are accepted by the
+<tref>payee</tref>. When a selection is made, the payment request is routed
+to the appropriate <tref>payment agent</tref>.
       </p>
 
       <section>
         <h4>Examples</h4>
         <ul>
           <li>
-Daniel wants to pay the taxi fare with his credit card. The cab company promotes
+Customer POV: Daniel wants to pay the taxi fare with his credit card.
+The cab company promotes
 the payment via its web site which offers, on Daniel's smartphone, to choose
-between several instruments offering different payment means: 1) the basic
-credit card (Visa, MasterCard, etc.) channel; 2) or an indirect aggregator
-(PayPal, Google checkout); 3) or the personal wallet detected as available on
-Daniel's phone.
+between several options offering different payment instruments: 1) the basic
+credit card (Visa, MasterCard, etc.) schemes provided by his
+cloud-based credit card wallet; 2) or an indirect aggregator
+(PayPal, Google checkout) installed as a native phone application; 3) or
+a locally installed cryptocurrency wallet application.
           </li>
           <li>
-Amantha downloads the latest version of her favorite game. It's only a couple
+Customer POV: Amantha downloads the latest version of her favorite game.
+It's only a couple
 of euros that she'd like to pay on top of her telecom operator's bill. The game
 store web site accepts payment via credit card and operator billing. Amantha
 selects the "operator billing" payment option.
           </li>
           <li>
+Merchant POV: A CrowdFundCo customer has just approved a donation to a
+third party. To complete the donation, CrowdFundCo provides its
+available payment instruments; Bitcoin and PayPal. The customer has
+a VISA credit card and a MasterCard credit card in a single payment agent
+as well as a Bitcoin payment agent. The payment request is forwarded
+to the Bitcoin payment agent.
+          </li>
+          <li class="issue">
+The following example is marked for removal because it conflates offering
+a new payment instrument w/ the selection of a payment instrument:
+
 Ricardo would like to pay for clothes at ThreadCo, a brick-and-mortar retailer,
 using software on his mobile phone. He taps his phone to checkout and notices
 that the purchase would be less expensive if he uses a department store
@@ -448,18 +462,49 @@ checkout process using his new card.
 
       <section>
         <h4>Motivations</h4>
+
+        <p>
+In order to ensure a level playing field and a vibrant ecosystem of
+<tref title="payment agent">payment agents</tref> and
+<tref title="payment instrument">payment instruments</tref>, it's important that
+a mechanism exists to enable the <tref>payer</tref> to easily select between a
+variety of competing options.
+        </p>
+
+        <p class="issue">
+The rest of the text in this section aren't really motivations, they're more
+like details about the things that should be provided by a payment
+instrument selection mechanism.
+        </p>
+
         <ul>
           <li>
 Each <tref>payment instrument</tref> is registered with a set of attributes in
-order to filter, sort, and display them.
+order to filter, sort, and display them including the
+<tref>payment scheme</tref> with which it is associated.
           </li>
           <li>
-Each <tref>payment processor</tref> is registered and 'subscribes' to a the
-<tref>payment instrument</tref> it is able to provide.
+Each <tref>payment agent</tref> registers the
+<tref title="payment instrument">payment instruments</tref> and
+associated <tref title="payment scheme">payment schemes</tref> it is able to
+provide.
+          </li>
+          <li>
+The payment initiation process can discover the locally registered
+<tref title="payment agent">payment agents</tref> and their
+supported <tref title="payment instrument">payment instruments</tref>
+and <tref title="payment scheme">payment schemes</tref>.
+          </li>
+          <li>
+Optionally, new payment instruments may be offered to the <tref>payer</tref> by
+the <tref>payee</tref> and provided as options by their
+<tref>payment agent</tref>.
           </li>
           <li>
 Each <tref>merchant</tref> provides a list of acceptable
-<tref title="payment instrument">payment instruments</tref>.
+<tref title="payment scheme">payment schemes</tref>, and if applicable,
+specific <tref title="payment instrument">payment instruments</tref>
+within each scheme (such as Visa and MasterCard only).
           </li>
           <li>
 A <tref>payment agent</tref> may attempt to optimize payment instruments on
@@ -482,20 +527,22 @@ discount cards, and other similar items as types of
 second is to explore how multiple payment instruments may be mixed together
 from different providers to complete a transaction.
         </p>
-
       </section>
 
-      <section>
+      <!-- section>
         <h4>Requirements</h4>
         <ul>
           <li>
-The browser and the host are able to negotiate a
+The <tref>payer</tref>, via the software that initiated the payment
+(such as the user agent coupled with the payment agent),
+and the <tref>payee</tref> are able to negotiate a
 <tref>payment instrument</tref> with respect to their preferences and
 support capabilities.
           </li>
           <li>
-A data format that expresses the list of available payment instruments that
-the <tref>merchant</tref> accepts.
+A data format, which would be a part of the payment request, that expresses
+the list of available payment instruments that the
+<tref>merchant</tref> accepts.
           </li>
           <li>
 A protocol that enables the <tref>payment agent</tref> to suggest new
@@ -503,7 +550,7 @@ A protocol that enables the <tref>payment agent</tref> to suggest new
 customer preferences (speed, points, price, etc.).
           </li>
         </ul>
-      </section>
+      </section -->
     </section>
 
     <section>
