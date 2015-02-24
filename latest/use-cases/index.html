@@ -70,10 +70,12 @@
           // Team Contact.
           wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/73816/status",
 
-          preProcess: [ webpayments.preProcess ]/*,
+          preProcess: [ webpayments.preProcess ]
+          /*,
           alternateFormats: [ {uri: "diff-20111214.html", label: "diff to previous version"} ],
           */
       };
+      //respecEvents.sub('start-all', webpayments.preProcess.apply);
     </script>
   </head>
 <body>
@@ -172,12 +174,8 @@ another entity.
       <dt><tdef>payment agent</tdef></dt>
       <dd>
 A piece of software operating on an <tref title="entity">entity's</tref>
-behalf that is capable of executing
+behalf that is capable of executing 
 <tref title="transaction">transactions</tref>.
-      </dd>
-      <dt><tdef></tdef></dt>
-      <dd>
-
       </dd>
     </dl>
   </section>
@@ -198,8 +196,18 @@ The website generates a payment request that is sent to the customer's
       </p>
       <section>
         <h4>Basic Flow</h4>
-        <img style="display: block; margin-left: auto; margin-right: auto;
-  max-height:100%; max-width:75%;" src="images/payment-initiation.svg">
+        <ol style="float: left;">
+          <li>
+<tref>Payer</tref> selects product or service to purchase.
+          </li>
+          <li>
+<tref>Payee</tref> generates payment request.
+          </li>
+          <li>
+Payment request sent to <tref>payment agent</tref>.
+          </li>
+        </ol>
+        <img style="display: block; max-height:100%; min-width: 40em; max-width:60%;" src="images/payment-initiation.svg"></img>
       </section>
       <section>
         <h4>Examples</h4>
