@@ -147,25 +147,26 @@ Negotiation of Purchase Terms
 Negotiation of Payment Instruments
       </li>
       <li>
-Funds Transfer
+Payment Processing
       </li>
       <li>
 Delivery of Product/Receipt
       </li>
     </ol>
+    
+    <p>This particular model focus on he interactions between a person (or organization) and a merchant. This particular model does not intend to address the exchanges between bank, card associations, or other back-end parties in a Payment. </p>
 
     <p>
 Each phase consists of a series of steps.
-The details of each step vary by <tref>payment scheme</tref>. Some steps may
-not be relevant at certain times (e.g., depending on payment scheme or
-transaction specifics). For example, some, but not all, purchases involve a
+The details of each step vary by <tref>payment scheme</tref>. Some steps may not be relevant at certain times (e.g., depending on Payment Scheme or transaction specifics).
+Some steps may happen in a slightly different order in some cases. For example, some, but not all, purchases involve a
 proof of funds or proof of hold. ACH and SEPA payment schemes generally do
 not support Verification of Available Funds, thus in these payment schemes
 the particular proof of funds step is skipped.
     <p>
 It is also important to note that these phases and steps may be be interrupted
 at various times (e.g., one party drops out, or exceptions occur like
-insufficient funds or a regulatory block). While these phases are an
+insufficient funds, refunds, or a regulatory block). While these phases are an
 approximation of the general flow of all payments, they are helpful in
 structuring the use cases such that it is easy to figure out to which part of
 the payment process a particular use case belongs.
@@ -188,7 +189,7 @@ negotiate the terms of the payment.
 <strong>Discovery of Offer</strong>. Payer discovers Payee offer (e.g., by browsing a Web page or from a native application).
         </li>
         <li>
-<strong>Agreement on Terms</strong>. What will be purchased, for how much, in what currency, authentication of Payer by Payee, forms of payment are acceptable to Payee, etc. Payee may generate invoice.
+<strong>Agreement on Terms</strong>. What will be purchased, for how much, in what currency, authentication of Payer by Payee, payment schemes acceptable to Payee, etc. Payee may generate invoice.
         </li>
         <li>
 <strong>Application of Marketing Elements</strong>. Payer discovers and applies to the Payment any loyalty programs, coupons, and other special offers.
@@ -200,34 +201,34 @@ negotiate the terms of the payment.
       <h3>Negotiation of Payment Instruments</h3>
       <p>
 The second phase of the payment process is used to determine which payment
-instruments the payer will use to transmit funds to the payee.
+instruments the payer will use to transfer funds to the payee.
       </p>
 
       <ul>
         <li>
-<strong>Discovery of Accepted Instruments</strong>. Payment Instruments accepted by the Payee.
+<strong>Discovery of Accepted Schemes</strong>. Payment Instruments accepted by the Payee. These may vary by Payer (and Payer's available Instruments).
         </li>
         <li>
-<strong>Selection of Payment Instruments</strong>. The intersection of Instruments available to Payer and accepted by Payee.
+<strong>Selection of Payment Instruments</strong>. Choice from among the intersection of Instruments available to Payer and accepted by Payee.
         </li>
         <li>
-<strong>Authentication to Access Instruments</strong>. Payment Operator authenticates Payer, who consents to pay. Note: This authentication with Payment Operator is distinct from any authentication required by the Merchant (e.g., via user account).
+<strong>Authentication to Access Instruments</strong>. Payment Instrument issuer authenticates Payer, who consents to pay.  Note: This authentication with Payment Processor is distinct from any authentication required by the Merchant (e.g., via user account).
         </li>
       </ul>
     </section>
 
     <section>
-      <h3>Funds Transfer</h3>
+      <h3>Payment Processing</h3>
       <p>
 The third phase of the payment process is used to initiate the transfer of
 funds. Depending on the payment instrument, the transfer of funds may be
 verified immediately or may take several days to be verified.
       </p>
  	    <ul>
-	      <li><strong>Initiation of Transfer</strong>. Depending on Payment Instruments, the Payer (e.g., PayPal), the Payee (e.g., credit card), or other party (e.g., bank) initiates transfer. </li>
-	      <li><strong>Verification of Available Funds</strong>. In some cases, Payee may need proof of funds or proof of hold before finalizing payment and delivery of the product.</li>
+	      <li><strong>Initiation of Processing</strong>. Depending on Payment Instruments, the Payer (e.g., when using PayPal), the Payee (e.g., when using a credit card), or other party (e.g., bank) initiates processing. </li>
+	      <li><strong>Verification of Available Funds</strong>. Payee may need proof of funds or proof of hold before finalizing payment and delivery of the product.</li>
 	      <li><strong>Authorization of Transfer</strong>. Payee receives proof that the transfer of funds has been authorized.</li>
-	      <li><strong>Completion of Transfer</strong>. Payment Instrument(s) determine details and transfer times vary from nearly immediately to several days.</li>
+	      <li><strong>Completion of Transfer</strong>. PPayment Scheme(s) determine details of clearing and settlement, and transfer times (immediately to days).</li>
 	    </ul>
     </section>
 
