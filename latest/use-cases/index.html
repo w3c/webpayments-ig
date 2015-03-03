@@ -106,8 +106,142 @@ general public. Expect this document to be rapidly iterated upon.
   <section>
     <h2>Introduction</h2>
     <p>
-Introduction goes here.
+Electronic commerce is thriving and continues to expand. However,
+fragmentation of payment systems is limiting the potential, as are problems
+such as fraud and usability. Since the Web is ubiquitous, strengthening support
+for payments has the potential to create new opportunities for
+businesses and customers.
+Although we are seeing innovation in payment services, the lack of Web
+standards makes it more difficult to adapt to new payment approaches or
+integrate new payment providers. Fragmented regulatory environments further
+complicate the payments landscape.
     </p>
+    <p>
+The purpose of this document is to frame what a realistic
+next generation payment architecture built on top of the Web Platform could
+look like. The architecture is not meant to replace existing payment systems,
+but augment and simplify the interface to each system. The purpose of this
+payment architecture is to enable as many of the current
+<tref>payment schemes</tref> in use today (such as electronic
+cheques, credit cards, direct debit, and cryptocurrencies) to be
+used more easily and securely on the Web while ensuring that future payment
+schemes could be added with little effort.
+    </p>
+  </section>
+
+  <section>
+    <h2>The Phases of a Payment</h2>
+    <p>
+In order to categorize the use cases in this document into a manner that is
+easy to comprehend, they are separated into four primary phases. The phases
+are:
+    </p>
+
+    <ol>
+      <li>
+Negotiation of Purchase Terms
+      </li>
+      <li>
+Negotiation of Payment Instruments
+      </li>
+      <li>
+Funds Transfer
+      </li>
+      <li>
+Delivery of Product/Receipt
+      </li>
+    </ol>
+
+    <p>
+Each phase consists of a series of steps.
+The details of each step vary by <tref>payment scheme</tref>. Some steps may
+not be relevant at certain times (e.g., depending on payment scheme or
+transaction specifics). For example, some, but not all, purchases involve a
+proof of funds or proof of hold. ACH and SEPA payment schemes generally do
+not support Verification of Available Funds, thus in these payment schemes
+the particular proof of funds step is skipped.
+    <p>
+It is also important to note that these phases and steps may be be interrupted
+at various times (e.g., one party drops out, or exceptions occur like
+insufficient funds or a regulatory block). While these phases are an
+approximation of the general flow of all payments, they are helpful in
+structuring the use cases such that it is easy to figure out to which part of
+the payment process a particular use case belongs.
+    </p>
+    <p>
+These phases can be applied to a variety of different payment scenarios such
+as person-to-person, person-to-business, business-to-person, 
+government-to-person, and so forth.
+    </p>
+
+    <section>
+      <h3>Negotiation of Payment Terms</h3>
+      <p>
+The first phase of the payment process is where the payer and the payee 
+negotiate the terms of the payment.
+      </p>
+      
+      <ul>
+        <li>
+<strong>Discovery of Offer</strong>. Payer discovers Payee offer (e.g., by browsing a Web page or from a native application).
+        </li>
+        <li>
+<strong>Agreement on Terms</strong>. What will be purchased, for how much, in what currency, authentication of Payer by Payee, forms of payment are acceptable to Payee, etc. Payee may generate invoice.
+        </li>
+        <li>
+<strong>Application of Marketing Elements</strong>. Payer discovers and applies to the Payment any loyalty programs, coupons, and other special offers.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Negotiation of Payment Instruments</h3>
+      <p>
+The second phase of the payment process is used to determine which payment
+instruments the payer will use to transmit funds to the payee.
+      </p>
+
+      <ul>
+        <li>
+<strong>Discovery of Accepted Instruments</strong>. Payment Instruments accepted by the Payee.
+        </li>
+        <li>
+<strong>Selection of Payment Instruments</strong>. The intersection of Instruments available to Payer and accepted by Payee.
+        </li>
+        <li>
+<strong>Authentication to Access Instruments</strong>. Payment Operator authenticates Payer, who consents to pay. Note: This authentication with Payment Operator is distinct from any authentication required by the Merchant (e.g., via user account).
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Funds Transfer</h3>
+      <p>
+The third phase of the payment process is used to initiate the transfer of
+funds. Depending on the payment instrument, the transfer of funds may be 
+verified immediately or may take several days to be verified.
+      </p>
+ 	    <ul>
+	      <li><strong>Initiation of Transfer</strong>. Depending on Payment Instruments, the Payer (e.g., PayPal), the Payee (e.g., credit card), or other party (e.g., bank) initiates transfer. </li>
+	      <li><strong>Verification of Available Funds</strong>. In some cases, Payee may need proof of funds or proof of hold before finalizing payment and delivery of the product.</li>
+	      <li><strong>Authorization of Transfer</strong>. Payee receives proof that the transfer of funds has been authorized.</li>
+	      <li><strong>Completion of Transfer</strong>. Payment Instrument(s) determine details and transfer times vary from nearly immediately to several days.</li>
+	    </ul>
+    </section>
+
+    <section>
+      <h3>Delivery of Product/Receipt</h3>
+      <p>
+The fouth phase of the payment process is used to complete the transaction by
+providing the payer with a receipt and/or the product that was purchased.
+      </p>
+
+      <ul>
+	      <li><strong>Delivery of Product</strong>. Payer receives goods or services immediately, at a later date, automatically on a recurring basis, etc. depending on the terms of the purchase.</li>
+	      <li><strong>Delivery of Receipt</strong>. Depending on the payment scheme(s) chosen, there are various ways and times that a receipt may be delivered (e.g., credit card receipt, digital proof of purchase, etc.).</li>
+      </ul>
+    </section>
+
   </section>
 
   <section>
@@ -174,7 +308,7 @@ another entity.
       <dt><tdef>payment agent</tdef></dt>
       <dd>
 A piece of software operating on an <tref title="entity">entity's</tref>
-behalf that is capable of executing 
+behalf that is capable of executing
 <tref title="transaction">transactions</tref>.
       </dd>
     </dl>
