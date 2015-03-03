@@ -877,6 +877,96 @@ All <tref title="customer">customers</tref> must be recognized by the
       </section>
     </section>
 
+   <section>
+      <h3>Payee-initiated Processing</h3>
+      <p>
+When a <tref>customer</tref> wants to make a purchase, the <tref>merchant</tref> requests 
+from the <tref title="customer">customer's</tref> <tref>payment agent</tref> an Instrument Proof. 
+The <tref>merchant</tref> sends this proof to its <tref>payment processor</tref> to initiate the 
+funds transfer. The <tref>payment processor</tref> can return a Payment Proof to the <tref>merchant</tref>.
+      </p>
+      
+      <section>
+        <h4>Basic Flow</h4>
+        <ol style="float: left;">
+          <li>
+Payment Request is sent to Payment Agent via User Agent.
+          </li>
+          <li>
+Payment Agent sends Instrument Proof to Payee (direct callback or via User Agent).
+          </li>
+          <li>
+Payee sends payment details and Instrument Proof to its Processor.
+          </li>
+          <li>
+Processor returns a Payment Proof to the merchant.          	
+          </li>
+        </ol>
+      </section>
+      
+      <section>
+        <h4>Examples</h4>
+        <ul>
+          <li>
+Customer POV: John goes to CandyCart.com and clicks “buy” to purchase chocolates. 
+After selecting his bank's virtual card, his browser re-directs him to his bank's wallet, which acts as a payment agent. 
+John approves the payment and his virtual card generates an Instrument Proof cryptogram that signs the transaction and 
+captures his content. The cryptogram is sent to the merchant, which completes the purchase after verification.
+          </li>
+          <li>
+Merchant POV: CandyCart.com presents John with an array of chocolates to buy. 
+After John has approved his cart and selected his bank's virtual card to pay with, CandyCart.com generates a 
+Payment Request and sends it to John's Payment Agent. It receives an Instrument Proof from the payment agent 
+and forwards it to CardProcessingCo, along with payment details, for processing the payment. 
+It gets a Payment Proof from CardProcessingCo in return, which completes the purchase.
+          </li>
+          <li>
+Payment Processor POV: CardProcessingCo receives a payment processing request from CandyCart.com. 
+Because it is using standard Instrument Proof cryptograms, CardProcessingCo can handle the request as 
+any other card payment.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Motivations</h4>
+        <p>
+In this use case, the merchant triggers the payment processing using its processor. 
+This flow is the closest to legacy card scheme flows (also, the one used in brick and mortar stores), 
+and it is expected that supporting it will ease integration in current merchant systems.
+	</p>
+	<p>
+An Instrument Proof in this use case is intended has a guarantee of possession by the customer of a valid, 
+compatible payment instrument and that the customer has given consent for the payment. For comparison, a 
+Payment Proof guarantees that the customer holds the corresponding funds and the funds will be transferred. 
+These guarantees are typically provided by a Payment Scheme, therefore the format for these proofs will 
+have to be scheme extensible.
+        </p>
+      </section>
+
+      <section>
+        <h4>Pre-conditions</h4>
+        <ul>
+          <li>
+A number of payment agents are available on the customer device and at least one is supported by the merchant.
+          </li>
+          <li>
+A payment agent and payment instrument has been selected by the customer, and a payment request has been sent 
+to the payment agent.
+          </li>
+        </ul>
+        <h4>Post-conditions</h4>
+        <ul>
+          <li>
+The payment agent has delivered an Instrument Proof (or a payment refusal).
+          </li>
+          <li>
+The merchant has obtained a Payment Proof from its processor.
+          </li>
+        </ul>
+      </section>
+    </section>
+
     <section>
       <h3>Limiting Payee-initiated Payments</h3>
       <p>
