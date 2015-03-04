@@ -98,6 +98,7 @@ add to the Open Web Platform.
 This document is a work in progress and is being released early and often
 using an agile process; it is incomplete.
     </p>
+	<p>
 The Web Payments IG has only had the opportunity to review a handful of the
 40+ use cases, 120+ requirements, and hundreds of pages of
 payments research submitted to the group via various other standards group
@@ -164,6 +165,7 @@ transaction specifics). For example, some, but not all, purchases involve a
 proof of funds or proof of hold. ACH and SEPA payment schemes generally do
 not support Verification of Available Funds, thus in these payment schemes
 the particular proof of funds step is skipped.
+	</p>
     <p>
 It is also important to note that these phases and steps may be be interrupted
 at various times (e.g., one party drops out, or exceptions occur like
@@ -355,7 +357,7 @@ Customer POV: Penny uses the HobbyCo website to select a model train for
 purchase. The store generates a payment request which is then forwarded to
 her <tref>payment agent</tref>. For more information on what happens
 next, see the <a href="#choosing-a-payment-instrument">
-choosing a payment instrument</a> use case</a>.
+choosing a payment instrument</a> use case.
           </li>
           <li>
 Merchant POV: A FarmCo <tref>customer</tref> selects a 10 kg bag of grass
@@ -888,12 +890,12 @@ funds transfer. The <tref>payment processor</tref> can return a Payment Proof to
       
       <section>
         <h4>Basic Flow</h4>
-        <ol style="float: left;">
+        <ol>
           <li>
 Payment Request is sent to Payment Agent via User Agent.
           </li>
           <li>
-Payment Agent sends Instrument Proof to Payee (direct callback or via User Agent).
+Payment Agent sends Instrument Proof to Payee (via User Agent or 2' direct callback).
           </li>
           <li>
 Payee sends payment details and Instrument Proof to its Processor.
@@ -902,6 +904,7 @@ Payee sends payment details and Instrument Proof to its Processor.
 Processor returns a Payment Proof to the merchant.          	
           </li>
         </ol>
+        <img style="display: block; max-height:100%; min-width: 40em; max-width:60%;" src="images/payee-initiated-processing.svg"></img>
       </section>
       
       <section>
