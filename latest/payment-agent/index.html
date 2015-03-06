@@ -34,8 +34,13 @@
           // editors, add as many as you like
           // only "name" is required
           editors:  [
-              { name: "Pat Doe", url: "http://patdoe.example.com/",
-                company: "ACME", companyURL: "http://acme.example.com/" },
+			  { 
+				name: "Pat Adler", url: "",
+                company: "Federal Reserve Bank of Chicago", companyURL: "" },
+			  { 
+				name: "Jörg Heuer", url: "",
+                company: "Deutsche Telekom", companyURL: "" },
+			  
           ],
  
           // authors, add as many as you like. 
@@ -75,7 +80,7 @@
 <body> 
   <section id='abstract'> 
     <p> 
-Abstract goes here.
+This document describes architectural requirements, concepts and rationale that would need to be provided to support current and planned use cases outlined in the Web Payments Activity.  This document is intended to provide an overview of core concepts related to the Payment Agent and considerations related to their use.
     </p> 
   </section> 
 
@@ -88,10 +93,98 @@ Custom Status of the Document language goes here.
   <section> 
     <h2>Introduction</h2> 
     <p>
-Introduction goes here.
+    <p>
+		A payment agent is defined as a software service that:
+		<ol type='1'>
+			<li>Provides a standard inteface for the collection of payment related information from user agents (ex. browsers, apps, or other web-enabled clients) which meets the following criteria:
+			<ol type='a'>
+				<li>Supports consistent, secure interface and apis for communication of payment data required to support payment schemes (ex. cards, digital currency, etc.) for common data elements</li>
+				<li>Provides ability to access information needed as part of the payment process in a standard way (ex, authentication data, account information, loyalty cards, etc.)</li>
+				<li>Is accessible from mutliple user agents</li>
+				<li>Receives requests from either local or remote user agents</li>
+				<li>Communicates with existing payment schemes/infrastructure to facilitate value tranfer</li>
+				<li>Coordinates with other payment agents to facilitate payments related information flows</li>
+			</ol>
+			</li>
+		</ol>
+    </p>
     </p>
   </section>
-
+  
+  <section> 
+    <h2>Overview of the Payment Agent</h2> 
+    <img style="display: block; max-height:100%; min-width: 40em; max-width:60%;" src="images/paygent_simple.svg"></img>
+  </section>
+   
+    <section> 
+      <h2>Payment Agent in context</h2> 
+      <p>
+  High level overview of how a payment agent works... (NEED TO INCORPORATE USE CASE DIAGRAMS/LINKAGES HERE)
+      </p>
+    </section>
+	
+	  <section> 
+	    <h2>Required (core) Capabilities</h2> 
+	    <p>
+	This section outlines the required capabilities that a Payment Agent must provide to meet minimal viable requirements:
+	<ul>
+		<li>Ability to receive and reply with standard formatted messages following payment agent API/protocol specifications</li>
+	<li>Abiltiy to interact with user agent Display Services for displaying payment related information</li>
+	<li>Ability support synchornization between multiple payment agents operating on behalf of a single user agent</li>
+	<li>Ability to support user agents running locally and remotely from payment agent</li>
+	
+	(NEED TO TIE TO CORE STANDARDS)
+		
+	</ul>
+	    </p>
+	  </section>
+	  
+  	  <section> 
+  	    <h2>Optional Capabilities</h2> 
+  	    <p>
+  	This section outlines the required capabilities that a Payment Agent could provide but are not required.
+	
+		<ul>
+			<li>Ability to communicate with Host Device Camera for accepting payment related info via visual input (ex. QR code or Bar code, etc)</li>
+		<li>Abiltiy to interact with Host Device Microphone for accepting payment related information via transmission of sound</li>
+		<li>Ability to interact with Host Biometric Services for accepting biometric authentication data required for payment process</li>
+		<li>Ability to interact with Host NFC (Near Field Contact) services to support proximity payments flows
+			</li>
+			<li>Ability to interact Host with BLE (Blue Tooth Low Energy) services to support local/proximity information exchange needed to support localized offers (ex. in store beacons)</li>
+			
+		</ul>
+		(NEED TO TIE TO CORE STANDARDS)
+  	    </p>
+  	  </section>
+	  
+	  <section>
+	  	<h2>Payment Agent API</h2>
+		<p>
+			The Payment Agent API is a standard protocol and set of API's which facilitate exchange of payment related data in a standard manner with user agents.  The following is a list of the API's that the Payment Agent protocol will support:
+			<ul>
+				<li>Identification and Authentication of Payment Participants</li>
+				<li>Payment Scheme/Instrument selection, clearing and settlement</li>
+				<li>Contracts and conditional payment</li>
+				<li>Authorization, Monitoring and Control</li>
+				<li>Ledger and Accounting</li>
+				<li>Taxation</li>
+				<li>Delivery and Shipping</li>
+				<li>Payment Scheduling and Calendering</li>
+				<li>Regulatory and Reporting</li>
+				<li>Wallet and Instrument provisioning and administration</li>
+				<li>Security and Auditing</li>
+			</ul>
+		</p>
+	  </section>
+	 
+   	  <section> 
+   	    <h2>Conceptual Architecture</h2> 
+   	    <p>
+   			DRAFT/PLACEHOLDER (NEED TO UPDATE)
+			 <img style="display: block; max-height:100%; min-width: 40em; max-width:60%;" src="images/paygent_detailed.svg"></img>
+   	    </p>
+   	  </section>
+	
   <section> 
     <h2>Acknowledgements</h2>
  
