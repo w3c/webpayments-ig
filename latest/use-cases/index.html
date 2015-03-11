@@ -45,18 +45,18 @@
           // only "name" is required. Same format as editors.
 
           authors:  [
-              { name: "David Ezell", url: "http://example.org/",
-                company: "NACS", companyURL: "http://www.nacsonline.com/" },
               { name: "Ian Jacobs", url: "http://www.w3.org/People/Jacobs/",
                 company: "W3C", companyURL: "http://www.w3.org/" },
               { name: "Manu Sporny", url: "https://manu.sporny.org/",
                 company: "Digital Bazaar, Inc.", companyURL: "http://digitalbazaar.com/" },
+              { name: "David Ezell", url: "http://example.org/",
+                company: "NACS", companyURL: "http://www.nacsonline.com/" },
               { name: "Laurent Castillo", url: "http://example.org/",
                 company: "Gemalto", companyURL: "http://www.gemalto.com/" },
           ],
 
           // maximum level of table of contents
-          maxTocLevel: 2,
+          maxTocLevel: 3,
 
           // name of the WG
           wg:           "Web Payments Interest Group",
@@ -85,11 +85,14 @@
 <body>
   <section id='abstract'>
     <p>
-This document outlines and prioritizes desired functionality that the Open
-Web Platform should provide in the area of Web Payments. The purpose of this
-document is to provide future W3C Working Groups with specific requirements
-and functionality that should be achievable with new features that they
-add to the Open Web Platform.
+This document provides future W3C Working Groups with specific Web Payment
+scenarios that that should be natively supported by the Open Web Platform,
+which is expected to reach at least 6 billion people by the year 2020.
+The payment process is described in several phases. Each phase contains a
+set of detailed steps. Each step contains multiple micro use cases
+that are intended to be expemplary of the sort of interaction that is
+required from payers, payees, merchants, customers, browsers, devices, and
+other participants in a Web-based payment.
     </p>
   </section>
 
@@ -111,15 +114,14 @@ general public. Expect this document to be rapidly iterated upon.
   <section>
     <h2>Introduction</h2>
     <p>
-Electronic commerce is thriving and continues to expand. However,
-fragmentation of payment systems is limiting the potential, as are problems
-such as fraud and usability. Since the Web is ubiquitous, strengthening support
-for payments has the potential to create new opportunities for
-businesses and customers.
-Although we are seeing innovation in payment services, the lack of Web
-standards makes it more difficult to adapt to new payment approaches or
-integrate new payment providers. Fragmented regulatory environments further
-complicate the payments landscape.
+This document provides future W3C Working Groups with specific Web Payment
+scenarios that that should be natively supported by the Open Web Platform,
+which is expected to reach at least 6 billion people by the year 2020.
+The payment process is described in several phases. Each phase contains a
+set of detailed steps. Each step contains multiple micro use cases
+that are intended to be expemplary of the sort of interaction that is
+required from payers, payees, merchants, customers, browsers, devices, and
+other participants in a Web-based payment.
     </p>
     <p>
 The purpose of this document is to employ use cases to frame what a realistic
@@ -127,128 +129,11 @@ vision looks like for payments on the Web Platform. The end result is not
 meant to replace existing payment systems, but augment and simplify the
 interface to each system via the Web. The purpose of this
 initiative is to enable as many of the current
-<tref>payment schemes</tref> in use today (such as electronic
-cheques, credit cards, direct debit, and cryptocurrencies) to be
+<tref title="payment scheme">payment schemes</tref> in use today (such
+as electronic cheques, credit cards, direct debit, and cryptocurrencies) to be
 used more easily and securely on the Web while ensuring that future payment
 schemes could be added with little effort.
     </p>
-  </section>
-
-  <section>
-    <h2>The Phases of a Payment</h2>
-    <p>
-In order to categorize the use cases in this document into a manner that is
-easy to comprehend, they are separated into four primary phases. The phases
-are:
-    </p>
-
-    <ol>
-      <li>
-Negotiation of Purchase Terms
-      </li>
-      <li>
-Negotiation of Payment Instruments
-      </li>
-      <li>
-Payment Processing
-      </li>
-      <li>
-Delivery of Product/Receipt
-      </li>
-    </ol>
-    
-    <p>This particular model focus on he interactions between a person (or organization) and a merchant. This particular model does not intend to address the exchanges between bank, card associations, or other back-end parties in a Payment. </p>
-
-    <p>
-Each phase consists of a series of steps.
-The details of each step vary by <tref>payment scheme</tref>. Some steps may not be relevant at certain times (e.g., depending on Payment Scheme or transaction specifics).
-Some steps may happen in a slightly different order in some cases. For example, some, but not all, purchases involve a
-proof of funds or proof of hold. ACH and SEPA payment schemes generally do
-not support Verification of Available Funds, thus in these payment schemes
-the particular proof of funds step is skipped.
-	</p>
-    <p>
-It is also important to note that these phases and steps may be be interrupted
-at various times (e.g., one party drops out, or exceptions occur like
-insufficient funds, refunds, or a regulatory block). While these phases are an
-approximation of the general flow of all payments, they are helpful in
-structuring the use cases such that it is easy to figure out to which part of
-the payment process a particular use case belongs.
-    </p>
-    <p>
-These phases can be applied to a variety of different payment scenarios such
-as person-to-person, person-to-business, business-to-person,
-government-to-person, and so forth.
-    </p>
-
-    <section>
-      <h3>Negotiation of Payment Terms</h3>
-      <p>
-The first phase of the payment process is where the payer and the payee
-negotiate the terms of the payment.
-      </p>
-
-      <ul>
-        <li>
-<strong>Discovery of Offer</strong>. Payer discovers Payee offer (e.g., by browsing a Web page or from a native application).
-        </li>
-        <li>
-<strong>Agreement on Terms</strong>. What will be purchased, for how much, in what currency, authentication of Payer by Payee, payment schemes acceptable to Payee, etc. Payee may generate invoice.
-        </li>
-        <li>
-<strong>Application of Marketing Elements</strong>. Payer discovers and applies to the Payment any loyalty programs, coupons, and other special offers.
-        </li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>Negotiation of Payment Instruments</h3>
-      <p>
-The second phase of the payment process is used to determine which payment
-instruments the payer will use to transfer funds to the payee.
-      </p>
-
-      <ul>
-        <li>
-<strong>Discovery of Accepted Schemes</strong>. Payment Instruments accepted by the Payee. These may vary by Payer (and Payer's available Instruments).
-        </li>
-        <li>
-<strong>Selection of Payment Instruments</strong>. Choice from among the intersection of Instruments available to Payer and accepted by Payee.
-        </li>
-        <li>
-<strong>Authentication to Access Instruments</strong>. Payment Instrument issuer authenticates Payer, who consents to pay.  Note: This authentication with Payment Processor is distinct from any authentication required by the Merchant (e.g., via user account).
-        </li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>Payment Processing</h3>
-      <p>
-The third phase of the payment process is used to initiate the transfer of
-funds. Depending on the payment instrument, the transfer of funds may be
-verified immediately or may take several days to be verified.
-      </p>
- 	    <ul>
-	      <li><strong>Initiation of Processing</strong>. Depending on Payment Instruments, the Payer (e.g., when using PayPal), the Payee (e.g., when using a credit card), or other party (e.g., bank) initiates processing. </li>
-	      <li><strong>Verification of Available Funds</strong>. Payee may need proof of funds or proof of hold before finalizing payment and delivery of the product.</li>
-	      <li><strong>Authorization of Transfer</strong>. Payee receives proof that the transfer of funds has been authorized.</li>
-	      <li><strong>Completion of Transfer</strong>. PPayment Scheme(s) determine details of clearing and settlement, and transfer times (immediately to days).</li>
-	    </ul>
-    </section>
-
-    <section>
-      <h3>Delivery of Product/Receipt</h3>
-      <p>
-The fouth phase of the payment process is used to complete the transaction by
-providing the payer with a receipt and/or the product that was purchased.
-      </p>
-
-      <ul>
-	      <li><strong>Delivery of Product</strong>. Payer receives goods or services immediately, at a later date, automatically on a recurring basis, etc. depending on the terms of the purchase.</li>
-	      <li><strong>Delivery of Receipt</strong>. Depending on the payment scheme(s) chosen, there are various ways and times that a receipt may be delivered (e.g., credit card receipt, digital proof of purchase, etc.).</li>
-      </ul>
-    </section>
-
   </section>
 
   <section>
@@ -322,6 +207,493 @@ behalf that is capable of executing
   </section>
 
   <section>
+    <h2>An Overview of the Payment Phases</h2>
+    <p>
+In order to organize the use cases in this document into a form that is
+easy to comprehend, they are separated into four primary phases. The phases
+are:
+    </p>
+
+    <ol>
+      <li>
+Negotiation of Payment Terms
+      </li>
+      <li>
+Negotiation of Payment Instruments
+      </li>
+      <li>
+Payment Processing
+      </li>
+      <li>
+Delivery of Product/Receipt
+      </li>
+    </ol>
+
+    <p>
+This particular model focus on the interactions between a <tref>payer</tref>
+and a <tref>payee</tref>, either of which could be a person, organization, or
+software agent). This particular model does not intend to address
+the low-level exchanges between banks, card associations, or other back-end
+"payment clearing" parties in a transaction.</p>
+
+    <p>
+Each phase consists of a series of steps.
+The details of each step vary by <tref>payment scheme</tref>. Some steps may
+not be relevant at certain times (e.g., depending on
+<tref>payment scheme</tref> or <tref>transaction</tref> specifics).
+Some steps may happen in a slightly different order in some cases.
+For example, some, but not all, purchases involve a proof of funds or proof of
+hold. ACH and SEPA payment schemes generally do not support the verification of
+available funds, thus in these payment schemes the particular proof of funds
+step is skipped.
+	</p>
+    <p>
+It is also important to note that these phases and steps may be be interrupted
+at various times (e.g., one party drops out, or exceptions occur like
+insufficient funds, refunds, or a regulatory block). While these phases are an
+approximation of the general flow of all payments, they are helpful in
+structuring the use cases such that it is easy to figure out to which part of
+the payment process a particular use case belongs.
+    </p>
+    <p>
+These phases can be applied to a variety of different payment scenarios such
+as person-to-person, person-to-business, business-to-person,
+government-to-person, and so forth.
+    </p>
+
+    <section>
+      <h3>Negotiation of Payment Terms</h3>
+      <p>
+The first phase of the payment process is where the <tref>payer</tref> and the
+<tref>payee</tref> negotiate the terms of the payment.
+      </p>
+
+      <ul>
+        <li>
+<strong>Discovery of Offer</strong>. The <tref>payer</tref> discovers the
+<tref title="payee">payee's</tref> offer (e.g., by browsing a Web page or
+from a native application).
+        </li>
+        <li>
+<strong>Agreement on Terms</strong>. The <tref>payer</tref> and the
+<tref>payee</tref> agree to what will be purchased, for how much,
+in what currency, how the <tref>payer</tref> will be authenticated by the
+<tref>payee</tref>, which payment schemes are acceptable, etc. The
+<tref>payee</tref> may generate an invoice for the <tref>payer</tref>.
+        </li>
+        <li>
+<strong>Application of Marketing Elements</strong>. The <tref>payer</tref>
+discovers and applies any loyalty programs, coupons, and other special offers
+to the payment terms.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Negotiation of Payment Instruments</h3>
+      <p>
+The second phase of the payment process is used to determine which
+<tref title="payment instrument"></tref>payment instruments</tref> the
+<tref>payer</tref> will use to transfer funds to the <tref>payee</tref>.
+      </p>
+
+      <ul>
+        <li>
+<strong>Discovery of Accepted Schemes</strong>. The <tref>payer</tref>
+discovers the <tref title="payment instrument">payment instruments</tref> that
+are accepted by the <tref>payee</tref>. These will vary depending on the types
+of <tref title="payment instrument">payment instruments</tref> that the
+<tref>payee</tref> accepts.
+        </li>
+        <li>
+<strong>Selection of Payment Instruments</strong>. The <tref>payee</tref>
+selects one or more <tref title="payment instrument">payment instruments)/tref>
+that are available to the <tref>payer</tref> and are accepted by the
+<tref>payee</tref>.
+        </li>
+        <li>
+<strong>Authentication to Access Instruments</strong>. The issuer of the
+<tref>payment instrument</tref> authenticates the <tref>payer</tref>, who then
+consents to pay. Note: This authentication with the
+<tref>payment processor</tref> is distinct from any authentication required
+by the <tref>payee</tref> (e.g., a merchant verifying a password on a
+<tref title="payer">payer's</tref> user account).
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Payment Processing</h3>
+      <p>
+The third phase of the payment process is used to initiate the transfer of
+funds. Depending on the <tref>payment instrument</tref>, the transfer of funds
+may be verified immediately or may take several days to be verified.
+      </p>
+ 	    <ul>
+	      <li>
+<strong>Initiation of Processing</strong>. Depending on the
+<tref>payment instrument</tref>, the <tref>payer</tref> (e.g., when using
+PayPal), the <tref>payee</tref> (e.g., when using a credit card), or other
+party (e.g., bank) initiates processing.
+        </li>
+	      <li>
+<strong>Verification of Available Funds</strong>. The <tref>payee</tref> may
+need to provide a proof of funds or a proof of hold to the <tref>payer</tref>
+before finalizing payment and delivery of the product.
+        </li>
+	      <li>
+<strong>Authorization of Transfer</strong>. The <tref>payer</tref> receives
+proof that the transfer of funds has been authorized.
+        </li>
+	      <li>
+<strong>Completion of Transfer</strong>. The <tref>payment scheme</tref>
+determines the details of payment clearing and settlement, and transfer times
+that may vary from near-realtime to multiple days.
+        </li>
+	    </ul>
+    </section>
+
+    <section>
+      <h3>Delivery of Product/Receipt</h3>
+      <p>
+The fouth phase of the payment process is used to complete the transaction by
+providing the <tref>payer</tref> with a receipt and/or the product that was
+purchased.
+      </p>
+
+      <ul>
+	      <li>
+<strong>Delivery of Product</strong>. The <tref>payer</tref> receives goods or
+services immediately, at a later date, automatically on a recurring basis,
+etc. depending on the terms of the purchase.
+        </li>
+	      <li>
+<strong>Delivery of Receipt</strong>. Depending on the
+<tref title="payment scheme">payment scheme(s)</tref></tref>chosen, there are
+various ways and times that a receipt may be delivered (e.g., credit card
+receipt, digital proof of purchase, encrypted line-item receipt, etc.).
+        </li>
+      </ul>
+    </section>
+
+  </section>
+
+  <section>
+    <h2>A Basic Example of the Payment Phases</h2>
+    <p>
+The following scenario is provided to aid the reader in understanding how the
+phases of the payment process apply to a real world situation. In this scenario,
+we follow Jill, who seeks a new outfit for a party. She selects items from
+PayToParty, which is a brick-and-mortar store with an online presence.
+She chooses how to pay and the items are delivered to her home on the
+following day.
+    </p>
+
+    <section>
+      <h3>Negotiation of Purchase Terms</h3>
+
+      <p>
+<strong>Discovery of Offer</strong>: Jill begins her purchase at
+home on her laptop, where she browses the items on the PayToParty Web
+site. On the way to work the next morning, she explores the catalog
+further from a native app on her smart phone. Jill can't decide
+whether the dress displayed online is blue with black stripes or white
+with gold stripes, so during her lunch break, she drops into the
+PayToParty store near her office. She spots a few more items that
+she thinks she'd like to purchase, but decides to wait until later to
+make the purchase.
+      </p>
+
+      <p>
+<strong>Agreement on Terms</strong>: That same evening at home,
+Jill logs into her account on the PayToParty Web site, adding her
+preferred items to her shopping cart. The total price appears on the
+page.
+      </p>
+
+      <p>
+<strong>Application of Marketing Elements</strong>: As Jill prepares to
+check out, PayToParty offers her a discount of 10% if she uses the store's
+loyalty card to pay.
+      </p>
+    </section>
+
+    <section>
+      <h3>Negotiation of Payment Instruments</h3>
+
+      <p>
+<strong>Discovery of Accepted Schemes</strong>: Given where Jill lives,
+PayToParty offers her payment by credit card, debit card, the PayToParty
+loyalty card and PayPal, but not Jill's favorite cryptocurrency (which she
+uses on other sites).
+      </p>
+
+      <p>
+<strong>Selection of Payment Instruments</strong>: Jill pushes the "Pay now"
+button and is presented with a number of options to pay, including her
+credit card, her PayToParty loyalty card (which is highlighted to remind her
+of the discount), and a PayPal account. There is also a gift card from
+PayToParty that she received for her birthday, but she chooses not to
+use it for this purchase.
+      </p>
+
+      <p>
+<strong>Authentication to Access Instruments</strong>: Jill selects
+the PayToParty loyalty card, which she enabled with theft-protection,
+and is asked to input a code that is sent to her phone before the purchase
+can be completed.
+      </p>
+    </section>
+
+    <section>
+      <h3>Payment Processing</h3>
+
+      <p>
+<strong>Initiation of Processing</strong>. The PayToParty website receives a
+message from Jill's device authorizing the payment. The PayToParty website
+takes that message and submits it to their payment processor, requesting a
+proof of hold for the funds.
+        </p>
+	      <p>
+<strong>Verification of Available Funds</strong>. The PayToParty website
+software receives a proof of hold on Jills fund's for the purchase price of
+the goods. The PayToParty night-shift employees begin packing her purchased
+items for delivery the next day.
+        </p>
+	      <p>
+<strong>Authorization of Transfer</strong>. Once Jill's package is ready to
+go, PayToParty exchanges the proof of hold for a proof of payment by
+re-submitting the request to the payment network. They receive a proof of
+payment from the payment processor.
+        </p>
+	      <p>
+<strong>Completion of Transfer</strong>. Since Jill's PayToParty loyalty card
+operates as a credit card, the PayToParty site is immediately credited with
+the purchase amount and the funds will be swept into their bank account at the
+end of the week. Jill will pay off the credit line at the end of the month.
+        </p>
+    </section>
+
+    <section>
+      <h3>Delivery of Product/Receipt</h3>
+
+      <p>
+<strong>Delivery of Receipt</strong>. Jill receives a detailed digital
+receipt for the purchase into her cloud-based digital wallet.
+      </p>
+
+      <p>
+<strong>Delivery of Product</strong>. Jill's package goes out by courier the
+next morning and is on her doorstep before she leaves for work.
+      </p>
+    </section>
+  </section>
+
+  <section>
+    <h2>The Phases of a Payment in Detail</h2>
+    <p>
+    </p>
+
+    <section>
+      <h3>Negotiation of Payment Terms</h3>
+      <p>
+      </p>
+
+      <section>
+        <h4>Discovery of Offer</h4>
+        <p>
+        <p>
+<strong>Live offers</strong>. EnergyCo lists barrels of refined oil for sale
+on their website based on an algorithm that uses the cost of coal and crude
+oil as inputs. EnergyCo guarantees their prices for up to 24 hours from the
+posting date.
+<span class="note">Priority: low</span>
+<span class="issue">Justification: The ability to express a non-repudiable
+offer as the basis of a legally enforceable contract will reduce
+transactional friction.</span>
+        </p>
+<strong>Machine-readable offer</strong>. BigBoxCo expresses their entire
+product catalog online as machine-readable information so that SearchCo may
+index their content more easily and direct more customer traffic to BigBoxCo's
+website.
+<span class="note">Priority: low</span>
+<span class="issue">Justification: Machine-readable offers
+will have a direct positive impact on store sales if they're indexed by search
+engines.</span>
+        </p>
+      </section>
+
+      <section>
+        <h4>Agreement on Terms</h4>
+        <p>
+<strong>Privacy Protection</strong>. Tibor orders assorted chocolates from
+CandyCo. CandyCo only needs Tibor's verified shipping address
+to send him the chocolates. With Tibor's authorization, his payment software
+transmits only his shipping address to CandyCo. Tibor's privacy is protected
+from the candy store, which did not require Tibor's name, email address, or
+any other personally identifying information to complete the transaction.
+<span class="note">Priority: high</span>
+<span class="issue">Justification: Not all payments require the payer
+to disclose personal information about themselves to complete a
+transaction.</span>
+        </p>
+
+      </section>
+
+      <section>
+        <h4>Application of Marketing Elements</h4>
+        <p>
+        </p>
+
+        <p>
+<strong></strong>.
+<span class="note">Priority: low</span>
+<span class="issue">Justification: </span>
+        </p>
+
+      </section>
+
+    </section>
+
+    <section>
+      <h3>Negotiation of Payment Instruments</h3>
+      <p>
+      </p>
+
+
+      <section>
+        <h4>Discovery of Accepted Schemes</h4>
+        <p>
+        </p>
+      </section>
+
+      <section>
+        <h4>Selection of Payment Instruments</h4>
+        <p>
+        </p>
+      </section>
+
+      <section>
+        <h4>Authentication to Access Instruments</h4>
+        <p>
+<strong>Know Your Customer / Anti-Money Laundering</strong>. PayCo must
+ensure that their customers do not appear on any regulatory blacklists when
+performing transactions above a certain monetary amount.
+<span class="note">Priority: high</span>
+<span class="issue">Justification: Easing regulatory compliance when accessing
+a payment instrument will ensure a safer and faster payment schemes.</span>
+        </p>
+      </section>
+
+    </section>
+
+    <section>
+      <h3>Payment Processing</h3>
+      <p>
+      </p>
+
+      <section>
+        <h4>Initiation of Processing</h4>
+        <p>
+        </p>
+      </section>
+
+      <section>
+        <h4>Verification of Available Funds</h4>
+        <p>
+        </p>
+      </section>
+
+      <section>
+        <h4>Authorization of Transfer</h4>
+        <p>
+        </p>
+      </section>
+
+      <section>
+        <h4>Completion of Transfer</h4>
+        <p>
+        </p>
+      </section>
+
+    </section>
+
+    <section>
+      <h3>Delivery of Product/Receipt</h3>
+      <p>
+      </p>
+
+      <section>
+        <h4>Delivery of Product</h4>
+        <p>
+        </p>
+      </section>
+      <section>
+        <h4>Delivery of Receipt</h4>
+        <p>
+        </p>
+      </section>
+
+    </section>
+  </section>
+
+  <section>
+    <h2>The Payment Phases Applied to the Real World</h2>
+    <p>
+    </p>
+
+    <section>
+      <h3>Credit Card Purchase</h3>
+      <p>
+      </p>
+    </section>
+
+    <section>
+      <h3>Google Wallet Payment</h3>
+      <p>
+      </p>
+    </section>
+
+    <section>
+      <h3>Electronic Cheque Payment</h3>
+      <p>
+      </p>
+    </section>
+
+    <section>
+      <h3>Credit Transfer / Direct Debit</h3>
+      <p>
+      </p>
+    </section>
+
+    <section>
+      <h3>Bitcoin Payment</h3>
+      <p>
+      </p>
+    </section>
+
+    <section>
+      <h3>Person to Person Cash Payment</h3>
+      <p>
+      </p>
+    </section>
+
+    <section>
+      <h3>Automatic Tax Payment</h3>
+      <p>
+      </p>
+    </section>
+
+    <section>
+      <h3>Government Entitlement Disbursement</h3>
+      <p>
+      </p>
+    </section>
+
+  </section>
+
+
+  <!--section>
     <h2>High Priority Use Cases</h2>
     <p>
 The following use cases have been identified by the Web Payments Interest
@@ -509,7 +881,7 @@ A protocol that is capable of discovering the <tref title="payer">payer's</tref>
 corresponding <tref title="payment scheme">payment scheme(s)</tref>.
           </li>
         </ul>
-      </section -->
+      </section>
     </section>
 
     <section>
@@ -732,7 +1104,7 @@ A protocol that enables the <tref>payment agent</tref> to suggest new
 customer preferences (speed, points, price, etc.).
           </li>
         </ul>
-      </section -->
+      </section>
     </section>
 
     <section>
@@ -883,12 +1255,12 @@ All <tref title="customer">customers</tref> must be recognized by the
    <section>
       <h3>Payee-initiated Processing</h3>
       <p>
-When a <tref>customer</tref> wants to make a purchase, the <tref>merchant</tref> requests 
-from the <tref title="customer">customer's</tref> <tref>payment agent</tref> an Instrument Proof. 
-The <tref>merchant</tref> sends this proof to its <tref>payment processor</tref> to initiate the 
+When a <tref>customer</tref> wants to make a purchase, the <tref>merchant</tref> requests
+from the <tref title="customer">customer's</tref> <tref>payment agent</tref> an Instrument Proof.
+The <tref>merchant</tref> sends this proof to its <tref>payment processor</tref> to initiate the
 funds transfer. The <tref>payment processor</tref> can return a Payment Proof to the <tref>merchant</tref>.
       </p>
-      
+
       <section>
         <h4>Basic Flow</h4>
         <ol>
@@ -902,31 +1274,31 @@ Payment Agent sends Instrument Proof to Payee (via User Agent or 2' direct callb
 Payee sends payment details and Instrument Proof to its Processor.
           </li>
           <li>
-Processor returns a Payment Proof to the merchant.          	
+Processor returns a Payment Proof to the merchant.
           </li>
         </ol>
         <img style="display: block; max-height:100%; min-width: 40em; max-width:60%;" src="images/payee-initiated-processing.svg"></img>
       </section>
-      
+
       <section>
         <h4>Examples</h4>
         <ul>
           <li>
-Customer POV: John goes to CandyCart.com and clicks “buy” to purchase chocolates. 
-After selecting his bank's virtual card, his browser re-directs him to his bank's wallet, which acts as a payment agent. 
-John approves the payment and his virtual card generates an Instrument Proof cryptogram that signs the transaction and 
+Customer POV: John goes to CandyCart.com and clicks “buy” to purchase chocolates.
+After selecting his bank's virtual card, his browser re-directs him to his bank's wallet, which acts as a payment agent.
+John approves the payment and his virtual card generates an Instrument Proof cryptogram that signs the transaction and
 captures his content. The cryptogram is sent to the merchant, which completes the purchase after verification.
           </li>
           <li>
-Merchant POV: CandyCart.com presents John with an array of chocolates to buy. 
-After John has approved his cart and selected his bank's virtual card to pay with, CandyCart.com generates a 
-Payment Request and sends it to John's Payment Agent. It receives an Instrument Proof from the payment agent 
-and forwards it to CardProcessingCo, along with payment details, for processing the payment. 
+Merchant POV: CandyCart.com presents John with an array of chocolates to buy.
+After John has approved his cart and selected his bank's virtual card to pay with, CandyCart.com generates a
+Payment Request and sends it to John's Payment Agent. It receives an Instrument Proof from the payment agent
+and forwards it to CardProcessingCo, along with payment details, for processing the payment.
 It gets a Payment Proof from CardProcessingCo in return, which completes the purchase.
           </li>
           <li>
-Payment Processor POV: CardProcessingCo receives a payment processing request from CandyCart.com. 
-Because it is using standard Instrument Proof cryptograms, CardProcessingCo can handle the request as 
+Payment Processor POV: CardProcessingCo receives a payment processing request from CandyCart.com.
+Because it is using standard Instrument Proof cryptograms, CardProcessingCo can handle the request as
 any other card payment.
           </li>
         </ul>
@@ -935,15 +1307,15 @@ any other card payment.
       <section>
         <h4>Motivations</h4>
         <p>
-In this use case, the merchant triggers the payment processing using its processor. 
-This flow is the closest to legacy card scheme flows (also, the one used in brick and mortar stores), 
+In this use case, the merchant triggers the payment processing using its processor.
+This flow is the closest to legacy card scheme flows (also, the one used in brick and mortar stores),
 and it is expected that supporting it will ease integration in current merchant systems.
 	</p>
 	<p>
-An Instrument Proof in this use case is intended has a guarantee of possession by the customer of a valid, 
-compatible payment instrument and that the customer has given consent for the payment. For comparison, a 
-Payment Proof guarantees that the customer holds the corresponding funds and the funds will be transferred. 
-These guarantees are typically provided by a Payment Scheme, therefore the format for these proofs will 
+An Instrument Proof in this use case is intended has a guarantee of possession by the customer of a valid,
+compatible payment instrument and that the customer has given consent for the payment. For comparison, a
+Payment Proof guarantees that the customer holds the corresponding funds and the funds will be transferred.
+These guarantees are typically provided by a Payment Scheme, therefore the format for these proofs will
 have to be scheme extensible.
         </p>
       </section>
@@ -955,7 +1327,7 @@ have to be scheme extensible.
 A number of payment agents are available on the customer device and at least one is supported by the merchant.
           </li>
           <li>
-A payment agent and payment instrument has been selected by the customer, and a payment request has been sent 
+A payment agent and payment instrument has been selected by the customer, and a payment request has been sent
 to the payment agent.
           </li>
         </ul>
@@ -1221,15 +1593,15 @@ be either approved of denied by the <tref>payment processor</tref>.
     <p>
 
     </p>
-  </section>
+  </section-->
 
   <section>
     <h2>Acknowledgements</h2>
 
     <p>
-The editors are thankful to the following contributions from members of the Web Payments Interest Group, Web Payments Community Group,
-and the Web community.
-(in alphabetical order):
+The editors are thankful to the following contributions from members of the
+Web Payments Interest Group, Web Payments Community Group,
+and the Web community at large (in alphabetical order):
     </p>
     <p>
     </p>
