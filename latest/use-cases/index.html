@@ -531,7 +531,7 @@ transaction.
         </li>
       </ul>
     </section>
-    
+
     <section>
       <h3>Negotiation of Payment Terms</h3>
       <p>
@@ -539,25 +539,129 @@ transaction.
 
       <section>
         <h4>Discovery of Offer</h4>
+
         <p>
+<strong>Website-based offer</strong>. Penny uses the HobbyCo website to
+select a $15 model train for purchase.
+<br/>
+<span class="note">Priority: high</span>
+<br/>
+<span class="issue">Justification: This is a common use case that can be
+accomplished today, albeit manually. The use case seems weak.</span>
+        </p>
+        <p>
+<strong>Point of Sale offer</strong>. Cory shops for groceries
+at his local ChowMart, scans all of the items he wants to purchase at the
+automated kiosk, and is presented with a total amount.
+<br/>
+<span class="note">Priority: high</span>
+<br/>
+<span class="issue">Justification: Unifying POS interaction w/ the Web
+Payments architecture is vital for the success of this work.</span>
+        </p>
+        <p>
+<strong>Mobile Point of Sale offer</strong>. Daniel takes a taxi from the
+airport to his hotel. The taxi driver displays the total with a mobile
+tap-to-pay option.
+<br/>
+<span class="note">Priority: high</span>
+<br/>
+<span class="issue">Justification: Unifying the way tap-to-pay offers work
+with the Web Payments architecture would help ensure ubiquity.</span>
+        </p>
+        <p>
+<strong>Freemium offer</strong>. Ricki plays his favorite native app game and
+wants to upgrade his avatar with a few extra power ups. Clicking on a
+power-up displays the price of the power up.
+<br/>
+<span class="note">Priority: high</span>
+<br/>
+<span class="issue">Justification: Many of the very successful games these
+days run on the freemium model, but are tied to specific app stores. Providing
+an app-store agnostic mechanism to pay for items in freemium games would
+give players and developers more choices.</span>
+        </p>
+        <p>
+<strong>E-mail offer</strong>. A GroupBuyCo customer receives an offer by email
+to purchase the deal of the day.
+<br/>
+<span class="note">Priority: medium</span>
+<br/>
+<span class="issue">Justification: Initiating a payment from inside an
+email application that is unified with the way the same payment is initiated at
+the Point of Sale or via the Web would help ensure the ubiquity of the
+Web payment technology platform.</span>
+        </p>
+        <p>
+<strong>Hold offers</strong>. Renne checks into a hotel and is asked for a
+deposit for any damages to the room.
+<br/>
+<span class="note">Priority: medium</span>
+<br/>
+<span class="issue">Justification: Not all transactions are designed to be
+followed through on. Some are merely there to protect the
+<tref>payee</tref> in the event of bad judgement on behalf of the
+<tref>payer</tref>.</span>
+        </p>
+        <p>
+<strong>Pre-authorized offers</strong>. George pulls up to a pump
+at a petrol station. His in-vehicle application recognizes the station
+location and the pump, and asks if he wants to approve a fill up for up to
+€40.
+<br/>
+<span class="note">Priority: medium</span>
+<br/>
+<span class="issue">Justification: Some offers are not aware of the final
+price but would rather set limits on the amount of the purchase before a
+particular metered good or service is delivered. Is this a duplicate of
+'Hold offers'?</span>
+        </p>
+        <p>
+<strong>Machine-readable offer</strong>. BigBoxCo expresses their entire
+product catalog online as machine-readable information so that SearchCo may
+index their content more easily and direct more customer traffic to BigBoxCo's
+website.
+<br/>
+<span class="note">Priority: low</span>
+<br/>
+<span class="issue">Justification: Machine-readable offers
+will have a direct positive impact on store sales if they're indexed by search
+engines.</span>
+        </p>
         <p>
 <strong>Live offers</strong>. EnergyCo lists barrels of refined oil for sale
 on their website based on an algorithm that uses the cost of coal and crude
 oil as inputs. EnergyCo guarantees their prices for up to 24 hours from the
 posting date.
+<br/>
 <span class="note">Priority: low</span>
+<br/>
 <span class="issue">Justification: The ability to express a non-repudiable
 offer as the basis of a legally enforceable contract will reduce
 transactional friction.</span>
         </p>
-<strong>Machine-readable offer</strong>. BigBoxCo expresses their entire
-product catalog online as machine-readable information so that SearchCo may
-index their content more easily and direct more customer traffic to BigBoxCo's
-website.
+        <p>
+<strong>Trail-ware offer</strong>. Amantha downloads the latest version of
+her favorite game and beats the first level. The game asks her if she'd like
+to buy the full game to play further levels.
+<br/>
 <span class="note">Priority: low</span>
-<span class="issue">Justification: Machine-readable offers
-will have a direct positive impact on store sales if they're indexed by search
-engines.</span>
+<br/>
+<span class="issue">Justification: There is a fairly large trial-ware industry
+that could benefit if there was a simple way of executing a payment w/o being
+re-directed to a website to create an account and enter all your credit
+card details.</span>
+        </p>
+        <p>
+<strong>Car-based offer</strong>. Jeff listens to a lot of music on the way
+to work. His car radio is configured to enable him to buy music that he
+really likes by providing a digital offer along with the music stream.
+<br/>
+<span class="note">Priority: low</span>
+<br/>
+<span class="issue">Justification: Car manufacturers and the entertainment
+industry may be interested in extending their sales channels into
+vehicles.</span>
         </p>
       </section>
 
@@ -570,7 +674,9 @@ to send him the chocolates. With Tibor's authorization, his payment software
 transmits only his shipping address to CandyCo. Tibor's privacy is protected
 from the candy store, which did not require Tibor's name, email address, or
 any other personally identifying information to complete the transaction.
+<br/>
 <span class="note">Priority: high</span>
+<br/>
 <span class="issue">Justification: Not all payments require the payer
 to disclose personal information about themselves to complete a
 transaction.</span>
@@ -585,7 +691,9 @@ transaction.</span>
 
         <p>
 <strong></strong>.
+<br/>
 <span class="note">Priority: low</span>
+<br/>
 <span class="issue">Justification: </span>
         </p>
 
@@ -617,7 +725,9 @@ transaction.</span>
 <strong>Know Your Customer / Anti-Money Laundering</strong>. PayCo must
 ensure that their customers do not appear on any regulatory blacklists when
 performing transactions above a certain monetary amount.
+<br/>
 <span class="note">Priority: high</span>
+<br/>
 <span class="issue">Justification: Easing regulatory compliance when accessing
 a payment instrument will ensure a safer and faster payment schemes.</span>
         </p>
