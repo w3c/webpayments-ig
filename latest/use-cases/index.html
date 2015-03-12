@@ -495,6 +495,44 @@ next morning and is on her doorstep before she leaves for work.
     </p>
 
     <section>
+      <h3>Assumptions</h3>
+
+      <p>
+The use cases below rely on a number of assumptions that are not
+detailed in the use cases but that will be explored in more detail in
+the architecture and requirements documents.
+      </p>
+
+      <ul>
+        <li>
+<strong>Connectivity</strong>. Connectivity requirements vary according to
+use case. The types of connections a device may utilize include Internet
+connectivity, proxied connections through short-range radio transmissions,
+and proximity connections over a technology such as Near-Field Communication
+(NFC) or Bluetooth Low Energy (BTLE). Some use cases assume no
+connectivity (e.g., user is temporarily unable to connect to a mobile phone
+network or a WiFi hotspot).
+        </li>
+        <li>
+<strong>Registered Payment Instruments</strong>. In order for the
+<tref>payer</tref> to select and utilize payment instruments, they must be
+registered in some way and discoverable by a browser, native application,
+or other software.
+        </li>
+        <li>
+<strong>Security</strong>. Keys, encryption, and other security technology
+must be used to secure sensitive information. It is important that sensitive
+information is not transmitted to parties that do not absolutely need to
+know the information in order to complete the transaction.</li>
+        <li>
+<strong>Identity</strong>. There will be a consistent, interoperable
+identifier used to identify the participants and accounts in a Web Payments
+transaction.
+        </li>
+      </ul>
+    </section>
+    
+    <section>
       <h3>Negotiation of Payment Terms</h3>
       <p>
       </p>
