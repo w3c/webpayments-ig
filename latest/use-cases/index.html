@@ -81,6 +81,36 @@
       };
       //respecEvents.sub('start-all', webpayments.preProcess.apply);
     </script>
+    <style type="text/css">
+dl {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+dt,
+dd {
+  line-height: 1.42857143;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 0;
+}
+@media (min-width: 768px) {
+  .dl-horizontal dt {
+    float: left;
+    width: 160px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dl-horizontal dd {
+    margin-left: 180px;
+  }
+}
+    </style>
   </head>
 <body>
   <section id='abstract'>
@@ -540,47 +570,96 @@ transaction.
       <section>
         <h4>Discovery of Offer</h4>
 
-        <p>
-<strong>Website-based offer</strong>. Penny uses the HobbyCo website to
+        <section>
+          <h5>High Priority</h5>
+
+          <dl class="dl-horizontal">
+            <dt>Website</dt>
+            <dd>
+Penny uses the HobbyCo website to
 select a $15 model train for purchase.
-<br/>
-<span class="note">Priority: high</span>
-<br/>
-<span class="issue">Justification: This is a common use case that can be
-accomplished today, albeit manually. The use case seems weak.</span>
-        </p>
-        <p>
-<strong>Point of Sale offer</strong>. Cory shops for groceries
-at his local ChowMart, scans all of the items he wants to purchase at the
-automated kiosk, and is presented with a total amount.
-<br/>
-<span class="note">Priority: high</span>
-<br/>
-<span class="issue">Justification: Unifying POS interaction w/ the Web
-Payments architecture is vital for the success of this work.</span>
-        </p>
-        <p>
-<strong>Mobile Point of Sale offer</strong>. Daniel takes a taxi from the
-airport to his hotel. The taxi driver displays the total with a mobile
-tap-to-pay option.
-<br/>
-<span class="note">Priority: high</span>
-<br/>
-<span class="issue">Justification: Unifying the way tap-to-pay offers work
-with the Web Payments architecture would help ensure ubiquity.</span>
-        </p>
-        <p>
-<strong>Freemium offer</strong>. Ricki plays his favorite native app game and
-wants to upgrade his avatar with a few extra power ups. Clicking on a
-power-up displays the price of the power up.
-<br/>
-<span class="note">Priority: high</span>
-<br/>
-<span class="issue">Justification: Many of the very successful games these
-days run on the freemium model, but are tied to specific app stores. Providing
-an app-store agnostic mechanism to pay for items in freemium games would
-give players and developers more choices.</span>
-        </p>
+            </dd>
+            <dt>Goals</dt>
+            <dd>
+Support existing patterns, enable small value payments
+            </dd>
+            <dt>Motivation</dt>
+            <dd>
+This is the most common type of offer on the Web circa 2015.
+<span class="issue">The use case seems weak.</span>
+            </dd>
+          </dl>
+          <hr/>
+
+          <dl class="dl-horizontal">
+            <dt>Point of Sale Kiosk</dt>
+            <dd>
+Cory shops for groceries at his local ChowMart, scans all of the items he
+wants to purchase at the automated kiosk, and is presented with a
+total amount.
+            </dd>
+            <dt>Goals</dt>
+            <dd>
+Support existing patterns, ubiquity, fixed point-of-sale integration
+            </dd>
+            <dt>Motivation</dt>
+            <dd>
+Unifying POS interaction w/ the Web Payments architecture is vital for the
+success of this work.
+            </dd>
+            <dt>Privacy</dt>
+            <dd>
+Cory shouldn't be able to be tracked unless he uses a loyalty card to pay.
+            </dd>
+          </dl>
+          <hr/>
+
+          <dl class="dl-horizontal">
+            <dt>Mobile</dt>
+            <dd>
+Daniel takes a taxi from the airport to his hotel. The taxi driver
+displays the total with his mobile device and uses a tap-to-pay option.
+            </dd>
+            <dt>Goals</dt>
+            <dd>
+Mobile payments
+            </dd>
+            <dt>Motivation</dt>
+            <dd>
+Unifying the way tap-to-pay offers work with the Web Payments architecture
+would help ensure ubiquity.
+            </dd>
+            <dt>Exceptions</dt>
+            <dd>
+No mobile phone connectivity (visiting a different country, taxi stops
+out of range of a mobile network, etc.)
+            </dd>
+          </dl>
+          <hr/>
+
+          <dl class="dl-horizontal">
+            <dt>Freemium</dt>
+            <dd>
+Ricki plays his favorite native app game and wants to upgrade his avatar
+with a few extra power ups. Clicking on a power-up displays the price of
+the power up.
+            </dd>
+            <dt>Goals</dt>
+            <dd>
+Ease of payment
+            </dd>
+            <dt>Motivation</dt>
+            <dd>
+Many of the very successful games these days run on the freemium model,
+but are tied to specific app stores. Providing an app-store agnostic
+mechanism to pay for items in freemium games would give players and
+developers more choices.
+            </dd>
+          </dl>
+        </section>
+        <section>
+          <h5>Medium Priority</h5>
+
         <p>
 <strong>E-mail offer</strong>. A GroupBuyCo customer receives an offer by email
 to purchase the deal of the day.
@@ -664,6 +743,7 @@ industry may be interested in extending their sales channels into
 vehicles.</span>
         </p>
       </section>
+    </section>
 
       <section>
         <h4>Agreement on Terms</h4>
