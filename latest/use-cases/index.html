@@ -855,80 +855,96 @@ Certain low-value transactions shouldn't require the
 to complete the transaction.
             </dd>
           </dl>
+
+          <dl class="dl-horizontal">
+            <dt>Need to Know</dt>
+            <dd>
+PayCo is required to keep a certain amount of information on their customers
+for anti-money laundering / know your customer regulatory purposes. When a
+<tref>payer</tref> performs a transaction with a <tref>payee</tref>, PayCo
+would like to reduce the amount of information that's transmitted to the
+<tref>payee</tref> while ensuring that PayCo stays compliant with regulations.
+            </dd>
+            <dt>Goals</dt>
+            <dd>
+Greater security, and Regulatory acceptance.
+            </dd>
+            <dt>Motivation</dt>
+            <dd>
+There are types of information, such as personally identifiable information,
+that <tref title="payee">payees</tref> do not need to know for some
+transactions. Limiting sensitive information to be transmitted to entities
+involved in a payment on a purely need-to-know basis increases security 
+while ensuring regulatory compliance.
+            </dd>
+          </dl>
+
+          <dl class="dl-horizontal">
+            <dt>One-time Payment</dt>
+            <dd>
+Jamie wishes to pay for a single article from a market analyst.
+            </dd>
+            <dt>Goals</dt>
+            <dd>
+Improved user experience
+            </dd>
+            <dt>Motivation</dt>
+            <dd>
+<tref title="payer">Payers</tref> should be able to understand if a
+particular purchase is a one-time payment prior to initiating the payment.
+            </dd>
+          </dl>
+
         </section>
 
         <section>
           <h5>Medium Priority</h5>
+
           <dl class="dl-horizontal">
-            <dt></dt>
+            <dt>Subscription</dt>
             <dd>
-&nbsp;
+Jeff subscribes to a site that provides a monthly analysis of the world
+of finance.
             </dd>
             <dt>Goals</dt>
             <dd>
-Increased user choice,
 Improved user experience,
-Greater security,
-Minimal standardization,
-Regulatory acceptance,
-Innovation,
-Lower Costs,
-Transparency,
-Automatability,
-Portability,
-Monetization,
-and Rapid, widespread adoption.
+Transparency, and
+Automatability.
             </dd>
             <dt>Motivation</dt>
             <dd>
-&nbsp;
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
-&nbsp;
+<tref title="payer">Payers</tref> should be able to understand if a
+particular purchase is a recurring payment prior to initiating the payment.
             </dd>
           </dl>
+
         </section>
 
         <section>
           <h5>Low Priority</h5>
           <dl class="dl-horizontal">
-            <dt></dt>
+            <dt>Full Disclosure</dt>
             <dd>
+Marge wishes to renew her passport online which requires a fee and
+a great deal of information about her real-world identity to be transmitted.
             </dd>
             <dt>Goals</dt>
             <dd>
-Increased user choice,
-Improved user experience,
-Greater security,
-Minimal standardization,
-Regulatory acceptance,
-Innovation,
-Lower Costs,
-Transparency,
-Automatability,
-Portability,
-Monetization,
-and Rapid, widespread adoption.
+Improved user experience.
             </dd>
             <dt>Motivation</dt>
             <dd>
-&nbsp;
+Some transactions will require very sensitive personally identifiable
+information to be transmitted by the <tref>payer</tref>.
             </dd>
             <dt>Privacy / Security</dt>
             <dd>
-&nbsp;
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
-&nbsp;
+Phishing for personaly identifiable information becomes much easier if there
+are mechanisms that are put in place that enable that information to be
+easily and automatically transmitted over the Web.
             </dd>
           </dl>
-
         </section>
 
       </section>
