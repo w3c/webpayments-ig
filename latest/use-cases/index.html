@@ -1193,8 +1193,51 @@ pseudo-anonymous payment mechanism.
 
         <section>
           <h5>High Priority</h5>
+
           <dl class="dl-horizontal">
-            <dt>Know Your Customer</dt>
+            <dt>Multi-Factor</dt>
+            <dd>
+              <ul>
+                <li>
+When Ian selects his debit card, he is prompted for a PIN.
+                </li>
+                <li>
+Wes has configured his debit card to require a fingerprint scan from his
+mobile device and a Universal Two Factor (U2F) device to be used when
+performing a purchase over $1,000.
+                </li>
+                <li>
+Frederic taps his phone at the grocery store to pay, and BankA sends him a
+one-time password (OTP) on his mobile phone that he enters in a keypad at
+the checkout counter.
+                </li>
+                <li>
+Nadia's bank asks her to use their in-branch retinal scan and palm-vein reader
+before she is allowed to withdraw $25,000.
+                </li>
+              </ul>
+            </dd>
+            <dt>Goals</dt>
+            <dd>
+Increased user choice,
+Improved user experience,
+Greater security,
+Minimal standardization,
+Regulatory acceptance,
+Innovation,
+and Rapid, widespread adoption.
+            </dd>
+            <dt>Motivation</dt>
+            <dd>
+Different authentication scenarios will require different authentication
+devices. It is important that the array of authentication devices used for
+multi-factor authentication supports what exists today, but is not
+limited to only what exists today.
+            </dd>
+          </dl>
+
+          <dl class="dl-horizontal">
+            <dt>KYC / AML</dt>
             <dd>
 PayCo must ensure that their customers do not appear on any regulatory
 blacklists when performing transactions above a certain monetary amount.
@@ -1205,7 +1248,8 @@ Regulatory acceptance, and Automatability.
             </dd>
             <dt>Motivation</dt>
             <dd>
-Easing regulatory compliance when accessing a payment instrument will ensure
+Easing regulatory compliance with respect to Know Your Customer (KYC) and
+Anti-Money Laundering (AML) when accessing a payment instrument will ensure
 a safer and faster payment schemes.
             </dd>
             <dt>Exceptions</dt>
@@ -1214,82 +1258,9 @@ If a company detects that a customer is on an applicable blacklist, the
 transaction must not proceed.
             </dd>
           </dl>
-        </section>
-
-        <section>
-          <h5>Medium Priority</h5>
-          <dl class="dl-horizontal">
-            <dt></dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Goals</dt>
-            <dd>
-Increased user choice,
-Improved user experience,
-Greater security,
-Minimal standardization,
-Regulatory acceptance,
-Innovation,
-Lower Costs,
-Transparency,
-Automatability,
-Portability,
-Monetization,
-and Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
-&nbsp;
-            </dd>
-          </dl>
-        </section>
-
-        <section>
-          <h5>Low Priority</h5>
-          <dl class="dl-horizontal">
-            <dt></dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Goals</dt>
-            <dd>
-Increased user choice,
-Improved user experience,
-Greater security,
-Minimal standardization,
-Regulatory acceptance,
-Innovation,
-Lower Costs,
-Transparency,
-Automatability,
-Portability,
-Monetization,
-and Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
-&nbsp;
-            </dd>
-          </dl>
 
         </section>
+
       </section>
 
     </section>
@@ -1307,110 +1278,77 @@ and Rapid, widespread adoption.
         <section>
           <h5>High Priority</h5>
           <dl class="dl-horizontal">
-            <dt></dt>
+            <dt>Payee-initiated</dt>
             <dd>
-&nbsp;
+              <ul>
+                <li>
+Richard's choses to pay using a credit card at FlowerFriends. FlowerFriends
+initiates payment processing using their payment processor to contacting the
+acquiring bank that handles credit card payments for FlowerFriends.
+                </li>
+                <li>
+Pitir has authorized RentSeekers to pull money out of his bank account on a
+monthly basis in order to pay his rent. RentSeekers initiates a payment using
+the ACH network to pull money from Pitir's bank account.
+                </li>
+              </ul>
             </dd>
             <dt>Goals</dt>
             <dd>
-Increased user choice,
-Improved user experience,
-Greater security,
-Minimal standardization,
-Regulatory acceptance,
-Innovation,
-Lower Costs,
-Transparency,
-Automatability,
-Portability,
-Monetization,
-and Rapid, widespread adoption.
+Automatability, and Rapid, widespread adoption.
             </dd>
             <dt>Motivation</dt>
             <dd>
-&nbsp;
+Payee-initiated payments, also known as "pull payments" or
+"four corner model payments", are widely deployed and utilized today. Not
+supporting this mechanism would be fatal to any potential standard.
             </dd>
             <dt>Privacy / Security</dt>
             <dd>
-&nbsp;
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
-&nbsp;
+One of the biggest security flaws of payee-initiated payments is that all the
+information necessary to initiate a transaction from the
+<tref title="payer">payer's</tref> financial account is typically transmitted
+to the <tref>payee</tref>. For example, credit card information along with
+expiration date, name, and CVV2 code are transmitted and could be intercepted
+by rogue software running on the <tref title="payer">payer's</tref> servers.
+Special attention should be paid to ensuring that this sort of broken security
+model isn't supported by a Web Payments solution. For example, at a minimum,
+credit card tokenization such as EMVCo's solution should be supported
+alongside other tokenization solutions.
             </dd>
           </dl>
-        </section>
 
-        <section>
-          <h5>Medium Priority</h5>
           <dl class="dl-horizontal">
-            <dt></dt>
+            <dt>Payer-initiated</dt>
             <dd>
-&nbsp;
+              <ul>
+                <li>
+Once Sally has signed into PayPal to pay, PayPal initiates payment processing.
+                </li>
+                <li>
+Joakim uses his Bitcoin wallet to send money to his friend.
+                </li>
+                <li>
+Carson (in the New York City) sends money to Vladamir (in Moscow) using
+his Ripple client, which converts the currency from US Dollars to Rubels in
+transit.
+                </li>
+              </ul>
             </dd>
             <dt>Goals</dt>
             <dd>
-Increased user choice,
 Improved user experience,
 Greater security,
-Minimal standardization,
-Regulatory acceptance,
-Innovation,
-Lower Costs,
-Transparency,
-Automatability,
-Portability,
-Monetization,
-and Rapid, widespread adoption.
+Innovation, and
+Automatability.
             </dd>
             <dt>Motivation</dt>
             <dd>
-&nbsp;
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
-&nbsp;
-            </dd>
-          </dl>
-        </section>
-
-        <section>
-          <h5>Low Priority</h5>
-          <dl class="dl-horizontal">
-            <dt></dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Goals</dt>
-            <dd>
-Increased user choice,
-Improved user experience,
-Greater security,
-Minimal standardization,
-Regulatory acceptance,
-Innovation,
-Lower Costs,
-Transparency,
-Automatability,
-Portability,
-Monetization,
-and Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
-&nbsp;
+Payer-initiated payments, also known as "push payments",
+"three-corner model payments", or "peer-to-peer payments", are fundamentally
+more secure as no information is given to the <tref>payee</tref> that would
+allow them or an attacker to replay the transaction for a different amount
+or to a different <tref>payee</tref> at a later date.
             </dd>
           </dl>
 
@@ -1421,76 +1359,25 @@ and Rapid, widespread adoption.
         <h4>Verification of Available Funds</h4>
         <p>
         </p>
+
         <section>
           <h5>High Priority</h5>
           <dl class="dl-horizontal">
-            <dt></dt>
+            <dt>Hold Verification</dt>
             <dd>
-&nbsp;
+Renne checks into a hotel and is asked for a deposit for any damages to the
+room. She uses her phone to provide a proof-of-hold until she checks out of
+the hotel, at which time the hold on her funds will be released.
             </dd>
             <dt>Goals</dt>
             <dd>
-Increased user choice,
-Improved user experience,
-Greater security,
-Minimal standardization,
-Regulatory acceptance,
-Innovation,
-Lower Costs,
-Transparency,
-Automatability,
-Portability,
-Monetization,
-and Rapid, widespread adoption.
+Improved user experience, and Transparency.
             </dd>
             <dt>Motivation</dt>
             <dd>
-&nbsp;
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
-&nbsp;
-            </dd>
-          </dl>
-        </section>
-
-        <section>
-          <h5>Medium Priority</h5>
-          <dl class="dl-horizontal">
-            <dt></dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Goals</dt>
-            <dd>
-Increased user choice,
-Improved user experience,
-Greater security,
-Minimal standardization,
-Regulatory acceptance,
-Innovation,
-Lower Costs,
-Transparency,
-Automatability,
-Portability,
-Monetization,
-and Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
-&nbsp;
+Delivering services or products that are difficult to "undo", such
+as performing an oil change, dispensing fuel, or renting a car or hotel
+room, are examples of situations which may require a two-part transaction.
             </dd>
           </dl>
         </section>
@@ -1498,36 +1385,21 @@ and Rapid, widespread adoption.
         <section>
           <h5>Low Priority</h5>
           <dl class="dl-horizontal">
-            <dt></dt>
+            <dt>Funds Verification</dt>
             <dd>
-&nbsp;
+When Mario wishes to purchase a race car through the manufacturer,
+the company that makes the car requires a proof of funds from Mario's bank
+in order for the customization of the car to proceed.
             </dd>
             <dt>Goals</dt>
             <dd>
-Increased user choice,
-Improved user experience,
-Greater security,
-Minimal standardization,
-Regulatory acceptance,
-Innovation,
-Lower Costs,
-Transparency,
-Automatability,
-Portability,
-Monetization,
-and Rapid, widespread adoption.
+Greater security, and Transparency.
             </dd>
             <dt>Motivation</dt>
             <dd>
-&nbsp;
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
-&nbsp;
+A <tref>payee</tref> may want to limit access to certain services to only those
+that they know can afford the good or service because the act of engaging the
+<tref>payer</tref> may be costly.
             </dd>
           </dl>
 
@@ -1538,6 +1410,7 @@ and Rapid, widespread adoption.
         <h4>Authorization of Transfer</h4>
         <p>
         </p>
+
         <section>
           <h5>High Priority</h5>
           <dl class="dl-horizontal">
