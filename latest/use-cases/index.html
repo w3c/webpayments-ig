@@ -93,9 +93,6 @@ dd {
 dl > dt:first-of-type {
   font-weight: bold;
 }
-dd {
-  margin-left: 0;
-}
 @media (min-width: 768px) {
   .dl-horizontal dt {
     font-weight: normal;
@@ -109,6 +106,10 @@ dd {
   }
   .dl-horizontal dd {
     margin-left: 180px;
+  }
+  .dl-horizontal dd > ul {
+    padding-left: 20px;
+    margin: 0px;
   }
 }
     </style>
@@ -1148,7 +1149,7 @@ their devices, it becomes possible to make selections for them automatically.
           </dl>
 
           <dl class="dl-horizontal">
-            <dt>Sharing Instruments</dt>
+            <dt>Payer Privacy</dt>
             <dd>
               <ul>
                 <li>
@@ -1212,7 +1213,8 @@ one-time password (OTP) on his mobile phone that he enters in a keypad at
 the checkout counter.
                 </li>
                 <li>
-Nadia's bank asks her to use their in-branch retinal scan and palm-vein reader
+Nadia's bank asks her to use her two-factor authentication device and at
+least one of their in-branch retinal scanners or palm-vein readers
 before she is allowed to withdraw $25,000.
                 </li>
               </ul>
@@ -1233,6 +1235,12 @@ Different authentication scenarios will require different authentication
 devices. It is important that the array of authentication devices used for
 multi-factor authentication supports what exists today, but is not
 limited to only what exists today.
+            </dd>
+            <dt>Accessibility</dt>
+            <dd>
+When requiring biometric verification, it is important to provide
+at least two (if not more) alternative mechanisms. Not everyone can provide
+fingerprints or detailed iris scans.
             </dd>
           </dl>
 
@@ -1414,230 +1422,135 @@ that they know can afford the good or service because the act of engaging the
         <section>
           <h5>High Priority</h5>
           <dl class="dl-horizontal">
-            <dt></dt>
+            <dt>Proofs</dt>
             <dd>
-&nbsp;
+              <ul>
+                <li>
+Zhang Wei orders 10 large boxes of red envelopes from an online shop in
+Tianjin. He uses an escrow service to provide a proof of escrow to the
+online shop in order to get them to initiate the shipment.
+                </li>
+                <li>
+To protect Tibor's privacy when he purchases candy online, the store asks only
+for Tibors verified shipping address and a proof of payment to send him
+the chocolates.
+                </li>
+                <li>
+RockinRadio, SmoothSounds, and classicallyClassic are independent specialised
+music streaming services. They accept proof of purchase from each other to
+provide a track that is in their online streaming catalogue even if it was
+originally bought from another provider.
+                </li>
+              </ul>
             </dd>
             <dt>Goals</dt>
             <dd>
 Increased user choice,
 Improved user experience,
 Greater security,
-Minimal standardization,
 Regulatory acceptance,
 Innovation,
-Lower Costs,
 Transparency,
-Automatability,
-Portability,
-Monetization,
-and Rapid, widespread adoption.
+Automatability, and Rapid, widespread adoption.
             </dd>
             <dt>Motivation</dt>
             <dd>
-&nbsp;
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
-&nbsp;
+Goods and services may be released at different times depending on the type
+of transaction being performed. At times, it's safe to release a good when
+the payment network acknowledges that the funds are on their way. At other
+times, it's not safe to release a good or service until it has been proven that
+the funds are sitting in the <tref title="payee">payee's</tref> financial
+account.
             </dd>
             <dt>Exceptions</dt>
             <dd>
-&nbsp;
+If a particular expected proof is not provided, the transaction will most
+likely fail or transition into an alternate path.
             </dd>
           </dl>
         </section>
 
-        <section>
-          <h5>Medium Priority</h5>
-          <dl class="dl-horizontal">
-            <dt></dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Goals</dt>
-            <dd>
-Increased user choice,
-Improved user experience,
-Greater security,
-Minimal standardization,
-Regulatory acceptance,
-Innovation,
-Lower Costs,
-Transparency,
-Automatability,
-Portability,
-Monetization,
-and Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
-&nbsp;
-            </dd>
-          </dl>
-        </section>
-
-        <section>
-          <h5>Low Priority</h5>
-          <dl class="dl-horizontal">
-            <dt></dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Goals</dt>
-            <dd>
-Increased user choice,
-Improved user experience,
-Greater security,
-Minimal standardization,
-Regulatory acceptance,
-Innovation,
-Lower Costs,
-Transparency,
-Automatability,
-Portability,
-Monetization,
-and Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
-&nbsp;
-            </dd>
-          </dl>
-
-        </section>
       </section>
 
       <section>
         <h4>Completion of Transfer</h4>
         <p>
         </p>
+
         <section>
           <h5>High Priority</h5>
           <dl class="dl-horizontal">
-            <dt></dt>
+            <dt>Variation of Delay</dt>
             <dd>
-&nbsp;
+              <ul>
+                <li>
+Sophie uses a credit card to buy some gifts for her parents and the shop has
+access to the funds in three days.
+                </li>
+                <li>
+Frank uses an electronic check to pay his rent. The rental agency has access
+to the funds in 7 days.
+                </li>
+                <li>
+Felicity has chosen Bitcoin to pay for glasses online, so the store
+that sells the glasses has almost guaranteed access to the funds within
+15 minutes.
+                </li>
+                <li>
+Vanessa uses Ripple to purchase a new work outfit in USD and funds are made
+available within a few minutes to OnlineWorkClothes in EUR.
+                </li>
+              </ul>
             </dd>
             <dt>Goals</dt>
             <dd>
 Increased user choice,
 Improved user experience,
-Greater security,
-Minimal standardization,
-Regulatory acceptance,
-Innovation,
-Lower Costs,
 Transparency,
 Automatability,
-Portability,
-Monetization,
 and Rapid, widespread adoption.
             </dd>
             <dt>Motivation</dt>
             <dd>
-&nbsp;
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
-&nbsp;
+When a transaction occurs, the time it takes to transmit and receive
+funds often vary according to <tref>payment scheme</tref>.
             </dd>
             <dt>Exceptions</dt>
             <dd>
-&nbsp;
+If the funds are sent but never received, then the <tref>payee</tref> will
+select a recourse mechanism that is included in the last transaction message.
             </dd>
           </dl>
         </section>
+
 
         <section>
           <h5>Medium Priority</h5>
           <dl class="dl-horizontal">
-            <dt></dt>
+            <dt>Notifications</dt>
             <dd>
-&nbsp;
+Gavin sends and electronic check to WaveMart. WaveMart receives a notification
+that payment has been initiated almost immediately. Four days later, WaveMart
+receives a notification from their bank that payment has been received.
             </dd>
             <dt>Goals</dt>
             <dd>
-Increased user choice,
-Improved user experience,
-Greater security,
-Minimal standardization,
-Regulatory acceptance,
 Innovation,
-Lower Costs,
-Transparency,
 Automatability,
-Portability,
-Monetization,
 and Rapid, widespread adoption.
             </dd>
             <dt>Motivation</dt>
             <dd>
-&nbsp;
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
-&nbsp;
+It is difficult for an organization to know when a payment has been received
+without depending on proprietary software.
             </dd>
             <dt>Exceptions</dt>
             <dd>
-&nbsp;
+It may also be important to be notified when a payment that was initiated
+has not been received, or when a payment has been reversed after it had been
+received.
             </dd>
           </dl>
-        </section>
-
-        <section>
-          <h5>Low Priority</h5>
-          <dl class="dl-horizontal">
-            <dt></dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Goals</dt>
-            <dd>
-Increased user choice,
-Improved user experience,
-Greater security,
-Minimal standardization,
-Regulatory acceptance,
-Innovation,
-Lower Costs,
-Transparency,
-Automatability,
-Portability,
-Monetization,
-and Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
-&nbsp;
-            </dd>
-          </dl>
-
         </section>
       </section>
 
@@ -1652,117 +1565,53 @@ and Rapid, widespread adoption.
         <h4>Delivery of Product</h4>
         <p>
         </p>
+
         <section>
           <h5>High Priority</h5>
           <dl class="dl-horizontal">
-            <dt></dt>
+            <dt>Physical Goods</dt>
             <dd>
-&nbsp;
+Giralt orders a bicycle for his daughter through BikeSmart online. The
+bicycle is delivered a few days later with a QRCode attached to the package
+that only Giralt can access.
             </dd>
             <dt>Goals</dt>
             <dd>
-Increased user choice,
-Improved user experience,
-Greater security,
-Minimal standardization,
-Regulatory acceptance,
-Innovation,
-Lower Costs,
-Transparency,
-Automatability,
-Portability,
-Monetization,
-and Rapid, widespread adoption.
+Rapid, widespread adoption.
             </dd>
             <dt>Motivation</dt>
             <dd>
-&nbsp;
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
-&nbsp;
+The purchase and delivery of physical goods via an online marketplace is one
+of the cornerstones of online commerce.
             </dd>
           </dl>
-        </section>
 
-        <section>
-          <h5>Medium Priority</h5>
           <dl class="dl-horizontal">
-            <dt></dt>
+            <dt>Virtual Goods</dt>
             <dd>
-&nbsp;
+When Lilith buys music from a band at MusicBox and then goes to their
+website to download additional content, no account is required, just a
+proof of purchase that is sent to the band's website, after which the site
+gives Lilith a link to download the additional content.
             </dd>
             <dt>Goals</dt>
             <dd>
-Increased user choice,
 Improved user experience,
 Greater security,
 Minimal standardization,
-Regulatory acceptance,
 Innovation,
-Lower Costs,
-Transparency,
 Automatability,
-Portability,
-Monetization,
-and Rapid, widespread adoption.
+Portability, and
+Monetization.
             </dd>
             <dt>Motivation</dt>
             <dd>
-&nbsp;
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
-&nbsp;
+Delivery of product can happen on any site that accepts a proof of purchase
+that contains a recognized product identifier.
             </dd>
           </dl>
         </section>
 
-        <section>
-          <h5>Low Priority</h5>
-          <dl class="dl-horizontal">
-            <dt></dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Goals</dt>
-            <dd>
-Increased user choice,
-Improved user experience,
-Greater security,
-Minimal standardization,
-Regulatory acceptance,
-Innovation,
-Lower Costs,
-Transparency,
-Automatability,
-Portability,
-Monetization,
-and Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
-&nbsp;
-            </dd>
-          </dl>
-
-        </section>
       </section>
 
       <section>
@@ -1772,114 +1621,67 @@ and Rapid, widespread adoption.
         <section>
           <h5>High Priority</h5>
           <dl class="dl-horizontal">
-            <dt></dt>
+            <dt>Electronic Receipts</dt>
             <dd>
-&nbsp;
+George pulls up to a pump at a petrol station. He pays electronically using a
+credit card (via his phone). An electronic receipt for the purchase from the
+gas station is displayed on his phone.
             </dd>
             <dt>Goals</dt>
             <dd>
-Increased user choice,
 Improved user experience,
 Greater security,
-Minimal standardization,
-Regulatory acceptance,
 Innovation,
-Lower Costs,
-Transparency,
-Automatability,
-Portability,
-Monetization,
-and Rapid, widespread adoption.
+Automatability, and
+Portability.
             </dd>
             <dt>Motivation</dt>
             <dd>
-&nbsp;
+Electronic receipts will make it easier to track expenses, prove that
+certain purchases were made, file taxes, and simplify management of
+unnecessary paper.
             </dd>
             <dt>Privacy / Security</dt>
             <dd>
-&nbsp;
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
-&nbsp;
+Many merchants want to ensure that receipts are not readable by any party
+between them and their customer.
             </dd>
           </dl>
-        </section>
 
-        <section>
-          <h5>Medium Priority</h5>
           <dl class="dl-horizontal">
-            <dt></dt>
+            <dt>Physical Receipts</dt>
             <dd>
-&nbsp;
+Bongani reserves a bus ticket online using his mobile phone. At the bus
+terminal he taps his phone to a kiosk and receives a printed physical receipt
+that he can use on the bus.
             </dd>
             <dt>Goals</dt>
             <dd>
-Increased user choice,
 Improved user experience,
-Greater security,
-Minimal standardization,
-Regulatory acceptance,
 Innovation,
-Lower Costs,
-Transparency,
-Automatability,
-Portability,
-Monetization,
+Portability, and
 and Rapid, widespread adoption.
             </dd>
             <dt>Motivation</dt>
             <dd>
-&nbsp;
+There will be a transition period from the use of physical receipts and
+tickets to digital receipts. In some cases, physical receipts may never be
+replaced, so it is important to ensure that digital receipts have a mechanism
+to be transformed to physical receipts.
             </dd>
             <dt>Privacy / Security</dt>
             <dd>
-&nbsp;
+Physical receipts should ensure that private information is not
             </dd>
-            <dt>Exceptions</dt>
+            <dt>Accessibility</dt>
             <dd>
-&nbsp;
+Implementations should ensure that people who have visual disabilities have
+options such as braile output for physical receipts along-side high-contrast /
+large print lettering.
             </dd>
           </dl>
         </section>
 
-        <section>
-          <h5>Low Priority</h5>
-          <dl class="dl-horizontal">
-            <dt></dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Goals</dt>
-            <dd>
-Increased user choice,
-Improved user experience,
-Greater security,
-Minimal standardization,
-Regulatory acceptance,
-Innovation,
-Lower Costs,
-Transparency,
-Automatability,
-Portability,
-Monetization,
-and Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
-&nbsp;
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
-&nbsp;
-            </dd>
-          </dl>
-
-        </section>
       </section>
 
     </section>
