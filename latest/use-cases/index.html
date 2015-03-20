@@ -121,7 +121,7 @@ This document provides future W3C Working Groups with specific Web Payment
 scenarios that that should be natively supported by the Open Web Platform,
 which is expected to reach at least 6 billion people by the year 2020.
 The payment process is described in several phases. Each phase contains a
-set of detailed steps. Each step contains multiple micro use cases
+set of detailed steps. Each step contains multiple use cases
 that are intended to be expemplary of the sort of interaction that is
 required from payers, payees, merchants, customers, browsers, devices, and
 other participants in a Web-based payment.
@@ -150,7 +150,7 @@ This document provides future W3C Working Groups with specific Web Payment
 scenarios that that should be natively supported by the Open Web Platform,
 which is expected to reach at least 6 billion people by the year 2020.
 The payment process is described in several phases. Each phase contains a
-set of detailed steps. Each step contains multiple micro use cases
+set of detailed steps. Each step contains multiple use cases
 that are intended to be expemplary of the sort of interaction that is
 required from payers, payees, merchants, customers, browsers, devices, and
 other participants in a Web-based payment.
@@ -572,92 +572,89 @@ transaction.
       <section>
         <h4>Discovery of Offer</h4>
 
-        <section>
-          <h5>High Priority</h5>
-
-          <dl class="dl-horizontal">
-            <dt>Website</dt>
-            <dd>
+        <dl class="dl-horizontal">
+          <dt>Website</dt>
+          <dd>
 Penny uses the HobbyCo website to select a $15 model train for purchase.
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 This is the most common type of offer on the Web circa 2015 and is included
 for the sake of completeness.
-            </dd>
-          </dl>
+          </dd>
+        </dl>
 
-          <dl class="dl-horizontal">
-            <dt>Point of Sale Kiosk</dt>
-            <dd>
+        <dl class="dl-horizontal">
+          <dt>Point of Sale Kiosk</dt>
+          <dd>
 Cory shops for groceries at his local ChowMart, scans all of the items he
 wants to purchase at the automated kiosk, and is presented with a
 total amount.
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Improved user experience, and Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 Unifying POS interaction w/ the Web Payments architecture is vital for the
 success of this work.
-            </dd>
-            <dt>Privacy</dt>
-            <dd>
+          </dd>
+          <dt>Privacy</dt>
+          <dd>
 Cory shouldn't be able to be tracked unless he uses a loyalty card to pay.
-            </dd>
-          </dl>
+          </dd>
+        </dl>
 
-          <dl class="dl-horizontal">
-            <dt>Mobile</dt>
-            <dd>
+        <dl class="dl-horizontal">
+          <dt>Mobile</dt>
+          <dd>
 Daniel takes a taxi from the airport to his hotel. The taxi driver
 displays the total with his mobile device and uses a tap-to-pay option.
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Improved user experience, Greater security, Innovation, Automatability, and
 Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 Unifying the way tap-to-pay offers work with the Web Payments architecture
 would help ensure ubiquity.
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
+          </dd>
+          <dt>Exceptions</dt>
+          <dd>
 No mobile phone connectivity (visiting a different country, taxi stops
 out of range of a mobile network, etc.)
-            </dd>
-          </dl>
+          </dd>
+        </dl>
 
-          <dl class="dl-horizontal">
-            <dt>Freemium</dt>
-            <dd>
+        <dl class="dl-horizontal">
+          <dt>Freemium</dt>
+          <dd>
 Ricki plays his favorite native app game and wants to upgrade his avatar
 with a few extra power ups. Clicking on a power-up displays the price of
 the power up.
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Improved user experience, Innovation, and Transparency.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 Many of the very successful games these days run on the freemium model,
 but are tied to specific app stores. Providing an app-store agnostic
 mechanism to pay for items in freemium games would give players and
 developers more choices.
-            </dd>
-          </dl>
-        </section>
+          </dd>
+        </dl>
+
         <section>
-          <h5>Medium Priority</h5>
+          <h5>Non-Essential Use Cases</h5>
 
           <dl class="dl-horizontal">
             <dt>E-mail</dt>
@@ -736,10 +733,6 @@ The in-vehicle application should require a second factor of authentication
 before allowing any purchases to be initiated by the vehicle.
             </dd>
           </dl>
-
-        </section>
-        <section>
-          <h5>Low Priority</h5>
 
           <dl class="dl-horizontal">
             <dt>Machine Readability</dt>
@@ -833,73 +826,69 @@ extending their sales channels into vehicles.
         <p>
         </p>
 
-        <section>
-          <h5>High Priority</h5>
-          <dl class="dl-horizontal">
-            <dt>Privacy Protection</dt>
-            <dd>
+        <dl class="dl-horizontal">
+          <dt>Privacy Protection</dt>
+          <dd>
 Tibor orders assorted chocolates from CandyCo. CandyCo only needs Tibor's
 verified shipping address to send him the chocolates. With Tibor's
 authorization, his payment software transmits only his shipping address to
 CandyCo. Tibor's privacy is protected from the candy store, which did not
 require Tibor's name, email address, or any other personally identifying
 information to complete the transaction.
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Improved user experience, and Greater security.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 Certain low-value transactions shouldn't require the
 <tref>payer</tref> to divulge personal information that is not necessary
 to complete the transaction.
-            </dd>
-          </dl>
+          </dd>
+        </dl>
 
-          <dl class="dl-horizontal">
-            <dt>Need to Know</dt>
-            <dd>
+        <dl class="dl-horizontal">
+          <dt>Need to Know</dt>
+          <dd>
 PayCo is required to keep a certain amount of information on their customers
 for anti-money laundering / know your customer regulatory purposes. When a
 <tref>payer</tref> performs a transaction with a <tref>payee</tref>, PayCo
 would like to reduce the amount of information that's transmitted to the
 <tref>payee</tref> while ensuring that PayCo stays compliant with regulations.
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Greater security, and Regulatory acceptance.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 There are types of information, such as personally identifiable information,
 that <tref title="payee">payees</tref> do not need to know for some
 transactions. Limiting sensitive information to be transmitted to entities
 involved in a payment on a purely need-to-know basis increases security
 while ensuring regulatory compliance.
-            </dd>
-          </dl>
+          </dd>
+        </dl>
 
-          <dl class="dl-horizontal">
-            <dt>One-time Payment</dt>
-            <dd>
+        <dl class="dl-horizontal">
+          <dt>One-time Payment</dt>
+          <dd>
 Jamie wishes to pay for a single article from a market analyst.
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Improved user experience
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 <tref title="payer">Payers</tref> should be able to understand if a
 particular purchase is a one-time payment prior to initiating the payment.
-            </dd>
-          </dl>
-
-        </section>
+          </dd>
+        </dl>
 
         <section>
-          <h5>Medium Priority</h5>
+          <h5>Non-essential Use Cases</h5>
 
           <dl class="dl-horizontal">
             <dt>Subscription</dt>
@@ -920,10 +909,6 @@ particular purchase is a recurring payment prior to initiating the payment.
             </dd>
           </dl>
 
-        </section>
-
-        <section>
-          <h5>Low Priority</h5>
           <dl class="dl-horizontal">
             <dt>Full Disclosure</dt>
             <dd>
@@ -955,43 +940,40 @@ easily and automatically transmitted over the Web.
         <p>
         </p>
 
-        <section>
-          <h5>Medium Priority</h5>
-          <dl class="dl-horizontal">
-            <dt>Coupons</dt>
-            <dd>
+        <dl class="dl-horizontal">
+          <dt>Coupons</dt>
+          <dd>
 JustPopcorn sends Marco a special discount offer given Marco's past purchases.
 The offer takes the form of a coupon that may be applied during payment.
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Automatability, and Portability,
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 Providing a mechanism to apply digital coupons before a payment is initiated
 helps price conscious customers as well as merchants attempting to research
 price sensitivity.
-            </dd>
-          </dl>
+          </dd>
+        </dl>
 
-          <dl class="dl-horizontal">
-            <dt>Loyalty Cards</dt>
-            <dd>
+        <dl class="dl-horizontal">
+          <dt>Loyalty Cards</dt>
+          <dd>
 Terry uses his FoodCo loyalty card when purchasing his weekly groceries, which
 gives him a discount on gas purchases performed at the FoodCo gas station.
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Improved user experience, and Portability,
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 Loyalty cards may be used at multiple locations to augment the price of a
 particular good.
-            </dd>
-          </dl>
-        </section>
+          </dd>
+        </dl>
 
       </section>
 
@@ -1008,52 +990,48 @@ particular good.
         <p>
         </p>
 
-        <section>
-          <h5>High Priority</h5>
-          <dl class="dl-horizontal">
-            <dt>Ubiquitous Schemes</dt>
-            <dd>
+        <dl class="dl-horizontal">
+          <dt>Ubiquitous Schemes</dt>
+          <dd>
 A game store Web site accepts payment via credit card, echeck, and
 operator billing.
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Increased user choice,
 Improved user experience,
 Minimal standardization,
 Lower Costs,
 Automatability,
 and Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 Existing ubiquitous payment schemes must be supported with no changes to the
 operation of the payment scheme.
-            </dd>
-          </dl>
+          </dd>
+        </dl>
 
-          <dl class="dl-horizontal">
-            <dt>Emerging Schemes</dt>
-            <dd>
+        <dl class="dl-horizontal">
+          <dt>Emerging Schemes</dt>
+          <dd>
 CrowdFundCo supports Bitcoin, Ripple, Google Wallet, and PayPal.
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Increased user choice,
 Improved user experience,
 Minimal standardization,
 Lower Costs,
 Automatability,
 and Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 The same mechanism used to support existing payment schemes should also be
 able to support emerging schemes.
-            </dd>
-          </dl>
-
-        </section>
+          </dd>
+        </dl>
 
       </section>
 
@@ -1062,77 +1040,75 @@ able to support emerging schemes.
         <p>
         </p>
 
-        <section>
-          <h5>High Priority</h5>
-          <dl class="dl-horizontal">
-            <dt>Manual Selection</dt>
-            <dd>
-              <ul>
-                <li>
+        <dl class="dl-horizontal">
+          <dt>Manual Selection</dt>
+          <dd>
+            <ul>
+              <li>
 Marie has credit cards from three different institutions:
 one for work (from BankA), one personal card (from BankB), and one retail card
 from PayCo. She wants to choose the right one depending on the context of her
 purchase.
-                </li>
-                <li>
+              </li>
+              <li>
 Claire has multiple credit cards from the same bank as well as one debit card.
-                </li>
-                <li>
+              </li>
+              <li>
 Veronique wants to use a cryptocurrency in some cases (e.g.,
 peer-to-peer payments).
-                </li>
-                <li>
+              </li>
+              <li>
 Seth participates in a loyalty program with his local grocery store and
 can apply a variety of digital coupons when he visits the store.
 <span class="issue">Is a loyalty card a payment instrument, or a credential?
 </span>
-                </li>
-                <li>
+              </li>
+              <li>
 David wants to be able to manually order available payment instruments
 when they are presented to him.
 <span class="issue">Why? Isn't this just a part of the wallet UI?</span>
-                </li>
-              </ul>
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+              </li>
+            </ul>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Increased user choice,
 Improved user experience,
 Innovation,
 Transparency,
 Portability,
 and Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 There are scenarios, such as the first interaction/use of a payment instrument,
 where selection of the payment instrument won't be able to be performed
 automatically.
-            </dd>
-          </dl>
+          </dd>
+        </dl>
 
-          <dl class="dl-horizontal">
-            <dt>Automatic Selection</dt>
-            <dd>
-              <ul>
-	              <li>
+        <dl class="dl-horizontal">
+          <dt>Automatic Selection</dt>
+          <dd>
+            <ul>
+              <li>
 PayCo wants Elizabeth to know that if she pays with the debit card preferred
 by PayCo (because of a lower transaction fee for PayCo), she will get a
 discount.
-                </li>
-	              <li>
+              </li>
+              <li>
 Whenever Mary shops at BigFreshGrocery she wants to use the same credit card,
 so payment should happen with that card automatically when she puts her
 phone near the checkout terminal or when purchasing groceries online.
-                </li>
-  	            <li>
+              </li>
+	            <li>
 Lalana wants to see the instruments she most often uses earlier in the list
 of available instruments.
-	              </li>
-	            </ul>
-	          </dd>
-            <dt>Goals</dt>
-            <dd>
+              </li>
+            </ul>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Increased user choice,
 Improved user experience,
 Innovation,
@@ -1140,50 +1116,48 @@ Lower Costs,
 Transparency,
 Automatability,
 and Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 When a <tref title="payer">payer's</tref> personal preferences are known by
 their devices, it becomes possible to make selections for them automatically.
-            </dd>
-          </dl>
+          </dd>
+        </dl>
 
-          <dl class="dl-horizontal">
-            <dt>Payer Privacy</dt>
-            <dd>
-              <ul>
-                <li>
+        <dl class="dl-horizontal">
+          <dt>Payer Privacy</dt>
+          <dd>
+            <ul>
+              <li>
 Lucio sends information about instruments he is willing to use to
 TrustedMerchant, who provides a discount for access to his information.
-                </li>
-                <li>
+              </li>
+              <li>
 Carla does not want to share information about the payment instruments she
 uses with any merchants, so that information is not shared with any online
 merchants.
-                </li>
-              </ul>
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+              </li>
+            </ul>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Increased user choice,
 Improved user experience,
 Innovation, and
 Monetization.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 Sharing or protecting data on the sorts of payment instruments available to
 a <tref>payer</tref> should be a decision made by the <tref>payer</tref>.
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
+          </dd>
+          <dt>Privacy / Security</dt>
+          <dd>
 The types of payment instruments available to a <tref>payer</tref> could be
 used to digitally fingerprint a <tref>payer</tref> even if they were using an
 pseudo-anonymous payment mechanism.
-            </dd>
-          </dl>
-
-        </section>
+          </dd>
+        </dl>
 
       </section>
 
@@ -1192,35 +1166,32 @@ pseudo-anonymous payment mechanism.
         <p>
         </p>
 
-        <section>
-          <h5>High Priority</h5>
-
-          <dl class="dl-horizontal">
-            <dt>Multi-Factor</dt>
-            <dd>
-              <ul>
-                <li>
+        <dl class="dl-horizontal">
+          <dt>Multi-Factor</dt>
+          <dd>
+            <ul>
+              <li>
 When Ian selects his debit card, he is prompted for a PIN.
-                </li>
-                <li>
+              </li>
+              <li>
 Wes has configured his debit card to require a fingerprint scan from his
 mobile device and a Universal Two Factor (U2F) device to be used when
 performing a purchase over $1,000.
-                </li>
-                <li>
+              </li>
+              <li>
 Frederic taps his phone at the grocery store to pay, and BankA sends him a
 one-time password (OTP) on his mobile phone that he enters in a keypad at
 the checkout counter.
-                </li>
-                <li>
+              </li>
+              <li>
 Nadia's bank asks her to use her two-factor authentication device and at
 least one of their in-branch retinal scanners or palm-vein readers
 before she is allowed to withdraw $25,000.
-                </li>
-              </ul>
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+              </li>
+            </ul>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Increased user choice,
 Improved user experience,
 Greater security,
@@ -1228,46 +1199,44 @@ Minimal standardization,
 Regulatory acceptance,
 Innovation,
 and Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 Different authentication scenarios will require different authentication
 devices. It is important that the array of authentication devices used for
 multi-factor authentication supports what exists today, but is not
 limited to only what exists today.
-            </dd>
-            <dt>Accessibility</dt>
-            <dd>
+          </dd>
+          <dt>Accessibility</dt>
+          <dd>
 When requiring biometric verification, it is important to provide
 at least two (if not more) alternative mechanisms. Not everyone can provide
 fingerprints or detailed iris scans.
-            </dd>
-          </dl>
+          </dd>
+        </dl>
 
-          <dl class="dl-horizontal">
-            <dt>KYC / AML</dt>
-            <dd>
+        <dl class="dl-horizontal">
+          <dt>KYC / AML</dt>
+          <dd>
 PayCo must ensure that their customers do not appear on any regulatory
 blacklists when performing transactions above a certain monetary amount.
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Regulatory acceptance, and Automatability.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 Easing regulatory compliance with respect to Know Your Customer (KYC) and
 Anti-Money Laundering (AML) when accessing a payment instrument will ensure
 a safer and faster payment schemes.
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
+          </dd>
+          <dt>Exceptions</dt>
+          <dd>
 If a company detects that a customer is on an applicable blacklist, the
 transaction must not proceed.
-            </dd>
-          </dl>
-
-        </section>
+          </dd>
+        </dl>
 
       </section>
 
@@ -1283,36 +1252,34 @@ transaction must not proceed.
         <p>
         </p>
 
-        <section>
-          <h5>High Priority</h5>
-          <dl class="dl-horizontal">
-            <dt>Payee-initiated</dt>
-            <dd>
-              <ul>
-                <li>
+        <dl class="dl-horizontal">
+          <dt>Payee-initiated</dt>
+          <dd>
+            <ul>
+              <li>
 Richard's choses to pay using a credit card at FlowerFriends. FlowerFriends
 initiates payment processing using their payment processor to contacting the
 acquiring bank that handles credit card payments for FlowerFriends.
-                </li>
-                <li>
+              </li>
+              <li>
 Pitir has authorized RentSeekers to pull money out of his bank account on a
 monthly basis in order to pay his rent. RentSeekers initiates a payment using
 the ACH network to pull money from Pitir's bank account.
-                </li>
-              </ul>
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+              </li>
+            </ul>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Automatability, and Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 Payee-initiated payments, also known as "pull payments" or
 "four corner model payments", are widely deployed and utilized today. Not
 supporting this mechanism would be fatal to any potential standard.
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
+          </dd>
+          <dt>Privacy / Security</dt>
+          <dd>
 One of the biggest security flaws of payee-initiated payments is that all the
 information necessary to initiate a transaction from the
 <tref title="payer">payer's</tref> financial account is typically transmitted
@@ -1323,44 +1290,43 @@ Special attention should be paid to ensuring that this sort of broken security
 model isn't supported by a Web Payments solution. For example, at a minimum,
 credit card tokenization such as EMVCo's solution should be supported
 alongside other tokenization solutions.
-            </dd>
-          </dl>
+          </dd>
+        </dl>
 
-          <dl class="dl-horizontal">
-            <dt>Payer-initiated</dt>
-            <dd>
-              <ul>
-                <li>
+        <dl class="dl-horizontal">
+          <dt>Payer-initiated</dt>
+          <dd>
+            <ul>
+              <li>
 Once Sally has signed into PayPal to pay, PayPal initiates payment processing.
-                </li>
-                <li>
+              </li>
+              <li>
 Joakim uses his Bitcoin wallet to send money to his friend.
-                </li>
-                <li>
+              </li>
+              <li>
 Carson (in the New York City) sends money to Vladamir (in Moscow) using
 his Ripple client, which converts the currency from US Dollars to Rubels in
 transit.
-                </li>
-              </ul>
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+              </li>
+            </ul>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Improved user experience,
 Greater security,
 Innovation, and
 Automatability.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 Payer-initiated payments, also known as "push payments",
 "three-corner model payments", or "peer-to-peer payments", are fundamentally
 more secure as no information is given to the <tref>payee</tref> that would
 allow them or an attacker to replay the transaction for a different amount
 or to a different <tref>payee</tref> at a later date.
-            </dd>
-          </dl>
+          </dd>
+        </dl>
 
-        </section>
       </section>
 
       <section>
@@ -1368,30 +1334,27 @@ or to a different <tref>payee</tref> at a later date.
         <p>
         </p>
 
-        <section>
-          <h5>High Priority</h5>
-          <dl class="dl-horizontal">
-            <dt>Hold Verification</dt>
-            <dd>
+        <dl class="dl-horizontal">
+          <dt>Hold Verification</dt>
+          <dd>
 Renne checks into a hotel and is asked for a deposit for any damages to the
 room. She uses her phone to provide a proof-of-hold until she checks out of
 the hotel, at which time the hold on her funds will be released.
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Improved user experience, and Transparency.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 Delivering services or products that are difficult to "undo", such
 as performing an oil change, dispensing fuel, or renting a car or hotel
 room, are examples of situations which may require a two-part transaction.
-            </dd>
-          </dl>
-        </section>
+          </dd>
+        </dl>
 
         <section>
-          <h5>Low Priority</h5>
+          <h5>Non-essential Use Cases</h5>
           <dl class="dl-horizontal">
             <dt>Funds Verification</dt>
             <dd>
@@ -1419,32 +1382,30 @@ that they know can afford the good or service because the act of engaging the
         <p>
         </p>
 
-        <section>
-          <h5>High Priority</h5>
-          <dl class="dl-horizontal">
-            <dt>Proofs</dt>
-            <dd>
-              <ul>
-                <li>
+        <dl class="dl-horizontal">
+          <dt>Proofs</dt>
+          <dd>
+            <ul>
+              <li>
 Zhang Wei orders 10 large boxes of red envelopes from an online shop in
 Tianjin. He uses an escrow service to provide a proof of escrow to the
 online shop in order to get them to initiate the shipment.
-                </li>
-                <li>
+              </li>
+              <li>
 To protect Tibor's privacy when he purchases candy online, the store asks only
 for Tibors verified shipping address and a proof of payment to send him
 the chocolates.
-                </li>
-                <li>
+              </li>
+              <li>
 RockinRadio, SmoothSounds, and classicallyClassic are independent specialised
 music streaming services. They accept proof of purchase from each other to
 provide a track that is in their online streaming catalogue even if it was
 originally bought from another provider.
-                </li>
-              </ul>
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+              </li>
+            </ul>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Increased user choice,
 Improved user experience,
 Greater security,
@@ -1452,23 +1413,22 @@ Regulatory acceptance,
 Innovation,
 Transparency,
 Automatability, and Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 Goods and services may be released at different times depending on the type
 of transaction being performed. At times, it's safe to release a good when
 the payment network acknowledges that the funds are on their way. At other
 times, it's not safe to release a good or service until it has been proven that
 the funds are sitting in the <tref title="payee">payee's</tref> financial
 account.
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
+          </dd>
+          <dt>Exceptions</dt>
+          <dd>
 If a particular expected proof is not provided, the transaction will most
 likely fail or transition into an alternate path.
-            </dd>
-          </dl>
-        </section>
+          </dd>
+        </dl>
 
       </section>
 
@@ -1477,55 +1437,51 @@ likely fail or transition into an alternate path.
         <p>
         </p>
 
-        <section>
-          <h5>High Priority</h5>
-          <dl class="dl-horizontal">
-            <dt>Variation of Delay</dt>
-            <dd>
-              <ul>
-                <li>
+        <dl class="dl-horizontal">
+          <dt>Variation of Delay</dt>
+          <dd>
+            <ul>
+              <li>
 Sophie uses a credit card to buy some gifts for her parents and the shop has
 access to the funds in three days.
-                </li>
-                <li>
+              </li>
+              <li>
 Frank uses an electronic check to pay his rent. The rental agency has access
 to the funds in 7 days.
-                </li>
-                <li>
+              </li>
+              <li>
 Felicity has chosen Bitcoin to pay for glasses online, so the store
 that sells the glasses has almost guaranteed access to the funds within
 15 minutes.
-                </li>
-                <li>
+              </li>
+              <li>
 Vanessa uses Ripple to purchase a new work outfit in USD and funds are made
 available within a few minutes to OnlineWorkClothes in EUR.
-                </li>
-              </ul>
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+              </li>
+            </ul>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Increased user choice,
 Improved user experience,
 Transparency,
 Automatability,
 and Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 When a transaction occurs, the time it takes to transmit and receive
 funds often vary according to <tref>payment scheme</tref>.
-            </dd>
-            <dt>Exceptions</dt>
-            <dd>
+          </dd>
+          <dt>Exceptions</dt>
+          <dd>
 If the funds are sent but never received, then the <tref>payee</tref> will
 select a recourse mechanism that is included in the last transaction message.
-            </dd>
-          </dl>
-        </section>
-
+          </dd>
+        </dl>
 
         <section>
-          <h5>Medium Priority</h5>
+          <h5>Non-essential Use Cases</h5>
           <dl class="dl-horizontal">
             <dt>Notifications</dt>
             <dd>
@@ -1566,36 +1522,34 @@ received.
         <p>
         </p>
 
-        <section>
-          <h5>High Priority</h5>
-          <dl class="dl-horizontal">
-            <dt>Physical Goods</dt>
-            <dd>
+        <dl class="dl-horizontal">
+          <dt>Physical Goods</dt>
+          <dd>
 Giralt orders a bicycle for his daughter through BikeSmart online. The
 bicycle is delivered a few days later with a QRCode attached to the package
 that only Giralt can access.
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 The purchase and delivery of physical goods via an online marketplace is one
 of the cornerstones of online commerce.
-            </dd>
-          </dl>
+          </dd>
+        </dl>
 
-          <dl class="dl-horizontal">
-            <dt>Virtual Goods</dt>
-            <dd>
+        <dl class="dl-horizontal">
+          <dt>Virtual Goods</dt>
+          <dd>
 When Lilith buys music from a band at MusicBox and then goes to their
 website to download additional content, no account is required, just a
 proof of purchase that is sent to the band's website, after which the site
 gives Lilith a link to download the additional content.
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Improved user experience,
 Greater security,
 Minimal standardization,
@@ -1603,14 +1557,13 @@ Innovation,
 Automatability,
 Portability, and
 Monetization.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 Delivery of product can happen on any site that accepts a proof of purchase
 that contains a recognized product identifier.
-            </dd>
-          </dl>
-        </section>
+          </dd>
+        </dl>
 
       </section>
 
@@ -1618,69 +1571,66 @@ that contains a recognized product identifier.
         <h4>Delivery of Receipt</h4>
         <p>
         </p>
-        <section>
-          <h5>High Priority</h5>
-          <dl class="dl-horizontal">
-            <dt>Electronic Receipts</dt>
-            <dd>
+        <dl class="dl-horizontal">
+          <dt>Electronic Receipts</dt>
+          <dd>
 George pulls up to a pump at a petrol station. He pays electronically using a
 credit card (via his phone). An electronic receipt for the purchase from the
 gas station is displayed on his phone.
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Improved user experience,
 Greater security,
 Innovation,
 Automatability, and
 Portability.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 Electronic receipts will make it easier to track expenses, prove that
 certain purchases were made, file taxes, and simplify management of
 unnecessary paper.
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
+          </dd>
+          <dt>Privacy / Security</dt>
+          <dd>
 Many merchants want to ensure that receipts are not readable by any party
 between them and their customer.
-            </dd>
-          </dl>
+          </dd>
+        </dl>
 
-          <dl class="dl-horizontal">
-            <dt>Physical Receipts</dt>
-            <dd>
+        <dl class="dl-horizontal">
+          <dt>Physical Receipts</dt>
+          <dd>
 Bongani reserves a bus ticket online using his mobile phone. At the bus
 terminal he taps his phone to a kiosk and receives a printed physical receipt
 that he can use on the bus.
-            </dd>
-            <dt>Goals</dt>
-            <dd>
+          </dd>
+          <dt>Goals</dt>
+          <dd>
 Improved user experience,
 Innovation,
 Portability, and
 and Rapid, widespread adoption.
-            </dd>
-            <dt>Motivation</dt>
-            <dd>
+          </dd>
+          <dt>Motivation</dt>
+          <dd>
 There will be a transition period from the use of physical receipts and
 tickets to digital receipts. In some cases, physical receipts may never be
 replaced, so it is important to ensure that digital receipts have a mechanism
 to be transformed to physical receipts.
-            </dd>
-            <dt>Privacy / Security</dt>
-            <dd>
+          </dd>
+          <dt>Privacy / Security</dt>
+          <dd>
 Physical receipts should ensure that private information is not
-            </dd>
-            <dt>Accessibility</dt>
-            <dd>
+          </dd>
+          <dt>Accessibility</dt>
+          <dd>
 Implementations should ensure that people who have visual disabilities have
 options such as braile output for physical receipts along-side high-contrast /
 large print lettering.
-            </dd>
-          </dl>
-        </section>
+          </dd>
+        </dl>
 
       </section>
 
