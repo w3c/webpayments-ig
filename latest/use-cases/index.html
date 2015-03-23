@@ -282,11 +282,14 @@ also developing a <a href="https://www.w3.org/Payments/IG/wiki/GlossaryReference
 
   <section>
     <h2>An Overview of the Payment Phases</h2>
-    <p>
-In order to organize the use cases in this document into a form that is
-easy to comprehend, they are separated into four primary phases. The phases
-are:
-    </p>
+
+    <p>There are many types of transactions in the world of payments,
+including indvidual-to-business, business-to-business,
+government-to-individual, individual-to-goernment, and
+individual-to-individual. In this document we focus on the
+interactions between a <tref>payer</tref> and a <tref>payee</tref>,
+either of which could be a person, organization, or software
+agent), which we organize into four phases:</p>
 
     <ol>
       <li>
@@ -303,15 +306,14 @@ Delivery of Product/Receipt
       </li>
     </ol>
 
-    <p>
-This particular model focus on the interactions between a <tref>payer</tref>
-and a <tref>payee</tref>, either of which could be a person, organization, or
-software agent). This particular model does not intend to address
-the low-level exchanges between banks, card associations, or other back-end
-"payment clearing" parties in a transaction.</p>
+<p>The descriptions below only discuss the interactions between the
+payer and the payee. We do not expose the low-level exchanges between
+banks, card associations, or other back-end "payment clearing" parties
+in a transaction. Those details will be discussed in the Interest
+Group's work on architecture and
+requirements.</p>
 
-    <p>
-Each phase consists of a series of steps.
+ <p>Each phase below consists of a series of steps.
 The details of each step vary by <tref>payment scheme</tref>. Some steps may
 not be relevant at certain times (e.g., depending on
 <tref>payment scheme</tref> or <tref>transaction</tref> specifics).
@@ -329,11 +331,12 @@ approximation of the general flow of all payments, they are helpful in
 structuring the use cases such that it is easy to figure out to which part of
 the payment process a particular use case belongs.
     </p>
-    <p>
-These phases can be applied to a variety of different payment scenarios such
-as person-to-person, person-to-business, business-to-person,
-government-to-person, and so forth.
-    </p>
+
+ <p>While these four phases may apply more or less well to a variety
+of other payment scenarios such as refunds or person-to-person
+payments, those topics are not the current focus of the group.  We
+plan to address them directly in <a href="#future-work">future
+work</a>.</p>
 
     <section>
       <h3>Negotiation of Payment Terms</h3>
@@ -1909,8 +1912,12 @@ customer.
       <p>
       </p>
     </section>
-
   </section>
+
+  <section>
+    <h2 id="future-work">Future Work</h2>
+  </secton>
+
 
   <section>
     <h2>Acknowledgements</h2>
