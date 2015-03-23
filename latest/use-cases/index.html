@@ -116,16 +116,15 @@ dl > dt:first-of-type {
   </head>
 <body>
   <section id='abstract'>
-    <p>
-This document provides future W3C Working Groups with specific Web Payment
-scenarios that that should be natively supported by the Open Web Platform,
-which is expected to reach at least 6 billion people by the year 2020.
-The payment process is described in several phases. Each phase contains a
-set of detailed steps. Each step contains multiple use cases
-that are intended to be expemplary of the sort of interaction that is
-required from payers, payees, merchants, customers, browsers, devices, and
-other participants in a Web-based payment.
-    </p>
+
+    <p>This document is a prioritized list of Web payments use cases.
+    Guided by these use cases, the W3C Web Payments Interest Group
+    plans to derive architecture and associated technology
+    requirements to integrate payments into the Open Web
+    Platform. That work will form the basis of conversations with W3C
+    groups and the broader payments industry about what standards
+    (from W3C or other organizations) will be necessary to fulfill the
+    use cases and make payments over the Web easier and more secure.</p>
   </section>
 
   <section id='sotd'>
@@ -145,27 +144,80 @@ general public. Expect this document to be rapidly iterated upon.
 
   <section>
     <h2>Introduction</h2>
-    <p>
-This document provides future W3C Working Groups with specific Web Payment
-scenarios that that should be natively supported by the Open Web Platform,
-which is expected to reach at least 6 billion people by the year 2020.
-The payment process is described in several phases. Each phase contains a
-set of detailed steps. Each step contains multiple use cases
-that are intended to be expemplary of the sort of interaction that is
-required from payers, payees, merchants, customers, browsers, devices, and
-other participants in a Web-based payment.
-    </p>
-    <p>
-The purpose of this document is to employ use cases to frame what a realistic
-vision looks like for payments on the Web Platform. The end result is not
-meant to replace existing payment systems, but augment and simplify the
-interface to each system via the Web. The purpose of this
-initiative is to enable as many of the current
-<tref title="payment scheme">payment schemes</tref> in use today (such
-as electronic cheques, credit cards, direct debit, and cryptocurrencies) to be
-used more easily and securely on the Web while ensuring that future payment
-schemes could be added with little effort.
-    </p>
+
+    <p>ECommerce is thriving and continues to expand. However
+    fragmentation of payment systems is limiting the growth potential
+    as are problems —both real and perceived by consumers— such as
+    fraud and usability.</p>
+
+    <p>Because the Web is ubiquitous, strengthening support for Web
+    payments has the potential to create new opportunities for
+    businesses and consumers. Mobile devices are already transforming
+    the industry by supplanting physical payment cards in proximity
+    payments, voucher distribution, and identification when people
+    authenticate to a scanner, point of sale, or access gate. Although
+    we are seeing innovation in mobile payment systems, the lack of
+    standards makes it more difficult to adapt to new payment
+    approaches or integrate new payment providers. Fragmented
+    regulatory environments further complicate the payments landscape.</p>
+
+    <p>To achieve greater interoperability among merchants and their
+    customers, payment providers, software vendors, mobile operators,
+    and payment networks, the W3C Web Payments Interest Group is
+    developing a roadmap for standards to improve the interoperability
+    of payments on the Web, including 
+      <tref title="payment scheme">payment schemes</tref> in use today
+(such as electronic cheques, credit cards, direct debit, and
+cryptocurrencies) and those of the future. The roadmap will be derived
+from the use cases listed below.</p>
+
+    <section>
+      <h3>How this Document is Organized</h3>
+
+      <p>To explain the organization of this document, we draw
+      an analogy with the classification of animals.</p>
+
+      <ul>
+	<li>Section 2 defines basic payment terms. For animals,
+	  these would be terms like "limbs"  or "systems."</li>
+	<li>Section 3 describes a common payment flow at a high
+	  level. For animals, this would be like a high level, broadly
+	  applicable description of 
+	  "mammals." The group expects to work on additional 
+	  payment flows in future work.</li>
+	<li>Section 4 is a specific narrative, labeled according
+	  to the steps of section 3. For mammals,
+	  this would be like describing a dolphin. Section 7 describes
+	additional familiar narratives to give a more complete picture
+	  of how the payment phases apply (for mammals: elephants, mice, etc.).
+	</li>
+	<li>Section 6 lists the use cases, short scenarios that cover
+	  diverse aspects of each payment step. For animals, we might
+	  include a use case that covers arms, flippers, trunks and
+	  other examples of the diversity of limbs.</li>
+      </ul>	  
+
+      <p>Each use case has:</p>
+      <ul>
+	<li>A title and short description.</li>
+	<li>Goals. How the use case advanced one or more of the Interest Group's
+	  <a href="https://www.w3.org/Payments/IG/wiki/ExecSummary#Goals">goals
+	    for an interoperable Web payments framework</a>.</li>
+	<li>Motivation. This is commentary to help explain why the use
+	  case has been included, including how it relates to similar use cases.</li>
+	</ul>
+      
+      <p>Each use case may also have notes on:</p>
+      <ul>
+	<li>Security/Privacy. Security or privacy issues that may arise through this use case.</li>
+	<li>Exceptions. Considerations in the case of specific exceptions (e.g., if a user pays with a voucher and the transaction fails, the user's voucher should be restored).</li>
+	<li>Accessibility. Accessibility considerations (e.g., in multi-factor authentication,
+	  management of biometrics 
+	in the case of users wtih some disabilities).</li>
+      </ul>
+
+    </section>
+
   </section>
 
   <section>
