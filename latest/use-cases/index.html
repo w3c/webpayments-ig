@@ -232,7 +232,7 @@ the reader:
       <dt><tdef>entity</tdef></dt>
       <dd>
 A person, organization, or software agent that is capable of interacting with
-the world. @@Do we need this?@@
+the world.
       </dd>
       <dt><tdef>payer</tdef></dt>
       <dd>
@@ -244,50 +244,40 @@ An <tref>entity</tref> that provides a source of funds as required by a
 An <tref>entity</tref> that receives funds as required by a
 <tref>transaction</tref>.
       </dd>
-      <dt><tdef>merchant</tdef></dt>
-      <dd>
-An <tref>entity</tref> receiving payment for goods, services, or other things
-of value; abstractly known as a <tref>payee</tref>.
-      </dd>
-      <dt><tdef>customer</tdef></dt>
-      <dd>
-An <tref>entity</tref> paying to receive goods, services, or other things
-of value; abstractly known as a <tref>payer</tref>.
-      </dd>
       <dt><tdef>transaction</tdef></dt>
       <dd>
-An instance of an exchange of value such as buying or selling something.
+	An exchange of value (e.g., buying or selling something)
+      </dd>
+      <dt><tdef>purchase</tdef></dt>
+      <dd>
+	Activities surrounding and including a <tref>transaction</tref> (e.g., discovery of an offer, negotiation of terms, selection of <tref>payment instrument</tref>, delivery, etc.).
       </dd>
       <dt><tdef>payment scheme</tdef></dt>
       <dd>
 Sets of rules and technical standards for the execution of payment transactions
 that have to be followed by adhering entities
 (<tref title="payment processor">payment processors</tref>,
-<tref title="payer">payers</tref> and <tref title="payee">payees</tref>).
+<tref title="payer">payers</tref> and <tref title="payee">payees</tref>). Examples: Visa, Mastercard, Bitcoin, Ripple, PayPal, Google Pay, Alipay, Yandex money, ACH, SEPA.
       </dd>
       <dt><tdef>payment instrument</tdef></dt>
       <dd>
 A mechanism used to transfer value from a <tref>payer</tref> to a
-<tref>payee</tref>.
+<tref>payee</tref>. Examples: Corporate Visa card, personal Visa card, a bitcoin account, a PayPal account, an Alipay account, etc.
       </dd>
       <dt><tdef>payment processor</tdef></dt>
       <dd>
 Submits and processes payments using a particular
-<tref>payment instrument</tref> to a payment network.
-      </dd>
-      <dt><tdef>credential</tdef></dt>
-      <dd>
-A qualification, achievement, personal quality, aspect of an
-<tref>entity</tref>'s background, or verifiable statement by an entity about
-another entity.
-      </dd>
-      <dt><tdef>payment agent</tdef></dt>
-      <dd>
-A piece of software operating on an <tref title="entity">entity's</tref>
-behalf that is capable of executing
-<tref title="transaction">transactions</tref>.
+<tref>payment instrument</tref> to a payment network. Examples: Stripe, Authorize.net, Atos, FedACH</li>
       </dd>
     </dl>
+
+  <p><strong>Note:</strong> There are a number of industry standards that
+define payment terms. The Web Payments Interest Group has as a goal to 
+make use of industry-defined terms in its deliverables. At the same time,
+the group has as a goal that these use cases may be understood by both
+payment industry professionals and the broader Web community. Thus, our
+definitions are simplified and few in number here, but the group is
+also developing a <a href="https://www.w3.org/Payments/IG/wiki/GlossaryReference">more complete glossary</a> with more detailed definitions and mappings to industry-defined terms.</p>
   </section>
 
   <section>
@@ -749,10 +739,8 @@ of the <tref>payer</tref>.
             </dd>
             <dt>Exceptions</dt>
             <dd>
-The <tref title="payer">payer's</tref> <tref>payment agent</tref> may know
-exactly how much money the <tref>payer</tref> has and not allow them to
-process the offer.
-            </dd>
+Software acting on the<tref title="payer">payer's</tref> behalf may keep track exactly how much money the <tref>payer</tref> has and not allow them to
+process the offer.</dd>
           </dl>
 
           <dl class="dl-horizontal">
@@ -881,8 +869,10 @@ extending their sales channels into vehicles.
         <dl class="dl-horizontal">
           <dt>Credentials</dt>
           <dd>
-At times it is necessary to transmit personally identifiable information in
-order to be cleared to make a purchase:
+At times it is necessary to transmit personally identifiable information 
+(e.g., about a qualification, achievement, personal quality, aspect of an
+<tref>entity</tref>'s background, or verifiable statement by an entity about
+another entity) in order to be cleared to make a purchase:
             <ul>
               <li>
 PharmCo will not sell regulated drugs to you unless you send proof that you
