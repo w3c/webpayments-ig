@@ -36,8 +36,8 @@
           editors:  [
               { name: "Manu Sporny", url: "https://manu.sporny.org/",
                 company: "Digital Bazaar, Inc.", companyURL: "http://digitalbazaar.com/" },
-              { name: "Katie Haritos-Shea", url: "https://www.linkedin.com/in/katieharitosshea",
-                company: "W3C Invited Expert", companyURL: "http://www.w3.org/Payments/IG/" },
+              { name: "Ian Jacobs", url: "http://www.w3.org/People/Jacobs/",
+                company: "W3C", companyURL: "http://www.w3.org/" },
           ],
 
           // authors, add as many as you like.
@@ -168,7 +168,7 @@ general public. Expect this document to be rapidly iterated upon.
     customers, payment providers, software vendors, mobile operators,
     and payment networks, the W3C Web Payments Interest Group is
     developing a roadmap for standards to improve the interoperability
-    of payments on the Web, including 
+    of payments on the Web, including
       <tref title="payment scheme">payment schemes</tref> in use today
 (such as electronic cheques, credit cards, direct debit, and
 cryptocurrencies) and those of the future. The roadmap will be derived
@@ -185,8 +185,8 @@ from the use cases listed below.</p>
 	  these would be terms like "limbs"  or "systems."</li>
 	<li>Section 3 describes a common payment flow at a high
 	  level. For animals, this would be like a high level, broadly
-	  applicable description of 
-	  "mammals." The group expects to work on additional 
+	  applicable description of
+	  "mammals." The group expects to work on additional
 	  payment flows in future work.</li>
 	<li>Section 4 is a specific narrative, labeled according
 	  to the steps of section 3. For mammals,
@@ -198,7 +198,7 @@ from the use cases listed below.</p>
 	  diverse aspects of each payment step. For animals, we might
 	  include a use case that covers arms, flippers, trunks and
 	  other examples of the diversity of limbs.</li>
-      </ul>	  
+      </ul>
 
       <p>Each use case has:</p>
       <ul>
@@ -209,13 +209,13 @@ from the use cases listed below.</p>
 	<li>Motivation. This is commentary to help explain why the use
 	  case has been included, including how it relates to similar use cases.</li>
 	</ul>
-      
+
       <p>Each use case may also have notes on:</p>
       <ul>
 	<li>Security/Privacy. Security or privacy issues that may arise through this use case.</li>
 	<li>Exceptions. Considerations in the case of specific exceptions (e.g., if a user pays with a voucher and the transaction fails, the user's voucher should be restored).</li>
 	<li>Accessibility. Accessibility considerations (e.g., in multi-factor authentication,
-	  management of biometrics 
+	  management of biometrics
 	in the case of users wtih some disabilities).</li>
       </ul>
 
@@ -277,7 +277,7 @@ Submits and processes payments using a particular
     </dl>
 
   <p><strong>Note:</strong> There are a number of industry standards that
-define payment terms. The Web Payments Interest Group has as a goal to 
+define payment terms. The Web Payments Interest Group has as a goal to
 make use of industry-defined terms in its deliverables. At the same time,
 the group has as a goal that these use cases may be understood by both
 payment industry professionals and the broader Web community. Thus, our
@@ -877,7 +877,7 @@ extending their sales channels into vehicles.
         <dl class="dl-horizontal">
           <dt>Credentials</dt>
           <dd>
-At times it is necessary to transmit personally identifiable information 
+At times it is necessary to transmit personally identifiable information
 (e.g., about a qualification, achievement, personal quality, aspect of an
 <tref>entity</tref>'s background, or verifiable statement by an entity about
 another entity) in order to be cleared to make a purchase:
@@ -1897,11 +1897,91 @@ customer.
     <section>
       <h3>Bitcoin Payment</h3>
       <p>
+The following scenario outlines an ideal payment experience using Bitcoin, or a
+Bitcoin-like, cryptocurrency. In this scenario, Lenne is buying a pair of
+alpaca socks from an online retailer using a buy one get another free coupon.
+The socks are shipped to her home address.
+      </p>
+
+      <h4>Negotiation of Purchase Terms</h4>
+
+      <p>
+<strong>Discovery of Offer</strong>: Lenne searches for "warm socks,
+locally sourced" in her favorite search engine. A pair of Alpaca socks come up
+as the first hit as the Alpaca's are nearby where she lives and the online
+store provides local delivery. She has a coupon in her wallet for the store
+that she picked up several months ago and forgot she had.
+      </p>
+
+      <p>
+<strong>Agreement on Terms</strong>: Lenne goes to AlpacaToesCo and puts the
+socks in her online shopping cart and is shown the price. Lenne provides her
+shipping address to AlpacaToes.
+      </p>
+
+      <p>
+<strong>Application of Marketing Elements</strong>: When Lenne puts the socks
+in her online shopping cart, she's reminded of the "Buy one, get one" coupon
+she has in her wallet. She adds another pair of socks and continues with the
+checkout process.
+      </p>
+
+      <h4>Negotiation of Payment Instruments</h4>
+
+      <p>
+<strong>Discovery of Accepted Schemes</strong>: The website takes VISA,
+Ripple, and Bitcoin for payment.
+      </p>
+
+      <p>
+<strong>Selection of Payment Instruments</strong>: Lenne has a VISA card
+as well as a local Ripple wallet and a cloud-based Bitcoin wallet. Lenne
+selects her cloud-based Bitcoin wallet.
+      </p>
+
+      <p>
+<strong>Authentication to Access Instruments</strong>: Since the value of the
+payment is less than $50, Lenne isn't asked for her two-factor authentication
+device to approve the purchase.
+      </p>
+
+      <h4>Payment Processing</h4>
+
+      <p>
+<strong>Initiation of Processing</strong>: Lenne's cloud-based Bitcoin wallet
+provider initiates the transaction.
+        </p>
+	      <p>
+<strong>Verification of Available Funds</strong>: <em>Not applicable to
+this particular use case.</em>
+        </p>
+	      <p>
+<strong>Authorization of Transfer</strong>: AlpacaToesCo is sent a message
+from the Bitcoin cloud wallet notifying them that the transfer has been
+initiated.
+        </p>
+	      <p>
+<strong>Completion of Transfer</strong>: AlpacaToesCo gets a message from the
+Bitcoin cloud wallet that the transfer is complete. A Bitcoin transaction ID
+is included in the message so that AlpacaToesCo can release the product when
+the appropriate number of verifications are made on the transaction.
+        </p>
+
+      <h4>Delivery of Product/Receipt</h4>
+
+      <p>
+<strong>Delivery of Receipt</strong>: AlpacaToesCo sees 6 verifications on the
+transaction in the Bitcoin blockchain and sends a receipt of sale to Lenne's
+cloud wallet.
+      </p>
+
+      <p>
+<strong>Delivery of Product</strong>: AlpacaToesCo ships the package of socks
+to Lenne.
       </p>
     </section>
 
-    <section>
-      <h3>Person to Person Cash Payment</h3>
+      <h4>Person to Person Cash Payment</h4>
       <p>
       </p>
     </section>
@@ -1909,7 +1989,7 @@ customer.
   </section>
 
   <section>
-    <h2 id="future-work">Future Work</h2>
+    <h2>Future Work</h2>
 
     <section>
       <h3>Automatic Tax Payment</h3>
