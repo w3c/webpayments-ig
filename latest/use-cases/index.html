@@ -118,16 +118,18 @@ dl > dt:first-of-type {
     </style>
   </head>
 <body>
-  <section id='abstract'>
 
-    <p>This document is a prioritized list of Web payments use cases.
-    Guided by these use cases, the W3C Web Payments Interest Group
-    plans to derive architecture and associated technology
-    requirements to integrate payments into the Open Web
-    Platform. That work will form the basis of conversations with W3C
-    groups and the broader payments industry about what standards
-    (from W3C or other organizations) will be necessary to fulfill the
-    use cases and make payments over the Web easier and more secure.</p>
+  <section id='abstract'>
+    <p>
+This document is a prioritized list of Web payments use cases.
+Guided by these use cases, the W3C Web Payments Interest Group
+plans to derive architecture and associated technology
+requirements to integrate payments into the Open Web
+Platform. That work will form the basis of conversations with W3C
+groups and the broader payments industry about what standards
+(from W3C or other organizations) will be necessary to fulfill the
+use cases and make payments over the Web easier and more secure.
+    </p>
   </section>
 
   <section id='sotd'>
@@ -135,81 +137,155 @@ dl > dt:first-of-type {
 This document is a work in progress and is being released early and often
 using an agile process; it is incomplete.
     </p>
-	<p>
+  <p>
 The Web Payments IG has only had the opportunity to review a handful of the
 40+ use cases, 120+ requirements, and hundreds of pages of
 payments research submitted to the group via various other standards group
 output such as ISO20022, research documents from X9 and the US Federal Reserve,
 documents from the Web Payments Community Group, and input from the
-general public. Expect this document to be rapidly iterated upon.
+general public. Our desire is to align with the larger payments industry
+when it's possible to do so. Expect this document to be rapidly iterated upon
+with that desire in mind.
     </p>
   </section>
 
   <section>
     <h2>Introduction</h2>
 
-    <p>ECommerce is thriving and continues to expand. However
-    fragmentation of payment systems is limiting the growth potential
-    as are problems —both real and perceived by consumers— such as
-    fraud and usability.</p>
+    <p>
+ECommerce is thriving and continues to expand. However
+fragmentation of payment systems is limiting the growth potential
+as are problems —both real and perceived— such as
+fraud and usability.
+    </p>
 
-    <p>Because the Web is ubiquitous, strengthening support for Web
-    payments has the potential to create new opportunities for
-    businesses and consumers. Mobile devices are already transforming
-    the industry by supplanting physical payment cards in proximity
-    payments, voucher distribution, and identification when people
-    authenticate to a scanner, point of sale, or access gate. Although
-    we are seeing innovation in mobile payment systems, the lack of
-    standards makes it more difficult to adapt to new payment
-    approaches or integrate new payment providers. Fragmented
-    regulatory environments further complicate the payments landscape.</p>
+    <p>
+Because the Web is ubiquitous, strengthening support for Web
+payments has the potential to create new opportunities for
+businesses and customers. Mobile devices are already transforming
+the industry by supplanting physical payment cards in proximity
+payments, voucher distribution, and identification when people
+authenticate to a scanner, point of sale, or access gate. Although
+we are seeing innovation in mobile payment systems, the lack of
+standards makes it more difficult to adapt to new payment
+approaches or integrate new payment providers.
+    </p>
 
-    <p>To achieve greater interoperability among merchants and their
-    customers, payment providers, software vendors, mobile operators,
-    and payment networks, the W3C Web Payments Interest Group is
-    developing a roadmap for standards to improve the interoperability
-    of payments on the Web, including
-      <tref title="payment scheme">payment schemes</tref> in use today
+    <p>
+To achieve greater interoperability among merchants and their
+customers, payment providers, software vendors, mobile operators,
+and payment networks, the W3C Web Payments Interest Group is
+developing a roadmap for standards to improve the interoperability
+of payments on the Web, including
+<tref title="payment scheme">payment schemes</tref> in use today
 (such as electronic cheques, credit cards, direct debit, and
 cryptocurrencies) and those of the future. The roadmap will be derived
-from the use cases listed below.</p>
+from the use cases listed below.
+    </p>
+
+    <section>
+      <h3>Why This Work is Important</h3>
+      <p>
+There are many people around the world that today's financial system does not
+reach. These people are called the world's unbanked (or underbanked). The
+unbanked often live paycheck to paycheck, do not have access to savings
+accounts or low-fee check cashing services, lines of credit, or a way of saving
+for their future. Being unable to plan for one's financial future often results
+in short-term thinking, which creates a viscious cycle of not being able to
+escape one's situation. Not being able to participate in the financial system
+creates unintended inequities that create waste and results in a net loss
+for society.
+      </p>
+      <p>
+However, some of the shortcomings of today's financial system could be
+addressed via technological improvements. For example, there is a considerable
+overlap between the unbanked and underbanked population and access to advanced
+mobile phones and the Web. If financial services could be provided via the
+Web in a standardized way to people with mobile phones, we could start to see
+an improvement in the lives of these individuals and families.
+      </p>
+      <p>
+The Web Payments work is not just about making payments easier, faster,
+more secure, and more innovative. Extending the current financial system to
+reach further helps an ever increasing number of people plan for their future,
+become long-term thinkers, and thus contributes to a greater net gain
+for society.
+      </p>
+    </section>
 
     <section>
       <h3>How this Document is Organized</h3>
 
-      <p>The document is organized as follows:</p>
+      <p>
+This document is organized as follows:
+      </p>
 
       <ul>
-	<li>Section 2 defines basic payment terms.</li>
-	<li>Section 3 describes a common payment flow at a high
-	  level. The group expects to work on additional
-	  payment flows in <a href="#future-work">future work</a>.</li>
-	<li>Section 4 is a specific narrative, labeled according
-	  to the steps of section 3.</li>
-	<li>Section 6 lists the use cases, short scenarios that cover
-	  diverse aspects of each payment step.</li>
+        <li>
+Section 2 defines basic payment terms.
+        </li>
+        <li>
+Section 3 describes a common payment flow at a high
+level. The group expects to work on additional
+payment flows in future work.
+        </li>
+        <li>
+Section 4 is a specific narrative, labeled according
+to the steps of section 3. Section 7 describes
+additional familiar narratives to give a more complete picture
+of how the payment phases apply.
+        </li>
+        <li>
+Section 6 lists the use cases, short scenarios that cover
+diverse aspects of each payment step.
+        </li>
       </ul>
 
-      <p>Each use case has:</p>
+      <p>
+Each use case has:
+      </p>
       <ul>
-	<li>A title and short description.</li>
-	<li>Goals. How the use case advanced one or more of the Interest Group's
-	  <a href="https://www.w3.org/Payments/IG/wiki/ExecSummary#Goals">goals
-	    for an interoperable Web payments framework</a>.</li>
-	<li>Motivation. This is commentary to help explain why the use
-	  case has been included, including how it relates to similar use cases.</li>
-	</ul>
-
-      <p>Each use case may also have notes on:</p>
-      <ul>
-	<li>Security/Privacy. Security or privacy issues that may arise through this use case.</li>
-	<li>Exceptions. Considerations in the case of specific exceptions (e.g., if a user pays with a voucher and the transaction fails, the user's voucher should be restored).</li>
-	<li>Accessibility. Accessibility considerations (e.g., in multi-factor authentication,
-	  management of biometrics
-	in the case of users wtih some disabilities).</li>
+        <li>
+A title and short description.
+        </li>
+        <li>
+Goals. How the use case advances one or more of the
+<a href="https://www.w3.org/Payments/IG/wiki/ExecSummary#Goals">goals
+for an interoperable Web payments framework</a>.
+        </li>
+        <li>
+Motivation. This is commentary to help explain why the use
+case has been included, including how it relates to similar use cases.
+        </li>
       </ul>
 
-      <p>The Interest Group (currently) regards some of the use cases as "essential" to addressing their <a href="https://www.w3.org/Payments/IG/wiki/ExecSummary#Goals">goals</a> and others as "non-essential."</p>
+      <p>
+Each use case may also have notes on:
+      </p>
+
+      <ul>
+        <li>
+Security/Privacy. Security or privacy issues that may arise through this use
+case.
+        </li>
+        <li>
+Exceptions. Considerations in the case of specific exceptions (e.g., if a
+user pays with a voucher and the transaction fails, the user's voucher should
+be restored).
+        </li>
+        <li>
+Accessibility. Accessibility considerations (e.g., in multi-factor
+authentication, management of biometrics in the case of users with some
+disabilities).
+        </li>
+      </ul>
+
+      <p>
+The Interest Group (currently) regards some of the use cases as "essential" to
+addressing their
+<a href="https://www.w3.org/Payments/IG/wiki/ExecSummary#Goals">goals</a> and
+others as "non-essential."
+      </p>
 
     </section>
 
@@ -241,11 +317,11 @@ An <tref>entity</tref> that receives funds as required by a
       </dd>
       <dt><tdef>transaction</tdef></dt>
       <dd>
-	An exchange of value (e.g., buying or selling something)
+  An exchange of value (e.g., buying or selling something)
       </dd>
       <dt><tdef>purchase</tdef></dt>
       <dd>
-	Activities surrounding and including a <tref>transaction</tref> (e.g., discovery of an offer, negotiation of terms, selection of <tref>payment instrument</tref>, delivery, etc.).
+  Activities surrounding and including a <tref>transaction</tref> (e.g., discovery of an offer, negotiation of terms, selection of <tref>payment instrument</tref>, delivery, etc.).
       </dd>
       <dt><tdef>payment scheme</tdef></dt>
       <dd>
@@ -266,24 +342,29 @@ Submits and processes payments using a particular
       </dd>
     </dl>
 
-  <p><strong>Note:</strong> There are a number of industry standards that
+    <p class="note">
+There are a number of financial industry standards (such as
+ISO20022, ISO12812, various X9 standards, PCI DSS, and others) that
 define payment terms. The Web Payments Interest Group has as a goal to
 make use of industry-defined terms in its deliverables. At the same time,
 the group has as a goal that these use cases may be understood by both
 payment industry professionals and the broader Web community. Thus, our
 definitions are simplified and few in number here, but the group is
-also developing a <a href="https://www.w3.org/Payments/IG/wiki/GlossaryReference">more complete glossary</a> with more detailed definitions and mappings to industry-defined terms.</p>
+also developing a
+<a href="https://www.w3.org/Payments/IG/wiki/GlossaryReference">more complete glossary</a>
+with detailed definitions and mappings to industry-defined terms.
+    </p>
   </section>
 
   <section>
     <h2>An Overview of the Payment Phases</h2>
 
     <p>There are many types of transactions in the world of payments,
-including indvidual-to-business, business-to-business,
-government-to-individual, individual-to-goernment, and
-individual-to-individual. In this document we focus on the
+including person-to-business, business-to-business,
+government-to-person, person-to-government, and
+person-to-person. In this document we focus on the
 interactions between a <tref>payer</tref> and a <tref>payee</tref>,
-either of which could be a person, organization, or software
+either of which could be a person, business, government, or software
 agent), which we organize into four phases:</p>
 
     <ol>
@@ -313,11 +394,11 @@ The details of each step vary by <tref>payment scheme</tref>. Some steps may
 not be relevant at certain times (e.g., depending on
 <tref>payment scheme</tref> or <tref>transaction</tref> specifics).
 Some steps may happen in a slightly different order in some cases.
-For example, some, but not all, purchases involve a proof of funds or proof of
+For example, some purchases do not involve a proof of funds or proof of
 hold. ACH and SEPA payment schemes generally do not support the verification of
 available funds, thus in these payment schemes the particular proof of funds
 step is skipped.
-	</p>
+  </p>
     <p>
 It is also important to note that these phases and steps may be be interrupted
 at various times (e.g., one party drops out, or exceptions occur like
@@ -365,7 +446,7 @@ to the payment terms.
       <h3>Negotiation of Payment Instruments</h3>
       <p>
 The second phase of the payment process is used to determine which
-<tref title="payment instrument"></tref>payment instruments</tref> the
+<tref title="payment instrument">payment instruments</tref> the
 <tref>payer</tref> will use to transfer funds to the <tref>payee</tref>.
       </p>
 
@@ -379,7 +460,7 @@ of <tref title="payment instrument">payment instruments</tref> that the
         </li>
         <li>
 <strong>Selection of Payment Instruments</strong>. The <tref>payee</tref>
-selects one or more <tref title="payment instrument">payment instruments)/tref>
+selects one or more <tref title="payment instrument">payment instruments</tref>
 that are available to the <tref>payer</tref> and are accepted by the
 <tref>payee</tref>.
         </li>
@@ -401,28 +482,28 @@ The third phase of the payment process is used to initiate the transfer of
 funds. Depending on the <tref>payment instrument</tref>, the transfer of funds
 may be verified immediately or may take several days to be verified.
       </p>
- 	    <ul>
-	      <li>
+       <ul>
+        <li>
 <strong>Initiation of Processing</strong>. Depending on the
 <tref>payment instrument</tref>, the <tref>payer</tref> (e.g., when using
 PayPal), the <tref>payee</tref> (e.g., when using a credit card), or other
 party (e.g., bank) initiates processing.
         </li>
-	      <li>
+        <li>
 <strong>Verification of Available Funds</strong>. The <tref>payee</tref> may
 need to provide a proof of funds or a proof of hold to the <tref>payer</tref>
 before finalizing payment and delivery of the product.
         </li>
-	      <li>
+        <li>
 <strong>Authorization of Transfer</strong>. The <tref>payer</tref> receives
 proof that the transfer of funds has been authorized.
         </li>
-	      <li>
+        <li>
 <strong>Completion of Transfer</strong>. The <tref>payment scheme</tref>
 determines the details of payment clearing and settlement, and transfer times
 that may vary from near-realtime to multiple days.
         </li>
-	    </ul>
+      </ul>
     </section>
 
     <section>
@@ -434,14 +515,14 @@ purchased.
       </p>
 
       <ul>
-	      <li>
+        <li>
 <strong>Delivery of Product</strong>. The <tref>payer</tref> receives goods or
 services immediately, at a later date, automatically on a recurring basis,
 etc. depending on the terms of the purchase.
         </li>
-	      <li>
+        <li>
 <strong>Delivery of Receipt</strong>. Depending on the
-<tref title="payment scheme">payment scheme(s)</tref></tref>chosen, there are
+<tref title="payment scheme">payment scheme(s)</tref></tref> chosen, there are
 various ways and times that a receipt may be delivered (e.g., credit card
 receipt, digital proof of purchase, encrypted line-item receipt, etc.).
         </li>
@@ -451,9 +532,9 @@ receipt, digital proof of purchase, encrypted line-item receipt, etc.).
   </section>
 
   <section>
-    <h2 id="phase-example">A Example of the Payment Phases</h2>
+    <h2 id="phases-overview">A Simple Example of the Payment Phases</h2>
     <p>
-The following (fictional) scenario is provided to aid the reader in understanding how the
+The following scenario is provided to aid the reader in understanding how the
 phases of the payment process apply to a real world situation. In this scenario,
 we follow Jill, who seeks a new outfit for a party. She selects items from
 PayToParty, which is a brick-and-mortar store with an online presence.
@@ -461,7 +542,10 @@ She chooses how to pay and the items are delivered to her home on the
 following day.
     </p>
 
-    <p>See the appendix for <a href="#additional-examples">additional examples of the payment phases</a>.</p>
+    <p>
+See the appendix for <a href="#additional-examples">additional examples of
+the payment phases</a>.
+    </p>
 
     <section>
       <h3>Negotiation of Purchase Terms</h3>
@@ -528,19 +612,19 @@ message from Jill's device authorizing the payment. PayToParty
 submits the message to their payment processor, requesting a
 proof of hold for the funds.
         </p>
-	      <p>
+        <p>
 <strong>Verification of Available Funds</strong>. PayToParty
 receives a proof of hold on Jills fund's for the purchase price of
 the goods. The PayToParty night-shift employees begin packing her purchased
 items for delivery the next day.
         </p>
-	      <p>
+        <p>
 <strong>Authorization of Transfer</strong>. Once Jill's package is ready to
 go, PayToParty exchanges the proof of hold for a proof of payment by
 re-submitting the request to the payment network. They receive a proof of
 payment from the payment processor.
         </p>
-	      <p>
+        <p>
 <strong>Completion of Transfer</strong>. Since Jill's PayToParty loyalty card
 operates as a credit card, the PayToParty site is immediately credited with
 the purchase amount and the funds will be swept into their bank account at the
@@ -552,8 +636,8 @@ end of the week. Jill will pay off the credit line at the end of the month.
       <h3>Delivery of Product/Receipt</h3>
 
       <p>
-<strong>Delivery of Receipt</strong>. Jill receives a detailed digital
-receipt for the purchase into her cloud-based digital wallet.
+<strong>Delivery of Receipt</strong>. Jill's cloud-based wallet
+receives a detailed line-item digital receipt for the purchase.
       </p>
 
       <p>
@@ -564,7 +648,7 @@ next morning and is on her doorstep before she leaves for work.
   </section>
 
   <section>
-    <h2 id="assumptions">Assumptions</h2>
+    <h2>Assumptions</h2>
 
     <p>
 The use cases below rely on a number of assumptions that are not
@@ -602,7 +686,7 @@ transaction.
   </section>
 
   <section>
-    <h2 id="phases">The Phases of a Payment in Detail</h2>
+    <h2 id="phases-detail">The Phases of a Payment in Detail</h2>
 
     <section>
       <h3>Negotiation of Payment Terms</h3>
@@ -1276,7 +1360,7 @@ Whenever Mary shops at BigFreshGrocery she wants to use the same credit card,
 so payment should happen with that card automatically when she puts her
 phone near the checkout terminal or when purchasing groceries online.
               </li>
-	            <li>
+              <li>
 Lalana wants to see the instruments she most often uses earlier in the list
 of available instruments.
               </li>
@@ -1941,17 +2025,17 @@ device to approve the purchase.
 <strong>Initiation of Processing</strong>: Lenne's cloud-based Bitcoin wallet
 provider initiates the transaction.
         </p>
-	      <p>
+        <p>
 <strong>Verification of Available Funds</strong>: <em>Not applicable to
 this particular use case.</em>
         </p>
-	      <p>
+        <p>
 <strong>Authorization of Transfer</strong>: AlpacaToesCo is sent a message
 from the Bitcoin cloud wallet notifying them that the transfer has been
 initiated. Lenne is told that she will receive a notification when the
 item is shipped.
         </p>
-	      <p>
+        <p>
 <strong>Completion of Transfer</strong>: AlpacaToesCo gets a message from the
 Bitcoin cloud wallet that the transfer is complete. A Bitcoin transaction ID
 is included in the message so that AlpacaToesCo can release the product when
@@ -1972,20 +2056,19 @@ to Lenne and she recieves them the next day.
       </p>
     </section>
 
-    </section>
-
   </section>
 
   <section class="appendix">
     <h2>Future Work</h2>
+
     <section>
-      <h3>Person to Person Cash Payment</h3>
+      <h3>Automatic Tax Payment</h3>
       <p>
       </p>
     </section>
 
     <section>
-      <h3>Automatic Tax Payment</h3>
+      <h3>Person to Person Cash Payment</h3>
       <p>
       </p>
     </section>
