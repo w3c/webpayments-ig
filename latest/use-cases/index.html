@@ -1508,6 +1508,70 @@ transaction must not proceed.
           </dd>
         </dl>
 
+        <section>
+          <h5>Non-essential Use Cases</h5>
+          <dl class="dl-horizontal">
+            <dt>Biometric</dt>
+            <dd>
+              <ul>
+                <li>
+John registers his fingerprint with his payment provider so that he can
+just use a fingerprint to pay for low-value items.
+                </li>
+                <li>
+Sarah registers her voiceprint and face with her payment provider for use
+in transactions greater than $1,000.
+                </li>
+                <li>
+Rico buys a $5,000 car for his daughter through an online dealership. His
+payment processor requires a password plus two forms of biometric
+identification. Rico doesn't have hands, so he uses a face and iris scan to
+perform the authentication
+                </li>
+              </ul>
+            </dd>
+            <dt>Goals</dt>
+            <dd>
+Increased user choice,
+Improved user experience,
+Greater security,
+Minimal standardization,
+Regulatory acceptance,
+Innovation,
+and Rapid, widespread adoption.
+            </dd>
+            <dt>Motivation</dt>
+            <dd>
+In current online and offline payment transactions, biometric authentication
+can be used to instead of password-based authentication. Biometrics can be
+utilized on Point of Sale terminals, mobile, and wearable devices.
+Web payment systems based on biometrics could achieve more reliable information
+security and convenience. Some forms of biometric authentication, like
+facial recognition, can also be used to augment password-based
+authentication mechanisms.
+            </dd>
+            <dt>Security / Privacy</dt>
+            <dd>
+              <ul>
+                <li>
+An individual's privacy should be protected when performing any sort of
+biometric authentication.
+                </li>
+                <li>
+Important data, such as the fingerprint template and private key, and
+sensitive code should be stored and executed in a Trusted Execution
+Environment (TEE).
+                </li>
+                <li>
+The fingerprint authentication protocol, which is capable of transmitting a
+proof of fingerprint authentication credential, should not contain any
+personal fingerprint data.
+                </li>
+              </ul>
+            </dd>
+          </dl>
+        </section>
+
       </section>
 
     </section>
