@@ -353,7 +353,7 @@ account, a PayPal account, an Alipay account, etc.
       <dd>
 An <a>entity</a> that submits and processes payments using a particular
 <a>payment instrument</a> to a payment network. Examples: Stripe, PayPal,
-Authorize.net, Atos, FedACH</li>
+Authorize.net, Atos, FedACH.
       </dd>
     </dl>
 
@@ -419,14 +419,14 @@ step is skipped.
     <p>
 It is also important to note that these phases and steps may be interrupted
 at various times (e.g., one party drops out, or exceptions occur like
-insufficient funds, refunds, or a regulatory block). While these phases are an
+insufficient funds or a regulatory block). While these phases are an
 approximation of the general flow of all payments, they are helpful in
 structuring the use cases such that it is easy to figure out to which part of
 the payment process a particular use case belongs.
     </p>
 
  <p>While these four phases may apply more or less well to a variety
-of other payment scenarios such as refunds or person-to-person
+of other payment scenarios such as person-to-person
 payments, those topics are not the current focus of the group.  We
 plan to address them directly in <a href="#future-work">future
 work</a>.</p>
@@ -537,7 +537,7 @@ etc. depending on the terms of the <a>purchase</a>.
         </li>
         <li>
 <strong>Delivery of Receipt</strong>. Depending on the
-<a title="payment scheme">payment scheme(s)</a></a> chosen, there are
+<a title="payment scheme">payment scheme(s)</a> chosen, there are
 various ways and times that a receipt may be delivered (e.g., credit card
 receipt, digital proof of <a>purchase</a>, encrypted line-item receipt, etc.).
         </li>
@@ -1960,8 +1960,6 @@ that contains a recognized product identifier.
 
       <section>
         <h4>Delivery of Receipt</h4>
-        <p>
-        </p>
         <dl class="dl-horizontal">
           <dt>Electronic Receipts</dt>
           <dd>
@@ -2023,6 +2021,11 @@ options such as Braille output for physical receipts alongside high-contrast /
 large print lettering.
           </dd>
         </dl>
+
+      </section>
+      <section>
+        <h4>Delivery of Receipt</h4>
+
 
         <dl class="dl-horizontal">
           <dt>Refunds</dt>
