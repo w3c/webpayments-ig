@@ -324,33 +324,15 @@ the reader:
 A person, organization, or software agent that is capable of interacting with
 the world.
       </dd>
-      <dt><dfn>payer</dfn></dt>
-      <dd>
-An <a>entity</a> that provides a source of funds as required by a
-<a>transaction</a>.
-      </dd>
       <dt><dfn>payee</dfn></dt>
       <dd>
 An <a>entity</a> that receives funds as required by a
 <a>transaction</a>.
       </dd>
-      <dt><dfn>transaction</dfn></dt>
+      <dt><dfn>payer</dfn></dt>
       <dd>
-An exchange of value (e.g., buying or selling something)
-      </dd>
-      <dt><dfn>purchase</dfn></dt>
-      <dd>
-Activities surrounding and including a <a>transaction</a> (e.g., discovery of
-an offer, negotiation of terms, selection of <a>payment instrument</a>,
-delivery, etc.).
-      </dd>
-      <dt><dfn>payment scheme</dfn></dt>
-      <dd>
-Sets of rules and technical standards for the execution of payment
-<a title="transaction">transactions</a> that have to be followed by adhering
-entities (<a title="payment processor">payment processors</a>,
-<a title="payer">payers</a> and <a title="payee">payees</a>). Examples: Visa,
-MasterCard, Bitcoin, Ripple, PayPal, Google Pay, Alipay, Yandex money, ACH, SEPA.
+An <a>entity</a> that provides a source of funds as required by a
+<a>transaction</a>.
       </dd>
       <dt><dfn>payment instrument</dfn></dt>
       <dd>
@@ -363,6 +345,24 @@ account, a PayPal account, an Alipay account, etc.
 An <a>entity</a> that submits and processes payments using a particular
 <a>payment instrument</a> to a payment network. Examples: Stripe, PayPal,
 Authorize.net, Atos, FedACH.
+      </dd>
+      <dt><dfn>payment scheme</dfn></dt>
+      <dd>
+Sets of rules and technical standards for the execution of payment
+<a title="transaction">transactions</a> that have to be followed by adhering
+entities (<a title="payment processor">payment processors</a>,
+<a title="payer">payers</a> and <a title="payee">payees</a>). Examples: Visa,
+MasterCard, Bitcoin, Ripple, PayPal, Google Pay, Alipay, Yandex money, ACH, SEPA.
+      </dd>
+      <dt><dfn>purchase</dfn></dt>
+      <dd>
+Activities surrounding and including a <a>transaction</a> (e.g., discovery of
+an offer, negotiation of terms, selection of <a>payment instrument</a>,
+delivery, etc.).
+      </dd>
+      <dt><dfn>transaction</dfn></dt>
+      <dd>
+An exchange of value (e.g., buying or selling something)
       </dd>
     </dl>
 
@@ -466,9 +466,10 @@ from a native application).
         <li>
 <strong>Agreement on Terms</strong>. The <a>payer</a> and the
 <a>payee</a> agree to what will be purchased, for how much,
-in what currency, how the <a>payer</a> will be authenticated by the
-<a>payee</a>, which <a title="payment scheme">payment schemes</a> are
-acceptable, etc. The <a>payee</a> may generate an invoice for the <a>payer</a>.
+in what currency, which <a title="payment scheme">payment schemes</a>
+or loyalty programs are acceptable, etc. The <a>payee</a> may require the
+<a>payer</a> to authenticate themselves. The <a>payee</a> may generate an
+invoice for the <a>payer</a>.
         </li>
         <li>
 <strong>Application of Marketing Elements</strong>. The <a>payer</a>
@@ -499,12 +500,13 @@ that are available to the <a>payer</a> and are accepted by the
 <a>payee</a>.
         </li>
         <li>
-<strong>Authentication to Access Instruments</strong>. The issuer of the
-<a>payment instrument</a> authenticates the <a>payer</a>, who then
-consents to pay. Note: This authentication with the
-<a>payment processor</a> is distinct from any authentication required
+<strong>Authentication to Access Instruments</strong>. The
+<a title="payer">payer's</a> access to the <a>payment instrument</a>
+is authenticated. The <a>payer</a> consents to pay. Note: This authentication
+with the <a>payment processor</a> is distinct from any authentication required
 by the <a>payee</a> (e.g., a merchant verifying a password on a
-<a title="payer">payer's</a> user account).
+<a title="payer">payer's</a> user account when they login to the merchant
+website).
         </li>
       </ul>
     </section>
@@ -529,13 +531,15 @@ need to provide a proof of funds or a proof of hold to the <a>payer</a>
 before finalizing payment and delivery of the product.
         </li>
         <li>
-<strong>Authorization of Transfer</strong>. The <a>payer</a> receives
+<strong>Authorization of Transfer</strong>. The <a>payee</a> receives
 proof that the transfer of funds has been authorized.
         </li>
         <li>
 <strong>Completion of Transfer</strong>. The <a>payment scheme</a>
-determines the details of payment clearing and settlement, and transfer times
-that may vary from near-realtime to multiple days.
+determines the details of payment clearing and settlement. Transfer times
+may vary from near-realtime to multiple days. The <a>payee</a>,
+the <a>payer</a>, and/or third parties (such as regulatory bodies) may be
+notified as each stage of the clearing and settlement process is completed.
         </li>
       </ul>
     </section>
