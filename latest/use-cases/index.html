@@ -49,12 +49,12 @@
                 company: "W3C", companyURL: "http://www.w3.org/" },
               { name: "Manu Sporny", url: "https://manu.sporny.org/",
                 company: "Digital Bazaar", companyURL: "http://digitalbazaar.com/" },
-              { name: "Qian Sun", url: "",
-                company: "Alibaba", companyURL: "http://www.alibabagroup.com/" },
               { name: "David Ezell", url: "http://example.org/",
                 company: "NACS", companyURL: "http://www.nacsonline.com/" },
-              { name: "Laurent Castillo", url: "http://example.org/",
-                company: "Gemalto", companyURL: "http://www.gemalto.com/" },
+              { name: "Qian Sun", url: "",
+                company: "Alibaba", companyURL: "http://www.alibabagroup.com/" },
+              { name: "David Jackson", url: "https://www.linkedin.com/in/davidjjackson",
+                company: "Oracle", companyURL: "http://www.oracle.com/" }
           ],
 
           // maximum level of table of contents
@@ -673,7 +673,7 @@ re-submitting the request to the payment network. They receive a proof of
 payment from the <a>payment processor</a>.
         </li>
           <li>
-<strong>Completion of Transfer</strong>. Since Jill's PayToParty loyalty card 
+<strong>Completion of Transfer</strong>. Since Jill's PayToParty loyalty card
 operates as a credit card, PayToParty will receive the funds in their normal
 end of week settlement.
         </li>
@@ -2100,8 +2100,91 @@ as possible.
     </p>
 
     <section>
-      <h3>Credit Card Purchase</h3>
-      <p><em>To be completed</em>.</p>
+      <h3>Credit Card Payment (Visa, MasterCard)</h3>
+      <p>
+This scenario outlines a typical card purchase using the 4 corner model.
+Janet is buying an Hermes bag online from a resale shop.
+      </p>
+
+      <h4>Negotiation of Purchase Terms</h4>
+      <ul>
+        <li>
+<strong>Discovery of Offer</strong>: Janet searches her favorite resale shop
+online to discover a gently used Hermes purse she has always wanted.
+        </li>
+
+        <li>
+<strong>Agreement on Terms</strong>: Janet selects the bag and puts it into
+the shopping cart before others have a chance to buy it. She agrees with the
+shipping terms and the amount of insurance paid for by the sender (seller).
+        </li>
+
+        <li>
+<strong>Application of Marketing Elements</strong>: At the time of reviewing
+the shopping cart, she is asked if she would like the scarf which goes with
+the purse and contains authenticity documentation as part of the sale.
+        </li>
+      </ul>
+
+      <h4>Negotiation of Payment Instruments</h4>
+      <ul>
+        <li>
+<strong>Discovery of Accepted Schemes</strong>: The site takes
+Discover/MasterCard/Visa/debit along with secured money order, Bitcoin,
+Google Wallet and ApplePay.
+        </li>
+
+        <li>
+<strong>Selection of Payment Instruments</strong>: Janet selects her points
+card which will award one point per dollar spent.
+        </li>
+
+        <li>
+<strong>Authentication to Access Instruments</strong>: Janet selects the
+account number already stored from previous purchases and is asked for the
+verification code on the back of the card and billing address for the card
+used.
+        </li>
+      </ul>
+
+      <h4>Payment Processing</h4>
+      <ul>
+        <li>
+<strong>Initiation of Processing</strong>: The eCommerce site now initiates a
+payment request for authorization from the seller's payment card processor.
+        </li>
+          <li>
+<strong>Verification of Available Funds</strong>: An authorization is then
+stored for the purchase and set for capture in the overnight file sent to
+the payment card processor. The payment card processor receives the validity
+of the card and funds available (auth) from Janet's issuing bank.
+        </li>
+          <li>
+<strong>Authorization of Transfer</strong>: The eCommerce software now releases
+the product for shipping to Janet.
+        </li>
+        <li>
+<strong>Completion of Transfer</strong>: In the evening when the seller leaves
+for the day, the closing for the next day's sales is complete and file sent
+to the processor for capture/clearing.
+        </li>
+      </ul>
+
+      <h4>Delivery of Product/Receipt and Reversals</h4>
+      <ul>
+        <li>
+<strong>Delivery of Receipt</strong>: The eCommerce software produces a
+receipt along with the tracking code for the purse to Janet's registered
+contact email. Janet receives this email into her email system which also
+forwards this receipt to her budget software contained on her notebook device.
+        </li>
+
+        <li>
+<strong>Delivery of Product</strong>: The shipping department packs and
+delivers to the shipper which will provide detailed tracking information
+through the MyUPS tracking software on Janet's mobile phone.
+        </li>
+      </ul>
     </section>
 
     <section>
