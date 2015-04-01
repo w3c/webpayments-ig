@@ -221,21 +221,21 @@ This document is organized as follows:
       </p>
 
       <ul>
-        <li>
+          <li>
 Section 2 defines basic payment terms.
         </li>
-        <li>
+          <li>
 Section 3 describes a common payment flow at a high
 level. The group expects to work on additional
 payment flows in future work.
         </li>
-        <li>
+          <li>
 Section 4 is a specific narrative, labeled according
 to the steps of section 3. Section 7 describes
 additional familiar narratives to give a more complete picture
 of how the payment phases apply.
         </li>
-        <li>
+          <li>
 Section 6 lists the use cases - short scenarios that cover
 diverse aspects of each payment step.
         </li>
@@ -245,15 +245,15 @@ diverse aspects of each payment step.
 Each use case has:
       </p>
       <ul>
-        <li>
+          <li>
 A title and short description.
         </li>
-        <li>
+          <li>
 Goals. How the use case advances one or more of the
 <a href="https://www.w3.org/Payments/IG/wiki/ExecSummary#Goals">goals
 for an interoperable Web payments framework</a>.
         </li>
-        <li>
+          <li>
 Motivation. This is commentary to help explain why the use
 case has been included, including how it relates to similar use cases.
         </li>
@@ -264,16 +264,16 @@ Each use case may also have notes on:
       </p>
 
       <ul>
-        <li>
+          <li>
 Security/Privacy. Security or privacy issues that may arise through this use
 case.
         </li>
-        <li>
+          <li>
 Exceptions. Considerations in the case of specific exceptions (e.g., if a
 user pays with a voucher and the <a>transaction</a> fails, the user's voucher
 should be restored).
         </li>
-        <li>
+          <li>
 Accessibility. Accessibility considerations (e.g., in multi-factor
 authentication, management of biometrics in the case of users with some
 disabilities).
@@ -402,18 +402,18 @@ understand the document without prior payment industry knowledge.
     </p>
 
     <ol>
-      <li>
+        <li>
 Negotiation of Payment Terms
-      </li>
-      <li>
+        </li>
+        <li>
 Negotiation of Payment Instruments
-      </li>
-      <li>
+        </li>
+        <li>
 Payment Processing
-      </li>
-      <li>
+        </li>
+        <li>
 Delivery of Product/Receipt and Reversals
-      </li>
+        </li>
     </ol>
 
 <p>The descriptions below only discuss the interactions between the
@@ -458,12 +458,12 @@ In the first phase of the payment process, the <a>payer</a> and the
       </p>
 
       <ul>
-        <li>
+          <li>
 <strong>Discovery of Offer</strong>. The <a>payer</a> discovers the
 <a title="payee">payee's</a> offer (e.g., by browsing a Web page or
 from a native application).
         </li>
-        <li>
+          <li>
 <strong>Agreement on Terms</strong>. The <a>payer</a> and the
 <a>payee</a> agree to what will be purchased, for how much,
 in what currency, which <a title="payment scheme">payment schemes</a>
@@ -471,7 +471,7 @@ or loyalty programs are acceptable, etc. The <a>payee</a> may require the
 <a>payer</a> to authenticate themselves. The <a>payee</a> may generate an
 invoice for the <a>payer</a>.
         </li>
-        <li>
+          <li>
 <strong>Application of Marketing Elements</strong>. The <a>payer</a>
 discovers and applies any loyalty programs, coupons, and other special offers
 to the payment terms.
@@ -487,18 +487,18 @@ In the second phase of the payment process, <a>payer</a> and <a>payee</a> determ
       </p>
 
       <ul>
-        <li>
+          <li>
 <strong>Discovery of Accepted Schemes</strong>. The <a>payer</a>
 discovers the <a title="payment instrument">payment instruments</a> that
 are accepted by the <a>payee</a>.
         </li>
-        <li>
+          <li>
 <strong>Selection of Payment Instruments</strong>. The <a>payee</a>
 selects one or more <a title="payment instrument">payment instruments</a>
 that are available to the <a>payer</a> and are accepted by the
 <a>payee</a>.
         </li>
-        <li>
+          <li>
 <strong>Authentication to Access Instruments</strong>. The
 <a title="payer">payer's</a> access to the <a>payment instrument</a>
 is authenticated. The <a>payer</a> consents to pay. Note: This authentication
@@ -517,22 +517,22 @@ funds. Depending on the <a>payment instrument</a>, the transfer of funds
 may be verified immediately or only after several days.
       </p>
        <ul>
-        <li>
+          <li>
 <strong>Initiation of Processing</strong>. Depending on the
 <a>payment instrument</a>, the <a>payer</a> (e.g., when using
 PayPal or Yandex Money), the <a>payee</a> (e.g., when using a credit card), or other
 party (e.g., bank) initiates processing.
         </li>
-        <li>
+          <li>
 <strong>Verification of Available Funds</strong>. The <a>payee</a> may
 need to provide a proof of funds or a proof of hold to the <a>payer</a>
 before finalizing payment and delivery of the product.
         </li>
-        <li>
+          <li>
 <strong>Authorization of Transfer</strong>. The <a>payee</a> receives
 proof that the transfer of funds has been authorized.
         </li>
-        <li>
+          <li>
 <strong>Completion of Transfer</strong>. The <a>payment scheme</a>
 determines the details of payment clearing and settlement. Transfer times
 may vary from near-realtime to multiple days. The <a>payee</a>,
@@ -550,19 +550,19 @@ product that was purchased.
       </p>
 
       <ul>
-        <li>
+          <li>
 <strong>Delivery of Product</strong>. The <a>payer</a> receives goods or
 services immediately, at a later date, automatically on a recurring basis,
 etc. depending on the terms of the <a>purchase</a>. A digital proof of
 payment may be required to access the product.
         </li>
-        <li>
+          <li>
 <strong>Delivery of Receipt</strong>. Depending on the
 <a title="payment scheme">payment scheme(s)</a> chosen, there are
 various ways and times that a receipt may be delivered (e.g., credit card
 receipt, digital proof of <a>purchase</a>, encrypted line-item receipt, etc.).
         </li>
-        <li>
+          <li>
 <strong>Reversals</strong>. At time exceptions may occur (e.g., defective
 product, application of store return policy, etc.). In this case, the <a>payee</a> initiates payment to the <a>payer</a>. The payment reversal may take different forms, including a refund to the <a>payer's</a> payment instrument, a refund using a different payment scheme, or store credit.
         </li>
@@ -596,8 +596,8 @@ entirely if the preceding section suffices, or moving this narrative to section 
 
     <section>
       <h3>Negotiation of <a>purchase</a> Terms</h3>
-<ul>
-      <li>
+      <ul>
+        <li>
 <strong>Discovery of Offer</strong>: Jill begins her <a>purchase</a> at
 home on her laptop, where she browses the items on the PayToParty Web
 site. On the way to work the next morning, she explores the catalog
@@ -607,93 +607,93 @@ with gold stripes, so during her lunch break, she drops into the
 PayToParty store near her office. She spots a few more items that
 she thinks she'd like to <a>purchase</a>, but decides to wait until later to
 make the <a>purchase</a>.
-      </li>
+        </li>
 
-      <li>
+        <li>
 <strong>Agreement on Terms</strong>: That same evening at home,
 Jill logs into her account on the PayToParty Web site, adding her
 preferred items to her shopping cart. The total price appears on the
 page.
-      </li>
+        </li>
 
-      <li>
+        <li>
 <strong>Application of Marketing Elements</strong>: As Jill prepares to
 check out, PayToParty offers her a discount of 10% if she uses the store's
 loyalty card to pay.
-      </li>
-</ul>
+        </li>
+      <ul>
     </section>
 
     <section>
       <h3>Negotiation of Payment Instruments</h3>
-<ul>
-      <li>
+      <ul>
+        <li>
 <strong>Discovery of Accepted Schemes</strong>: Given where Jill lives,
 PayToParty offers her payment by credit card, debit card, the PayToParty
 loyalty card, and PayPal, but not Jill's favorite cryptocurrency (which she
 uses on other sites).
-      </li>
+        </li>
 
-      <li>
+        <li>
 <strong>Selection of Payment Instruments</strong>: Jill pushes the "Pay Now to Party!" button and is presented with a number of options to pay, including her
 credit card, her PayToParty loyalty card (which is highlighted to remind her
 of the discount), and a PayPal account. There is also a gift card from
 PayToParty that she received for her birthday, but she chooses not to
 use it for this <a>purchase</a>.
-      </li>
+        </li>
 
-      <li>
+        <li>
 <strong>Authentication to Access Instruments</strong>: Jill selects
 the PayToParty loyalty card, which she enabled with theft-protection,
 and is asked to input a code that is sent to her phone before the
 <a>purchase</a> can be completed.
-      </li>
-</ul>
+        </li>
+      <ul>
     </section>
 
     <section>
       <h3>Payment Processing</h3>
-<ul>
-      <li>
+      <ul>
+        <li>
 <strong>Initiation of Processing</strong>. PayToParty receives a
 message from Jill's device authorizing the payment. PayToParty
 submits the message to their <a>payment processor</a>, requesting a
 proof of hold for the funds.
         </li>
-        <li>
+          <li>
 <strong>Verification of Available Funds</strong>. PayToParty
 receives a proof of hold on Jill's funds for the <a>purchase</a> price of
 the goods. The PayToParty night-shift employees begin packing her purchased
 items for delivery the next day.
         </li>
-        <li>
+          <li>
 <strong>Authorization of Transfer</strong>. Once Jill's package is ready to
 go, PayToParty exchanges the proof of hold for a proof of payment by
 re-submitting the request to the payment network. They receive a proof of
 payment from the <a>payment processor</a>.
         </li>
-        <li>
+          <li>
 <strong>Completion of Transfer</strong>. Since Jill's PayToParty loyalty card
 operates as a credit card, the PayToParty site is immediately credited with
 the <a>purchase</a> amount and the funds will be swept into their bank account
 at the end of the week.
         </li>
-</ul>
+      <ul>
     </section>
 
     <section>
       <h3>Delivery of Product/Receipt and Reversals</h3>
-<ul>
-      <li>
+      <ul>
+        <li>
 <strong>Delivery of Receipt</strong>. Jill's cloud-based wallet
 receives a detailed line-item digital receipt for the <a>purchase</a>.
-      </li>
+        </li>
 
-      <li>
+        <li>
 <strong>Delivery of Product</strong>. Jill's package goes out by courier the
 next morning and is on her doorstep before she leaves for work.
-      </li>
-</ul>
+        </li>
+      <ul>
     </section>
   </section>
 
@@ -707,7 +707,7 @@ the architecture and requirements documents.
     </p>
 
     <ul>
-      <li>
+        <li>
 <strong>Connectivity</strong>. Connectivity requirements vary according to
 use case. The types of connections a device may utilize include Internet
 connectivity, proxied connections through short-range radio transmissions,
@@ -715,24 +715,24 @@ and proximity connections over a technology such as Near-Field Communication
 (NFC) or Bluetooth Low Energy (BTLE). Some use cases assume no
 connectivity (e.g., user is temporarily unable to connect to a mobile phone
 network or a WiFi hotspot).
-      </li>
-      <li>
+        </li>
+        <li>
 <strong>Registered Payment Instruments</strong>. In order for the
 <a>payer</a> to select and utilize
 <a title="payment instrument">payment instruments</a>, they must be
 registered in some way and discoverable by a browser, native application,
 or other software.
-      </li>
-      <li>
+        </li>
+        <li>
 <strong>Security</strong>. Keys, encryption, and other security technology
 must be used to secure sensitive information. It is important that sensitive
 information is not transmitted to parties that do not absolutely need to
 know the information in order to complete the <a>transaction</a>.</li>
-      <li>
+        <li>
 <strong>Identity</strong>. There will be a consistent, interoperable
 identifier used to identify the participants and accounts in a Web Payments
 transaction.
-      </li>
+        </li>
     </ul>
   </section>
 
@@ -975,7 +975,7 @@ and rapid, widespread adoption.
             </dd>
             <dt>Motivation</dt>
             <dd>
-There is a fairly large trial-ware industry that could benefit from 
+There is a fairly large trial-ware industry that could benefit from
 a simple way of executing a payment without requiring redirection
 to another site to enter account and payment details.
             </dd>
@@ -984,8 +984,8 @@ to another site to enter account and payment details.
           <dl class="dl-horizontal">
             <dt>In-vehicle</dt>
             <dd>
-Jeff listens to a lot of music on the way to work. The music station serves a digital offer along with the music stream. This enables Jeff to 
-easily buy music that he really likes. 
+Jeff listens to a lot of music on the way to work. The music station serves a digital offer along with the music stream. This enables Jeff to
+easily buy music that he really likes.
             </dd>
             <dt>Goals</dt>
             <dd>
@@ -1023,18 +1023,18 @@ At times it is necessary to transmit personally identifiable information
 <a>entity</a>'s background, or verifiable statement by an entity about
 another entity) in order to be cleared to make a purchase:
             <ul>
-              <li>
-PharmCo will only sell regulated drugs to someone with proof 
+                <li>
+PharmCo will only sell regulated drugs to someone with proof
 of an active pharmacist's license.
               </li>
-              <li>
+                <li>
 WineCo will only sell wine to someone with proof of being over the age of 21.
               </li>
-              <li>
+                <li>
 BoomCo will only ship industrial explosives to a business that can
 provide evidence of construction permits, a contractor's license, and an explosives handling license.
               </li>
-              <li>
+                <li>
 HomeLoanCo will not finalize a quote for a home mortgage without
 a credit score report and an audited finances report.
               </li>
@@ -1124,7 +1124,7 @@ Improved user experience
           </dd>
           <dt>Motivation</dt>
           <dd>It should be clear to a
-<a title="payer">payer</a> whether a 
+<a title="payer">payer</a> whether a
 <a>purchase</a> is one-time or recurring, prior to initiation of
 the payment.
           </dd>
@@ -1245,8 +1245,8 @@ particular good.
         <dl class="dl-horizontal">
           <dt>Store Credit</dt>
           <dd>
-When Rick arrives as the self-checkout kiosk, 
-he scans five dress shirts and two new pair of slacks. 
+When Rick arrives as the self-checkout kiosk,
+he scans five dress shirts and two new pair of slacks.
 The kiosk mentions that Rick could save 15% off of his <a>purchase</a>
 if he makes the <a>purchase</a> using store credit. He accepts the offer and
 a new store credit card is placed in his payment application on his mobile
@@ -1321,7 +1321,7 @@ and rapid, widespread adoption.
           <dt>Motivation</dt>
           <dd>
 The same mechanism used to support existing
-<a title="payment scheme">payment schemes</a> should also 
+<a title="payment scheme">payment schemes</a> should also
 support emerging <a title="payment scheme">payment schemes</a>.
           </dd>
         </dl>
@@ -1357,7 +1357,7 @@ before.
           </dd>
           <dt>Privacy / Security</dt>
           <dd>
-Discovery of digital wallets must be done in such a way as to ensure 
+Discovery of digital wallets must be done in such a way as to ensure
 privacy protection.
           </dd>
         </dl>
@@ -1366,26 +1366,26 @@ privacy protection.
           <dt>Manual Selection</dt>
           <dd>In many cases, the <a>payer</a> will select a payment instrument manually:
             <ul>
-              <li>
+                <li>
 Marie has credit cards from three different institutions:
 one for work (from BankA), one personal card (from BankB), and one retail card
 (from PayCo). She wants to choose the right one depending on the context of her
 purchase.
               </li>
-              <li>
+                <li>
 Claire has one debit card and multiple credit cards from the same bank.
               </li>
-              <li>
+                <li>
 Veronique wants to use a cryptocurrency in some cases (e.g.,
 peer-to-peer payments).
               </li>
-              <li>
+                <li>
 Seth participates in a loyalty program with his local grocery store and
 can apply a variety of digital coupons when he visits the store.
 <span class="issue">Is a loyalty card a payment instrument, or a credential?
 </span>
               </li>
-              <li>
+                <li>
 David wants to be able to manually arrange available
 <a title="payment instrument">payment instruments</a> when they are presented
 to him. <span class="issue">Why does this need to be standardized?
@@ -1415,22 +1415,22 @@ automatically.
           <dd>When a <a title="payer">payer's</a> personal preferences are known, it becomes possible to make selections for them automatically.
 
             <ul>
-              <li>
+                <li>
 Jonny's payment software on his smart watch chooses the payment instrument that
 will provide him with the biggest cost savings for each <a>purchase</a> he makes
 throughout the week.
               </li>
-              <li>
+                <li>
 PayCo wants Elizabeth to know that if she pays with the debit card preferred
 by PayCo (because of a lower <a>transaction</a> fee for PayCo), she will benefit from a discount.
               </li>
-              <li>
+                <li>
 Whenever Mary shops at BigFreshGrocery she uses the same credit card.
 She wants payment to happen automatically with that card when she puts her
 phone near the checkout terminal as well as when purchasing groceries online
 from BigFreshGrocery.
               </li>
-              <li>
+                <li>
 Lalana does not like to scroll. She wants the instruments she uses most often to appear at top of the displayed list of available payment instruments.
               </li>
             </ul>
@@ -1454,11 +1454,11 @@ and rapid, widespread adoption.
           <dt>Payer Privacy</dt>
           <dd>We anticipate a range of privacy scenarios:
             <ul>
-              <li>
+                <li>
 Lucio sends information about instruments he is willing to use to
 TrustedMerchant, who provides a discount for access to his information.
               </li>
-              <li>
+                <li>
 Carla does not want to share information about the
 <a title="payment instrument">payment instruments</a> she uses with any
 merchants, so that information is not shared with any online merchants.
@@ -1499,20 +1499,20 @@ obligated to protect this kind of <a>payer</a> payment information.
           <dt>Multi-Factor</dt>
           <dd>We anticipate a range of authentication scenarios, leveraging a wide variety of approaches and device capabilities:
             <ul>
-              <li>
+                <li>
 When Ian selects his debit card, he is prompted for a PIN.
               </li>
-              <li>
+                <li>
 Wes has configured his debit card to require a fingerprint scan from his
 mobile device and a Universal Two Factor (U2F) device to be used when
 performing a <a>purchase</a> over $1,000.
               </li>
-              <li>
+                <li>
 Frederic taps his phone at the grocery store to pay, and BankA sends him a
 one-time password (OTP) on his mobile phone that he enters in a keypad at
 the checkout counter.
               </li>
-              <li>
+                <li>
 Nadia's bank asks her to use her two-factor authentication device and at
 least one of their in-branch retinal scanners or palm-vein readers
 before she is allowed to withdraw $25,000.
@@ -1530,7 +1530,7 @@ Innovation,
 and rapid, widespread adoption.
           </dd>
           <dt>Motivation</dt>
-          <dd>The payments architecture should support 
+          <dd>The payments architecture should support
 	    the authentication devices available today for
 multi-factor authentication, as well as those of the future.
           </dd>
@@ -1554,7 +1554,7 @@ Regulatory acceptance, and Automatability.
           <dt>Motivation</dt>
           <dd>
 Easing compliance with Know Your Customer (KYC) and
-Anti-Money Laundering (AML) regulations 
+Anti-Money Laundering (AML) regulations
 will ensure safer and faster <a title="payment scheme">payment schemes</a>.
           </dd>
           <dt>Exceptions</dt>
@@ -1572,15 +1572,15 @@ transaction must not proceed.
 In current online and offline payment <a>transaction</a>s, biometric
 authentication can be used instead of password-based authentication:
               <ul>
-                <li>
+                  <li>
 John registers his fingerprint with his payment provider so that he can
 just use a fingerprint to pay for low-value items.
                 </li>
-                <li>
+                  <li>
 Sarah registers her voiceprint and face with her payment provider for use
 in <a>transaction</a>s greater than $1,000.
                 </li>
-                <li>
+                  <li>
 Rico buys a $5,000 car for his daughter through an online dealership. His
 <a>payment processor</a> requires a password plus two forms of biometric
 identification. Rico doesn't have hands, so he uses a face and iris scan to
@@ -1609,16 +1609,16 @@ authentication mechanisms.
             <dt>Security / Privacy</dt>
             <dd>
               <ul>
-                <li>
+                  <li>
 An individual's privacy should be protected when performing any sort of
 biometric authentication.
                 </li>
-                <li>
+                  <li>
 Important data, such as the fingerprint template and private key, and
 sensitive code should be stored and executed in a Trusted Execution
 Environment (TEE).
                 </li>
-                <li>
+                  <li>
 The fingerprint authentication protocol, which is capable of transmitting a
 proof of fingerprint authentication credential, should not contain any
 personal fingerprint data.
@@ -1662,12 +1662,12 @@ in [[WCAG20]].
           <dt>Payee-initiated</dt>
           <dd>Some payments are initiated by the payee:
             <ul>
-              <li>
+                <li>
 Richard choses to pay using a credit card at FlowerFriends. FlowerFriends
 initiates payment processing using their <a>payment processor</a> to contact the
 acquiring bank that handles credit card payments for FlowerFriends.
               </li>
-              <li>
+                <li>
 Pitir has authorized RentSeekers to pull money out of his bank account on a
 monthly basis in order to pay his rent. RentSeekers initiates a payment using
 the ACH network to pull money from Pitir's bank account.
@@ -1702,13 +1702,13 @@ alongside other tokenization solutions.
           <dt>Payer-initiated</dt>
           <dd>Some payments are initiated by the payer:
             <ul>
-              <li>
+                <li>
 Once Sally has signed into PayPal to pay, PayPal initiates payment processing.
               </li>
-              <li>
+                <li>
 Joakim uses his Bitcoin wallet to send money to his friend.
               </li>
-              <li>
+                <li>
 Carson (in New York City) sends money to Vladamir (in Moscow) using
 his Ripple client, which converts the currency from US Dollars to Rubels in
 transit.
@@ -1792,17 +1792,17 @@ who they know can afford the good or service because the act of engaging the
           <dt>Proofs</dt>
           <dd>Goods and services may be released at different times depending on the type of <a>transaction</a> being performed:
             <ul>
-              <li>
+                <li>
 Zhang Wei orders 10 large boxes of envelopes from an online shop in
 Tianjin. He uses an escrow service to provide a proof of escrow to the
 online shop in order to get them to initiate the shipment.
               </li>
-              <li>
+                <li>
 To protect Tibor's privacy when he  <a title="purchase">purchases</a> candy
 online, the store asks only for Tibor's verified shipping address and a
 proof of payment to send him the chocolates.
               </li>
-              <li>
+                <li>
 RockinRadio, SmoothSounds, and classicallyClassic are independent, specialized
 music streaming services. They accept proof of <a>purchase</a> from each other
 to provide a track that is in their online streaming catalogue even if it was
@@ -1847,20 +1847,20 @@ likely fail or transition into an alternate path.
           <dd>When a <a>transaction</a> occurs, the time it takes to transmit and receive
 funds often vary according to the <a>payment scheme</a>:
             <ul>
-              <li>
+                <li>
 Sophie uses a credit card to buy some gifts for her parents. The shop has
 access to the funds in three days.
               </li>
-              <li>
+                <li>
 Frank uses an electronic cheque to pay his rent. The rental agency has access
 to the funds in 7 days.
               </li>
-              <li>
+                <li>
 Felicity has chosen Bitcoin to pay for glasses online. The store
 that sells the glasses has almost guaranteed access to the funds within
 15 minutes.
               </li>
-              <li>
+                <li>
 Vanessa uses Ripple to <a>purchase</a> a new work outfit in US Dollars.
 Funds in Euros are available to OnlineWorkClothes within a few minutes.
               </li>
@@ -1944,7 +1944,7 @@ is one of the cornerstones of online commerce.
           <dd>
 When Lilith buys music from a band at MusicBox and then goes to their
 Web site to download additional content, no account is required, just a
-proof of <a>purchase</a> that is sent to the band's website, after which 
+proof of <a>purchase</a> that is sent to the band's website, after which
 MusicBox provides Lilith a link to download the additional content.
           </dd>
           <dt>Goals</dt>
@@ -2039,20 +2039,20 @@ large print lettering.
 At times, it becomes necessary to refund a <a title="payer">payer's</a>
 payment:
             <ul>
-              <li>
+                <li>
 Pele buys a slice of pizza with a credit card at a local restaurant
 and is accidentally charged for five slices of pizza. He notices the
 mistake after he pays and requests a refund, which the restaurant
 manager approves. The overcharged funds are returned to his account.
               </li>
-              <li>
+                <li>
 Teo claims that a blender that they purchased online was faulty and returns
 the product to the merchant. The merchant provides the customer with a refund
 in the form of store credit based on the return policy.
               </li>
-              <li><span class="issue">Should we include a scenario where the refund is to a different payment scheme, e.g., cash?</span>
+                <li><span class="issue">Should we include a scenario where the refund is to a different payment scheme, e.g., cash?</span>
               </li>
-              <li>
+                <li>
 A financial crimes regulator identifies a criminal syndicate that is
 operating via a number of fake identities. The fake identities are flagged
 and an electronic message is sent to all
@@ -2116,77 +2116,77 @@ fingerprint instead of a password to authorize the payment.
       </p>
 
       <h4>Negotiation of <a>Purchase</a> Terms</h4>
-<ul>
-      <li>
+      <ul>
+        <li>
 <strong>Discovery of Offer</strong>: Anna searches for a flight on
 the booking website. She finds a flight for the ideal price and time.
-      </li>
+        </li>
 
-      <li>
+        <li>
 <strong>Agreement on Terms</strong>: Anna selects the flight and agrees to the
 terms and service associated with the ticket.
-      </li>
+        </li>
 
-      <li>
+        <li>
 <strong>Application of Marketing Elements</strong>: <em>Not applicable to
 this particular use case.</em>
-      </li>
-</ul>
+        </li>
+      <ul>
 
       <h4>Negotiation of Payment Instruments</h4>
-<ul>
-      <li>
+      <ul>
+        <li>
 <strong>Discovery of Accepted Schemes</strong>: The booking website takes
 Alipay, Visa, MasterCard, and China UnionPay for payment.
-      </li>
+        </li>
 
-      <li>
+        <li>
 <strong>Selection of Payment Instruments</strong>: Anna chooses Alipay for
 payment.
-      </li>
+        </li>
 
-      <li>
+        <li>
 <strong>Authentication to Access Instruments</strong>: Anna logs in the Alipay
 with her account name and password. Anna is told that she will pay for the
 airline ticket with 600RMB and she confirms it. Anna uses her fingerprint to
 approve the payment.
-      </li>
-</ul>
+        </li>
+      <ul>
 
       <h4>Payment Processing</h4>
-<ul>
-      <li>
+      <ul>
+        <li>
 <strong>Initiation of Processing</strong>: Anna's Alipay wallet initiates
 the <a>transaction</a>.
         </li>
-        <li>
+          <li>
 <strong>Verification of Available Funds</strong>: <em>Not applicable to
 this particular use case.</em>
         </li>
-        <li>
+          <li>
 <strong>Authorization of Transfer</strong>: Alipay initiates the payment to
 the booking website based on Anna's prior fingerprint-based authorization.
         </li>
-        <li>
+          <li>
 <strong>Completion of Transfer</strong>: The booking website gets a message
 from Alipay that the transfer is complete.
         </li>
-</ul>
+      <ul>
 
       <h4>Delivery of Product/Receipt and Reversals</h4>
-<ul>
-      <li>
+      <ul>
+        <li>
 <strong>Delivery of Receipt</strong>: The booking website sees that Anna's
 airline ticket order has been paid and sends a receipt message to her
 digital wallet.
-      </li>
+        </li>
 
-      <li>
+        <li>
 <strong>Delivery of Product</strong>: The booking website sends an email to
 Anna with the flight information including the airline, flight number,
 departure time, and gate number.
-      </li>
-</ul>
+        </li>
+      <ul>
     </section>
 
     <section>
@@ -2210,89 +2210,89 @@ The socks are shipped to her home address.
 
       <h4>Negotiation of Purchase Terms</h4>
 
-<ul>
-      <li>
+      <ul>
+        <li>
 <strong>Discovery of Offer</strong>: Lenne searches for "warm socks,
 locally sourced" in her favorite search engine. A pair of Alpaca socks come up
 as the first hit as the Alpaca's are nearby where she lives and the online
 store (AlpacaToesCo) provides local delivery. She has a coupon in her
 digital wallet for the store, but forgot long ago that it is there.
-      </li>
+        </li>
 
-      <li>
+        <li>
 <strong>Agreement on Terms</strong>: Lenne goes to AlpacaToesCo and puts the
 socks in her online shopping cart and is shown the price. Lenne provides her
 shipping address to AlpacaToes.
-      </li>
+        </li>
 
-      <li>
+        <li>
 <strong>Application of Marketing Elements</strong>: When Lenne puts the socks
 in her online shopping cart, she's reminded of the "buy one, get one free"
 coupon she has in her wallet. She adds another pair of socks and continues
 with the checkout process.
-      </li>
-</ul>
+        </li>
+      <ul>
 
       <h4>Negotiation of Payment Instruments</h4>
 
-<ul>
-      <li>
+      <ul>
+        <li>
 <strong>Discovery of Accepted Schemes</strong>: The website takes Visa,
 Ripple, and Bitcoin for payment.
-      </li>
+        </li>
 
-      <li>
+        <li>
 <strong>Selection of Payment Instruments</strong>: Lenne has a Visa card
 as well as a local Ripple wallet and a cloud-based Bitcoin wallet. Lenne
 selects her cloud-based Bitcoin wallet.
-      </li>
+        </li>
 
-      <li>
+        <li>
 <strong>Authentication to Access Instruments</strong>: Since the value of the
 payment is less than $50, Lenne isn't asked for her two-factor authentication
 device to approve the <a>purchase</a>.
-      </li>
-</ul>
+        </li>
+      <ul>
 
       <h4>Payment Processing</h4>
-<ul>
+      <ul>
 
-      <li>
+        <li>
 <strong>Initiation of Processing</strong>: Lenne's cloud-based Bitcoin wallet
 provider initiates the <a>transaction</a>.
         </li>
-        <li>
+          <li>
 <strong>Verification of Available Funds</strong>: <em>Not applicable to
 this particular use case.</em>
         </li>
-        <li>
+          <li>
 <strong>Authorization of Transfer</strong>: AlpacaToesCo is sent a message
 from the Bitcoin cloud wallet notifying them that the transfer has been
 initiated. Lenne is told that she will receive a notification when the
 item is shipped.
         </li>
-        <li>
+          <li>
 <strong>Completion of Transfer</strong>: AlpacaToesCo gets a message from the
 Bitcoin cloud wallet that the transfer is complete. A Bitcoin
 <a>transaction</a> ID is included in the message so that AlpacaToesCo can
 release the product when the appropriate number of verifications are made on
 the <a>transaction</a>.
         </li>
-</ul>
+      <ul>
 
       <h4>Delivery of Product/Receipt and Reversals</h4>
-<ul>
-      <li>
+      <ul>
+        <li>
 <strong>Delivery of Receipt</strong>: AlpacaToesCo sees 6 verifications on the
 transaction in the Bitcoin blockchain and sends a receipt of sale to Lenne's
 cloud wallet. The store notifies Lenne that they have shipped her package.
-      </li>
+        </li>
 
-      <li>
+        <li>
 <strong>Delivery of Product</strong>: AlpacaToesCo ships the package of socks
 to Lenne and she receives them the next day.
-      </li>
-</ul>
+        </li>
+      <ul>
     </section>
 
   </section>
