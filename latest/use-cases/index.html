@@ -595,7 +595,7 @@ entirely if the preceding section suffices, or moving this narrative to section 
     </p>
 
     <section>
-      <h3>Negotiation of <a>purchase</a> Terms</h3>
+      <h3>Negotiation of Purchase Terms</h3>
       <ul>
         <li>
 <strong>Discovery of Offer</strong>: Jill begins her <a>purchase</a> at
@@ -2106,6 +2106,106 @@ as possible.
     </section>
 
     <section>
+      <h3>Tokenized Payments (ApplePay / Venmo / CyberSource)</h3>
+      <p>
+The following scenario outlines payment using a mobile device and
+tokenization. The merchant has provided a mobile application that
+customers can download in the example below. This example may apply to
+various tokenization payment systems now in use, such as ApplePay,
+CyberSource, Venmo, etc.
+      </p>
+
+      <h4>Negotiation of Purchase Terms</h4>
+      <ul>
+        <li>
+<strong>Discovery of Offer</strong>: Tom uses the Terrific-Tools Application
+to select a new ax to purchase and finds a hickory handled model like the
+one his father had.
+        </li>
+
+        <li>
+<strong>Agreement on Terms</strong>: Tom selects the ax to purchase.
+        </li>
+
+        <li>
+<strong>Application of Marketing Elements</strong>: <em>Not applicable to
+this particular use case.</em>
+        </li>
+      </ul>
+
+      <h4>Negotiation of Payment Instruments</h4>
+      <ul>
+        <li>
+<strong>Discovery of Accepted Schemes</strong>: The mobile device uses
+tokenized <a title="payment instrument">payment instruments</a> and the
+Terrific-Tools Application displays the options available.
+        </li>
+
+        <li>
+<strong>Selection of Payment Instruments</strong>: Tom chooses to pay
+with MasterCard.
+        </li>
+
+        <li>
+<strong>Authentication to Access Instruments</strong>: Tom uses the
+fingerprint recognition feature of his device to select the
+<a>payment instrument</a> and authenticate his use of the
+instrument (MasterCard).
+        </li>
+      </ul>
+
+      <h4>Payment Processing</h4>
+      <ul>
+        <li>
+<strong>Initiation of Processing</strong>: The Terrific-Tools Application
+communicates with the Terrific-Tools Server and creates a unique
+transaction ID.
+        </li>
+          <li>
+<strong>Verification of Available Funds</strong>: <em>Not applicable to
+this particular use case.</em>
+        </li>
+          <li>
+<strong>Authorization of Transfer</strong>: The following steps are performed
+by the <a>payment processor</a>:
+            <ol>
+              <li>
+The Terrific-Tools Application presents the transaction payload along to an
+internal SDK and gets back an encrypted transaction payload: tokenized card
+data, cryptogram, transaction details.
+              </li>
+              <li>
+The Terrific-Tools Application sends the encrypted transaction payload to
+the Acquirer [not the same as the Terrific-Tools Server].
+              </li>
+              <li>
+The Acquirer decrypts the information and processes the transaction.
+              </li>
+              <li>
+The Acquirer responds back to the Terrific-Tools Application with an approval.
+              </li>
+            </ol>
+        </li>
+        <li>
+<strong>Completion of Transfer</strong>: The acquirer sends a transaction
+receipt to the Terrific-Tools Server.
+        </li>
+      </ul>
+
+      <h4>Delivery of Product/Receipt and Reversals</h4>
+      <ul>
+        <li>
+<strong>Delivery of Receipt</strong>: The Terrific-Tools Server sends a
+transaction receipt to the Terrific-Tools Application on the mobile device.
+        </li>
+
+        <li>
+<strong>Delivery of Product</strong>: Terrific-Tools, Inc. ships the ax to Tom.
+        </li>
+      </ul>
+    </section>
+
+    <section>
       <h3>PayPal / Alipay / Google Wallet Payment</h3>
       <p>
 The following scenario outlines an ideal payment experience using a
@@ -2115,7 +2215,7 @@ ticket from a booking website and during the payment process she uses her
 fingerprint instead of a password to authorize the payment.
       </p>
 
-      <h4>Negotiation of <a>Purchase</a> Terms</h4>
+      <h4>Negotiation of Purchase Terms</h4>
       <ul>
         <li>
 <strong>Discovery of Offer</strong>: Anna searches for a flight on
@@ -2131,7 +2231,7 @@ terms and service associated with the ticket.
 <strong>Application of Marketing Elements</strong>: <em>Not applicable to
 this particular use case.</em>
         </li>
-      <ul>
+      </ul>
 
       <h4>Negotiation of Payment Instruments</h4>
       <ul>
@@ -2151,7 +2251,7 @@ with her account name and password. Anna is told that she will pay for the
 airline ticket with 600RMB and she confirms it. Anna uses her fingerprint to
 approve the payment.
         </li>
-      <ul>
+      </ul>
 
       <h4>Payment Processing</h4>
       <ul>
@@ -2171,7 +2271,7 @@ the booking website based on Anna's prior fingerprint-based authorization.
 <strong>Completion of Transfer</strong>: The booking website gets a message
 from Alipay that the transfer is complete.
         </li>
-      <ul>
+      </ul>
 
       <h4>Delivery of Product/Receipt and Reversals</h4>
       <ul>
@@ -2186,7 +2286,7 @@ digital wallet.
 Anna with the flight information including the airline, flight number,
 departure time, and gate number.
         </li>
-      <ul>
+      </ul>
     </section>
 
     <section>
@@ -2231,7 +2331,7 @@ in her online shopping cart, she's reminded of the "buy one, get one free"
 coupon she has in her wallet. She adds another pair of socks and continues
 with the checkout process.
         </li>
-      <ul>
+      </ul>
 
       <h4>Negotiation of Payment Instruments</h4>
 
@@ -2252,11 +2352,10 @@ selects her cloud-based Bitcoin wallet.
 payment is less than $50, Lenne isn't asked for her two-factor authentication
 device to approve the <a>purchase</a>.
         </li>
-      <ul>
+      </ul>
 
       <h4>Payment Processing</h4>
       <ul>
-
         <li>
 <strong>Initiation of Processing</strong>: Lenne's cloud-based Bitcoin wallet
 provider initiates the <a>transaction</a>.
@@ -2278,7 +2377,7 @@ Bitcoin cloud wallet that the transfer is complete. A Bitcoin
 release the product when the appropriate number of verifications are made on
 the <a>transaction</a>.
         </li>
-      <ul>
+      </ul>
 
       <h4>Delivery of Product/Receipt and Reversals</h4>
       <ul>
@@ -2292,7 +2391,7 @@ cloud wallet. The store notifies Lenne that they have shipped her package.
 <strong>Delivery of Product</strong>: AlpacaToesCo ships the package of socks
 to Lenne and she receives them the next day.
         </li>
-      <ul>
+      </ul>
     </section>
 
   </section>
