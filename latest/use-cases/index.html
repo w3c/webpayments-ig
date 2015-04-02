@@ -224,18 +224,18 @@ This document is organized as follows:
           <li>
 Section 2 defines basic payment terms.
         </li>
-          <li>
+        <li>
 Section 3 describes a common payment flow at a high
 level. The group expects to work on additional
 payment flows in future work.
         </li>
-          <li>
+        <li>
 Section 4 is a specific narrative, labeled according
 to the steps of section 3. Section 7 describes
 additional familiar narratives to give a more complete picture
 of how the payment phases apply.
         </li>
-          <li>
+        <li>
 Section 6 lists the use cases - short scenarios that cover
 diverse aspects of each payment step.
         </li>
@@ -248,12 +248,12 @@ Each use case has:
           <li>
 A title and short description.
         </li>
-          <li>
+        <li>
 Goals. How the use case advances one or more of the
 <a href="https://www.w3.org/Payments/IG/wiki/ExecSummary#Goals">goals
 for an interoperable Web payments framework</a>.
         </li>
-          <li>
+        <li>
 Motivation. This is commentary to help explain why the use
 case has been included, including how it relates to similar use cases.
         </li>
@@ -268,12 +268,12 @@ Each use case may also have notes on:
 Security/Privacy. Security or privacy issues that may arise through this use
 case.
         </li>
-          <li>
+        <li>
 Exceptions. Considerations in the case of specific exceptions (e.g., if a
 user pays with a voucher and the <a>transaction</a> fails, the user's voucher
 should be restored).
         </li>
-          <li>
+        <li>
 Accessibility. Accessibility considerations (e.g., in multi-factor
 authentication, management of biometrics in the case of users with some
 disabilities).
@@ -412,7 +412,7 @@ Negotiation of Payment Instruments
 Payment Processing
         </li>
         <li>
-Delivery of Product/Receipt and Reversals
+Delivery of Product/Receipt and Refunds
         </li>
     </ol>
 
@@ -463,7 +463,7 @@ In the first phase of the payment process, the <a>payer</a> and the
 <a title="payee">payee's</a> offer (e.g., by browsing a Web page or
 from a native application).
         </li>
-          <li>
+        <li>
 <strong>Agreement on Terms</strong>. The <a>payer</a> and the
 <a>payee</a> agree to what will be purchased, for how much,
 in what currency, which <a title="payment scheme">payment schemes</a>
@@ -471,7 +471,7 @@ or loyalty programs are acceptable, etc. The <a>payee</a> may require the
 <a>payer</a> to authenticate themselves. The <a>payee</a> may generate an
 invoice for the <a>payer</a>.
         </li>
-          <li>
+        <li>
 <strong>Application of Marketing Elements</strong>. The <a>payer</a>
 discovers and applies any loyalty programs, coupons, and other special offers
 to the payment terms.
@@ -492,13 +492,13 @@ In the second phase of the payment process, <a>payer</a> and <a>payee</a> determ
 discovers the <a title="payment instrument">payment instruments</a> that
 are accepted by the <a>payee</a>.
         </li>
-          <li>
+        <li>
 <strong>Selection of Payment Instruments</strong>. The <a>payee</a>
 selects one or more <a title="payment instrument">payment instruments</a>
 that are available to the <a>payer</a> and are accepted by the
 <a>payee</a>.
         </li>
-          <li>
+        <li>
 <strong>Authentication to Access Instruments</strong>. The
 <a title="payer">payer's</a> access to the <a>payment instrument</a>
 is authenticated. The <a>payer</a> consents to pay. Note: This authentication
@@ -523,16 +523,16 @@ may be verified immediately or only after several days.
 PayPal or Yandex Money), the <a>payee</a> (e.g., when using a credit card), or other
 party (e.g., bank) initiates processing.
         </li>
-          <li>
+        <li>
 <strong>Verification of Available Funds</strong>. The <a>payee</a> may
 need to provide a proof of funds or a proof of hold to the <a>payer</a>
 before finalizing payment and delivery of the product.
         </li>
-          <li>
+        <li>
 <strong>Authorization of Transfer</strong>. The <a>payee</a> receives
 proof that the transfer of funds has been authorized.
         </li>
-          <li>
+        <li>
 <strong>Completion of Transfer</strong>. The <a>payment scheme</a>
 determines the details of payment clearing and settlement. Transfer times
 may vary from near-realtime to multiple days. The <a>payee</a>,
@@ -543,7 +543,7 @@ notified as each stage of the clearing and settlement process is completed.
     </section>
 
     <section>
-      <h3>Delivery of Product/Receipt and Reversals</h3>
+      <h3>Delivery of Product/Receipt and Refunds</h3>
       <p>
 In the fourth phase of the payment process, the <a>transaction</a> is completed
 by providing the <a>payer</a> with a receipt and/or the product that
@@ -557,16 +557,16 @@ services immediately, at a later date, automatically on a recurring basis,
 etc. depending on the terms of the <a>purchase</a>. A digital proof of
 payment may be required to access the product.
         </li>
-          <li>
+        <li>
 <strong>Delivery of Receipt</strong>. Depending on the
 <a title="payment scheme">payment scheme(s)</a> chosen, there are
 various ways and times that a receipt may be delivered (e.g., credit card
 receipt, digital proof of <a>purchase</a>, encrypted line-item receipt, etc.).
         </li>
-          <li>
-<strong>Reversals</strong>. At time exceptions may occur (e.g., defective
+        <li>
+<strong>Refunds</strong>. At time exceptions may occur (e.g., defective
 product, application of store return policy, etc.). In this case, the
-<a>payee</a> initiates payment to the <a>payer</a>. The payment reversal may
+<a>payee</a> initiates payment to the <a>payer</a>. The refund may
 take different forms, including a refund to the <a title="payer">payer's</a>
 payment instrument, a refund using a different payment scheme, or store credit.
         </li>
@@ -664,19 +664,19 @@ message from Jill's device authorizing the payment. PayToParty
 submits the message to their <a>payment processor</a>, requesting a
 proof of hold for the funds.
         </li>
-          <li>
+        <li>
 <strong>Verification of Available Funds</strong>. PayToParty
 receives a proof of hold on Jill's funds for the <a>purchase</a> price of
 the goods. The PayToParty night-shift employees begin packing her purchased
 items for delivery the next day.
         </li>
-          <li>
+        <li>
 <strong>Authorization of Transfer</strong>. Once Jill's package is ready to
 go, PayToParty exchanges the proof of hold for a proof of payment by
 re-submitting the request to the payment network. They receive a proof of
 payment from the <a>payment processor</a>.
         </li>
-          <li>
+        <li>
 <strong>Completion of Transfer</strong>. Since Jill's PayToParty loyalty card
 operates as a credit card, PayToParty will receive the funds in their normal
 end of week settlement.
@@ -685,7 +685,7 @@ end of week settlement.
     </section>
 
     <section>
-      <h3>Delivery of Product/Receipt and Reversals</h3>
+      <h3>Delivery of Product/Receipt and Refunds</h3>
       <ul>
         <li>
 <strong>Delivery of Receipt</strong>. Jill's cloud-based wallet
@@ -1919,7 +1919,7 @@ received.
     </section>
 
     <section>
-      <h3>Delivery of Product/Receipt and Reversals</h3>
+      <h3>Delivery of Product/Receipt and Refunds</h3>
       <section>
         <h4>Delivery of Product</h4>
         <p>
@@ -2036,27 +2036,29 @@ large print lettering.
 
       </section>
       <section>
-        <h4>Reversals</h4>
+        <h4>Refunds</h4>
         <dl class="dl-horizontal">
-          <dt>Refunds</dt>
+          <dt>Common Refunds</dt>
           <dd>
 At times, it becomes necessary to refund a <a title="payer">payer's</a>
 payment:
             <ul>
-                <li>
+              <li>
 Pele buys a slice of pizza with a credit card at a local restaurant
 and is accidentally charged for five slices of pizza. He notices the
 mistake after he pays and requests a refund, which the restaurant
 manager approves. The overcharged funds are returned to his account.
               </li>
-                <li>
+              <li>
 Teo claims that a blender that they purchased online was faulty and returns
 the product to the merchant. The merchant provides the customer with a refund
 in the form of store credit based on the return policy.
               </li>
-                <li><span class="issue">Should we include a scenario where the refund is to a different payment scheme, e.g., cash?</span>
+              <li>
+<span class="issue">Should we include a scenario where the refund is to a
+different payment scheme, e.g., cash?</span>
               </li>
-                <li>
+              <li>
 A financial crimes regulator identifies a criminal syndicate that is
 operating via a number of fake identities. The fake identities are flagged
 and an electronic message is sent to all
@@ -2158,13 +2160,13 @@ used.
 <strong>Initiation of Processing</strong>: The eCommerce site now initiates a
 payment request for authorization from the seller's payment card processor.
         </li>
-          <li>
+        <li>
 <strong>Verification of Available Funds</strong>: An authorization is then
 stored for the purchase and set for capture in the overnight file sent to
 the payment card processor. The payment card processor receives the validity
 of the card and funds available (auth) from Janet's issuing bank.
         </li>
-          <li>
+        <li>
 <strong>Authorization of Transfer</strong>: The eCommerce software now releases
 the product for shipping to Janet.
         </li>
@@ -2175,7 +2177,7 @@ to the processor for capture/clearing.
         </li>
       </ul>
 
-      <h4>Delivery of Product/Receipt and Reversals</h4>
+      <h4>Delivery of Product/Receipt and Refunds</h4>
       <ul>
         <li>
 <strong>Delivery of Receipt</strong>: The eCommerce software produces a
@@ -2248,11 +2250,11 @@ instrument (MasterCard).
 communicates with the Terrific-Tools Server and creates a unique
 transaction ID.
         </li>
-          <li>
+        <li>
 <strong>Verification of Available Funds</strong>: <em>Not applicable to
 this particular use case.</em>
         </li>
-          <li>
+        <li>
 <strong>Authorization of Transfer</strong>: The following steps are performed
 by the <a>payment processor</a>:
             <ol>
@@ -2279,7 +2281,7 @@ receipt to the Terrific-Tools Server.
         </li>
       </ul>
 
-      <h4>Delivery of Product/Receipt and Reversals</h4>
+      <h4>Delivery of Product/Receipt and Refunds</h4>
       <ul>
         <li>
 <strong>Delivery of Receipt</strong>: The Terrific-Tools Server sends a
@@ -2346,21 +2348,21 @@ approve the payment.
 <strong>Initiation of Processing</strong>: Anna's Alipay wallet initiates
 the <a>transaction</a>.
         </li>
-          <li>
+        <li>
 <strong>Verification of Available Funds</strong>: <em>Not applicable to
 this particular use case.</em>
         </li>
-          <li>
+        <li>
 <strong>Authorization of Transfer</strong>: Alipay initiates the payment to
 the booking website based on Anna's prior fingerprint-based authorization.
         </li>
-          <li>
+        <li>
 <strong>Completion of Transfer</strong>: The booking website gets a message
 from Alipay that the transfer is complete.
         </li>
       </ul>
 
-      <h4>Delivery of Product/Receipt and Reversals</h4>
+      <h4>Delivery of Product/Receipt and Refunds</h4>
       <ul>
         <li>
 <strong>Delivery of Receipt</strong>: The booking website sees that Anna's
@@ -2447,17 +2449,17 @@ device to approve the <a>purchase</a>.
 <strong>Initiation of Processing</strong>: Lenne's cloud-based Bitcoin wallet
 provider initiates the <a>transaction</a>.
         </li>
-          <li>
+        <li>
 <strong>Verification of Available Funds</strong>: <em>Not applicable to
 this particular use case.</em>
         </li>
-          <li>
+        <li>
 <strong>Authorization of Transfer</strong>: AlpacaToesCo is sent a message
 from the Bitcoin cloud wallet notifying them that the transfer has been
 initiated. Lenne is told that she will receive a notification when the
 item is shipped.
         </li>
-          <li>
+        <li>
 <strong>Completion of Transfer</strong>: AlpacaToesCo gets a message from the
 Bitcoin cloud wallet that the transfer is complete. A Bitcoin
 <a>transaction</a> ID is included in the message so that AlpacaToesCo can
@@ -2466,7 +2468,7 @@ the <a>transaction</a>.
         </li>
       </ul>
 
-      <h4>Delivery of Product/Receipt and Reversals</h4>
+      <h4>Delivery of Product/Receipt and Refunds</h4>
       <ul>
         <li>
 <strong>Delivery of Receipt</strong>: AlpacaToesCo sees 6 verifications on the
