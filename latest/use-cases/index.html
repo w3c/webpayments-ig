@@ -8,13 +8,13 @@
     <script class='remove'>
       var respecConfig = {
           // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
-          specStatus:           "ED",
+          specStatus:           "FPWD",
 
           // the specification's short name, as in http://www.w3.org/TR/short-name/
           shortName:            "web-payments-use-cases",
 
           // if you wish the publication date to be other than today, set this
-          // publishDate:  "2009-08-06",
+          publishDate:  "2015-04-16",
 
           // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
           // and its maturity status
@@ -150,7 +150,7 @@ use cases and make payments over the Web easier and more secure.
 This document is a work in progress and is being released early and often
 using an agile process; it is incomplete.
     </p>
-  <p>
+    <p>
 The Web Payments IG has only had the opportunity to review a handful of the
 40+ use cases, 120+ requirements, hundreds of pages of
 payments research submitted to the group via various other standards group
@@ -2174,13 +2174,13 @@ online to discover a gently used purse that she has always wanted.
         <li>
 <strong>Agreement on Terms</strong>: Janet selects the purse and puts it into
 the shopping cart before others have a chance to buy it. She agrees with the
-shipping terms and the amount of insurance paid for by the sender (seller).
+shipping terms and adds an extended warranty for the product.
         </li>
 
         <li>
 <strong>Application of Marketing Elements</strong>: At the time of reviewing
 the shopping cart, she is asked if she would like the scarf which goes with
-the purse and contains authenticity documentation as part of the sale.
+the purse.
         </li>
       </ul>
 
@@ -2188,59 +2188,59 @@ the purse and contains authenticity documentation as part of the sale.
       <ul>
         <li>
 <strong>Discovery of Accepted Schemes</strong>: The site takes
-Discover/MasterCard/Visa/debit along with secured money order, Bitcoin,
-Google Wallet, and ApplePay.
+Discover, MasterCard, Visa, and debit cards along with secured money order,
+Bitcoin, Google Wallet, and ApplePay.
         </li>
 
         <li>
-<strong>Selection of Payment Instruments</strong>: Janet selects her points
-card which will award one point per dollar spent.
+<strong>Selection of Payment Instruments</strong>: Janet selects her Discover
+points card that highlighted by default because she had used it for a previous
+purchase with the merchant.
         </li>
 
         <li>
-<strong>Authentication to Access Instruments</strong>: Janet selects the
-account number already stored from previous purchases and is asked for the
-verification code on the back of the card and billing address for the card
-used.
+<strong>Authentication to Access Instruments</strong>: The merchant asks Janet
+for her zip code and the verification code on the back of the card.
         </li>
       </ul>
 
       <h4>Payment Processing</h4>
       <ul>
         <li>
-<strong>Initiation of Processing</strong>: The eCommerce site now initiates a
-payment request for authorization from the seller's payment card processor.
+<strong>Initiation of Processing</strong>: The merchant initiates an
+payment authorization request to their <a>payment processor</a>.
         </li>
         <li>
-<strong>Verification of Available Funds</strong>: An authorization is then
-stored for the purchase and set for capture in the overnight file sent to
-the payment card processor. The payment card processor receives the validity
-of the card and funds available (auth) from Janet's issuing bank.
+<strong>Verification of Available Funds</strong>: The payment authorization
+request is successful and the <a>payment processor</a> sends a response to the
+merchant acknowledging that the funds are now held until the merchant
+finalizes the payment.
         </li>
         <li>
-<strong>Authorization of Transfer</strong>: The eCommerce software now releases
-the product for shipping to Janet.
+<strong>Authorization of Transfer</strong>: After the merchant has packed
+the bag for shipping, the merchant sends a message back to the
+<a>payment processor</a> to finalize the payment.
         </li>
         <li>
-<strong>Completion of Transfer</strong>: In the evening when the seller leaves
-for the day, the closing for the next day's sales is complete and file sent
-to the processor for capture/clearing.
+<strong>Completion of Transfer</strong>: The funds are immediately deducted from
+Janet's line of credit. The funds take 3 days to be transferred to the
+merchant's bank account.
         </li>
       </ul>
 
       <h4>Delivery of Product/Receipt and Refunds</h4>
       <ul>
         <li>
-<strong>Delivery of Receipt</strong>: The eCommerce software produces a
-receipt along with the tracking code for the purse to Janet's registered
-contact email. Janet receives this email into her email system which also
-forwards this receipt to her budget software contained on her notebook device.
+<strong>Delivery of Receipt</strong>: The seller sends her a digital receipt,
+which she receives by email and directly to her digital wallet. Her
+digital wallet forwards the receipt to her budgeting software. The digital
+wallet forwards the tracking number embedded in the digital receipt to
+her MyUPS Shipping Tracker mobile application.
         </li>
 
         <li>
-<strong>Delivery of Product</strong>: The shipping department packs and
-delivers to the shipper which will provide detailed tracking information
-through the MyUPS tracking software on Janet's mobile phone.
+<strong>Delivery of Product</strong>: The merchant's shipping department packs
+and delivers the bag to the shipper, which then sends it to Janet.
         </li>
       </ul>
     </section>
@@ -2252,14 +2252,14 @@ The following scenario outlines payment using a mobile device and
 tokenization. The merchant has provided a mobile application that
 customers can download in the example below. This example may apply to
 various tokenization payment systems now in use, such as ApplePay,
-CyberSource, Venmo, etc.
+CyberSource, Venmo, Square, etc.
       </p>
 
       <h4>Negotiation of Purchase Terms</h4>
       <ul>
         <li>
-<strong>Discovery of Offer</strong>: Tom uses the Terrific-Tools Application
-to select a new ax to purchase and finds a hickory handled model like the
+<strong>Discovery of Offer</strong>: Tom uses the Terrific-Tools mobile
+app to select a new ax to purchase and finds a hickory handled model like the
 one his father had.
         </li>
 
@@ -2430,16 +2430,6 @@ departure time, and gate number.
     </section>
 
     <section>
-      <h3>Electronic Cheque Payment</h3>
-      <p><em>To be completed</em>.</p>
-    </section>
-
-    <section>
-      <h3>Credit Transfer / Direct Debit</h3>
-      <p><em>To be completed</em>.</p>
-    </section>
-
-    <section>
       <h3>Cryptocurrency Payment (Bitcoin, Ripple)</h3>
       <p>
 The following scenario outlines an ideal payment experience using Bitcoin, or a
@@ -2532,6 +2522,16 @@ cloud wallet. The store notifies Lenne that they have shipped her package.
 to Lenne and she receives them the next day.
         </li>
       </ul>
+    </section>
+
+    <section>
+      <h3>Electronic Cheque Payment</h3>
+      <p><em>To be completed</em>.</p>
+    </section>
+
+    <section>
+      <h3>Credit Transfer / Direct Debit</h3>
+      <p><em>To be completed</em>.</p>
     </section>
 
   </section>
