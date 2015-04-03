@@ -95,6 +95,9 @@
       //respecEvents.sub('start-all', webpayments.preProcess.apply);
     </script>
     <style type="text/css">
+h4 {
+  color: #005A9C;
+}
 dl {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -2164,85 +2167,91 @@ This scenario outlines a typical card purchase using the 4 corner model.
 Janet is buying an handbag online from a resale shop.
       </p>
 
-      <h4>Negotiation of Purchase Terms</h4>
-      <ul>
-        <li>
+      <section class="notoc">
+        <h4>Negotiation of Purchase Terms</h4>
+        <ul>
+          <li>
 <strong>Discovery of Offer</strong>: Janet searches her favorite resale shop
 online to discover a gently used purse that she has always wanted.
-        </li>
-
-        <li>
+          </li>
+          <li>
 <strong>Agreement on Terms</strong>: Janet selects the purse and puts it into
 the shopping cart before others have a chance to buy it. She agrees with the
 shipping terms and adds an extended warranty for the product.
-        </li>
-
-        <li>
+          </li>
+          <li>
 <strong>Application of Marketing Elements</strong>: At the time of reviewing
 the shopping cart, she is asked if she would like the scarf which goes with
 the purse.
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </section>
 
-      <h4>Negotiation of Payment Instruments</h4>
-      <ul>
-        <li>
+      <section class="notoc">
+        <h4>Negotiation of Payment Instruments</h4>
+        <ul>
+          <li>
 <strong>Discovery of Accepted Schemes</strong>: The site takes
 Discover, MasterCard, Visa, and debit cards along with secured money order,
 Bitcoin, Google Wallet, and ApplePay.
-        </li>
+          </li>
 
-        <li>
+          <li>
 <strong>Selection of Payment Instruments</strong>: Janet selects her Discover
 points card that highlighted by default because she had used it for a previous
 purchase with the merchant.
-        </li>
+          </li>
 
-        <li>
+          <li>
 <strong>Authentication to Access Instruments</strong>: The merchant asks Janet
 for her zip code and the verification code on the back of the card.
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </section>
 
-      <h4>Payment Processing</h4>
-      <ul>
-        <li>
+      <section class="notoc">
+        <h4>Payment Processing</h4>
+        <ul>
+          <li>
 <strong>Initiation of Processing</strong>: The merchant initiates an
 payment authorization request to their <a>payment processor</a>.
-        </li>
-        <li>
+          </li>
+          <li>
 <strong>Verification of Available Funds</strong>: The payment authorization
 request is successful and the <a>payment processor</a> sends a response to the
 merchant acknowledging that the funds are now held until the merchant
 finalizes the payment.
-        </li>
-        <li>
+          </li>
+          <li>
 <strong>Authorization of Transfer</strong>: After the merchant has packed
 the bag for shipping, the merchant sends a message back to the
 <a>payment processor</a> to finalize the payment.
-        </li>
-        <li>
+          </li>
+          <li>
 <strong>Completion of Transfer</strong>: The funds are immediately deducted from
 Janet's line of credit. The funds take 3 days to be transferred to the
 merchant's bank account.
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </section>
 
-      <h4>Delivery of Product/Receipt and Refunds</h4>
-      <ul>
-        <li>
+      <section class="notoc">
+        <h4>Delivery of Product/Receipt and Refunds</h4>
+        <ul>
+          <li>
 <strong>Delivery of Receipt</strong>: The seller sends her a digital receipt,
 which she receives by email and directly to her digital wallet. Her
 digital wallet forwards the receipt to her budgeting software. The digital
 wallet forwards the tracking number embedded in the digital receipt to
 her MyUPS Shipping Tracker mobile application.
-        </li>
+          </li>
 
-        <li>
+          <li>
 <strong>Delivery of Product</strong>: The merchant's shipping department packs
 and delivers the bag to the shipper, which then sends it to Janet.
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </section>
     </section>
 
     <section>
@@ -2255,94 +2264,84 @@ various tokenization payment systems now in use, such as ApplePay,
 CyberSource, Venmo, Square, etc.
       </p>
 
-      <h4>Negotiation of Purchase Terms</h4>
-      <ul>
-        <li>
+      <section class="notoc">
+        <h4>Negotiation of Purchase Terms</h4>
+        <ul>
+          <li>
 <strong>Discovery of Offer</strong>: Tom uses the Terrific-Tools mobile
 app to select a new ax to purchase and finds a hickory handled model like the
 one his father had.
-        </li>
+          </li>
 
-        <li>
-<strong>Agreement on Terms</strong>: Tom selects the ax to purchase.
-        </li>
+          <li>
+<strong>Agreement on Terms</strong>: Tom selects the ax, which is in the
+price range he wanted.
+          </li>
 
-        <li>
+          <li>
 <strong>Application of Marketing Elements</strong>: <em>Not applicable to
 this particular use case.</em>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </section>
 
-      <h4>Negotiation of Payment Instruments</h4>
-      <ul>
-        <li>
-<strong>Discovery of Accepted Schemes</strong>: The mobile device uses
+      <section class="notoc">
+        <h4>Negotiation of Payment Instruments</h4>
+        <ul>
+          <li>
+<strong>Discovery of Accepted Schemes</strong>: The mobile app uses
 tokenized <a title="payment instrument">payment instruments</a> and the
 Terrific-Tools Application displays the options available.
-        </li>
+          </li>
 
-        <li>
+          <li>
 <strong>Selection of Payment Instruments</strong>: Tom chooses to pay
-with MasterCard.
-        </li>
+with his tokenization-enabled MasterCard.
+          </li>
 
-        <li>
+          <li>
 <strong>Authentication to Access Instruments</strong>: Tom uses the
-fingerprint recognition feature of his device to select the
-<a>payment instrument</a> and authenticate his use of the
-instrument (MasterCard).
-        </li>
-      </ul>
+fingerprint recognition feature of his device to authenticate his payment.
+          </li>
+        </ul>
+      </section>
 
-      <h4>Payment Processing</h4>
-      <ul>
-        <li>
-<strong>Initiation of Processing</strong>: The Terrific-Tools Application
-communicates with the Terrific-Tools Server and creates a unique
-transaction ID.
-        </li>
-        <li>
+      <section class="notoc">
+        <h4>Payment Processing</h4>
+        <ul>
+          <li>
+<strong>Initiation of Processing</strong>: The mobile app creates an
+encrypted transaction and sends it to the payment processor. The payment
+processor decrypts the information and processes the transaction.
+          </li>
+          <li>
 <strong>Verification of Available Funds</strong>: <em>Not applicable to
 this particular use case.</em>
-        </li>
-        <li>
-<strong>Authorization of Transfer</strong>: The following steps are performed
-by the <a>payment processor</a>:
-            <ol>
-              <li>
-The Terrific-Tools Application presents the transaction payload along to an
-internal SDK and gets back an encrypted transaction payload: tokenized card
-data, cryptogram, transaction details.
-              </li>
-              <li>
-The Terrific-Tools Application sends the encrypted transaction payload to
-the Acquirer [not the same as the Terrific-Tools Server].
-              </li>
-              <li>
-The Acquirer decrypts the information and processes the transaction.
-              </li>
-              <li>
-The Acquirer responds back to the Terrific-Tools Application with an approval.
-              </li>
-            </ol>
-        </li>
-        <li>
-<strong>Completion of Transfer</strong>: The acquirer sends a transaction
-receipt to the Terrific-Tools Server.
-        </li>
-      </ul>
+          </li>
+          <li>
+<strong>Authorization of Transfer</strong>: The payment processor
+responds back to the mobile app with an approval.
+          </li>
+          <li>
+<strong>Completion of Transfer</strong>: The payment processor sends a
+transaction receipt to Terrific-Tools.
+          </li>
+        </ul>
+      </section>
 
-      <h4>Delivery of Product/Receipt and Refunds</h4>
-      <ul>
-        <li>
-<strong>Delivery of Receipt</strong>: The Terrific-Tools Server sends a
-transaction receipt to the Terrific-Tools Application on the mobile device.
-        </li>
+      <section class="notoc">
+        <h4>Delivery of Product/Receipt and Refunds</h4>
+        <ul>
+          <li>
+<strong>Delivery of Receipt</strong>: Terrific-Tools sends a transaction
+receipt to the mobile app.
+          </li>
 
-        <li>
+          <li>
 <strong>Delivery of Product</strong>: Terrific-Tools, Inc. ships the ax to Tom.
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </section>
     </section>
 
     <section>
@@ -2355,78 +2354,86 @@ ticket from a booking website and during the payment process she uses her
 fingerprint instead of a password to authorize the payment.
       </p>
 
-      <h4>Negotiation of Purchase Terms</h4>
-      <ul>
-        <li>
+      <section class="notoc">
+        <h4>Negotiation of Purchase Terms</h4>
+        <ul>
+          <li>
 <strong>Discovery of Offer</strong>: Anna searches for a flight on
 the booking website. She finds a flight for the ideal price and time.
-        </li>
+          </li>
 
-        <li>
+          <li>
 <strong>Agreement on Terms</strong>: Anna selects the flight and agrees to the
 terms and service associated with the ticket.
-        </li>
+          </li>
 
-        <li>
+          <li>
 <strong>Application of Marketing Elements</strong>: <em>Not applicable to
 this particular use case.</em>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </section>
 
-      <h4>Negotiation of Payment Instruments</h4>
-      <ul>
-        <li>
+      <section class="notoc">
+        <h4>Negotiation of Payment Instruments</h4>
+        <ul>
+          <li>
 <strong>Discovery of Accepted Schemes</strong>: The booking website takes
 Alipay, Visa, MasterCard, and China UnionPay for payment.
-        </li>
+          </li>
 
-        <li>
+          <li>
 <strong>Selection of Payment Instruments</strong>: Anna chooses Alipay for
 payment.
-        </li>
+          </li>
 
-        <li>
+          <li>
 <strong>Authentication to Access Instruments</strong>: Anna logs in the Alipay
 with her account name and password. Anna is told that she will pay for the
 airline ticket with 600RMB and she confirms it. Anna uses her fingerprint to
 approve the payment.
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </section>
 
-      <h4>Payment Processing</h4>
-      <ul>
-        <li>
+      <section class="notoc">
+        <h4>Payment Processing</h4>
+        <ul>
+          <li>
 <strong>Initiation of Processing</strong>: Anna's Alipay wallet initiates
 the <a>transaction</a>.
-        </li>
-        <li>
+          </li>
+          <li>
 <strong>Verification of Available Funds</strong>: <em>Not applicable to
 this particular use case.</em>
-        </li>
-        <li>
+          </li>
+          <li>
 <strong>Authorization of Transfer</strong>: Alipay initiates the payment to
 the booking website based on Anna's prior fingerprint-based authorization.
-        </li>
-        <li>
+          </li>
+          <li>
 <strong>Completion of Transfer</strong>: The booking website gets a message
 from Alipay that the transfer is complete.
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </section>
 
-      <h4>Delivery of Product/Receipt and Refunds</h4>
-      <ul>
-        <li>
+      <section class="notoc">
+        <h4>Delivery of Product/Receipt and Refunds</h4>
+        <ul>
+          <li>
 <strong>Delivery of Receipt</strong>: The booking website sees that Anna's
 airline ticket order has been paid and sends a receipt message to her
 digital wallet.
-        </li>
+          </li>
 
-        <li>
+          <li>
 <strong>Delivery of Product</strong>: The booking website sends an email to
 Anna with the flight information including the airline, flight number,
 departure time, and gate number.
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </section>
     </section>
 
     <section>
@@ -2438,90 +2445,96 @@ alpaca socks from an online retailer using a "buy one, get one free" coupon.
 The socks are shipped to her home address.
       </p>
 
-      <h4>Negotiation of Purchase Terms</h4>
-
-      <ul>
-        <li>
+      <section class="notoc">
+        <h4>Negotiation of Purchase Terms</h4>
+        <ul>
+          <li>
 <strong>Discovery of Offer</strong>: Lenne searches for "warm socks,
 locally sourced" in her favorite search engine. A pair of Alpaca socks come up
 as the first hit as the Alpaca's are nearby where she lives and the online
 store (AlpacaToesCo) provides local delivery. She has a coupon in her
 digital wallet for the store, but forgot long ago that it is there.
-        </li>
+          </li>
 
-        <li>
+          <li>
 <strong>Agreement on Terms</strong>: Lenne goes to AlpacaToesCo and puts the
 socks in her online shopping cart and is shown the price. Lenne provides her
 shipping address to AlpacaToes.
-        </li>
+          </li>
 
-        <li>
+          <li>
 <strong>Application of Marketing Elements</strong>: When Lenne puts the socks
 in her online shopping cart, she's reminded of the "buy one, get one free"
 coupon she has in her wallet. She adds another pair of socks and continues
 with the checkout process.
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </section>
 
-      <h4>Negotiation of Payment Instruments</h4>
-
-      <ul>
-        <li>
+      <section class="notoc">
+        <h4>Negotiation of Payment Instruments</h4>
+        <ul>
+          <li>
 <strong>Discovery of Accepted Schemes</strong>: The website takes Visa,
 Ripple, and Bitcoin for payment.
-        </li>
+          </li>
 
-        <li>
+          <li>
 <strong>Selection of Payment Instruments</strong>: Lenne has a Visa card
 as well as a local Ripple wallet and a cloud-based Bitcoin wallet. Lenne
 selects her cloud-based Bitcoin wallet.
-        </li>
+          </li>
 
-        <li>
+          <li>
 <strong>Authentication to Access Instruments</strong>: Since the value of the
 payment is less than $50, Lenne isn't asked for her two-factor authentication
 device to approve the <a>purchase</a>.
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </section>
 
-      <h4>Payment Processing</h4>
-      <ul>
-        <li>
+      <section class="notoc">
+        <h4>Payment Processing</h4>
+        <ul>
+          <li>
 <strong>Initiation of Processing</strong>: Lenne's cloud-based Bitcoin wallet
 provider initiates the <a>transaction</a>.
-        </li>
-        <li>
+          </li>
+          <li>
 <strong>Verification of Available Funds</strong>: <em>Not applicable to
 this particular use case.</em>
-        </li>
-        <li>
+          </li>
+          <li>
 <strong>Authorization of Transfer</strong>: AlpacaToesCo is sent a message
 from the Bitcoin cloud wallet notifying them that the transfer has been
 initiated. Lenne is told that she will receive a notification when the
 item is shipped.
-        </li>
-        <li>
+          </li>
+          <li>
 <strong>Completion of Transfer</strong>: AlpacaToesCo gets a message from the
 Bitcoin cloud wallet that the transfer is complete. A Bitcoin
 <a>transaction</a> ID is included in the message so that AlpacaToesCo can
 release the product when the appropriate number of verifications are made on
 the <a>transaction</a>.
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </section>
 
-      <h4>Delivery of Product/Receipt and Refunds</h4>
-      <ul>
-        <li>
+      <section class="notoc">
+        <h4>Delivery of Product/Receipt and Refunds</h4>
+        <ul>
+          <li>
 <strong>Delivery of Receipt</strong>: AlpacaToesCo sees 6 verifications on the
 transaction in the Bitcoin blockchain and sends a receipt of sale to Lenne's
 cloud wallet. The store notifies Lenne that they have shipped her package.
-        </li>
+          </li>
 
-        <li>
+          <li>
 <strong>Delivery of Product</strong>: AlpacaToesCo ships the package of socks
 to Lenne and she receives them the next day.
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </section>
     </section>
 
     <section>
