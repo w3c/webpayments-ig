@@ -80,7 +80,7 @@
 <body> 
   <section id='abstract'> 
     <p> 
-This document describes architectural requirements, concepts and rationale that would need to be provided to support current and planned use cases outlined in the Web Payments Activity.  This document is intended to provide an overview of core concepts related to the Payment Agent and considerations related to their use.
+This document describes a conceptual unified architecture and set of communication/protocol standards for payments on the world wide web. The architecture and examples included in this document outline a set of core principles and abstractions required to achieve broad interoperability across the many and growing number of users and devices connected to the Web, as well as the core goals such as security, privacy, and user choice outlined in the W3C's Web Payments Charter. The document also includes practical examples of how the architecture could be used to achieve these goals which are based on the Web Payments IG Use Cases document.   
     </p> 
   </section> 
 
@@ -89,12 +89,17 @@ This document describes architectural requirements, concepts and rationale that 
 Custom Status of the Document language goes here.
     </p> 
   </section> 
+  
+  <section> 
+    <h2>The Challenge with Payments on the Web</h2> 
+    This section will provide introductory context and outline key problems that the Payment Agent Architecture is trying to address
+  </section>
 
   <section> 
-    <h2>Introduction</h2> 
+    <h2>Introduction to the payment agent</h2> 
+    <p>This Section will provide an introduction to the Payment Agent Concept and Key principles, abstractions and rationale behind the subsequent proposal.  This section should also clearly outline what the architecture is NOT intended to do. (ex. replace existing payments standards such as ISO20022 or IS12812.</p>
     <p>
-    <p>
-		A payment agent is defined as a software service that:
+		A payment agent (paygent) is defined as a software service that:
 		<ol type='1'>
 			<li>Provides a standard inteface for the collection of payment related information from user agents (ex. browsers, apps, or other web-enabled clients) which meets the following criteria:
 			<ol type='a'>
@@ -112,15 +117,24 @@ Custom Status of the Document language goes here.
   </section>
   
   <section> 
-    <h2>Overview of the Payment Agent</h2> 
-    <img style="display: block; max-height:100%; min-width: 40em; max-width:60%;" src="images/paygentbase.svg"></img>
+    <h2>A Simple Example</h2> 
+   This section outlines a higher level, easy to understand example of how the payment agent concept could be used as part of a payment process and raises key questions/discussion points which will help users to understand specific rationale for architecture requirements outlined later in the document.
+  </section>
+  
+  <section> 
+    <h2>Getting to know the Payment Agent</h2> 
+    This section of the document provides a more detailed introduction of the payment agent concept and outlines core building blocks and abstractions used in the payment agent architecture.  This section also will include necessary diagrams and context to help organizations who may potentially implement designs based on this architecture and set of standards
+  </section>
+  
+  <section> 
+    <h2>Where does the payment agent live</h2> 
+    This section of the document outlines examples of deployment models for payment agents and outlines considerations regarding specific deployment environments.  For example, this section would likely outline several examples of payment agent "containers" such as In-Browser Deployment, Native Application deployment, Web-Service/Cloud Deployment, Embedded/Operating System Deployment, etc. It will also include information and references to specific payments standards which may be specific to each container and their interaction with the proposed architecture.
   </section>
    
     <section> 
-      <h2>Payment Agent in context</h2> 
+      <h2>A more detailed example</h2> 
       <p>
- <img style="display: block; max-height:100%; min-width: 40em; max-width:60%;" src="images/paygent_connect.svg"></img>
- <img style="display: block; max-height:100%; min-width: 40em; max-width:60%;" src="images/model_1B_out_of_band_proof_of_payment.svg"></img>
+		  This section of the document will outline a more detailed view of how the payment agent concepts might be deployed as part of a multi-agent payment processing flow.  For example, this section could include an overview of how specific payment agents of the Payer such as a digital Wallet interact with specific payment agents of the Payee such as a digital POS terminal and payment agents of payment processors such as payment processing schemes to facilitate payment.
  
       </p>
     </section>
@@ -128,9 +142,9 @@ Custom Status of the Document language goes here.
 	  <section> 
 	    <h2>Required (core) Capabilities</h2> 
 	    <p>
-	This section outlines the required capabilities that a Payment Agent must provide to meet minimal viable requirements:
+	This section outlines the required capabilities that a Payment Agent and associated communication protocols must provide to meet minimal viable requirements:
 	<ul>
-		<li>Ability to receive and reply with standard formatted messages following payment agent API/protocol specifications</li>
+	<li>Ability to receive and reply with standard formatted messages following payment agent API/protocol specifications</li>
 	<li>Abiltiy to interact with user agent Display Services for displaying payment related information</li>
 	<li>Ability support synchornization between multiple payment agents operating on behalf of a single user agent</li>
 	<li>Ability to support user agents running locally and remotely from payment agent</li>
@@ -144,7 +158,7 @@ Custom Status of the Document language goes here.
   	  <section> 
   	    <h2>Optional Capabilities</h2> 
   	    <p>
-  	This section outlines the required capabilities that a Payment Agent could provide but are not required.
+  	This section outlines the capabilities that a Payment Agent could provide but are not required in all contexts
 	
 		<ul>
 			<li>Ability to communicate with Host Device Camera for accepting payment related info via visual input (ex. QR code or Bar code, etc)</li>
@@ -160,7 +174,7 @@ Custom Status of the Document language goes here.
   	  </section>
 	  
 	  <section>
-	  	<h2>Payment Agent API</h2>
+	  	<h2>Introduction to the Payment Agent API - A look at Payment Agent Communciation and Messaging</h2>
 		<p>
 			The Payment Agent API is a standard protocol and set of API's which facilitate exchange of payment related data in a standard manner with user agents.  The following is a list of the API's that the Payment Agent protocol will support:
 			<ul>
@@ -182,11 +196,24 @@ Custom Status of the Document language goes here.
    	  <section> 
    	    <h2>Conceptual Architecture</h2> 
    	    <p>
-   			DRAFT/PLACEHOLDER (NEED TO UPDATE)
+   			This section will illustrate a complete view of the payment agent architecture which is developed incrementally in earlier sections of the document
 	
    	    </p>
    	  </section>
-	
+ 	  <section> 
+ 	    <h2>How these concepts relate to existing web and payments standards work</h2> 
+ 	    <p>
+ 			This section will illustrate where specific elements of the payment agent architecture and communications conceptual architecture, have been, are being, or are planned to be addressed by existing standards efforts as well as any elements for which there is not existing standards work already availabile or in progress.  This section of the document will include recommendations for engaging/integrating with exising standards or standards groups.
+
+ 	    </p>
+ 	  </section>
+  	  <section> 
+  	    <h2>Additional Use Cases and Examples</h2> 
+  	    <p>
+  			This section will include illustrations and walk throughs of the remainder of the Web Paymnets IG use-cases document
+
+  	    </p>
+  	  </section>
   <section> 
     <h2>Acknowledgements</h2>
  
