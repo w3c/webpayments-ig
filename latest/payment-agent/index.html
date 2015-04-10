@@ -146,7 +146,7 @@ Custom Status of the Document language goes here.
   </section>
   
   <section> 
-    <h3>Deployment Contexts</h3> 
+    <h3>Deployment Contexts (Containers)</h3> 
     This section of the document provides an introduction to the types of infrastructure (ex. mobile device, Server, etc) that would likely host components of the architecture.  This is important as specific deployment contexts may create constraints that impact how elements of the architecture can be implemented.  This section will also highlight specfic standards that may apply to a speicific portion of the overll architecture.
 	<section><h4>Overview</h4></section>
     <section><h4>Mobile Device</h4>
@@ -188,41 +188,43 @@ Custom Status of the Document language goes here.
 	 </section>
 	
 	  <section> 
-	    <h2>Required (core) Capabilities</h2> 
-	    <p>
-	This section outlines the required capabilities that all User Agents involved with the payments process and associated communication protocols must provide to meet minimal viable requirements:
-	<ul>
-	<li>Ability to receive and reply with standard formatted messages following payment agent API/protocol specifications</li>
-	<li>Abiltiy to interact with user agent Display Services for displaying payment related information</li>
-	<li>Ability support synchornization between multiple payment agents operating on behalf of a single user agent</li>
-	<li>Ability to support user agents running locally and remotely from payment agent</li>
+		<h2>Detailed Requirements and Use Case Illustration</h2>  
+	    <section>
+			<h3>Required (core) Capabilities</h3> 
+	    	<p>This section outlines the required capabilities that all User Agents involved with the payments process and associated communication protocols must provide to meet minimal viable 				requirements:
+				<ul>
+					<li>Ability to receive and reply with standard formatted messages following payment agent API/protocol specifications</li>
+					<li>Abiltiy to interact with user agent Display Services for displaying payment related information</li>
+					<li>Ability support synchornization between multiple payment agents operating on behalf of a single user agent</li>
+					<li>Ability to support user agents running locally and remotely from payment agent</li>
 	
-	(NEED TO TIE TO CORE STANDARDS)
+					(NEED TO TIE TO CORE STANDARDS)
 		
-	</ul>
-	    </p>
-	  </section>
+				</ul>
+	    	</p>
+	  	</section>
 	  
-  	  <section> 
-  	    <h2>Optional Capabilities</h2> 
-  	    <p>
-  	This section outlines the capabilities that a Payment Agent could provide but are not required in all contexts
+  	  	<section> 
+  	    	<h3>Optional Capabilities</h3> 
+  	    	<p>This section outlines the capabilities that User Agents involved with the payments process could provide but are not required in all contexts
 	
-		<ul>
-			<li>Ability to communicate with Host Device Camera for accepting payment related info via visual input (ex. QR code or Bar code, etc)</li>
-		<li>Abiltiy to interact with Host Device Microphone for accepting payment related information via transmission of sound</li>
-		<li>Ability to interact with Host Biometric Services for accepting biometric authentication data required for payment process</li>
-		<li>Ability to interact with Host NFC (Near Field Contact) services to support proximity payments flows
-			</li>
-			<li>Ability to interact Host with BLE (Blue Tooth Low Energy) services to support local/proximity information exchange needed to support localized offers (ex. in store beacons)</li>
-			
-		</ul>
+				<ul>
+					<li>Ability to communicate with Host Device Camera for accepting payment related info via visual input (ex. QR code or Bar code, etc)</li>
+					<li>Abiltiy to interact with Host Device Microphone for accepting payment related information via transmission of sound</li>
+					<li>Ability to interact with Host Biometric Services for accepting biometric authentication data required for payment process</li>
+					<li>Ability to interact with Host NFC (Near Field Contact) services to support proximity payments flows</li>
+					<li>Ability to interact Host with BLE (Blue Tooth Low Energy) services to support local/proximity information exchange needed to support localized offers (ex. in store beacons)</li>
+				</ul>
 		(NEED TO TIE TO CORE STANDARDS)
-  	    </p>
-  	  </section>
+  	    	</p>
+  	  	</section>
+	
+	  <section><h3>Use Case Illustration</h3> </section>
+	</section>  
+	  <section><h2>Reference</h2>
 	  
 	  <section>
-	  	<h2>Introduction to the Payment Agent API - A look at Payment Agent Communciation and Messaging</h2>
+	  	<h2>API Reference</h2>
 		<p>
 			The Payment Agent API is a standard protocol and set of API's which facilitate exchange of payment related data in a standard manner with user agents.  The following is a list of the API's that the Payment Agent protocol will support:
 			<ul>
@@ -240,21 +242,18 @@ Custom Status of the Document language goes here.
 			</ul>
 		</p>
 	  </section>
-	 
-   	  <section> 
-   	    <h2>Conceptual Architecture</h2> 
-   	    <p>
-   			This section will illustrate a complete view of the payment agent architecture which is developed incrementally in earlier sections of the document
+	  <section>
+	  	<h2>Standards Reference</h2>
+		<p>
+			The following standards are included due to their relevance to the goals of the Web Payments initiative.
+			<ul>
+				<li>ISO20022</li>
+				<li>ANSI X9<li>
+				<li>ETC</li>	
+			</ul>
+		</p>
+	  </section>
 	
-   	    </p>
-   	  </section>
- 	  <section> 
- 	    <h2>How these concepts relate to existing web and payments standards work</h2> 
- 	    <p>
- 			This section will illustrate where specific elements of the payment agent architecture and communications conceptual architecture, have been, are being, or are planned to be addressed by existing standards efforts as well as any elements for which there is not existing standards work already availabile or in progress.  This section of the document will include recommendations for engaging/integrating with exising standards or standards groups.
-
- 	    </p>
- 	  </section>
   	  <section> 
   	    <h2>Additional Use Cases and Examples</h2> 
   	    <p>
@@ -262,6 +261,7 @@ Custom Status of the Document language goes here.
 
   	    </p>
   	  </section>
+	  </section>
   <section> 
     <h2>Acknowledgements</h2>
  
