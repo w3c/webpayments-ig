@@ -95,6 +95,9 @@
       //respecEvents.sub('start-all', webpayments.preProcess.apply);
     </script>
     <style type="text/css">
+body {
+  line-height: 1.4em;
+}
 h4 {
   color: #005A9C;
 }
@@ -511,7 +514,7 @@ discovers the <a title="payment instrument">payment instruments</a> that
 are accepted by the <a>payee</a>.
         </li>
         <li>
-<strong>Selection of Payment Instruments</strong>. The <a>payee</a>
+<strong>Selection of Payment Instruments</strong>. The <a>payer</a>
 selects one or more <a title="payment instrument">payment instruments</a>
 that are available to the <a>payer</a> and are accepted by the
 <a>payee</a>.
@@ -542,8 +545,8 @@ PayPal or Yandex Money), the <a>payee</a> (e.g., when using a credit card), or o
 party (e.g., bank) initiates processing.
         </li>
         <li>
-<strong>Verification of Available Funds</strong>. The <a>payee</a> may
-need to provide a proof of funds or a proof of hold to the <a>payer</a>
+<strong>Verification of Available Funds</strong>. The <a>payer</a> may
+need to provide a proof of funds or a proof of hold to the <a>payee</a>
 before finalizing payment and delivery of the product.
         </li>
         <li>
@@ -582,7 +585,7 @@ various ways and times that a receipt may be delivered (e.g., credit card
 receipt, digital proof of <a>purchase</a>, encrypted line-item receipt, etc.).
         </li>
         <li>
-<strong>Refunds</strong>. At time exceptions may occur (e.g., defective
+<strong>Refunds</strong>. At times exceptions may occur (e.g., defective
 product, application of store return policy, etc.). In this case, the
 <a>payee</a> initiates payment to the <a>payer</a>. The refund may
 take different forms, including a refund to the <a title="payer">payer's</a>
@@ -610,11 +613,10 @@ the payment phases</a>.
     </p>
 
     <p class="issue">
-General feedback is requested as to whether or not this section is helpful in
-grounding the payment phases and steps in a real world use case is helpful this
-early in the document. An alternative would be removing this section
-entirely if the preceding section suffices, or moving this narrative to 
-section 7 with other examples.
+General feedback is requested on whether this section is helpful. We are 
+attempting to ground the payment phases and steps in a real world use case. 
+An alternative would be removing this section entirely if the preceding 
+section suffices, or moving this narrative to section 7 with the other examples.
     </p>
 
     <section>
@@ -641,8 +643,8 @@ page.
 
         <li>
 <strong>Application of Marketing Elements</strong>: As Jill prepares to
-check out, PayToParty offers her a discount of 10% if she uses the store's
-loyalty card to pay.
+check out, PayToParty notifies her of a discount for 10% if she uses 
+the store's loyalty card to pay.
         </li>
       </ul>
     </section>
@@ -652,7 +654,7 @@ loyalty card to pay.
       <ul>
         <li>
 <strong>Discovery of Accepted Schemes</strong>: Given where Jill lives,
-PayToParty offers her payment by credit card, debit card, the PayToParty
+PayToParty accepts payment by credit card, debit card, the PayToParty
 loyalty card, and PayPal, but not Jill's favorite cryptocurrency (which she
 uses on other sites).
         </li>
@@ -733,7 +735,7 @@ the architecture and requirements documents.
     <ul>
         <li>
 <strong>Connectivity</strong>. Connectivity requirements vary according to
-use case. The types of connections a device may utilize include Internet
+use case. The types of connections a device may use include Internet
 connectivity, proxied connections through short-range radio transmissions,
 and proximity connections over a technology such as Near-Field Communication
 (NFC) or Bluetooth Low Energy (BTLE). Some use cases assume no
@@ -805,9 +807,9 @@ for the sake of completeness.
         <dl class="dl-horizontal">
           <dt>Point of Sale Kiosk</dt>
           <dd>
-Cory shops for groceries at his local ChowMart, scans all of the items he
-wants to <a>purchase</a> at the automated kiosk, and is presented with a
-total amount.
+Cory shops for groceries at his local ChowMart, scans his loyalty card and
+all of the items he wants to <a>purchase</a> at the automated kiosk, and is
+presented with a total amount.
           </dd>
           <dt>Goals</dt>
           <dd>
@@ -906,9 +908,10 @@ Improved user experience, Increased user choice, and rapid, widespread adoption.
             </dd>
             <dt>Motivation</dt>
             <dd>
-By design, some <a title="transaction">transactions</a> do not reach
-completion. Some are merely there to protect the <a>payee</a> (e.g., in the
-event of questionable judgment by the <a>payer</a>).
+Some <a title="transaction">transactions</a>, such as a hold of funds,
+do not always reach completion and are primarily used
+to protect the <a>payee</a> from negligence on the part of the
+<a>payer</a> (e.g., such as a <a>payer</a> damaging a hotel room).
             </dd>
             <dt>Exceptions</dt>
             <dd>
