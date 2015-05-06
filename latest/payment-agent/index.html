@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html> 
   <head> 
-    <title>Web Payments Payment Agent</title> 
+    <title>Towards a Unified Architecture for Payments on the Web</title> 
     <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/> 
     <script src='../respec-w3c-common.js' class='remove'></script> 
     <script src='../respec-webpayments.js' class='remove'></script> 
@@ -34,8 +34,13 @@
           // editors, add as many as you like
           // only "name" is required
           editors:  [
-              { name: "Pat Doe", url: "http://patdoe.example.com/",
-                company: "ACME", companyURL: "http://acme.example.com/" },
+			  { 
+				name: "Pat Adler", url: "",
+                company: "Federal Reserve Bank of Chicago", companyURL: "" },
+			  { 
+				name: "Jörg Heuer", url: "",
+                company: "Deutsche Telekom", companyURL: "" },
+			  
           ],
  
           // authors, add as many as you like. 
@@ -75,23 +80,157 @@
 <body> 
   <section id='abstract'> 
     <p> 
-Abstract goes here.
+This document describes a conceptual unified architecture and set of communication/protocol standards for payments on the World Wide Web. The architecture and examples included in this document outline a set of core principles and abstractions required to achieve broad interoperability across the many and growing number of users and devices connected to the Web, as well as the core goals such as security, privacy, and user choice outlined in the W3C's Web Payments Charter. The document also includes practical examples of how the architecture could be used to achieve these goals which are based on the Web Payments IG Use Cases document.   
     </p> 
   </section> 
 
   <section id='sotd'> 
     <p> 
-Custom Status of the Document language goes here.
+		This document is in early draft state and is expected to rapidly evolve based on broad feedback and input from the Web Payments Interest Group
     </p> 
   </section> 
+  
+  
+  <section> <h2>Introduction</h2>
+	<section> <h3>Purpose of this document</h3> 
+   	 	This document is intended to outline key characteristics, requirements and desired goals of a unified architecture for payments and related services on the world wide web. This document and the conceptual architecture it is intended to describe are based on the use cases defined as part of the W3C's Web Payments Interest Group which can be found <a href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/">here</a>.
+  	</section>
+	<section> <h3>How this document is organized</h3> </section>
+</section>
+<section><h2>Summary Requirements</h2>
+	<section><h3>Functional Requirements</h3> 
+This goal of this section is to outline a high level, easy to understand description of summary requirements that the proposed architecture must provide to support unified payments on the web in a manner which also addresses the overarching goals outlined in the <a href="http://www.w3.org/2014/04/payments/webpayments_charter.html">W3C Web Payments Charter</a> .   Requirements have been grouped into functional categories to:
+<ul>
+	<li>facilitate readability of this document</li>
+	<li>outline and identify relevant or related standards specific to the category</li>
+	<li>communicate functional needs for additinal standards that may be needed to technical working groups</li>
+</ul>
+	The functional requirements categories used by this document are:
+ <ul>
+	 <li><b>UA</b> - User Agent:</li>
+	 <li><b>IA</b> - Identity and Authentication</li>
+	 <li><b>CA</b> - Credentials and Authorization</li>
+	 <li><b>CS</b> - Digital Contracts and Signatures</li>
+	 <li><b>LD</b> - Loyalty and Discounts</li>
+	 <li><b>LA</b> - Ledgers and Accounting</li>
+	 <li><b>T</b> - Taxation</li>
+	 <li><b>FX</b> - Currency Conversion and Foreign Exchange</li>
+	 <li><b>RI</b> - Receipts and Invoicing</li>
+	 <li><b>PS</b> - Payment Messaging, Clearing and Settlement</li>
+	 <li><b>DS</b> - Delivery and Shipping</li>
+	 <li><b>SC</b> - Payment Scheduling and Calendering</li>
+	 <li><b>RR</b> - Regulatory and Reporting</li>
+	 <li><b>WA</b> - Wallet and Paymnet Instrument Provisioning and Administration</li>
+	 <li><b>SA</b> - Security and Auditing</li>
+ </ul>
+  <p class="note">Following the introduction of categories above, this section will include a categorized table of mandatory list of core/functional requirements that the architecture must support.
+	  <p id="summary_functional_requirements"></p>
+	  <table>
+	   <caption>Summary Functional Requirements</caption>
+	   <thead>
+	    <tr>
+	     
+	     <th id="category"> Category
+	     <th id="requirement_id"> ID
+	     <th id="requirement">Requirement	
+	     <th id="use_case_ref">Use Cases
+	   <tbody>
+	    <tr>
+	     <td>IA
+	     <td> 1
+	     <td> Payer and payee should not need to know each other’s account numbers to make a web payment
+	     <td> Payer Privacy
+	    <tr>
+   	     <td>IA
+   	     <td> 2
+   	     <td> Payer and payee account data should not be disclosed at any point throughout the lifecycle of the payment
+   	     <td> Payer Privacy
+	  </table>
+  
+  </p>
+  
+  
+</section>
+  
+<section><h3>Role Based Contextual Requirements</h3> 
+    In addition to functional groupings of requirements, this document also identifies requirements which are based on the role or context of the actors in the payments process and which may be unique to the actors role in the process.  The following roles/contexts have been identified for use in this document:
+	<ul>
+		<li><b>PC</b> - Payer Context</li>
+		<li><b>EC</b> - Payee Context</li>
+		<li><b>WP</b> - Wallet Provider Context</li>
+		<li><b>PS</b> - Payment System Context</li>
+		<li><b>RG</b> - Regulatory Context</li>
+		<li><b>TP</b> - Third Party Service Provider Context</li>
+		<p class="note">Not sure if this is better covered in the detailed use case illustration section below</p>
+	</ul>
+</section>
+<section><h3>Non-Functional and Aggregate Architecture Requirements</h3> 
+    This section captures identified non-functional and aggregate architecture requirements which are required to support overarching goals such as security, interoperability, etc.
+	Non-Functional and Aggregate Architecture Requirements have been captured using the following categories:
+	<ul>
+		<li><b>KP</b> - Key Principles</li>
+		<li><b>SE</b> - Security</li>
+		<li><b>IO</b> - Interoperability</li>
+		<li><b>SC</b> - Scalability</li>
+		<li><b>ETC</b> - ETC</li>
+		<li><b>ETC</b> - ETC</li>
+	</ul>
+</section>
+</section>
+    	
+<section> <h2>Key Architecture Concepts and Terminology</h2>   
+      <p>This section of the document will outline key concepts and terminology used to describe a unified architure for payments on the web.  This architecture is  might be deployed in context as part of a multi-user agent payment processing flow.  For example, this section could include an overview of how specific user agents of the Payer such as a digital Wallet interact with specific user agents of the Payee such as a digital POS terminal and user agents of payment processors such as payment processing schemes to facilitate payment. </p>
+	  <section><h3>Simple example</h3>
+	  <p class="note">This section will contain one or more simple diagrams and descriptions which are intended to introduce key architecture concepts </p>
+	  </section>
+	  <section><h3>Key Concept: The Symetrical Web of Payments</h3>
+	  <p class="note">This section will focus on illustrating the key architectural principle of Symetry of core capabilities</p>
+	  </section>
+	  <section><h3>Key Concept: Payment Relays</h3>
+	  <p class="note">This section will focus on illustrating the key architectural principle that allows for multiple parties in the payment process to use one or more "agents" to facilitate the payments process</p>
+	  </section>
+</section>
+	 </section>
+	
+	  <section> 
+		<h2>Detailed Requirements and Use Case Illustration</h2>  
+		    <section><h3>Negotiation of Payment Terms</h3>
+		  	  <p class="note">This section will contain one or more simple diagrams and descriptions which are intended to illustrate key architecture concepts in the context of each phase of the payments process. It will also describe any specific architecture variations specific to use cases to help provide guidance to working groups and technical architecture groups that will be working on developing specifications and standards to meet the outlined requirements</p>
+			  General Overview </br>
+				1.1 Discovery of Offer</br>
+		        1.2 Agreement on Terms</br>
+		        1.3 Application of Marketing Elements</br>
+			</section>
+		    <section><h3>Negotiation of Payment Instruments</h3>
+		        General Overview </br>
+				2.1 Discovery of Accepted Schemes</br>
+		        2.2 Selection of Payment Instruments</br.>
+		        2.3 Authentication to Access Instruments</section>
+		    <section><h3>Payment Processing</h3>
+		        General Overview</br>
+				3.1 Initiation of Processing</br>
+		        3.2 Verification of Available Funds</br>
+		        3.3 Authorization of Transfer</br>
+		        3.4 Completion of Transfer</br>
+			</section>
+		    <section><h3>Delivery of Product/Receipt and Refunds</h3>
+				General Overview</br>
+		        4.1 Delivery of Product</br>
+		        4.2 Delivery of Receipt</br>
+		        4.3 Refunds</br>
+			</section>
+	
+	 
+	
+  	  <section> 
+  	    <h2>Additional Use Cases and Examples</h2> 
+  	    <p>
+  			This section will include illustrations and walk throughs of the remainder of the Web Paymnets IG use-cases document
 
-  <section> 
-    <h2>Introduction</h2> 
-    <p>
-Introduction goes here.
-    </p>
-  </section>
-
+  	    </p>
+  	  </section>
+	  </section>
+	  
   <section> 
     <h2>Acknowledgements</h2>
  
@@ -104,6 +243,8 @@ List of contributors/reviewers.
     </p>
 
   </section>
+  <section><h2>Appendix</h2></section>
+  <section><h3>Detailed Requirements Traceability Matrix</h3></section>
 
   </body> 
 </html>

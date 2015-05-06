@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="34cm" height="13cm" viewBox="18 44 661 254" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="312.736" y="56.5834">
+    <tspan x="312.736" y="56.5834"></tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="730.8" y="165.45">
+    <tspan x="730.8" y="165.45"></tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke-linejoin: round; stroke: #ff8585" d="M 105.327,196.144 A 10,10 0 0 0 115.327,206.144"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke-linejoin: round; stroke: #ff8585" x1="105.327" y1="170.463" x2="105.327" y2="196.144"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke-linejoin: round; stroke: #ff8585" d="M 356.074,215.653 A 9.50848,9.50848 0 0 0 346.565,206.144"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke-linejoin: round; stroke: #ff8585" x1="115.327" y1="206.144" x2="346.565" y2="206.144"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke-linejoin: round; stroke: #ff8585" x1="356.074" y1="215.653" x2="356.074" y2="233.038"/>
+    <polygon style="fill: #ff8585" points="351.074,233.038 356.074,243.038 361.074,233.038 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke: #ff8585" points="351.074,233.038 356.074,243.038 361.074,233.038 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="883" y="348">
+    <tspan x="883" y="348"></tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke-linejoin: round; stroke: #ff8585" d="M 590.102,206.163 A 9.79342,9.79342 0 0 0 599.895,196.37"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke-linejoin: round; stroke: #ff8585" x1="599.895" y1="178.463" x2="599.895" y2="196.37"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke-linejoin: round; stroke: #ff8585" d="M 365.576,206.163 A 9.50169,9.50169 0 0 0 356.074,215.665"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke-linejoin: round; stroke: #ff8585" x1="590.102" y1="206.163" x2="365.576" y2="206.163"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke-linejoin: round; stroke: #ff8585" x1="356.074" y1="215.665" x2="356.074" y2="233.038"/>
+    <polygon style="fill: #ff8585" points="351.074,233.038 356.074,243.038 361.074,233.038 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke: #ff8585" points="351.074,233.038 356.074,243.038 361.074,233.038 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke-linejoin: round; stroke: #ff8585" d="M 355.961,207.593 A 0.0398484,0.0398484 0 0 0 356.001,207.633"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke-linejoin: round; stroke: #ff8585" x1="355.961" y1="170.463" x2="355.961" y2="207.593"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke-linejoin: round; stroke: #ff8585" d="M 356.074,207.658 A 0.0257599,0.0257599 0 0 0 356.048,207.633"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke-linejoin: round; stroke: #ff8585" x1="356.001" y1="207.633" x2="356.048" y2="207.633"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke-linejoin: round; stroke: #ff8585" x1="356.074" y1="207.658" x2="356.074" y2="233.038"/>
+    <polygon style="fill: #ff8585" points="351.074,233.038 356.074,243.038 361.074,233.038 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke: #ff8585" points="351.074,233.038 356.074,243.038 361.074,233.038 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke: #000000" x1="190.852" y1="144.463" x2="283.247" y2="144.463"/>
+    <polygon style="fill: #000000" points="283.247,149.463 293.247,144.463 283.247,139.463 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke: #000000" points="283.247,149.463 293.247,144.463 283.247,139.463 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke: #000000" x1="416.911" y1="144.463" x2="509.306" y2="144.463"/>
+    <polygon style="fill: #000000" points="509.306,149.463 519.306,144.463 509.306,139.463 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3.52778; stroke: #000000" points="509.306,149.463 519.306,144.463 509.306,139.463 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="295.011" y="118.463" width="121.9" height="52" rx="10" ry="10"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="295.011" y="118.463" width="121.9" height="52" rx="10" ry="10"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="355.961" y="140.363">
+      <tspan x="355.961" y="140.363">Phase 2</tspan>
+      <tspan x="355.961" y="156.363">Payee gets paid</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="521.07" y="110.463" width="157.65" height="68" rx="10" ry="10"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="521.07" y="110.463" width="157.65" height="68" rx="10" ry="10"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="599.895" y="132.363">
+      <tspan x="599.895" y="132.363">Phase 3</tspan>
+      <tspan x="599.895" y="148.363">Payer receives </tspan>
+      <tspan x="599.895" y="164.363">receipt/goods/service</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="19.8019" y="118.463" width="171.05" height="52" rx="10" ry="10"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="19.8019" y="118.463" width="171.05" height="52" rx="10" ry="10"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="105.327" y="140.363">
+      <tspan x="105.327" y="140.363">Phase 1</tspan>
+      <tspan x="105.327" y="156.363">Payer initiates Payment</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="217.074" y="244.802" width="278" height="52" rx="10" ry="10"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="217.074" y="244.802" width="278" height="52" rx="10" ry="10"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="356.074" y="266.702">
+      <tspan x="356.074" y="266.702">Exceptions</tspan>
+      <tspan x="356.074" y="282.702">Insufficient funds, Regulatory block, etc.</tspan>
+    </text>
+  </g>
+</svg>
