@@ -1,0 +1,209 @@
+Identity is the gate keeper but security is the door.
+
+Erik Anderson
+Bloomberg R&D & Co-chairman W3C Web Payments IG/SG
+
+Some requirement drafts for W3C Web Payments.
+
+Even when technologies are developed inside the NSA, they don't remain exclusive for long. Today's top-secret programs become tomorrow's PhD theses and the next day's hacker tools. There exists quantum tools to sniff, regexp match, swap sip/sport/dip/dport/syn/ack, set ack and push flags, and add the payload to create the malicious reply. These tools, once top secret tools, are now open and available to all.
+
+The only defence against these tools is to encrypt all of the information, down to the very data elements themselves, to accomplish information security requirements for consumer protection & protection of our financial systems.
+
+***********************************
+Requirements drafts.
+
+Identity
+  NOTE: We must move beyond static authentication and into the next generation of authenticating the identity of the user (or system)
+  - Identity is ultimately a service of the account provider but the browser must facilitate features/capabilities to facilitate the binding of an electronic identity to the physical person if Web Payment API's are to be adopted throughout financial services.
+  - Electronic identities must support attribute based configurable inputs
+  - Electronic identities must not be identical across different account providers (ie email address, SSN, etc) but operate under a common framework.
+    NOTE: For privacy concerns. Its possible for collisions to occur but these occurrences are unlikely
+  - An electronic identity must be unique per account provider and issued from the provider.
+    NOTE: There exists conditions that an identity must be pseudo anonymous and unique per transaction but forensically linkable back to the user (if necessary by legal & regulatory processes
+    NOTE: Out of scope for now - merit based electronic identities may not be issued from an account provider but solely from the end user.
+  - Electronic identities must support attributes based on various selectable data elements of the user
+    NOTE: Below are system requirements. Depending on device capabilities these "must" requirements will not be achievable
+    NOTE: If a device has limited capabilities and depending on legal+regulatory constraints not all transactional values will be capable on these low capability devices.
+    NOTE: At the core an attribute is a tokenized form of any mandatory and discretionary inputs from both the account provider&holder. These can include but not limited to digitized documentation, tokenized biometric template matches, time elements, knowledge elements, location elements, or another token.
+    - Attributes must have an ID associated with them for lookup purposes. These IDs/names shouldnt be overly descriptive to leak information.
+    - Attributes must be capable of being derived from data elements based on digitized formats of a users analog documentation (credentials)
+      Example: Tokenized scan of a users drivers license.
+    - Attributes must be capable of being derived from and cryptographically linked to various biometric templates from a user
+    - Attributes must be capable of being derived from a secure cryptographic device in the possession of a user
+    - Attributes must be capable of being derived based on a users geolocation or a geofence of where a user should be.
+      NOTE: This is a must for high value transactions or any verifiable proximity based transactions.
+    - Attributes must be capable of being based on knowledge from a user. Such as a password, address, pin, pet name.
+    - Attributes must be capable of being derived from random or pseudo-random data inputs (such as known information seeded to a random number generator)
+    - Attributes should be capable of being derived from time based information. Example: Timelocks, Timebox
+      NOTE: Postdated check, 3 day hold on funds, etc
+      NOTE: Depending on the use case(s) this is essential but not in all cases.
+    - Attributes should be capable of being derived from remote resource. Example: URL or Secure DNS resource lookup
+    - Attributes must support being derived (or aggregated) from other attributes.
+    - Attributes must be expressed in a standard format such that they can benefit from future hardware&software technologies
+    - Attributes crypto materials must be stored in an encrypted container and unlockable by input from the intended user.
+      Example: Unlocked by a hardware token, static password, finger swipe, one time password, pin, etc.
+  - Biometric templates
+    - Biometric templates should only be stored in a modified/secured format. Example: encrypted with a password or token in the users possession.
+    - If plain fingerprint template matching is being used, the enrolment template must reside on a device/token owned by and only accessible under the knowledge of the user.
+    - Account biometric templates must be enrolled with the account provider but protected against theft by some form of user input. Hardware token preferred.
+      NOTE: Unattended enrolment of biometrics is not advisable. 
+      NOTE: Not all biometrics work with all users. Example: Finger scan metrics don't work on 5% of all individuals.
+  - If identifier is for a machine attributes must be capable of being derived from virtual information such as IP address, MAC address, system ID, etc
+    NOTE: Delegate authority to a system to issue reoccurring payments.
+  - multiple inputs that go into the creation of an Electronic Identity must be cryptographically bound together so those elements of identity cannot be hijacked, separated and used for different intents i.e. No fishing
+  - Identity hardening – Identity validation that grows with each trusted relationship that is linked to it…  
+    - To assure the users identity is confirmed the account provider must be able to request user provide a tier of factors/tokens to prove identity
+       - Example: Alternate finger swipe
+                  Biological data such as voice print, vein scan, palm print, retina scan, tissue sample.
+                  Voice print
+                  Token provided from a users secure cryptographic device
+    - Regulatory compliance will impact the identity hardening process and also insurance impact with increased trust
+      Example:
+         - Cross border, international, cross state transactions
+         - Tiers of values for the transaction such as $3000, $25,000, $1,000,000, etc
+  - 
+         
+Authentication
+  - As far as these requirements are written, Identity and Authentication can be used interchangeably because we are authenticating the
+    identity of the user  
+Security
+  - We must move beyond static key cryptography and into the next generation of dynamic key management of cryptographic keys.
+  - Must support configurable identification
+  - Must utilize a standardized cryptographic messaging syntax like X9.73, RFC
+  - Cryptographic key management must be done utilizing a standardized dynamic key management system based on a variety of attributes (such as X9.69)
+    - Attributes
+      - Attributes must have an ID associated with them for lookup purposes.
+      - Attributes must include descriptive names but these names should be secured to protect against information leakage.
+      - Attributes must be capable of being derived from random or pseudo-random data (such as known information seeded to a random number generator)
+      - Attributes must be capable of being generated/input from a secure cryptographic device in the possession of a user
+      - Attributes must be capable of input data from the configurable identity outputs
+      - Each attribute must include permissions for read, write, or read&write access.
+        - Examples:
+          - Attribute based on read only permissions. Example: Account provider can read a user initiated transaction but they never have permissions to initiate the transaction themselves
+          - Attribute based on write only permissions. Example: used to write secure information for a regulatory body but only that particular regulatory body can read it.
+          - Attribute based on bidirectional read and write permissions.
+    - Roles
+      - Roles are independent of other roles. Thus a role should never include other roles, although 2 roles can include the same attributes.
+      - Roles must include descriptive names but these names should be secured to protect against information leakage.
+        - Examples of names:
+          - US Citizen
+          - Standard account holder of xyz bank
+          - Premium account holder of xyz bank
+          - Bloomberg employee.
+      - Attributes are assigned to roles. A role can include a variable number of attributes. Example: 1 to 10...0 attributes.
+      - It is desirable that 1 attribute for each role be based on a maintenance value under control of the account provider. Account provider can rotate this attribute periodically or if it is believed a security compromise of the role has occurred.
+    - Tokens
+      - Dynamic key management tokens are assigned to users.
+      - Tokens are the specialized container for roles & attributes.
+      - A token can include a variable number of roles. Example: 1 to 10...0 roles.
+    - Cryptographic keys
+      - Cryptographic keys are constructed from crypto materials extracted from attributes in a users token.
+      - Cryptographic keys must include 1 random or pseudo-random input to their construction.
+      - Cryptographic keys are one time use only
+      - Keys and their input materials must be flushed from memory immediately after use
+  - Security must not be centralized by 1 authority. Security must be configurable per account provider. Account provider can delegate to 3rd party if necessary.
+  - Compromise of security of 1 account provider should not lead to information disclosure for all users of that providers service.
+  - Transactional messages, in and of themselves, a self-contained cryptographic object
+  - Cryptographic objects:
+    - Each cryptographic object supports tiers/layers of security
+    - Cryptographic objects can contain another cryptographic object, arrray of said objects, trees of said objects, etc. Best analogy of this is an onion inside of onion.
+    - Cryptographic objects are wrapped by a standardized descriptive layer such as X9.73, etc that allows metadata about the object(s) contents to be exposed without decrypting the object and unnecessarily exposing the contents as the object is routed/relayed through n-number of secure/unsecure networks.
+       - Example: Object/message routing/relaying should be possible without requiring each node to decrypt the object.
+    - Cryptographic objects are not tied to 1 cryptographic algorithm. Can be constructed by n-number of algorithms.
+    - Which algorithms used to construct the object(s) in chosen by the account provider. There is no one international standard encryption algorithm so various algorithms must be available and choices provided.
+    - Legal/regulatory information can be included for regulatory bodies without compromising the integrity of the message itself or enabling regulatory fishing.
+    - There are many tiers of regulators so each regulatory layer must be its own security layer and constructed from its own set of attributes/dynamic keys
+    - If regulatory information is to be included in a transactional message the user must be made aware
+    - Encryption objects should be agnostic of the internal protected data and able to contain any arbitrary data/layload
+    - Cryptographic objects must be able to support encryption keys that unlock encryption keys.
+      - Example:
+        - Each party be they user(s), financial, legal, or regulatory, can use their individual one time dynamic key to encrypt a randomly generated encryption key without having to duplicate and encrypt the object payload/data separately for each required party.
+        - Dynamic key thats used to protect a static private bitcoin key.
+  - At least 1 of the n-attribute inputs to the dynamic key management system must be exclusively under control of the user.
+  - No 2 users of an account provider share the same set of attributes. Thus every message is uniquely secured for the end user. BAD WORDING. WHAT ABOUT GROUP ACCOUNTS?
+  - Each message contains at least 1 random element to ensure the contents are uniquely encrypted.
+  - On a users device Attributes and Cryptographic material used as input to construct a dynamic key management system must be deployed to the user
+    in an out of bands communication (ie not in the same session with the transaction)
+  - On a users device Attributes and Cryptographic material used as input to construct a dynamic key management system must be stored in a secure method such as an offline
+    token or online with a layer of security such as identity based encryption.
+  - Wire message formats:
+    NOTE: There are various messaging standards for financial services. ISO 20022 is by far one of the biggest but there are other formats.
+    - Wire messages are all encapsulated inside of a cryptographic object thats provide protection regardless of man-in-the-middle or routing of objects through unsecure networks
+      - Example:
+        - TOR network or plain text HTTP session.
+    - There must be a mechanism to convert from a web friendly structures to wire structures:
+       - Example: Convert from a browser friendly JSON or JSON-LD data structure(s) to ISO 20022, FIX, or card specific structure such as ISO 8583
+    - Account provider must be able to specify which standardized message format they require.
+
+Credentials
+   NOTE: Credentials are critical inputs to the Identity solution. We must be able to trace the Electronic identities back to the very documentation that went into the creation of those Identities. Ultimately the protection of those credential and access to the content of those credentials must come from to whom those credentials refer to. For consumer protection reasons, if someone wants to access the credentials of Erik Anderson then ONLY Erik Anderson should be able to provide cryptographic authorization to access to those credentials.
+
+***********************************
+
+Legal, Regulatory, and Consumer Protection
+  - Personal Information
+    - A good summary of legal directions the US is taking when it comes to protecting and enforcing access to users personal information can be found on. http://us.practicallaw.com/6-502-0467.  Many trails lead into findlaw.com, americanbar.com, federal trade commission, state statutes.
+    - In many US states, end users can now sue non-government account and information holders who's data has been breached resulting in the mis-use, abuse, identity theft.
+       - This includes hijacking of information that is relayed through 3rd party companies.
+       - This includes "unauthorized access" of data even by a employee of those companies. Loss of a personal device containing protected classifications of information.
+       - These states directly require encryption of data and trigger notification to the user if their personal information is accesses. Harsh consequences for unauthorized access, unauthorized acquisition, and data acquired under false pretences.
+    - Next generation of Business Operating procedures 
+    - Several state have now redefined of "personal information" beyond the general definition. This new definition now includes:
+       - finger prints & biometric data
+       - account numbers
+       - Personal security questions like maiden name, mothers name, pet name
+       - Geolocation information of the user.
+    - What data is regulated
+       - All data is regulated at one international . There are stricter restrictions when 
+  - Regulatory
+  
+  
+*****************************
+  
+Some regulation bulletpoints. 
+ - Regulation
+    - What national laws regulate to the collection and use of personal data?
+    - To whom do the laws apply?
+    - What data is regulated?
+    - What acts are regulated?
+    - What is the jurisdictional scope of the rules?
+    - What are the main exemptions?
+    - Is notification or registration required before processing data?
+ - Main data protection rules and principles
+    - What are the main obligations imposed on data controllers to ensure data is processed properly?
+    - Is the consent of data subjects required before processing personal data?
+    - If consent is not given, on what other grounds (if any) can processing be justified?
+    - Do special rules apply for certain types of personal data, such as sensitive data?
+ - Rights of individuals
+    - What information should be provided to data subjects at the point of collection of the personal data?
+    - What other specific rights are granted to data subjects?
+    - Do data subjects have a right to request the deletion of their data?
+ - Security requirements
+    - What security requirements are imposed in relation to personal data?
+    - Is there a requirement to notify personal data security breaches to data subjects or the national regulator?
+ - Processing by third parties
+    - What additional requirements apply where a third party processes the data on behalf of the data controller?
+ - Electronic communications
+    - Under what conditions can data controllers store cookies or equivalent devices on the data subject's terminal equipment?
+ - International transfer of data
+    - What rules regulate the transfer of data outside your jurisdiction?
+    - Are data transfer agreements contemplated or in use? Have any standard forms or precedents been approved by national authorities?
+    - Is a data transfer agreement sufficient to legitimise transfer, or must additional requirements (such as the need to obtain consent) be satisfied?
+    - Does the relevant national regulator need to approve the data transfer agreement?
+ - Enforcement and sanctions
+    - What are the enforcement powers of the national regulator?
+    - What are the sanctions and remedies for non-compliance with data protection laws?
+ 
+In essence, any piece of data is regulated somewhere and by someone. No single Identity, Payment, Transactional system that intends to use the public internet can possibly adhere to the requirements of this constantly changing legal/regulatory environment.
+
+We need closed loop solutions over an open loop network like the internet.
+
+So, if this is an impossible task to undertake using an open network how can this be accomplished?
+Simply: encrypt all data all the time and provide role based access controls to the very data elements of every document. In essence a computer programmable regulatory & legal environment all enforced via cryptography.
+
+Burden for that regulation must fall on the data storage provider but they need a secure front end, the browser, to mitigate risk for unauthorized access of the data.
+
+Its in my belief if we extend the existing browser to a "secure browser with role based access controls enforced via cryptography" we can lock the hackers out of our data even if they penetrate our networks.
+
+The above requirements will let the worlds financial systems store their data on a publicly available cloud storage more securely than their own internal networks. Jennifer Lawrence will never fear her iCloud photos are stolen again.
+
