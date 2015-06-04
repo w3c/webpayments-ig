@@ -49,7 +49,7 @@
               { name: "Manu Sporny", url: "https://manu.sporny.org/",
                 company: "Digital Bazaar", companyURL: "http://digitalbazaar.com/" },
               { name: "Ian Jacobs", url: "http://www.w3.org/People/Jacobs/",
-                company: "W3C", companyURL: "http://www.w3.org/" }              
+                company: "W3C", companyURL: "http://www.w3.org/" }
           ],
 
           otherLinks: [{
@@ -107,6 +107,9 @@ dd {
 dl > dt:first-of-type {
   font-weight: bold;
 }
+.align-left {
+  text-align: left;
+}
 @media (min-width: 768px), print {
   .dl-horizontal {
     margin-bottom: 4em;
@@ -135,7 +138,7 @@ dl > dt:first-of-type {
 
   <section id='abstract'>
     <p>
-The purpose of this document is to outline a coherent implementation and 
+The purpose of this document is to outline a coherent implementation and
 deployment strategy for the Web Payments standardization work at W3C.
     </p>
   </section>
@@ -151,18 +154,18 @@ using an agile process; it is incomplete.
     <h2>Introduction</h2>
 
     <p>
-The purpose of this document is to outline a coherent implementation and 
+The purpose of this document is to outline a coherent implementation and
 deployment strategy for the Web Payments standardization work at W3C.
-This document is separated into sections that describe "versions" that 
+This document is separated into sections that describe "versions" that
 consist of the following:
     </p>
-    
+
     <ul>
       <li>
 Strategic goals for the version.
       </li>
       <li>
-Basic capabilities that are targeted and which groups are responsible for 
+Basic capabilities that are targeted and which groups are responsible for
 delivering the capabilities.
       </li>
       <li>
@@ -172,40 +175,40 @@ Organization of standardization of those capabilities.
 Deployment goals and strategies
       </li>
     </ul>
-    
+
   </section>
 
   <section>
     <h2>Version 1</h2>
 
     <p>
-The initial implementation of the Web Payments work will focus on delivering 
+The initial implementation of the Web Payments work will focus on delivering
 standards for a Minimum Viable Platform (MVP) by December 2017.
     </p>
-    
+
     <section>
       <h3>Goals</h3>
       <ul>
         <li>
-Lower cost of integration of payment services via standard wallet 
+Lower cost of integration of payment services via standard wallet
 (payment agent) APIs.
         </li>
         <li>
-Lower cost of satisfying Know Your Customer (KYC) requirements when 
+Lower cost of satisfying Know Your Customer (KYC) requirements when
 performing payments.
         </li>
         <li>
-Increased usability, privacy, and security for users.        
+Increased usability, privacy, and security for users.
         </li>
       </ul>
     </section>
     <section>
       <h3>Implementation Plan</h3>
       <p>
-The following table shows the capabilities for this version, with annotations 
-about where those capabilities arise in the payment flow and which groups will 
-work on them. As we progress, we will include links to definitions of these 
-capabilities, descriptions of phases in the use cases document, and 
+The following table shows the capabilities for this version, with annotations
+about where those capabilities arise in the payment flow and which groups will
+work on them. As we progress, we will include links to definitions of these
+capabilities, descriptions of phases in the use cases document, and
 draft charters.
       </p>
       <table>
@@ -218,117 +221,280 @@ draft charters.
         </thead>
         <tbody>
           <tr>
-            <td>
+            <td class="align-left">
 Initiation of payment with invoice and payment instrument
             </td>
             <td>
 Phase 1: <a href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/#negotiation-of-payment-terms-1">Negotiation of Payment Terms</a>
             </td>
             <td>
-Payment Architecture WG
+Payment WG
             </td>
           </tr>
           <tr>
-            <td>
+            <td class="align-left">
 Discovery of payment instruments
             </td>
             <td>
-Phase 2: <a href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/#application-of-marketing-elements">Negotiation of Payment Instruments</a>            
+Phase 2: <a href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/#application-of-marketing-elements">Negotiation of Payment Instruments</a>
             </td>
             <td>
 Credentials WG
             </td>
           </tr>
           <tr>
-            <td>
-            
+            <td class="align-left">
+Selection of payment instrument
             </td>
             <td>
-<a href=""></a>            
+Phase 2: <a href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/#application-of-marketing-elements">Negotiation of Payment Instruments</a>
             </td>
             <td>
-            
-            </td>
-          </tr>
-          <tr>
-            <td>
-            
-            </td>
-            <td>
-<a href=""></a>            
-            </td>
-            <td>
-            
+Payment WG
             </td>
           </tr>
           <tr>
-            <td>
-            
+            <td class="align-left">
+Routing of proof of purchase
             </td>
             <td>
-<a href=""></a>            
+Phase 3: <a href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/#payment-processing-2">Payment Processing</a>
             </td>
             <td>
-            
-            </td>
-          </tr>
-          <tr>
-            <td>
-            
-            </td>
-            <td>
-<a href=""></a>            
-            </td>
-            <td>
-            
+Payment WG
             </td>
           </tr>
           <tr>
-            <td>
-            
+            <td class="align-left">
+Regulatory intervention
             </td>
             <td>
-<a href=""></a>            
+Phase 3: <a href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/#payment-processing-2">Payment Processing</a>
             </td>
             <td>
-            
-            </td>
-          </tr>
-          <tr>
-            <td>
-            
-            </td>
-            <td>
-<a href=""></a>            
-            </td>
-            <td>
-            
+Payment WG
             </td>
           </tr>
           <tr>
-            <td>
-            
+            <td class="align-left">
+Routing of receipt
             </td>
             <td>
-<a href=""></a>            
+Phase 4: <a href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/#delivery-of-product-receipt-and-refunds-2">Delivery of Product/Receipt</a>
             </td>
             <td>
-            
+Payment WG
             </td>
           </tr>
           <tr>
-            <td>
-            
+            <td class="align-left">
+Provision and verification of credentials<br/>
+(Know Your Customer / Anti-Money Laundering)
             </td>
             <td>
-<a href=""></a>            
+<a href="#supporting-capabilities">Supporting</a>
             </td>
             <td>
-            
+Credentials WG
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+Strong authentication of payer to account provider
+            </td>
+            <td>
+<a href="#supporting-capabilities">Supporting</a>
+            </td>
+            <td>
+Authentication WGs
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+Secure data and communications
+            </td>
+            <td>
+<a href="#supporting-capabilities">Supporting</a>
+            </td>
+            <td>
+Security WGs / Linked Data WGs
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+Digital signatures and key management
+            </td>
+            <td>
+<a href="#supporting-capabilities">Supporting</a>
+            </td>
+            <td>
+Security WGs / Linked Data WGs
             </td>
           </tr>
         </tbody>
       </table>
+      <p class="note">
+Supporting capabilities are those that may be reused during different phases of
+the payment flows.
+      </p>
+    </section>
+    <section>
+      <h3>Groups</h3>
+      <p>
+A list of relevant groups that will participate in the first iteration of
+specification creation.
+      </p>
+      <ul class="note">
+        <li>
+We may not develop requirements for all these groups.
+        </li>
+        <li>
+There are additional groups where we will have dependencies or liaisons and
+individual charters will address them.
+        </li>
+      </ul>
+      <ul>
+        <li>Payments
+          <ul>
+          <li>
+<a href="https://www.w3.org/Payments/IG/">Web Payments IG</a> (industry use cases and requirements as input to these various groups)
+          </li>
+          <li>
+Payment WG (see <a href="https://www.w3.org/Payments/IG/wiki/Roadmap/PaymentArchitectureWG">draft charter</a>)
+          </li>
+          </ul>
+          </li>
+          <li>
+Credentials (linking real-world identities to Web identities)
+          <ul>
+          <li>
+Web Credentials WG (see <a rel="nofollow" class="external text" href="https://docs.google.com/document/d/1xfdzFahQpaQKGL4aOvePlIdsJO6Q5OJkPgSIxtUx9Vc/edit">draft charter</a>)
+          </li>
+          </ul>
+          </li>
+          <li>
+Authentication
+          <ul>
+          <li>
+FIDO-based authentication Working Group
+          <ul>
+          <li>
+Addresses enrollment and framework for two-factor authentication (allows various approaches).
+          </li>
+          <li>
+May have a dependency on WebAppSec work
+          </li>
+          </ul>
+          </li>
+          <li>
+Hardware-based authentication Working Group
+          </li>
+          </ul>
+          </li>
+          <li>
+Security
+          <ul>
+          <li>
+Still unknown: encryption, signature, key management requirements for Web App Security WG and Web Crypto WG?
+          </li>
+          <li>
+Linked Data Security WG
+          </li>
+          </ul>
+          </li>
+          <li>
+Related Interest Groups
+          <ul>
+          <li>
+Privacy IG (for reviews about sharing of sensitive information)
+          </li>
+          </ul>
+          </li>
+          <li>
+Related Community Groups
+          <ul>
+          <li>
+Credentials
+          </li>
+          <li>
+Web NFC
+          </li>
+          <li>
+Web Payments
+          </li>
+          <li>
+Web Bluetooth
+          </li>
+          <li>
+Web Crypto API
+          </li>
+          <li>
+Web of Things
+          </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h3>Deployment and Adoption</h3>
+      <p>
+Deployment in version 1 will focus on enabling a few major online retailers
+to run Web Payment agents to issue Web Payment invoices for processing at
+1-2 major online Payment Service Providers (or banks). The payment
+institutions would then initiate the payment and send a proof of payment
+back to the retailer.
+      </p>
+      <section>
+        <h4>Goals</h4>
+          <ul>
+            <li>
+3 major online retailers launching Web Payments support (for example:
+Alibaba, Walmart, Target, Best Buy, Overstock.com, Amazon, Tesco, eBay, etc.)
+            </li>
+            <li>
+1-2 large online payment companies (or banks) launching Web Payments support
+(for example: Google Wallet, PayPal, Alipay, Bank of America, HSBC,
+US Fed, etc.)
+            </li>
+            <li>
+5-10 smaller players from the online retail space and the payments space
+            </li>
+            <li>
+1 million payments within the first year after standardization
+            </li>
+            <li>
+Favorable reviews by the Web developer community
+            </li>
+          </ul>
+      </section>
+      <section>
+        <h4>Strategies</h4>
+        <ul>
+          <li>
+Deployment strategy should be a pure software deployment. Do not require new hardware to be deployed.
+          </li>
+          <li>
+Specifications should focus on technology that has already been prototyped.
+          </li>
+          <li>
+All software should be cloud-only for version 1. For example, do not try to
+support both cloud and local wallets due to a possible conflict around the
+"payment message bus" being implemented at the OS layer or the browser layer.
+          </li>
+        </ul>
+      </section>
+    </section>
+    <section>
+      <h3>Unresolved Issues</h3>
+      <p class="issue">
+Where we need an extensible message format, we will want to specify at least
+a data model. The hard question will be whether we can achieve a single
+serialization (e.g., JSON or JSON-LD or XML) or whether we need multiple.
+      </p>
+      <p class="issue">
+What canonicalization (if any) is needed in our messages for the purpose of
+digital signatures.
+      </p>
     </section>
   </section>
 
