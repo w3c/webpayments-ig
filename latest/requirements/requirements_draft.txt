@@ -11,7 +11,7 @@ Also worded as
 - Encryption is the door
 - Identity is the lock
 - Credentials are the keys
-- Human metrics are the gatekeepers
+- Human biometrics are the gatekeepers
 
 Some requirement drafts for W3C Web Payments.
 
