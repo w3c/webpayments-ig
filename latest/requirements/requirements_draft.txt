@@ -274,3 +274,64 @@ cryptography" we can lock the hackers out of our data even if they penetrate our
 
 The above requirements will let the worlds financial systems store their data on a publicly available cloud storage more
 securely than their own internal networks. Jennifer Lawrence will never fear her iCloud photos are stolen again.
+
+*****************************
+Digested notes from the Federal Reserve Secure Payments Taskforce call on Thursday 6/4/2015
+
+Key takeaways from Federal Reserve Secure Payments Taskforce inaugural meeting.
+
+Presentation link:
+https://fedpaymentsimprovement.org/wp-content/uploads/060415_secure_payments_task_force_teleconference.pdf
+
+There is a lot of valuable documentation listed in the above PDF.
+
+Key takeaways and notes from the documentation:
+  - Identity & Authorization
+     - Identity Management
+	    -  important to meeting cybersecurity goals. Identity Framework will provide better coverage than authentication solutions.
+     - Significant advancements in technology allow for devices and mechanisms to identify their owner
+	 - Standards, approaches and solutions that could be tailored to address an individual organization’s priorities
+	 - Did the user authorized the transaction, sharing of his information, opening of personal records?
+	 - Data breaches resulted in identity theft. Utilize approaches to protect users data in transit or at rest.
+	 - Realtime indicator and notification when information is accesses or shared.
+	 - Consumer Identity solution must be strengthened against events leading to identity theft, both personal and corporate.
+	 - Due to technologies advancements, counterfeit of payment instruments is nearly impossible. Theft of sensitive data and private keys are the key factor enabling many methods of payment fraud. These thefts enable misrepresentation of authority, counterfeit cards and checks, and take over or create new payment accounts.
+	 - If digital signature mechanisms become a norm they will also become part of the attack vector for the identity thief.
+	 - Geographic tailoring of location input is an important factor to identity to thwart many instances of fraud.
+  - Authentication
+     - Authentication is to reduce risks but provides no guarantee of whom the user is.
+     - Make use of advances in authentication technology to help reduce risks
+	 - Authentication by itself is not enough
+  - Data Security
+     - Many lessons learned from data breaches.
+	    - Many of these breaches are national or superregional in scope, affecting consumers in many states and, frequently, across the country.
+	    - Identification of privacy risk in information systems is very hard and double so due to non-standard approaches to securing the information. Most information is secured in bulk vs smaller layers that segregate & isolate information loss to anonymized elements that are unusable without being associated with the whole. Example: Breaking the key securing the birthdate of one individual without compromising the individuals name nor all consumer's birthdates.
+	    - Data anonymization has been an immensely successful strategy for storing of data at rest.
+	    - A another great strategy has been bulk storage of a user's historical credit profile yet encrypted anonymized elements that are cryptographically separated from their whole. This particular strategy can be easily applied to data in transit to prevent the whole of the data from being loss even if the message containing such data is captured.
+	    - Current data security approaches are still leaning to securing the network. This is leading to overall security depending on the security of each element of a network. Furthermore, these weak links can change as the security preferences or makeup of payment participants change over time. The only solution is to end-to-end secure the data itself and let the network/channel independently evolution.
+		- Using a standardized end-to-end data security mechanism will prevent even a rogue authorized agent/node from accessing information they dont need to access.
+		  Example: Users bulk data was accidentally sent for age verification yet no unnecessary information was disclosed due to access controls only allowed opening the anonymized age record.
+		- To minimize risk one times keys are necessary to prevent an authorized party of one anonymized record from elevating their permissions by combining a historical static keys from other parties.
+	    - Identity based authentication combined with revocable roles & time based access controls to information would allow immediate tangible actions to be executed even after the occurrence of an information-exposing event.
+	    - Users records were stolen resulting in disclosure, publication, and unauthorized reuse of their personal data resulting in identity theft at a massive scale.
+		- A large percentage of data breaches occurred from password/account recovery mechanisms of authorized vendor accounts.
+		- Separation of the data security from the application security was viewed as a giant leap forward in event the application or operating system was compromised. This mechanism should be applied on consumer premise as well.
+		- Consumer confidence in electronic payment systems is at an all time low. Millennials trust Bitcoin's more than fiat.
+		- Financial institutions must accept the consequence of a security failure but that does not always match who has the ability to correct those security gaps.
+		  Example: Financial institution has no control over browser security mechanisms, Financial Institution have no control over zero day vulnerabilities in software applications written by 3rd parties.
+		- Information about the quality of commercial security products is imperfect and causes incorrect investment decisions
+		- Current security depends on the security of each element of a network. 
+	 - All data must be protected at all times from UI entry/display to the very databases that information is stored.
+	 - Mechanism to measure threat intelligence of information. Threat intelligence must have context if its to be actionable.
+	 - Data security technology mechanisms must be integrated into an organization’s workflow and risk management practices.
+	 - The size and sophistication of an organization, to a large extent, indicates the threat information that contains and must protect.
+	 - Sharing private sector information with government still has many legal hurdles. Authorization mechanisms must be put into the data itself to authorized sharing of information with the government yet limit regulatory snooping.
+	 - Cyber threat due to information sharing is a serious issue and must be addresses.
+	 - Consumer use of corrective financial protection mechabisms, such as Fraud Alerts and Credit Freeze systems, has been very low (<10%) unsuccessful. Consumers don't use these particular types of identity theft protections and by the time the alert or freeze occurs the damage has been done. When consumers use those systems it ends up costing several days of time. Must protect the data around identity (ie credentials) with better access controls and protection mechanisms. It should be infeasible to defeat the authentication, identification, and access control mechanisms to expose the data even on a compromised PC or at a compromised consumer data collection facility.
+	 - Identity theft and fraud is drastically increasing (25-50% per year) because of personal data sharing mechanisms, data breaches, password/account recovery mechanisms, malware, etc.
+  - Security Framework
+	 - Security Framework should recognize the global nature of technology yet avoid guidance based on country of origin, which would impede international commerce.  National cybersecurity concerns can be addressed in alignment with international standards.
+	 - A data security standard/framework should wrap the details of the underlying technologies yet be flexible to let the industry define how the framework protects the assets within their organizations based on their overall risk management plans. Avoid developing a conformity assessment program, confidence before conformity.
+	 - Industry should define how the Framework should be adopted in their organizations based on their overall risk management plans. That approach has generally been well received. 
+	 - Framework must address privacy and civil liberties methodology. Identity and privacy technology must be integrated with cybersecurity technology. Layer cybersecurity technologies into identity and privacy so identity theft and violation of privacy becomes infeasible.
+	 - Framework should be directly referenced as "public policy" to prevent against misaligned incentives. Policymakers cant craft a policy that addresses constantly changing threats, complex interdependencies of todays information networks, nor provide enough details to implement adequate cybersecurity protection.
