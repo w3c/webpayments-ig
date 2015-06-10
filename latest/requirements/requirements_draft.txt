@@ -317,7 +317,7 @@ Key takeaways and notes from the documentation:
         - A large percentage of data breaches occurred from password/account recovery mechanisms of authorized vendor accounts.
         - Separation of the data security from the application security was viewed as a giant leap forward in event the application or operating system was compromised. This mechanism should be applied on consumer premise as well.
         - Consumer confidence in electronic payment systems is at an all time low. Millennials trust Bitcoin's more than fiat.
-        - Financial institutions must accept the consequence of a fraud & security failure but that does not always match who has the ability to correct those security gaps.
+        - Financial institutions & merchants must accept the consequence of a fraud & security failure but that does not always match who has the ability to correct those security gaps.
           Example: Financial institution has no control over browser security mechanisms, Financial Institution have no control over zero day vulnerabilities in software applications written by 3rd parties. Financial Institutions will have no control of the network security as future payments transition between closed loop systems and open loop system (ie public internet).
         - Information about the quality of commercial security products is imperfect and causes incorrect investment decisions
         - Current security depends on the security of each element of a network.
