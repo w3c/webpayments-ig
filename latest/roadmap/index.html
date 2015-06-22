@@ -1,64 +1,80 @@
-<!DOCTYPE html> 
-<html> 
-  <head> 
-    <title>Web Payments Roadmap</title> 
-    <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/> 
-    <script src='../respec-w3c-common.js' class='remove'></script> 
-    <script src='../respec-webpayments.js' class='remove'></script> 
-    <script class='remove'> 
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Payments Roadmap 1.0</title>
+    <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
+    <link rel="stylesheet" href="spec.css">
+    <script src='../respec-w3c-common.js' class='remove'></script>
+    <script src='../respec-webpayments.js' class='remove'></script>
+    <script class='remove'>
       var respecConfig = {
           // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
           specStatus:           "ED",
-          
+
           // the specification's short name, as in http://www.w3.org/TR/short-name/
           shortName:            "web-payments-roadmap",
- 
+
           // if you wish the publication date to be other than today, set this
-          // publishDate:  "2009-08-06",
- 
+          //publishDate:  "2015-04-16",
+
           // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
           // and its maturity status
           // previousPublishDate:  "1977-03-15",
           // previousMaturity:  "CG-DRAFT",
- 
+
           // if there a publicly available Editor's Draft, this is the link
-          //edDraftURI:           "https://web-payments.org/specs/source/use-cases",
- 
+          edDraftURI:           "https://dvcs.w3.org/hg/webpayments/raw-file/default/latest/roadmap/index.html",
+
           // if this is a LCWD, uncomment and set the end of its review period
           // lcEnd: "2009-08-05",
- 
+
           // if you want to have extra CSS, append them to this list
           // it is recommended that the respec.css stylesheet be kept
           //extraCSS:             [],
- 
+
           // editors, add as many as you like
           // only "name" is required
           editors:  [
-              { name: "Pat Doe", url: "http://patdoe.example.com/",
-                company: "ACME", companyURL: "http://acme.example.com/" },
+              { name: "Manu Sporny", url: "https://manu.sporny.org/",
+                company: "Digital Bazaar", companyURL: "http://digitalbazaar.com/" },
+              { name: "Ian Jacobs", url: "http://www.w3.org/People/Jacobs/",
+                company: "W3C", companyURL: "http://www.w3.org/" }
           ],
- 
-          // authors, add as many as you like. 
+
+          // authors, add as many as you like.
           // This is optional, uncomment if you have authors as well as editors.
           // only "name" is required. Same format as editors.
- 
-          //authors:  [
-          //    { name: "Your Name", url: "http://example.org/",
-          //      company: "Your Company", companyURL: "http://example.com/" },
-          //],
+
+          authors:  [
+              { name: "Manu Sporny", url: "https://manu.sporny.org/",
+                company: "Digital Bazaar", companyURL: "http://digitalbazaar.com/" },
+              { name: "Ian Jacobs", url: "http://www.w3.org/People/Jacobs/",
+                company: "W3C", companyURL: "http://www.w3.org/" }
+          ],
+
+          otherLinks: [{
+            key: "Version control",
+            data: [{
+              value: "Github Repository",
+              href: "https://github.com/w3c/webpayments-ig"
+            }, {
+              value: "Issues",
+              href: "http://www.w3.org/Payments/IG/track/products/9"
+            }]
+          }],
 
           // maximum level of table of contents
-          maxTocLevel: 2,
-      
+          maxTocLevel: 3,
+
           // name of the WG
           wg:           "Web Payments Interest Group",
-          
+
           // URI of the public WG page
           wgURI:        "http://www.w3.org/blog/wpig/",
-          
-          // name (with the @w3c.org) of the public mailing to which comments are due
-          wgPublicList: "public-webpayments-comments@w3.org",
-          
+
+          // name of the public mailing to which comments are due
+          wgPublicList: "public-webpayments-comments",
+
           // URI of the patent status for this WG, for Rec-track documents
           // !!!! IMPORTANT !!!!
           // This is important for Rec-track documents, do not copy a patent URI from a random
@@ -66,45 +82,432 @@
           // Team Contact.
           wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/73816/status",
 
-          preProcess: [ webpayments.preProcess ]/*,
+          //preProcess: [ webpayments.preProcess ]
+          /*,
           alternateFormats: [ {uri: "diff-20111214.html", label: "diff to previous version"} ],
           */
       };
-    </script> 
-  </head> 
-<body> 
-  <section id='abstract'> 
-    <p> 
-Abstract goes here.
-    </p> 
-  </section> 
+      //respecEvents.sub('start-all', webpayments.preProcess.apply);
+    </script>
+    <style type="text/css">
+body {
+  line-height: 1.4em;
+}
+h4 {
+  color: #005A9C;
+}
+dl {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+dt,
+dd {
+  line-height: 1.42857143;
+}
+dl > dt:first-of-type {
+  font-weight: bold;
+}
+.align-left {
+  text-align: left;
+}
+@media (min-width: 768px), print {
+  .dl-horizontal {
+    margin-bottom: 4em;
+  }
+  .dl-horizontal dt {
+    font-weight: normal;
+    float: left;
+    width: 160px;
+    clear: left;
+    overflow: hidden;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dl-horizontal dd {
+    margin-left: 180px;
+  }
+  .dl-horizontal dd > ul {
+    padding-left: 20px;
+    margin: 0px;
+  }
+}
+    </style>
+  </head>
+<body>
 
-  <section id='sotd'> 
-    <p> 
-Custom Status of the Document language goes here.
-    </p> 
-  </section> 
-
-  <section> 
-    <h2>Introduction</h2> 
+  <section id='abstract'>
     <p>
-Introduction goes here.
+The purpose of this document is to outline a coherent implementation and
+deployment strategy for the Web Payments standardization work at W3C.
     </p>
   </section>
 
-  <section> 
+  <section id='sotd'>
+    <p>
+This document is a work in progress and is being released early and often
+using an agile process; it is incomplete.
+    </p>
+  </section>
+
+  <section>
+    <h2>Introduction</h2>
+
+    <p>
+The purpose of this document is to outline a coherent implementation and
+deployment strategy for the Web Payments standardization work at W3C.
+This document is separated into sections that describe "versions" that
+consist of the following:
+    </p>
+
+    <ul>
+      <li>
+Strategic goals for the version.
+      </li>
+      <li>
+Basic capabilities that are targeted and which groups are responsible for
+delivering the capabilities.
+      </li>
+      <li>
+Organization of standardization of those capabilities.
+      </li>
+      <li>
+Deployment goals and strategies
+      </li>
+    </ul>
+
+  </section>
+
+  <section>
+    <h2>Version 1</h2>
+
+    <p>
+The initial implementation of the Web Payments work will focus on delivering
+standards for a Minimum Viable Platform (MVP) by December 2017.
+    </p>
+
+    <section>
+      <h3>Goals</h3>
+      <ul>
+        <li>
+Lower cost of integration of payment services via standard wallet
+(payment agent) APIs.
+        </li>
+        <li>
+Lower cost of satisfying Know Your Customer (KYC) requirements when
+performing payments.
+        </li>
+        <li>
+Increased usability, privacy, and security for users.
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h3>Implementation Plan</h3>
+      <p>
+The following table shows the capabilities for this version, with annotations
+about where those capabilities arise in the payment flow and which groups will
+work on them. As we progress, we will include links to definitions of these
+capabilities, descriptions of phases in the use cases document, and
+draft charters.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th style="white-space: nowrap;">Capability</th>
+            <th style="white-space: nowrap;">Supports</th>
+            <th style="white-space: nowrap;">Responsible Group</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="align-left">
+Initiation of payment with invoice and payment instrument
+            </td>
+            <td>
+Phase 1: <a href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/#negotiation-of-payment-terms-1">Negotiation of Payment Terms</a>
+            </td>
+            <td>
+Payment WG
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+Discovery of payment instruments
+            </td>
+            <td>
+Phase 2: <a href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/#application-of-marketing-elements">Negotiation of Payment Instruments</a>
+            </td>
+            <td>
+Credentials WG
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+Selection of payment instrument
+            </td>
+            <td>
+Phase 2: <a href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/#application-of-marketing-elements">Negotiation of Payment Instruments</a>
+            </td>
+            <td>
+Payment WG
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+Routing of proof of purchase
+            </td>
+            <td>
+Phase 3: <a href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/#payment-processing-2">Payment Processing</a>
+            </td>
+            <td>
+Payment WG
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+Regulatory intervention
+            </td>
+            <td>
+Phase 3: <a href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/#payment-processing-2">Payment Processing</a>
+            </td>
+            <td>
+Payment WG
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+Routing of receipt
+            </td>
+            <td>
+Phase 4: <a href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/#delivery-of-product-receipt-and-refunds-2">Delivery of Product/Receipt</a>
+            </td>
+            <td>
+Payment WG
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+Provision and verification of credentials<br/>
+(Know Your Customer / Anti-Money Laundering)
+            </td>
+            <td>
+<a href="#supporting-capabilities">Supporting</a>
+            </td>
+            <td>
+Credentials WG
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+Strong authentication of payer to account provider
+            </td>
+            <td>
+<a href="#supporting-capabilities">Supporting</a>
+            </td>
+            <td>
+Authentication WGs
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+Secure data and communications
+            </td>
+            <td>
+<a href="#supporting-capabilities">Supporting</a>
+            </td>
+            <td>
+Security WGs / Linked Data WGs
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+Digital signatures and key management
+            </td>
+            <td>
+<a href="#supporting-capabilities">Supporting</a>
+            </td>
+            <td>
+Security WGs / Linked Data WGs
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">
+Supporting capabilities are those that may be reused during different phases of
+the payment flows.
+      </p>
+    </section>
+    <section>
+      <h3>Groups</h3>
+      <p>
+A list of relevant groups that will participate in the first iteration of
+specification creation.
+      </p>
+      <ul class="note">
+        <li>
+We may not develop requirements for all these groups.
+        </li>
+        <li>
+There are additional groups where we will have dependencies or liaisons and
+individual charters will address them.
+        </li>
+      </ul>
+      <ul>
+        <li>Payments
+          <ul>
+          <li>
+<a href="https://www.w3.org/Payments/IG/">Web Payments IG</a> (industry use cases and requirements as input to these various groups)
+          </li>
+          <li>
+Payment WG (see <a href="https://www.w3.org/Payments/IG/wiki/Roadmap/PaymentArchitectureWG">draft charter</a>)
+          </li>
+          </ul>
+          </li>
+          <li>
+Credentials (linking real-world identities to Web identities)
+          <ul>
+          <li>
+Web Credentials WG (see <a rel="nofollow" class="external text" href="https://docs.google.com/document/d/1xfdzFahQpaQKGL4aOvePlIdsJO6Q5OJkPgSIxtUx9Vc/edit">draft charter</a>)
+          </li>
+          </ul>
+          </li>
+          <li>
+Authentication
+          <ul>
+          <li>
+FIDO-based authentication Working Group
+          <ul>
+          <li>
+Addresses enrollment and framework for two-factor authentication (allows various approaches).
+          </li>
+          <li>
+May have a dependency on WebAppSec work
+          </li>
+          </ul>
+          </li>
+          <li>
+Hardware-based authentication Working Group
+          </li>
+          </ul>
+          </li>
+          <li>
+Security
+          <ul>
+          <li>
+Still unknown: encryption, signature, key management requirements for Web App Security WG and Web Crypto WG?
+          </li>
+          <li>
+Linked Data Security WG
+          </li>
+          </ul>
+          </li>
+          <li>
+Related Interest Groups
+          <ul>
+          <li>
+Privacy IG (for reviews about sharing of sensitive information)
+          </li>
+          </ul>
+          </li>
+          <li>
+Related Community Groups
+          <ul>
+          <li>
+Credentials
+          </li>
+          <li>
+Web NFC
+          </li>
+          <li>
+Web Payments
+          </li>
+          <li>
+Web Bluetooth
+          </li>
+          <li>
+Web Crypto API
+          </li>
+          <li>
+Web of Things
+          </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h3>Deployment and Adoption</h3>
+      <p>
+Deployment in version 1 will focus on enabling a few major online retailers
+to run Web Payment agents to issue Web Payment invoices for processing at
+1-2 major online Payment Service Providers (or banks). The payment
+institutions would then initiate the payment and send a proof of payment
+back to the retailer.
+      </p>
+      <section>
+        <h4>Goals</h4>
+          <ul>
+            <li>
+3 major online retailers launching Web Payments support (for example:
+Alibaba, Walmart, Target, Best Buy, Overstock.com, Amazon, Tesco, eBay, etc.)
+            </li>
+            <li>
+1-2 large online payment companies (or banks) launching Web Payments support
+(for example: Google Wallet, PayPal, Alipay, Bank of America, HSBC,
+US Fed, etc.)
+            </li>
+            <li>
+5-10 smaller players from the online retail space and the payments space
+            </li>
+            <li>
+1 million payments within the first year after standardization
+            </li>
+            <li>
+Favorable reviews by the Web developer community
+            </li>
+          </ul>
+      </section>
+      <section>
+        <h4>Strategies</h4>
+        <ul>
+          <li>
+Deployment strategy should be a pure software deployment. Do not require new hardware to be deployed.
+          </li>
+          <li>
+Specifications should focus on technology that has already been prototyped.
+          </li>
+          <li>
+All software should be cloud-only for version 1. For example, do not try to
+support both cloud and local wallets due to a possible conflict around the
+"payment message bus" being implemented at the OS layer or the browser layer.
+          </li>
+        </ul>
+      </section>
+    </section>
+    <section>
+      <h3>Unresolved Issues</h3>
+      <p class="issue">
+Where we need an extensible message format, we will want to specify at least
+a data model. The hard question will be whether we can achieve a single
+serialization (e.g., JSON or JSON-LD or XML) or whether we need multiple.
+      </p>
+      <p class="issue">
+What canonicalization (if any) is needed in our messages for the purpose of
+digital signatures.
+      </p>
+    </section>
+  </section>
+
+  <section class="appendix">
     <h2>Acknowledgements</h2>
- 
     <p>
-The editors are thankful to the following contributions from ...
-(in alphabetical order): 
+The editors wish to thank the participants of the
+<a href="http://www.w3.org/Payments/IG/">Web Payments Interest Group</a>
+for discussions about and contributions to this document, as well as the
+<a href="https://www.w3.org/community/webpayments/">Web Payments Community
+Group</a> for earlier work that informed this document.
     </p>
-    <p>
-List of contributors/reviewers.
-    </p>
-
   </section>
 
-  </body> 
+  </body>
 </html>
-

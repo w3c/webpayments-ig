@@ -1,0 +1,373 @@
+Erik Anderson
+Bloomberg R&D & Co-chairman W3C Web Payments IG/SG
+
+Identity is the gate keeper but security is the door.
+- Security is the door
+- Identity is the lock
+- Credentials are the keys
+- Technology is the gatekeeper
+
+Also worded as
+- Encryption is the door
+- Identity is the lock
+- Credentials are the keys
+- Human biometrics are the gatekeepers
+
+Some requirement drafts for W3C Web Payments.
+
+Even when technologies are developed inside the NSA, they don't remain exclusive for long. Today's top-secret programs become tomorrow's PhD theses and the next day's hacker tools. There exists quantum tools to sniff, regexp match, swap sip/sport/dip/dport/syn/ack, set ack and push flags, and add the payload to create the malicious reply. These tools, once top secret tools, are now open and available to all.
+
+The only defence against these tools is to encrypt all of the information, down to the very data elements themselves, to accomplish information security requirements for consumer protection & protection of our financial systems.
+
+***********************************
+Requirements drafts.
+
+Identity
+  NOTE: We must move beyond static authentication and into the next generation of authenticating the identity of the user
+    (or system)
+  - Identity is ultimately a service of the account provider but the browser must facilitate features/capabilities to
+    facilitate the binding of an electronic identity to the physical person if Web Payment API's are to be adopted
+    throughout financial services.
+  - Electronic identities must support attribute based configurable inputs
+  - Electronic identities must not be identical across different account providers (ie email address, SSN, etc) but operate
+    under a common framework.
+    NOTE: For privacy concerns. Its possible for collisions to occur but these occurrences are unlikely
+  - An electronic identity must be unique per account provider and issued from the provider.
+    NOTE: There exists conditions that an identity must be pseudo anonymous and unique per transaction but forensically
+    linkable back to the user (if necessary by legal & regulatory processes
+    NOTE: Out of scope for now - merit based electronic identities may not be issued from an account provider but solely
+          from the end user.
+  - Electronic identities must support attributes based on various selectable data elements of the user
+    NOTE: Below are system requirements. Depending on device capabilities these "must" requirements will not be achievable
+    NOTE: If a device has limited capabilities and depending on legal+regulatory constraints not all transactional values
+           will be capable on these low capability devices.
+    NOTE: At the core an attribute is a tokenized form of any mandatory and discretionary inputs from both the account
+          provider&holder. These can include but not limited to digitized documentation, tokenized biometric template
+          matches, time elements, knowledge elements, location elements, or another token.
+    - Attributes must have an ID associated with them for lookup purposes. These IDs/names shouldnt be overly descriptive to
+      leak information.
+    - Attributes must be capable of being derived from data elements based on digitized formats of a users analog
+      documentation (credentials)
+      Example: Tokenized scan of a users drivers license.
+    - Attributes must be capable of being derived from and cryptographically linked to various biometric templates from a user
+    - Attributes must be capable of being derived from a secure cryptographic device in the possession of a user
+    - Attributes must be capable of being derived based on a users geolocation or a geofence of where a user should be.
+      NOTE: This is a must for high value transactions or any verifiable proximity based transactions.
+    - Attributes must be capable of being based on knowledge from a user. Such as a password, address, pin, pet name.
+    - Attributes must be capable of being derived from random or pseudo-random data inputs (such as known information seeded
+      to a random number generator)
+    - Attributes should be capable of being derived from time based information. Example: Timelocks, Timebox
+      NOTE: Postdated check, 3 day hold on funds, etc
+      NOTE: Depending on the use case(s) this is essential but not in all cases.
+    - Attributes should be capable of being derived from remote resource. Example: URL or Secure DNS resource lookup
+    - Attributes must support being derived (or aggregated) from other attributes.
+    - Attributes must be expressed in a standard format such that they can benefit from future hardware&software technologies
+    - Attributes crypto materials must be stored in an encrypted container and unlockable by input from the intended user.
+      Example: Unlocked by a hardware token, static password, finger swipe, one time password, pin, etc.
+  - Biometric templates
+    - Biometric templates should only be stored in a modified/secured format. Example: encrypted with a password or token in
+      the users possession.
+    - If plain fingerprint template matching is being used, the enrolment template must reside on a device/token owned by and
+      only accessible under the knowledge of the user.
+    - Account biometric templates must be enrolled with the account provider but protected against theft by some form of user
+      input. Hardware token preferred.
+      NOTE: Unattended enrolment of biometrics is not advisable. 
+      NOTE: Not all biometrics work with all users. Example: Finger scan metrics don't work on 5% of all individuals.
+  - If identifier is for a machine attributes must be capable of being derived from virtual information such as IP address,
+    MAC address, system ID, etc
+    NOTE: Delegate authority to a system to issue reoccurring payments.
+  - Multiple inputs that go into the creation of an Electronic Identity must be cryptographically bound together so those
+    elements of identity cannot be hijacked, separated and used for different intents i.e. No fishing.
+    NOTE: Non-repudiation is a must so a user should never be able to say "my private key was stolen so it wasnt me"
+  - Identity hardening – Identity validation that grows with each trusted relationship that is linked to it…  
+    - To assure the users identity is confirmed the account provider must be able to request user provide a tier of
+     factors/tokens to prove identity
+       - Example: Alternate finger swipe
+                  Biological data such as voice print, vein scan, palm print, retina scan, tissue sample.
+                  Voice print
+                  Token provided from a users secure cryptographic device
+    - Regulatory compliance will impact the identity hardening process and also insurance impact with increased trust
+      Example:
+         - Cross border, international, cross state transactions
+         - Tiers of values for the transaction such as $3000, $25,000, $1,000,000, etc
+  - 
+         
+Authentication
+  - As far as these requirements are written, Identity and Authentication can be used interchangeably because we are
+    authenticating the identity of the user  
+Security
+  - We must move beyond static key cryptography and into the next generation of dynamic key management of cryptographic keys.
+  - Must support configurable identification
+  - Must utilize a standardized cryptographic messaging syntax like X9.73, RFC
+  - Cryptographic key management must be done utilizing a standardized dynamic key management system based on a variety of
+    attributes (such as X9.69)
+    - Attributes
+      - Attributes must have an ID associated with them for lookup purposes.
+      - Attributes must include descriptive names but these names should be secured to protect against information leakage.
+      - Attributes must be capable of being derived from random or pseudo-random data (such as known information seeded to a
+        random number generator)
+      - Attributes must be capable of being generated/input from a secure cryptographic device in the possession of a user
+      - Attributes must be capable of input data from the configurable identity outputs
+      - Each attribute must include permissions for read, write, or read&write access.
+        - Examples:
+          - Attribute based on read only permissions. Example: Account provider can read a user initiated transaction but
+            they never have permissions to initiate the transaction themselves
+          - Attribute based on write only permissions. Example: used to write secure information for a regulatory body but
+            only that particular regulatory body can read it.
+          - Attribute based on bidirectional read and write permissions.
+    - Roles
+      - Roles are independent of other roles. Thus a role should never include other roles, although 2 roles can include
+        the same attributes.
+      - Roles must include descriptive names but these names should be secured to protect against information leakage.
+        - Examples of names:
+          - US Citizen
+          - Standard account holder of xyz bank
+          - Premium account holder of xyz bank
+          - Bloomberg employee.
+      - Attributes are assigned to roles. A role can include a variable number of attributes. Example: 1 to 10...0 attributes.
+      - It is desirable that 1 attribute for each role be based on a maintenance value under control of the account provider.
+        Account provider can rotate this attribute periodically or if it is believed a security compromise of the role has occurred.
+    - Tokens
+      - Dynamic key management tokens are assigned to users.
+      - Tokens are the specialized container for roles & attributes.
+      - A token can include a variable number of roles. Example: 1 to 10...0 roles.
+    - Cryptographic keys
+      - Cryptographic keys are constructed from crypto materials extracted from attributes in a users token.
+      - Cryptographic keys must include 1 random or pseudo-random input to their construction.
+      - Cryptographic keys are one time use only
+      - Keys and their input materials must be flushed from memory immediately after use
+  - Security must not be centralized by 1 authority. Security must be configurable per account provider. Account provider
+    can delegate to 3rd party if necessary.
+  - Compromise of security of 1 account provider should not lead to information disclosure for all users of that providers
+    service.
+  - Transactional messages, in and of themselves, a self-contained cryptographic object
+  - Cryptographic objects:
+    - Each cryptographic object supports tiers/layers of security
+    - Cryptographic objects can contain another cryptographic object, array of said objects, trees of said objects, etc.
+      Best analogy of this is an onion inside of onion.
+    - Cryptographic objects are wrapped by a standardized descriptive layer such as X9.73, etc that allows metadata about
+       the object(s) contents to be exposed without decrypting the object and unnecessarily exposing the contents as the
+       object is routed/relayed through n-number of secure/unsecure networks.
+       - Example: Object/message routing/relaying should be possible without requiring each node to decrypt the object.
+    - Cryptographic objects are not tied to 1 cryptographic algorithm. Can be constructed by n-number of algorithms.
+    - Which algorithms used to construct the object(s) in chosen by the account provider. There is no one international
+      standard encryption algorithm so various algorithms must be available and choices provided.
+    - Legal/regulatory information can be included for regulatory bodies without compromising the integrity of the message
+      itself or enabling regulatory fishing.
+    - There are many tiers of regulators so each regulatory layer must be its own security layer and constructed from its
+      own set of attributes/dynamic keys
+    - If regulatory information is to be included in a transactional message the user must be made aware
+    - Encryption objects should be agnostic of the internal protected data and able to contain any arbitrary data/layload
+    - Cryptographic objects must be able to support encryption keys that unlock encryption keys.
+      - Example:
+        - Each party be they user(s), financial, legal, or regulatory, can use their individual one time dynamic key to
+          encrypt a randomly generated encryption key without having to duplicate and encrypt the object payload/data separately for each required party.
+        - Dynamic key thats used to protect a static private bitcoin key.
+  - At least 1 of the n-attribute inputs to the dynamic key management system must be exclusively under control of the user.
+  - No 2 users of an account provider share the same set of attributes. Thus every message is uniquely secured for the
+    end user. BAD WORDING. WHAT ABOUT GROUP ACCOUNTS?
+  - Each message contains at least 1 random element to ensure the contents are uniquely encrypted.
+  - On a users device Attributes and Cryptographic material used as input to construct a dynamic key management system must
+    be deployed to the user in an out of bands communication (ie not in the same session with the transaction)
+  - On a users device Attributes and Cryptographic material used as input to construct a dynamic key management system must
+    be stored in a secure method such as an offline token or online with a layer of security such as identity based
+    encryption.
+  - Wire message formats:
+    NOTE: There are various messaging standards for financial services. ISO 20022 is by far one of the biggest but there
+          are other formats.
+    - Wire messages are all encapsulated inside of a cryptographic object thats provide protection regardless of
+      man-in-the-middle or routing of objects through unsecure networks
+      - Example:
+        - TOR network or plain text HTTP session.
+    - There must be a mechanism to convert from a web friendly structures to wire structures:
+       - Example: Convert from a browser friendly JSON or JSON-LD data structure(s) to ISO 20022, FIX, or card specific
+         structure such as ISO 8583
+    - Account provider must be able to specify which standardized message format they require.
+
+Credentials
+   NOTE: Credentials are critical inputs to the Identity solution. We must be able to trace the Electronic identities back
+         to the very documentation that went into the creation of those Identities. Ultimately the protection of those
+         credential and access to the content of those credentials must come from to whom those credentials refer to. For
+         consumer protection reasons, if someone wants to access the credentials of Erik Anderson then ONLY Erik Anderson
+         should be able to provide cryptographic authorization to access to those credentials.
+
+***********************************
+
+Legal, Regulatory, and Consumer Protection
+  - Personal Information
+    - A good summary of legal directions the US is taking when it comes to protecting and enforcing access to users personal
+	  information can be found on. http://us.practicallaw.com/6-502-0467.  Many trails lead into findlaw.com, americanbar.com,
+	  federal trade commission, state statutes.
+    - In many US states, end users can now sue non-government account and information holders who's data has been breached
+	  resulting in the mis-use, abuse, identity theft.
+       - This includes hijacking of information that is relayed through 3rd party companies.
+       - This includes "unauthorized access" of data even by a employee of those companies. Loss of a personal device
+	     containing protected classifications of information.
+       - These states directly require encryption of data and trigger notification to the user if their personal information
+	     is accesses. Harsh consequences for unauthorized access, unauthorized acquisition, and data acquired under false
+		 pretences.
+    - Next generation of Business Operating procedures 
+    - Several state have now redefined of "personal information" beyond the general definition. This new definition now
+      includes:
+       - finger prints & biometric data
+       - account numbers
+       - Personal security questions like maiden name, mothers name, pet name
+       - Geolocation information of the user.
+    - What data is regulated
+       - All data is regulated at one international . There are stricter restrictions when 
+  - Regulatory
+  
+  
+*****************************
+  
+Some regulation bulletpoints. 
+ - Regulation
+    - What national laws regulate to the collection and use of personal data?
+    - To whom do the laws apply?
+    - What data is regulated?
+    - What acts are regulated?
+    - What is the jurisdictional scope of the rules?
+    - What are the main exemptions?
+    - Is notification or registration required before processing data?
+ - Main data protection rules and principles
+    - What are the main obligations imposed on data controllers to ensure data is processed properly?
+    - Is the consent of data subjects required before processing personal data?
+    - If consent is not given, on what other grounds (if any) can processing be justified?
+    - Do special rules apply for certain types of personal data, such as sensitive data?
+ - Rights of individuals
+    - What information should be provided to data subjects at the point of collection of the personal data?
+    - What other specific rights are granted to data subjects?
+    - Do data subjects have a right to request the deletion of their data?
+ - Security requirements
+    - What security requirements are imposed in relation to personal data?
+    - Is there a requirement to notify personal data security breaches to data subjects or the national regulator?
+ - Processing by third parties
+    - What additional requirements apply where a third party processes the data on behalf of the data controller?
+ - Electronic communications
+    - Under what conditions can data controllers store cookies or equivalent devices on the data subject's terminal
+	  equipment?
+ - International transfer of data
+    - What rules regulate the transfer of data outside your jurisdiction?
+    - Are data transfer agreements contemplated or in use? Have any standard forms or precedents been approved by national
+	  authorities?
+    - Is a data transfer agreement sufficient to legitimise transfer, or must additional requirements (such as the need
+	  to obtain consent) be satisfied?
+    - Does the relevant national regulator need to approve the data transfer agreement?
+ - Enforcement and sanctions
+    - What are the enforcement powers of the national regulator?
+    - What are the sanctions and remedies for non-compliance with data protection laws?
+ 
+In essence, any piece of data is regulated somewhere and by someone. No single Identity, Payment, Transactional system that
+intends to use the public internet can possibly adhere to the requirements of this constantly changing legal/regulatory environment.
+
+We need closed loop solutions over an open loop network like the internet.
+
+So, if this is an impossible task to undertake using an open network how can this be accomplished?
+Simply: encrypt all data all the time and provide role based access controls to the very data elements of every document.
+In essence a computer programmable regulatory & legal environment all enforced via cryptography.
+
+Burden for that regulation must fall on the data storage provider but they need a secure front end, the browser, to mitigate
+risk for unauthorized access of the data.
+
+Its in my belief if we extend the existing browser to a "secure browser with role based access controls enforced via
+cryptography" we can lock the hackers out of our data even if they penetrate our networks.
+
+The above requirements will let the worlds financial systems store their data on a publicly available cloud storage more
+securely than their own internal networks. Jennifer Lawrence will never fear her iCloud photos are stolen again.
+
+*****************************
+Digested notes from the Federal Reserve Secure Payments Taskforce call on Thursday 6/4/2015
+
+Key takeaways from Federal Reserve Secure Payments Taskforce inaugural meeting.
+
+Presentation link:
+https://fedpaymentsimprovement.org/wp-content/uploads/060415_secure_payments_task_force_teleconference.pdf
+
+There is a lot of valuable documentation listed in the above PDF.
+
+Key takeaways and notes from the documentation:
+  - Identity & Authorization
+     - Identity Management
+        - Important to meeting cybersecurity goals. Identity Framework will provide better coverage than an authentication solution.
+     - Significant advancements in technology allow for devices and mechanisms to identify their owner
+     - Standards, approaches and solutions that could be tailored to address an individual organization’s priorities
+     - Did the user authorized the transaction, sharing of his information, opening of personal records?
+     - Data breaches resulted in identity theft. Utilize approaches to protect users data in transit or at rest.
+     - Realtime indicator and notification when information is accesses or shared.
+     - Consumer Identity solution must be strengthened against events leading to identity theft, both personal and corporate.
+     - Due to technologies advancements, counterfeit of payment instruments is nearly impossible. Theft of sensitive data and private keys are the key factor enabling many methods of payment fraud. These thefts enable misrepresentation of authority, counterfeit cards and checks, and take over or create new payment accounts.
+     - If digital signature mechanisms become a norm they will also become part of the attack vector for the identity thief.
+     - Geographic tailoring of location input is an important factor to identity to thwart many instances of fraud.
+  - Authentication
+     - Authentication is to reduce risks but provides no guarantee of whom the user is.
+     - Make use of advances in authentication technology to help reduce risks
+     - Authentication by itself is not enough
+	 - Enhanced authentication does not directly help prevent data breaches or identity theft. Only enhanced encryption does that.
+  - Data Security
+     - Many lessons learned from data breaches.
+	    - Authentication did nothing to protect the information.
+        - Many of these breaches are national or superregional in scope, affecting consumers in many states and, frequently, across the country.
+        - Identification of privacy risk in information systems is very hard and double so due to non-standard approaches to securing the information. Most information is secured in bulk vs smaller layers that segregate & isolate information loss to anonymized elements that are unusable without being associated with the whole. Example: Breaking the key securing the birthdate of one individual without compromising the individuals name nor all consumer's birthdates.
+        - Data anonymization has been an immensely successful strategy for storing of data at rest.
+        - A another great strategy has been bulk storage of a user's historical credit profile yet encrypted anonymized elements that are cryptographically separated from their whole. This particular strategy can be easily applied to data in transit to prevent the whole of the data from being loss even if the message containing such data is captured.
+        - Current data security approaches are still leaning to securing the network. This is leading to overall security depending on the security of each element of a network. Furthermore, these weak links can change as the security preferences or makeup of payment participants change over time. The only solution is to end-to-end secure the data itself and let the network/channel independently evolution.
+        - Using a standardized end-to-end data security mechanism will prevent even a rogue authorized agent/node from accessing information they dont need to access.
+          Example: Users bulk data was accidentally sent for age verification yet no unnecessary information was disclosed due to access controls only allowed opening the anonymized age record.
+        - To minimize risk one times keys are necessary to prevent an authorized party of one anonymized record from elevating their permissions by combining a historical static keys from other parties.
+        - Identity based authentication combined with revocable roles & time based access controls to information would allow immediate tangible actions to be executed even after the occurrence of an information-exposing event.
+        - Users records were stolen resulting in disclosure, publication, and unauthorized reuse of their personal data resulting in identity theft at a massive scale.
+        - Separation of the data security from the application security was viewed as a giant leap forward in event the application or operating system was compromised. This mechanism should be applied on consumer premise as well.
+        - Consumer confidence in electronic payment systems is at an all time low. Millennials trust Bitcoin more than fiat.
+        - Financial institutions must accept the consequence of a fraud & security failure but that does not always match who has the ability to correct those security gaps.
+          Example: Financial institution has no control over browser security mechanisms, Financial Institution have no control over zero day vulnerabilities in software applications written by 3rd parties. Financial Institutions will have no control of the network security as future payments transition between closed loop systems and open loop system (ie public internet).
+		  Example:  A large percentage of data breaches occurred from authorized vendors and service providers. Vendors are outside the immediate vision of the legally responsible organizations yet have the same or better access to information as the organization to whom they are providing the services. Many vendors provide & maintain critical security components of that organizations information networks. The legally responsible organizations can be held responsible even for the security or process flaws of the vendor.
+        - Information about the quality of commercial security products is imperfect and causes incorrect investment decisions
+        - Current security depends on the security of each element of a network.
+		- Studies conducted since 2009 show that hackers are attacking private data over payment instruments themselves. Having access to data is allowing the fraudsters to conduct large volumes of smaller value transactions. Smaller transactions may go unnoticed by consumers.
+		- Analysis of data breaches show serious weaknesses in data security at merchants, Vendors & Service Providers, Depository Financial Institutions, and payment processors. Despite emphasizing larger merchants and recently imposing a system of fines for failing to comply with PCI standards, the PCI process has not prevented security weaknesses that allow large data breaches. Strengthening public oversight and adoption of data security techniques in nonfinancial organizations would supplement improvements to the financial systems.
+		- While many breaches have not exposed large quantities of sensitive data, what is exposed is particularly useful for identity theft.
+		- Data breaches cause a massive loss of consumer confidence. It is unlikely but possible a breach will cause an immediately shifted to alternative means of payment, but doing so could create substantial operational challenges for those payment systems. To allow for efficient payment substitution in support of a smoothly functioning economy, there must also be multiple reliable ways to make and receive electronic payments.
+     - All data must be protected at all times from UI entry/display to the very databases that information is stored.
+     - Mechanism to measure threat intelligence of information. Threat intelligence must have context if its to be actionable.
+     - Data security technology mechanisms must be integrated into an organization’s workflow and risk management practices.
+     - The size and sophistication of an organization, to a large extent, indicates the threat information that contains and must protect.
+     - Sharing private sector information with government still has many legal hurdles. Authorization mechanisms must be put into the data itself to authorized sharing of information with the government yet limit regulatory snooping.
+     - Cyber threat due to information storage, transit, and sharing mechanisms are serious issues and must be addresses.
+     - Consumer use of corrective financial protection mechanisms, such as Fraud Alerts and Credit Freeze systems, has been very low (<10%) and unsuccessful. Consumers don't use these particular types of identity theft protections and by the time the alert or freeze occurs the damage has been done. When consumers use those systems it ends up costing several days of time. Must protect the data around identity (ie credentials) with better access controls and protection mechanisms. It should be infeasible to defeat the authentication, identification, and access control mechanisms to expose the data even on a compromised PC or at a compromised consumer data collection facility.
+     - Identity theft and fraud is drastically increasing (25-50% per year) because of personal data sharing mechanisms, data breaches, password/account recovery mechanisms, malware, etc.
+	 - Currently, the Federal Trade Commission and the Consumer Finance Protection Bureau have jurisdiction to enforce data security measures that deter payment fraud at merchants and processors. Legislators have proposed giving the FTC authority not only to enforce data security standards but to set them as well. Federal financial institution regulators may need to speed implementation of their new cybersecurity assessments of financial institutions and strongly emphasize data security.
+	 - Countries that adopted chip-n-pin carts have noticed that fraudsters shifted their efforts to identity fraud, taking over or creating new accounts, and IMOTO (Internet and Mail Order and Telephone Order) causing a dramatic rise in associated fraud losses. History shows that new payment instruments & technologies lack adequate protective measures, such as the Internet, causing a major influx of fraudsters. Adopting chin&pin in the US will have unintended consequences such as flocking to internet based payment mechanisms.
+	 - To keep the costs low and not boil the oceans, the optimal control point should use a least-cost method to enhance security. Meaning the payer’s bank, for example, can best determine whether the payer’s signature on a check is genuine, and the payee’s bank can best determine whether the payee’s endorsement on the check is genuine. Example: We dont need to build a massive government based KYC physical & Biometric signature verification platform when the existing Banks can do this. Over doing the security, identity, KYC/AML, & legal/regulatory structure will create misaligned incentives that are not socially optimal nor justified.
+  - Security Framework
+     - Security Framework should recognize the global nature of technology yet avoid guidance based on country of origin, which would impede international commerce.  National cybersecurity concerns can be addressed in alignment with international standards.
+	 - Its not possible for any single Government or even entities within one Government to have an exclusive, comprehensive regulatory, or supervisory jurisdiction over such a Framework. Framework must allow security layer(s) that aligns that with their jurisdiction yet not allow information leakage outside their sphere.
+	    US Examples: 
+		  - The Board of Governors of the Federal Reserve System issues certain retail payment regulations, especially regarding checks.
+		  - The Consumer Financial Protection Bureau (CFPB) has jurisdiction over most federal consumer protection regulation for electronic payment transactions.
+		  - The Federal Reserve Board, as well as other federal financial supervisors, conducts exams, and these exams can entail a review of the financial institution’s payment system security precautions, including those of its business partners.
+		  - Worse yet, there are many 3rd party organizations involved in operating networks and providing payment services to the public are banks, but many are not.
+		  - Additional regulators can be involved like nonbanks operating under state money-transmitter licenses are subject to state agency supervision.
+		  - In addition, the CFPB may determine, by rule, that certain nonbanks in markets for consumer financial products and services are larger participants and therefore subject to CFPB supervision.
+		  - A variety of state laws also address consumer rights in instances of identity theft or a data breach. Small and large business can be legally liable for a data breach leading to identity theft. All that KYC information is a honeypot for fraudsters seeking to exploit identity data or sell that information on the black market (Target's data breach revealed a worldwide network for selling card data)
+     - A data security standard/framework should wrap the details of the underlying technologies yet be flexible to let the industry define how the framework protects the assets within their organizations based on their overall risk management plans. Avoid developing a conformity assessment program, confidence before conformity. A good framework will hide the underlying technology specifics so users can solve business cases vs struggling with advanced security systems and challenging cryptographic API's.
+     - Industry should define how the Framework should be adopted in their organizations based on their overall risk management plans. Rather, in striving to achieve efficiency, organizations must balance the security costs to prevent and mitigate fraud against the full set of costs that fraud generates. That approach has generally been well received. 
+     - Framework must address privacy and civil liberties methodology. Identity and privacy technology must be integrated with cybersecurity technology. Layer cybersecurity technologies into authentication, authorization, identity, message exchange, and private information sharing mechanisms so identity theft and violation of privacy becomes infeasible.
+     - Framework should be directly referenced as "public policy" to prevent against misaligned incentives. Policymakers cant craft a policy that addresses constantly changing threats, complex interdependencies of todays information networks, nor provide enough details to implement adequate cybersecurity protection. Under some assumptions, strategic uncertainty may lead to more effort to protect than is socially optimal.
+     - Framework must address protection of the data itself. A payment and information networks consists of many components—computers, communication channels, software, and users—each subject to attack and requiring defense. The weakness of each component will vary, and attackers will strike vulnerabilities with the highest expected payoff. Engineers who protect these components make judgements about their vulnerability and prioritize each component to determine which weakness to correct. These assessments are difficult, costly, and uncertain, and some weaknesses will likely remain due to undetected vulnerabilities or imprecise assessments (such as underestimates of potential damages). Engineers cant protect all the components all the time so we must work on protecting the underlying data. This requires a data protection framework that spans the UI to the very data storage. A proper framework will allow the web/internet to be used as the payment pipes. Without such a data protection framework it will be impossible to safely use the web/internet because of the uncertainty of security of each network node a transaction goes through.
+	 - Without a proper framework the Engineers will protect a handful of weak network links but not all of them. Over time, the set of weak links will change. A mild amount of uncertainty can lead to additional protection of weaker links where expected losses are high and countermeasures are justified. On the other hand, high uncertainty can lead to no protection: the defender may not know which link is weakest and thus leave all links unprotected.
+	 - Installation of 'corporate malware' is a norm for financial institutions. They install this malware to allow them to follow misaligned compliance incentives. Without protecting the data itself, this approach to following compliance becomes the weakest link in the institutions security and the point of attack.
+  - Financial institution priorities:
+     - Short-term priority: protect payment and other sensitive data
+	 - Medium-term priority: protect electronic cash letters and improve authorization in card payments
+	 - Long-term priorities: effective security standards and improved incentives
+	    - One key long-run principle to ensure efficient processing and strong security would be to standardize security protocols embedded in and around the electronic payment messages. An example would be to segregate anonymized elements in every message in its own security layer such that each element is individually encrypted but also unusable without attacking and reassembling the whole.
+		- Standardization is critical for this because transactional value needs to move internationally and processors can adapt their systems to a limited set of protocols.
+		   - For example, there are a number of efforts to develop tokens for e-commerce transactions to replace card numbers in processing. The tokenization schemes work similarly, and if they all go to market, much of the processing chain will need costly upgrades to integrate with token systems that address the same security weakness.
+		   - While proprietary standards may be quick to develop, research suggests that an inclusive and cooperative development process, such as that provided by the ANSI, improves motivation to comply with standards. In any large and diverse payment system, even well-designed security standards will be adopted unevenly across participants, so it is critical to motivate participants to comply. To 'encourage' adoption statutory rules allow a basic principle that the entity in the best position to deter fraud will bear the losses for a payment it processes. This principle of assigning liability to the control point best suited to prevent fraud provides strong incentive to detect and deter fraud in a cost-effective manner.
+		   - As security for transactions becomes more standardized and adopted you can objectively measure the security and risk of a transaction to allow independent insurance to be cheaply added to cover those transactions.
+		   - The payment systems can attained low fraud loss rates without a central authority implementing significant rules or oversight.
+		   - Applying the same principle to data will help protect sensitive data on home computers. Malware, such as key loggers installed on desktop computers or malicious browser plugins, gives fraudsters credentials of consumer or business payment accounts. Stolen credentials allow unauthorized access to online banking systems and thus the ability to initiate fraudulent payments. Privacy laws and regulations require strong security measures over credentials and other personally identifiable information.
+		   - In an extreme form of account takeover, identity theft, fraudsters use a person’s credentials to create a new account under their control. Identity theft often results in large fraud losses because the victim is unaware of transactions on the new account. The U.S. Department of Justice estimated that 1.125 million persons in the United States suffered new account fraud in 2012, totalling several billion in out-ofpocket losses to victims both merchants and consumers.
+		   - Improving the security of home computers would significantly reduce fraud on all forms of payments.
+		     NOT TRUE: "Implementation of security on home requires changing laws concerning liability over damage due to malware and creating institutions to coordinate efforts to prevent and remediate malware."  Most users dont know how to protect their home computer against the plethora of malware that comes in through the browser. 
+			 That malware infects personal computers with key loggers that harvest online banking credentials, which are then used to generate fraudulent wire, check, credit card, bitcoin, or ACH payments.  If the enhanced security is added to the browser all PC's, Mac's, Mobile devices, laptops, and tablets get the enhanced security. A simple hardware token could be used as an unlocking mechanism to protect the sensitive data even after the data has been relayed to fraudsters. Home users are protected from themselves and everyone benefits. Browser enabled security protocols would effect a system-wide approach to payment security and be further enhanced by immediate acceleration of public & private efforts not even related to payments. This will further push payment participants to adopt effective security protocols.
