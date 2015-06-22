@@ -20,5 +20,6 @@ The purpose of the directories in this repository are explained below:
                      Editor's drafts are kept.
 * [ED](ED) - The latest time-stamped Editor's drafts are placed here.
 * [WD](WD) - The latest time-stamped Working Drafts are placed here.
+* [prototypes](prototypes) - Code samples of prototypes built to test assumptions and elicit feedback on work in progress.
 
 
