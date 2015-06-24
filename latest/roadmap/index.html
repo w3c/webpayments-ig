@@ -182,28 +182,172 @@ Deployment goals and strategies
     <h2>Version 1</h2>
 
     <p>
-The initial implementation of the Web Payments work will focus on delivering
-standards for a Minimum Viable Platform (MVP) by December 2017.
+The initial implementation of the Web Payments work will start in October 2015
+and will focus on delivering standards for a Minimum Viable Platform (MVP)
+by December 2017.
     </p>
 
     <section>
       <h3>Goals</h3>
       <ul>
         <li>
-Lower cost of integration of payment services via standard wallet
-(payment agent) APIs.
+<strong>Payment ecosystem integration</strong>: Interoperable support for a
+simple payment scenario. This includes the steps of 1) invoking a payment
+request, 2) selecting a payment instrument, 3) initiating funds transfer,
+and 4) delivering a proof of payment.
         </li>
         <li>
-Lower cost of satisfying Know Your Customer (KYC) requirements when
-performing payments.
-        </li>
-        <li>
-Increased usability, privacy, and security for users.
+<strong>Security</strong>: Digital signatures, encryption, and
+multi-factor authentication.
         </li>
       </ul>
     </section>
+
     <section>
-      <h3>Implementation Plan</h3>
+      <h3>Use Cases</h3>
+      <p>
+The following use cases are in scope for version 1 with specific limitations
+expressed beside each use case:
+      <table>
+        <thead>
+          <tr>
+            <th style="white-space: nowrap;">Use Case</th>
+            <th style="white-space: nowrap;">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases#uc-website">Website</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases#uc-registrationless">Registration-less</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases#uc-one-time-payment">One Time Payment</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases#uc-ubiquitous">Ubiquitous Schemes</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases#uc-discovery">Discovery</a>
+            </td>
+            <td>
+<span class="issue">Unclear about how much wallet/payment instrument
+discovery flexibility should be in version 1.</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases#uc-payer-privacy">Payer Privacy</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases#uc-manual-selection">Manual Selection</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases#uc-password">Password Authentication</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases#uc-multifactor">Multifactor Authentication</a>
+            </td>
+            <td>
+Stretch goal for version 1.
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases#uc-payee-initiated">Payee-initiated</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases#uc-payer-initiated">Payer-initiated</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases#uc-proofs">Proofs</a>
+            </td>
+            <td>
+Very basic proof of initiation of funds transfer for version 1.
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases#uc-virtual-goods">Virtual Goods</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases#uc-physical-goods">Physical Goods</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases#uc-electronic-receipts">Electronic Receipts</a>
+            </td>
+            <td>
+Very basic receipt container and delivery protocol for version 1.
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases#uc-subscription">Subscription</a>
+            </td>
+            <td>
+Stretch goal for version 1.
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases#uc-refund">Basic Refund</a>
+            </td>
+            <td>
+Stretch goal for version 1.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h3>Capabilities</h3>
       <p>
 The following table shows the capabilities for this version, with annotations
 about where those capabilities arise in the payment flow and which groups will
