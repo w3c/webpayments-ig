@@ -487,79 +487,97 @@ the payment flows.
       </p>
     </section>
     <section>
-      <h3>Groups</h3>
+      <h3>Groups and Scope</h3>
       <p>
 A list of relevant groups that will participate in the first iteration of
 specification creation.
       </p>
-      <ul class="note">
-        <li>
-We may not develop requirements for all these groups.
-        </li>
-        <li>
-There are additional groups where we will have dependencies or liaisons and
-individual charters will address them.
-        </li>
-      </ul>
-      <ul>
-        <li>Payments
+
+      <table>
+        <thead>
+          <tr>
+            <th style="white-space: nowrap;">Group</th>
+            <th style="white-space: nowrap;">Scope</th>
+            <th style="white-space: nowrap;">Charter</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+<a href="http://www.w3.org/Payments/IG/">Web Payments Interest Group</a>
+            </td>
+            <td>
+Continued development of use cases and requirements for version 2.
+Liason between larger W3C community and other relevant standards bodies.
+            </td>
+            <td>
+<a href="http://www.w3.org/2014/04/payments/webpayments_charter.html">
+October 2014 - December 2017</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+Web Payments Working Group
+            </td>
+            <td>
+Invoking a payment request, selecting a payment instrument, initiating funds
+transfer, delivering a proof of payment.
+            </td>
+            <td>
+<a href="https://www.w3.org/Payments/IG/wiki/Roadmap/PaymentArchitectureWG">
+Draft Charter
+</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+Web Authentication Working Group
+            </td>
+            <td>
+Secure authentication of entities (users, systems and devices) to enable
+high-security Web applications. Based on FIDO Alliance work.
+            </td>
+            <td>
+No charter yet
+            </td>
+          </tr>
+          <tr>
+            <td>
+Hardware-based Security Working Group
+            </td>
+            <td>
+A set of Hardware-Based Web Security standard services providing Web
+Applications usage of secure services enabled by hardware modules
+(Trusted Execution Environments, Secure Elements, and other secure enablers).
+            </td>
+            <td>
+No charter yet.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="issue">
+It is currently unknown whether or not a Credentials WG or Linked Data
+Security WG will be created.
+      </p>
+
+          <li>
+Related W3C Groups
           <ul>
           <li>
-<a href="https://www.w3.org/Payments/IG/">Web Payments IG</a> (industry use cases and requirements as input to these various groups)
+Technical Architecture Group (TAG) (for reviews related to Web Architecture)
           </li>
           <li>
-Payment WG (see <a href="https://www.w3.org/Payments/IG/wiki/Roadmap/PaymentArchitectureWG">draft charter</a>)
+Security IG (for reviews about security)
           </li>
-          </ul>
-          </li>
-          <li>
-Credentials (linking real-world identities to Web identities)
-          <ul>
-          <li>
-Web Credentials WG (see <a rel="nofollow" class="external text" href="https://docs.google.com/document/d/1xfdzFahQpaQKGL4aOvePlIdsJO6Q5OJkPgSIxtUx9Vc/edit">draft charter</a>)
-          </li>
-          </ul>
-          </li>
-          <li>
-Authentication
-          <ul>
-          <li>
-FIDO-based authentication Working Group
-          <ul>
-          <li>
-Addresses enrollment and framework for two-factor authentication (allows various approaches).
-          </li>
-          <li>
-May have a dependency on WebAppSec work
-          </li>
-          </ul>
-          </li>
-          <li>
-Hardware-based authentication Working Group
-          </li>
-          </ul>
-          </li>
-          <li>
-Security
-          <ul>
-          <li>
-Still unknown: encryption, signature, key management requirements for Web App Security WG and Web Crypto WG?
-          </li>
-          <li>
-Linked Data Security WG
-          </li>
-          </ul>
-          </li>
-          <li>
-Related Interest Groups
-          <ul>
           <li>
 Privacy IG (for reviews about sharing of sensitive information)
           </li>
           </ul>
           </li>
           <li>
-Related Community Groups
+Related W3C Community Groups
           <ul>
           <li>
 Credentials
