@@ -1513,7 +1513,7 @@ When Suresh attempts to pay online, he is asked for a username and password
 by his payment service provider before the payment is approved.
           </dd>
           <dt>Target version</dt>
-          <dd>Uncategorized</dd>
+          <dd>1.0</dd>
           <dt>Motivation</dt>
           <dd>
 The most common mechanism for protecting access to payment instruments on the
@@ -1529,6 +1529,10 @@ of approaches and device capabilities:
             <ul>
               <li>
 When Ian selects his debit card, he is prompted for a PIN.
+              </li>
+              <li>
+Horace presses the biometric fingerprint reader on his phone to authorize a
+purchase.
               </li>
               <li>
 An authentication code is sent to Tony's mobile phone as a text message
@@ -1553,7 +1557,7 @@ before she is allowed to withdraw $25,000.
             </ul>
           </dd>
           <dt>Target version</dt>
-          <dd>Uncategorized</dd>
+          <dd>1.0</dd>
           <dt>Motivation</dt>
           <dd>The payments architecture should support
 	    the authentication devices available today for
@@ -1708,7 +1712,7 @@ the ACH network to pull money from Pitir's bank account.
             </ul>
           </dd>
           <dt>Target version</dt>
-          <dd>Uncategorized</dd>
+          <dd>1.0</dd>
           <dt>Motivation</dt>
           <dd>
 Payee-initiated payments, also known as "pull payments" or
@@ -1747,7 +1751,7 @@ transit.
             </ul>
           </dd>
           <dt>Target version</dt>
-          <dd>Uncategorized</dd>
+          <dd>1.0</dd>
           <dt>Motivation</dt>
           <dd>
 Payer-initiated payments, also known as "push payments",
@@ -1814,12 +1818,16 @@ Goods and services may be released at different times depending on the type of
 <a>transaction</a> being performed:
             <ul>
                 <li>
+Sung-hyun provides a proof of initiation of funds transfer to get access to
+an online streaming music service.
+              </li>
+                <li>
 Zhang Wei orders 10 large boxes of envelopes from an online shop in
 Tianjin. He uses an escrow service to provide a proof of escrow to the
 online shop in order to get them to initiate the shipment.
               </li>
                 <li>
-To protect Tibor's privacy when he  <a title="purchase">purchases</a> candy
+To protect Tibor's privacy when he <a title="purchase">purchases</a> candy
 online, the store asks only for Tibor's verified shipping address and a
 proof of payment to send him the chocolates.
               </li>
@@ -1832,7 +1840,7 @@ originally bought from another provider.
             </ul>
           </dd>
           <dt>Target version</dt>
-          <dd>Uncategorized</dd>
+          <dd>1.0</dd>
           <dt>Motivation</dt>
           <dd>
 At times, it is safe to release a good
@@ -1929,11 +1937,28 @@ bicycle is delivered a few days later with a QRCode attached to the package
 that only Giralt can access.
           </dd>
           <dt>Target version</dt>
-          <dd>Uncategorized</dd>
+          <dd>1.0</dd>
           <dt>Motivation</dt>
           <dd>
 The <a>purchase</a> and delivery of physical goods via an online marketplace
 is one of the cornerstones of online commerce.
+          </dd>
+        </dl>
+
+        <dl id="uc-virtual-goods" class="dl-horizontal">
+          <dt>Virtual Goods</dt>
+          <dd>
+When Lilith buys music from a band at MusicBox and then goes to their
+Web site to download additional content, no registration is required, just a
+proof of <a>purchase</a> that is sent to the band's website, after which
+MusicBox provides Lilith a link to download the additional content.
+          </dd>
+          <dt>Target version</dt>
+          <dd>1.0</dd>
+          <dt>Motivation</dt>
+          <dd>
+Delivery of product can happen on any site that accepts a proof of purchase
+that contains a recognized product identifier.
           </dd>
         </dl>
 
@@ -1952,23 +1977,6 @@ have them shipped to a nearby department store to save on shipping.
           </dd>
         </dl>
 
-        <dl id="uc-virtual-goods" class="dl-horizontal">
-          <dt>Virtual Goods</dt>
-          <dd>
-When Lilith buys music from a band at MusicBox and then goes to their
-Web site to download additional content, no registration is required, just a
-proof of <a>purchase</a> that is sent to the band's website, after which
-MusicBox provides Lilith a link to download the additional content.
-          </dd>
-          <dt>Target version</dt>
-          <dd>Uncategorized</dd>
-          <dt>Motivation</dt>
-          <dd>
-Delivery of product can happen on any site that accepts a proof of purchase
-that contains a recognized product identifier.
-          </dd>
-        </dl>
-
       </section>
 
       <section>
@@ -1981,7 +1989,7 @@ credit card (via his phone). An electronic receipt for the <a>purchase</a>
 from the gas station is displayed on his phone.
           </dd>
           <dt>Target version</dt>
-          <dd>Uncategorized</dd>
+          <dd>1.0 (very basic receipt container and delivery protocol)</dd>
           <dt>Motivation</dt>
           <dd>
 Electronic receipts will make it easier to track expenses, prove that
@@ -2065,7 +2073,7 @@ payments sent to the fake identities.
             </ul>
           </dd>
           <dt>Target version</dt>
-          <dd>Uncategorized</dd>
+          <dd>1.0 (if time permits)</dd>
           <dt>Motivation</dt>
           <dd>
 Some <a>transaction</a>s are the result of human error or fault. In these
