@@ -1,5 +1,23 @@
 https://www.youtube.com/watch?v=zKuFu19LgZA
 
+1       6:01    Deterrence is not effective….only prevention
+2       8:37    Confusion and Errors coming from multiple languages….a fact of life.
+3      15:38    Military Crypto…electronic….1850’s    point to point.
+4      17:03    Key exchange by previous arrangement necessary
+5      17:50    Engine must be open….algorithms execution for example
+6      18:37    Security by obscurity isn’t
+7      18:50    Keys must be secret
+8      19:30    One time Pad discussion
+9      22:41    Crypto by itself is not security
+10.    28:00    Do it right the first time
+11.    35:00    W3C specification for browser is horribly wrong
+12.    39:07    Encrypted code protects from injections or changes
+13.    42:18    Object Capabilities….Java script
+14.    52:25    Never trust the browser
+15.    52:26    Encode/encrypt all inputs and outputs
+16.    52:27    Context is everything.
+ 
+
 - There is no security in obscurity
 - The more secrets you have the harder they are to keep
 - No secrets inside the encryption machine. Assume the enemy finds out how it works, let having them know how it works doesnt compromise the security of the system. To be confident in the security publish it.
