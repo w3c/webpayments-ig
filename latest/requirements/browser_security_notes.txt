@@ -1,0 +1,97 @@
+https://www.youtube.com/watch?v=zKuFu19LgZA
+
+1       6:01    Deterrence is not effective….only prevention
+2       8:37    Confusion and Errors coming from multiple languages….a fact of life.
+3      15:38    Military Crypto…electronic….1850’s    point to point.
+4      17:03    Key exchange by previous arrangement necessary
+5      17:50    Engine must be open….algorithms execution for example
+6      18:37    Security by obscurity isn’t
+7      18:50    Keys must be secret
+8      19:30    One time Pad discussion
+9      22:41    Crypto by itself is not security
+10.    28:00    Do it right the first time
+11.    35:00    W3C specification for browser is horribly wrong
+12.    39:07    Encrypted code protects from injections or changes
+13.    42:18    Object Capabilities….Java script
+14.    52:25    Never trust the browser
+15.    52:26    Encode/encrypt all inputs and outputs
+16.    52:27    Context is everything.
+ 
+
+- There is no security in obscurity
+- The more secrets you have the harder they are to keep
+- No secrets inside the encryption machine. Assume the enemy finds out how it works, let having them know how it works doesnt compromise the security of the system. To be confident in the security publish it.
+- Making it hard to find isnt good enough
+- Only thing to keep secret is the keys, not the algorithms
+- Never reuse the same key
+- Cryptography isnt security.
+- Security needs to be factored into every decision
+- We will go back and make it secure later, NOOOOO. This is the hardest part. Not wait for 2.0.
+- You cant add security, just as you cant add reliability. Insecurity and unreliability must be removed. You cant add security, you can only remove insecurity
+- If you have published a platform and people have used in an insecure way, its difficult to then remove those features, because they are inherently insecure, and replace them with more reliable features. You just cant to that without causing big breakage. You need to fix it before you release it.
+- Having been secure to this point doesnt guarantee we wont be hackled. As we become more successful, as our business grows, we will become a bigger target and they will come after us.
+- Do not try and do things that wont be effective.
+- We cant stop them but we can slow them down? Speed bumps wont stop them so put your resources to do something more effective.
+- Dont prohibit what you cant prevent. Bad actors will exploit whatever you cant prevent.
+- False security is worse than no security (unnecessary expense and confusion of risk. Will make bad judgements based on false assumptions). Pursuing false security means you are not pursuing better forms of security.
+
+
+
+The browser platform
+- Horribly insecure
+- Still "fixing it later"
+- HTML5 made it worse than better (Powerful new capabilities but not constraning the ability of bad guys to get at those new capabilities)
+- The JavaScript global object -- or the window object as it's called in the browsers -- gives every scrap of script the same set of powerful capabilities, so there's no way a page can defend itself from any other script that happens to get into that page. 
+- Never trust the browser. The server should never trusted the browser to enforce policies. The browser cannot and will not protect your interests. You must properly filter and validate everything that comes from the browser.
+- A malicious party can exploit coding conventions to inject malicious code.
+- Malicious code gets all the same permissions as the site
+- Who's interest does the Browser represent? (for browser its the website its showing). It turns out there are more interests involved than the users and the sites. There can be third parties, and fourth parties, and many other parties on the same page. A malicious party can exploit code conventions to inject malicious code onto the page, and that code gets all of the rights of the site. This can compromise the site and the user.
+- So what can an attacker do if he can get some script onto your page? 
+   - The attacker can request additional scripts from any server in the world. Once it gets a foothold -- and it only needs a tiny amount of code to do that -- it can obtain all the additional scripts it wants from the most evil websites in the world. The browser has the same origin policy that limits the ability of a page to interact with other sites, but it in no way limits the ability of an attacker to get more script to run on your page.
+   - An attacker can read the document. The attacker can see everything the user can see and a lot of the things the user can't see. It can see hidden fields, comments, cookies, all sorts of stuff which is invisible on the page.
+   - The attacker can make requests of your server, and your server cannot detect that the requests did not originate from your application. Now, you should be using SSL to secure your connections, but if you do, it doesn't help you here because the attacker gets access to your secure connections. You should be authenticating your requests from the browser with a special token, sometimes called a crumb .. that doesn't help. The attacker has access to that as well.
+   - If your server accepts SQL queries then the attacker gets direct access to your database, and can do anything that SQL will allow them to do. Now, if your server application is creating SQL queries by concatenating together pieces of material that it gets from the browser, then you probably gave access to the attacker to your database, because SQL was optimized for SQL injection attacks.
+   - The attacker has control over the display and can request additional information from the user, and the user cannot detect that the request did not originate from your application. The browsers all have anti-phishing chrome in them now. The problem with it is that the users don't pay any attention to it. If they did, the chrome would be saying this is a legit request, go ahead and give it. Because what the browser is looking for is where the HTML came from, not where the script came from, and it's the script that's evil here.
+      - Some sites, whenever something scary is about the happen, think okay, let's make sure that the user is still on board, so let's ask for their password again. That doesn't help you in this case because the attacker has control of the screen, so he can go to the user and say what's your password, and everything tells the user that this is a legitimate request: give it up. In fact, if your site routinely asks the user to give up their password at unlikely times, what you're doing is training the users to give up the password anytime an attacker asks for it.
+   - The attacker can then send the information that it obtained by talking to your servers or scraping the page or talking to the user and send it to any server in the world. Again, there's the same origin policy in the browser, which does not limit the ability of the attacker to send this information to the most evil site on the planet.
+   - The above types of attacks are called XSS (Cross site scripting). Cross site scripting attacks were invented in 1995 yet we havent made any progress on the fundamental problem since then.
+   - The browser does not prevent any of these, and web standards require these weaknesses. If your browser does not expose your site and your users to all of these problems, it is not standards compliant. There's something deeply wrong in the W3C standards. To make the browser secure means breaking those W3C standards and that's going against the 'standards politicians'.
+- The consequences of an attack are horrible. 
+   - Harm to customers
+   - Loss of trust
+   - Legal liabilities. There's even been talk about criminal liabilities, because of negligence of a browser standard knowingly exposing people to harm.
+- A mashup is a self-inflicted XSS attack. Mashups are great. It's a way of creating an application of components that come from several independent parties and are letting them work together for the user's benefit. But they're not safe as currently practiced in the browser.
+- Why is there XSS?
+   - The web stack is too complicated
+   - Template based web frameworks are optimized for XSS injection.
+   - The JavaScript global object -- or the window object as it's called in the browsers -- gives every scrap of script the same set of powerful capabilities, so there's no way a page can defend itself from any other script that happens to get into that page.
+- The browser distinguishes between the interests of the user and the site, but didn't anticipate that there could be other interests represented. (Such as hardware, secure element, payment processors, cloud storage, etc.)
+- Within a page, interests are confused, and an ad, or a widget, or an Ajax library, they all get the same rights as your own script. You hope if you're loading jQuery, there's nothing to prevent jQuery from deciding we're going to go rogue today and start harvesting identities. If you're loading external stuff, it will happen.
+- These security issues will not get fixed in a hurry so its up to the application developers to create secure applications on an insecure platf
+  NOTE: This is why Paypal is successful because its an application written around the insecurities. How to deliver Paypal features on a public browser?
+- The principle of least authority - Any unit of software should be given just the capabilities it needs to do its work, and no more. Problem with browser gives capabilities to all of the scripts. Objects should be granted capabilities on a need-to-do basis.
+- Instead of trying to guess if code can do something bad, try granting it a safe capability. Most code should never be granted access to Window, Document, or innerHTML.
+- The JavaScript language doesn't match our expectations of what a traditional language provides. The fact that the language doesn't match our expectations is what leads us into these sorts of problems. Confusion is a bad thing. Confusion causes bugs, confusion gets in the way of reliability, also gets in the way of security. Confusion aids the enemy. Bugs are a manifestation of confusion. With great complexity comes great confusion. It's hard enough to reason about what our programs do just in terms of their functionality, but now we have a whole 'nother level of reasoning we have to do, so in order to have any hope of being able to do that effectively we need to keep our designs as clean and as simple as we can because complicated, busy designs are difficult to reason about. Overriding the push method of an array object myarray['push'] = function() {};
+
+
+Lazy's Programmers Guide to Secure Computing by Marc Steigler
+
+
+   
+- Browser is still better than everything else. All other application platforms and application delivery systems are strictly worse than the web. The reason for that is their blame the victim security model. One thing all those systems have in common that the web does not do is ask questions of the user about what a program should be able to do, and generally ask them in a way that the user cannot answer them correctly.  All that accomplishes is that when the thing finally goes wrong, you can say well, it's your fault, you agreed to this.
+
+
+
+Security lessons learned from using a web enabled technology in a secure application:
+  - Dont expose the window or document object to everyone. These 2 objects are the source of most insecurity. NOTE: This will break 99.99% of existing JavaScript libraries, like jQuery, because all of those modules assume window and document are global objects.
+  - Dont iterate the window and document object's to expose its members as globals that any JavaScript can get at.
+  - Make a JavaScript classing system that uses closures to protect private members inside of closures. Very much like C++ private, protected, and public members. Use the private to protect access.
+  - All HTML elements on the page must be protected against direct accessibility as well. If you grab a reference to any HTML element you can walk that element back to the document and window parents.
+  - Use a 'shadow document' or 'shadow window' object. Only expose the bare functionality required.
+  - Use Object.freeze(myObject); to prevent existing JavaScript objects from being hijacked for malicious intent.
+  - Asynchronous module loading, like require() is dangerous.
+     - Use a native version require() that allows you to enforce the use of a manifest system to ensure only authorized dependencies are loaded.
+     - All dependencies are loaded at loadtime not runtime. Any require() that is done at runtime only returns the reference to the existing loaded module. If the module wasnt loaded before this point an exception is thrown.
+     - Manifest should utilize a SHA2 hash to verify the loaded modules are the correct intended files.
+     - Native require() should never allow a fully qualified domain name to be specified. FQDN are only specified in the manifest.
+  - Create a separate JavaScript context and load all trusted JavaScript that is allowed access to insecure interfaces like window, document, HTML5 interfaces like file access, sockets, etc.
