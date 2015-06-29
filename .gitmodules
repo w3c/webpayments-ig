@@ -1,0 +1,6 @@
+[submodule "prototypes/web-payment-request-chrome"]
+	path = prototypes/web-payment-request-chrome
+	url = https://github.com/emschwartz/web-payment-request-chrome
+[submodule "prototypes/web-payment-request-demo-server"]
+	path = prototypes/web-payment-request-demo-server
+	url = https://github.com/emschwartz/web-payment-request-demo-server

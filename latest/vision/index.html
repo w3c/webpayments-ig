@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A Vision for a Web Payments Architecture</title>
+    <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
+    <script src='//www.w3.org/Tools/respec/respec-w3c-common' class='remove'></script>
+    <script class='remove'>
+      var respecConfig = {
+          // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
+          specStatus:           "ED",
+
+          // the specification's short name, as in http://www.w3.org/TR/short-name/
+          shortName:            "web-payments-vision",
+
+          // if you wish the publication date to be other than today, set this
+          //publishDate:  "2015-04-16",
+
+          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+          // and its maturity status
+          // previousPublishDate:  "1977-03-15",
+          // previousMaturity:  "CG-DRAFT",
+
+          // if there a publicly available Editor's Draft, this is the link
+          edDraftURI: "http://w3c.github.io/webpayments-ig/latest/vision/index.html",
+
+          // if this is a LCWD, uncomment and set the end of its review period
+          // lcEnd: "2009-08-05",
+
+          // if you want to have extra CSS, append them to this list
+          // it is recommended that the respec.css stylesheet be kept
+          //extraCSS:             [],
+
+          // editors, add as many as you like
+          // only "name" is required
+          editors:  [
+              { name: "Adrian Hope-Bailie", url: "http://medium.com/@ahopebailie",
+                company: "Ripple Labs", companyURL: "http://www.ripplelabs.com/" }
+          ],
+
+          // authors, add as many as you like.
+          // This is optional, uncomment if you have authors as well as editors.
+          // only "name" is required. Same format as editors.
+
+          authors:  [
+              { name: "Adrian Hope-Bailie", url: "http://medium.com/@ahopebailie",
+                company: "Ripple Labs", companyURL: "http://www.ripplelabs.com/" },
+              { name: "Ian Jacobs", url: "http://www.w3.org/People/Jacobs/",
+                company: "W3C", companyURL: "http://www.w3.org/" }
+          ],
+
+          otherLinks: [{
+            key: "Version control",
+            data: [{
+              value: "Github Repository",
+              href: "https://github.com/w3c/webpayments-ig"
+            }, {
+              value: "Issues",
+              href: "http://www.w3.org/Payments/IG/track/products/8"
+            }]
+          }],
+
+          // maximum level of table of contents
+          maxTocLevel: 3,
+
+          // name of the WG
+          wg:           "Web Payments Interest Group",
+
+          // URI of the public WG page
+          wgURI:        "http://www.w3.org/Payments/IG/",
+
+          // name of the public mailing to which comments are due
+          wgPublicList: "public-webpayments-ig-comments",
+
+          // URI of the patent status for this WG, for Rec-track documents
+          // !!!! IMPORTANT !!!!
+          // This is important for Rec-track documents, do not copy a patent URI from a random
+          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+          // Team Contact.
+          wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/73816/status",
+
+      };
+    </script>
+  </head>
+<body>
+  <section id='abstract'>
+    <p>
+This document is the architecture vision statment of the W3C Web Payments Interest 
+Group. It describes the principles upon which a Web Payments architecture should be built.
+    </p>
+  </section>
+
+  <section id='sotd'>
+    <p>
+Previous versions of this document were maintained on the group's 
+<a href="https://www.w3.org/Payments/IG/wiki/Payment_Agent_Task_Force/Vision">wiki</a>.
+    </p>
+    <p>
+On <strong>28 May 2015</strong> the chairs of the Web Payments Interest Group issued 
+a <a href="https://lists.w3.org/Archives/Public/public-webpayments-ig/2015May/0220.html"><strong>call for consensus</strong></a></a> 
+  to determine whether the group will publish this as an endorsed vision for Web payments.
+    </p>
+  </section>
+
+  <section>
+    <h2>Web Principles</h2>
+    <p>
+Any architecture grounded in the Web should respect well-known Web principles such as:
+    </p>
+    <ul>
+      <li>Adhering to Web architecture fundamentals</li>
+      <li>Supporting network independence</li>
+      <li>Supporting device independence</li>
+      <li>Providing accessibility for payers and payees with disabilities</li>
+      <li>Being machine-readable where possible to enable automation and engagement of non-human entities</li>
+      <li>Protecting the privacy of all participants</li>
+      <li>Being open and usable by anyone, including those who are not yet connected to the Web</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h2>Desireable properties of a Web Payments Architecture</h2>
+    <p>
+In addition to the priciples above, the following are desirable properties specific to a Web payments architecture:
+    </p>
+    <section>
+      <h3>Provides payees and payers unencumbered knowledge and choice in how to undertake payments</h3>
+      <p>
+It is consistent with the purpose of the Web to enable payees to receive payments, and payers to pay, 
+using their preferred payment instruments and payment schemes. The Web payments architecture must not 
+restrict these choices but rather foster transparency of choices available. 
+      </p>
+    </section>
+    <section>
+      <h3>Improves the user experience</h3>
+      <p>
+We want to improve the user experience in a variety of ways. These include reducing the need to provide 
+data as part of a transaction (helpful on mobile in particular), simplifying payment user interfaces and 
+interactions, standardizing the payment flow across all Web applications, and making it easier to make 
+payments from a wide range of devices, such as computers, portable devices, televisions, eBooks, and 
+automobiles. 
+      </p>
+      <p>
+Taken together, we expect these improvements will lower the rate of "cart abandonment" and 
+increase the velocity of payments made over the Web.
+      </p>
+    </section>
+    <section>
+      <h3>Supports a wide spectrum of security and privacy needs to meet industry expectations</h3>
+      <p>
+Trust in Web payments is critical to their widespread adoption. Because of this the architecture must provide 
+the ability for participants in the payment process to confidently, securely and accurately identify and 
+connect to other participants that are party to the payment. 
+      </p>
+      <p>
+The architecture should not disclose private details of the participants identity or other sensitive information 
+as part of the payment process unless required by operational, legal or jurisdictional rules, or when deliberately 
+consented to (e.g. as part of a loyalty program) by the owner of the information. 
+      </p>
+      <p>
+The Web payments architecture should make this easy by standardizing the mechanisms available to issue, exchange 
+and verify credentials as part of a payment transaction, as well as a secure mechanism for the exchange of identity 
+information when it is explicitly required as part of a payment. To accomplish this, it is expected that the 
+architecture will also need to support an evolving variety of authentication and identification techniques 
+(e.g. multifactor, biometric, etc.) which can be used independent of or in concert with a participants identity data. 
+      </p>
+    </section>
+    <section>
+      <h3>Encapsulates existing payment schemes and enables new schemes</h3>
+      <p>
+In order to achieve this, we anticipate that the architecture will be:
+      </p>
+      <ul>
+        <li><strong>Minimalist</strong>, in order to accommodate diverse existing and emerging schemes.</li>
+        <li><strong>Extensible</strong>, so that above and beyond the minimum information required for interoperability, parties 
+          involved in payments can exchange the information they require, using the formats and protocols they prefer.</li>
+      </ul>
+    </section>
+    <section>
+      <h3>Encourages efficient settlement</h3>
+      <p>
+Different payment schemes move value at different speeds. The Web payments architecture should not impose additional 
+delays, so that payment information circulates as efficiently as possible and the final settlement (exchange of value) 
+is done as quickly as possible.
+      </p>
+    </section>
+    <section>
+      <h3>Facilitates compliance with legal & regulatory obligations</h3>
+      <p>
+The Web is a global system which must operate across many legal and regulatory jurisdictions. While there are common 
+requirements across jurisdictions, it is not cost-effective to create a single system that satisfies all legal and 
+regulatory obligations in all jurisdictions. 
+      </p>
+      <p>
+As a result, a successful architecture for payments on the web will account 
+for variability with regard to legal and regulatory frameworks it can support. The group envisions an extensible set of 
+'hooks' that enable participant-authorized parties to comply with legal and regulatory requirements in different 
+jurisdictions in a secure and more standard manner.
+      </p>
+      <p>
+We believe the industry will benefit from standards that lower the cost (e.g. through automation) of addressing 
+needs related to Know Your Customer, Anti-Money Laundering, and other requirements related to due diligence and 
+customer identity.
+      </p>
+    </section>
+    <section>
+      <h3>Enables monetization on the spectrum of Web to native apps</h3>
+      <p>
+Web developers will be able to integrate payments smoothly into a variety of user experiences on the Web, including 
+in-app payments, downloads, and subscriptions. This is key to opening up new revenue generating opportunities on the 
+Web that were not previously viable due to the costs incurred and poor user experiences required in processing payments.
+      </p>
+    </section>
+    <section>
+      <h3>Bridges distributed value networks</h3>
+      <p>
+The Web will ultimately serve as a bridge between open and closed value exchange networks, enabling interoperable value 
+exchange. This will enable both payers and payees to seamlessly make payments using a variety of previously 
+non-interoperable payment instruments. 
+      </p>
+    </section>
+  </section>
+
+  <section class="appendix">
+    <h2>Acknowledgements</h2>
+    <p>
+The editors wish to thank the participants of the
+<a href="http://www.w3.org/Payments/IG/">Web Payments Interest Group</a>
+for discussions about and contributions to this document, as well as the
+<a href="https://www.w3.org/community/webpayments/">Web Payments Community
+Group</a> for earlier work that informed this document.
+    </p>
+  </section>
+
+  </body>
+</html>
