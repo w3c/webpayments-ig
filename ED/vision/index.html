@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" typeof="bibo:Document " prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#">
+  
+  <head>
+    <meta lang="" property="dc:language" content="en">
+    <title>A Vision for a Web Payments Architecture</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <style>
+      /*****************************************************************
+       * ReSpec 3 CSS
+       * Robin Berjon - http://berjon.com/
+       *****************************************************************/
+
+      /*      
+      Edited by Adrian Hope-Bailie - 1 July 2015
+      Generated from http://w3c.github.io/webpayments-ig/latest/vision/index.html
+      Saved as HTML
+      Hand edited to:
+      - fix links to this doc
+      - remove link to latest
+      - add the following CSS fix
+      */
+      .secno {
+        padding-right: 10px;
+      }
+      
+      /* --- INLINES --- */
+      em.rfc2119 { 
+          text-transform:     lowercase;
+          font-variant:       small-caps;
+          font-style:         normal;
+          color:              #900;
+      }
+      
+      h1 acronym, h2 acronym, h3 acronym, h4 acronym, h5 acronym, h6 acronym, a acronym,
+      h1 abbr, h2 abbr, h3 abbr, h4 abbr, h5 abbr, h6 abbr, a abbr {
+          border: none;
+      }
+      
+      dfn {
+          font-weight:    bold;
+      }
+      
+      a.internalDFN {
+          color:  inherit;
+          border-bottom:  1px solid #99c;
+          text-decoration:    none;
+      }
+      
+      a.externalDFN {
+          color:  inherit;
+          border-bottom:  1px dotted #ccc;
+          text-decoration:    none;
+      }
+      
+      a.bibref {
+          text-decoration:    none;
+      }
+      
+      cite .bibref {
+          font-style: normal;
+      }
+      
+      code {
+          color:  #C83500;
+      }
+      
+      /* --- TOC --- */
+      .toc a, .tof a {
+          text-decoration:    none;
+      }
+      
+      a .secno, a .figno {
+          color:  #000;
+      }
+      
+      ul.tof, ol.tof {
+          list-style: none outside none;
+      }
+      
+      .caption {
+          margin-top: 0.5em;
+          font-style:   italic;
+      }
+      
+      /* --- TABLE --- */
+      table.simple {
+          border-spacing: 0;
+          border-collapse:    collapse;
+          border-bottom:  3px solid #005a9c;
+      }
+      
+      .simple th {
+          background: #005a9c;
+          color:  #fff;
+          padding:    3px 5px;
+          text-align: left;
+      }
+      
+      .simple th[scope="row"] {
+          background: inherit;
+          color:  inherit;
+          border-top: 1px solid #ddd;
+      }
+      
+      .simple td {
+          padding:    3px 10px;
+          border-top: 1px solid #ddd;
+      }
+      
+      .simple tr:nth-child(even) {
+          background: #f0f6ff;
+      }
+      
+      /* --- DL --- */
+      .section dd > p:first-child {
+          margin-top: 0;
+      }
+      
+      .section dd > p:last-child {
+          margin-bottom: 0;
+      }
+      
+      .section dd {
+          margin-bottom:  1em;
+      }
+      
+      .section dl.attrs dd, .section dl.eldef dd {
+          margin-bottom:  0;
+      }
+      
+      @media print {
+          .removeOnSave {
+              display: none;
+          }
+      }
+    </style>
+    <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/W3C-ED">
+    <!--[if lt IE 9]>
+      <script src='https://www.w3.org/2008/site/js/html5shiv.js'></script>
+    <![endif]-->
+  </head>
+  
+  <body class="h-entry" role="document" id="respecDocument">
+    <div class="head" role="contentinfo" id="respecHeader">
+      <p>
+        <a href="http://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/Icons/w3c_home" alt="W3C"></a>
+      </p>
+      <h1 class="title p-name" id="title" property="dcterms:title">A Vision for a Web Payments Architecture</h1>
+      <h2 id="w3c-editor-s-draft-01-july-2015">
+        <abbr title="World Wide Web Consortium">W3C</abbr>Editor's Draft
+        <time property="dcterms:issued" class="dt-published" datetime="2015-07-01">01 July 2015</time>
+      </h2>
+      <dl>
+        <dt>This version:</dt>
+        <dd>
+          <a class="u-url" href="http://www.w3.org/Payments/IG/Vision">http://www.w3.org/Payments/IG/Vision</a>
+        </dd>
+        <dt>Latest editor's draft:</dt>
+        <dd>
+          <a href="http://w3c.github.io/webpayments-ig/latest/vision/index.html">http://w3c.github.io/webpayments-ig/latest/vision/index.html</a>
+        </dd>
+        <dt>Editors:</dt>
+        <dd class="p-author h-card vcard" property="bibo:editor" resource="_:editor0">
+          <span property="rdf:first" typeof="foaf:Person">
+            <meta property="foaf:name" content="Adrian Hope-Bailie">
+            <a class="u-url url p-name fn" property="foaf:homepage" href="http://medium.com/@ahopebailie">Adrian Hope-Bailie</a>,
+            <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.ripplelabs.com/">Ripple Labs</a>
+          </span>
+          <span property="rdf:rest" resource="_:editor1"></span>
+        </dd>
+        <dd class="p-author h-card vcard" resource="_:editor1">
+          <span property="rdf:first" typeof="foaf:Person">
+            <meta property="foaf:name" content="Ian Jacobs">
+            <a class="u-url url p-name fn" property="foaf:homepage" href="http://www.w3.org/People/Jacobs/">Ian Jacobs</a>,
+            <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a>
+          </span>
+          <span property="rdf:rest" resource="_:editor2"></span>
+        </dd>
+        <dd class="p-author h-card vcard" resource="_:editor2">
+          <span property="rdf:first" typeof="foaf:Person">
+            <meta property="foaf:name" content="Manu Sporny">
+            <a class="u-url url p-name fn" property="foaf:homepage" href="https://manu.sporny.org/">Manu Sporny</a>,
+            <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://digitalbazaar.com/">Digital Bazaar</a>
+          </span>
+          <span property="rdf:rest" resource="_:editor3"></span>
+        </dd>
+        <dd class="p-author h-card vcard" resource="_:editor3">
+          <span property="rdf:first" typeof="foaf:Person">
+            <meta property="foaf:name" content="Pat Adler">
+            <a class="u-url url p-name fn" property="foaf:homepage" href="https://www.linkedin.com/pub/patrick-adler/2/730/2b4">Pat Adler</a>,
+            <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.federalreserve.gov/">Federal Reserve Bank of Chicago</a>
+          </span>
+          <span property="rdf:rest" resource="rdf:nil"></span>
+        </dd>
+        <dt>Version control:</dt>
+        <dd>
+          <a href="https://github.com/w3c/webpayments-ig">
+                      Github Repository
+                    </a>
+        </dd>
+        <dd>
+          <a href="http://www.w3.org/Payments/IG/track/products/8">
+                      Issues
+                    </a>
+        </dd>
+      </dl>
+      <p class="copyright">
+        <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>© 2015
+        <a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a>
+        <sup>®</sup>(
+        <a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+        <a href="http://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+        <a href="http://www.keio.ac.jp/">Keio</a>,
+        <a href="http://ev.buaa.edu.cn/">Beihang</a>).
+        <abbr title="World Wide Web Consortium">W3C</abbr>
+        <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+        <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>and
+        <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a>rules apply.</p>
+      <hr>
+    </div>
+    <section id="abstract" class="introductory" property="dc:abstract">
+      <h2 id="h-abstract" resource="#h-abstract">
+        <span property="xhv:role" resource="xhv:heading">Abstract</span>
+      </h2>
+      <p>This document is the architecture vision statment of the
+        <abbr title="World Wide Web Consortium">W3C</abbr>Web Payments Interest Group. It describes the principles upon which a Web Payments architecture should be built.</p>
+    </section>
+    <section id="sotd" class="introductory">
+      <h2 id="h-sotd" resource="#h-sotd">
+        <span property="xhv:role" resource="xhv:heading">Status of This Document</span>
+      </h2>
+      <p>
+        <em>This section describes the status of this document at the time of its publication. Other documents may supersede this document.
+          A list of current
+          <abbr title="World Wide Web Consortium">W3C</abbr>publications and the latest revision of this technical report can be found in the
+          <a href="http://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a>at http://www.w3.org/TR/.</em>
+      </p>
+      <p>This document represents the consensus of the Web Payments Interest Group as of the publication date of this document. See
+        the
+        <a href="https://lists.w3.org/Archives/Public/public-webpayments-ig/2015May/0220.html">28 
+  May 2015 Call for Consensus</a>.</p>
+      <p>Previous versions of this document were maintained on the group's
+        <a href="https://www.w3.org/Payments/IG/wiki/Payment_Agent_Task_Force/Vision">wiki</a>.</p>
+      <p>This document was published by the
+        <a href="http://www.w3.org/Payments/IG/">Web Payments Interest Group</a>as an Editor's Draft. If you wish to make comments regarding this document, please send them to
+        <a href="mailto:public-webpayments-ig-comments@w3.org">public-webpayments-ig-comments@w3.org</a>(
+        <a href="mailto:public-webpayments-ig-comments-request@w3.org?subject=subscribe">subscribe</a>,
+        <a href="http://lists.w3.org/Archives/Public/public-webpayments-ig-comments/">archives</a>). All comments are welcome.</p>
+      <p>Publication as an Editor's Draft does not imply endorsement by the
+        <abbr title="World Wide Web Consortium">W3C</abbr>Membership. This is a draft document and may be updated, replaced or obsoleted by other documents at any time.
+        It is inappropriate to cite this document as other than work in progress.</p>
+      <p>This document was produced by a group operating under the
+        <a id="sotd_patent" property="w3p:patentRules" href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 <abbr title="World Wide Web Consortium">W3C</abbr> Patent
+            Policy</a>.
+        <abbr title="World Wide Web Consortium">W3C</abbr>maintains a
+        <a href="http://www.w3.org/2004/01/pp-impl/73816/status" rel="disclosure">public list of any patent
+              disclosures</a>made in connection with the deliverables of the group; that page also includes instructions for disclosing a patent. An
+        individual who has actual knowledge of a patent which the individual believes contains
+        <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential
+            Claim(s)</a>must disclose the information in accordance with
+        <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section
+            6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.</p>
+      <p>This document is governed by the
+        <a id="w3c_process_revision" href="http://www.w3.org/2014/Process-20140801/">1 August 2014 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.</p>
+    </section>
+    <section id="toc">
+      <h2 class="introductory" id="h-toc" resource="#h-toc">
+        <span property="xhv:role" resource="xhv:heading">Table of Contents</span>
+      </h2>
+      <ul class="toc" role="directory" id="respecContents">
+        <li class="tocline">
+          <a href="#web-principles" class="tocxref"><span class="secno">1. </span>Web Principles</a>
+        </li>
+        <li class="tocline">
+          <a href="#desireable-properties-of-a-web-payments-architecture" class="tocxref"><span class="secno">2. </span>Desireable properties of a Web Payments Architecture</a>
+          <ul class="toc">
+            <li class="tocline">
+              <a href="#provides-payees-and-payers-unencumbered-knowledge-and-choice-in-how-to-undertake-payments" class="tocxref"><span class="secno">2.1 </span>Provides payees and payers unencumbered knowledge and choice in how to undertake payments</a>
+            </li>
+            <li class="tocline">
+              <a href="#improves-the-user-experience" class="tocxref"><span class="secno">2.2 </span>Improves the user experience</a>
+            </li>
+            <li class="tocline">
+              <a href="#supports-a-wide-spectrum-of-security-and-privacy-needs-to-meet-industry-expectations" class="tocxref"><span class="secno">2.3 </span>Supports a wide spectrum of security and privacy needs to meet industry expectations</a>
+            </li>
+            <li class="tocline">
+              <a href="#encapsulates-existing-payment-schemes-and-enables-new-schemes" class="tocxref"><span class="secno">2.4 </span>Encapsulates existing payment schemes and enables new schemes</a>
+            </li>
+            <li class="tocline">
+              <a href="#encourages-efficient-settlement" class="tocxref"><span class="secno">2.5 </span>Encourages efficient settlement</a>
+            </li>
+            <li class="tocline">
+              <a href="#facilitates-compliance-with-legal-regulatory-obligations" class="tocxref"><span class="secno">2.6 </span>Facilitates compliance with legal &amp; regulatory obligations</a>
+            </li>
+            <li class="tocline">
+              <a href="#enables-monetization-on-the-spectrum-of-web-to-native-apps" class="tocxref"><span class="secno">2.7 </span>Enables monetization on the spectrum of Web to native apps</a>
+            </li>
+            <li class="tocline">
+              <a href="#bridges-distributed-value-networks" class="tocxref"><span class="secno">2.8 </span>Bridges distributed value networks</a>
+            </li>
+          </ul>
+        </li>
+        <li class="tocline">
+          <a href="#acknowledgements" class="tocxref"><span class="secno">A. </span>Acknowledgements</a>
+        </li>
+      </ul>
+    </section>
+    <section id="web-principles" typeof="bibo:Chapter" resource="#web-principles" property="bibo:hasPart">
+      <!--OddPage-->
+      <h2 id="h-web-principles" resource="#h-web-principles">
+        <span property="xhv:role" resource="xhv:heading">
+          <span class="secno">1.</span>Web Principles</span>
+      </h2>
+      <p>Any architecture grounded in the Web should respect well-known Web principles such as:</p>
+      <ul>
+        <li>Adhering to Web architecture fundamentals</li>
+        <li>Supporting network independence</li>
+        <li>Supporting device independence</li>
+        <li>Providing accessibility for payers and payees with disabilities</li>
+        <li>Being machine-readable where possible to enable automation and engagement of non-human entities</li>
+        <li>Protecting the privacy of all participants</li>
+        <li>Being open and usable by anyone, including those who are not yet connected to the Web</li>
+      </ul>
+    </section>
+    <section id="desireable-properties-of-a-web-payments-architecture" typeof="bibo:Chapter" resource="#desireable-properties-of-a-web-payments-architecture"
+    property="bibo:hasPart">
+      <!--OddPage-->
+      <h2 id="h-desireable-properties-of-a-web-payments-architecture" resource="#h-desireable-properties-of-a-web-payments-architecture">
+        <span property="xhv:role" resource="xhv:heading">
+          <span class="secno">2.</span>Desireable properties of a Web Payments Architecture</span>
+      </h2>
+      <p>In addition to the priciples above, the following are desirable properties specific to a Web payments architecture:</p>
+      <section
+      id="provides-payees-and-payers-unencumbered-knowledge-and-choice-in-how-to-undertake-payments" typeof="bibo:Chapter" resource="#provides-payees-and-payers-unencumbered-knowledge-and-choice-in-how-to-undertake-payments"
+      property="bibo:hasPart">
+        <h3 id="h-provides-payees-and-payers-unencumbered-knowledge-and-choice-in-how-to-undertake-payments" resource="#h-provides-payees-and-payers-unencumbered-knowledge-and-choice-in-how-to-undertake-payments">
+          <span property="xhv:role" resource="xhv:heading">
+            <span class="secno">2.1</span>Provides payees and payers unencumbered knowledge and choice in how to undertake payments</span>
+        </h3>
+        <p>It is consistent with the purpose of the Web to enable payees to receive payments, and payers to pay, using their preferred
+          payment instruments and payment schemes. The Web payments architecture must not restrict these choices but rather foster
+          transparency of choices available.</p>
+    </section>
+    <section id="improves-the-user-experience" typeof="bibo:Chapter" resource="#improves-the-user-experience" property="bibo:hasPart">
+      <h3 id="h-improves-the-user-experience" resource="#h-improves-the-user-experience">
+        <span property="xhv:role" resource="xhv:heading">
+          <span class="secno">2.2</span>Improves the user experience</span>
+      </h3>
+      <p>We want to improve the user experience in a variety of ways. These include reducing the need to provide data as part of
+        a transaction (helpful on mobile in particular), simplifying payment user interfaces and interactions, standardizing the
+        payment flow across all Web applications, and making it easier to make payments from a wide range of devices, such as computers,
+        portable devices, televisions, eBooks, and automobiles.</p>
+      <p>Taken together, we expect these improvements will lower the rate of "cart abandonment" and increase the velocity of payments
+        made over the Web.</p>
+    </section>
+    <section id="supports-a-wide-spectrum-of-security-and-privacy-needs-to-meet-industry-expectations" typeof="bibo:Chapter"
+    resource="#supports-a-wide-spectrum-of-security-and-privacy-needs-to-meet-industry-expectations" property="bibo:hasPart">
+      <h3 id="h-supports-a-wide-spectrum-of-security-and-privacy-needs-to-meet-industry-expectations" resource="#h-supports-a-wide-spectrum-of-security-and-privacy-needs-to-meet-industry-expectations">
+        <span property="xhv:role" resource="xhv:heading">
+          <span class="secno">2.3</span>Supports a wide spectrum of security and privacy needs to meet industry expectations</span>
+      </h3>
+      <p>Trust in Web payments is critical to their widespread adoption. Because of this the architecture must provide the ability
+        for participants in the payment process to confidently, securely and accurately identify and connect to other participants
+        that are party to the payment.</p>
+      <p>The architecture should not disclose private details of the participants identity or other sensitive information as part
+        of the payment process unless required by operational, legal or jurisdictional rules, or when deliberately consented to (e.g.
+        as part of a loyalty program) by the owner of the information.</p>
+      <p>The Web payments architecture should make this easy by standardizing the mechanisms available to issue, exchange and verify
+        credentials as part of a payment transaction, as well as a secure mechanism for the exchange of identity information when
+        it is explicitly required as part of a payment. To accomplish this, it is expected that the architecture will also need to
+        support an evolving variety of authentication and identification techniques (e.g. multifactor, biometric, etc.) which can
+        be used independent of or in concert with a participants identity data.</p>
+    </section>
+    <section id="encapsulates-existing-payment-schemes-and-enables-new-schemes" typeof="bibo:Chapter" resource="#encapsulates-existing-payment-schemes-and-enables-new-schemes"
+    property="bibo:hasPart">
+      <h3 id="h-encapsulates-existing-payment-schemes-and-enables-new-schemes" resource="#h-encapsulates-existing-payment-schemes-and-enables-new-schemes">
+        <span property="xhv:role" resource="xhv:heading">
+          <span class="secno">2.4</span>Encapsulates existing payment schemes and enables new schemes</span>
+      </h3>
+      <p>In order to achieve this, we anticipate that the architecture will be:</p>
+      <ul>
+        <li>
+          <strong>Minimalist</strong>, in order to accommodate diverse existing and emerging schemes.</li>
+        <li>
+          <strong>Extensible</strong>, so that above and beyond the minimum information required for interoperability, parties involved in
+          payments can exchange the information they require, using the formats and protocols they prefer.</li>
+      </ul>
+    </section>
+    <section id="encourages-efficient-settlement" typeof="bibo:Chapter" resource="#encourages-efficient-settlement" property="bibo:hasPart">
+      <h3 id="h-encourages-efficient-settlement" resource="#h-encourages-efficient-settlement">
+        <span property="xhv:role" resource="xhv:heading">
+          <span class="secno">2.5</span>Encourages efficient settlement</span>
+      </h3>
+      <p>Different payment schemes move value at different speeds. The Web payments architecture should not impose additional delays,
+        so that payment information circulates as efficiently as possible and the final settlement (exchange of value) is done as
+        quickly as possible.</p>
+    </section>
+    <section id="facilitates-compliance-with-legal-regulatory-obligations" typeof="bibo:Chapter" resource="#facilitates-compliance-with-legal-regulatory-obligations"
+    property="bibo:hasPart">
+      <h3 id="h-facilitates-compliance-with-legal-regulatory-obligations" resource="#h-facilitates-compliance-with-legal-regulatory-obligations">
+        <span property="xhv:role" resource="xhv:heading">
+          <span class="secno">2.6</span>Facilitates compliance with legal &amp; regulatory obligations</span>
+      </h3>
+      <p>The Web is a global system which must operate across many legal and regulatory jurisdictions. While there are common requirements
+        across jurisdictions, it is not cost-effective to create a single system that satisfies all legal and regulatory obligations
+        in all jurisdictions.</p>
+      <p>As a result, a successful architecture for payments on the web will account for variability with regard to legal and regulatory
+        frameworks it can support. The group envisions an extensible set of 'hooks' that enable participant-authorized parties to
+        comply with legal and regulatory requirements in different jurisdictions in a secure and more standard manner.</p>
+      <p>We believe the industry will benefit from standards that lower the cost (e.g. through automation) of addressing needs related
+        to Know Your Customer, Anti-Money Laundering, and other requirements related to due diligence and customer identity.</p>
+    </section>
+    <section id="enables-monetization-on-the-spectrum-of-web-to-native-apps" typeof="bibo:Chapter" resource="#enables-monetization-on-the-spectrum-of-web-to-native-apps"
+    property="bibo:hasPart">
+      <h3 id="h-enables-monetization-on-the-spectrum-of-web-to-native-apps" resource="#h-enables-monetization-on-the-spectrum-of-web-to-native-apps">
+        <span property="xhv:role" resource="xhv:heading">
+          <span class="secno">2.7</span>Enables monetization on the spectrum of Web to native apps</span>
+      </h3>
+      <p>Web developers will be able to integrate payments smoothly into a variety of user experiences on the Web, including in-app
+        payments, downloads, and subscriptions. This is key to opening up new revenue generating opportunities on the Web that were
+        not previously viable due to the costs incurred and poor user experiences required in processing payments.</p>
+    </section>
+    <section id="bridges-distributed-value-networks" typeof="bibo:Chapter" resource="#bridges-distributed-value-networks" property="bibo:hasPart">
+      <h3 id="h-bridges-distributed-value-networks" resource="#h-bridges-distributed-value-networks">
+        <span property="xhv:role" resource="xhv:heading">
+          <span class="secno">2.8</span>Bridges distributed value networks</span>
+      </h3>
+      <p>The Web will ultimately serve as a bridge between open and closed value exchange networks, enabling interoperable value
+        exchange. This will enable both payers and payees to seamlessly make payments using a variety of previously non-interoperable
+        payment instruments.</p>
+    </section>
+    </section>
+    <section class="appendix" id="acknowledgements" typeof="bibo:Chapter" resource="#acknowledgements" property="bibo:hasPart">
+      <!--OddPage-->
+      <h2 id="h-acknowledgements" resource="#h-acknowledgements">
+        <span property="xhv:role" resource="xhv:heading">
+          <span class="secno">A.</span>Acknowledgements</span>
+      </h2>
+      <p>The editors wish to thank the participants of the
+        <a href="http://www.w3.org/Payments/IG/">Web Payments Interest Group</a>for discussions about and contributions to this document, as well as the
+        <a href="https://www.w3.org/community/webpayments/">Web Payments Community
+Group</a>for earlier work that informed this document.</p>
+    </section>
+  </body>
+
+</html>
