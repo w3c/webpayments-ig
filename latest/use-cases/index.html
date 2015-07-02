@@ -198,7 +198,7 @@ greater interoperability among merchants and their customers,
 payment providers, software vendors, mobile operators, native mobile
 apps, and payment networks. The roadmap will include
 <a title="payment scheme">payment schemes</a> in use
-today (such as electronic cheques, credit cards, direct debit, and
+today (such as electronic checks, credit cards, direct debit, and
 cryptocurrencies) and those of the future. The roadmap will be derived from
 the use cases listed below.
     </p>
@@ -209,8 +209,8 @@ the use cases listed below.
 The Web Payments work is not just about making payments easier, faster,
 more secure, and more innovative. There are many people around the world that
 today's financial system does not reach. These people are called the world's
-unbanked (or underbanked). The unbanked often live pay cheque to pay cheque, do
-not have access to savings accounts or low-fee cheque cashing services, lines
+unbanked (or underbanked). The unbanked often live paycheck to paycheck, do
+not have access to savings accounts or low-fee check cashing services, lines
 of credit, or a way of saving for their future. Being unable to plan for one's
 financial future often results in a focus on the short-term, which creates a
 vicious cycle of not being able to escape one's situation. Not being able to
@@ -241,22 +241,27 @@ This document is organized as follows:
 
       <ul>
           <li>
-Section 2 defines basic payment terms.
+<a href="#terminology">Section 2</a> defines basic payment terms.
         </li>
         <li>
-Section 3 describes a common payment flow at a high
-level. The group expects to work on additional
+<a href="#an-overview-of-the-payment-phases">Section 3</a> describes a
+common payment flow at a high level. The group expects to work on additional
 payment flows in future work.
         </li>
         <li>
-Section 4 is a specific narrative, labeled according
-to the steps of section 3. Section 7 describes
+<a href="#a-simple-example-of-the-payment-phases">Section 4</a> is a specific
+narrative, labeled according to the steps of section 3.
+<a href="#additional-examples-of-the-payment-phases">Section 7</a> describes
 additional familiar narratives to give a more complete picture
 of how the payment phases apply.
         </li>
         <li>
-Section 6 lists the use cases - short scenarios that cover
-diverse aspects of each payment step.
+<a href="#assumptions">Section 5</a> highlights general assumptions that have
+been made about the use cases.
+        </li>
+        <li>
+<a href="#use-cases-1">Section 6</a> lists the use cases - short scenarios
+that cover diverse aspects of each payment step.
         </li>
       </ul>
 
@@ -353,7 +358,7 @@ An <a>entity</a> that provides a source of funds as required by a
       <dd>
 A mechanism used to transfer value from a <a>payer</a> to a
 <a>payee</a>. Examples: Corporate Visa card, personal Visa card, a bitcoin
-account, a PayPal account, an Alipay account, etc.
+account, a PayPal account, and an Alipay account.
       </dd>
       <dt><dfn>payment processor</dfn></dt>
       <dd>
@@ -372,8 +377,8 @@ MasterCard, Bitcoin, Ripple, PayPal, Google Pay, Alipay, Yandex money, ACH, SEPA
       <dt><dfn>purchase</dfn></dt>
       <dd>
 Activities surrounding and including a <a>transaction</a> (e.g., discovery of
-an offer, negotiation of terms, selection of <a>payment instrument</a>,
-delivery, etc.).
+an offer, negotiation of terms, selection of <a>payment instrument</a>, and
+delivery).
       </dd>
       <dt><dfn>transaction</dfn></dt>
       <dd>
@@ -432,8 +437,8 @@ Delivery of Product/Receipt and Refunds
     </ol>
 
 <p>The descriptions below only discuss the interactions between the
-payer and the <a>payee</a>. We do not expose the low-level exchanges between
-banks, card associations, or other back-end "payment clearing" parties
+<a>payer</a> and the <a>payee</a>. We do not expose the low-level exchanges
+between banks, card associations, or other back-end "payment clearing" parties
 in a <a>transaction</a>. Those details will be discussed in the Interest
 Group's work on architecture and
 requirements.</p>
@@ -578,11 +583,11 @@ payment may be required to access the product.
 <strong>Delivery of Receipt</strong>. Depending on the
 <a title="payment scheme">payment scheme(s)</a> chosen, there are
 various ways and times that a receipt may be delivered (e.g., credit card
-receipt, digital proof of <a>purchase</a>, encrypted line-item receipt, etc.).
+receipt, digital proof of <a>purchase</a>, or encrypted line-item receipt).
         </li>
         <li>
 <strong>Refunds</strong>. At times exceptions may occur (e.g., defective
-product, application of store return policy, etc.). In this case, the
+product or application of store return policy). In this case, the
 <a>payee</a> initiates payment to the <a>payer</a>. The refund may
 take different forms, including a refund to the <a title="payer">payer's</a>
 payment instrument, a refund using a different payment scheme, or store credit.
@@ -859,8 +864,8 @@ be helpful.
           </dd>
           <dt>Exceptions</dt>
           <dd>
-No mobile phone connectivity (visiting a different country, trip occurs
-outside the range of a mobile network, etc.)
+No mobile phone connectivity (e.g. visiting a different country or trip occurs
+outside the range of a mobile network)
           </dd>
         </dl>
 
@@ -1331,7 +1336,7 @@ store-specific line of credit.
         <dl id="uc-ubiquitous" class="dl-horizontal">
           <dt>Ubiquitous Schemes</dt>
           <dd>
-A game store Web site accepts payment via credit card, e-cheque, and
+A game store Web site accepts payment via credit card, e-check, and
 operator billing.
           </dd>
           <dt>Target version</dt>
@@ -1752,8 +1757,8 @@ Once Sally has signed into PayPal to pay, PayPal initiates payment processing.
 Joakim uses his Bitcoin wallet to send money to his friend.
               </li>
                 <li>
-Carson (in New York City) sends money to Vladamir (in Moscow) using
-his Ripple client, which converts the currency from US Dollars to Rubels in
+Carson (in New York City) sends money to Vladimir (in Moscow) using
+his Ripple client, which converts the currency from US Dollars to Roubels in
 transit.
               </li>
             </ul>
@@ -1881,7 +1886,7 @@ Eman uses a credit card to buy some gifts for her parents. The shop has
 access to the funds in three days.
               </li>
                 <li>
-Frank uses an electronic cheque to pay his rent. The rental agency has access
+Frank uses an electronic check to pay his rent. The rental agency has access
 to the funds in 7 days.
               </li>
                 <li>
@@ -1908,7 +1913,7 @@ message.
         <dl id="uc-notifications" class="dl-horizontal">
           <dt>Notifications</dt>
           <dd>
-Gavin sends an electronic cheque to WaveMart. WaveMart receives a notification
+Gavin sends an electronic check to WaveMart. WaveMart receives a notification
 that payment has been initiated almost immediately. Four days later, WaveMart
 receives a notification from their bank that payment has been received.
           </dd>
@@ -2213,7 +2218,7 @@ The following scenario outlines payment using a mobile device and
 tokenization. The merchant has provided a mobile application that
 customers can download in the example below. This example may apply to
 various tokenization payment systems now in use, such as ApplePay,
-CyberSource, Venmo, Square, etc.
+CyberSource, Venmo, and Square.
       </p>
 
       <section class="notoc">
@@ -2490,7 +2495,7 @@ to Lenne and she receives them the next day.
     </section>
 
     <section>
-      <h3>Electronic Cheque Payment</h3>
+      <h3>Electronic Check Payment</h3>
       <p><em>To be completed</em>.</p>
     </section>
 
