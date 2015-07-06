@@ -3,8 +3,10 @@
 <head>
 <title>Web Payments: Capabilities 1.0</title>
 <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
+<script src="../common/biblio.js" class="remove"></script>
 <script src='../respec-w3c-common.js' class='remove'></script>
 <script src='../respec-webpayments.js' class='remove'></script>
+<script src="../common/script/resolveReferences.js" class="remove"></script>
 <script class='remove'>
 var respecConfig = {
     // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
@@ -118,6 +120,8 @@ maxTocLevel: 3,
              // Team Contact.
              wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/73816/status",
 
+             // see common/biblio.js for a list of specs that we might need to reference
+             localBiblio: biblio,
              preProcess: [ webpayments.preProcess ]/*,
                                                      alternateFormats: [ {uri: "diff-20111214.html", label: "diff to previous version"} ],
                                                     */
@@ -146,6 +150,11 @@ maxTocLevel: 3,
     This document is in early draft state and is expected to rapidly evolve
     based on broad feedback and input from the Web Payments Interest Group.
     </p>
+</section>
+
+<section id="introduction">
+    <h2>Introduction</h2>
+    <p>This document needs an introduction! - SPM</p>
 </section>
 
 <section id="relationships">
@@ -206,7 +215,7 @@ maxTocLevel: 3,
         of ownership (such as Ledger entries, Deeds, etc.) used as part of the
         settlement of payments or commercial exchanges. Settlement via the Web
         involves access to the accounts of the participants and ledgers of the
-        account providers and capabilities to manage accounts and capture and
+        <a title="account provider">account providers</a> and capabilities to manage accounts and capture and
         monitor transactions in a ledger against those accounts.<br />
         <div class='group-capability'><strong>Capabilities</strong>:
             Accounts, Ledgers, and Legal/Regulatory
@@ -278,28 +287,30 @@ maxTocLevel: 3,
 
     <p>Interaction 1:</p>
 
-    <p>Payee communicates request for payment to payer and shares payment instructions</p>
+    <p><a>Payee</a> communicates request for payment to <a>payer</a> and shares payment instructions</p>
 
     <p><span><img alt="Payer-PayeeService Provider.png" src="images/image02.png"
         title=""></span></p>
 
     <p>Interaction 2:</p>
 
-    <p>Payer uses information received from Payee and creates a new payment request from Payment Service Provider with stored value.</p>
+    <p><a>Payer</a> uses information received from <a>Payee</a> and creates a new payment request
+    from <a>Payment Services Provider</a> with stored value.</p>
 
     <p><span><img alt="PSPtoPSP.png" src="images/image04.png" title=""></span></p>
 
     <p>Interaction 3:</p>
 
-    <p>Payer’s Payment Service Provider sends details to complete payment to Payee’s Payment Service Provider</p>
+    <p><a title="payer">Payer’s</a> <a>Payment Services Provider</a> sends details to complete payment to <a
+        title='payee'>Payee's</a> <a>Payment Services Provider</a></p>
 
     <p>The roles illustrated here may be carried out by many different entities.
-    For example, "account provider" may be carried out by financial institutions,
-    mobile operators, tech companies, or cryptocurrency systems; “payee” may be an
+    For example, "<a>account provider</a>" may be carried out by financial institutions,
+    mobile operators, tech companies, or cryptocurrency systems; “<a>payee</a>” may be an
     individual, a business, an NGO, or any entity that can accept a payment.</p>
 
     <p>A payment may involve just two parties (e.g., peer-to-peer) or may be
-    carried out by several collaborating parties. For instance, a payee may use a
+    carried out by several collaborating parties. For instance, a <a>payee</a> may use a
     payment service provider which in turn uses a card network. The actions of
     these intermediaries may vary, from simply forwarding messages to fulfilling
     regulatory obligations. Additionally, these interactions may happen in
@@ -314,7 +325,7 @@ maxTocLevel: 3,
 
         <ol>
             <li>Key Management
-            <ol type='a'>
+            <ol >
                 <li>All participants require an interchangeable mechanism for creation,
                 management, storage, and exchange of cryptographic keys</li>
 
@@ -340,7 +351,7 @@ maxTocLevel: 3,
             <ol>
                 <li>Information transferred should be cryptographically signed
                 to ensure
-                <ol type='a'>
+                <ol >
                     <li>Authenticity of the participants and ownership of value/asset being
                     transferred or exchanged</li>
 
@@ -352,13 +363,13 @@ maxTocLevel: 3,
             </li>
         </ol>
 
-        <section class='notoc'>
+        <section >
             <h4>Key Concepts:</h4>
 
             <p>(describe any key concepts/relationship to other capabilities here)</p>
 
         </section>
-        <section class='notoc'
+        <section 
             <h4>Suggested Deliverables:</h4>
 
             <ul>
@@ -375,7 +386,7 @@ maxTocLevel: 3,
             </ul>
 
         </section>
-        <section class='notoc'>
+        <section >
             <h4>Related Specifications:</h4>
 
             <ul>
@@ -389,7 +400,7 @@ maxTocLevel: 3,
                 Encryption, XML Digital Signature</li>
             </ul>
         </section>
-        <section class='notoc'>
+        <section >
 
             <h4>Responsible Working Group(s) or Standards Bodies:</h4>
 
@@ -406,19 +417,20 @@ maxTocLevel: 3,
 
         <ol>
             <li>Identity
-            <ol type='a'>
+            <ol >
                 <li>Entities in the System are able to access Identity information of other
                 parties it is interacting with if specifically required by law, or if
                 consented to by owner of the information</li>
 
                 <li>Identity and credentials of an entity are able to be linked/associated
-                with Accounts and payments to satisfy requirements for Account Providers and
-                Payments Service Providers to comply with KYC/AML requirements.</li>
+                with Accounts and payments to satisfy requirements for <a
+                    title="account provider">Account Providers</a> and
+                <a title="payment services provider">Payments Service Providers</a> to comply with KYC/AML requirements.</li>
             </ol>
             </li>
             <li>Credentials
 
-            <ol type='a'>
+            <ol >
                 <li>Entities in the system are able to be associated with 1 or more
                 credentials. A credential is a qualification, achievement, quality, or piece
                 of information about an entity’s background such as a name, home address,
@@ -427,7 +439,7 @@ maxTocLevel: 3,
                 the entity (ex. over age 21) without divulging sensitive attributes/details
                 about the entity (ex. date of birth)</li>
 
-                <li>Payer is able to exchange standard format credentials with Payee to
+                <li><a>Payer</a> is able to exchange standard format credentials with <a>Payee</a> to
                 validate attributes necessary to complete the payment</li>
             </ol>
             </li>
@@ -435,7 +447,7 @@ maxTocLevel: 3,
             <li>Rights</li>
 
             <li>Authentication
-            <ol type='a'>
+            <ol >
                 <li>Participants are able to authenticate the validity of identifiers
                 presented by entities that they are interacting with</li>
             </ol>
@@ -453,40 +465,41 @@ maxTocLevel: 3,
             </ol>
             </li>
             <li>Discovery
-            <ol type='a'>
-                <li>Payer is able to securely locate public identifier of Payee to be used as
+            <ol >
+                <li><a>Payer</a> is able to securely locate public identifier of <a>Payee</a> to be used as
                 part of payment process</li>
 
-                <li>Payee is able to obtain public identifier of Payer participating in
+                <li><a>Payee</a> is able to obtain public identifier of <a>Payer</a> participating in
                 payment process</li>
 
-                <li>Payer identifier is persistent across devices</li>
+                <li><a>Payer</a> identifier is persistent across devices</li>
             </ol>
             </li>
             <li>Registration
-            <ol type='a'>
-                <li>Payer and Payee able to register with Payment Services Provider to obtain
+            <ol >
+                <li><a>Payer</a> and <a>Payee</a> able to register with <a>Payment Services
+                    Provider</a> to obtain
                 credentials used for payments process</li>
             </ol>
             </li>
             <li>
             Enrollment
-            <ol type='a'>
+            <ol >
                 <li>Payment services provider is able to perform the necessary steps during
-                payer/payee enrollment to collect required identity and credential
-                information about the payer/payee and associate it with an Account.</li>
+                payer/<a>payee</a> enrollment to collect required identity and credential
+                information about the payer/<a>payee</a> and associate it with an Account.</li>
             </ol>
             </li>
             <li>Legal/Regulatory concerns related to Trust and Identity</li>
         </ol>
 
-        <section class='notoc'>
+        <section >
             <h4>Key Concepts:</h4>
 
             <p>TO DISCUSS: Trust Agent???</p>
 
         </section>
-        <section class='notoc'>
+        <section >
             <h4>Suggested Deliverables:</h4>
 
             <ul>
@@ -511,7 +524,7 @@ maxTocLevel: 3,
             </ul>
 
         </section>
-        <section class='notoc'>
+        <section >
             <h4>Related Specifications:</h4>
 
             <ul>
@@ -521,7 +534,7 @@ maxTocLevel: 3,
             </ul>
 
         </section>
-        <section class='notoc'>
+        <section >
             <h4>Responsible Working Group(s) or Standards Bodies:</h4>
 
             <ul>
@@ -541,56 +554,56 @@ maxTocLevel: 3,
             <ol>
                 <li>
                 Manage Accounts
-                <ol type='a'>
-                    <li>Payers and Payees (account owners) require the capability to create
+                <ol >
+                    <li><a title='payer'>Payers</a> and <a title='payee'>Payees</a> (account owners) require the capability to create
                     accounts at an account provider.</li>
 
-                    <li>Payers and Payees require the capability to authorise access to their
-                    accounts by third parties such as Payment Services Providers.</li>
+                    <li><a title='payer'>Payers</a> and <a title='payee'>Payees</a> require the capability to authorise access to their
+                    accounts by third parties such as <a title="payment services provider">Payment Services Providers</a>.</li>
 
-                    <li>Payers, Payees and other authorised entities require the capability of
+                    <li><a title='payer'>Payers</a>, <a title='payee'>Payees</a> and other authorised entities require the capability of
                     checking the current balance on an account.</li>
                 </ol>
                 </li>
                 <li>Account Registration/Enrollmentat Payments Services Providers
-                <ol type='a'>
-                    <li>Payers and Payees are able to register accounts that will be used as part
-                    of the payment process with Payment Service Providersof their choice</li>
+                <ol >
+                    <li><a title='payer'>Payers</a> and <a title='payee'>Payees</a> are able to register accounts that will be used as part
+                    of the payment process with <a title="payment services provider">Payment Services Providers</a> of their choice</li>
 
-                    <li>Payers and Payees are able to delegate access to specific account
-                    functions to Payment Service Providers of their choice</li>
+                    <li><a title='payer'>Payers</a> and <a title='payee'>Payees</a> are able to delegate access to specific account
+                    functions to <a title="payment services provider">Payment Services Providers</a> of their choice</li>
                 </ol>
                 </li>
                 <li>Receive Funds
 
-                <ol type='a'>
-                    <li>Payees are able to receive funds into theiraccounts<span><br></span></li>
+                <ol >
+                    <li><a title='payee'>Payees</a> are able to receive funds into theiraccounts<span><br></span></li>
                 </ol>
                 </li>
                 <li>Send funds
-                <ol type='a'>
-                    <li>Payers are able to transfer funds from their accounts</li>
+                <ol >
+                    <li><a title='payer'>Payers</a> are able to transfer funds from their accounts</li>
                 </ol>
                 </li>
             </ol>
 
-            <section class='notoc'>
+            <section >
                 <h4>Key Concepts:</h4>
 
                 <p>(describe any key concepts/relationship to other capabilities here)</p>
 
             </section>
-            <section class='notoc'>
+            <section >
                 <h4>Suggested Deliverables:</h4>
 
                 <p>(include suggested/needed deliverables here)</p>
 
             </section>
-            <section class='notoc'>
+            <section >
                 <h4>Responsible Working Group(s) or Standards Bodies:</h4>
 
             </section>
-            <section class='notoc'>
+            <section >
                 <h4>Related Specifications:</h4>
 
                 <p>(Insert relevant related existing or in progress standards for capability
@@ -603,7 +616,7 @@ maxTocLevel: 3,
 
             <ol>
                 <li>Discovery of Ledger services
-                <ol type='a'>
+                <ol >
                     <li>Participants require the capability to locate the endpoints at which
                     ledger services are offered by an account provider</li>
 
@@ -612,14 +625,14 @@ maxTocLevel: 3,
                 </ol>
                 </li>
                 <li>Capture transactions in ledger
-                <ol type='a'>
+                <ol >
                     <li>Participants in the settlement process require the capability to
                     capture a transaction in a ledger transferring value from one account to
                     another on the same ledger.</li>
                 </ol>
                 </li>
                 <li>Monitor a ledger
-                <ol type='a'>
+                <ol >
                     <li><span>Participants in the settlement process require the ability to
                         monitor a ledger for new transactions that impact a specific
                         account.<br></span></li>
@@ -627,7 +640,7 @@ maxTocLevel: 3,
                 </li>
 
                 <li>Reserve funds in an account
-                <ol type='a'>
+                <ol >
                     <li>To execute settlement across ledgers a counterparty may require the
                     ability to request that an account provider temporarily reserve funds in an
                     account while settlement is finalised on the other ledger(s).</li>
@@ -635,13 +648,13 @@ maxTocLevel: 3,
                 </li>
             </ol>
 
-            <section class='notoc'>
+            <section >
                 <h4>Key Concepts:</h4>
 
                 <p>TODO</p>
 
             </section>
-            <section class='notoc'>
+            <section >
                 <h4>Suggested Deliverables:</h4>
 
                 <ul>
@@ -658,7 +671,7 @@ maxTocLevel: 3,
                 </ul>
 
             </section>
-            <section class='notoc'>
+            <section >
                 <h4>Related Specifications:</h4>
 
                 <ul>
@@ -670,7 +683,7 @@ maxTocLevel: 3,
                 </ul>
 
             </section>
-            <section class='notoc'>
+            <section >
                 <h2>Responsible Working Group(s) or Standards Bodies:</h2>
 
                 <ul>
@@ -685,28 +698,28 @@ maxTocLevel: 3,
 
         <ol>
             <li>Payment Instrument Discovery and Selection
-            <ol type='a'>
-                <li>Payer and payee are able to discover payment instruments/schemes which
+            <ol >
+                <li><a>Payer</a> and <a>payee</a> are able to discover payment instruments/schemes which
                 they have in common and may be used in the payment process</li>
 
-                <li>Payer is able to establish the different costs of making the payment
-                using the various combinations of payer and payee instruments and schemes
+                <li><a>Payer</a> is able to establish the different costs of making the payment
+                using the various combinations of <a>payer</a> and <a>payee</a> instruments and schemes
                 (payment methods)</li>
 
-                <li>Payer is able to select payment instrument for use in the payment
+                <li><a>Payer</a> is able to select payment instrument for use in the payment
                 process</li>
 
-                <li>Payee is able to communicate requirements(or preference) to payer as to
+                <li><a>Payee</a> is able to communicate requirements(or preference) to <a>payer</a> as to
                 whether a specific instrument is accepted and the payment terms for using
                 that instrument</li>
             </ol>
 
             <li>Payment Initiation
-            <ol type='a'>
-                <li>Payer is able to initiate a payment using selected payment
+            <ol >
+                <li><a>Payer</a> is able to initiate a payment using selected payment
                 instrument</li>
 
-                <li>Payer is able to identify Payee via:
+                <li><a>Payer</a> is able to identify <a>Payee</a> via:
 
                 <ol>
                     <li>Information received via Invoice</li>
@@ -716,7 +729,7 @@ maxTocLevel: 3,
                     <li>Information from past payees</li>
                 </ol>
                 </li>
-                <li>Payee is able to initiate a request for payment to payee’s designated
+                <li><a>Payee</a> is able to initiate a request for payment to payee’s designated
                 account provider</li>
 
                 <li>Account provider is able to initiate a payment on behalf of the Payee
@@ -725,18 +738,18 @@ maxTocLevel: 3,
             </ol>
             </li>
             <li>Payment Authorization
-            <ol type='a'>
-                <li>Payment service provider or payee is able to get authorization from payer
+            <ol >
+                <li>Payment service provider or <a>payee</a> is able to get authorization from payer
                 to execute payment either in real-time or using a preloaded authorization
                 mechanism</li>
 
-                <li>Payment service provider is able to demonstrate to payer account provider
+                <li>Payment service provider is able to demonstrate to <a>payer</a> account provider
                 that payment is authorised</li>
             </ol>
             </li>
 
             <li>Payment Execution
-            <ol type='a'>
+            <ol >
                 <li>Payment orchestrator is able to evaluate that all requirements have been
                 met to execute the payment including authorization(s) and compliance checks
                 as required.</li>
@@ -748,11 +761,11 @@ maxTocLevel: 3,
             </li>
 
             <li>Payment Acknowledgement
-            <ol type='a'>
-                <li>Payee is able to receive confirmation that payment has been successfully
+            <ol >
+                <li><a>Payee</a> is able to receive confirmation that payment has been successfully
                 completed</li>
 
-                <li>Payer is able to receive verification that payment has been successfully
+                <li><a>Payer</a> is able to receive verification that payment has been successfully
                 received</li>
 
                 <li>Account provider is able to receive confirmation that payment is
@@ -760,31 +773,31 @@ maxTocLevel: 3,
             </ol>
             </li>
             <li>Regulatory/Legal Compliance
-            <ol type='a'>
-                <li>Regulator is able to access/view required payment, payer, and payee
+            <ol >
+                <li><a>Regulator</a> is able to access/view required payment, payer, and payee
                 details for payments that take place within their jurisdiction</li>
 
-                <li>Regulator is able to intervene in payments meeting or exceeding certain
+                <li><a>Regulator</a> is able to intervene in payments meeting or exceeding certain
                 thresholds or criteria in order to comply with jurisdictional laws and
                 requirements</li>
             </ol>
             </li>
             <li>Payment Settlement and Clearing
-            <ol type='a'>
-                <li>Payment service provider is able to provide payer with
-                quotesto settle payee via all payee
+            <ol >
+                <li>Payment service provider is able to provide <a>payer</a> with
+                quotesto settle <a>payee</a> via all <a>payee</a>
                 supported payment schemes</li>
             </ol>
             </li>
         </ol>
 
-        <section class='notoc'>
+        <section >
             <h4>Key Concepts:</h4>
 
             <p>TODO: Payment Agent</p>
 
         </section>
-        <section class='notoc'>
+        <section >
             <h4>Suggested Deliverables:</h4>
 
             <ul>
@@ -801,7 +814,7 @@ maxTocLevel: 3,
             </ul>
 
         </section>
-        <section class='notoc'>
+        <section >
             <h4>Related Specifications:</h4>
 
             <ul>
@@ -815,7 +828,7 @@ maxTocLevel: 3,
             </ul>
 
         </section>
-        <section class='notoc'>
+        <section >
             <h4>Responsible Working Group(s) or Standards Bodies:</h4>
 
             <ul>
@@ -832,20 +845,20 @@ maxTocLevel: 3,
 
             <ol>
                 <li>Generate Offer
-                <ol type='a'>
-                    <li>Payee is able to generate a standard format offer which provides
+                <ol >
+                    <li><a>Payee</a> is able to generate a standard format offer which provides
                     information on specific products or services being offered, and additional
                     information on payment instruments accepted, or terms of the offer.</li>
 
-                    <li>Payer is able to generate a standard format offer which can be accepted
+                    <li><a>Payer</a> is able to generate a standard format offer which can be accepted
                     or declined by the payee.</li>
 
-                    <li>Payee is able to create scheduled/recurring offers</li>
+                    <li><a>Payee</a> is able to create scheduled/recurring offers</li>
                 </ol>
                 </li>
                 <li>Receive Offer
-                <ol type='a'>
-                    <li>Payer is able to receive offer in machine readable format and use it to
+                <ol >
+                    <li><a>Payer</a> is able to receive offer in machine readable format and use it to
                     initiate payment request</li>
 
                     <li>Payeeis able to receive offer in
@@ -859,16 +872,16 @@ maxTocLevel: 3,
 
             <ol>
                 <li>
-                Payee is able toable tocommunicate discounts which may be applied to
+                <a>Payee</a> is able toable tocommunicate discounts which may be applied to
                 Offers
                 </li>
 
                 <li>
-                Payee is able to receive and apply discount to offer
+                <a>Payee</a> is able to receive and apply discount to offer
                 </li>
 
                 <li>
-                Payee is able to apply standard loyalty identifiers to offers
+                <a>Payee</a> is able to apply standard loyalty identifiers to offers
                 </li>
             </ol>
         </section>
@@ -876,19 +889,19 @@ maxTocLevel: 3,
             <h3>Coupons</h3>
 
             <ol>
-                <li>Payer is able to apply coupons to offers</li>
+                <li><a>Payer</a> is able to apply coupons to offers</li>
 
-                <li>Payee is able to issue general use coupons</li>
+                <li><a>Payee</a> is able to issue general use coupons</li>
 
-                <li>Payee is able to issue coupons specific to payer identifier</li>
+                <li><a>Payee</a> is able to issue coupons specific to <a>payer</a> identifier</li>
             </ol>
 
         </section>
-        <section class='notoc'>
+        <section >
             <h4>Key Concepts:</h4>
 
         </section>
-        <section class='notoc'>
+        <section >
             <h4>Suggested Deliverables:</h4>
 
             <ul>
@@ -898,7 +911,7 @@ maxTocLevel: 3,
             </ul>
 
         </section>
-        <section class='notoc'>
+        <section >
             <h4>Related Specifications:</h4>
 
             <ul>
@@ -910,7 +923,7 @@ maxTocLevel: 3,
             </ul>
 
         </section>
-        <section class='notoc'>
+        <section >
             <h4>Responsible Working Group(s) or Standards Bodies:</h4>
 
             <ul>
@@ -924,33 +937,33 @@ maxTocLevel: 3,
 
         <ol>
             <li>Invoice creation
-            <ol type='a'>
-                <li>Payee is able to generate a standard formatted invoice
-                and communicate to Payer as part of the negotiation
+            <ol >
+                <li><a>Payee</a> is able to generate a standard formatted invoice
+                and communicate to <a>Payer</a> as part of the negotiation
                 of payment terms</li>
             </ol>
             </li>
             <li>Invoice receipt
-            <ol type='a'>
-                <li>Payer is able to receive standard formatted invoice</li>
+            <ol >
+                <li><a>Payer</a> is able to receive standard formatted invoice</li>
             </ol>
             </li>
             <li>Invoice data
-            <ol type='a'>
-                <li>Invoice provides payer with Payment instructions for making payment to
+            <ol >
+                <li>Invoice provides <a>payer</a> with Payment instructions for making payment to
                 Payee</li>
 
-                <li>Invoice identifier is returned to Payee via payment process to verify
+                <li>Invoice identifier is returned to <a>Payee</a> via payment process to verify
                 payment is complete</li>
             </ol>
             </li>
         </ol>
 
-        <section class='notoc'>
+        <section >
             <h4>Key Concepts:</h4>
 
         </section>
-        <section class='notoc'>
+        <section >
             <h4>Suggested Deliverables:</h4>
 
             <ul>
@@ -961,7 +974,7 @@ maxTocLevel: 3,
             </ul>
 
         </section>
-        <section class='notoc'>
+        <section >
             <h4>Related Specifications:</h4>
 
             <ul>
@@ -973,7 +986,7 @@ maxTocLevel: 3,
             </ul>
 
         </section>
-        <section class='notoc'>
+        <section >
             <h3>Responsible Working Group(s) or Standards Bodies:</h3>
 
             <ul>
@@ -987,24 +1000,24 @@ maxTocLevel: 3,
 
         <ol>
             <li>Create Receipt
-            <ol type='a'>
-                <li>Payee is able to create receipt and communicate receipt to Payer
+            <ol >
+                <li><a>Payee</a> is able to create receipt and communicate receipt to Payer
                 following completion of payment</li>
             </ol>
             </li>
             <li>Receive Receipt
-            <ol type='a'>
-                <li>Payer is able to receive receipt and persist for future use
+            <ol >
+                <li><a>Payer</a> is able to receive receipt and persist for future use
                 (ex. returns, reimbursement, etc)</li>
             </ol>
             </li>
         </ol>
 
-        <section class='notoc'>
+        <section >
             <h4>Key Concepts:</h4>
 
         </section>
-        <section class='notoc'>
+        <section >
             <h4>Suggested Deliverables:</h4>
 
             <ul>
@@ -1014,7 +1027,7 @@ maxTocLevel: 3,
             </ul>
 
         </section>
-        <section class='notoc'>
+        <section >
             <h4>Related Specifications:</h4>
 
             <ul>
@@ -1024,7 +1037,7 @@ maxTocLevel: 3,
             </ul>
 
         </section>
-        <section class='notoc'>
+        <section >
             <h2>Responsible Working Group(s) or Standards Bodies:</h2>
 
             <ul>
@@ -1037,18 +1050,18 @@ maxTocLevel: 3,
         <h3>Loyalty</h3>
 
         <ol>
-            <li>Payer is able to register with Payee’s loyalty program by requesting
+            <li><a>Payer</a> is able to register with Payee’s loyalty program by requesting
             loyalty identifier from Payee.</li>
 
-            <li>Payee can “opt-in” to loyalty program by providing program specific
+            <li><a>Payee</a> can “opt-in” to loyalty program by providing program specific
             public identifier</li>
         </ol>
 
-        <section class='notoc'>
+        <section >
             <h4>Key Concepts:</h4>
 
         </section>
-        <section class='notoc'>
+        <section >
             <h4>Suggested Deliverables:</h4>
 
             <ul>
@@ -1056,7 +1069,7 @@ maxTocLevel: 3,
             </ul>
 
         </section>
-        <section class='notoc'>
+        <section >
             <h4>Related Specifications:</h4>
 
             <ul>
@@ -1070,7 +1083,7 @@ maxTocLevel: 3,
             </ul>
 
         </section>
-        <section class='notoc'>
+        <section >
             <h4>Responsible Working Group(s) or Standards Bodies:</h4>
 
             <ul>
@@ -1087,232 +1100,184 @@ maxTocLevel: 3,
     incorporated across each of the defined capabilities in this document as they 
     are undertaken by standards teams. The principles include:</p>
 
-    <h2>Extensibility</h2>
+    <section>
+        <h2>Extensibility</h2>
 
-    <ul>
-        <li>Because the Web payments architecture will accommodate a great variety of
-        payment schemes (existing and new), we expect to future standards to support
-        interoperability on a minimal set of features and also support
-        scheme-specific extensions. Therefore, data formats must be easily
-        extensible.</li>
-    </ul>
+        <ul>
+            <li>Because the Web payments architecture will accommodate a great variety of
+            payment schemes (existing and new), we expect to future standards to support
+            interoperability on a minimal set of features and also support
+            scheme-specific extensions. Therefore, data formats must be easily
+            extensible.</li>
+        </ul>
 
-    <h2>Composability</h2>
+    </section>
+    <section>
+        <h2>Composability</h2>
 
-    <ul>
-        <li>Different parties will want to add information to messages that are
-        forwarded.</li>
-    </ul>
+        <ul>
+            <li>Different parties will want to add information to messages that are
+            forwarded.</li>
+        </ul>
 
-    <h2>Identifiers</h2>
+    </section>
+    <section>
+        <h2>Identifiers</h2>
 
-    <ul>
-        <li>Payment schemes define identifier syntax and semantics (e.g., primary
-        account numbers (PANs) for credit cards, or bitcoin account identifiers). We
-        expect to support scheme-specific identifiers. But where global identifiers
-        are required and are not scheme specific, we expect to use URIs.</li>
+        <ul>
+            <li>Payment schemes define identifier syntax and semantics (e.g., primary
+            account numbers (PANs) for credit cards, or bitcoin account identifiers). We
+            expect to support scheme-specific identifiers. But where global identifiers
+            are required and are not scheme specific, we expect to use URIs.</li>
 
-        <li>Due to the nature of payments and the fundamental challenge of preventing
-        “double-spending” as part of the payments process, it is important that every
-        actor/system be uniquely identifiable to other actors and systems
-        participating in the payments process. While each actor must be identifiable,
-        a number of use cases that need to be addressed include low value or
-        less-sensitive payments which do not require the knowledge of a participant’s
-        identity as a part of the transaction. Because of this, it is important to
-        de-couple the identification (non-identity based unique ID) of each
-        participant in the Architecture from the Identity data (sensitive/private
-        data about the participant) which describes information about a participant
-        taking part in the system</li>
-    </ul>
+            <li>Due to the nature of payments and the fundamental challenge of preventing
+            “double-spending” as part of the payments process, it is important that every
+            actor/system be uniquely identifiable to other actors and systems
+            participating in the payments process. While each actor must be identifiable,
+            a number of use cases that need to be addressed include low value or
+            less-sensitive payments which do not require the knowledge of a participant’s
+            identity as a part of the transaction. Because of this, it is important to
+            de-couple the identification (non-identity based unique ID) of each
+            participant in the Architecture from the Identity data (sensitive/private
+            data about the participant) which describes information about a participant
+            taking part in the system</li>
+        </ul>
 
-    <h2>Security</h2>
+    </section>
+    <section>
+        <h2>Security</h2>
 
-    <ul>
-        <li>Messages must not be altered in transit, but may be included as part of
-        encapsulating messages created by intermediaries.</li>
+        <ul>
+            <li>Messages must not be altered in transit, but may be included as part of
+            encapsulating messages created by intermediaries.</li>
 
-        <li>It must be possible to provide read-only access to transaction
-        information to third parties (with user consent).</li>
+            <li>It must be possible to provide read-only access to transaction
+            information to third parties (with user consent).</li>
 
-        <li>Signatures must be non-forgeable.</li>
-    </ul>
+            <li>Signatures must be non-forgeable.</li>
+        </ul>
 
-    <h2>Identity, Privacy, and Consumer Protection</h2>
+    </section>
+    <section>
+        <h2>Identity, Privacy, and Consumer Protection</h2>
 
-    <ul>
-        <li>To satisfy regulatory requirements and financial industry expectations,
-        some use cases will require strong assurances of connections between a Web
-        identity and a real-world identity.</li>
+        <ul>
+            <li>To satisfy regulatory requirements and financial industry expectations,
+            some use cases will require strong assurances of connections between a Web
+            identity and a real-world identity.</li>
 
-        <li>At the same time, any source of information that can lead to the
-        unintended disclosure or leakage of a user’s identity (or purchasing habits)
-        is likely protected in a jurisdiction somewhere in the world by a
-        legal/regulatory entity having responsibility for its citizens.</li>
+            <li>At the same time, any source of information that can lead to the
+            unintended disclosure or leakage of a user’s identity (or purchasing habits)
+            is likely protected in a jurisdiction somewhere in the world by a
+            legal/regulatory entity having responsibility for its citizens.</li>
 
-        <li>For discussion: the role of per-transaction pseudo-anonymous identity
-        mechanisms for some use cases. These mechanisms would make it much more
-        difficult for an unauthorized party to track a user’s purchasing habits from
-        1 transaction to another transaction. This will also eliminate the loss of
-        that identity from affecting other services that user is enrolled in.</li>
+            <li>For discussion: the role of per-transaction pseudo-anonymous identity
+            mechanisms for some use cases. These mechanisms would make it much more
+            difficult for an unauthorized party to track a user’s purchasing habits from
+            1 transaction to another transaction. This will also eliminate the loss of
+            that identity from affecting other services that user is enrolled in.</li>
 
-        <li>Regulations in several jurisdictions require the consumer to be notified
-        every time their personal information/credentials are accessed. To discuss:
-        cryptography requiring a user’s input/knowledge to open that
-        information.</li>
+            <li>Regulations in several jurisdictions require the consumer to be notified
+            every time their personal information/credentials are accessed. To discuss:
+            cryptography requiring a user’s input/knowledge to open that
+            information.</li>
 
-        <li>Some purchases in combination (e.g., products accommodating prenatal care
-        needs) will leak sensitive information. To discuss: dynamic key construction
-        can be applied to each line item in a receipt to help prevent unauthorized
-        data mining of individuals, legal &amp; regulatory snooping. Even if the
-        protected information is stolen or accidentally forwarded to unauthorized
-        parties they will not have the correct tokenized inputs to recreate the
-        dynamic keys to unlock access to the protected information.</li>
+            <li>Some purchases in combination (e.g., products accommodating prenatal care
+            needs) will leak sensitive information. To discuss: dynamic key construction
+            can be applied to each line item in a receipt to help prevent unauthorized
+            data mining of individuals, legal &amp; regulatory snooping. Even if the
+            protected information is stolen or accidentally forwarded to unauthorized
+            parties they will not have the correct tokenized inputs to recreate the
+            dynamic keys to unlock access to the protected information.</li>
 
-        <li>Role based access controls when applied to dynamic key construction for
-        each individual credential or large sets of data will help facilitate
-        interoperable access without needless duplication and encryption of
-        information for each authorized party. For discussion: Use dynamic keys to
-        protect a static key where various dynamic keys can be used to unlock the
-        static key that protects the sensitive content.</li>
+            <li>Role based access controls when applied to dynamic key construction for
+            each individual credential or large sets of data will help facilitate
+            interoperable access without needless duplication and encryption of
+            information for each authorized party. For discussion: Use dynamic keys to
+            protect a static key where various dynamic keys can be used to unlock the
+            static key that protects the sensitive content.</li>
 
-        <li>The system should support privacy by requiring only the minimal amount of
-        information necessary to carry out a transaction. Additional considerations
-        (e.g., marketing initiatives with user consent, or legal requirements) may
-        lead to additional information exchange beyond the minimum required.</li>
+            <li>The system should support privacy by requiring only the minimal amount of
+            information necessary to carry out a transaction. Additional considerations
+            (e.g., marketing initiatives with user consent, or legal requirements) may
+            lead to additional information exchange beyond the minimum required.</li>
 
-        <li>Payment account providers must take measures to ensure that account
-        identifiers are not, on their own, sufficient to identify the account
-        holder.</li>
+            <li>Payment account providers must take measures to ensure that account
+            identifiers are not, on their own, sufficient to identify the account
+            holder.</li>
 
-        <li>Another suggestion: “Don’t require personal authentication, but make sure
-        it can be done properly”</li>
-    </ul>
+            <li>Another suggestion: “Don’t require personal authentication, but make sure
+            it can be done properly”</li>
+        </ul>
 
-    <h2>Legal and Regulatory</h2>
+    </section>
+    <section>
+        <h2>Legal and Regulatory</h2>
 
-    <ul>
-        <li>In some jurisdictions legal or regulatory entities may need to be granted
-        “time-limited access” to a transaction to view specific credentials and
-        purchased items of the user. The system should limit what is viewed to the
-        minimum necessary. Examples: Government subsidies such as food stamps,
-        controlled substances. In these cases those particular line items in the
-        receipt may be required to be viewable via individuals or computers charged
-        with the responsibility to prevent abuse of those programs (e.g.,
-        unauthorized reselling). There may also be a requirement to view identities
-        or credentials.</li>
+        <ul>
+            <li>In some jurisdictions legal or regulatory entities may need to be granted
+            “time-limited access” to a transaction to view specific credentials and
+            purchased items of the user. The system should limit what is viewed to the
+            minimum necessary. Examples: Government subsidies such as food stamps,
+            controlled substances. In these cases those particular line items in the
+            receipt may be required to be viewable via individuals or computers charged
+            with the responsibility to prevent abuse of those programs (e.g.,
+            unauthorized reselling). There may also be a requirement to view identities
+            or credentials.</li>
 
-        <li>For certain classes of payments, such as high value or international, it
-        must be possible to provide role-based access controls to pierce a
-        pseudo-anonymous identity mechanism so the transaction can be counter signed
-        by a legal, regulatory, or KYC/AML system yet safeguard against disclosing
-        unnecessary information. It must be infeasible for the piercing of this
-        mechanisms to leak enough information for those authorities to forge user
-        information.</li>
-    </ul>
+            <li>For certain classes of payments, such as high value or international, it
+            must be possible to provide role-based access controls to pierce a
+            pseudo-anonymous identity mechanism so the transaction can be counter signed
+            by a legal, regulatory, or KYC/AML system yet safeguard against disclosing
+            unnecessary information. It must be infeasible for the piercing of this
+            mechanisms to leak enough information for those authorities to forge user
+            information.</li>
+        </ul>
+    </section>
+    <section>
 
-    <h2>Accessibility</h2>
+        <h2>Accessibility</h2>
 
-    <ul>
-        <li>Web payment schemas, interfaces, data and the architectures that enable
-        them need to be made accessible for people with disabilities. Web APIs and
-        applications must be developed and implemented with accessibility-in-mind and
-        allow for accessibility features. If not, developers, payees, providers and
-        retailers may be in violation of disability laws.</li>
-    </ul>
+        <ul>
+            <li>Web payment schemas, interfaces, data and the architectures that enable
+            them need to be made accessible for people with disabilities. Web APIs and
+            applications must be developed and implemented with accessibility-in-mind and
+            allow for accessibility features. If not, developers, payees, providers and
+            retailers may be in violation of disability laws.</li>
+        </ul>
 
-    <h2>Discovery and instrument selection</h2>
+    </section>
+    <section>
+        <h2>Discovery and instrument selection</h2>
 
-    <ul>
-        <li>Default expectation for privacy reasons is that payee will present
-        accepted schemes and computation of intersection (or other compution) will
-        happen on the payer side.</li>
+        <ul>
+            <li>Default expectation for privacy reasons is that <a>payee</a> will present
+            accepted schemes and computation of intersection (or other compution) will
+            happen on the <a>payer</a> side.</li>
 
-        <li>There are other scenarios to discuss that would presumably involve user
-        consent (e.g., computation done on payee side, or by a third party
-        platform).</li>
+            <li>There are other scenarios to discuss that would presumably involve user
+            consent (e.g., computation done on <a>payee</a> side, or by a third party
+            platform).</li>
 
-        <li>Quoting Adrian Hope-Bailie idea: “The algorithm MUST not prevent any
-        scheme from being available as a candidate for registration AND for this
-        matching/discovery process. i.e. It shouldn't be possible for the browser (or
-        any other component that executes this discovery process) to exclude schemes
-        or instruments on the basis of anything but technical incompatibility.”</li>
+            <li>Quoting Adrian Hope-Bailie idea: “The algorithm MUST not prevent any
+            scheme from being available as a candidate for registration AND for this
+            matching/discovery process. i.e. It shouldn't be possible for the browser (or
+            any other component that executes this discovery process) to exclude schemes
+            or instruments on the basis of anything but technical incompatibility.”</li>
 
-        <li>The standard should not hard-code a selection process. Regulatory and
-        cultural preferences may vary (e.g., the <span><a href=
-                "https://www.google.com/url?q=https%3A%2F%2Flists.w3.org%2FArchives%2FPublic%2Fpublic-webpayments-ig%2F2015Jun%2F0114.html&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHM5Sh5w_M5mfM_y-jTtvIgiTNlww">
-                Alibaba escrow use case</a></span>).</li>
-    </ul>
+            <li>The standard should not hard-code a selection process. Regulatory and
+            cultural preferences may vary (e.g., the <span><a href=
+                    "https://www.google.com/url?q=https%3A%2F%2Flists.w3.org%2FArchives%2FPublic%2Fpublic-webpayments-ig%2F2015Jun%2F0114.html&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHM5Sh5w_M5mfM_y-jTtvIgiTNlww">
+                    Alibaba escrow use case</a></span>).</li>
+        </ul>
+    </section>
 </section>
-<section>
+<section class='appendix informative' id='glossary'>
     <h1>Glossary</h1>
-
-    <h1>The following terms are used throughout this document.</h1>
-
-    <dl>
-        <dt>Payer</dt>
-        <dd>The payer provides a source of funds as required by a
-        payment.</dd>
-
-        <dt>Payee</dt>
-        <dd>The payee receives funds as required by a
-        payment.</dd>
-
-        <dt>Account Provider</dt>
-
-        <dd>At its core, a payment is a transfer of value from one account to another.
-        An account is a store of value with a balance and a history of debits and
-        credits that affect that balance. The account provider is responsible for
-        managing and controlling access to one or more accounts on behalf of the
-        account owner (usually a payer or payee). Account owners access their accounts
-        through payment instruments. The rules
-        that govern usage of a payment instrument constitute a payment
-        scheme. An account’s value is represented
-        as a series of deposits (credits) and withdrawals (debits) and is recorded in a
-        ledger maintained by the account provider.</dd>
-
-        <dt>Account Owner</dt>
-
-        <dd>An account owner is the entity with the legal right of ownership of any
-        asset in an account provided to them by an account provider. The account owner
-        may directly or indirectly transfer some or all of this asset out of the
-        account or take ownership of additional assets in the account as a result of a
-        completed payment and settlement process.</dd>
-
-        <dt>Payment Services Provider</dt>
-
-        <dd>The payment services provider provides services to the payer and/or payee
-        to facilitate a payment.</dd>
-
-        <dt>Payment Orchestrator</dt>
-
-        <dd>The payment orchestrator is the entity or entities (payer, payee or payment
-        service provider) that are orchestrating the steps required to complete the
-        payment flow.</dd>
-
-        <dt>Regulator</dt>
-        <dd>The regulator is responsible for monitoring some
-        payments activities and enforcing legal requirements. The payment flow may be
-        interrupted and the payment aborted or cancelled if the regulator does not
-        approve the conditions of payment.</dd>
-
-        <dt>Settlement Service</dt>
-
-        <dd>Settlement is the process of discharging any obligations that exist between
-        parties to a payment. This process involves the final and irrevocable movement
-        of value between the accounts of the payer and payee and any counterparties to
-        the transaction through the capture of debits and credits in the ledgers upon
-        which the accounts are recorded.
-
-        <p>Today the provision of settlement services is reserved for centralised
-        entities such as central banks or in the case of cross-border payments a
-        combination of central and correspondent banks however it is technically
-        feasible that settlement services could be provided by any entity in a Web
-        payments architecture.</p>
-        </dd>
-    </dl>
+    <div data-include="../common/terms.html" data-oninclude="restrictReferences"></div>
 
     <p class='note'>@@The Web Payments Glossary@@ defines additional terms and relates
-        this group’s definitions to those from related standards.</p>
+    this group’s definitions to those from related standards.</p>
 
 </section>
 </body>
