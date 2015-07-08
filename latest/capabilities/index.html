@@ -1,168 +1,186 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Web Payments: Capabilities 1.0</title>
-    <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
-    <script src='../respec-w3c-common.js' class='remove'></script>
-    <script src='../respec-webpayments.js' class='remove'></script>
-    <script class='remove'>
+<head>
+<title>Web Payments: Capabilities 1.0</title>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
+<script src="../common/biblio.js" class="remove"></script>
+<script src='../respec-w3c-common.js' class='remove'></script>
+<script src='../respec-webpayments.js' class='remove'></script>
+<script src="../common/script/resolveReferences.js" class="remove"></script>
+<script class='remove'>
 var respecConfig = {
     // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
-    specStatus:           "ED",
+specStatus:           "ED",
 
-    // the specification's short name, as in http://www.w3.org/TR/short-name/
-    shortName:            "web-payments-capabilities",
+                      // the specification's short name, as in http://www.w3.org/TR/short-name/
+                      shortName:            "web-payments-capabilities",
 
-    // if you wish the publication date to be other than today, set this
-    // publishDate:  "2009-08-06",
+                      // if you wish the publication date to be other than today, set this
+                      // publishDate:  "2009-08-06",
 
-    // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
-    // and its maturity status
-    // previousPublishDate:  "1977-03-15",
-    // previousMaturity:  "CG-DRAFT",
+                      // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+                      // and its maturity status
+                      // previousPublishDate:  "1977-03-15",
+                      // previousMaturity:  "CG-DRAFT",
 
-    // if there a publicly available Editor's Draft, this is the link
-    edDraftURI:           "dvcs.w3.org/hg/webpayments/raw-file/default/latest/capabilities/index.html",
+                      // if there a publicly available Editor's Draft, this is the link
+                      edDraftURI:           "dvcs.w3.org/hg/webpayments/raw-file/default/latest/capabilities/index.html",
 
-    // if this is a LCWD, uncomment and set the end of its review period
-    // lcEnd: "2009-08-05",
+                      // if this is a LCWD, uncomment and set the end of its review period
+                      // lcEnd: "2009-08-05",
 
-    // if you want to have extra CSS, append them to this list
-    // it is recommended that the respec.css stylesheet be kept
-    //extraCSS:             [],
+                      // if you want to have extra CSS, append them to this list
+                      // it is recommended that the respec.css stylesheet be kept
+                      //extraCSS:             [],
 
-    // editors, add as many as you like
-    // only "name" is required
-    editors:  [{
-      name: "Pat Adler",
+                      // editors, add as many as you like
+                      // only "name" is required
+                      editors:  [{
+name: "Pat Adler",
       url: "https://www.linkedin.com/pub/patrick-adler/2/730/2b4",
       company: "Federal Reserve Bank of Chicago",
       companyURL: "http://www.federalreserve.gov/"
-    }, {
-      name: "Adrian Hope-Bailie",
+                      }, {
+name: "Adrian Hope-Bailie",
       url: "https://www.linkedin.com/in/adrianhopebailie",
       company: "Ripple Labs", companyURL: "https://www.telekom.com/"
-    }, {
-      name: "Ian Jacobs", url: "http://www.w3.org/People/Jacobs/",
+                      }, {
+name: "Ian Jacobs", url: "http://www.w3.org/People/Jacobs/",
       company: "W3C", companyURL: "http://www.w3.org"
-    }, {
-      name: "Manu Sporny", url: "https://manu.sporny.org",
+                      }, {
+name: "Shane McCarron", url: 'http://blog.halindrome.com',
       company: "Digital Bazaar", companyURL: "http://digitalbazaar.com/"
-    }],
+                      }, {
+name: "Manu Sporny", url: "https://manu.sporny.org",
+      company: "Digital Bazaar", companyURL: "http://digitalbazaar.com/"
+                      }],
 
-    // authors, add as many as you like.
-    // This is optional, uncomment if you have authors as well as editors.
-    // only "name" is required. Same format as editors.
+      // authors, add as many as you like.
+      // This is optional, uncomment if you have authors as well as editors.
+      // only "name" is required. Same format as editors.
 
-    authors:  [{
-      name: "Patrick Adler",
+authors:  [{
+name: "Patrick Adler",
       url: "",
       company: "Federal Reserve Bank of Chicago",
       companyURL: ""
-    }, {
-      name: "Adrian Hope-Bailie",
+          }, {
+name: "Adrian Hope-Bailie",
       url: "",
       company: "Ripple Labs",
       companyURL: ""
-    }, {
-      name: "Ian Jacobs",
+          }, {
+name: "Ian Jacobs",
       url: "",
       company: "W3C",
       companyURL: ""
-    }, {
-      name: "Manu Sporny",
-      url: "",
-      company: "Digital Bazaar",
-      companyURL: ""
-    }, {
-      name: "Jörg Heuer",
-      url: "",
-      company: "Deutsche Telekom",
-      companyURL: ""
-    },  {
-      name: "David Ezell",
-      url: "",
-      company: "National Association of Convenience Stores (NACS)",
-      companyURL: ""
-    }, {
-      name: "Dave Raggett",
-      url: "",
-      company: "W3C",
-      companyURL: ""
-    }, {
-      name: "Katie Haritos-Shea",
-      url: "",
-      company: "W3C Invited Expert",
-      companyURL: ""
-    }],
+          }, {
+name: "Manu Sporny",
+          url: "",
+          company: "Digital Bazaar",
+          companyURL: ""
+          }, {
+name: "Jörg Heuer",
+          url: "",
+          company: "Deutsche Telekom",
+          companyURL: ""
+          },  {
+name: "David Ezell",
+          url: "",
+          company: "National Association of Convenience Stores (NACS)",
+          companyURL: ""
+          }, {
+name: "Dave Raggett",
+          url: "",
+          company: "W3C",
+          companyURL: ""
+          }, {
+name: "Katie Haritos-Shea",
+          url: "",
+          company: "W3C Invited Expert",
+          companyURL: ""
+          }],
 
-    // maximum level of table of contents
-    maxTocLevel: 3,
+          // maximum level of table of contents
+maxTocLevel: 3,
 
-    // name of the WG
-    wg:           "Web Payments Interest Group",
+             // name of the WG
+             wg:           "Web Payments Interest Group",
 
-    // URI of the public WG page
-    wgURI:        "http://www.w3.org/blog/wpig/",
+             // URI of the public WG page
+             wgURI:        "http://www.w3.org/blog/wpig/",
 
-    // name (with the @w3c.org) of the public mailing to which comments are due
-    wgPublicList: "public-webpayments-comments@w3.org",
+             // name (with the @w3c.org) of the public mailing to which comments are due
+             wgPublicList: "public-webpayments-comments@w3.org",
 
-    // URI of the patent status for this WG, for Rec-track documents
-    // !!!! IMPORTANT !!!!
-    // This is important for Rec-track documents, do not copy a patent URI from a random
-    // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
-    // Team Contact.
-    wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/73816/status",
+             // URI of the patent status for this WG, for Rec-track documents
+             // !!!! IMPORTANT !!!!
+             // This is important for Rec-track documents, do not copy a patent URI from a random
+             // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+             // Team Contact.
+             wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/73816/status",
 
-    preProcess: [ webpayments.preProcess ]/*,
-    alternateFormats: [ {uri: "diff-20111214.html", label: "diff to previous version"} ],
-    */
+             // see common/biblio.js for a list of specs that we might need to reference
+             localBiblio: biblio,
+             preProcess: [ webpayments.preProcess ]/*,
+                                                     alternateFormats: [ {uri: "diff-20111214.html", label: "diff to previous version"} ],
+                                                    */
 };
-    </script>
-  </head>
+</script>
+<style>
+.group-capability
+{
+    margin-left: 2em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+</style>
+</head>
 <body>
-  <section id='abstract'>
-    <p>
-Payments and the ability to exchange value efficiently and securely over the
-web are critical to global commerce. Open standards for payments and value
-exchange help ensure open access and interoperability to financial systems for
-all the people that use the Web. This document describes aset of capabilities
-that, if standardized, will improve payments on the Web.
-    </p>
-  </section>
+<section id='abstract'>
+    <p>Payments and the ability to exchange value efficiently and securely over the
+    web are critical to global commerce. Open standards for payments and value
+    exchange help ensure open access and interoperability to financial systems for
+    all the people that use the Web. This document describes aset of capabilities
+    that, if standardized, will improve payments on the Web.</p>
+</section>
 
-  <section id='sotd'>
+<section id='sotd'>
     <p>
-This document is in early draft state and is expected to rapidly evolve
-based on broad feedback and input from the Web Payments Interest Group.
+    This document is in early draft state and is expected to rapidly evolve
+    based on broad feedback and input from the Web Payments Interest Group.
     </p>
-  </section>
+</section>
 
-  <section id="relationships">
+<section id="introduction">
+    <h2>Introduction</h2>
+    <p>This document needs an introduction! - SPM</p>
+</section>
+
+<section id="relationships">
     <h2>Relationship to Other Documents</h2>
     <p>In addition to this document, the Web Payments Interest Group is
     developing:</p>
 
     <ul>
-      <li>A <a href="https://www.w3.org/Payments/IG/wiki/Payment_Agent_Task_Force/Vision">
-      Vision for Web Payments</a> describes the desirable properties of a Web
-      payments architecture.</li>
+        <li>A <a href="https://www.w3.org/Payments/IG/wiki/Payment_Agent_Task_Force/Vision">
+            Vision for Web Payments</a> describes the desirable properties of a Web
+        payments architecture.</li>
 
-      <li><a href="http://www.w3.org/TR/web-payments-use-cases/">
-      Web Payments Use Cases 1.0</a> is a prioritized list of Web payments
-      scenarios that the Interest Group expects to address via the capabilities
-      described in this document. The use cases establish a scope of work and a
-      deeper analysis of implied requirements (technical, regulatory, etc.) will
-      inform future standardization work.</li>
+        <li><a href="http://www.w3.org/TR/web-payments-use-cases/">
+            Web Payments Use Cases 1.0</a> is a prioritized list of Web payments
+        scenarios that the Interest Group expects to address via the capabilities
+        described in this document. The use cases establish a scope of work and a
+        deeper analysis of implied requirements (technical, regulatory, etc.) will
+        inform future standardization work.</li>
 
-      <li>A <a href="https://www.w3.org/Payments/IG/wiki/Roadmap">
-      Roadmap</a> proposes which groups (in or outside of W3C) should take
-      the lead on creating standards for these capabilities.</li>
+        <li>A <a href="https://www.w3.org/Payments/IG/wiki/Roadmap">
+            Roadmap</a> proposes which groups (in or outside of W3C) should take
+        the lead on creating standards for these capabilities.</li>
     </ul>
-  </section>
+</section>
+<section id="overview">
 
-  <section id="overview">
     <h1>Overview of Capabilities</h1>
 
     <p>Capabilities are functionalities necessary to implement payments on the
@@ -174,36 +192,36 @@ based on broad feedback and input from the Web Payments Interest Group.
     <p>We organize capabilities into five groups.</p>
 
     <ol>
-      <li>
+        <li>
         <strong>Security Core</strong> - These capabilities provide the security
         foundation for payments.
-        <div style="margin-left:2em;"><strong>Capabilities</strong>: Key Creation and
-        Management, Cryptographic Signatures, Encryption</div>
+        <div class='group-capability'><strong>Capabilities</strong>: Key Creation and
+            Management, Cryptographic Signatures, Encryption</div>
         <div class="issue">Right now this group has
-        only security capabilities in it. We may wish to have a more general
-        purpose Core set. If so, what would this core set include?</div>
-      </li>
-      <li>
+            only security capabilities in it. We may wish to have a more general
+            purpose Core set. If so, what would this core set include?</div>
+        </li>
+        <li>
         <strong>Trust and Identity - </strong>Includes features related to establishing
         trust among parties, and credentialing or authorization of parties involved
         in a transaction.
-        <div style="margin-left:2em;"><strong>Capabilities</strong>:
-        Identity, Credentials, Rights, Authentication, Authorization, Privacy, Discovery,
-        Registration, Enrollment, and Legal/Regulatory concerns.</div>
-      </li>
-      <li>
+        <div class='group-capability'><strong>Capabilities</strong>:
+            Identity, Credentials, Rights, Authentication, Authorization, Privacy, Discovery,
+            Registration, Enrollment, and Legal/Regulatory concerns.</div>
+        </li>
+        <li>
         <strong>Accounts and Settlement - </strong>Includes capabilities related to
         managing stores of value (such as Deposit Accounts) and recorded accounts
         of ownership (such as Ledger entries, Deeds, etc.) used as part of the
         settlement of payments or commercial exchanges. Settlement via the Web
         involves access to the accounts of the participants and ledgers of the
-        account providers and capabilities to manage accounts and capture and
+        <a title="account provider">account providers</a> and capabilities to manage accounts and capture and
         monitor transactions in a ledger against those accounts.<br />
-        <div style="margin-left:2em;"><strong>Capabilities</strong>:
-        Accounts, Ledgers, and Legal/Regulatory
-        concerns related to accounting and recorded ownership.</div>
-      </li>
-      <li>
+        <div class='group-capability'><strong>Capabilities</strong>:
+            Accounts, Ledgers, and Legal/Regulatory
+            concerns related to accounting and recorded ownership.</div>
+        </li>
+        <li>
         <strong>Payments and Clearing - </strong>These are the capabilities that help
         parties in a transaction establish the mechanics of how the payment will be
         executed and the directly or indirectly make this happen. This involves the
@@ -212,19 +230,19 @@ based on broad feedback and input from the Web Payments Interest Group.
         costs of making the payment, time between clearing of the payment and
         settlement into the payee’s account, regulatory requirements and required
         authorisations.
-        <div style="margin-left:2em;"><strong>Capabilities</strong>:
-        Funding, Payment, Messaging, Clearing, Markets, Foreign/Currency
-        Exchange, and Legal/regulatory concerns specific to Payments and
-        Exchange of Value.</div>
-      </li>
-      <li>
+        <div class='group-capability'><strong>Capabilities</strong>:
+            Funding, Payment, Messaging, Clearing, Markets, Foreign/Currency
+            Exchange, and Legal/regulatory concerns specific to Payments and
+            Exchange of Value.</div>
+        </li>
+        <li>
         <strong>Commerce - </strong>Includes capabilities related to commercial and
         economic interactions.
-        <div style="margin-left:2em;"><strong>Capabilities</strong>:
-        Offers, Invoicing, Receipts, Loyalty, Rewards,
-        Contracts, Lending, Insurance, Taxation, Legal/Regulatory concerns related
-        to aspects of commercial and economic interactions.</div>
-      </li>
+        <div class='group-capability'><strong>Capabilities</strong>:
+            Offers, Invoicing, Receipts, Loyalty, Rewards,
+            Contracts, Lending, Insurance, Taxation, Legal/Regulatory concerns related
+            to aspects of commercial and economic interactions.</div>
+        </li>
     </ol>
 
     <p>The Interest Group anticipates that these groups will make it easier to
@@ -235,178 +253,1032 @@ based on broad feedback and input from the Web Payments Interest Group.
 
     <p class="note">Some of these capabilities are expected be useful outside of payment
     scenarios.</p>
-  </section>
-
-  <section>
-    <h2>Capabilities in Context</h2>
-
     <section>
-      <h3>Digital Wallets and Payment Agents</h3>
+        <h2>Digital Wallets and Payment Agents</h2>
 
-      <p>Although the capabilities described in this document may be used and
-      composed in a variety of ways to fulfill payments use cases, the Interest Group
-      anticipates that in many cases, they will be packaged in “payment agents” (or
-      “digital wallets”) that act as a bridge between the merchant, the user, and the
-      user’s account providers.</p>
+        <p>Although the capabilities described in this document may be used and
+        composed in a variety of ways to fulfill payments use cases, the Interest Group
+        anticipates that in many cases, they will be packaged in “payment agents” (or
+        “digital wallets”) that act as a bridge between the merchant, the user, and the
+        user’s account providers.</p>
     </section>
+</section>
 
-    <section>
-      <h3>Payment Service Providers</h3>
-
-      <p>The roles illustrated here may be carried out by many different entities.
-      For example, "account provider" may be carried out by financial institutions,
-      mobile operators, tech companies, or cryptocurrency systems; “payee” may be an
-      individual, a business, an NGO, or any entity that can accept a payment.</p>
-
-      <p>A payment may involve just two parties (e.g., peer-to-peer) or may be
-      carried out by several collaborating parties. For instance, a payee may use a
-      payment service provider which in turn uses a card network. The actions of
-      these intermediaries may vary, from simply forwarding messages to fulfilling
-      regulatory obligations. Additionally, these interactions may happen in
-      different sequences and direction depending on the payment context.</p>
-    </section>
-
-    <section>
-      <h3>Payment Interactions</h3>
+<section>
+    <h1>Capabilities in Context</h1>
 
     <p>To simplify and harmonize the descriptions of capabilities necessary for
     payments and value exchange on the Web, it is helpful to understand the parties
     involved and the direction that information flows among them at various
     <a href="http://www.w3.org/TR/web-payments-use-cases/#an-overview-of-the-payment-phases">
-    phases</a> of a payment. We use the following diagram to help illustrate
+        phases</a> of a payment. We use the following diagram to help illustrate
     roles and information flow:</p>
 
-    <p>@@@ Figure: Payment Interaction Wheel @@@</p>
+    <p><span><img alt="InteractionsWheel.png" src="images/image00.png" title=
+        ""></span></p>
+
+    <p>Figure: Payment Interaction Wheel</p>
 
     <p>For example, the following diagrams illustrate three interactions in a
     comment payment scenario.</p>
 
     <p><span><img alt="Request for Payment.png" src="images/image03.png" title=
-    "" /></span></p>
+        "" /></span></p>
 
     <p>Interaction 1:</p>
 
-    <p>Payee communicates request for payment to payer and shares payment
-    instructions</p>
+    <p><a>Payee</a> communicates request for payment to <a>payer</a> and shares payment instructions</p>
 
     <p><span><img alt="Payer-PayeeService Provider.png" src="images/image02.png"
-    title="" /></span></p>
+        title=""></span></p>
 
     <p>Interaction 2:</p>
 
-    <p>Payer uses information received from Payee and creates a new payment
-    request from Payment Service Provider with stored value.</p>
+    <p><a>Payer</a> uses information received from <a>Payee</a> and creates a new payment request
+    from <a>Payment Services Provider</a> with stored value.</p>
 
-    <p><span><img alt="PSPtoPSP.png" src="images/image04.png" title=
-    "" /></span></p>
+    <p><span><img alt="PSPtoPSP.png" src="images/image04.png" title=""></span></p>
 
     <p>Interaction 3:</p>
 
-    <p>Payer’s Payment Service Provider sends details to complete payment to
-    Payee’s</p>
+    <p><a title="payer">Payer’s</a> <a>Payment Services Provider</a> sends details to complete payment to <a
+        title='payee'>Payee's</a> <a>Payment Services Provider</a></p>
 
-    </section>
+    <p>The roles illustrated here may be carried out by many different entities.
+    For example, "<a>account provider</a>" may be carried out by financial institutions,
+    mobile operators, tech companies, or cryptocurrency systems; “<a>payee</a>” may be an
+    individual, a business, an NGO, or any entity that can accept a payment.</p>
 
-  </section>
+    <p>A payment may involve just two parties (e.g., peer-to-peer) or may be
+    carried out by several collaborating parties. For instance, a <a>payee</a> may use a
+    payment service provider which in turn uses a card network. The actions of
+    these intermediaries may vary, from simply forwarding messages to fulfilling
+    regulatory obligations. Additionally, these interactions may happen in
+    different sequences and direction depending on the payment context.</p>
+</section>
+<section>
 
-  <section>
     <h2>Capabilities in Detail</h2>
 
     <section>
-      <h3>Security Core</h3>
-
-      <p class="issue">Describe any key concepts/relationship to other capabilities here...</p>
-
-      <section>
-        <h4>Key Management</h4>
-
-        <p>All participants require an interchangeable mechanism for creation,
-        management, storage and exchange of cryptographic keys</p>
-
-        <p>Key management capabilities are required to:</p>
+        <h2>Core and Security</h2>
 
         <ol>
-          <li>Securely communicate unique identifiers of payment process
-          participants</li>
+            <li>Key Management
+            <ol >
+                <li>All participants require an interchangeable mechanism for creation,
+                management, storage, and exchange of cryptographic keys</li>
 
-          <li>Digitally sign and authenticate information exchanged as part of the
-          payments process (ex. payments, receipts, invoices, etc.)</li>
+                <li>Key management capabilities are required to:
 
-          <li>Provide reference key for independent elements of the payments process to
-          compose/link transactions and related data across asynchronous segments of
-          the payment process</li>
+                <ol>
+                    <li>Securely communicate unique identifiers of payment process
+                    participants</li>
+
+                    <li>Digitally sign and authenticate
+                    information exchanged as part of the payments process (e.g., payments,
+                    receipts, invoices, etc.)</li>
+
+                    <li>Provide reference key for independent elements of the payments process to
+                    compose/link transactions and related data across asynchronous segments of
+                    the payment process</li>
+                </ol>
+                </li>
+            </ol>
+            </li>
+
+            <li>Cryptographic Signatures</li>
+            <ol>
+                <li>Information transferred should be cryptographically signed
+                to ensure
+                <ol >
+                    <li>Authenticity of the participants and ownership of value/asset being
+                    transferred or exchanged</li>
+
+                    <li>Nonrepudiationof participants intent
+                    related to information / communication being exchanged</li>
+                </ol>
+                </li>
+            </ol>
+            </li>
         </ol>
-      </section>
 
-      <section>
-        <h4>Cryptographic Signatures</h4>
+        <section >
+            <h4>Key Concepts:</h4>
 
-        <p>Information transferred should be cryptographically signed to ensure</p>
+            <p>(describe any key concepts/relationship to other capabilities here)</p>
+
+        </section>
+        <section 
+            <h4>Suggested Deliverables:</h4>
+
+            <ul>
+                <li>Data model with a concrete syntax for expressing data in the
+                architecture</li>
+
+                <li>Web-based key public key infrastructure data formats and
+                protocols</li>
+
+                <li>New normalization mechanisms for data model serialization (if necessary,
+                for digital signatures)</li>
+
+                <li>Digital signature mechanism for data model</li>
+            </ul>
+
+        </section>
+        <section >
+            <h4>Related Specifications:</h4>
+
+            <ul>
+                <li>Data models: Graph (RDF), Document/Tree (JSON, XML)</li>
+
+                <li>Syntaxes: XML, JSON, JSON-LD</li>
+
+                <li>Normalization: XML Canonicalization, RDF Dataset Normalization</li>
+
+                <li>Signatures: Linked Data Signatures, Javascript Object Signing and
+                Encryption, XML Digital Signature</li>
+            </ul>
+        </section>
+        <section >
+
+            <h4>Responsible Working Group(s) or Standards Bodies:</h4>
+
+            <ul>
+                <li>Linked Data Signatures Working Group (W3C)</li>
+
+                <li>JOSE (IETF)</li>
+            </ul>
+        </section>
+    </section>
+    <section>
+
+        <h2>Identity and Credentials</h2>
 
         <ol>
-          <li>Authenticity of the participants and ownership of value/asset being
-          transferred or exchanged</li>
+            <li>Identity
+            <ol >
+                <li>Entities in the System are able to access Identity information of other
+                parties it is interacting with if specifically required by law, or if
+                consented to by owner of the information</li>
 
-          <li>Nonrepudiation of participants intent related to information /
-          communication being exchanged</li>
+                <li>Identity and credentials of an entity are able to be linked/associated
+                with Accounts and payments to satisfy requirements for <a
+                    title="account provider">Account Providers</a> and
+                <a title="payment services provider">Payments Service Providers</a> to comply with KYC/AML requirements.</li>
+            </ol>
+            </li>
+            <li>Credentials
+
+            <ol >
+                <li>Entities in the system are able to be associated with 1 or more
+                credentials. A credential is a qualification, achievement, quality, or piece
+                of information about an entity’s background such as a name, home address,
+                government ID, professional license, or university degree, typically used to
+                indicate suitability. Thisallows for the exchange of suitable qualities of
+                the entity (ex. over age 21) without divulging sensitive attributes/details
+                about the entity (ex. date of birth)</li>
+
+                <li><a>Payer</a> is able to exchange standard format credentials with <a>Payee</a> to
+                validate attributes necessary to complete the payment</li>
+            </ol>
+            </li>
+
+            <li>Rights</li>
+
+            <li>Authentication
+            <ol >
+                <li>Participants are able to authenticate the validity of identifiers
+                presented by entities that they are interacting with</li>
+            </ol>
+            </li>
+            <li>Authorization</li>
+
+            <li>Privacy
+
+            <ol>
+                <li>All capabilities in this document should be standardized in a way that
+                minimizes the inclusion/exchange of personal or other sensitive metadata that
+                are part of the payments process unless specifically required by
+                law, or consented to by the owner of the
+                information.</li>
+            </ol>
+            </li>
+            <li>Discovery
+            <ol >
+                <li><a>Payer</a> is able to securely locate public identifier of <a>Payee</a> to be used as
+                part of payment process</li>
+
+                <li><a>Payee</a> is able to obtain public identifier of <a>Payer</a> participating in
+                payment process</li>
+
+                <li><a>Payer</a> identifier is persistent across devices</li>
+            </ol>
+            </li>
+            <li>Registration
+            <ol >
+                <li><a>Payer</a> and <a>Payee</a> able to register with <a>Payment Services
+                    Provider</a> to obtain
+                credentials used for payments process</li>
+            </ol>
+            </li>
+            <li>
+            Enrollment
+            <ol >
+                <li>Payment services provider is able to perform the necessary steps during
+                payer/<a>payee</a> enrollment to collect required identity and credential
+                information about the payer/<a>payee</a> and associate it with an Account.</li>
+            </ol>
+            </li>
+            <li>Legal/Regulatory concerns related to Trust and Identity</li>
         </ol>
-      </section>
 
-      <section>
-        <h4>Suggested Deliverables</h4>
+        <section >
+            <h4>Key Concepts:</h4>
+
+            <p>TO DISCUSS: Trust Agent???</p>
+
+        </section>
+        <section >
+            <h4>Suggested Deliverables:</h4>
+
+            <ul>
+                <li>Data format and vocabularies for expressing cryptographically verifiable
+                credentials</li>
+
+                <li>Protocol to issue credentials to a recipient</li>
+
+                <li>Protocol to store credentials at an arbitrary location as decided by a
+                recipient</li>
+
+                <li>Protocol to request and transmit credentials, given a recipient’s
+                authorization, to a credential consumer</li>
+
+                <li>Protocol to strongly bind an identifier to a real world identity and a
+                cryptographic token (ex: two-factor hardware device)</li>
+
+                <li>Protocol to request and deliver untraceable, short-lived, privacy
+                enhancing credentials.</li>
+
+                <li>Protocol to discover entity’s credential service</li>
+            </ul>
+
+        </section>
+        <section >
+            <h4>Related Specifications:</h4>
+
+            <ul>
+                <li>Identity Credentials (Credentials WG)</li>
+
+                <li>Credentials Vocabulary (Credentials WG)</li>
+            </ul>
+
+        </section>
+        <section >
+            <h4>Responsible Working Group(s) or Standards Bodies:</h4>
+
+            <ul>
+                <li>Credentials Working Group (W3C)</li>
+
+                <li>Authentication Working Groups (W3C)</li>
+            </ul>
+
+        </section>
+    </section>
+    <section>
+        <h2>Accounts and Settlement</h2>
+
+        <section>
+            <h3>Accounts</h3>
+
+            <ol>
+                <li>
+                Manage Accounts
+                <ol >
+                    <li><a title='payer'>Payers</a> and <a title='payee'>Payees</a> (account owners) require the capability to create
+                    accounts at an account provider.</li>
+
+                    <li><a title='payer'>Payers</a> and <a title='payee'>Payees</a> require the capability to authorise access to their
+                    accounts by third parties such as <a title="payment services provider">Payment Services Providers</a>.</li>
+
+                    <li><a title='payer'>Payers</a>, <a title='payee'>Payees</a> and other authorised entities require the capability of
+                    checking the current balance on an account.</li>
+                </ol>
+                </li>
+                <li>Account Registration/Enrollmentat Payments Services Providers
+                <ol >
+                    <li><a title='payer'>Payers</a> and <a title='payee'>Payees</a> are able to register accounts that will be used as part
+                    of the payment process with <a title="payment services provider">Payment Services Providers</a> of their choice</li>
+
+                    <li><a title='payer'>Payers</a> and <a title='payee'>Payees</a> are able to delegate access to specific account
+                    functions to <a title="payment services provider">Payment Services Providers</a> of their choice</li>
+                </ol>
+                </li>
+                <li>Receive Funds
+
+                <ol >
+                    <li><a title='payee'>Payees</a> are able to receive funds into theiraccounts<span><br></span></li>
+                </ol>
+                </li>
+                <li>Send funds
+                <ol >
+                    <li><a title='payer'>Payers</a> are able to transfer funds from their accounts</li>
+                </ol>
+                </li>
+            </ol>
+
+            <section >
+                <h4>Key Concepts:</h4>
+
+                <p>(describe any key concepts/relationship to other capabilities here)</p>
+
+            </section>
+            <section >
+                <h4>Suggested Deliverables:</h4>
+
+                <p>(include suggested/needed deliverables here)</p>
+
+            </section>
+            <section >
+                <h4>Responsible Working Group(s) or Standards Bodies:</h4>
+
+            </section>
+            <section >
+                <h4>Related Specifications:</h4>
+
+                <p>(Insert relevant related existing or in progress standards for capability
+                segment)</p>
+
+            </section>
+        </section>
+        <section>
+            <h3>Ledgers</h3>
+
+            <ol>
+                <li>Discovery of Ledger services
+                <ol >
+                    <li>Participants require the capability to locate the endpoints at which
+                    ledger services are offered by an account provider</li>
+
+                    <li>Participants require the capability to discover which services are
+                    available against a ledger at an account provider</li>
+                </ol>
+                </li>
+                <li>Capture transactions in ledger
+                <ol >
+                    <li>Participants in the settlement process require the capability to
+                    capture a transaction in a ledger transferring value from one account to
+                    another on the same ledger.</li>
+                </ol>
+                </li>
+                <li>Monitor a ledger
+                <ol >
+                    <li><span>Participants in the settlement process require the ability to
+                        monitor a ledger for new transactions that impact a specific
+                        account.<br></span></li>
+                </ol>
+                </li>
+
+                <li>Reserve funds in an account
+                <ol >
+                    <li>To execute settlement across ledgers a counterparty may require the
+                    ability to request that an account provider temporarily reserve funds in an
+                    account while settlement is finalised on the other ledger(s).</li>
+                </ol>
+                </li>
+            </ol>
+
+            <section >
+                <h4>Key Concepts:</h4>
+
+                <p>TODO</p>
+
+            </section>
+            <section >
+                <h4>Suggested Deliverables:</h4>
+
+                <ul>
+                    <li>Standardised data model for accounts and ledgers</li>
+
+                    <li>Standardised interface for account management</li>
+
+                    <li>Standardised interface for ledger services</li>
+
+                    <li>Protocol for discovering ledger services</li>
+
+                    <li>Protocol for executing settlement between participants on the open
+                    Web</li>
+                </ul>
+
+            </section>
+            <section >
+                <h4>Related Specifications:</h4>
+
+                <ul>
+                    <li>ISO20022 / X9 specs</li>
+
+                    <li>Web Commerce Formats and Protocols (Web Payments WG)</li>
+
+                    <li>Web Payments Vocabulary (Web Payments WG)</li>
+                </ul>
+
+            </section>
+            <section >
+                <h2>Responsible Working Group(s) or Standards Bodies:</h2>
+
+                <ul>
+                    <li>Web Settlement Working Group (W3C)</li>
+                </ul>
+
+            </section>
+        </section>
+    </section>
+    <section>
+        <h2>Payments and Exchange</h2>
+
+        <ol>
+            <li>Payment Instrument Discovery and Selection
+            <ol >
+                <li><a>Payer</a> and <a>payee</a> are able to discover payment instruments/schemes which
+                they have in common and may be used in the payment process</li>
+
+                <li><a>Payer</a> is able to establish the different costs of making the payment
+                using the various combinations of <a>payer</a> and <a>payee</a> instruments and schemes
+                (payment methods)</li>
+
+                <li><a>Payer</a> is able to select payment instrument for use in the payment
+                process</li>
+
+                <li><a>Payee</a> is able to communicate requirements(or preference) to <a>payer</a> as to
+                whether a specific instrument is accepted and the payment terms for using
+                that instrument</li>
+            </ol>
+
+            <li>Payment Initiation
+            <ol >
+                <li><a>Payer</a> is able to initiate a payment using selected payment
+                instrument</li>
+
+                <li><a>Payer</a> is able to identify <a>Payee</a> via:
+
+                <ol>
+                    <li>Information received via Invoice</li>
+
+                    <li>Individual contact information</li>
+
+                    <li>Information from past payees</li>
+                </ol>
+                </li>
+                <li><a>Payee</a> is able to initiate a request for payment to payee’s designated
+                account provider</li>
+
+                <li>Account provider is able to initiate a payment on behalf of the Payee
+                based on Payee’s requested schedule and frequency (recurring
+                payment)</li>
+            </ol>
+            </li>
+            <li>Payment Authorization
+            <ol >
+                <li>Payment service provider or <a>payee</a> is able to get authorization from payer
+                to execute payment either in real-time or using a preloaded authorization
+                mechanism</li>
+
+                <li>Payment service provider is able to demonstrate to <a>payer</a> account provider
+                that payment is authorised</li>
+            </ol>
+            </li>
+
+            <li>Payment Execution
+            <ol >
+                <li>Payment orchestrator is able to evaluate that all requirements have been
+                met to execute the payment including authorization(s) and compliance checks
+                as required.</li>
+
+                <li>Payment orchestrator is able to instruct all participants to execute the
+                payment and perform any roll-back steps that may be required in case of a
+                failure by any participant to complete the payment.</li>
+            </ol>
+            </li>
+
+            <li>Payment Acknowledgement
+            <ol >
+                <li><a>Payee</a> is able to receive confirmation that payment has been successfully
+                completed</li>
+
+                <li><a>Payer</a> is able to receive verification that payment has been successfully
+                received</li>
+
+                <li>Account provider is able to receive confirmation that payment is
+                complete</li>
+            </ol>
+            </li>
+            <li>Regulatory/Legal Compliance
+            <ol >
+                <li><a>Regulator</a> is able to access/view required payment, payer, and payee
+                details for payments that take place within their jurisdiction</li>
+
+                <li><a>Regulator</a> is able to intervene in payments meeting or exceeding certain
+                thresholds or criteria in order to comply with jurisdictional laws and
+                requirements</li>
+            </ol>
+            </li>
+            <li>Payment Settlement and Clearing
+            <ol >
+                <li>Payment service provider is able to provide <a>payer</a> with
+                quotesto settle <a>payee</a> via all <a>payee</a>
+                supported payment schemes</li>
+            </ol>
+            </li>
+        </ol>
+
+        <section >
+            <h4>Key Concepts:</h4>
+
+            <p>TODO: Payment Agent</p>
+
+        </section>
+        <section >
+            <h4>Suggested Deliverables:</h4>
+
+            <ul>
+                <li>Protocol for discovering all payment instruments available to a
+                payer.</li>
+
+                <li>User Agent API and REST API for initiating a payment and protocol for
+                routing an invoice to a payment service</li>
+
+                <li>Protocol for authorizing payment via regulatory API</li>
+
+                <li>User Agent API and REST API for completing a payment and protocol for
+                routing payment acknowledgement to payer</li>
+            </ul>
+
+        </section>
+        <section >
+            <h4>Related Specifications:</h4>
+
+            <ul>
+                <li>ISO20022 / X9 specs</li>
+
+                <li>Web Commerce Formats and Protocols (Web Payments WG)</li>
+
+                <li>Web Commerce User Agent API (Web Payments WG)</li>
+
+                <li>Web Payments Vocabulary (Web Payments WG)</li>
+            </ul>
+
+        </section>
+        <section >
+            <h4>Responsible Working Group(s) or Standards Bodies:</h4>
+
+            <ul>
+                <li>Web Payments Working Group (W3C)</li>
+            </ul>
+        </section>
+
+    </section>
+    <section>
+        <h2>Commerce</h2>
+
+        <section>
+            <h3>Offers</h3>
+
+            <ol>
+                <li>Generate Offer
+                <ol >
+                    <li><a>Payee</a> is able to generate a standard format offer which provides
+                    information on specific products or services being offered, and additional
+                    information on payment instruments accepted, or terms of the offer.</li>
+
+                    <li><a>Payer</a> is able to generate a standard format offer which can be accepted
+                    or declined by the payee.</li>
+
+                    <li><a>Payee</a> is able to create scheduled/recurring offers</li>
+                </ol>
+                </li>
+                <li>Receive Offer
+                <ol >
+                    <li><a>Payer</a> is able to receive offer in machine readable format and use it to
+                    initiate payment request</li>
+
+                    <li>Payeeis able to receive offer in
+                    machine readable format and use it to create invoice</li>
+                </ol>
+                </li>
+            </ol>
+        </section>
+        <section>
+            <h3>Discounts</h3>
+
+            <ol>
+                <li>
+                <a>Payee</a> is able toable tocommunicate discounts which may be applied to
+                Offers
+                </li>
+
+                <li>
+                <a>Payee</a> is able to receive and apply discount to offer
+                </li>
+
+                <li>
+                <a>Payee</a> is able to apply standard loyalty identifiers to offers
+                </li>
+            </ol>
+        </section>
+        <section>
+            <h3>Coupons</h3>
+
+            <ol>
+                <li><a>Payer</a> is able to apply coupons to offers</li>
+
+                <li><a>Payee</a> is able to issue general use coupons</li>
+
+                <li><a>Payee</a> is able to issue coupons specific to <a>payer</a> identifier</li>
+            </ol>
+
+        </section>
+        <section >
+            <h4>Key Concepts:</h4>
+
+        </section>
+        <section >
+            <h4>Suggested Deliverables:</h4>
+
+            <ul>
+                <li>Data format and vocabularies for expressing offers and coupons</li>
+
+                <li>User Agent API for using an offer to initiate a payment</li>
+            </ul>
+
+        </section>
+        <section >
+            <h4>Related Specifications:</h4>
+
+            <ul>
+                <li>Web Commerce Formats and Protocols (Web Payments WG)</li>
+
+                <li>Web Commerce User Agent API (Web Payments WG)</li>
+
+                <li>Web Payments Vocabulary (Web Payments WG)</li>
+            </ul>
+
+        </section>
+        <section >
+            <h4>Responsible Working Group(s) or Standards Bodies:</h4>
+
+            <ul>
+                <li>Web Payments Working Group (W3C)</li>
+            </ul>
+        </section>
+
+    </section>
+    <section>
+        <h3>Invoices</h3>
+
+        <ol>
+            <li>Invoice creation
+            <ol >
+                <li><a>Payee</a> is able to generate a standard formatted invoice
+                and communicate to <a>Payer</a> as part of the negotiation
+                of payment terms</li>
+            </ol>
+            </li>
+            <li>Invoice receipt
+            <ol >
+                <li><a>Payer</a> is able to receive standard formatted invoice</li>
+            </ol>
+            </li>
+            <li>Invoice data
+            <ol >
+                <li>Invoice provides <a>payer</a> with Payment instructions for making payment to
+                Payee</li>
+
+                <li>Invoice identifier is returned to <a>Payee</a> via payment process to verify
+                payment is complete</li>
+            </ol>
+            </li>
+        </ol>
+
+        <section >
+            <h4>Key Concepts:</h4>
+
+        </section>
+        <section >
+            <h4>Suggested Deliverables:</h4>
+
+            <ul>
+                <li>Data format and vocabulary for expressing an invoice</li>
+
+                <li>User Agent API for initiating a payment and protocol for routing an
+                invoice to a payment service</li>
+            </ul>
+
+        </section>
+        <section >
+            <h4>Related Specifications:</h4>
+
+            <ul>
+                <li>Web Commerce Formats and Protocols (Web Payments WG)</li>
+
+                <li>Web Commerce User Agent API (Web Payments WG)</li>
+
+                <li>Web Payments Vocabulary (Web Payments WG)</li>
+            </ul>
+
+        </section>
+        <section >
+            <h3>Responsible Working Group(s) or Standards Bodies:</h3>
+
+            <ul>
+                <li>Web Payments Working Group (W3C)</li>
+            </ul>
+        </section>
+
+    </section>
+    <section>
+        <h3>Receipts</h3>
+
+        <ol>
+            <li>Create Receipt
+            <ol >
+                <li><a>Payee</a> is able to create receipt and communicate receipt to Payer
+                following completion of payment</li>
+            </ol>
+            </li>
+            <li>Receive Receipt
+            <ol >
+                <li><a>Payer</a> is able to receive receipt and persist for future use
+                (ex. returns, reimbursement, etc)</li>
+            </ol>
+            </li>
+        </ol>
+
+        <section >
+            <h4>Key Concepts:</h4>
+
+        </section>
+        <section >
+            <h4>Suggested Deliverables:</h4>
+
+            <ul>
+                <li>Data format and vocabulary for expressing a receipt</li>
+
+                <li>Protocol for routing an receipt to a payer’s receipt storage service</li>
+            </ul>
+
+        </section>
+        <section >
+            <h4>Related Specifications:</h4>
+
+            <ul>
+                <li>Web Commerce Formats and Protocols (Web Payments WG)</li>
+
+                <li>Web Payments Vocabulary (Web Payments WG)</li>
+            </ul>
+
+        </section>
+        <section >
+            <h2>Responsible Working Group(s) or Standards Bodies:</h2>
+
+            <ul>
+                <li>Web Payments Working Group (W3C)</li>
+            </ul>
+        </section>
+
+    </section>
+    <section>
+        <h3>Loyalty</h3>
+
+        <ol>
+            <li><a>Payer</a> is able to register with Payee’s loyalty program by requesting
+            loyalty identifier from Payee.</li>
+
+            <li><a>Payee</a> can “opt-in” to loyalty program by providing program specific
+            public identifier</li>
+        </ol>
+
+        <section >
+            <h4>Key Concepts:</h4>
+
+        </section>
+        <section >
+            <h4>Suggested Deliverables:</h4>
+
+            <ul>
+                <li>Same as “Trust” deliverables</li>
+            </ul>
+
+        </section>
+        <section >
+            <h4>Related Specifications:</h4>
+
+            <ul>
+                <li>
+                <h4>Identity Credentials (Credentials WG)</h4>
+                </li>
+
+                <li>Credentials Vocabulary (Credentials WG)</li>
+
+                <li>Web Commerce Vocabulary (Credentials WG)</li>
+            </ul>
+
+        </section>
+        <section >
+            <h4>Responsible Working Group(s) or Standards Bodies:</h4>
+
+            <ul>
+                <li>Credentials Working Group (W3C)</li>
+            </ul>
+        </section>
+    </section>
+</section>
+<section>
+    <h1>Guiding principles and key considerations</h1>
+
+    <p>Due to the breadth of the capabilities that will require standardization, it
+    is important to outline certain guiding principles which are expected to be
+    incorporated across each of the defined capabilities in this document as they 
+    are undertaken by standards teams. The principles include:</p>
+
+    <section>
+        <h2>Extensibility</h2>
+
         <ul>
-          <li>Data model with a concrete syntax for expressing data in the
-          architecture</li>
-
-          <li>Web-based key public key infrastructure data formats and protocols</li>
-
-          <li>New normalization mechanisms for data model serialization (if necessary,
-          for digital signatures)</li>
-
-          <li>Digital signature mechanism for data model</li>
+            <li>Because the Web payments architecture will accommodate a great variety of
+            payment schemes (existing and new), we expect to future standards to support
+            interoperability on a minimal set of features and also support
+            scheme-specific extensions. Therefore, data formats must be easily
+            extensible.</li>
         </ul>
 
-        <section>
-          <h5>Related Specifications</h5>
-
-          <ul>
-            <li>Data models: Graph (RDF), Document/Tree (JSON, XML)</li>
-
-            <li>Syntaxes: XML, JSON, JSON-LD</li>
-
-            <li>Normalization: XML Canonicalization, RDF Dataset Normalization</li>
-
-            <li>Signatures: Linked Data Signatures, Javascript Object Signing and
-            Encryption, XML Digital Signature</li>
-          </ul>
-        </section>
-
-        <section>
-          <h5>Responsible Working Group(s) or Standards Bodies</h5>
-
-          <ul>
-            <li>Linked Data Signatures Working Group (W3C)</li>
-
-            <li>JOSE (IETF)</li>
-          </ul>
-        </section>
-      </section>
     </section>
-  </section>
+    <section>
+        <h2>Composability</h2>
 
-  <section class="appendix">
-    <h2>Acknowledgements</h2>
+        <ul>
+            <li>Different parties will want to add information to messages that are
+            forwarded.</li>
+        </ul>
 
-    <p>
-The editors are thankful to the following contributions from ...
-(in alphabetical order):
-    </p>
-    <p>
-List of contributors/reviewers.
-    </p>
+    </section>
+    <section>
+        <h2>Identifiers</h2>
 
-  </section>
+        <ul>
+            <li>Payment schemes define identifier syntax and semantics (e.g., primary
+            account numbers (PANs) for credit cards, or bitcoin account identifiers). We
+            expect to support scheme-specific identifiers. But where global identifiers
+            are required and are not scheme specific, we expect to use URIs.</li>
 
-  </body>
+            <li>Due to the nature of payments and the fundamental challenge of preventing
+            “double-spending” as part of the payments process, it is important that every
+            actor/system be uniquely identifiable to other actors and systems
+            participating in the payments process. While each actor must be identifiable,
+            a number of use cases that need to be addressed include low value or
+            less-sensitive payments which do not require the knowledge of a participant’s
+            identity as a part of the transaction. Because of this, it is important to
+            de-couple the identification (non-identity based unique ID) of each
+            participant in the Architecture from the Identity data (sensitive/private
+            data about the participant) which describes information about a participant
+            taking part in the system</li>
+        </ul>
+
+    </section>
+    <section>
+        <h2>Security</h2>
+
+        <ul>
+            <li>Messages must not be altered in transit, but may be included as part of
+            encapsulating messages created by intermediaries.</li>
+
+            <li>It must be possible to provide read-only access to transaction
+            information to third parties (with user consent).</li>
+
+            <li>Signatures must be non-forgeable.</li>
+        </ul>
+
+    </section>
+    <section>
+        <h2>Identity, Privacy, and Consumer Protection</h2>
+
+        <ul>
+            <li>To satisfy regulatory requirements and financial industry expectations,
+            some use cases will require strong assurances of connections between a Web
+            identity and a real-world identity.</li>
+
+            <li>At the same time, any source of information that can lead to the
+            unintended disclosure or leakage of a user’s identity (or purchasing habits)
+            is likely protected in a jurisdiction somewhere in the world by a
+            legal/regulatory entity having responsibility for its citizens.</li>
+
+            <li>For discussion: the role of per-transaction pseudo-anonymous identity
+            mechanisms for some use cases. These mechanisms would make it much more
+            difficult for an unauthorized party to track a user’s purchasing habits from
+            1 transaction to another transaction. This will also eliminate the loss of
+            that identity from affecting other services that user is enrolled in.</li>
+
+            <li>Regulations in several jurisdictions require the consumer to be notified
+            every time their personal information/credentials are accessed. To discuss:
+            cryptography requiring a user’s input/knowledge to open that
+            information.</li>
+
+            <li>Some purchases in combination (e.g., products accommodating prenatal care
+            needs) will leak sensitive information. To discuss: dynamic key construction
+            can be applied to each line item in a receipt to help prevent unauthorized
+            data mining of individuals, legal &amp; regulatory snooping. Even if the
+            protected information is stolen or accidentally forwarded to unauthorized
+            parties they will not have the correct tokenized inputs to recreate the
+            dynamic keys to unlock access to the protected information.</li>
+
+            <li>Role based access controls when applied to dynamic key construction for
+            each individual credential or large sets of data will help facilitate
+            interoperable access without needless duplication and encryption of
+            information for each authorized party. For discussion: Use dynamic keys to
+            protect a static key where various dynamic keys can be used to unlock the
+            static key that protects the sensitive content.</li>
+
+            <li>The system should support privacy by requiring only the minimal amount of
+            information necessary to carry out a transaction. Additional considerations
+            (e.g., marketing initiatives with user consent, or legal requirements) may
+            lead to additional information exchange beyond the minimum required.</li>
+
+            <li>Payment account providers must take measures to ensure that account
+            identifiers are not, on their own, sufficient to identify the account
+            holder.</li>
+
+            <li>Another suggestion: “Don’t require personal authentication, but make sure
+            it can be done properly”</li>
+        </ul>
+
+    </section>
+    <section>
+        <h2>Legal and Regulatory</h2>
+
+        <ul>
+            <li>In some jurisdictions legal or regulatory entities may need to be granted
+            “time-limited access” to a transaction to view specific credentials and
+            purchased items of the user. The system should limit what is viewed to the
+            minimum necessary. Examples: Government subsidies such as food stamps,
+            controlled substances. In these cases those particular line items in the
+            receipt may be required to be viewable via individuals or computers charged
+            with the responsibility to prevent abuse of those programs (e.g.,
+            unauthorized reselling). There may also be a requirement to view identities
+            or credentials.</li>
+
+            <li>For certain classes of payments, such as high value or international, it
+            must be possible to provide role-based access controls to pierce a
+            pseudo-anonymous identity mechanism so the transaction can be counter signed
+            by a legal, regulatory, or KYC/AML system yet safeguard against disclosing
+            unnecessary information. It must be infeasible for the piercing of this
+            mechanisms to leak enough information for those authorities to forge user
+            information.</li>
+        </ul>
+    </section>
+    <section>
+
+        <h2>Accessibility</h2>
+
+        <ul>
+            <li>Web payment schemas, interfaces, data and the architectures that enable
+            them need to be made accessible for people with disabilities. Web APIs and
+            applications must be developed and implemented with accessibility-in-mind and
+            allow for accessibility features. If not, developers, payees, providers and
+            retailers may be in violation of disability laws.</li>
+        </ul>
+
+    </section>
+    <section>
+        <h2>Discovery and instrument selection</h2>
+
+        <ul>
+            <li>Default expectation for privacy reasons is that <a>payee</a> will present
+            accepted schemes and computation of intersection (or other compution) will
+            happen on the <a>payer</a> side.</li>
+
+            <li>There are other scenarios to discuss that would presumably involve user
+            consent (e.g., computation done on <a>payee</a> side, or by a third party
+            platform).</li>
+
+            <li>Quoting Adrian Hope-Bailie idea: “The algorithm MUST not prevent any
+            scheme from being available as a candidate for registration AND for this
+            matching/discovery process. i.e. It shouldn't be possible for the browser (or
+            any other component that executes this discovery process) to exclude schemes
+            or instruments on the basis of anything but technical incompatibility.”</li>
+
+            <li>The standard should not hard-code a selection process. Regulatory and
+            cultural preferences may vary (e.g., the <span><a href=
+                    "https://www.google.com/url?q=https%3A%2F%2Flists.w3.org%2FArchives%2FPublic%2Fpublic-webpayments-ig%2F2015Jun%2F0114.html&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHM5Sh5w_M5mfM_y-jTtvIgiTNlww">
+                    Alibaba escrow use case</a></span>).</li>
+        </ul>
+    </section>
+</section>
+<section class='appendix informative' id='glossary'>
+    <h1>Glossary</h1>
+    <div data-include="../common/terms.html" data-oninclude="restrictReferences"></div>
+
+    <p class='note'>@@The Web Payments Glossary@@ defines additional terms and relates
+    this group’s definitions to those from related standards.</p>
+
+</section>
+</body>
 </html>
-
