@@ -2380,7 +2380,7 @@ payment.
           <li>
 <strong>Authentication to Access Instruments</strong>: Meihui logs in the Alipay
 with her account name and password. Meihui is told that she will pay for the
-airline ticket with 3,500 RMB and she confirms it. Meihui uses her fingerprint 
+airline ticket with 3,500 RMB and she confirms it. Meihui uses her fingerprint
 to approve the payment.
           </li>
         </ul>
@@ -2533,8 +2533,104 @@ to Lenne and she receives them the next day.
     </section>
 
     <section>
-      <h3>Credit Transfer / Direct Debit</h3>
-      <p><em>To be completed</em>.</p>
+      <h3>Direct Debit</h3>
+      <p>
+The following scenario outlines an ideal payment experience using a
+Direct Debit (<a>payee-initiated payment</a>), also known as a
+<a>pull payment</a> in the context of a <a>four corner model</a> payment. 
+In this scenario, Anna is signing up for electricity service via the
+service's website. During the payment process she will validate an electronic 
+direct debit mandate.
+      </p>
+
+      <section class="notoc">
+        <h4>Negotiation of Purchase Terms</h4>
+        <ul>
+          <li>
+<strong>Discovery of Offer</strong>: Anna connects to a utility website. She 
+wants to setup this new utility immediately before she moves in to a new flat.
+          </li>
+          <li>
+<strong>Agreement on Terms</strong>: Anna selects the contract she wants and 
+agrees to the terms and service associated with the delivery of electricity.
+          </li>
+          <li>
+<strong>Application of Marketing Elements</strong>: <em>Not applicable to this 
+particular use case.</em>
+          </li>
+        </ul>
+      </section>
+
+      <section class="notoc">
+        <h4>Negotiation of Payment Instruments</h4>
+        <ul>
+          <li>
+<strong>Discovery of Accepted Schemes</strong>: The utility website takes 
+Visa, MasterCard, and SEPA Direct Debit for payment.
+          </li>
+          <li>
+<strong>Selection of Payment Instruments</strong>: Anna chooses SEPA Direct 
+Debit for payment.
+          </li>
+          <li>
+<strong>Authentication to Access Instruments</strong>: Anna provides
+all the mandatory data required for a valid electronic SEPA Direct Debit 
+Mandate as well as the IBAN number associated with Anna's account. Anna is 
+told that she is setting up a recurring payment with the utility and the 
+payment will be automatically withdrawn at the end of the month based on 
+her electricity consumption. She agrees to the automatic transfer by 
+entering her secret PIN.
+          </li>
+        </ul>
+      </section>
+
+      <section class="notoc">
+        <h4>Payment Processing</h4>
+        <ul>
+          <li>
+<strong>Initiation of Processing</strong>: At the end of the month the utility 
+invoice system will initiate the payment by sending an invoice by email 
+that will be sent directly to Anna's payment service provider.
+          </li>
+          <li>
+<strong>Verification of Available Funds</strong>: Not applicable to this 
+particular use case.
+          </li>
+          <li>
+<strong>Authorization of Transfer</strong>: Anna's payment service provider
+authorizes the transfer based on the reference ID that was validated by
+Anna during the <strong>Authentication to Access Instruments</strong> phase.
+          </li>
+          <li>
+<strong>Completion of Transfer</strong>: The utility website gets a message 
+from its payment service provider that the transfer has been completed.
+          </li>
+        </ul>
+      </section>
+
+      <section class="notoc">
+        <h4>Delivery of Product/Receipt and Refunds</h4>
+        <ul>
+          <li>
+<strong>Delivery of Receipt</strong>: The utility website sees that Anna's 
+direct debit mandate has been validated and sends a receipt message to her 
+digital wallet.
+          </li>
+          <li>
+<strong>Delivery of Product</strong>: The utility website sends an email to 
+Anna with the contract information.
+          </li>
+          <li>
+<strong>Refunds</strong>: Anna could request a refund by contacting her bank 
+if something goes wrong with the Direct Debit.
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <h3>Credit Transfer</h3>
+
     </section>
 
   </section>
