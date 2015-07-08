@@ -2537,9 +2537,9 @@ to Lenne and she receives them the next day.
       <p>
 The following scenario outlines an ideal payment experience using a
 Direct Debit (<a>payee-initiated payment</a>), also known as a
-<a>pull payment</a> in the context of a <a>four corner model</a> payment. 
+<a>pull payment</a> in the context of a <a>four corner model</a> payment.
 In this scenario, Anna is signing up for electricity service via the
-service's website. During the payment process she will validate an electronic 
+service's website. During the payment process she will validate an electronic
 direct debit mandate.
       </p>
 
@@ -2547,15 +2547,15 @@ direct debit mandate.
         <h4>Negotiation of Purchase Terms</h4>
         <ul>
           <li>
-<strong>Discovery of Offer</strong>: Anna connects to a utility website. She 
+<strong>Discovery of Offer</strong>: Anna connects to a utility website. She
 wants to setup this new utility immediately before she moves in to a new flat.
           </li>
           <li>
-<strong>Agreement on Terms</strong>: Anna selects the contract she wants and 
+<strong>Agreement on Terms</strong>: Anna selects the contract she wants and
 agrees to the terms and service associated with the delivery of electricity.
           </li>
           <li>
-<strong>Application of Marketing Elements</strong>: <em>Not applicable to this 
+<strong>Application of Marketing Elements</strong>: <em>Not applicable to this
 particular use case.</em>
           </li>
         </ul>
@@ -2565,20 +2565,20 @@ particular use case.</em>
         <h4>Negotiation of Payment Instruments</h4>
         <ul>
           <li>
-<strong>Discovery of Accepted Schemes</strong>: The utility website takes 
+<strong>Discovery of Accepted Schemes</strong>: The utility website takes
 Visa, MasterCard, and SEPA Direct Debit for payment.
           </li>
           <li>
-<strong>Selection of Payment Instruments</strong>: Anna chooses SEPA Direct 
+<strong>Selection of Payment Instruments</strong>: Anna chooses SEPA Direct
 Debit for payment.
           </li>
           <li>
 <strong>Authentication to Access Instruments</strong>: Anna provides
-all the mandatory data required for a valid electronic SEPA Direct Debit 
-Mandate as well as the IBAN number associated with Anna's account. Anna is 
-told that she is setting up a recurring payment with the utility and the 
-payment will be automatically withdrawn at the end of the month based on 
-her electricity consumption. She agrees to the automatic transfer by 
+all the mandatory data required for a valid electronic SEPA Direct Debit
+Mandate as well as the IBAN number associated with Anna's account. Anna is
+told that she is setting up a recurring payment with the utility and the
+payment will be automatically withdrawn at the end of the month based on
+her electricity consumption. She agrees to the automatic transfer by
 entering her secret PIN.
           </li>
         </ul>
@@ -2588,13 +2588,13 @@ entering her secret PIN.
         <h4>Payment Processing</h4>
         <ul>
           <li>
-<strong>Initiation of Processing</strong>: At the end of the month the utility 
-invoice system will initiate the payment by sending an invoice by email 
+<strong>Initiation of Processing</strong>: At the end of the month the utility
+invoice system will initiate the payment by sending an invoice by email
 that will be sent directly to Anna's payment service provider.
           </li>
           <li>
-<strong>Verification of Available Funds</strong>: Not applicable to this 
-particular use case.
+<strong>Verification of Available Funds</strong>: <em>Not applicable to this
+particular use case.</em>
           </li>
           <li>
 <strong>Authorization of Transfer</strong>: Anna's payment service provider
@@ -2602,7 +2602,7 @@ authorizes the transfer based on the reference ID that was validated by
 Anna during the <strong>Authentication to Access Instruments</strong> phase.
           </li>
           <li>
-<strong>Completion of Transfer</strong>: The utility website gets a message 
+<strong>Completion of Transfer</strong>: The utility website gets a message
 from its payment service provider that the transfer has been completed.
           </li>
         </ul>
@@ -2612,16 +2612,16 @@ from its payment service provider that the transfer has been completed.
         <h4>Delivery of Product/Receipt and Refunds</h4>
         <ul>
           <li>
-<strong>Delivery of Receipt</strong>: The utility website sees that Anna's 
-direct debit mandate has been validated and sends a receipt message to her 
+<strong>Delivery of Receipt</strong>: The utility website sees that Anna's
+direct debit mandate has been validated and sends a receipt message to her
 digital wallet.
           </li>
           <li>
-<strong>Delivery of Product</strong>: The utility website sends an email to 
+<strong>Delivery of Product</strong>: The utility website sends an email to
 Anna with the contract information.
           </li>
           <li>
-<strong>Refunds</strong>: Anna could request a refund by contacting her bank 
+<strong>Refunds</strong>: Anna could request a refund by contacting her bank
 if something goes wrong with the Direct Debit.
           </li>
         </ul>
@@ -2630,7 +2630,96 @@ if something goes wrong with the Direct Debit.
 
     <section>
       <h3>Credit Transfer</h3>
+      <p>
+The following scenario outlines an ideal payment experience using a
+<a>payer-initiated payment</a>, also known as a
+<a>push payment</a> in the context of a <a>four corner model</a> payment. In
+this scenario, Anna is buying a very expensive piece of furniture that costs
+far more than the maximum amount allowed by her payment card. She pays
+using her bank account via her bank's website.
+      </p>
 
+      <section class="notoc">
+        <h4>Negotiation of Purchase Terms</h4>
+        <ul>
+          <li>
+<strong>Discovery of Offer</strong>: Anna browses a Furniture website.
+She wants to buy a desk for her new flat.
+          </li>
+          <li>
+<strong>Agreement on Terms</strong>: Anna selects a heavy oak antique desk
+from the 17th century.
+          </li>
+          <li>
+<strong>Application of Marketing Elements</strong>: <em>Not applicable to this
+particular use case.</em>
+          </li>
+        </ul>
+      </section>
+
+      <section class="notoc">
+        <h4>Negotiation of Payment Instruments</h4>
+        <ul>
+          <li>
+<strong>Discovery of Accepted Schemes</strong>: The furniture website takes
+Visa, MasterCard, and SEPA "Credit Transfer via SEPAmail" for payment.
+          </li>
+          <li>
+<strong>Selection of Payment Instruments</strong>: Anna chooses
+"Credit Transfer via SEPAmail" for payment and provides a tokenized version
+of her IBAN account number. The furniture website sends a "payment request"
+to its payment service provider which will forward it to Anna’s bank.
+          </li>
+          <li>
+<strong>Authentication to Access Instruments</strong>: Anna connects to her
+bank's website where the payment request is pending approval.
+          </li>
+        </ul>
+      </section>
+
+      <section class="notoc">
+        <h4>Payment Processing</h4>
+        <ul>
+          <li>
+<strong>Initiation of Processing</strong>: Anna approves the payment request.
+          </li>
+          <li>
+<strong>Verification of Available Funds</strong>: The availability of
+funds is verified by Anna's bank.
+          </li>
+          <li>
+<strong>Authorization of Transfer</strong>: The funds transfer is automatically
+authorized by Anna's bank.
+          </li>
+          <li>
+<strong>Completion of Transfer</strong>: Anna's bank sends the Credit Transfer,
+as well as a payment-report (analogous to a signed receipt) to the furniture
+website's payment service provider. The furniture website gets a message
+(also known as a "payment advice") from its payment service provider that the
+transfer is complete depending of the Scheme of Credit Transfer used:
+within 24 hours for a SEPA Credit Transfer, often longer in International
+Credit Transfer outside Europe.
+          </li>
+        </ul>
+      </section>
+
+      <section class="notoc">
+        <h4>Delivery of Product/Receipt and Refunds</h4>
+        <ul>
+          <li>
+<strong>Delivery of Receipt</strong>: The furniture website sees that Anna's
+credit transfer has been received and sends a receipt message by email to Anna.
+          </li>
+          <li>
+<strong>Delivery of Product</strong>: The piece of furniture is shipped to
+Anna.
+          </li>
+          <li>
+<strong>Refunds</strong>: Anna must contact the furniture website directly
+since the credit transfer cannot be reversed since she initiated it.
+          </li>
+        </ul>
+      </section>
     </section>
 
   </section>
