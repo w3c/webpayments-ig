@@ -113,14 +113,14 @@
             <b>payment instrument</b>for that
             <b>payment scheme,</b>manually capture the details of that instrument into the page (along with any other essential data such
             as a shipping address) and then submit this data back to the
-            <b>payee.</b>The payment data briefly passes through the Web context (from the payer's user agent to the payee's Website) on
-            it's way to a payment processor. At that point much of the communication to complete a payment takes place among banks, card
-            networks, and other parties in the payment ecosystem typically outside of the "Web context."</p>
+            <b>payee.</b>The payment data briefly passes through the Web (from the payer's user agent to the payee's Website) on it's way
+            to a payment processor. At that point, much of the communication to complete a payment takes place among banks, card networks,
+            and other parties in the payment ecosystem typically outside of the Web.</p>
           <p>In an effort to improve upon this process, various parties have innovated ways to make the payment flow easier, for example
             by caching payment instrument information in browsers, registering users on eCommerce websites to facilitate re-use of customer
-            data and/or payment credentials, and even developing new payment schemes. Unfortunately these efforts all suffer from a lack
-            of standardization of the high level flow of a Web payment, of the interfaces between the various parties, the user agent
-            and the Web application, or of the messages exchanged between these parties over the Web.</p>
+            data and/or payment credentials, and even developing new payment schemes. Unfortunately, these efforts all suffer from a
+            lack of standardization of the high level flow of a Web payment, of the interfaces between the various parties, the user
+            agent and the Web application, or of the messages exchanged between these parties over the Web.</p>
           <p>This group will create open Web standards for the interfaces in and out of the Web context to provide interoperability between
             payment systems (existing and future), and encourage greater automation of steps in a typical payment. The interfaces between
             the payment schemes and the Web are via the user agent and the Web application, therefore the scope of the initial charter
@@ -189,8 +189,8 @@
                   matching those registered by the payer with those supported by the payee (as defined in the Payment Request), while keeping
                   information local to the payer.</li>
                 <li>
-                  <b>Selection of a payment instrument</b>by the payer, confirmation of the terms and sending of any requested data back to the
-                  payee for validation.</li>
+                  <b>Selection of a payment instrument</b>by the payer, confirmation of the terms, and sending of any requested data back to
+                  the payee for validation.</li>
               </ul>
             </dd>
             <dt>Payment Processing</dt>
@@ -204,8 +204,7 @@
             </dd>
           </dl>
           <p>The group will also address exceptions that may occur during these steps, including payment authorization failure.</p>
-          <h3
-          id="security">Security and Privacy Considerations</h3>
+          <h3 id="security">Security and Privacy Considerations</h3>
             <p>Security is obviously critical in payments and while the initial work of the group will leave much of the required security
               and authentication to the payment schemes it is important to ensure that any additions to the Web platform are secure and
               tamper-proof. The ability to manipulate any message in a payment flow has potentially massive financial impact therefore
@@ -308,28 +307,37 @@
           <dl>
             <dt>
               <a href="/Payments/IG/">Web Payments Interest Group</a>
-              <dd>Discussion of the use cases and requirements that led to the creation of this group, as well as the overall Web payment
-                landscape of which this group's work is a part.</dd>
-              <dt>
-                <a href="http://www.w3.org/Privacy/">Privacy Interest Group</a>
-              </dt>
-              <dd>For privacy reviews.</dd>
-              <dt>
-                <a href="http://www.w3.org/Security/wiki/IG">Web Security Interest Group</a>
-              </dt>
-              <dd>For security reviews.</dd>
-              <dt>
-                <a href="/International/core/">Internationalization Core
+            </dt>
+            <dd>Discussion of the use cases and requirements that led to the creation of this group, as well as the overall Web payment
+              landscape of which this group's work is a part.</dd>
+            <dt>
+              <a href="/community/webpayments/">Web Payments Community Group</a>
+            </dt>
+            <dd>Community group responsible for research and incubation of ideas that have been adopted by this group.</dd>
+            <dt>
+              <a href="/community/credentials">Credentials Community Group</a>
+            </dt>
+            <dd>Researching methods to exchange secure, verifiable credentials.</dd>
+            <dt>
+              <a href="http://www.w3.org/Privacy/">Privacy Interest Group</a>
+            </dt>
+            <dd>For privacy reviews.</dd>
+            <dt>
+              <a href="http://www.w3.org/Security/wiki/IG">Web Security Interest Group</a>
+            </dt>
+            <dd>For security reviews.</dd>
+            <dt>
+              <a href="/International/core/">Internationalization Core
   Working Group</a>
-              </dt>
-              <dd>Internationalization and localization review</dd>
-              <dt>
-                <a href="/2012/webcrypto/">Web Cryptography Working Group</a>
-              </dt>
-              <dd>Consultation on encryption of messages that are part of these APIs.</dd>
-              <dt>
-                <a href="/WAI/PF/">Protocols and Formats Working Group</a>(and successor)</dt>
-              <dd>To help ensure the protocols support accessibility.</dd>
+            </dt>
+            <dd>Internationalization and localization review</dd>
+            <dt>
+              <a href="/2012/webcrypto/">Web Cryptography Working Group</a>
+            </dt>
+            <dd>Consultation on encryption of messages that are part of these APIs.</dd>
+            <dt>
+              <a href="/WAI/PF/">Protocols and Formats Working Group</a>(and successor)</dt>
+            <dd>To help ensure the protocols support accessibility.</dd>
           </dl>
           <p>This group will also collaborate with future W3C Working Groups developing authentication protocols.</p>
           <h3>Groups Outside W3C</h3>
@@ -339,8 +347,7 @@
             </dt>
             <dd>GSMA is an industry association of mobile network operators with near global coverage.</dd>
             <dt>
-              <a href="http://www.iso.org/iso/iso_technical_committee?commid=49650">ISO
-  TC 68</a>
+              <a href="http://www.iso.org/iso/iso_technical_committee?commid=49650">ISO TC 68</a>
             </dt>
             <dd>Coordination with ISO TC 68 will help achieve broad interoperability of payment systems (e.g., through alignment between
               Web protocols and ISO 20022).</dd>
