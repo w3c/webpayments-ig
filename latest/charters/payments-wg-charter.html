@@ -101,7 +101,7 @@
 
     <p>We anticipate the following benefits of this work:</p>
     <ul>
-        <li>Streamlined <a href="#payment_flow">payment flow</a>, which is expected to reduce the the percentage of
+        <li>Streamlined <a href="#payment_flow">payment flow</a>, which is expected to reduce the percentage of
             transactions abandoned prior to completion ("shopping cart abandonment").
         </li>
         <li>Increased customer satisfaction due to additional payment options available to users.</li>
@@ -114,8 +114,8 @@
         </li>
         <li>Added value through machine-readable digital payment requests and payment responses.</li>
     </ul>
-    <p>The W3C is also planning other Working Groups to develop standards that will facilitate payments on the Web, on
-        topics such as security.</p>
+    <p>The W3C is also planning other Working Groups to develop standards, on topics such as security, that will
+        facilitate payments on the Web.</p>
 
     <p>
         <strong>Note</strong>: The Web Payments Interest Group expects to provide more detailed technical input to
@@ -142,32 +142,32 @@
             the messages exchanged between these parties over the Web.</p>
 
         <p>This group will create open Web standards for the interfaces in and out of the Web context to provide
-            interoperability between payment systems (existing and future), and encourage greater automation of steps in
-            a typical payment. The interfaces between the payment schemes and the Web are via the user agent and the Web
-            application, therefore the scope of the initial charter is focused on the interactions between these two
-            components and the external actors that will interface directly with them.</p>
+            interoperability between payer and payee systems (for existing and future payment schemes), and encourage
+            greater automation of the steps in a typical payment. The interfaces between the payment schemes and the Web
+            are via the user agent and the Web application, therefore the scope of the initial charter is focused on the
+            interactions between these two components and the external actors that will interface directly with
+            them.</p>
 
         <p>The group will focus primarily on standardisation of a set of messages and a message flow for the initiation.
             confirmation and completion of a payment. By focusing on the message format and flow the group leaves open
-            the standardisation of the delivery mechanism for these messages as this will vary depedning on the use case
+            the standardisation of the delivery mechanism for these messages as this will vary depending on the use case
             and technology stack. The group will aim to standardise the delivery mechanism for common scenarios such as
             WebIDL APIs for the use cases where the messages are proxied between payer and payee via a Web browser or
             Web APIs where the messages are exchanged directly over the Web between two online entities in the classic
             REST pattern.</p>
 
         <p><strong>Note:</strong> W3C expects to deal with a wider variety of of eCommerce scenarios over time,
-            including
-            digital receipts; loyalty programs and coupons; peer-to-peer payments; and harmonization of user experience
-            in-browser, in-app, and in-store. For more information, see the <a
+            including digital receipts; loyalty programs and coupons; peer-to-peer payments; and harmonization of user
+            experience in-browser, in-app, and in-store. For more information, see the <a
                     href="http://www.w3.org/TR/web-payments-use-cases/">Payments Use Cases</a> published by the W3C Web
             Payments Interest Group.</p>
 
         <h3 id="payment_flow">Payment Flow</h3>
 
         <p>The scope of work supports the following elements of a basic purchase triggered by user interaction with a
-            Web application initiating a new payment. These standards define a high-level message flow to facilitate a
-            payment from payer to payee either in the form of a credit push (payer initiated) or a debit pull (payee
-            initiated) that can be used to facilitate a payment from any payment scheme.</p>
+            Web application initiating a new payment. These standards define a high-level message flow for a payment
+            from payer to payee either in the form of a credit push (payer initiated) or a debit pull (payee initiated)
+            payment, and can be used to facilitate a payment from any payment scheme.</p>
         <dl>
             <dt>Pre-Payment</dt>
             <dd>
@@ -183,10 +183,10 @@
             <dd>
                 <ul>
                     <li>
-                        <strong>Payment Request</strong>, by the payee to the payer providing the terms of the payment
-                        including
-                        elements such as the accepted payment schemes, price, currency, recurrence, transaction type
-                        (purchase, refund etc.) and requests for any additional data that is required from the payee.
+                        <strong>Payment Initiation Request</strong>, by the payee to the payer providing the terms of
+                        the payment including elements such as the accepted payment schemes, price, currency,
+                        recurrence, transaction type (purchase, refund etc.) and requests for any additional data that
+                        is required from the payee.
                     </li>
                 </ul>
             </dd>
@@ -196,7 +196,8 @@
                     <li>
                         <strong>Discovery</strong>, by the payer, of their available payment instruments that can be
                         used to make the payment. This is done by matching those registered by the payer with those
-                        supported by the payee (as defined in the Payment Request), while keeping information local to
+                        supported by the payee (as defined in the Payment Initiation Request), while keeping information
+                        local to
                         the payer.
                     </li>
                     <li>
@@ -205,7 +206,7 @@
                     </li>
                 </ul>
             </dd>
-            <dt>Payment Processing</dt>
+            <dt>Payment Processing and Completion</dt>
             <dd>
                 <ul>
                     <li>Execution of the payment by either payer or payee.</li>
@@ -259,10 +260,9 @@
         </ul>
         <p>This definition of wallet may expand in the future to include other items people find in physical wallets
             such as digital receipts, coupons, and identification. What the group defines today as a wallet service may
-            in future offer new functionality that even makes the wallet metaphor entirely inappropriate. The lable
-            <em>"wallet"</em> , while appropriate today, should not imply any limitation on the functionality that this
-            service may
-            be expected to provide under future standards.</p>
+            in future offer new functionality that even makes the wallet metaphor entirely inappropriate. Therefor the
+            label <em>"wallet"</em>, while appropriate today, should not imply any limitation on the functionality that
+            this service may be expected to provide under future versions of any standards produced by the group.</p>
 
         <p>The group intends to create a standard interface from the Web to a user's wallet so that a user with any
             conforming wallet can seamlessly make payments with any conforming Web application running in a conforming
@@ -272,15 +272,15 @@
 
         <p>The group will also consider the use case where an aggregation service stands in place of a wallet service
             and offers the user a wider choice of payment solutions by combining the functionality of multiple wallet
-            services.</p>
+            services or performing a complex payment instrument discovery process to collect the set of payment
+            instruments the user has available.</p>
 
         <p>
             <strong>Note:</strong>The Working Group anticipates a rich ecosystem of eCommerce and payment functionality,
             including loyalty schemes and coupons, digital receipts, location services, marketing additions, and so on.
-            Some of these functionalities may be provided by a digital wallet, or by other aggregating services
-            available to the
-            user. This charter does not seek to preclude those additional services, and in the future W3C may look for
-            standardization opportunities to increase interoperability of such services.</p>
+            Some of this functionality may be provided by a digital wallet, or by other aggregating services available
+            to the user. This charter does not seek to preclude those additional services, and in the future W3C may
+            look for standardization opportunities to increase interoperability of such services.</p>
     </div>
     <div>
         <h2 id="deliverables">Deliverables</h2>
@@ -338,7 +338,31 @@
                 via that service's REST API endpoint(s) and where HTTP callbacks may be used to pass responses to other
                 Web services.
             </li>
+            <li><strong>Inter-app on mobile devices (Optional)</strong>: If possible the group will standardise a
+                delivery mechanism for payment messages between apps on a mobile device so that wallet apps can
+                seamlessly interface with Websites running inside the mobile device's user agent (browser).
+            </li>
         </ul>
+        <h4 id="Card_Payments_1.0">Card Payments 1.0 (optional)</h4>
+
+        <p>A very large proportion of payments on the Web are conducted using payment cards from one of the global card
+            schemes. The group should attempt to define a standardised specialisation of the payment flow specifically
+            for payment cards.</p>
+
+        <p>A generic card payment standard could:</p>
+        <ul>
+            <li>Demonstrate how a debit-pull payment scheme should be implemented using the Web Payments 1.0
+                standard.
+            </li>
+            <li>Take advantage of new security technologies such as EMVco Tokenisation to improve on the existing
+                methods of using cards on the Web.
+            </li>
+            <li>Standardise a single payment scheme that is reusable by all payment card schemes globally to kick-start
+                adoption of the Web Payments 1.0 standard.
+            </li>
+        </ul>
+        <p>Development of such a standard will require collaboration by the group with the owners of the existing global
+            card schemes.</p>
         <h4>Milestones</h4>
         <table width="80%" class="roadmap">
             <tfoot>
@@ -382,8 +406,8 @@
         </table>
         <h3 id="other_deliverables">Other deliverables</h3>
 
-        <p>The Working Group will document best practices for the discovery of payer payment
-            instruments by wallet services. This involves best practice approaches for discovering the available payer
+        <p>The Working Group will document best practices and recommended algorithms for the discovery of payer payment
+            instruments by wallet services. This involves best practice approaches for discovering the supported payer
             payment instruments given the payer's configured payment instruments and those acceptable to a payee as
             listed in a payment initiation request.</p>
     </div>
