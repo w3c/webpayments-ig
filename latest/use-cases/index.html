@@ -198,7 +198,7 @@ greater interoperability among merchants and their customers,
 payment providers, software vendors, mobile operators, native mobile
 apps, and payment networks. The roadmap will include
 <a title="payment scheme">payment schemes</a> in use
-today (such as electronic cheques, credit cards, direct debit, and
+today (such as electronic checks, credit cards, direct debit, and
 cryptocurrencies) and those of the future. The roadmap will be derived from
 the use cases listed below.
     </p>
@@ -209,8 +209,8 @@ the use cases listed below.
 The Web Payments work is not just about making payments easier, faster,
 more secure, and more innovative. There are many people around the world that
 today's financial system does not reach. These people are called the world's
-unbanked (or underbanked). The unbanked often live pay cheque to pay cheque, do
-not have access to savings accounts or low-fee cheque cashing services, lines
+unbanked (or underbanked). The unbanked often live paycheck to paycheck, do
+not have access to savings accounts or low-fee check cashing services, lines
 of credit, or a way of saving for their future. Being unable to plan for one's
 financial future often results in a focus on the short-term, which creates a
 vicious cycle of not being able to escape one's situation. Not being able to
@@ -241,22 +241,27 @@ This document is organized as follows:
 
       <ul>
           <li>
-Section 2 defines basic payment terms.
+<a href="#terminology">Section 2</a> defines basic payment terms.
         </li>
         <li>
-Section 3 describes a common payment flow at a high
-level. The group expects to work on additional
+<a href="#an-overview-of-the-payment-phases">Section 3</a> describes a
+common payment flow at a high level. The group expects to work on additional
 payment flows in future work.
         </li>
         <li>
-Section 4 is a specific narrative, labeled according
-to the steps of section 3. Section 7 describes
+<a href="#a-simple-example-of-the-payment-phases">Section 4</a> is a specific
+narrative, labeled according to the steps of section 3.
+<a href="#additional-examples-of-the-payment-phases">Section 7</a> describes
 additional familiar narratives to give a more complete picture
 of how the payment phases apply.
         </li>
         <li>
-Section 6 lists the use cases - short scenarios that cover
-diverse aspects of each payment step.
+<a href="#assumptions">Section 5</a> highlights general assumptions that have
+been made about the use cases.
+        </li>
+        <li>
+<a href="#use-cases-1">Section 6</a> lists the use cases - short scenarios
+that cover diverse aspects of each payment step.
         </li>
       </ul>
 
@@ -349,11 +354,16 @@ An <a>entity</a> that receives funds as required by a
 An <a>entity</a> that provides a source of funds as required by a
 <a>transaction</a>.
       </dd>
+      <dt><dfn>transaction</dfn></dt>
+      <dd>
+An economic exchange between a <a>payer</a> and one or more
+<a title="payee">payees</a>.
+      </dd>
       <dt><dfn>payment instrument</dfn></dt>
       <dd>
 A mechanism used to transfer value from a <a>payer</a> to a
 <a>payee</a>. Examples: Corporate Visa card, personal Visa card, a bitcoin
-account, a PayPal account, an Alipay account, etc.
+account, a PayPal account, and an Alipay account.
       </dd>
       <dt><dfn>payment processor</dfn></dt>
       <dd>
@@ -372,12 +382,35 @@ MasterCard, Bitcoin, Ripple, PayPal, Google Pay, Alipay, Yandex money, ACH, SEPA
       <dt><dfn>purchase</dfn></dt>
       <dd>
 Activities surrounding and including a <a>transaction</a> (e.g., discovery of
-an offer, negotiation of terms, selection of <a>payment instrument</a>,
-delivery, etc.).
+an offer, negotiation of terms, selection of <a>payment instrument</a>, and
+delivery).
       </dd>
-      <dt><dfn>transaction</dfn></dt>
+      <dt><dfn>three corner model</dfn></dt>
       <dd>
-An exchange of value (e.g., buying or selling something)
+A <a>payment scheme</a> including the following stakeholders: the <a>payer</a>
+(also known as the Card Holder), the Issuer (who has a relationship with
+the <a>payer</a>), the Acceptor and the Acquirer (who has a relationship with
+the Acceptor), but where the Issuer and the Acquirer are the same entity.
+      </dd>
+      <dt><dfn>four corner model</dfn></dt>
+      <dd>
+A <a>payment scheme</a> which includes the following stakeholders:
+the <a>payer</a> (also known as the Cardholder), the Issuer (who has a
+relationship with the Cardholder), the Acceptor and the Acquirer (which
+has a relationship with the Acceptor). The <a>payment scheme</a> defines the
+rules which apply to all parties; there are no limitations as to who may
+join the scheme, as long as the requirements of the scheme are met.
+      </dd>
+      <dt><dfn>push payment</dfn> or <dfn>payer-initiated payment</dfn></dt>
+      <dd>
+A type of <a>transaction</a> where the <a>payer</a> initiates the funds
+transfer to the <a>payee</a>. PayPal is an example of a push payment.
+      </dd>
+      <dt><dfn>pull payment</dfn> or <dfn>payee-initiated payment</dfn></dt>
+      <dd>
+A type of <a>transaction</a> where the <a>payee</a> initiates the funds
+transfer from the <a>payee</a>. A credit card payment is an example of a
+pull payment.
       </dd>
     </dl>
 
@@ -432,8 +465,8 @@ Delivery of Product/Receipt and Refunds
     </ol>
 
 <p>The descriptions below only discuss the interactions between the
-payer and the <a>payee</a>. We do not expose the low-level exchanges between
-banks, card associations, or other back-end "payment clearing" parties
+<a>payer</a> and the <a>payee</a>. We do not expose the low-level exchanges
+between banks, card associations, or other back-end "payment clearing" parties
 in a <a>transaction</a>. Those details will be discussed in the Interest
 Group's work on architecture and
 requirements.</p>
@@ -578,11 +611,11 @@ payment may be required to access the product.
 <strong>Delivery of Receipt</strong>. Depending on the
 <a title="payment scheme">payment scheme(s)</a> chosen, there are
 various ways and times that a receipt may be delivered (e.g., credit card
-receipt, digital proof of <a>purchase</a>, encrypted line-item receipt, etc.).
+receipt, digital proof of <a>purchase</a>, or encrypted line-item receipt).
         </li>
         <li>
 <strong>Refunds</strong>. At times exceptions may occur (e.g., defective
-product, application of store return policy, etc.). In this case, the
+product or application of store return policy). In this case, the
 <a>payee</a> initiates payment to the <a>payer</a>. The refund may
 take different forms, including a refund to the <a title="payer">payer's</a>
 payment instrument, a refund using a different payment scheme, or store credit.
@@ -623,8 +656,10 @@ section suffices, or moving this narrative to section 7 with the other examples.
 home on her laptop, where she browses the items on the PayToParty Web
 site. On the way to work the next morning, she explores the catalog
 further from a native app on her smart phone. Jill can't decide
-whether the dress displayed online is blue with black stripes or white
-with gold stripes, so during her lunch break, she drops into the
+whether the dress displayed online is
+<a href="https://en.wikipedia.org/wiki/The_dress_(viral_phenomenon)">
+blue with black stripes or white with gold stripes</a>,
+so during her lunch break, she drops into the
 PayToParty store near her office. She spots a few more items that
 she thinks she'd like to <a>purchase</a>, but decides to wait until later to
 make the <a>purchase</a>.
@@ -633,7 +668,7 @@ make the <a>purchase</a>.
         <li>
 <strong>Agreement on Terms</strong>: That same evening at home,
 Jill logs into her account on the PayToParty Web site, adding her
-preferred items to her shopping cart. The total price appears on the
+chosen items to her shopping cart. The total price appears on the
 page.
         </li>
 
@@ -667,9 +702,9 @@ use it for this <a>purchase</a>.
 
         <li>
 <strong>Authentication to Access Instruments</strong>: Jill selects
-the PayToParty loyalty card, which she enabled with theft-protection,
-and is asked to input a code that is sent to her phone before the
-<a>purchase</a> can be completed.
+the PayToParty loyalty card, the use of which is protected by two-factor
+authentication, and is asked to input a code that is sent to her phone
+before the <a>purchase</a> can be completed.
         </li>
       </ul>
     </section>
@@ -751,7 +786,7 @@ must be used to secure sensitive information. It is important that sensitive
 information is not transmitted to parties that do not absolutely need to
 know the information in order to complete the <a>transaction</a>.</li>
         <li>
-<strong>Identity</strong>. There will be a consistent, interoperable
+<strong>Identity</strong>. There will be an interoperable
 identifier used to identify the participants and accounts in a Web Payments
 transaction.
         </li>
@@ -859,8 +894,8 @@ be helpful.
           </dd>
           <dt>Exceptions</dt>
           <dd>
-No mobile phone connectivity (visiting a different country, trip occurs
-outside the range of a mobile network, etc.)
+No mobile phone connectivity (e.g. visiting a different country or trip occurs
+outside the range of a mobile network).
           </dd>
         </dl>
 
@@ -868,7 +903,7 @@ outside the range of a mobile network, etc.)
           <dt>Freemium</dt>
           <dd>
 Chaoxiang plays his favorite native app game and wants to upgrade his avatar
-with a few extra "power-ups." Clicking on a power-up displays the price.
+with a few extra "power-ups". Clicking on a power-up displays the price.
           </dd>
           <dt>Target version</dt>
           <dd>Uncategorized</dd>
@@ -882,7 +917,7 @@ developers more choices.
         </dl>
 
         <dl id="uc-email" class="dl-horizontal">
-          <dt>E-mail</dt>
+          <dt>Email</dt>
           <dd>
 A GroupBuyCo customer receives an offer by email to <a>purchase</a> the deal
 of the day.
@@ -920,8 +955,8 @@ to protect the <a>payee</a> from negligence on the part of the
           <dt>Exceptions</dt>
           <dd>
 Software acting on the <a title="payer">payer's</a> behalf may keep
-track of exactly how much money the <a>payer</a> has and not allow them to
-process the offer.
+track of exactly how much money the <a>payer</a> has available and
+not allow them to process the offer.
           </dd>
         </dl>
 
@@ -948,8 +983,8 @@ small fuel <a title="purchase">purchases</a> in a way that respects their privac
           </dd>
           <dt>Security</dt>
           <dd>
-Automated <a title="purchase">purchases</a> (e.g,. by a vehicle) should involve
-increased security (e.g., a second factor of authentication).
+Automated <a title="purchase">purchases</a> (e.g,. by a vehicle) may involve
+increased logging and security (e.g., a second factor of authentication).
           </dd>
         </dl>
 
@@ -986,7 +1021,7 @@ enforceable contract will reduce <a>transaction</a> friction.
         </dl>
 
         <dl id="uc-trialware" class="dl-horizontal">
-          <dt>Trial-ware</dt>
+          <dt>Trialware</dt>
           <dd>
 Amantha downloads the latest version of her favorite game and beats
 the first level. The game asks her if she'd like to buy the full game
@@ -996,7 +1031,7 @@ to play further levels.
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
-There is a fairly large trial-ware industry that could benefit from
+There is a fairly large trialware industry that could benefit from
 a simple way of executing a payment without requiring redirection
 to another site to enter account and payment details.
           </dd>
@@ -1019,8 +1054,7 @@ extending their sales channels into vehicles.
           <dt>Accessibility</dt>
           <dd>
 For safety reasons, the interface used to interact with the digital offer
-must not distract the driver of the vehicle. Voice controls and other
-techniques can be used to reduce driver distraction.
+must not lead to an increase in vehicle accidents.
           </dd>
         </dl>
 
@@ -1166,12 +1200,12 @@ processes.
         <dl id="uc-privacy" class="dl-horizontal">
           <dt>Privacy Protection</dt>
           <dd>
-Tibor orders assorted chocolates from CandyCo. CandyCo only needs Tibor's
-verified shipping address to send him the chocolates. With Tibor's
-authorization, his payment software transmits only his shipping address to
-CandyCo. Tibor's privacy is protected from the candy store, which did not
-require Tibor's name, email address, or any other personally identifying
-information to complete the <a>transaction</a>.
+Tibor orders chocolates from CandyCo. CandyCo requests Tibor's
+tokenized shipping address to send him the candy. With Tibor's
+authorization, his payment software transmits a tokenized shipping address to
+BoomCo that the shipper can decipher. Tibor's privacy is protected from the
+candy store, which did not require any personally identifying information to
+complete the <a>transaction</a>.
           </dd>
           <dt>Target version</dt>
           <dd>Uncategorized</dd>
@@ -1191,7 +1225,8 @@ protected throughout the process.
         <dl id="uc-need-to-know" class="dl-horizontal">
           <dt>Need to Know</dt>
           <dd>
-PayCo is required to keep a certain amount of information on their customers
+PayCo, a payment processor, is required to keep a certain amount of
+information on their customers
 for anti-money laundering / know your customer regulatory purposes. When a
 <a>payer</a> performs a <a>transaction</a> with a <a>payee</a>, PayCo
 would like to reduce the amount of information that's transmitted to the
@@ -1331,7 +1366,7 @@ store-specific line of credit.
         <dl id="uc-ubiquitous" class="dl-horizontal">
           <dt>Ubiquitous Schemes</dt>
           <dd>
-A game store Web site accepts payment via credit card, e-cheque, and
+A game store Web site accepts payment via credit card, e-check, and
 operator billing.
           </dd>
           <dt>Target version</dt>
@@ -1752,7 +1787,7 @@ Once Sally has signed into PayPal to pay, PayPal initiates payment processing.
 Joakim uses his Bitcoin wallet to send money to his friend.
               </li>
                 <li>
-Carson (in New York City) sends money to Vladamir (in Moscow) using
+Carson (in New York City) sends money to Vladimir (in Moscow) using
 his Ripple client, which converts the currency from US Dollars to Rubels in
 transit.
               </li>
@@ -1763,7 +1798,7 @@ transit.
           <dt>Motivation</dt>
           <dd>
 Payer-initiated payments, also known as "push payments",
-"three-corner model payments", or "peer-to-peer payments", are fundamentally
+"three corner model payments", or "peer-to-peer payments", are fundamentally
 more secure as no information is given to the <a>payee</a> that would
 allow them or an attacker to replay the <a>transaction</a> for a different
 amount or to a different <a>payee</a> at a later date.
@@ -1807,8 +1842,9 @@ in order for the customization of the car to proceed.
           <dt>Motivation</dt>
           <dd>
 A <a>payee</a> may want to limit access to certain services to only those
-who they know can afford the good or service because the act of engaging the
-<a>payer</a> may be costly.
+who they know can afford the good or service because the act of
+providing an acceptable level of service to the <a>payee</a> during the
+pre-sale phase may be costly.
           </dd>
         </dl>
 
@@ -1881,7 +1917,7 @@ Eman uses a credit card to buy some gifts for her parents. The shop has
 access to the funds in three days.
               </li>
                 <li>
-Frank uses an electronic cheque to pay his rent. The rental agency has access
+Frank uses an electronic check to pay his rent. The rental agency has access
 to the funds in 7 days.
               </li>
                 <li>
@@ -1908,7 +1944,7 @@ message.
         <dl id="uc-notifications" class="dl-horizontal">
           <dt>Notifications</dt>
           <dd>
-Gavin sends an electronic cheque to WaveMart. WaveMart receives a notification
+Gavin sends an electronic check to WaveMart. WaveMart receives a notification
 that payment has been initiated almost immediately. Four days later, WaveMart
 receives a notification from their bank that payment has been received.
           </dd>
@@ -1940,9 +1976,8 @@ received.
         <dl id="uc-physical-goods" class="dl-horizontal">
           <dt>Physical Goods</dt>
           <dd>
-Giralt orders a bicycle for his daughter through BikeSmart online. The
-bicycle is delivered a few days later with a QRCode attached to the package
-that only Giralt can access.
+Giralt orders a bicycle for his daughter through BikeSmart online and has it
+shipped to his home address.
           </dd>
           <dt>Target version</dt>
           <dd>1.0</dd>
@@ -1993,21 +2028,29 @@ have them shipped to a nearby department store to save on shipping.
           <dt>Electronic Receipts</dt>
           <dd>
 Ashraf pulls up to a pump at a petrol station. He pays electronically using a
-credit card (via his phone). An electronic receipt for the <a>purchase</a>
-from the gas station is displayed on his phone.
+credit card (via his phone). A machine-readable electronic receipt for
+the <a>purchase</a> from the gas station is transferred to his phone and
+displayed using his favorite expense tracking software.
           </dd>
           <dt>Target version</dt>
           <dd>1.0 (very basic receipt container and delivery protocol)</dd>
           <dt>Motivation</dt>
           <dd>
-Electronic receipts will make it easier to track expenses, prove that
-certain  <a title="purchase">purchases</a> were made, file tax returns, and
-simplify management of unnecessary paper.
+Standardized, machine-readable electronic receipts could make it easier to
+track expenses, prove that certain  <a title="purchase">purchases</a> were
+made, file tax returns, and simplify management of unnecessary paper.
           </dd>
-          <dt>Privacy / Security</dt>
+          <dt>Privacy</dt>
           <dd>
 Many merchants want to ensure that receipts are not readable by any party
 between them and their customer.
+          </dd>
+          <dt>Security</dt>
+          <dd>
+Electronic receipts should be tamperproof such that the information can be
+verified to have come from the merchant issuing the receipt. One mechanism
+that could be employed would be the use of digital signatures over the
+contents of the electronic receipt.
           </dd>
           <dt>Accessibility</dt>
           <dd>
@@ -2063,7 +2106,7 @@ mistake after he pays and requests a refund, which the restaurant
 manager approves. The overcharged funds are returned to his account.
               </li>
               <li>
-Teo claims that a blender they purchased online was faulty and returns
+Teo claims that a blender he purchased online was faulty and returns
 the product to the merchant. The merchant provides the customer with a refund
 in the form of store credit based on the return policy.
               </li>
@@ -2115,7 +2158,7 @@ as possible.
     <section>
       <h3>Credit Card Payment (Visa, MasterCard)</h3>
       <p>
-This scenario outlines a typical card purchase using the 4 corner model.
+This scenario outlines a typical card purchase using the "four corner model".
 Janet is buying an handbag online from a resale shop.
       </p>
 
@@ -2150,8 +2193,8 @@ Bitcoin, Google Wallet, and ApplePay.
 
           <li>
 <strong>Selection of Payment Instruments</strong>: Janet selects her Discover
-points card that highlighted by default because she had used it for a previous
-purchase with the merchant.
+rewards credit card that is highlighted by default because she had used
+it for a previous purchase with the merchant.
           </li>
 
           <li>
@@ -2213,7 +2256,7 @@ The following scenario outlines payment using a mobile device and
 tokenization. The merchant has provided a mobile application that
 customers can download in the example below. This example may apply to
 various tokenization payment systems now in use, such as ApplePay,
-CyberSource, Venmo, Square, etc.
+CyberSource, Venmo, and Square.
       </p>
 
       <section class="notoc">
@@ -2290,7 +2333,7 @@ receipt to the mobile app.
           </li>
 
           <li>
-<strong>Delivery of Product</strong>: Terrific-Tools, Inc. ships the ax to Tom.
+<strong>Delivery of Product</strong>: Terrific-Tools ships the ax to Tom.
           </li>
         </ul>
       </section>
@@ -2342,8 +2385,8 @@ payment.
           <li>
 <strong>Authentication to Access Instruments</strong>: Meihui logs in the Alipay
 with her account name and password. Meihui is told that she will pay for the
-airline ticket with 600RMB and she confirms it. Meihui uses her fingerprint to
-approve the payment.
+airline ticket with 3,500 RMB and she confirms it. Meihui uses her fingerprint
+to approve the payment.
           </li>
         </ul>
       </section>
@@ -2490,13 +2533,200 @@ to Lenne and she receives them the next day.
     </section>
 
     <section>
-      <h3>Electronic Cheque Payment</h3>
+      <h3>Electronic Check Payment</h3>
       <p><em>To be completed</em>.</p>
     </section>
 
-    <section>
-      <h3>Credit Transfer / Direct Debit</h3>
-      <p><em>To be completed</em>.</p>
+    <section id="direct-debit">
+      <h3>Direct Debit (SEPA Direct Debit)</h3>
+      <p>
+The following scenario outlines an ideal payment experience using a
+Direct Debit (<a>payee-initiated payment</a>), also known as a
+<a>pull payment</a> in the context of a <a>four corner model</a> payment.
+In this scenario, Anna is signing up for electricity service via the
+service's website. During the payment process she will validate an electronic
+direct debit mandate.
+      </p>
+
+      <section class="notoc">
+        <h4>Negotiation of Purchase Terms</h4>
+        <ul>
+          <li>
+<strong>Discovery of Offer</strong>: Anna connects to a utility website. She
+wants to setup this new utility immediately before she moves in to a new flat.
+          </li>
+          <li>
+<strong>Agreement on Terms</strong>: Anna selects the contract she wants and
+agrees to the terms and service associated with the delivery of electricity.
+          </li>
+          <li>
+<strong>Application of Marketing Elements</strong>: <em>Not applicable to this
+particular use case.</em>
+          </li>
+        </ul>
+      </section>
+
+      <section class="notoc">
+        <h4>Negotiation of Payment Instruments</h4>
+        <ul>
+          <li>
+<strong>Discovery of Accepted Schemes</strong>: The utility website takes
+Visa, MasterCard, and SEPA Direct Debit for payment.
+          </li>
+          <li>
+<strong>Selection of Payment Instruments</strong>: Anna chooses SEPA Direct
+Debit for payment.
+          </li>
+          <li>
+<strong>Authentication to Access Instruments</strong>: Anna provides
+all the mandatory data required for a valid electronic SEPA Direct Debit
+Mandate as well as the IBAN number associated with Anna's account. Anna is
+told that she is setting up a recurring payment with the utility and the
+payment will be automatically withdrawn at the end of the month based on
+her electricity consumption. She agrees to the automatic transfer by
+entering her secret PIN.
+          </li>
+        </ul>
+      </section>
+
+      <section class="notoc">
+        <h4>Payment Processing</h4>
+        <ul>
+          <li>
+<strong>Initiation of Processing</strong>: At the end of the month the utility
+invoice system will initiate the payment by sending an invoice by email
+that will be sent directly to Anna's payment service provider.
+          </li>
+          <li>
+<strong>Verification of Available Funds</strong>: <em>Not applicable to this
+particular use case.</em>
+          </li>
+          <li>
+<strong>Authorization of Transfer</strong>: Anna's payment service provider
+authorizes the transfer based on the reference ID that was validated by
+Anna during the <strong>Authentication to Access Instruments</strong> phase.
+          </li>
+          <li>
+<strong>Completion of Transfer</strong>: The utility website gets a message
+from its payment service provider that the transfer has been completed.
+          </li>
+        </ul>
+      </section>
+
+      <section class="notoc">
+        <h4>Delivery of Product/Receipt and Refunds</h4>
+        <ul>
+          <li>
+<strong>Delivery of Receipt</strong>: The utility website sees that Anna's
+direct debit mandate has been validated and sends a receipt message to her
+digital wallet.
+          </li>
+          <li>
+<strong>Delivery of Product</strong>: The utility website sends an email to
+Anna with the contract information based on the email provided in the
+Completion of Transfer message sent to her payment service provider.
+          </li>
+          <li>
+<strong>Refunds</strong>: Anna could request a refund by contacting her bank
+if something goes wrong with the Direct Debit.
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="credit-transfer">
+      <h3>Credit Transfer (SEPAmail)</h3>
+      <p>
+The following scenario outlines an ideal payment experience using a
+<a>payer-initiated payment</a>, also known as a
+<a>push payment</a> in the context of a <a>four corner model</a> payment. In
+this scenario, Anna is buying a very expensive piece of furniture that costs
+far more than the maximum amount allowed by her payment card. She pays
+using her bank account via her bank's website.
+      </p>
+
+      <section class="notoc">
+        <h4>Negotiation of Purchase Terms</h4>
+        <ul>
+          <li>
+<strong>Discovery of Offer</strong>: Anna browses a Furniture website.
+She wants to buy a desk for her new flat.
+          </li>
+          <li>
+<strong>Agreement on Terms</strong>: Anna selects a heavy oak antique desk
+from the 17th century.
+          </li>
+          <li>
+<strong>Application of Marketing Elements</strong>: <em>Not applicable to this
+particular use case.</em>
+          </li>
+        </ul>
+      </section>
+
+      <section class="notoc">
+        <h4>Negotiation of Payment Instruments</h4>
+        <ul>
+          <li>
+<strong>Discovery of Accepted Schemes</strong>: The furniture website takes
+Visa, MasterCard, and SEPA "Credit Transfer via SEPAmail" for payment.
+          </li>
+          <li>
+<strong>Selection of Payment Instruments</strong>: Anna chooses
+"Credit Transfer via SEPAmail" for payment and provides a tokenized version
+of her IBAN account number. The furniture website sends a "payment request"
+to its payment service provider which will forward it to Anna’s bank.
+          </li>
+          <li>
+<strong>Authentication to Access Instruments</strong>: Anna connects to her
+bank's website where the payment request is pending approval.
+          </li>
+        </ul>
+      </section>
+
+      <section class="notoc">
+        <h4>Payment Processing</h4>
+        <ul>
+          <li>
+<strong>Initiation of Processing</strong>: Anna approves the payment request.
+          </li>
+          <li>
+<strong>Verification of Available Funds</strong>: The availability of
+funds is verified by Anna's bank.
+          </li>
+          <li>
+<strong>Authorization of Transfer</strong>: The funds transfer is automatically
+authorized by Anna's bank.
+          </li>
+          <li>
+<strong>Completion of Transfer</strong>: Anna's bank sends the Credit Transfer,
+as well as a payment report (analogous to a signed receipt) to the furniture
+website's payment service provider. The furniture website gets a message
+(also known as a "payment advice") from its payment service provider that the
+transfer is complete depending of the Scheme of Credit Transfer used:
+within 24 hours for a SEPA Credit Transfer, often longer in International
+Credit Transfer outside Europe.
+          </li>
+        </ul>
+      </section>
+
+      <section class="notoc">
+        <h4>Delivery of Product/Receipt and Refunds</h4>
+        <ul>
+          <li>
+<strong>Delivery of Receipt</strong>: The furniture website sees that Anna's
+credit transfer has been received and sends a receipt by email to
+Anna based on the email address included in the payment report.
+          </li>
+          <li>
+<strong>Delivery of Product</strong>: The piece of furniture is shipped to
+Anna.
+          </li>
+          <li>
+<strong>Refunds</strong>: Anna must contact the furniture website directly
+since the credit transfer cannot be reversed since she initiated it.
+          </li>
+        </ul>
+      </section>
     </section>
 
   </section>
