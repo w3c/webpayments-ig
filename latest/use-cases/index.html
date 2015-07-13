@@ -1615,26 +1615,53 @@ such as strong two-factor verification.
           </dd>
         </dl>
 
-        <dl id="uc-regulatory-blocks" class="dl-horizontal">
-          <dt>Regulatory Blocks</dt>
+        <dl id="uc-kyc" class="dl-horizontal">
+          <dt>KYC</dt>
           <dd>
-PayCo must ensure that their customers do not appear on any regulatory
-blacklists when performing <a>transaction</a>s above a certain monetary amount.
+A number of Know Your Customer (KYC) requirements must be met when a financial
+service provider authorizes access to a particular <a>payment instrument</a>:
+            <ul>
+              <li>
+A bank performs KYC clearing on a continuous basis to ensure that their
+customers are properly vetted before participating in financial transactions.
+              </li>
+              <li>
+A wealth management provider must ensure that their customer's are
+accredited investors before allowing them to directly manage certain
+investments in their account.
+              </li>
+              <li>
+A central bank in an emerging nation enables independent mobile resellers to
+perform minimal thumbprint-based KYC clearing in remote regions of the
+country.
+              </li>
+              <li>
+A medical drug reseller requires that a customer is licensed to practice
+medicine and write prescriptions for Class 2 medications (highly adictive
+drugs with a known medical use) before a purchase is allowed to proceed.
+              </li>
+              <li>
+A customer provides a set of KYC credentials at the time of transaction to
+meet transaction requirements managed by the financial institution and merchant.
+              </li>
+            </ul>
           </dd>
           <dt>Target version</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
-Easing compliance with Know Your Customer (KYC) and
-Anti-Money Laundering (AML) regulations
-will ensure safer and faster <a title="payment scheme">payment schemes</a>.
+Authorization to access an instrument depends on more than just authenticating
+with the payment service provider, it may also require the <a>payee</a> to
+have other provable qualities before the transaction can proceed.
           </dd>
-          <dt>Exceptions</dt>
+          <dt>Regulation</dt>
           <dd>
-If a <a>payee</a> detects that a <a>payer</a> is on an applicable blacklist, the
-transaction must not proceed.
+In many countries, a variety of regulations exist that require merchants and
+financial service providers to prove that they have vetted their customers
+before allowing a transaction to proceed.
           </dd>
         </dl>
+
 
           <dl id="uc-biometric" class="dl-horizontal">
             <dt>Biometric</dt>
