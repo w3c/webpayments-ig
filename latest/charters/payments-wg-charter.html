@@ -120,14 +120,18 @@
         </li>
         <li>Added value through machine-readable digital payment requests and payment responses.</li>
     </ul>
-    <p>The W3C is also planning other Working Groups to develop standards, covering topics such as security, that will
-        facilitate payments on the Web.</p>
-
     <p>
-        <strong>Note</strong>: The Web Payments Interest Group expects to provide more detailed technical input to
-        relevant W3C Working Groups including this one, based on a detailed analysis of the relevant <a
-            href="http://www.w3.org/TR/web-payments-use-cases/#an-overview-of-the-payment-phases">Web Payments Use
-        Cases</a>.</p>
+        The Web Payments Interest Group will continue to guide the W3C in the Web Payments activity and may propose new
+        working groups to cover topics such as identity, credentials and commerce (including invoicing, receipts,
+        loyalty programs, coupons, discounts, offers etc.).</p>
+
+    <p>As part of this work the Web Payments Interest Group expects to provide technical input to this and other
+        relevant W3C Working Groups, based on a detailed analysis of the relevant <a
+                href="http://www.w3.org/TR/web-payments-use-cases/">Web Payments Use
+            Cases</a>.</p>
+
+    <p>The W3C is also planning other Working Groups to develop standards, covering topics such as security, that will
+        be important in facilitating payments on the Web.</p>
 
     <div class="scope">
         <h2 id="scope">Scope</h2>
@@ -142,12 +146,12 @@
 
         <p>In an effort to improve upon this process, various parties have innovated ways to make the payment flow
             easier, for example by caching payment instrument information in browsers, registering users on eCommerce
-            websites to facilitate re-use of customer data and/or payment credentials, and even developing new payment
-            schemes. Unfortunately, these efforts all suffer from a lack of standardization. Standardization of the high
-            level flow of a Web payment, of the interfaces between the various parties (example: the user agent and the
-            Web application) or of the messages exchanged between these parties over the Web. The result is that users
-            are lead through entirely different flows and verification routines every time they make a payment on the
-            Web.</p>
+            websites to facilitate re-use of customer data and/or payment credentials (increasingly through the use of
+            tokenization), and even developing new payment schemes. Unfortunately, these efforts all suffer from a lack
+            of standardization. Standardization of the high level flow of a Web payment, of the interfaces between the
+            various parties (example: the user agent and the Web application) or of the messages exchanged between these
+            parties over the Web. The result is that users are lead through entirely different flows and verification
+            routines every time they make a payment on the Web.</p>
 
         <p>This group will create open Web standards for the <em>interfaces</em> in and out of the Web context to
             provide
@@ -184,8 +188,8 @@
                 <ul>
                     <li>
                         <strong>Registration</strong>, by the payer with their <a href="#wallets">wallet</a>, of any
-                        conforming <strong>payment instrument</strong> they wish to use on the Web (e.g. a credit card,
-                        electronic cash, cryptocurrency, etc).
+                        conforming <strong>payment instrument</strong> they wish to use on the Web (e.g. a credit or
+                        debit card, electronic cash, cryptocurrency, etc).
                     </li>
                 </ul>
             </dd>
@@ -280,7 +284,7 @@
         <p>In this charter we define a <strong>wallet</strong> as a software service, providing similar functions in the
             digital world to those provided by a physical wallet, namely:</p>
         <ul>
-            <li>It holds and allows access to payment instruments registered by the wallet owner.</li>
+            <li>It holds and allows access to payment instruments registered by the payer.</li>
             <li>It provides logic to support certain payment schemes and enables the payer to use registered payment
                 instruments to
                 execute a payment in accordance with the rules and processes of that scheme.
@@ -544,8 +548,8 @@
         <h2 id="decisions">Decision Policy</h2>
 
         <p>As explained in the Process Document (<a href="/Consortium/Process/policies#Consensus">section 3.3</a>), this
-            group will seek to make decisions when there is consensus. When the Chair puts a question and observes
-            dissent, after due consideration of different opinions, the Chairs should put a question out for voting
+            group will seek to make decisions when there is consensus. When a Chair puts a question and observes
+            dissent, after due consideration of different opinions, the Chair should put a question out for voting
             within the group (allowing for remote asynchronous participation -- using, for example, email and/or
             web-based survey techniques) and record a decision, along with any objections. The matter should then be
             considered resolved unless and until new information becomes available.
