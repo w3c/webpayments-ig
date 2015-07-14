@@ -1615,19 +1615,93 @@ such as strong two-factor verification.
           </dd>
         </dl>
 
-        <dl id="uc-regulatory-blocks" class="dl-horizontal">
-          <dt>Regulatory Blocks</dt>
+        <dl id="uc-kyc" class="dl-horizontal">
+          <dt>KYC</dt>
           <dd>
-PayCo must ensure that their customers do not appear on any regulatory
-blacklists when performing <a>transaction</a>s above a certain monetary amount.
+A number of Know Your Customer (KYC) requirements must be met when a financial
+service provider authorizes access to a particular <a>payment instrument</a>:
+            <ul>
+              <li>
+BigBank performs KYC clearing on a continuous basis to ensure that their
+customers are properly vetted before participating in financial transactions.
+              </li>
+              <li>
+Multigen, a wealth management company, must ensure that their customer's
+are accredited investors before allowing them to directly manage certain
+investments in their account.
+              </li>
+              <li>
+The Central Bank of Pakistan enables independent mobile resellers to
+perform minimal thumbprint-based KYC clearing in remote regions of the
+country.
+              </li>
+              <li>
+Pharmaxis, a medical drug reseller, requires that a customer is licensed to
+practice medicine and write prescriptions for Class 2 medications (highly
+addictive drugs with a known medical use) before a purchase is allowed to
+proceed.
+              </li>
+              <li>
+Dr. Kubo provides a set of explosives expert KYC credentials at the time of
+transaction to meet transaction requirements managed by the financial
+institution and merchant.
+              </li>
+            </ul>
           </dd>
           <dt>Target version</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
-Easing compliance with Know Your Customer (KYC) and
-Anti-Money Laundering (AML) regulations
-will ensure safer and faster <a title="payment scheme">payment schemes</a>.
+Authorization to access an instrument depends on more than just authenticating
+with the payment service provider, it may also require the <a>payee</a> to
+have other provable qualities before the transaction can proceed.
+          </dd>
+          <dt>Regulation</dt>
+          <dd>
+In many countries, a variety of regulations exist that require merchants and
+financial service providers to prove that they have vetted their customers
+before allowing a transaction to proceed.
+          </dd>
+        </dl>
+
+        <dl id="uc-" class="dl-horizontal">
+          <dt>AML</dt>
+          <dd>
+Financial service providers, and some merchants, are required to adhere to
+Anti-Money Laundering (AML) regulations by blocking transactions involving
+known bad actors or by reporting suspicious activity related to financial
+transactions:
+            <ul>
+              <li>
+Corresponda Bank's AML system notices an outgoing payment to an account listed
+as frozen by FinCEN and prevents the payment from proceeding.
+              </li>
+              <li>
+FasterPay, a payment service provider, notices tens of thousands of small
+transactions flowing from high-risk foreign accounts into a previously dormant
+domestic account and automatically files a Suspicious Activity Report.
+              </li>
+              <li>
+Eastern Group, an international remittance system, verifies that both the
+sender and a recipient of an international remittance are not on a watch
+list and have known accounts at the source and destination of funds
+before authorizing the transaction.
+              </li>
+              <li>
+The Flamingo, a casino, automatically files a Currency Transaction Report
+when one of its systems detects a customer withdrawing over $10,000 USD
+in winnings over the course of a day.
+              </li>
+            </ul>
+          </dd>
+          <dt>Target version</dt>
+          <dd>Uncategorized</dd>
+          <dt>Motivation</dt>
+          <dd>
+Financial service providers, and some merchants, are required to adhere to
+Anti-Money Laundering (AML) regulations by reporting suspicious activity
+related to financial transactions or by blocking transactions involving
+known bad actors.
           </dd>
           <dt>Exceptions</dt>
           <dd>
