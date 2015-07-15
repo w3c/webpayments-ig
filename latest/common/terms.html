@@ -1,141 +1,249 @@
-<p>The following terms are used throughout this document.</p>
+<p>
+This document attempts to communicate the concepts outlined in the Web
+Payments space by using specific terms to discuss particular concepts. This
+terminology is included below and linked to throughout the document to aid
+the reader:
+</p>
 
 <dl class="termlist">
-    <dt><dfn>Account</dfn></dt>
-    <dd>[PSD2] an account held in the name of one or more payment service users 
-    which is used for the execution of payment transactions</dd>
-    <dd>[Capabilities] An account is a store of value with a balance and a history 
-    of debits and credits that affect that balance</dd>
-    
-    <dt><dfn>Account Provider</dfn></dt>
-    <dd>[PSD2] account servicing payment service provider: a payment service provider 
-    providing and maintaining the payment account from which the payer wants the 
-        specific payment transaction to be made</dd>
+  <dt><dfn>account</dfn></dt>
 
-    <dt><dfn>Authentication</dfn></dt>
-    <dd>[PSD2] procedures which allow the payment service provider to verify the 
-        identity of a payment service user or the validity of the use of a specific 
-        payment instrument, including the use of its personalized security credentials</dd>
-    <dd>[ECB] a security mechanism for verifying: 1) the identity of an individual 
-        or other entity (including verification by means of a computer or computer 
-        application); and 2) the level of authority of that person or entity (i.e. 
-        the ability of that person or entity to perform specific tasks or activities).</dd>
-    
-    <dt><dfn>Authorization</dfn></dt>
-    <dd>[Proposed text – Evert] Requesting acceptance of a payment from a payer to a payee 
-        at the account serving payment service provider or other actor 
-        according to payment rules defined by the relevant payment scheme</dd>
-    <dd>[ECB] the consent given by a participant (or a third party acting on behalf of 
-        that participant) in order to transfer funds or securities.</dd>
-    
-    <dt><dfn>Clearing</dfn></dt>
-    <dd>[ECB] the process of transmitting, reconciling and, in some cases, 
-        confirming transfer orders prior to settlement, potentially including the 
-        netting of orders and the establishment of final positions for settlement</dd>
-    
-    <dt><dfn>Customer</dfn></dt>
-    <dd>An entity paying to receive goods, services, or other things of value; abstractly known as a payer.</dd>
-    
-    <dt><dfn>Identity</dfn></dt>
-    <dd>A set of information that can be used to identify a particular entity 
-        such as a person, software agent, or organization. 
-        An entity may have multiple identities associated with it.</dd>
-    
-    <dt><dfn>Ledger</dfn></dt>
-    <dd>[Merriam-Webster] a book containing accounts to which debits and credits 
-        are posted from books of original entry</dd>
-    
-    <dt><dfn>Merchant</dfn></dt>
-    <dd>An entity receiving payment for goods, services, or other things of value; 
-        abstractly known as a payee.</dd>
-    
-    <dt><dfn>Payer</dfn></dt>
-    <dd>An entity that provides a source of funds as required by a transaction.</dd>
-    
-    <dt><dfn>Payee</dfn></dt>
-    <dd>An entity that receives funds as required by a transaction.</dd>
+  <dd>[PSD2] an account held in the name of one or more payment service
+  users which is used for the execution of payment transactions.
+  [Capabilities] An account is a store of value with a balance and a
+  history of debits and credits that affect that balance</dd>
 
-    <dt><dfn>Payment</dfn></dt>
-    <dd>[ECB] in a strict sense, a payment is a transfer of funds which discharges 
-        an obligation on the part of a payer vis-à-vis a payee. 
-        However, in a technical or statistical sense, it is often used as a synonym for “transfer order”</dd>
-    
-    <dt><dfn>Payment Order</dfn></dt>
-    <dd>[PSD2] any instruction by a payer or payee to his payment service provider 
-        requesting the execution of a payment transaction</dd>
-    
-    <dt><dfn>Transfer Order</dfn></dt>
-    <dd>[ECB] an order or message requesting the transfer of assets 
-        (e.g. funds, securities, other financial instruments or commodities) 
-        from the debtor to the creditor</dd>
-    
-    <dt><dfn>Payment Instrument</dfn></dt>
-    <dd>PSD2] any personalized device(s) and/or set of procedures agreed 
-        between the payment service user and the payment service provider 
-        and used in order to initiate a payment order</dd>
-    <dd>[ECB] a tool or a set of procedures enabling the transfer of funds from a payer to a payee.</dd>
-    
-    <dt><dfn>Payment Scheme</dfn></dt>
-    <dd>[ECB] a set of interbank rules, practices and standards necessary 
-        for the functioning of payment services.</dd>
-    
-    <dt><dfn>Payment Service Provider</dfn></dt>
-    <dd>[PSD] A body executing payment services such as
-        <ol>
-        <li>credit institutions</li>
-        <li>electronic money institutions</li>
-        <li>post office giro institutions</li>
-        <li>payment institutions</li>
-        <li>central banks other than when acting in their capacity as a monetary authority 
-            or carrying out other functions of a public nature</li>
-        <li>government departments and local authorities, other than when carrying out functions 
-            of a public nature</li>
-        </ol></dd>
-    
-    <dt><dfn>Credit institution</dfn></dt>
-    <dd>[ECB] a company duly authorized to carry out banking transactions on a regular basis
-        (i.e. to receive deposits from the public, carry out credit transactions, 
-        make funds available and manage means of payment)</dd>
-    
-    <dt><dfn>Electronic Money Institution</dfn></dt>
-    <dd>[ECB] a term used in EU legislation to designate credit institutions which 
-        are governed by a simplified regulatory regime because their activity is 
-        limited to the issuance of electronic money and the provision of financial 
-        and non-financial services closely related to the issuance of electronic money.</dd>
-    
-    <dt><dfn>Purchase</dfn></dt>
-    <dd>Activities surrounding and including a transaction 
-        (e.g., discovery of an offer, negotiation of terms, selection of payment instrument, delivery, etc.).</dd>
-    
-    <dt><dfn>Settlement</dfn></dt>
-    <dd>[ECB] the completion of a transaction or of processing with the aim of 
-        discharging participants’ obligations through the transfer of funds and/or 
-        securities. A settlement may be final or provisional.</dd>
-    
-    <dt><dfn>Transaction</dfn></dt>
-    <dd>An agreement, communication, or movement carried out between a buyer and a seller 
-        to exchange an asset for payment</dd>
-    
-    <dt><dfn>Wallet</dfn></dt>
-    <dd>a software service, providing similar functions in the digital world to those provided 
-        by a physical wallet, namely:
-        <ul>
-            <li>It holds payment instruments registered by the wallet owner;</li>
-            <li>It supports certain payment schemes and enables the payer to use registered payment 
-                instruments to execute a payment in accordance with that scheme;</li>
-            <li>It may hold one or more balances of some digital asset that can be used to make payments.</li>
-        </ul>
-        This definition of wallet may expand in the future to include other items people find in 
-        physical wallets such as digital receipts, coupons, and identification.</dd>
-    
-    
-    <dt><dfn>Payment Orchestrator</dfn></dt>
-    <dd>The payment orchestrator is the entity or entities (payer, payee or payment
-    service provider) that are orchestrating the steps required to complete the
-    payment flow.</dd>
+  <dt><dfn>account provider</dfn></dt>
 
-    <dt><dfn>Regulator</dfn></dt>
-    <dd>The regulator is responsible for monitoring some
-    payments activities and enforcing legal requirements.</dd>
+  <dd>[PSD2] account servicing payment service provider: a payment
+  service provider providing and maintaining the payment account from
+  which the payer wants the specific payment transaction to be made</dd>
+
+  <dt><dfn>authentication</dfn></dt>
+
+  <dd>[PSD2] procedures which allow the payment service provider to
+  verify the identity of a payment service user or the validity of the
+  use of a specific payment instrument, including the use of its
+  personalized security credentials. [ECB] a security mechanism for
+  verifying: 1) the identity of an individual or other entity (including
+  verification by means of a computer or computer application); and 2)
+  the level of authority of that person or entity (i.e. the ability of
+  that person or entity to perform specific tasks or activities).</dd>
+
+  <dt><dfn>authorization</dfn></dt>
+
+  <dd>[Proposed text ï¿½ Evert] Requesting acceptance of a payment from a
+  payer to a payee at the account serving payment service provider or
+  other actor according to payment rules defined by the relevant payment
+  scheme. [ECB] the consent given by a participant (or a third party
+  acting on behalf of that participant) in order to transfer funds or
+  securities.</dd>
+
+  <dt><dfn>clearing</dfn></dt>
+
+  <dd>[ECB] the process of transmitting, reconciling and, in some cases,
+  confirming transfer orders prior to settlement, potentially including
+  the netting of orders and the establishment of final positions for
+  settlement</dd>
+
+  <dt><dfn>credit institution</dfn></dt>
+
+  <dd>[ECB] a company duly authorized to carry out banking transactions
+  on a regular basis (i.e. to receive deposits from the public, carry
+  out credit transactions, make funds available and manage means of
+  payment)</dd>
+
+  <dt><dfn>customer</dfn></dt>
+
+  <dd>An entity paying to receive goods, services, or other things of
+  value; abstractly known as a payer.</dd>
+
+  <dt><dfn>electronic money institution</dfn></dt>
+
+  <dd>[ECB] a term used in EU legislation to designate credit
+  institutions which are governed by a simplified regulatory regime
+  because their activity is limited to the issuance of electronic money
+  and the provision of financial and non-financial services closely
+  related to the issuance of electronic money.</dd>
+
+  <dt><dfn>entity</dfn></dt>
+
+  <dd>A person, organization, or software agent that is capable of
+  interacting with the world.</dd>
+
+  <dt><dfn>four corner model</dfn></dt>
+
+  <dd>A <a>payment scheme</a> which includes the following stakeholders:
+  the <a>payer</a> (also known as the Cardholder), the Issuer (who has a
+  relationship with the Cardholder), the Acceptor and the Acquirer
+  (which has a relationship with the Acceptor). The <a>payment
+  scheme</a> defines the rules which apply to all parties; there are no
+  limitations as to who may join the scheme, as long as the requirements
+  of the scheme are met.</dd>
+
+  <dt><dfn>identity</dfn></dt>
+
+  <dd>A set of information that can be used to identify a particular
+  entity such as a person, software agent, or organization. An entity
+  may have multiple identities associated with it.</dd>
+
+  <dt><dfn>ledger</dfn></dt>
+
+  <dd>[Merriam-Webster] a book containing accounts to which debits and
+  credits are posted from books of original entry</dd>
+
+  <dt><dfn>merchant</dfn></dt>
+
+  <dd>An entity receiving payment for goods, services, or other things
+  of value; abstractly known as a payee.</dd>
+
+  <dt><dfn>payee</dfn></dt>
+
+  <dd>An entity that receives funds as required by a transaction.</dd>
+
+  <dt><dfn>payer</dfn></dt>
+
+  <dd>An entity that provides a source of funds as required by a
+  transaction.</dd>
+
+  <dt><dfn>payment</dfn></dt>
+
+  <dd>[ECB] in a strict sense, a payment is a transfer of funds which
+  discharges an obligation on the part of a payer vis-a-vis a payee.
+  However, in a technical or statistical sense, it is often used as a
+  synonym for <a>transfer order</a></dd>
+
+  <dt><dfn>payment instrument</dfn></dt>
+
+  <dd>A mechanism used to transfer value from a <a>payer</a> to a
+  <a>payee</a>. Examples: Corporate Visa card, personal Visa card, a
+  bitcoin account, a PayPal account, and an Alipay account. [PSD2] any
+  personalized device(s) and/or set of procedures agreed between the
+  payment service user and the payment service provider and used in
+  order to initiate a payment order. [ECB] a tool or a set of procedures
+  enabling the transfer of funds from a payer to a payee.</dd>
+
+  <dt><dfn>payment orchestrator</dfn></dt>
+
+  <dd>The payment orchestrator is the entity or entities (payer, payee
+  or payment service provider) that are orchestrating the steps required
+  to complete the payment flow.</dd>
+
+  <dt><dfn>payment order</dfn></dt>
+
+  <dd>[PSD2] any instruction by a payer or payee to his payment service
+  provider requesting the execution of a payment transaction</dd>
+
+  <dt><dfn>payment processor</dfn></dt>
+
+  <dd>An <a>entity</a> that submits and processes payments using a
+  particular <a>payment instrument</a> to a payment network. Examples:
+  Stripe, PayPal, Authorize.net, Atos, FedACH.</dd>
+
+  <dt><dfn>payment scheme</dfn></dt>
+
+  <dd>Sets of rules and technical standards for the execution of payment
+  <a title="transaction">transactions</a> that have to be followed by
+  adhering entities (<a title="payment processor">payment
+  processors</a>, <a title="payer">payers</a> and <a title=
+  "payee">payees</a>). Examples: Visa, MasterCard, Bitcoin, Ripple,
+  PayPal, Google Pay, Alipay, Yandex money, ACH, SEPA. [ECB] a set of
+  interbank rules, practices and standards necessary for the functioning
+  of payment services.</dd>
+
+  <dt><dfn>payment service provider</dfn></dt>
+
+  <dd>
+    [PSD] A body executing payment services such as
+
+    <ol>
+      <li>credit institutions</li>
+
+      <li>electronic money institutions</li>
+
+      <li>post office giro institutions</li>
+
+      <li>payment institutions</li>
+
+      <li>central banks other than when acting in their capacity as a
+      monetary authority or carrying out other functions of a public
+      nature</li>
+
+      <li>government departments and local authorities, other than when
+      carrying out functions of a public nature</li>
+    </ol>
+  </dd>
+
+  <dt><dfn>pull payment</dfn> or <dfn>payee-initiated payment</dfn></dt>
+
+  <dd>A type of <a>transaction</a> where the <a>payee</a> initiates the
+  funds transfer from the <a>payee</a>. A credit card payment is an
+  example of a pull payment.</dd>
+
+  <dt><dfn>purchase</dfn></dt>
+
+  <dd>Activities surrounding and including a transaction (e.g.,
+  discovery of an offer, negotiation of terms, selection of payment
+  instrument, delivery, etc.).</dd>
+
+  <dt><dfn>push payment</dfn> or <dfn>payer-initiated payment</dfn></dt>
+
+  <dd>A type of <a>transaction</a> where the <a>payer</a> initiates the
+  funds transfer to the <a>payee</a>. PayPal is an example of a push
+  payment.</dd>
+
+  <dt><dfn>regulator</dfn></dt>
+
+  <dd>The regulator is responsible for monitoring some payments
+  activities and enforcing legal requirements.</dd>
+
+  <dt><dfn>settlement</dfn></dt>
+
+  <dd>[ECB] the completion of a transaction or of processing with the
+  aim of discharging participantsï¿½ obligations through the transfer of
+  funds and/or securities. A settlement may be final or
+  provisional.</dd>
+
+  <dt><dfn>three corner model</dfn></dt>
+
+  <dd>A <a>payment scheme</a> including the following stakeholders: the
+  <a>payer</a> (also known as the Card Holder), the Issuer (who has a
+  relationship with the <a>payer</a>), the Acceptor and the Acquirer
+  (who has a relationship with the Acceptor), but where the Issuer and
+  the Acquirer are the same entity.</dd>
+
+  <dt><dfn>transaction</dfn></dt>
+
+  <dd>An economic exchange between a <a>payer</a> and one or more
+  <a title="payee">payees</a>. An agreement, communication, or movement
+  carried out between a buyer and a seller to exchange an asset for
+  payment</dd>
+
+  <dt><dfn>transfer order</dfn></dt>
+
+  <dd>[ECB] an order or message requesting the transfer of assets (e.g.
+  funds, securities, other financial instruments or commodities) from
+  the debtor to the creditor</dd>
+
+  <dt><dfn>wallet</dfn></dt>
+
+  <dd>
+    a software service, providing similar functions in the digital world
+    to those provided by a physical wallet, namely:
+
+    <ul>
+      <li>It holds payment instruments registered by the wallet
+      owner;</li>
+
+      <li>It supports certain payment schemes and enables the payer to
+      use registered payment instruments to execute a payment in
+      accordance with that scheme;</li>
+
+      <li>It may hold one or more balances of some digital asset that
+      can be used to make payments.</li>
+    </ul>This definition of wallet may expand in the future to include
+    other items people find in physical wallets such as digital
+    receipts, coupons, and identification.
+  </dd>
 
 </dl>
