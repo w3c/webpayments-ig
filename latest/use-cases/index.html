@@ -2093,6 +2093,10 @@ message.
         <dl id="uc-escrow" class="dl-horizontal">
           <dt>Escrow</dt>
           <dd>
+There are a number of considerations when providing escrow services to both
+<a title="payer">payers</a> and <a title="payee">payees</a>:
+            <ul>
+              <li>
 Jack has established an online store on a trusted third party website to
 sell pants. Mary wants to buy a pair of pants from Jack's online store.
 Mary doesn't trust Jack because she has never met him nor has she done
@@ -2103,10 +2107,22 @@ notified that the funds have been received by the trusted third party.
 Jack sends the pants to Mary via Express Mail. When Mary gets the pants,
 she will tell the trusted third party and they will move the funds
 to Jack's account.
+              </li>
+              <li>
+Escrow services in China sometimes provide a virtual financial account to
+<a title="payer">payers</a>. Money is typically transferred from the
+<a title="payer">payer's</a> bank account to the escrow service provider's
+bank to hold, but where the funds are still legally owned by the <a>payer</a>.
+When Hung transfers funds to an escrow service provider, his
+rights and responsibilities are exchanged with the escrow service provider
+at the same time as well as how various parties involved with the account
+can access and use the funds.
+              </li>
+            </ul>
             </ul>
           </dd>
           <dt>Target version</dt>
-        <dd>Uncategorized</dd>
+          <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
 A trusted third party is typically helpful for non-instant transactions
@@ -2115,6 +2131,13 @@ relationship. A trusted third party protects the <a>payer</a> by ensuring that
 the <a>payee</a> has been vetted and by guaranteeing product or a refund. The
 trusted third party protects the <a>payee</a> by ensuring that funds from the
 <a>payer</a> have been verified before releasing the product to them.
+          </dd>
+          <dt>Regulatory</dt>
+          <dd>
+The use of money held in escrow accounts by the escrow service provider is
+covered by a number of consumer protection laws that restrict what the
+escrow service provider can do with the money. Expressing these restrictions
+in a way that enhances interoperability is desirable.
           </dd>
         </dl>
 
