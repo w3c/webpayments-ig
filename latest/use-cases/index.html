@@ -3,8 +3,10 @@
   <head>
     <title>Web Payments Use Cases 1.0</title>
     <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
+    <script src="../common/biblio.js" class="remove"></script>
     <script src='../respec-w3c-common.js' class='remove'></script>
     <script src='../respec-webpayments.js' class='remove'></script>
+    <script src="../common/script/resolveReferences.js" class="remove"></script>
     <script class='remove'>
       var respecConfig = {
           // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
@@ -332,100 +334,11 @@ entities is purely coincidental.
 
   <section>
     <h2>Terminology</h2>
-    <p>
-This document attempts to communicate the concepts outlined in the Web
-Payments space by using specific terms to discuss particular concepts. This
-terminology is included below and linked to throughout the document to aid
-the reader:
-    </p>
-    <dl>
-      <dt><dfn>entity</dfn></dt>
-      <dd>
-A person, organization, or software agent that is capable of interacting with
-the world.
-      </dd>
-      <dt><dfn>payee</dfn></dt>
-      <dd>
-An <a>entity</a> that receives funds as required by a
-<a>transaction</a>.
-      </dd>
-      <dt><dfn>payer</dfn></dt>
-      <dd>
-An <a>entity</a> that provides a source of funds as required by a
-<a>transaction</a>.
-      </dd>
-      <dt><dfn>transaction</dfn></dt>
-      <dd>
-An economic exchange between a <a>payer</a> and one or more
-<a title="payee">payees</a>.
-      </dd>
-      <dt><dfn>payment instrument</dfn></dt>
-      <dd>
-A mechanism used to transfer value from a <a>payer</a> to a
-<a>payee</a>. Examples: Corporate Visa card, personal Visa card, a bitcoin
-account, a PayPal account, and an Alipay account.
-      </dd>
-      <dt><dfn>payment processor</dfn></dt>
-      <dd>
-An <a>entity</a> that submits and processes payments using a particular
-<a>payment instrument</a> to a payment network. Examples: Stripe, PayPal,
-Authorize.net, Atos, FedACH.
-      </dd>
-      <dt><dfn>payment scheme</dfn></dt>
-      <dd>
-Sets of rules and technical standards for the execution of payment
-<a title="transaction">transactions</a> that have to be followed by adhering
-entities (<a title="payment processor">payment processors</a>,
-<a title="payer">payers</a> and <a title="payee">payees</a>). Examples: Visa,
-MasterCard, Bitcoin, Ripple, PayPal, Google Pay, Alipay, Yandex money, ACH, SEPA.
-      </dd>
-      <dt><dfn>purchase</dfn></dt>
-      <dd>
-Activities surrounding and including a <a>transaction</a> (e.g., discovery of
-an offer, negotiation of terms, selection of <a>payment instrument</a>, and
-delivery).
-      </dd>
-      <dt><dfn>three corner model</dfn></dt>
-      <dd>
-A <a>payment scheme</a> including the following stakeholders: the <a>payer</a>
-(also known as the Card Holder), the Issuer (who has a relationship with
-the <a>payer</a>), the Acceptor and the Acquirer (who has a relationship with
-the Acceptor), but where the Issuer and the Acquirer are the same entity.
-      </dd>
-      <dt><dfn>four corner model</dfn></dt>
-      <dd>
-A <a>payment scheme</a> which includes the following stakeholders:
-the <a>payer</a> (also known as the Cardholder), the Issuer (who has a
-relationship with the Cardholder), the Acceptor and the Acquirer (which
-has a relationship with the Acceptor). The <a>payment scheme</a> defines the
-rules which apply to all parties; there are no limitations as to who may
-join the scheme, as long as the requirements of the scheme are met.
-      </dd>
-      <dt><dfn>push payment</dfn> or <dfn>payer-initiated payment</dfn></dt>
-      <dd>
-A type of <a>transaction</a> where the <a>payer</a> initiates the funds
-transfer to the <a>payee</a>. PayPal is an example of a push payment.
-      </dd>
-      <dt><dfn>pull payment</dfn> or <dfn>payee-initiated payment</dfn></dt>
-      <dd>
-A type of <a>transaction</a> where the <a>payee</a> initiates the funds
-transfer from the <a>payee</a>. A credit card payment is an example of a
-pull payment.
-      </dd>
-    </dl>
 
-    <p class="note">
-There are a number of financial industry standards (such as
-ISO20022, ISO12812, various X9 standards, PCI DSS, and others) that
-define payment terms. The Web Payments Interest Group has as a goal to
-make use of industry-defined terms in its deliverables. At the same time,
-the group has as a goal that these use cases may be understood by both
-payment industry professionals and the broader Web community. Thus, our
-definitions are simplified and few in number here, but the group is
-also developing a
-<a href="https://www.w3.org/Payments/IG/wiki/GlossaryReference">more complete glossary</a>
-with detailed definitions and mappings to industry-defined terms.
-    </p>
+    <div data-include="../common/terms.html" 
+      data-oninclude="restrictReferences">
+    </div>
+
   </section>
 
   <section>
