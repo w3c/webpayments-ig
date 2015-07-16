@@ -4,6 +4,7 @@
     <title>Web Payments Roadmap 1.0</title>
     <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
     <link rel="stylesheet" href="spec.css">
+    <script src="../common/biblio.js" class="remove"></script>
     <script src='../respec-w3c-common.js' class='remove'></script>
     <script src='../respec-webpayments.js' class='remove'></script>
     <script class='remove'>
@@ -53,7 +54,7 @@
           ],
 
           otherLinks: [{
-            key: "Version control",
+            key: "phase control",
             data: [{
               value: "Github Repository",
               href: "https://github.com/w3c/webpayments-ig"
@@ -65,6 +66,9 @@
 
           // maximum level of table of contents
           maxTocLevel: 3,
+
+          // local bibliography
+          localBiblio: biblio,
 
           // name of the WG
           wg:           "Web Payments Interest Group",
@@ -84,55 +88,11 @@
 
           //preProcess: [ webpayments.preProcess ]
           /*,
-          alternateFormats: [ {uri: "diff-20111214.html", label: "diff to previous version"} ],
+          alternateFormats: [ {uri: "diff-20111214.html", label: "diff to previous phase"} ],
           */
       };
       //respecEvents.sub('start-all', webpayments.preProcess.apply);
     </script>
-    <style type="text/css">
-body {
-  line-height: 1.4em;
-}
-h4 {
-  color: #005A9C;
-}
-dl {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-dt,
-dd {
-  line-height: 1.42857143;
-}
-dl > dt:first-of-type {
-  font-weight: bold;
-}
-.align-left {
-  text-align: left;
-}
-@media (min-width: 768px), print {
-  .dl-horizontal {
-    margin-bottom: 4em;
-  }
-  .dl-horizontal dt {
-    font-weight: normal;
-    float: left;
-    width: 160px;
-    clear: left;
-    overflow: hidden;
-    text-align: right;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .dl-horizontal dd {
-    margin-left: 180px;
-  }
-  .dl-horizontal dd > ul {
-    padding-left: 20px;
-    margin: 0px;
-  }
-}
-    </style>
   </head>
 <body>
 
@@ -155,31 +115,62 @@ using an agile process; it is incomplete.
 
     <p>
 The purpose of this document is to outline a coherent implementation and
-deployment strategy for the Web Payments standardization work at W3C.
-This document is separated into sections that describe "versions" that
-consist of the following:
+deployment strategy for the Web Payments standardization work at W3C. It
+consists of the following major sections:
+    </p>
+    <ul>
+      <li>
+<a href="#coordination">Section 2: Coordination</a> describes the different
+groups involved in the work and how they will coordinate to achieve the
+long-term vision [[WEB-PAYMENTS-VISION]] of the Web Payments work.
+      </li>
+      <li>
+
+      </li>
+    </ul>
+This rest of this document is separated into sections that describe "phases"
+that consist of the following:
     </p>
 
     <ul>
       <li>
-Strategic goals for the version.
+Strategic goals for the phase.
       </li>
       <li>
-Basic capabilities that are targeted and which groups are responsible for
+Use cases that should be achievable by the end of the phase.
+      </li>
+      <li>
+Capabilities that are targeted and which groups are responsible for
 delivering the capabilities.
       </li>
       <li>
-Organization of standardization of those capabilities.
+A list of relevant groups that will participate in the phase
+as well as what they will be working on during the phase.
       </li>
       <li>
-Deployment goals and strategies
+Deployment goals and strategies to achieve adoption.
       </li>
     </ul>
 
   </section>
 
   <section>
-    <h2>Version 1</h2>
+    <h2>Coordination</h2>
+
+    <p>
+In order for the Web Payments Activity to succeed, multiple groups will need
+to coordinate work in key areas related to payments, commerce,
+identity/credentials, and security. The diagram below outlines the categories
+that each group will participate in as well as the phases the groups will
+be active in:
+    </p>
+
+    <img style="display: block; margin: auto;" width="75%" 
+      src="images/coordination.svg" />
+  </section>
+
+  <section>
+    <h2>Web Payments Phase 1</h2>
 
     <p>
 The initial implementation of the Web Payments work will start in October 2015
@@ -206,7 +197,7 @@ multi-factor authentication.
     <section>
       <h3>Use Cases</h3>
       <p>
-The following use cases are in scope for version 1 with specific limitations
+The following use cases are in scope for phase 1 with specific limitations
 expressed beside each use case:
       <table>
         <thead>
@@ -250,7 +241,7 @@ expressed beside each use case:
             </td>
             <td class="align-left">
 <span class="issue">Unclear about how much wallet/payment instrument
-discovery flexibility should be in version 1.</span>
+discovery flexibility should be in phase 1.</span>
             </td>
           </tr>
           <tr>
@@ -259,7 +250,7 @@ discovery flexibility should be in version 1.</span>
             </td>
             <td class="align-left">
 The use case where the payer shares a subset of their payment instruments
-with the payee before the purchase is not in scope for this version.
+with the payee before the purchase is not in scope for this phase.
             </td>
           </tr>
           <tr>
@@ -281,7 +272,7 @@ with the payee before the purchase is not in scope for this version.
 <a href="../use-cases/index.html#uc-multifactor">Multifactor Authentication</a>
             </td>
             <td class="align-left">
-Stretch goal for version 1 with a focus on FIDO-based authentication and 
+Stretch goal for phase 1 with a focus on FIDO-based authentication and
 mobile phone-based fingerprint authentication.
             </td>
           </tr>
@@ -304,7 +295,7 @@ mobile phone-based fingerprint authentication.
 <a href="../use-cases/index.html#uc-proofs">Proofs</a>
             </td>
             <td class="align-left">
-Very basic proof of initiation of funds transfer for version 1.
+Very basic proof of initiation of funds transfer for phase 1.
             </td>
           </tr>
           <tr>
@@ -326,7 +317,7 @@ Very basic proof of initiation of funds transfer for version 1.
 <a href="../use-cases/index.html#uc-electronic-receipts">Electronic Receipts</a>
             </td>
             <td class="align-left">
-Very basic receipt container and delivery protocol for version 1.
+Very basic receipt container and delivery protocol for phase 1.
             </td>
           </tr>
           <tr>
@@ -334,7 +325,7 @@ Very basic receipt container and delivery protocol for version 1.
 <a href="../use-cases/index.html#uc-subscription">Subscription</a>
             </td>
             <td class="align-left">
-Stretch goal for version 1.
+Stretch goal for phase 1.
             </td>
           </tr>
           <tr>
@@ -342,7 +333,7 @@ Stretch goal for version 1.
 <a href="../use-cases/index.html#uc-refund">Basic Refund</a>
             </td>
             <td class="align-left">
-Stretch goal for version 1.
+Stretch goal for phase 1.
             </td>
           </tr>
         </tbody>
@@ -356,7 +347,7 @@ This section is out of date and needs to be re-aligned with the latest
 capabilities document.
       </p>
       <p>
-The following table shows the capabilities for this version, with annotations
+The following table shows the capabilities for this phase, with annotations
 about where those capabilities arise in the payment flow and which groups will
 work on them. As we progress, we will include links to definitions of these
 capabilities, descriptions of phases in the use cases document, and
@@ -510,7 +501,7 @@ specification creation.
 <a href="http://www.w3.org/Payments/IG/">Web Payments Interest Group</a>
             </td>
             <td>
-Continued development of use cases and requirements for version 2.
+Continued development of use cases and requirements for phase 2.
 Liason between larger W3C community and other relevant standards bodies.
             </td>
             <td>
@@ -607,7 +598,7 @@ Web of Things
     <section>
       <h3>Deployment and Adoption</h3>
       <p>
-Deployment in version 1 will focus on enabling a few major online retailers
+Deployment in phase 1 will focus on enabling a few major online retailers
 to run Web Payment agents to issue Web Payment invoices for processing at
 1-2 major online Payment Service Providers (or banks). The payment
 institutions would then initiate the payment and send a proof of payment
@@ -646,7 +637,7 @@ Deployment strategy should be a pure software deployment. Do not require new har
 Specifications should focus on technology that has already been prototyped.
           </li>
           <li>
-All software should be cloud-only for version 1. For example, do not try to
+All software should be cloud-only for phase 1. For example, do not try to
 support both cloud and local wallets due to a possible conflict around the
 "payment message bus" being implemented at the OS layer or the browser layer.
           </li>

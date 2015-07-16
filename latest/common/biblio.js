@@ -11,7 +11,21 @@ var biblio = {
     "deliveredBy": [
       "http://www.iso20022.org/contact.page"
     ]
-	}
+	},
+	"WEB-PAYMENTS-VISION": {
+    "authors": [
+      "Adrian Hope-Bailie",
+      "Ian Jacobs"
+    ],
+    "etAl": true,
+    "href": "http://www.w3.org/Payments/IG/Vision",
+    "title": "A Vision for a Web Payments Architecture",
+    "status": "NOTE",
+    "publisher": "W3C",
+    "deliveredBy": [
+      "http://www.w3.org/Payments/IG/"
+    ]
+	},
 // capture localBiblio entries here if needed - example below
 //	"WAI-ARIA-10": {
 //		"authors": [
