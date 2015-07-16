@@ -7,6 +7,7 @@
     <script src="../common/biblio.js" class="remove"></script>
     <script src='../respec-w3c-common.js' class='remove'></script>
     <script src='../respec-webpayments.js' class='remove'></script>
+    <script src="../common/script/resolveReferences.js" class="remove"></script>
     <script class='remove'>
       var respecConfig = {
           // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
@@ -50,11 +51,13 @@
               { name: "Manu Sporny", url: "https://manu.sporny.org/",
                 company: "Digital Bazaar", companyURL: "http://digitalbazaar.com/" },
               { name: "Ian Jacobs", url: "http://www.w3.org/People/Jacobs/",
-                company: "W3C", companyURL: "http://www.w3.org/" }
+                company: "W3C", companyURL: "http://www.w3.org/" },
+              { name: "Adrian Hope-Bailie", url: "http://medium.com/@ahopebailie",
+                company: "Ripple Labs", companyURL: "http://www.ripplelabs.com/" },
           ],
 
           otherLinks: [{
-            key: "phase control",
+            key: "Version control",
             data: [{
               value: "Github Repository",
               href: "https://github.com/w3c/webpayments-ig"
@@ -120,37 +123,34 @@ consists of the following major sections:
     </p>
     <ul>
       <li>
-<a href="#coordination">Section 2: Coordination</a> describes the different
+<a href="#terminology">Section 2: Terminology</a> defines common terminology
+used throughout the document.
+      </li>
+      <li>
+<a href="#coordination">Section 3: Coordination</a> describes the different
 groups involved in the work and how they will coordinate to achieve the
 long-term vision [[WEB-PAYMENTS-VISION]] of the Web Payments work.
       </li>
       <li>
-
-      </li>
-    </ul>
-This rest of this document is separated into sections that describe "phases"
-that consist of the following:
-    </p>
-
-    <ul>
-      <li>
-Strategic goals for the phase.
-      </li>
-      <li>
-Use cases that should be achievable by the end of the phase.
-      </li>
-      <li>
+<a href="#web-payments-phase-1">Section 4: Web Payments Phase 1</a> is
+separated into subsections detailing: 1) Strategic goals for the phase,
+2) Use cases that should be achievable by the end of the phase, 3)
 Capabilities that are targeted and which groups are responsible for
-delivering the capabilities.
-      </li>
-      <li>
-A list of relevant groups that will participate in the phase
-as well as what they will be working on during the phase.
-      </li>
-      <li>
-Deployment goals and strategies to achieve adoption.
-      </li>
+delivering the capabilities, 4) A list of relevant groups that will participate
+in the phase as well as what they will be working on during the phase, and
+4) Deployment goals and strategies to achieve adoption.
+          </li>
+        </ul>
     </ul>
+
+  </section>
+
+  <section>
+    <h2>Terminology</h2>
+
+    <div data-include="../common/terms.html"
+      data-oninclude="restrictReferences">
+    </div>
 
   </section>
 
@@ -165,7 +165,7 @@ that each group will participate in as well as the phases the groups will
 be active in:
     </p>
 
-    <img style="display: block; margin: auto;" width="75%" 
+    <img style="display: block; margin: auto;" width="75%"
       src="images/coordination.svg" />
   </section>
 
@@ -180,21 +180,76 @@ by December 2017.
 
     <section>
       <h3>Goals</h3>
-      <ul>
-        <li>
-<strong>Payment ecosystem integration</strong>: Interoperable support for a
-simple payment scenario. This includes the steps of 1) invoking a payment
-request, 2) selecting a payment instrument, 3) initiating funds transfer,
-and 4) delivering a proof of payment.
-        </li>
-        <li>
-<strong>Security</strong>: Digital signatures, encryption, and
-multi-factor authentication.
-        </li>
-      </ul>
+       <p>The scope of work supports the following elements of a basic purchase
+      triggered by user interaction with a Web application initiating a new
+      payment. These standards define a high-level message flow for a payment
+      from payer to payee either in the form of a credit push (payer
+      initiated) or a debit pull (payee initiated) payment, and can be used to
+      facilitate a payment from any payment scheme.</p>
+
+      <img width=50% align="left" src="images/phase1-flow.png"
+        alt="Web Payments Basic Payment Flow" />
+
+      <dl style="margin-top: 5em;">
+        <dt>Pre-Payment</dt>
+
+        <dd>
+          <ul>
+            <li><strong>Registration</strong>, by the <a>payer</a> with their
+            <a>wallet</a>, of any conforming <a>payment
+            instrument</a> they wish to use on the Web (e.g. a credit or
+            debit card, electronic cash, cryptocurrency, etc).</li>
+          </ul>
+        </dd>
+
+        <dt>Negotiation of Terms</dt>
+
+        <dd>
+          <ul>
+            <li><strong>Payment Initiation Request</strong>, by the payee to
+            the payer providing the terms of the payment including elements
+            such as the accepted payment schemes, price, currency, recurrence,
+            transaction type (purchase, refund etc.), timeout and requests for
+            any additional data that is required from the payee.</li>
+          </ul>
+        </dd>
+
+        <dt>Negotiation of Payment Instruments</dt>
+
+        <dd>
+          <ul>
+            <li><strong>Discovery</strong>, by the payer, of their available
+            payment instruments that can be used to make the payment. This is
+            done by matching those registered by the payer with those
+            supported by the payee (as defined in the Payment Initiation
+            Request), while keeping information local to the payer.</li>
+
+            <li><strong>Selection of a payment instrument</strong> by the
+            payer, confirmation of the terms, and sending of any requested
+            data back to the payee for validation.</li>
+          </ul>
+        </dd>
+
+        <dt>Payment Processing and Completion</dt>
+
+        <dd>
+          <ul>
+            <li>Execution of the payment by either payer or payee.</li>
+
+            <li>Delivery of a <strong>Payment Completion</strong> generated by
+            the entity that executed the payment. This may contain a
+            <strong>Proof of Payment</strong> if supported by the payment
+            scheme.</li>
+          </ul>
+        </dd>
+      </dl>
+
+      <p>The group will also address exceptions that may occur during these
+      steps, including payment authorization failure.</p>
+      <br/>
     </section>
 
-    <section>
+    <section style="clear: left;">
       <h3>Use Cases</h3>
       <p>
 The following use cases are in scope for phase 1 with specific limitations
