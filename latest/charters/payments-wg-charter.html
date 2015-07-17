@@ -301,9 +301,13 @@
             user agent. The group may define APIs that will also be used outside of a user agent context (such as
             between
             Web services, or from within a native application, where the browser is not the proxy between wallet and
-            payee application).</p>
+          payee application).</p>
 
-          <p>The group may also consider the use case where an aggregation service acts as a more sophisticated wallet service or providing a wider choice of payment solutions to the payer. For example, the aggregator service might combine the functionality of multiple wallet services, or apply more complex algorithms to discover and collect the set of payment
+	<h4>On Multiple Wallets</h4>
+
+	  <p>In the design of these standards, the Working Group will not assume that each user has only one wallet. In this charter, the phrase "the payer's wallet" is shorthand for "the payer's wallet(s)" as the payer may have multiple wallets.</p>
+
+	   <p>The Working Group may consider the use case where an aggregation service acts as a more sophisticated wallet service or providing a wider choice of payment solutions to the payer. For example, the aggregator service might combine the functionality of multiple wallet services, or apply more complex algorithms to discover and collect the set of payment
             instruments available to the payer.</p>
 
         <h3 id="out_of_scope">Out of Scope</h3>
@@ -445,7 +449,7 @@
 
         <h4 id="best_practices">Instrument Discovery Good Practices</h4>
 
-	<p>This charter does not include a deliverable for a standard mechanism to discover &mdash; via the payer's wallet(s)&mdash; available payment instruments. However, the Working Group may document good practices and recommend algorithms for the discovery of payer payment
+	<p>This charter does not include a deliverable for a standard mechanism to discover &mdash; via the payer's wallet&mdash; available payment instruments. However, the Working Group may document good practices and recommend algorithms for the discovery of payer payment
             instruments. This involves good practice approaches for discovering the supported payer
             payment instruments given the payer's configured payment instruments and those acceptable to a payee as
             listed in a payment initiation request.</p>
