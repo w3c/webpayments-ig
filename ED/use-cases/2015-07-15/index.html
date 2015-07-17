@@ -266,9 +266,11 @@ span.note, span.issue, span.warning { padding: .1em .5em .15em; }
 </dd>
 <dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><meta property="foaf:name" content="Manu Sporny"><a class="u-url url p-name fn" property="foaf:homepage" href="https://manu.sporny.org/">Manu Sporny</a>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://digitalbazaar.com/">Digital Bazaar</a></span>
 </dd>
-<dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><meta property="foaf:name" content="David Ezell"><a class="u-url url p-name fn" property="foaf:homepage" href="http://example.org/">David Ezell</a>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.nacsonline.com/">NACS</a></span>
-</dd>
 <dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Qian Sun</span>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.alibabagroup.com/">Alibaba</a></span>
+</dd>
+<dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><meta property="foaf:name" content="Cyril Vignet"><a class="u-url url p-name fn" property="foaf:homepage" href="https://www.linkedin.com/pub/cyril-vignet/bb/704/423">Cyril Vignet</a>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.bpce.fr/">Groupe BPCE</a></span>
+</dd>
+<dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><meta property="foaf:name" content="David Ezell"><a class="u-url url p-name fn" property="foaf:homepage" href="http://example.org/">David Ezell</a>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.nacsonline.com/">NACS</a></span>
 </dd>
 <dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><meta property="foaf:name" content="David Jackson"><a class="u-url url p-name fn" property="foaf:homepage" href="https://www.linkedin.com/in/davidjjackson">David Jackson</a>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.oracle.com/">Oracle</a></span>
 </dd>
@@ -371,6 +373,38 @@ general public. Our desire is to align with the larger payments industry
 when it's possible to do so. Expect this document to be rapidly iterated upon
 with that desire in mind.
     </p>
+    <p>
+The following changes have been made since the last version of this document:
+    </p>
+    <ul>
+      <li>
+Reorganization of use cases by phases approved by the Web Payments IG.
+      </li>
+      <li>
+Removal of the "Goals" for each use case as they were repetitive and did not
+greatly aid understanding of the use case.
+      </li>
+      <li>
+Addition of Regulatory concerns to a number of the use cases.
+      </li>
+      <li>
+Addition of two more scenarios related to Direct Debit and Credit Transfer.
+      </li>
+      <li>
+Addition of "Relationship to Other Documents" section.
+      </li>
+      <li>
+Integration of a unified Web Payments Activity glossary.
+      </li>
+      <li>
+Addition of Escrow, Biometric, Know Your Customer (KYC), and
+Anti-Money Laundering (AML) use cases.
+      </li>
+      <li>
+Integration of feedback from the public, Web Payments Community Group, and
+Web Payments Interest Group.
+      </li>
+    </ul>
   
         
         <p>
@@ -433,7 +467,7 @@ with that desire in mind.
       
     
   
-</section><section id="toc"><h2 class="introductory" id="h-toc" resource="#h-toc"><span property="xhv:role" resource="xhv:heading">Table of Contents</span></h2><ul class="toc" role="directory" id="respecContents"><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a><ul class="toc"><li class="tocline"><a href="#why-this-work-is-important" class="tocxref"><span class="secno">1.1 </span>Why This Work is Important</a></li><li class="tocline"><a href="#how-this-document-is-organized" class="tocxref"><span class="secno">1.2 </span>How this Document is Organized</a></li></ul></li><li class="tocline"><a href="#terminology" class="tocxref"><span class="secno">2. </span>Terminology</a></li><li class="tocline"><a href="#an-overview-of-the-payment-phases" class="tocxref"><span class="secno">3. </span>An Overview of the Payment Phases</a><ul class="toc"><li class="tocline"><a href="#negotiation-of-payment-terms" class="tocxref"><span class="secno">3.1 </span>Negotiation of Payment Terms</a></li><li class="tocline"><a href="#negotiation-of-payment-instruments" class="tocxref"><span class="secno">3.2 </span>Negotiation of Payment Instruments</a></li><li class="tocline"><a href="#payment-processing" class="tocxref"><span class="secno">3.3 </span>Payment Processing</a></li><li class="tocline"><a href="#delivery-of-product-receipt-and-refunds" class="tocxref"><span class="secno">3.4 </span>Delivery of Product/Receipt and Refunds</a></li></ul></li><li class="tocline"><a href="#a-simple-example-of-the-payment-phases" class="tocxref"><span class="secno">4. </span>A Simple Example of the Payment Phases</a><ul class="toc"><li class="tocline"><a href="#negotiation-of-purchase-terms" class="tocxref"><span class="secno">4.1 </span>Negotiation of Purchase Terms</a></li><li class="tocline"><a href="#negotiation-of-payment-instruments-1" class="tocxref"><span class="secno">4.2 </span>Negotiation of Payment Instruments</a></li><li class="tocline"><a href="#payment-processing-1" class="tocxref"><span class="secno">4.3 </span>Payment Processing</a></li><li class="tocline"><a href="#delivery-of-product-receipt-and-refunds-1" class="tocxref"><span class="secno">4.4 </span>Delivery of Product/Receipt and Refunds</a></li></ul></li><li class="tocline"><a href="#assumptions" class="tocxref"><span class="secno">5. </span>Assumptions</a></li><li class="tocline"><a href="#use-cases-1" class="tocxref"><span class="secno">6. </span>Use Cases</a><ul class="toc"><li class="tocline"><a href="#negotiation-of-payment-terms-1" class="tocxref"><span class="secno">6.1 </span>Negotiation of Payment Terms</a><ul class="toc"><li class="tocline"><a href="#discovery-of-offer" class="tocxref"><span class="secno">6.1.1 </span>Discovery of Offer</a></li><li class="tocline"><a href="#agreement-on-terms" class="tocxref"><span class="secno">6.1.2 </span>Agreement on Terms</a></li><li class="tocline"><a href="#application-of-marketing-elements" class="tocxref"><span class="secno">6.1.3 </span>Application of Marketing Elements</a></li></ul></li><li class="tocline"><a href="#negotiation-of-payment-instruments-2" class="tocxref"><span class="secno">6.2 </span>Negotiation of Payment Instruments</a><ul class="toc"><li class="tocline"><a href="#discovery-of-accepted-schemes" class="tocxref"><span class="secno">6.2.1 </span>Discovery of Accepted Schemes</a></li><li class="tocline"><a href="#selection-of-payment-instruments" class="tocxref"><span class="secno">6.2.2 </span>Selection of Payment Instruments</a></li><li class="tocline"><a href="#authentication-to-access-instruments" class="tocxref"><span class="secno">6.2.3 </span>Authentication to Access Instruments</a></li></ul></li><li class="tocline"><a href="#payment-processing-2" class="tocxref"><span class="secno">6.3 </span>Payment Processing</a><ul class="toc"><li class="tocline"><a href="#initiation-of-processing" class="tocxref"><span class="secno">6.3.1 </span>Initiation of Processing</a></li><li class="tocline"><a href="#verification-of-available-funds" class="tocxref"><span class="secno">6.3.2 </span>Verification of Available Funds</a></li><li class="tocline"><a href="#authorization-of-transfer" class="tocxref"><span class="secno">6.3.3 </span>Authorization of Transfer</a></li><li class="tocline"><a href="#completion-of-transfer" class="tocxref"><span class="secno">6.3.4 </span>Completion of Transfer</a></li></ul></li><li class="tocline"><a href="#delivery-of-product-receipt-and-refunds-2" class="tocxref"><span class="secno">6.4 </span>Delivery of Product/Receipt and Refunds</a><ul class="toc"><li class="tocline"><a href="#delivery-of-product" class="tocxref"><span class="secno">6.4.1 </span>Delivery of Product</a></li><li class="tocline"><a href="#delivery-of-receipt" class="tocxref"><span class="secno">6.4.2 </span>Delivery of Receipt</a></li><li class="tocline"><a href="#refunds" class="tocxref"><span class="secno">6.4.3 </span>Refunds</a></li></ul></li></ul></li><li class="tocline"><a href="#additional-examples-of-the-payment-phases" class="tocxref"><span class="secno">7. </span>Additional Examples of the Payment Phases</a><ul class="toc"><li class="tocline"><a href="#credit-card-payment-visa-mastercard" class="tocxref"><span class="secno">7.1 </span>Credit Card Payment (Visa, MasterCard)</a><ul class="toc"></ul></li><li class="tocline"><a href="#tokenized-payments-applepay-venmo-cybersource" class="tocxref"><span class="secno">7.2 </span>Tokenized Payments (ApplePay / Venmo / CyberSource)</a><ul class="toc"></ul></li><li class="tocline"><a href="#three-corner-model-payments-paypal-alipay-google-wallet" class="tocxref"><span class="secno">7.3 </span>Three Corner Model Payments (PayPal / Alipay / Google Wallet)</a><ul class="toc"></ul></li><li class="tocline"><a href="#cryptocurrency-payment-bitcoin-ripple" class="tocxref"><span class="secno">7.4 </span>Cryptocurrency Payment (Bitcoin, Ripple)</a><ul class="toc"></ul></li><li class="tocline"><a href="#electronic-check-payment" class="tocxref"><span class="secno">7.5 </span>Electronic Check Payment</a></li><li class="tocline"><a href="#direct-debit" class="tocxref"><span class="secno">7.6 </span>Direct Debit (SEPA Direct Debit)</a><ul class="toc"></ul></li><li class="tocline"><a href="#credit-transfer" class="tocxref"><span class="secno">7.7 </span>Credit Transfer (SEPAmail)</a><ul class="toc"></ul></li></ul></li><li class="tocline"><a href="#future-work" class="tocxref"><span class="secno">A. </span>Future Work</a></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgements</a></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ul class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.1 </span>Informative references</a></li></ul></li></ul></section>
+</section><section id="toc"><h2 class="introductory" id="h-toc" resource="#h-toc"><span property="xhv:role" resource="xhv:heading">Table of Contents</span></h2><ul class="toc" role="directory" id="respecContents"><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a><ul class="toc"><li class="tocline"><a href="#why-this-work-is-important" class="tocxref"><span class="secno">1.1 </span>Why This Work is Important</a></li><li class="tocline"><a href="#relationships" class="tocxref"><span class="secno">1.2 </span>Relationship to Other Documents</a></li><li class="tocline"><a href="#how-this-document-is-organized" class="tocxref"><span class="secno">1.3 </span>How this Document is Organized</a></li></ul></li><li class="tocline"><a href="#terminology" class="tocxref"><span class="secno">2. </span>Terminology</a></li><li class="tocline"><a href="#an-overview-of-the-payment-phases" class="tocxref"><span class="secno">3. </span>An Overview of the Payment Phases</a><ul class="toc"><li class="tocline"><a href="#negotiation-of-payment-terms" class="tocxref"><span class="secno">3.1 </span>Negotiation of Payment Terms</a></li><li class="tocline"><a href="#negotiation-of-payment-instruments" class="tocxref"><span class="secno">3.2 </span>Negotiation of Payment Instruments</a></li><li class="tocline"><a href="#payment-processing" class="tocxref"><span class="secno">3.3 </span>Payment Processing</a></li><li class="tocline"><a href="#delivery-of-product-receipt-and-refunds" class="tocxref"><span class="secno">3.4 </span>Delivery of Product/Receipt and Refunds</a></li></ul></li><li class="tocline"><a href="#a-simple-example-of-the-payment-phases" class="tocxref"><span class="secno">4. </span>A Simple Example of the Payment Phases</a><ul class="toc"><li class="tocline"><a href="#negotiation-of-purchase-terms" class="tocxref"><span class="secno">4.1 </span>Negotiation of Purchase Terms</a></li><li class="tocline"><a href="#negotiation-of-payment-instruments-1" class="tocxref"><span class="secno">4.2 </span>Negotiation of Payment Instruments</a></li><li class="tocline"><a href="#payment-processing-1" class="tocxref"><span class="secno">4.3 </span>Payment Processing</a></li><li class="tocline"><a href="#delivery-of-product-receipt-and-refunds-1" class="tocxref"><span class="secno">4.4 </span>Delivery of Product/Receipt and Refunds</a></li></ul></li><li class="tocline"><a href="#assumptions" class="tocxref"><span class="secno">5. </span>Assumptions</a></li><li class="tocline"><a href="#use-cases-1" class="tocxref"><span class="secno">6. </span>Use Cases</a><ul class="toc"><li class="tocline"><a href="#negotiation-of-payment-terms-1" class="tocxref"><span class="secno">6.1 </span>Negotiation of Payment Terms</a><ul class="toc"><li class="tocline"><a href="#discovery-of-offer" class="tocxref"><span class="secno">6.1.1 </span>Discovery of Offer</a></li><li class="tocline"><a href="#agreement-on-terms" class="tocxref"><span class="secno">6.1.2 </span>Agreement on Terms</a></li><li class="tocline"><a href="#application-of-marketing-elements" class="tocxref"><span class="secno">6.1.3 </span>Application of Marketing Elements</a></li></ul></li><li class="tocline"><a href="#negotiation-of-payment-instruments-2" class="tocxref"><span class="secno">6.2 </span>Negotiation of Payment Instruments</a><ul class="toc"><li class="tocline"><a href="#discovery-of-accepted-schemes" class="tocxref"><span class="secno">6.2.1 </span>Discovery of Accepted Schemes</a></li><li class="tocline"><a href="#selection-of-payment-instruments" class="tocxref"><span class="secno">6.2.2 </span>Selection of Payment Instruments</a></li><li class="tocline"><a href="#authentication-to-access-instruments" class="tocxref"><span class="secno">6.2.3 </span>Authentication to Access Instruments</a></li></ul></li><li class="tocline"><a href="#payment-processing-2" class="tocxref"><span class="secno">6.3 </span>Payment Processing</a><ul class="toc"><li class="tocline"><a href="#initiation-of-processing" class="tocxref"><span class="secno">6.3.1 </span>Initiation of Processing</a></li><li class="tocline"><a href="#verification-of-available-funds" class="tocxref"><span class="secno">6.3.2 </span>Verification of Available Funds</a></li><li class="tocline"><a href="#authorization-of-transfer" class="tocxref"><span class="secno">6.3.3 </span>Authorization of Transfer</a></li><li class="tocline"><a href="#completion-of-transfer" class="tocxref"><span class="secno">6.3.4 </span>Completion of Transfer</a></li></ul></li><li class="tocline"><a href="#delivery-of-product-receipt-and-refunds-2" class="tocxref"><span class="secno">6.4 </span>Delivery of Product/Receipt and Refunds</a><ul class="toc"><li class="tocline"><a href="#delivery-of-product" class="tocxref"><span class="secno">6.4.1 </span>Delivery of Product</a></li><li class="tocline"><a href="#delivery-of-receipt" class="tocxref"><span class="secno">6.4.2 </span>Delivery of Receipt</a></li><li class="tocline"><a href="#refunds" class="tocxref"><span class="secno">6.4.3 </span>Refunds</a></li></ul></li></ul></li><li class="tocline"><a href="#additional-examples-of-the-payment-phases" class="tocxref"><span class="secno">7. </span>Additional Examples of the Payment Phases</a><ul class="toc"><li class="tocline"><a href="#credit-card-payment-visa-mastercard" class="tocxref"><span class="secno">7.1 </span>Credit Card Payment (Visa, MasterCard)</a><ul class="toc"></ul></li><li class="tocline"><a href="#tokenized-payments-applepay-venmo-cybersource" class="tocxref"><span class="secno">7.2 </span>Tokenized Payments (ApplePay / Venmo / CyberSource)</a><ul class="toc"></ul></li><li class="tocline"><a href="#three-corner-model-payments-paypal-alipay-google-wallet" class="tocxref"><span class="secno">7.3 </span>Three Corner Model Payments (PayPal / Alipay / Google Wallet)</a><ul class="toc"></ul></li><li class="tocline"><a href="#cryptocurrency-payment-bitcoin-ripple" class="tocxref"><span class="secno">7.4 </span>Cryptocurrency Payment (Bitcoin, Ripple)</a><ul class="toc"></ul></li><li class="tocline"><a href="#electronic-check-payment" class="tocxref"><span class="secno">7.5 </span>Electronic Check Payment</a></li><li class="tocline"><a href="#direct-debit" class="tocxref"><span class="secno">7.6 </span>Direct Debit (SEPA Direct Debit)</a><ul class="toc"></ul></li><li class="tocline"><a href="#credit-transfer" class="tocxref"><span class="secno">7.7 </span>Credit Transfer (SEPAmail)</a><ul class="toc"></ul></li></ul></li><li class="tocline"><a href="#future-work" class="tocxref"><span class="secno">A. </span>Future Work</a></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgements</a></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ul class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.1 </span>Informative references</a></li></ul></li></ul></section>
 
   
 
@@ -501,8 +535,46 @@ thus contributes to a greater net gain for society.
       </p>
     </section>
 
+    <section id="relationships" typeof="bibo:Chapter" resource="#relationships" property="bibo:hasPart">
+      <h3 id="h-relationships" resource="#h-relationships"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.2 </span>Relationship to Other Documents</span></h3>
+      <p>
+This document is one part of a greater body of work around Web Payments that
+the <a href="https://www.w3.org/Payments/IG/">Web Payments Interest Group</a>
+at <abbr title="World Wide Web Consortium">W3C</abbr> is producing. These other documents include:
+      </p>
+
+      <ul>
+        <li>
+<a href="https://www.w3.org/Payments/IG/Vision">A Vision for Web Payments</a>
+describes the desirable properties of a Web Payments architecture.
+        </li>
+
+        <li>
+<a href="http://www.w3.org/TR/web-payments-use-cases/">Web Payments Use Cases
+1.0</a> (this document) is a prioritized list of all Web Payments scenarios
+that the Web Payments Interest Group expects the architecture to address
+in time.
+        </li>
+
+        <li>
+<a href="https://dvcs.w3.org/hg/webpayments/raw-file/default/latest/capabilities/index.html">
+Web Payments Capabilities 1.0</a>
+derives a set of capabilities from the use cases that, if standardized, will
+improve payments  on the Web.
+        </li>
+
+        <li>
+<a href="https://www.w3.org/Payments/IG/Roadmap">Web Payments Roadmap 1.0</a>
+proposes an implementation and deployment plan that will result in
+enhancements to the Open Web Platform that will achieve the scenarios outlined
+in the Use Cases document and the capabilities listed in the Capabilities
+document.
+        </li>
+      </ul>
+    </section>
+
     <section id="how-this-document-is-organized" typeof="bibo:Chapter" resource="#how-this-document-is-organized" property="bibo:hasPart">
-      <h3 id="h-how-this-document-is-organized" resource="#h-how-this-document-is-organized"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.2 </span>How this Document is Organized</span></h3>
+      <h3 id="h-how-this-document-is-organized" resource="#h-how-this-document-is-organized"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3 </span>How this Document is Organized</span></h3>
 
       <p>
 This document is organized as follows:
@@ -510,27 +582,29 @@ This document is organized as follows:
 
       <ul>
           <li>
-<a href="#terminology">Section 2</a> defines basic payment terms.
+<a href="#terminology">Section 2: Terminology</a> defines basic payment
+terminology.
         </li>
         <li>
-<a href="#an-overview-of-the-payment-phases">Section 3</a> describes a
-common payment flow at a high level. The group expects to work on additional
-payment flows in future work.
+<a href="#an-overview-of-the-payment-phases">Section 3: An Overview of the
+Payment Phases</a> describes a common payment flow at a high level. The group
+expects to work on additional payment flows in future work.
         </li>
         <li>
-<a href="#a-simple-example-of-the-payment-phases">Section 4</a> is a specific
+<a href="#a-simple-example-of-the-payment-phases">Section 4: A Simple
+Example of the Payment Phases</a> is a specific
 narrative, labeled according to the steps of section 3.
-<a href="#additional-examples-of-the-payment-phases">Section 7</a> describes
-additional familiar narratives to give a more complete picture
-of how the payment phases apply.
+<a href="#additional-examples-of-the-payment-phases">Section 7:
+Additional Examples of the Payment Phases</a> describes additional familiar
+narratives to give a more complete picture of how the payment phases apply.
         </li>
         <li>
-<a href="#assumptions">Section 5</a> highlights general assumptions that have
-been made about the use cases.
+<a href="#assumptions">Section 5: Assumptions</a> highlights general
+assumptions that have been made about the use cases.
         </li>
         <li>
-<a href="#use-cases-1">Section 6</a> lists the use cases - short scenarios
-that cover diverse aspects of each payment step.
+<a href="#use-cases-1">Section 6: Use Cases</a> lists the use cases - short
+scenarios that cover diverse aspects of each payment step.
         </li>
       </ul>
 
@@ -542,8 +616,9 @@ Each use case has:
 A title and short description.
         </li>
         <li>
-A <em>Target version</em> which specifies the intended version of the Web
-Payments Architecture that will enable the use case.
+A <em>Roadmap phase</em> which specifies the intended phase of the
+<a href="https://www.w3.org/Payments/IG/Roadmap">Web Payments Roadmap</a> that
+will enable the use case.
         </li>
         <li>
 A short <em>Motivation</em> statement to help explain why the use
@@ -642,7 +717,7 @@ the reader:
 
   
 
-  <dt><dfn id="dfn-entity">entity</dfn></dt>
+  <dt><dfn lt="entity|entities" id="dfn-entity">entity</dfn></dt>
 
   <dd>A person, organization, or software agent that is capable of
   interacting with the world.</dd>
@@ -669,11 +744,11 @@ the reader:
 
   
 
-  <dt><dfn id="dfn-payee">payee</dfn></dt>
+  <dt><dfn lt="payee|payees" id="dfn-payee">payee</dfn></dt>
 
   <dd>An entity that receives funds as required by a transaction.</dd>
 
-  <dt><dfn id="dfn-payer">payer</dfn></dt>
+  <dt><dfn lt="payer|payers" id="dfn-payer">payer</dfn></dt>
 
   <dd>An entity that provides a source of funds as required by a
   transaction.</dd>
@@ -682,7 +757,7 @@ the reader:
 
   
 
-  <dt><dfn id="dfn-payment-instrument">payment instrument</dfn></dt>
+  <dt><dfn lt="payment instrument|payment instruments" id="dfn-payment-instrument">payment instrument</dfn></dt>
 
   <dd>A mechanism used to transfer value from a <a href="#dfn-payer" class="internalDFN">payer</a> to a
   <a href="#dfn-payee" class="internalDFN">payee</a>. Examples: Corporate Visa card, personal Visa card, a
@@ -700,13 +775,13 @@ the reader:
 
   
 
-  <dt><dfn id="dfn-payment-processor">payment processor</dfn></dt>
+  <dt><dfn lt="payment processor|payment processors" id="dfn-payment-processor">payment processor</dfn></dt>
 
   <dd>An <a href="#dfn-entity" class="internalDFN">entity</a> that submits and processes payments using a
   particular <a href="#dfn-payment-instrument" class="internalDFN">payment instrument</a> to a payment network. Examples:
   Stripe, PayPal, Authorize.net, Atos, FedACH.</dd>
 
-  <dt><dfn id="dfn-payment-scheme">payment scheme</dfn></dt>
+  <dt><dfn lt="payment scheme|payment schemes" id="dfn-payment-scheme">payment scheme</dfn></dt>
 
   <dd>Sets of rules and technical standards for the execution of payment
   <a title="transaction" href="#dfn-transaction" class="internalDFN">transactions</a> that have to be followed by
@@ -720,21 +795,23 @@ the reader:
 
   
 
-  <dt><dfn id="dfn-pull-payment">pull payment</dfn> or <dfn id="dfn-payee-initiated-payment">payee-initiated payment</dfn></dt>
+  <dt><dfn lt="pull payment|pull payments|payee-initiated payment|payee-initiated payments" id="dfn-payee-initiated-payment">payee-initiated payment</dfn></dt>
 
-  <dd>A type of <a href="#dfn-transaction" class="internalDFN">transaction</a> where the <a href="#dfn-payee" class="internalDFN">payee</a> initiates the
+  <dd>Also known as a pull payment, a type of <a href="#dfn-transaction" class="internalDFN">transaction</a> where
+  the <a href="#dfn-payee" class="internalDFN">payee</a> initiates the
   funds transfer from the <a href="#dfn-payee" class="internalDFN">payee</a>. A credit card payment is an
   example of a pull payment.</dd>
 
-  <dt><dfn id="dfn-purchase">purchase</dfn></dt>
+  <dt><dfn lt="purchase|purchases" id="dfn-purchase">purchase</dfn></dt>
 
   <dd>Activities surrounding and including a transaction (e.g.,
   discovery of an offer, negotiation of terms, selection of payment
   instrument, delivery, etc.).</dd>
 
-  <dt><dfn id="dfn-push-payment">push payment</dfn> or <dfn id="dfn-payer-initiated-payment">payer-initiated payment</dfn></dt>
+  <dt><dfn lt="push payment|push payments|payer-initiated payment|payer-initiated payments" id="dfn-payer-initiated-payment">payer-initiated payment</dfn></dt>
 
-  <dd>A type of <a href="#dfn-transaction" class="internalDFN">transaction</a> where the <a href="#dfn-payer" class="internalDFN">payer</a> initiates the
+  <dd>Also known as a push payment, a type of <a href="#dfn-transaction" class="internalDFN">transaction</a> where the
+  <a href="#dfn-payer" class="internalDFN">payer</a> initiates the
   funds transfer to the <a href="#dfn-payee" class="internalDFN">payee</a>. PayPal is an example of a push
   payment.</dd>
 
@@ -750,24 +827,25 @@ the reader:
 
   
 
-  <dt><dfn id="dfn-transaction">transaction</dfn></dt>
+  <dt><dfn lt="transaction|transactions" id="dfn-transaction">transaction</dfn></dt>
 
   <dd>An economic exchange between a <a href="#dfn-payer" class="internalDFN">payer</a> and one or more
   <a title="payee" href="#dfn-payee" class="internalDFN">payees</a>. An agreement, communication, or movement
   carried out between a buyer and a seller to exchange an asset for
-  payment</dd>
+  payment.</dd>
 
-  <dt><dfn id="dfn-transfer-order">transfer order</dfn></dt>
+  <dt><dfn lt="transfer order|transfer orders" id="dfn-transfer-order">transfer order</dfn></dt>
 
   <dd>[ECB] an order or message requesting the transfer of assets (e.g.
   funds, securities, other financial instruments or commodities) from
-  the debtor to the creditor</dd>
+  the debtor to the creditor.</dd>
 
   <dt></dt>
 
   
 
-</dl></div>
+</dl>
+</div>
 
   </section>
 
@@ -1167,8 +1245,8 @@ use further be helpful in scanning the document more quickly?
           <dd>
 Penny uses the HobbyCo website to select a $15 model train for <a href="#dfn-purchase" class="internalDFN">purchase</a>.
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 A human being seeing a visual offer of sale on a website is the most common
@@ -1183,7 +1261,7 @@ Cory shops for groceries at his local ChowMart, scans his loyalty card and
 all of the items he wants to <a href="#dfn-purchase" class="internalDFN">purchase</a> at the automated kiosk, requests
 a cash back amount, and is presented with a total amount.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1232,7 +1310,7 @@ from the store.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1259,7 +1337,7 @@ outside the range of a mobile network).
 Chaoxiang plays his favorite native app game and wants to upgrade his avatar
 with a few extra "power-ups". Clicking on a power-up displays the price.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1276,7 +1354,7 @@ developers more choices.
 A GroupBuyCo customer receives an offer by email to <a href="#dfn-purchase" class="internalDFN">purchase</a> the deal
 of the day.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1297,7 +1375,7 @@ email application could lead to a wholly new category of phishing/fraud.
 Renne checks into a hotel and is asked for a deposit for any damages
 to the room.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1322,7 +1400,7 @@ recognizes the station location and the pump. The pump communicates which
 fuels it has and their price in an offer. Krishna's car asks if he wants to
 approve a fill up for up to €35.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1356,7 +1434,7 @@ BigBoxCo expresses their entire product catalog online as machine-readable
 information so that SearchCo may index their content more easily and direct
 more customer traffic to BigBoxCo's website.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1372,7 +1450,7 @@ EnergyCo lists barrels of refined oil for sale on their website based on an
 algorithm that uses the cost of coal and crude oil as inputs. EnergyCo
 guarantees their prices for up to 24 hours from the posting date.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1393,7 +1471,7 @@ Amantha downloads the latest version of her favorite game and beats
 the first level. The game asks her if she'd like to buy the full game
 to play further levels.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1410,7 +1488,7 @@ Jeff listens to a lot of music on the way to work. The music station
 serves a digital offer along with the music stream. This enables Jeff to
 easily buy music that he really likes.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1435,7 +1513,7 @@ motion or if it requires the driver to look away from the road.
 Vern sends money to his friend Milena by typing in Milena's mobile phone number
 and the amount he wants to send.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1458,8 +1536,8 @@ person using direct bank to bank transfers.
           <dd>
 Jamie wishes to pay for a single article from a market analyst.
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>It should be clear to a
 <a title="payer" href="#dfn-payer" class="internalDFN">payer</a> whether a
@@ -1489,8 +1567,8 @@ needing to register with the coffee shop or the music service.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 There are a large number of "paywall" websites on the Web that require a
@@ -1515,8 +1593,8 @@ abandonment of the transaction.
 Larissa subscribes to a site that provides a monthly analysis of the world
 of finance.
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0 (if time permits)</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1 (if time permits)</dd>
           <dt>Motivation</dt>
           <dd>
 <a title="payer" href="#dfn-payer" class="internalDFN">Payers</a> should be able to understand if a
@@ -1557,7 +1635,7 @@ a credit score report and an audited finances report.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1591,7 +1669,7 @@ BoomCo that the shipper can decipher. Tibor's privacy is protected from the
 candy store, which did not require any personally identifying information to
 complete the <a href="#dfn-transaction" class="internalDFN">transaction</a>.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1616,7 +1694,7 @@ for anti-money laundering / know your customer regulatory purposes. When a
 would like to reduce the amount of information that's transmitted to the
 <a href="#dfn-payee" class="internalDFN">payee</a> while ensuring that PayCo complies with regulations.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1645,7 +1723,7 @@ a technology website to pay for a new laptop.
   </li>
 </ul>
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1661,7 +1739,7 @@ the <a href="#dfn-payee" class="internalDFN">payee</a> in order to initiate paym
 Marge wishes to renew her passport online which requires transmission
 of a fee and a great deal of information about her real-world identity.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1687,7 +1765,7 @@ JustPopcorn sends Marco a special discount offer given Marco's past
 <a title="purchase" href="#dfn-purchase" class="internalDFN">purchases</a>. The offer takes the form of a coupon that
 may be applied during payment.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1704,7 +1782,7 @@ Terry uses his FoodCo loyalty card when purchasing his weekly groceries, which
 gives him a discount on gas  <a title="purchase" href="#dfn-purchase" class="internalDFN">purchases</a> performed at the
 FoodCo gas station.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1723,7 +1801,7 @@ if she makes the <a href="#dfn-purchase" class="internalDFN">purchase</a> using 
 a new store credit card is placed in her payment application on her mobile
 phone.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1753,8 +1831,8 @@ store-specific line of credit.
 A game store Web site accepts payment via credit card, e-check, and
 operator billing.
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 Ubiquitous <a title="payment scheme" href="#dfn-payment-scheme" class="internalDFN">payment schemes</a> should be supported
@@ -1773,7 +1851,7 @@ scheme.
           <dd>
 CrowdFundCo supports Bitcoin, Ripple, Google Wallet, and PayPal.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1797,15 +1875,15 @@ Yanos has a multiple digital wallets: one on his mobile phone, two in the
 cloud (but on different websites), and one on his smart watch. Each one has
 a credit card that he may want to use for a credit card-based <a href="#dfn-purchase" class="internalDFN">purchase</a>.
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 A <a href="#dfn-payer" class="internalDFN">payer</a> will most likely use multiple digital wallets over time. It is
 important to ensure that the wallets that they use are presented to them in a
 consistent manner across devices.
 <span class="issue">The amount of wallet/payment instrument discovery
-flexibility that version 1.0 should support is currently unknown.</span>
+flexibility that phase 1 should support is currently unknown.</span>
           </dd>
           <dt>Accessibility</dt>
           <dd>
@@ -1836,8 +1914,8 @@ merchants, so that information is not shared with any online merchants.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 Sharing or protecting data on the sorts of
@@ -1890,8 +1968,8 @@ credit card and provide a $5 tip with digital cash.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 There are scenarios, such as the first interaction/use of a payment instrument,
@@ -1929,7 +2007,7 @@ often to appear at top of the displayed list of available payment instruments.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1950,8 +2028,8 @@ Payment solutions providers can make payments easier and faster through automati
 When Suresh attempts to pay online, he is asked for a username and password
 by his payment service provider before the payment is approved.
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 The most common mechanism for protecting access to payment instruments on the
@@ -1994,8 +2072,8 @@ before she is allowed to withdraw $25,000.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>The payments architecture should support
 	    the authentication devices available today for
@@ -2043,7 +2121,7 @@ institution and merchant.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -2089,7 +2167,7 @@ in winnings over the course of a day.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -2127,7 +2205,7 @@ perform the authentication.
                 </li>
               </ul>
             </dd>
-            <dt>Target version</dt>
+            <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
             <dt>Motivation</dt>
             <dd>
@@ -2172,7 +2250,7 @@ Gao's payment processor service continuously monitor's his daily spending limit,
 daily withdrawal limit, and typical spending behavior and alerts him when a
 suspicious payment has been requested.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -2190,7 +2268,7 @@ shared among multiple employees to make purchases. The account is protected
 by an access control list as well as limits on the amount that each
 employee can spend without authorization by management.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -2245,8 +2323,8 @@ using the details in the QR Code.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 Payee-initiated payments, also known as "pull payments" or
@@ -2284,8 +2362,8 @@ transit.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 Payer-initiated payments, also known as "push payments",
@@ -2316,7 +2394,7 @@ Renne checks into a hotel and is asked for a deposit for any damages to the
 room. She uses her phone to provide a proof-of-hold until she checks out of
 the hotel, at which time the hold on her funds will be released.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -2334,7 +2412,7 @@ When Mario wishes to <a href="#dfn-purchase" class="internalDFN">purchase</a> a 
 the company that makes the car requires a proof of funds from Mario's bank
 in order for the customization of the car to proceed.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -2380,8 +2458,8 @@ originally bought from another provider.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 At times, it is safe to release a good
@@ -2428,7 +2506,7 @@ Funds in Euros are available to OnlineWorkClothes within a few minutes.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Exceptions</dt>
           <dd>
@@ -2469,7 +2547,7 @@ can access and use the funds.
             </ul>
             
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -2496,7 +2574,7 @@ Gavin sends an electronic check to WaveMart. WaveMart receives a notification
 that payment has been initiated almost immediately. Four days later, WaveMart
 receives a notification from their bank that payment has been received.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -2528,8 +2606,8 @@ received.
 Giralt orders a bicycle for his daughter through BikeSmart online and has it
 shipped to his home address.
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 The <a href="#dfn-purchase" class="internalDFN">purchase</a> and delivery of physical goods via an online marketplace
@@ -2545,8 +2623,8 @@ Web site to download additional content, no registration is required, just a
 proof of <a href="#dfn-purchase" class="internalDFN">purchase</a> that is sent to the band's website, after which
 MusicBox provides Lilith a link to download the additional content.
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 Delivery of product can happen on any site that accepts a proof of purchase
@@ -2560,7 +2638,7 @@ that contains a recognized product identifier.
 Takeru orders a new backpack online and has it shipped to a nearby department
 store for pickup.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -2581,8 +2659,8 @@ credit card (via his phone). A machine-readable electronic receipt for
 the <a href="#dfn-purchase" class="internalDFN">purchase</a> from the gas station is transferred to his phone and
 displayed using his favorite expense tracking software.
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0 (very basic receipt container and delivery protocol)</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1 (very basic receipt container and delivery protocol)</dd>
           <dt>Motivation</dt>
           <dd>
 Standardized, machine-readable electronic receipts make it easier to
@@ -2617,7 +2695,7 @@ Bongani reserves a bus ticket online using his mobile phone. At the bus
 terminal he taps his phone to a kiosk and receives a printed physical receipt
 that he can use on the bus.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -2672,8 +2750,8 @@ payments sent to the fake identities.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0 (if time permits)</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1 (if time permits)</dd>
           <dt>Motivation</dt>
           <dd>
 Some <a href="#dfn-transaction" class="internalDFN">transaction</a>s are the result of human error or fault. In these
@@ -3096,7 +3174,7 @@ to Lenne and she receives them the next day.
       <p>
 The following scenario outlines an ideal payment experience using a
 Direct Debit (<a href="#dfn-payee-initiated-payment" class="internalDFN">payee-initiated payment</a>), also known as a
-<a href="#dfn-pull-payment" class="internalDFN">pull payment</a> in the context of a <a href="#dfn-four-corner-model" class="internalDFN">four corner model</a> payment.
+pull payment in the context of a <a href="#dfn-four-corner-model" class="internalDFN">four corner model</a> payment.
 In this scenario, Anna is signing up for electricity service via the
 service's website. During the payment process she will validate an electronic
 direct debit mandate.
@@ -3193,7 +3271,7 @@ if something goes wrong with the Direct Debit.
       <p>
 The following scenario outlines an ideal payment experience using a
 <a href="#dfn-payer-initiated-payment" class="internalDFN">payer-initiated payment</a>, also known as a
-<a href="#dfn-push-payment" class="internalDFN">push payment</a> in the context of a <a href="#dfn-four-corner-model" class="internalDFN">four corner model</a> payment. In
+push payment in the context of a <a href="#dfn-four-corner-model" class="internalDFN">four corner model</a> payment. In
 this scenario, Anna is buying a very expensive piece of furniture that costs
 far more than the maximum amount allowed by her payment card. She pays
 using her bank account via her bank's website.
@@ -3289,9 +3367,24 @@ since the credit transfer cannot be reversed since she initiated it.
     <!--OddPage--><h2 id="h-future-work" resource="#h-future-work"><span property="xhv:role" resource="xhv:heading"><span class="secno">A. </span>Future Work</span></h2>
 
     <ul>
-      <li>Automatic Tax Payment</li>
-      <li>Person to Person Cash Payment</li>
-      <li>Government Entitlement Disbursement</li>
+      <li>
+Integration of US Federal Reserve Faster Payments Use Cases
+      </li>
+      <li>
+Integration of Bill and Melinda Gates Foundation Level One Project Use Cases
+      </li>
+      <li>
+Government Entitlement Disbursement
+      </li>
+      <li>
+Automatic Tax Payment
+      </li>
+      <li>
+Person to Person Cash Payment
+      </li>
+      <li>
+Government Entitlement Disbursement
+      </li>
     </ul>
 
   </section>

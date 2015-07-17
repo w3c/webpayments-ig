@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" typeof="bibo:Document " prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#">
+<head><meta lang="" property="dc:language" content="en">
+    <title>Web Payments Roadmap 1.0</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <style>/* --- ISSUES/NOTES --- */
+div.issue-title, div.note-title , div.warning-title {
+    padding-right:  1em;
+    min-width: 7.5em;
+    color: #b9ab2d;
+}
+div.issue-title { color: #e05252; }
+div.note-title { color: #2b2; }
+div.warning-title { color: #f22; }
+div.issue-title span, div.note-title span, div.warning-title span {
+    text-transform: uppercase;
+}
+div.note, div.issue, div.warning {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.note > p:first-child, .issue > p:first-child, .warning > p:first-child { margin-top: 0 }
+.issue, .note, .warning {
+    padding: .5em;
+    border-left-width: .5em;
+    border-left-style: solid;
+}
+div.issue, div.note , div.warning {
+    padding: 1em 1.2em 0.5em;
+    margin: 1em 0;
+    position: relative;
+    clear: both;
+}
+span.note, span.issue, span.warning { padding: .1em .5em .15em; }
+
+.issue {
+    border-color: #e05252;
+    background: #fbe9e9;
+}
+.note {
+    border-color: #52e052;
+    background: #e9fbe9;
+}
+
+.warning {
+    border-color: #f11;
+    border-right-width: .2em;
+    border-top-width: .2em;
+    border-bottom-width: .2em;
+    border-style: solid;
+    background: #fbe9e9;
+}
+
+.warning-title:before{
+    content: "⚠"; /*U+26A0 WARNING SIGN*/
+    font-size: 3em;
+    float: left;
+    height: 100%;
+    padding-right: .3em;
+    vertical-align: top;
+    margin-top: -0.5em;
+}
+</style><link rel="stylesheet" href="spec.css">
+    
+    
+    
+    
+    
+  <style>/*****************************************************************
+ * ReSpec 3 CSS
+ * Robin Berjon - http://berjon.com/
+ *****************************************************************/
+
+/* --- INLINES --- */
+em.rfc2119 { 
+    text-transform:     lowercase;
+    font-variant:       small-caps;
+    font-style:         normal;
+    color:              #900;
+}
+
+h1 acronym, h2 acronym, h3 acronym, h4 acronym, h5 acronym, h6 acronym, a acronym,
+h1 abbr, h2 abbr, h3 abbr, h4 abbr, h5 abbr, h6 abbr, a abbr {
+    border: none;
+}
+
+dfn {
+    font-weight:    bold;
+}
+
+a.internalDFN {
+    color:  inherit;
+    border-bottom:  1px solid #99c;
+    text-decoration:    none;
+}
+
+a.externalDFN {
+    color:  inherit;
+    border-bottom:  1px dotted #ccc;
+    text-decoration:    none;
+}
+
+a.bibref {
+    text-decoration:    none;
+}
+
+cite .bibref {
+    font-style: normal;
+}
+
+code {
+    color:  #C83500;
+}
+
+/* --- TOC --- */
+.toc a, .tof a {
+    text-decoration:    none;
+}
+
+a .secno, a .figno {
+    color:  #000;
+}
+
+ul.tof, ol.tof {
+    list-style: none outside none;
+}
+
+.caption {
+    margin-top: 0.5em;
+    font-style:   italic;
+}
+
+/* --- TABLE --- */
+table.simple {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    border-bottom:  3px solid #005a9c;
+}
+
+.simple th {
+    background: #005a9c;
+    color:  #fff;
+    padding:    3px 5px;
+    text-align: left;
+}
+
+.simple th[scope="row"] {
+    background: inherit;
+    color:  inherit;
+    border-top: 1px solid #ddd;
+}
+
+.simple td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+    background: #f0f6ff;
+}
+
+/* --- DL --- */
+.section dd > p:first-child {
+    margin-top: 0;
+}
+
+.section dd > p:last-child {
+    margin-bottom: 0;
+}
+
+.section dd {
+    margin-bottom:  1em;
+}
+
+.section dl.attrs dd, .section dl.eldef dd {
+    margin-bottom:  0;
+}
+
+@media print {
+    .removeOnSave {
+        display: none;
+    }
+}
+</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/W3C-ED"><!--[if lt IE 9]><script src='https://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]--></head>
+<body class="h-entry" role="document" id="respecDocument"><div class="head" role="contentinfo" id="respecHeader">
+  <p>
+      
+        
+            <a href="http://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/Icons/w3c_home" alt="W3C"></a>
+        
+      
+  </p>
+  <h1 class="title p-name" id="title" property="dcterms:title">Web Payments Roadmap 1.0</h1>
+  
+  <h2 id="w3c-editor-s-draft-17-july-2015"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time property="dcterms:issued" class="dt-published" datetime="2015-07-17">17 July 2015</time></h2>
+  <dl>
+    
+      <dt>This version:</dt>
+      <dd><a class="u-url" href="https://www.w3.org/Payments/IG/Roadmap">https://www.w3.org/Payments/IG/Roadmap</a></dd>
+    
+    
+      <dt>Latest editor's draft:</dt>
+      <dd><a href="https://dvcs.w3.org/hg/webpayments/raw-file/default/latest/roadmap/index.html">https://dvcs.w3.org/hg/webpayments/raw-file/default/latest/roadmap/index.html</a></dd>
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    <dt>Editors:</dt>
+    <dd class="p-author h-card vcard" property="bibo:editor" resource="_:editor0"><span property="rdf:first" typeof="foaf:Person"><meta property="foaf:name" content="Manu Sporny"><a class="u-url url p-name fn" property="foaf:homepage" href="https://manu.sporny.org/">Manu Sporny</a>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://digitalbazaar.com/">Digital Bazaar</a></span>
+<span property="rdf:rest" resource="_:editor1"></span>
+</dd>
+<dd class="p-author h-card vcard" resource="_:editor1"><span property="rdf:first" typeof="foaf:Person"><meta property="foaf:name" content="Ian Jacobs"><a class="u-url url p-name fn" property="foaf:homepage" href="http://www.w3.org/People/Jacobs/">Ian Jacobs</a>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a></span>
+<span property="rdf:rest" resource="rdf:nil"></span>
+</dd>
+
+    
+      <dt>Authors:</dt>
+      <dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><meta property="foaf:name" content="Manu Sporny"><a class="u-url url p-name fn" property="foaf:homepage" href="https://manu.sporny.org/">Manu Sporny</a>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://digitalbazaar.com/">Digital Bazaar</a></span>
+</dd>
+<dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><meta property="foaf:name" content="Ian Jacobs"><a class="u-url url p-name fn" property="foaf:homepage" href="http://www.w3.org/People/Jacobs/">Ian Jacobs</a>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a></span>
+</dd>
+<dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><meta property="foaf:name" content="Adrian Hope-Bailie"><a class="u-url url p-name fn" property="foaf:homepage" href="http://medium.com/@ahopebailie">Adrian Hope-Bailie</a>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.ripplelabs.com/">Ripple Labs</a></span>
+</dd>
+<dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><meta property="foaf:name" content="Pat Adler"><a class="u-url url p-name fn" property="foaf:homepage" href="https://www.linkedin.com/pub/patrick-adler/2/730/2b4">Pat Adler</a>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.federalreserve.gov/">Federal Reserve Bank of Chicago</a></span>
+</dd>
+
+    
+    
+      
+        
+          <dt>Version control:</dt>
+          
+             
+                
+                  <dd>
+                    <a href="https://github.com/w3c/webpayments-ig">
+                      Github Repository
+                    </a>
+                  </dd>
+                
+             
+                
+                  <dd>
+                    <a href="http://www.w3.org/Payments/IG/track/products/9">
+                      Issues
+                    </a>
+                  </dd>
+                
+             
+          
+        
+      
+    
+  </dl>
+  
+  
+  
+  
+    
+      <p class="copyright">
+        <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> ©
+        2015
+        
+        <a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
+        (<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+        <a href="http://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+        <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>). 
+        
+        <abbr title="World Wide Web Consortium">W3C</abbr> <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+        <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
+        
+          <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a>
+        
+        rules apply.
+      </p>
+    
+  
+  <hr>
+</div>
+
+  <section id="abstract" class="introductory" property="dc:abstract"><h2 id="h-abstract" resource="#h-abstract"><span property="xhv:role" resource="xhv:heading">Abstract</span></h2>
+    <p>
+The purpose of this document is to outline a coherent implementation and
+deployment strategy for the Web Payments standardization work at <abbr title="World Wide Web Consortium">W3C</abbr>.
+    </p>
+  </section><section id="sotd" class="introductory"><h2 id="h-sotd" resource="#h-sotd"><span property="xhv:role" resource="xhv:heading">Status of This Document</span></h2>
+  
+    
+      
+        <p>
+          <em>This section describes the status of this document at the time of its publication.
+          Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the
+          latest revision of this technical report can be found in the <a href="http://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at
+          http://www.w3.org/TR/.</em>
+        </p>
+        
+        
+    <p>
+This document is a work in progress and is being released early and often
+using an agile process; it is incomplete.
+    </p>
+  
+        
+        <p>
+          This document was published by the <a href="http://www.w3.org/blog/wpig/">Web Payments Interest Group</a> as an Editor's Draft.
+          
+          
+            If you wish to make comments regarding this document, please send them to 
+            <a href="mailto:public-webpayments-comments@w3.org">public-webpayments-comments@w3.org</a> 
+            (<a href="mailto:public-webpayments-comments-request@w3.org?subject=subscribe">subscribe</a>,
+            <a href="http://lists.w3.org/Archives/Public/public-webpayments-comments/">archives</a>).
+          
+          
+          
+          
+          
+            
+            All comments are welcome.
+            
+          
+        </p>
+        
+        
+        
+          <p>
+            Publication as an Editor's Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr>
+            Membership. This is a draft document and may be updated, replaced or obsoleted by other
+            documents at any time. It is inappropriate to cite this document as other than work in
+            progress.
+          </p>
+        
+        
+        
+        <p>
+          
+            This document was produced by a group operating under the 
+            <a id="sotd_patent" property="w3p:patentRules" href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 <abbr title="World Wide Web Consortium">W3C</abbr> Patent
+            Policy</a>.
+          
+          
+          
+            
+              <abbr title="World Wide Web Consortium">W3C</abbr> maintains a <a href="http://www.w3.org/2004/01/pp-impl/73816/status" rel="disclosure">public list of any patent
+              disclosures</a> 
+            
+            made in connection with the deliverables of the group; that page also includes
+            instructions for disclosing a patent. An individual who has actual knowledge of a patent
+            which the individual believes contains
+            <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential
+            Claim(s)</a> must disclose the information in accordance with
+            <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section
+            6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+          
+          
+        </p>
+        
+          <p>This document is governed by the <a id="w3c_process_revision" href="http://www.w3.org/2014/Process-20140801/">1 August 2014 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+          </p>
+        
+        
+      
+    
+  
+</section><section id="toc"><h2 class="introductory" id="h-toc" resource="#h-toc"><span property="xhv:role" resource="xhv:heading">Table of Contents</span></h2><ul class="toc" role="directory" id="respecContents"><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a><ul class="toc"><li class="tocline"><a href="#relationships" class="tocxref"><span class="secno">1.1 </span>Relationship to Other Documents</a></li></ul></li><li class="tocline"><a href="#terminology" class="tocxref"><span class="secno">2. </span>Terminology</a></li><li class="tocline"><a href="#coordination" class="tocxref"><span class="secno">3. </span>Coordination</a></li><li class="tocline"><a href="#web-payments-phase-1" class="tocxref"><span class="secno">4. </span>Web Payments Phase 1</a><ul class="toc"><li class="tocline"><a href="#goals" class="tocxref"><span class="secno">4.1 </span>Goals</a></li><li class="tocline"><a href="#use-cases" class="tocxref"><span class="secno">4.2 </span>Use Cases</a></li><li class="tocline"><a href="#groups-and-scope" class="tocxref"><span class="secno">4.3 </span>Groups and Scope</a></li><li class="tocline"><a href="#deployment-and-adoption" class="tocxref"><span class="secno">4.4 </span>Deployment and Adoption</a><ul class="toc"><li class="tocline"><a href="#goals-1" class="tocxref"><span class="secno">4.4.1 </span>Goals</a></li><li class="tocline"><a href="#strategies" class="tocxref"><span class="secno">4.4.2 </span>Strategies</a></li></ul></li><li class="tocline"><a href="#unresolved-issues" class="tocxref"><span class="secno">4.5 </span>Unresolved Issues</a></li></ul></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">A. </span>Acknowledgements</a></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">B. </span>References</a><ul class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">B.1 </span>Informative references</a></li></ul></li></ul></section>
+
+  
+
+  <section id="introduction" typeof="bibo:Chapter" resource="#introduction" property="bibo:hasPart">
+    <!--OddPage--><h2 id="h-introduction" resource="#h-introduction"><span property="xhv:role" resource="xhv:heading"><span class="secno">1. </span>Introduction</span></h2>
+
+    <p>
+The purpose of this document is to outline a coherent implementation and
+deployment strategy for the Web Payments standardization work at <abbr title="World Wide Web Consortium">W3C</abbr>. It
+consists of the following major sections:
+    </p>
+    <ul>
+      <li>
+<a href="#terminology">Section 2: Terminology</a> defines common terminology
+used throughout the document.
+      </li>
+      <li>
+<a href="#coordination">Section 3: Coordination</a> describes the different
+groups involved in the work and how they will coordinate to achieve the
+long-term vision [<cite><a class="bibref" href="#bib-WEB-PAYMENTS-VISION">WEB-PAYMENTS-VISION</a></cite>] of the Web Payments work.
+      </li>
+      <li>
+<a href="#web-payments-phase-1">Section 4: Web Payments Phase 1</a> is
+separated into subsections detailing: 1) Strategic goals for the phase,
+2) Use cases that should be achievable by the end of the phase, 3)
+Capabilities that are targeted and which groups are responsible for
+delivering the capabilities, 4) A list of relevant groups that will participate
+in the phase as well as what they will be working on during the phase, and
+4) Deployment goals and strategies to achieve adoption.
+          </li>
+        </ul>
+    
+
+    <section id="relationships" typeof="bibo:Chapter" resource="#relationships" property="bibo:hasPart">
+      <h3 id="h-relationships" resource="#h-relationships"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.1 </span>Relationship to Other Documents</span></h3>
+      <p>
+This document is one part of a greater body of work around Web Payments that
+the <a href="https://www.w3.org/Payments/IG/">Web Payments Interest Group</a>
+at <abbr title="World Wide Web Consortium">W3C</abbr> is producing. These other documents include:
+      </p>
+
+      <ul>
+        <li>
+<a href="https://www.w3.org/Payments/IG/Vision">A Vision for Web Payments</a>
+describes the desirable properties of a Web Payments architecture.
+        </li>
+
+        <li>
+<a href="http://www.w3.org/TR/web-payments-use-cases/">Web Payments Use Cases
+1.0</a> is a prioritized list of all Web Payments scenarios
+that the Web Payments Interest Group expects the architecture to address
+in time.
+        </li>
+
+        <li>
+<a href="https://dvcs.w3.org/hg/webpayments/raw-file/default/latest/capabilities/index.html">
+Web Payments Capabilities 1.0</a>
+derives a set of capabilities from the use cases that, if standardized, will
+improve payments  on the Web.
+        </li>
+
+        <li>
+<a href="https://www.w3.org/Payments/IG/Roadmap">Web Payments Roadmap 1.0</a>
+(this document) proposes an implementation and deployment plan that will result
+in enhancements to the Open Web Platform that will achieve the scenarios
+outlined in the Use Cases document and the capabilities listed in the
+Capabilities document.
+        </li>
+      </ul>
+    </section>
+
+  </section>
+
+  <section id="terminology" typeof="bibo:Chapter" resource="#terminology" property="bibo:hasPart">
+    <!--OddPage--><h2 id="h-terminology" resource="#h-terminology"><span property="xhv:role" resource="xhv:heading"><span class="secno">2. </span>Terminology</span></h2>
+
+    <div><p>
+This document attempts to communicate the concepts outlined in the Web
+Payments space by using specific terms to discuss particular concepts. This
+terminology is included below and linked to throughout the document to aid
+the reader:
+</p>
+
+<dl class="termlist">
+  <dt></dt>
+
+  
+
+  <dt></dt>
+
+  
+
+  <dt></dt>
+
+  
+
+  <dt></dt>
+
+  
+
+  <dt></dt>
+
+  
+
+  <dt></dt>
+
+  
+
+  <dt></dt>
+
+  
+
+  <dt></dt>
+
+  
+
+  <dt><dfn lt="entity|entities" id="dfn-entity">entity</dfn></dt>
+
+  <dd>A person, organization, or software agent that is capable of
+  interacting with the world.</dd>
+
+  <dt></dt>
+
+  
+
+  <dt></dt>
+
+  
+
+  <dt></dt>
+
+  
+
+  <dt></dt>
+
+  
+
+  <dt><dfn lt="payee|payees" id="dfn-payee">payee</dfn></dt>
+
+  <dd>An entity that receives funds as required by a transaction.</dd>
+
+  <dt><dfn lt="payer|payers" id="dfn-payer">payer</dfn></dt>
+
+  <dd>An entity that provides a source of funds as required by a
+  transaction.</dd>
+
+  <dt></dt>
+
+  
+
+  <dt><dfn lt="payment instrument|payment instruments" id="dfn-payment-instrument">payment instrument</dfn></dt>
+
+  <dd>A mechanism used to transfer value from a <a href="#dfn-payer" class="internalDFN">payer</a> to a
+  <a href="#dfn-payee" class="internalDFN">payee</a>. Examples: Corporate Visa card, personal Visa card, a
+  bitcoin account, a PayPal account, and an Alipay account. [PSD2] any
+  personalized device(s) and/or set of procedures agreed between the
+  payment service user and the payment service provider and used in
+  order to initiate a payment order. [ECB] a tool or a set of procedures
+  enabling the transfer of funds from a payer to a payee.</dd>
+
+  <dt></dt>
+
+  
+
+  <dt></dt>
+
+  
+
+  <dt><dfn lt="payment processor|payment processors" id="dfn-payment-processor">payment processor</dfn></dt>
+
+  <dd>An <a href="#dfn-entity" class="internalDFN">entity</a> that submits and processes payments using a
+  particular <a href="#dfn-payment-instrument" class="internalDFN">payment instrument</a> to a payment network. Examples:
+  Stripe, PayPal, Authorize.net, Atos, FedACH.</dd>
+
+  <dt><dfn lt="payment scheme|payment schemes" id="dfn-payment-scheme">payment scheme</dfn></dt>
+
+  <dd>Sets of rules and technical standards for the execution of payment
+  <a title="transaction" href="#dfn-transaction" class="internalDFN">transactions</a> that have to be followed by
+  adhering entities (<a title="payment processor" href="#dfn-payment-processor" class="internalDFN">payment
+  processors</a>, <a title="payer" href="#dfn-payer" class="internalDFN">payers</a> and <a title="payee" href="#dfn-payee" class="internalDFN">payees</a>). Examples: Visa, MasterCard, Bitcoin, Ripple,
+  PayPal, Google Pay, Alipay, Yandex money, ACH, SEPA. [ECB] a set of
+  interbank rules, practices and standards necessary for the functioning
+  of payment services.</dd>
+
+  <dt></dt>
+
+  
+
+  <dt></dt>
+
+  
+
+  <dt></dt>
+
+  
+
+  <dt></dt>
+
+  
+
+  <dt></dt>
+
+  
+
+  <dt></dt>
+
+  
+
+  <dt></dt>
+
+  
+
+  <dt><dfn lt="transaction|transactions" id="dfn-transaction">transaction</dfn></dt>
+
+  <dd>An economic exchange between a <a href="#dfn-payer" class="internalDFN">payer</a> and one or more
+  <a title="payee" href="#dfn-payee" class="internalDFN">payees</a>. An agreement, communication, or movement
+  carried out between a buyer and a seller to exchange an asset for
+  payment.</dd>
+
+  <dt><dfn lt="transfer order|transfer orders" id="dfn-transfer-order">transfer order</dfn></dt>
+
+  <dd>[ECB] an order or message requesting the transfer of assets (e.g.
+  funds, securities, other financial instruments or commodities) from
+  the debtor to the creditor.</dd>
+
+  <dt><dfn lt="wallet|wallets" id="dfn-wallet">wallet</dfn></dt>
+
+  <dd>
+    a software service, providing similar functions in the digital world
+    to those provided by a physical wallet, namely:
+
+    <ul>
+      <li>It holds payment instruments registered by the wallet
+      owner;</li>
+
+      <li>It supports certain payment schemes and enables the payer to
+      use registered payment instruments to execute a payment in
+      accordance with that scheme;</li>
+
+      <li>It may hold one or more balances of some digital asset that
+      can be used to make payments.</li>
+    </ul>This definition of wallet may expand in the future to include
+    other items people find in physical wallets such as digital
+    receipts, coupons, and identification.
+  </dd>
+
+</dl>
+</div>
+
+  </section>
+
+  <section id="coordination" typeof="bibo:Chapter" resource="#coordination" property="bibo:hasPart">
+    <!--OddPage--><h2 id="h-coordination" resource="#h-coordination"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>Coordination</span></h2>
+
+    <p>
+In order for the Web Payments Activity to succeed, multiple groups will need
+to coordinate work in key areas related to payments, commerce,
+identity/credentials, and security. The diagram below outlines the categories
+that each group will participate in as well as the phases the groups will
+be active in:
+    </p>
+
+    <img style="display: block; margin: auto;" width="75%" src="images/coordination.svg">
+  </section>
+
+  <section id="web-payments-phase-1" typeof="bibo:Chapter" resource="#web-payments-phase-1" property="bibo:hasPart">
+    <!--OddPage--><h2 id="h-web-payments-phase-1" resource="#h-web-payments-phase-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">4. </span>Web Payments Phase 1</span></h2>
+
+    <p>
+The initial implementation of the Web Payments work will start in October 2015
+and will focus on delivering standards for a Minimum Viable Platform (MVP)
+by December 2017.
+    </p>
+
+    <section id="goals" typeof="bibo:Chapter" resource="#goals" property="bibo:hasPart">
+      <h3 id="h-goals" resource="#h-goals"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1 </span>Goals</span></h3>
+       <p>The scope of work supports the following elements of a basic purchase
+      triggered by user interaction with a Web application initiating a new
+      payment. These standards define a high-level message flow for a payment
+      from payer to payee either in the form of a credit push (payer
+      initiated) or a debit pull (payee initiated) payment, and can be used to
+      facilitate a payment from any payment scheme.</p>
+
+      <img width="50%" align="left" src="images/phase1-flow.png" alt="Web Payments Basic Payment Flow">
+
+      <dl style="margin-top: 5em;">
+        <dt>Pre-Payment</dt>
+
+        <dd>
+          <ul>
+            <li><strong>Registration</strong>, by the <a href="#dfn-payer" class="internalDFN">payer</a> with their
+            <a href="#dfn-wallet" class="internalDFN">wallet</a>, of any conforming <a href="#dfn-payment-instrument" class="internalDFN">payment
+            instrument</a> they wish to use on the Web (e.g. a credit or
+            debit card, electronic cash, cryptocurrency, etc).</li>
+          </ul>
+        </dd>
+
+        <dt>Negotiation of Terms</dt>
+
+        <dd>
+          <ul>
+            <li><strong>Payment Initiation Request</strong>, by the payee to
+            the payer providing the terms of the payment including elements
+            such as the accepted payment schemes, price, currency, recurrence,
+            transaction type (purchase, refund etc.), timeout and requests for
+            any additional data that is required from the payee.</li>
+          </ul>
+        </dd>
+
+        <dt>Negotiation of Payment Instruments</dt>
+
+        <dd>
+          <ul>
+            <li><strong>Discovery</strong>, by the payer, of their available
+            payment instruments that can be used to make the payment. This is
+            done by matching those registered by the payer with those
+            supported by the payee (as defined in the Payment Initiation
+            Request), while keeping information local to the payer.</li>
+
+            <li><strong>Selection of a payment instrument</strong> by the
+            payer, confirmation of the terms, and sending of any requested
+            data back to the payee for validation.</li>
+          </ul>
+        </dd>
+
+        <dt>Payment Processing and Completion</dt>
+
+        <dd>
+          <ul>
+            <li>Execution of the payment by either payer or payee.</li>
+
+            <li>Delivery of a <strong>Payment Completion</strong> generated by
+            the entity that executed the payment. This may contain a
+            <strong>Proof of Payment</strong> if supported by the payment
+            scheme.</li>
+          </ul>
+        </dd>
+      </dl>
+
+      <p>The group will also address exceptions that may occur during these
+      steps, including payment authorization failure.</p>
+      <br>
+    </section>
+
+    <section style="clear: left;" id="use-cases" typeof="bibo:Chapter" resource="#use-cases" property="bibo:hasPart">
+      <h3 id="h-use-cases" resource="#h-use-cases"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2 </span>Use Cases</span></h3>
+      <p>
+The following use cases are in scope for phase 1 with specific limitations
+expressed beside each use case:
+      </p><table>
+        <thead>
+          <tr>
+            <th style="white-space: nowrap;">Use Case</th>
+            <th style="white-space: nowrap;">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases/index.html#uc-website">Website</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases/index.html#uc-registrationless">Registration-less</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases/index.html#uc-one-time-payment">One Time Payment</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases/index.html#uc-ubiquitous">Ubiquitous Schemes</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases/index.html#uc-discovery">Discovery</a>
+            </td>
+            <td class="align-left">
+<span class="issue">Unclear about how much wallet/payment instrument
+discovery flexibility should be in phase 1.</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases/index.html#uc-payer-privacy">Payer Privacy</a>
+            </td>
+            <td class="align-left">
+The use case where the payer shares a subset of their payment instruments
+with the payee before the purchase is not in scope for this phase.
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases/index.html#uc-manual-selection">Manual Selection</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases/index.html#uc-password">Password Authentication</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases/index.html#uc-multifactor">Multifactor Authentication</a>
+            </td>
+            <td class="align-left">
+Stretch goal for phase 1 with a focus on FIDO-based authentication and
+mobile phone-based fingerprint authentication.
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases/index.html#uc-payee-initiated">Payee-initiated</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases/index.html#uc-payer-initiated">Payer-initiated</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases/index.html#uc-proofs">Proofs</a>
+            </td>
+            <td class="align-left">
+Very basic proof of initiation of funds transfer for phase 1.
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases/index.html#uc-virtual-goods">Virtual Goods</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases/index.html#uc-physical-goods">Physical Goods</a>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases/index.html#uc-electronic-receipts">Electronic Receipts</a>
+            </td>
+            <td class="align-left">
+Very basic receipt container and delivery protocol for phase 1.
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases/index.html#uc-subscription">Subscription</a>
+            </td>
+            <td class="align-left">
+Stretch goal for phase 1.
+            </td>
+          </tr>
+          <tr>
+            <td class="align-left">
+<a href="../use-cases/index.html#uc-refund">Basic Refund</a>
+            </td>
+            <td class="align-left">
+Stretch goal for phase 1.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+The capabilities associated with each use case listed above can be found in
+the 
+<a href="https://dvcs.w3.org/hg/webpayments/raw-file/default/latest/capabilities/index.html">
+Web Payments Capabilities 1.0</a> document.
+      </p>
+    </section>
+
+    <section id="groups-and-scope" typeof="bibo:Chapter" resource="#groups-and-scope" property="bibo:hasPart">
+      <h3 id="h-groups-and-scope" resource="#h-groups-and-scope"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.3 </span>Groups and Scope</span></h3>
+      <p>
+A list of relevant groups that will participate in the first iteration of
+specification creation.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="white-space: nowrap;">Group</th>
+            <th style="white-space: nowrap;">Scope</th>
+            <th style="white-space: nowrap;">Charter</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+<a href="http://www.w3.org/Payments/IG/">Web Payments Interest Group</a>
+            </td>
+            <td>
+Continued development of use cases and requirements for phase 2.
+Liason between larger <abbr title="World Wide Web Consortium">W3C</abbr> community and other relevant standards bodies.
+            </td>
+            <td>
+<a href="http://www.w3.org/2014/04/payments/webpayments_charter.html">
+October 2014 - December 2017</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+Web Payments Working Group
+            </td>
+            <td>
+Invoking a payment request, selecting a payment instrument, initiating funds
+transfer, delivering a proof of payment.
+            </td>
+            <td>
+<a href="https://www.w3.org/Payments/IG/wiki/Roadmap/PaymentArchitectureWG">
+Draft Charter
+</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+Web Authentication Working Group
+            </td>
+            <td>
+Secure authentication of entities (users, systems and devices) to enable
+high-security Web applications. Based on FIDO Alliance work.
+            </td>
+            <td>
+No charter yet
+            </td>
+          </tr>
+          <tr>
+            <td>
+Hardware-based Security Working Group
+            </td>
+            <td>
+A set of Hardware-Based Web Security standard services providing Web
+Applications usage of secure services enabled by hardware modules
+(Trusted Execution Environments, Secure Elements, and other secure enablers).
+            </td>
+            <td>
+No charter yet.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="issue"><div class="issue-title" aria-level="4" role="heading" id="h-issue1"><span>Issue 1</span></div><p class="">
+It is currently unknown whether or not a Credentials WG or Linked Data
+Security WG will be created.
+      </p></div>
+
+          <li>
+Related <abbr title="World Wide Web Consortium">W3C</abbr> Groups
+          <ul>
+          <li>
+Technical Architecture Group (TAG) (for reviews related to Web Architecture)
+          </li>
+          <li>
+Security IG (for reviews about security)
+          </li>
+          <li>
+Privacy IG (for reviews about sharing of sensitive information)
+          </li>
+          </ul>
+          </li>
+          <li>
+Related <abbr title="World Wide Web Consortium">W3C</abbr> Community Groups
+          <ul>
+          <li>
+Credentials
+          </li>
+          <li>
+Web NFC
+          </li>
+          <li>
+Web Payments
+          </li>
+          <li>
+Web Bluetooth
+          </li>
+          <li>
+Web Crypto API
+          </li>
+          <li>
+Web of Things
+          </li>
+          </ul>
+        </li>
+      
+    </section>
+    <section id="deployment-and-adoption" typeof="bibo:Chapter" resource="#deployment-and-adoption" property="bibo:hasPart">
+      <h3 id="h-deployment-and-adoption" resource="#h-deployment-and-adoption"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.4 </span>Deployment and Adoption</span></h3>
+      <p>
+Deployment in phase 1 will focus on enabling a few major online retailers
+to run Web Payment agents to issue Web Payment invoices for processing at
+1-2 major online Payment Service Providers (or banks). The payment
+institutions would then initiate the payment and send a proof of payment
+back to the retailer.
+      </p>
+      <section id="goals-1" typeof="bibo:Chapter" resource="#goals-1" property="bibo:hasPart">
+        <h4 id="h-goals-1" resource="#h-goals-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.4.1 </span>Goals</span></h4>
+          <ul>
+            <li>
+3 major online retailers launching Web Payments support (for example:
+Alibaba, Walmart, Target, Best Buy, Overstock.com, Amazon, Tesco, eBay, etc.)
+            </li>
+            <li>
+1-2 large online payment companies (or banks) launching Web Payments support
+(for example: Google Wallet, PayPal, Alipay, Bank of America, HSBC,
+US Fed, etc.)
+            </li>
+            <li>
+5-10 smaller players from the online retail space and the payments space
+            </li>
+            <li>
+1 million payments within the first year after standardization
+            </li>
+            <li>
+Favorable reviews by the Web developer community
+            </li>
+          </ul>
+      </section>
+      <section id="strategies" typeof="bibo:Chapter" resource="#strategies" property="bibo:hasPart">
+        <h4 id="h-strategies" resource="#h-strategies"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.4.2 </span>Strategies</span></h4>
+        <ul>
+          <li>
+Deployment strategy should be a pure software deployment. Do not require new hardware to be deployed.
+          </li>
+          <li>
+Specifications should focus on technology that has already been prototyped.
+          </li>
+          <li>
+All software should be cloud-only for phase 1. For example, do not try to
+support both cloud and local wallets due to a possible conflict around the
+"payment message bus" being implemented at the OS layer or the browser layer.
+          </li>
+        </ul>
+      </section>
+    </section>
+    <section id="unresolved-issues" typeof="bibo:Chapter" resource="#unresolved-issues" property="bibo:hasPart">
+      <h3 id="h-unresolved-issues" resource="#h-unresolved-issues"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.5 </span>Unresolved Issues</span></h3>
+      <div class="issue"><div class="issue-title" aria-level="4" role="heading" id="h-issue2"><span>Issue 2</span></div><p class="">
+Where we need an extensible message format, we will want to specify at least
+a data model. The hard question will be whether we can achieve a single
+serialization (e.g., JSON or JSON-LD or XML) or whether we need multiple.
+      </p></div>
+      <div class="issue"><div class="issue-title" aria-level="4" role="heading" id="h-issue3"><span>Issue 3</span></div><p class="">
+What canonicalization (if any) is needed in our messages for the purpose of
+digital signatures.
+      </p></div>
+    </section>
+  </section>
+
+  <section class="appendix" id="acknowledgements" typeof="bibo:Chapter" resource="#acknowledgements" property="bibo:hasPart">
+    <!--OddPage--><h2 id="h-acknowledgements" resource="#h-acknowledgements"><span property="xhv:role" resource="xhv:heading"><span class="secno">A. </span>Acknowledgements</span></h2>
+    <p>
+The editors wish to thank the participants of the
+<a href="http://www.w3.org/Payments/IG/">Web Payments Interest Group</a>
+for discussions about and contributions to this document, as well as the
+<a href="https://www.w3.org/community/webpayments/">Web Payments Community
+Group</a> for earlier work that informed this document.
+    </p>
+  </section>
+
+  
+
+<section id="references" class="appendix" typeof="bibo:Chapter" resource="#references" property="bibo:hasPart"><!--OddPage--><h2 id="h-references" resource="#h-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">B. </span>References</span></h2><section id="informative-references" typeof="bibo:Chapter" resource="#informative-references" property="bibo:hasPart"><h3 id="h-informative-references" resource="#h-informative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">B.1 </span>Informative references</span></h3><dl class="bibliography" resource=""><dt id="bib-WEB-PAYMENTS-VISION">[WEB-PAYMENTS-VISION]</dt><dd>Adrian Hope-Bailie; Ian Jacobs et al. <a href="http://www.w3.org/Payments/IG/Vision" property="dc:references"><cite>A Vision for a Web Payments Architecture</cite></a>. W3C Note. URL: <a href="http://www.w3.org/Payments/IG/Vision" property="dc:references">http://www.w3.org/Payments/IG/Vision</a>
+</dd></dl></section></section></body></html>

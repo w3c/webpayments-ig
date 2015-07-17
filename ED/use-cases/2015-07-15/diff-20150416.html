@@ -376,24 +376,48 @@ Bazaar
 </dd>
 <dd class="p-author h-card vcard">
 <span property="dc:contributor" typeof="foaf:Person">
-<meta property="foaf:name" content="David Ezell">
-<a class="u-url url p-name fn" property="foaf:homepage" href="http://example.org/">
-David
+<span property="foaf:name" class="p-name fn">
+<ins class="diff-chg">Qian
+Sun
+</ins></span>,<a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.alibabagroup.com/"><ins class="diff-chg">
+Alibaba
+</ins></a>
+<del class="diff-old">David
 Ezell
+</del>
+</span>
+</dd>
+<dd class="p-author h-card vcard">
+<span property="dc:contributor" typeof="foaf:Person">
+<meta property="foaf:name" content="Cyril Vignet">
+<a class="u-url url p-name fn" property="foaf:homepage" href="https://www.linkedin.com/pub/cyril-vignet/bb/704/423">
+<ins class="diff-chg">Cyril
+Vignet
+</ins>
 </a>,
-<a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.nacsonline.com/">
-NACS
+<del class="diff-old">NACS
+</del>
+<a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.bpce.fr/">
+<ins class="diff-chg">Groupe
+BPCE
+</ins>
 </a>
 </span>
 </dd>
 <dd class="p-author h-card vcard">
 <span property="dc:contributor" typeof="foaf:Person">
-<span property="foaf:name" class="p-name fn">
-Qian
+<del class="diff-old">Qian
 Sun
-</span>,
-<a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.alibabagroup.com/">
+,
 Alibaba
+</del>
+<meta property="foaf:name" content="David Ezell">
+<a class="u-url url p-name fn" property="foaf:homepage" href="http://example.org/">
+<ins class="diff-chg">David
+Ezell
+</ins></a>,<a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.nacsonline.com/"><ins class="diff-chg">
+NACS
+</ins>
 </a>
 </span>
 </dd>
@@ -425,6 +449,22 @@ Issues
 </a>
 </dd>
 </dl>
+<p>
+<ins class="diff-new">This
+document
+is
+also
+available
+in
+this
+non-normative
+format:
+</ins><a rel="alternate" href="diff-20150416.html"><ins class="diff-new">
+diff
+to
+previous
+version
+</ins></a></p>
 <p class="copyright">
 <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">
 Copyright
@@ -751,6 +791,129 @@ in
 mind.
 </p>
 <p>
+<ins class="diff-new">The
+following
+changes
+have
+been
+made
+since
+the
+last
+version
+of
+this
+document:
+</ins></p><ul><li><ins class="diff-new">
+Reorganization
+of
+use
+cases
+by
+phases
+approved
+by
+the
+Web
+Payments
+IG.
+</ins></li><li><ins class="diff-new">
+Removal
+of
+the
+"Goals"
+for
+each
+use
+case
+as
+they
+were
+repetitive
+and
+did
+not
+greatly
+aid
+understanding
+of
+the
+use
+case.
+</ins></li><li><ins class="diff-new">
+Addition
+of
+Regulatory
+concerns
+to
+a
+number
+of
+the
+use
+cases.
+</ins></li><li><ins class="diff-new">
+Addition
+of
+two
+more
+scenarios
+related
+to
+Direct
+Debit
+and
+Credit
+Transfer.
+</ins></li><li><ins class="diff-new">
+Addition
+of
+"Relationship
+to
+Other
+Documents"
+section.
+</ins></li><li><ins class="diff-new">
+Integration
+of
+a
+unified
+Web
+Payments
+Activity
+glossary.
+</ins></li><li><ins class="diff-new">
+Addition
+of
+Escrow,
+Biometric,
+Know
+Your
+Customer
+(KYC),
+and
+Anti-Money
+Laundering
+(AML)
+use
+cases.
+</ins></li><li><ins class="diff-new">
+Integration
+of
+feedback
+from
+the
+public,
+Web
+Payments
+Community
+Group,
+and
+Web
+Payments
+Interest
+Group.
+</ins></li></ul><p>
 This
 document
 was
@@ -1004,10 +1167,17 @@ Important
 </a>
 </li>
 <li class="tocline">
-<a href="#how-this-document-is-organized" class="tocxref">
+<a href="#relationships" class="tocxref">
 <span class="secno">
 1.2
 </span>
+<ins class="diff-new">Relationship
+to
+Other
+Documents
+</ins></a></li><li class="tocline"><a href="#how-this-document-is-organized" class="tocxref"><span class="secno"><ins class="diff-new">
+1.3
+</ins></span>
 How
 this
 Document
@@ -1975,11 +2145,170 @@ for
 society.
 </p>
 </section>
+<section id="relationships" typeof="bibo:Chapter" resource="#relationships" property="bibo:hasPart">
+<h3 id="h-relationships" resource="#h-relationships">
+<span property="xhv:role" resource="xhv:heading">
+<span class="secno">
+<ins class="diff-new">1.2
+</ins></span><ins class="diff-new">
+Relationship
+to
+Other
+Documents
+</ins></span></h3><p><ins class="diff-new">
+This
+document
+is
+one
+part
+of
+a
+greater
+body
+of
+work
+around
+Web
+Payments
+that
+the
+</ins><a href="https://www.w3.org/Payments/IG/"><ins class="diff-new">
+Web
+Payments
+Interest
+Group
+</ins></a><ins class="diff-new">
+at
+</ins><abbr title="World Wide Web Consortium"><ins class="diff-new">
+W3C
+</ins></abbr><ins class="diff-new">
+is
+producing.
+These
+other
+documents
+include:
+</ins></p><ul><li><a href="https://www.w3.org/Payments/IG/Vision"><ins class="diff-new">
+A
+Vision
+for
+Web
+Payments
+</ins></a><ins class="diff-new">
+describes
+the
+desirable
+properties
+of
+a
+Web
+Payments
+architecture.
+</ins></li><li><a href="http://www.w3.org/TR/web-payments-use-cases/"><ins class="diff-new">
+Web
+Payments
+Use
+Cases
+1.0
+</ins></a><ins class="diff-new">
+(this
+document)
+is
+a
+prioritized
+list
+of
+all
+Web
+Payments
+scenarios
+that
+the
+Web
+Payments
+Interest
+Group
+expects
+the
+architecture
+to
+address
+in
+time.
+</ins></li><li><a href="https://dvcs.w3.org/hg/webpayments/raw-file/default/latest/capabilities/index.html"><ins class="diff-new">
+Web
+Payments
+Capabilities
+1.0
+</ins></a><ins class="diff-new">
+derives
+a
+set
+of
+capabilities
+from
+the
+use
+cases
+that,
+if
+standardized,
+will
+improve
+payments
+on
+the
+Web.
+</ins></li><li><a href="https://www.w3.org/Payments/IG/Roadmap"><ins class="diff-new">
+Web
+Payments
+Roadmap
+1.0
+</ins></a><ins class="diff-new">
+proposes
+an
+implementation
+and
+deployment
+plan
+that
+will
+result
+in
+enhancements
+to
+the
+Open
+Web
+Platform
+that
+will
+achieve
+the
+scenarios
+outlined
+in
+the
+Use
+Cases
+document
+and
+the
+capabilities
+listed
+in
+the
+Capabilities
+document.
+</ins></li></ul></section>
 <section id="how-this-document-is-organized" typeof="bibo:Chapter" resource="#how-this-document-is-organized" property="bibo:hasPart">
 <h3 id="h-how-this-document-is-organized" resource="#h-how-this-document-is-organized">
 <span property="xhv:role" resource="xhv:heading">
 <span class="secno">
-1.2
+<del class="diff-old">1.2
+</del>
+<ins class="diff-chg">1.3
+</ins>
 </span>
 How
 this
@@ -2000,18 +2329,32 @@ follows:
 <li>
 <a href="#terminology">
 Section
-2
-</a>
+<del class="diff-old">2
+</del>
+<ins class="diff-chg">2:
+Terminology
+</ins></a>
 defines
 basic
 payment
-terms.
+<del class="diff-old">terms.
+</del>
+<ins class="diff-chg">terminology.
+</ins>
 </li>
 <li>
 <a href="#an-overview-of-the-payment-phases">
 Section
-3
-</a>
+<del class="diff-old">3
+</del>
+<ins class="diff-chg">3:
+An
+Overview
+of
+the
+Payment
+Phases
+</ins></a>
 describes
 a
 common
@@ -2037,8 +2380,17 @@ work.
 <li>
 <a href="#a-simple-example-of-the-payment-phases">
 Section
-4
-</a>
+<del class="diff-old">4
+</del>
+<ins class="diff-chg">4:
+A
+Simple
+Example
+of
+the
+Payment
+Phases
+</ins></a>
 is
 a
 specific
@@ -2053,8 +2405,16 @@ section
 3.
 <a href="#additional-examples-of-the-payment-phases">
 Section
-7
-</a>
+<del class="diff-old">7
+</del>
+<ins class="diff-chg">7:
+Additional
+Examples
+of
+the
+Payment
+Phases
+</ins></a>
 describes
 additional
 familiar
@@ -2074,9 +2434,12 @@ apply.
 </li>
 <li>
 <a href="#assumptions">
-<ins class="diff-new">Section
-5
-</ins></a><ins class="diff-new">
+Section
+<del class="diff-old">6
+</del>
+<ins class="diff-chg">5:
+Assumptions
+</ins></a><ins class="diff-chg">
 highlights
 general
 assumptions
@@ -2088,10 +2451,12 @@ about
 the
 use
 cases.
-</ins></li><li><a href="#use-cases-1">
+</ins></li><li><a href="#use-cases-1"><ins class="diff-chg">
 Section
-6
-</a>
+6:
+Use
+Cases
+</ins></a>
 lists
 the
 use
@@ -2129,8 +2494,8 @@ How
 </del>
 <ins class="diff-chg">A
 </ins><em><ins class="diff-chg">
-Target
-version
+Roadmap
+phase
 </ins></em><ins class="diff-chg">
 which
 specifies
@@ -2144,7 +2509,7 @@ or
 more
 </del>
 <ins class="diff-chg">intended
-version
+phase
 </ins>
 of
 the
@@ -2153,13 +2518,15 @@ for
 an
 interoperable
 </del>
+<a href="https://www.w3.org/Payments/IG/Roadmap">
 Web
 <del class="diff-old">payments
 framework
 .
 </del>
 <ins class="diff-chg">Payments
-Architecture
+Roadmap
+</ins></a><ins class="diff-chg">
 that
 will
 enable
@@ -2552,7 +2919,7 @@ reader:
 <dt>
 </dt>
 <dt>
-<dfn id="dfn-entity">
+<dfn lt="entity|entities" id="dfn-entity">
 entity
 </dfn>
 </dt>
@@ -2574,24 +2941,24 @@ world.
 </dd>
 <dt>
 <dfn id="dfn-four-corner-model">
-<ins class="diff-new">four
+<ins class="diff-chg">four
 corner
 model
-</ins></dfn></dt><dd><ins class="diff-new">
+</ins></dfn></dt><dd><ins class="diff-chg">
 A
-</ins><a href="#dfn-payment-scheme" class="internalDFN"><ins class="diff-new">
+</ins><a href="#dfn-payment-scheme" class="internalDFN"><ins class="diff-chg">
 payment
 scheme
-</ins></a><ins class="diff-new">
+</ins></a><ins class="diff-chg">
 which
 includes
 the
 following
 stakeholders:
 the
-</ins><a href="#dfn-payer" class="internalDFN"><ins class="diff-new">
+</ins><a href="#dfn-payer" class="internalDFN"><ins class="diff-chg">
 payer
-</ins></a><ins class="diff-new">
+</ins></a><ins class="diff-chg">
 (also
 known
 as
@@ -2619,10 +2986,10 @@ with
 the
 Acceptor).
 The
-</ins><a href="#dfn-payment-scheme" class="internalDFN"><ins class="diff-new">
+</ins><a href="#dfn-payment-scheme" class="internalDFN"><ins class="diff-chg">
 payment
 scheme
-</ins></a><ins class="diff-new">
+</ins></a><ins class="diff-chg">
 defines
 the
 rules
@@ -2652,8 +3019,7 @@ the
 scheme
 are
 met.
-</ins></dd><dt></dt><dt></dt><dt></dt><dt>
-<dfn id="dfn-payee">
+</ins></dd><dt></dt><dt></dt><dt></dt><dt><dfn lt="payee|payees" id="dfn-payee">
 payee
 </dfn>
 </dt>
@@ -2674,7 +3040,7 @@ a
 </ins>
 </dd>
 <dt>
-<dfn id="dfn-payer">
+<dfn lt="payer|payers" id="dfn-payer">
 payer
 </dfn>
 </dt>
@@ -2700,7 +3066,7 @@ a
 <dt>
 </dt>
 <dt>
-<dfn id="dfn-payment-instrument">
+<dfn lt="payment instrument|payment instruments" id="dfn-payment-instrument">
 payment
 instrument
 </dfn>
@@ -2797,7 +3163,7 @@ payee.
 <dt>
 </dt>
 <dt>
-<dfn id="dfn-payment-processor">
+<dfn lt="payment processor|payment processors" id="dfn-payment-processor">
 payment
 processor
 </dfn>
@@ -2831,7 +3197,7 @@ Atos,
 FedACH.
 </dd>
 <dt>
-<dfn id="dfn-payment-scheme">
+<dfn lt="payment scheme|payment schemes" id="dfn-payment-scheme">
 payment
 scheme
 </dfn>
@@ -2901,35 +3267,41 @@ functioning
 of
 payment
 services.
-</ins></dd><dt></dt><dt><dfn id="dfn-pull-payment"><ins class="diff-new">
+</ins>
+</dd>
+<dt>
+</dt>
+<dt>
+<dfn lt="pull payment|pull payments|payee-initiated payment|payee-initiated payments" id="dfn-payee-initiated-payment">
+<ins class="diff-chg">payee-initiated
+payment
+</ins></dfn></dt><dd><ins class="diff-chg">
+Also
+known
+as
+a
 pull
-payment
-</ins></dfn><ins class="diff-new">
-or
-</ins><dfn id="dfn-payee-initiated-payment"><ins class="diff-new">
-payee-initiated
-payment
-</ins></dfn></dt><dd><ins class="diff-new">
-A
+payment,
+a
 type
 of
-</ins><a href="#dfn-transaction" class="internalDFN"><ins class="diff-new">
+</ins><a href="#dfn-transaction" class="internalDFN"><ins class="diff-chg">
 transaction
-</ins></a><ins class="diff-new">
+</ins></a><ins class="diff-chg">
 where
 the
-</ins><a href="#dfn-payee" class="internalDFN"><ins class="diff-new">
+</ins><a href="#dfn-payee" class="internalDFN"><ins class="diff-chg">
 payee
-</ins></a><ins class="diff-new">
+</ins></a><ins class="diff-chg">
 initiates
 the
 funds
 transfer
 from
 the
-</ins><a href="#dfn-payee" class="internalDFN"><ins class="diff-new">
+</ins><a href="#dfn-payee" class="internalDFN"><ins class="diff-chg">
 payee
-</ins></a>.<ins class="diff-new">
+</ins></a>.<ins class="diff-chg">
 A
 credit
 card
@@ -2941,10 +3313,7 @@ of
 a
 pull
 payment.
-</ins>
-</dd>
-<dt>
-<dfn id="dfn-purchase">
+</ins></dd><dt><dfn lt="purchase|purchases" id="dfn-purchase">
 purchase
 </dfn>
 </dt>
@@ -2977,13 +3346,8 @@ etc.).
 <dt>
 <del class="diff-old">transaction
 </del>
-<dfn id="dfn-push-payment">
-<ins class="diff-chg">push
-payment
-</ins></dfn><ins class="diff-chg">
-or
-</ins><dfn id="dfn-payer-initiated-payment"><ins class="diff-chg">
-payer-initiated
+<dfn lt="push payment|push payments|payer-initiated payment|payer-initiated payments" id="dfn-payer-initiated-payment">
+<ins class="diff-chg">payer-initiated
 payment
 </ins>
 </dfn>
@@ -2992,7 +3356,13 @@ payment
 <del class="diff-old">An
 exchange
 </del>
-<ins class="diff-chg">A
+<ins class="diff-chg">Also
+known
+as
+a
+push
+payment,
+a
 type
 </ins>
 of
@@ -3042,7 +3412,7 @@ payment.
 <del class="diff-old">There
 are
 </del>
-<dfn id="dfn-transaction">
+<dfn lt="transaction|transactions" id="dfn-transaction">
 <ins class="diff-chg">transaction
 </ins></dfn></dt><dd><ins class="diff-chg">
 An
@@ -3082,24 +3452,8 @@ Interest
 Group
 has
 as
-</del>
-<ins class="diff-chg">one
-or
-more
-</ins><a title="payee" href="#dfn-payee" class="internalDFN"><ins class="diff-chg">
-payees
-</ins></a>.<ins class="diff-chg">
-An
-agreement,
-communication,
-or
-movement
-carried
-out
-between
-</ins>
 a
-<del class="diff-old">goal
+goal
 to
 make
 use
@@ -3118,8 +3472,20 @@ group
 has
 as
 </del>
-<ins class="diff-chg">buyer
-and
+<ins class="diff-chg">one
+or
+more
+</ins><a title="payee" href="#dfn-payee" class="internalDFN"><ins class="diff-chg">
+payees
+</ins></a>.<ins class="diff-chg">
+An
+agreement,
+communication,
+or
+movement
+carried
+out
+between
 </ins>
 a
 <del class="diff-old">goal
@@ -3132,25 +3498,25 @@ be
 understood
 by
 both
+payment
+industry
+professionals
 </del>
-<ins class="diff-chg">seller
+<ins class="diff-chg">buyer
+</ins>
+and
+<ins class="diff-new">a
+seller
 to
 exchange
 an
 asset
 for
-</ins>
-payment
-<del class="diff-old">industry
-professionals
-and
-</del>
-</dd>
-<dt>
-<dfn id="dfn-transfer-order">
-<ins class="diff-chg">transfer
+payment.
+</ins></dd><dt><dfn lt="transfer order|transfer orders" id="dfn-transfer-order"><ins class="diff-new">
+transfer
 order
-</ins></dfn></dt><dd><ins class="diff-chg">
+</ins></dfn></dt><dd><ins class="diff-new">
 [ECB]
 an
 order
@@ -3209,8 +3575,10 @@ to
 terms.
 </del>
 <ins class="diff-chg">the
-creditor
-</ins></dd><dt></dt></dl>
+creditor.
+</ins></dd><dt>
+</dt>
+</dl>
 </div>
 </section>
 <section id="an-overview-of-the-payment-phases" typeof="bibo:Chapter" resource="#an-overview-of-the-payment-phases" property="bibo:hasPart">
@@ -5632,8 +6000,8 @@ purchase
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -5641,7 +6009,7 @@ version
 widespread
 adoption.
 </del>
-<ins class="diff-chg">1.0
+<ins class="diff-chg">1
 </ins>
 </dd>
 <dt>
@@ -5748,8 +6116,8 @@ amount.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -6090,8 +6458,8 @@ store.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -6251,8 +6619,8 @@ price.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -6345,8 +6713,8 @@ day.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -6456,8 +6824,8 @@ room.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -6655,8 +7023,8 @@ to
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -6858,8 +7226,8 @@ website.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -6958,8 +7326,8 @@ date.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -7064,8 +7432,8 @@ levels.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -7164,8 +7532,8 @@ likes.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -7299,8 +7667,8 @@ wants
 to
 send.
 </ins></dd><dt><ins class="diff-chg">
-Target
-version
+Roadmap
+phase
 </ins></dt><dd><ins class="diff-chg">
 Uncategorized
 </ins></dd><dt><ins class="diff-chg">
@@ -7385,10 +7753,10 @@ a
 market
 analyst.
 </ins></dd><dt><ins class="diff-chg">
-Target
-version
+Roadmap
+phase
 </ins></dt><dd><ins class="diff-chg">
-1.0
+1
 </ins></dd><dt><ins class="diff-chg">
 Motivation
 </ins></dt><dd><ins class="diff-chg">
@@ -7527,10 +7895,10 @@ the
 music
 service.
 </ins></li></ul></dd><dt><ins class="diff-chg">
-Target
-version
+Roadmap
+phase
 </ins></dt><dd><ins class="diff-chg">
-1.0
+1
 </ins></dd><dt><ins class="diff-chg">
 Motivation
 </ins></dt><dd><ins class="diff-chg">
@@ -7668,10 +8036,10 @@ world
 of
 finance.
 </ins></dd><dt><ins class="diff-chg">
-Target
-version
+Roadmap
+phase
 </ins></dt><dd><ins class="diff-chg">
-1.0
+1
 (if
 time
 permits)
@@ -7862,8 +8230,8 @@ report.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -8100,8 +8468,8 @@ transaction
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -8241,8 +8609,8 @@ regulations.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -8429,8 +8797,8 @@ laptop.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -8766,8 +9134,8 @@ identity.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -8879,8 +9247,8 @@ payment.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -8958,8 +9326,8 @@ station.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -9094,8 +9462,8 @@ phone.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -9195,8 +9563,8 @@ billing.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -9216,7 +9584,7 @@ rapid,
 widespread
 adoption.
 </del>
-<ins class="diff-chg">1.0
+<ins class="diff-chg">1
 </ins>
 </dd>
 <dt>
@@ -9309,8 +9677,8 @@ PayPal.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -9426,8 +9794,8 @@ purchase
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -9444,7 +9812,7 @@ rapid,
 widespread
 adoption.
 </del>
-<ins class="diff-chg">1.0
+<ins class="diff-chg">1
 </ins>
 </dd>
 <dt>
@@ -9494,8 +9862,8 @@ instrument
 discovery
 flexibility
 that
-version
-1.0
+phase
+1
 should
 support
 is
@@ -9626,10 +9994,10 @@ any
 online
 merchants.
 </ins></li></ul></dd><dt><ins class="diff-chg">
-Target
-version
+Roadmap
+phase
 </ins></dt><dd><ins class="diff-chg">
-1.0
+1
 </ins></dd><dt><ins class="diff-chg">
 Motivation
 </ins></dt><dd><ins class="diff-chg">
@@ -9926,8 +10294,8 @@ cash.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -9945,7 +10313,7 @@ rapid,
 widespread
 adoption.
 </del>
-<ins class="diff-chg">1.0
+<ins class="diff-chg">1
 </ins>
 </dd>
 <dt>
@@ -10143,8 +10511,8 @@ instruments.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -10291,8 +10659,8 @@ merchants.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -10306,7 +10674,7 @@ Innovation,
 and
 Monetization.
 </del>
-<ins class="diff-chg">1.0
+<ins class="diff-chg">1
 </ins>
 </dd>
 <dt>
@@ -10607,8 +10975,8 @@ $25,000.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -10630,7 +10998,7 @@ rapid,
 widespread
 adoption.
 </del>
-<ins class="diff-chg">1.0
+<ins class="diff-chg">1
 </ins>
 </dd>
 <dt>
@@ -10896,8 +11264,8 @@ merchant.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -11161,8 +11529,8 @@ of
 a
 day.
 </ins></li></ul></dd><dt><ins class="diff-chg">
-Target
-version
+Roadmap
+phase
 </ins></dt><dd><ins class="diff-chg">
 Uncategorized
 </ins></dd><dt><ins class="diff-chg">
@@ -11355,8 +11723,8 @@ authentication.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -11586,8 +11954,8 @@ has
 been
 requested.
 </ins></dd><dt><ins class="diff-chg">
-Target
-version
+Roadmap
+phase
 </ins></dt><dd><ins class="diff-chg">
 Uncategorized
 </ins></dd><dt><ins class="diff-chg">
@@ -11674,8 +12042,8 @@ authorization
 by
 management.
 </ins></dd><dt><ins class="diff-chg">
-Target
-version
+Roadmap
+phase
 </ins></dt><dd><ins class="diff-chg">
 Uncategorized
 </ins></dd><dt><ins class="diff-chg">
@@ -11967,8 +12335,8 @@ Code.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -11978,7 +12346,7 @@ rapid,
 widespread
 adoption.
 </del>
-<ins class="diff-chg">1.0
+<ins class="diff-chg">1
 </ins>
 </dd>
 <dt>
@@ -12194,8 +12562,8 @@ transit.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -12208,7 +12576,7 @@ Innovation,
 and
 Automatability.
 </del>
-<ins class="diff-chg">1.0
+<ins class="diff-chg">1
 </ins>
 </dd>
 <dt>
@@ -12374,8 +12742,8 @@ released.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -12482,8 +12850,8 @@ proceed.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -12731,8 +13099,8 @@ provider.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -12754,7 +13122,7 @@ rapid,
 widespread
 adoption.
 </del>
-<ins class="diff-chg">1.0
+<ins class="diff-chg">1
 </ins>
 </dd>
 <dt>
@@ -12997,8 +13365,8 @@ minutes.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -13292,8 +13660,8 @@ use
 the
 funds.
 </ins></li></ul></dd><dt><ins class="diff-chg">
-Target
-version
+Roadmap
+phase
 </ins></dt><dd><ins class="diff-chg">
 Uncategorized
 </ins></dd><dt><ins class="diff-chg">
@@ -13470,8 +13838,8 @@ received.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -13625,8 +13993,8 @@ address.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -13634,7 +14002,7 @@ version
 widespread
 adoption.
 </del>
-<ins class="diff-chg">1.0
+<ins class="diff-chg">1
 </ins>
 </dd>
 <dt>
@@ -13724,8 +14092,8 @@ content.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -13742,7 +14110,7 @@ Portability,
 and
 Monetization.
 </del>
-<ins class="diff-chg">1.0
+<ins class="diff-chg">1
 </ins>
 </dd>
 <dt>
@@ -13793,8 +14161,8 @@ store
 for
 pickup.
 </ins></dd><dt><ins class="diff-new">
-Target
-version
+Roadmap
+phase
 </ins></dt><dd><ins class="diff-new">
 Uncategorized
 </ins></dd><dt><ins class="diff-new">
@@ -13909,8 +14277,8 @@ software.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -13922,7 +14290,7 @@ security,
 Innovation,
 Automatability,
 </del>
-<ins class="diff-chg">1.0
+<ins class="diff-chg">1
 (very
 basic
 receipt
@@ -14126,8 +14494,8 @@ bus.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -14436,8 +14804,8 @@ identities.
 <dt>
 <del class="diff-old">Goals
 </del>
-<ins class="diff-chg">Target
-version
+<ins class="diff-chg">Roadmap
+phase
 </ins>
 </dt>
 <dd>
@@ -14456,7 +14824,7 @@ rapid,
 widespread
 adoption.
 </del>
-<ins class="diff-chg">1.0
+<ins class="diff-chg">1
 (if
 time
 permits)
@@ -16476,10 +16844,8 @@ also
 known
 as
 a
-</ins><a href="#dfn-pull-payment" class="internalDFN"><ins class="diff-new">
 pull
 payment
-</ins></a><ins class="diff-new">
 in
 the
 context
@@ -16517,14 +16883,17 @@ electronic
 direct
 debit
 mandate.
-</ins></p><section class="notoc" typeof="bibo:Chapter" resource="#negotiation-of-purchase-terms-5" property="bibo:hasPart"><h4 id="negotiation-of-purchase-terms-5" resource="#negotiation-of-purchase-terms-5">
-<span property="xhv:role" resource="xhv:heading">
-<ins class="diff-new">Negotiation
+</ins></p><section class="notoc" typeof="bibo:Chapter" resource="#negotiation-of-purchase-terms-5" property="bibo:hasPart"><h4 id="negotiation-of-purchase-terms-5" resource="#negotiation-of-purchase-terms-5"><span property="xhv:role" resource="xhv:heading"><ins class="diff-new">
+Negotiation
 of
 Purchase
 Terms
-</ins></span></h4><ul><li><strong><ins class="diff-new">
-Discovery
+</ins></span>
+</h4>
+<ul>
+<li>
+<strong>
+<ins class="diff-new">Discovery
 of
 Offer
 </ins></strong>:<ins class="diff-new">
@@ -16919,10 +17288,8 @@ also
 known
 as
 a
-</ins><a href="#dfn-push-payment" class="internalDFN"><ins class="diff-chg">
 push
 payment
-</ins></a><ins class="diff-chg">
 in
 the
 context
@@ -17319,6 +17686,34 @@ Work
 </span>
 </h2>
 <ul>
+<li>
+<ins class="diff-new">Integration
+of
+US
+Federal
+Reserve
+Faster
+Payments
+Use
+Cases
+</ins></li><li><ins class="diff-new">
+Integration
+of
+Bill
+and
+Melinda
+Gates
+Foundation
+Level
+One
+Project
+Use
+Cases
+</ins></li><li><ins class="diff-new">
+Government
+Entitlement
+Disbursement
+</ins></li>
 <li>
 Automatic
 Tax

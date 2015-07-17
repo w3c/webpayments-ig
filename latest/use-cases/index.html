@@ -16,7 +16,7 @@
           shortName:            "web-payments-use-cases",
 
           // if you wish the publication date to be other than today, set this
-          //publishDate:  "2015-04-16",
+          //publishDate:  "2015-07-15",
 
           // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
           // and its maturity status
@@ -51,10 +51,12 @@
                 company: "W3C", companyURL: "http://www.w3.org/" },
               { name: "Manu Sporny", url: "https://manu.sporny.org/",
                 company: "Digital Bazaar", companyURL: "http://digitalbazaar.com/" },
-              { name: "David Ezell", url: "http://example.org/",
-                company: "NACS", companyURL: "http://www.nacsonline.com/" },
               { name: "Qian Sun", url: "",
                 company: "Alibaba", companyURL: "http://www.alibabagroup.com/" },
+              { name: "Cyril Vignet", url: "https://www.linkedin.com/pub/cyril-vignet/bb/704/423",
+                company: "Groupe BPCE", companyURL: "http://www.bpce.fr/" },
+              { name: "David Ezell", url: "http://example.org/",
+                company: "NACS", companyURL: "http://www.nacsonline.com/" },
               { name: "David Jackson", url: "https://www.linkedin.com/in/davidjjackson",
                 company: "Oracle", companyURL: "http://www.oracle.com/" }
           ],
@@ -168,6 +170,38 @@ general public. Our desire is to align with the larger payments industry
 when it's possible to do so. Expect this document to be rapidly iterated upon
 with that desire in mind.
     </p>
+    <p>
+The following changes have been made since the last version of this document:
+    </p>
+    <ul>
+      <li>
+Reorganization of use cases by phases approved by the Web Payments IG.
+      </li>
+      <li>
+Removal of the "Goals" for each use case as they were repetitive and did not
+greatly aid understanding of the use case.
+      </li>
+      <li>
+Addition of Regulatory concerns to a number of the use cases.
+      </li>
+      <li>
+Addition of two more scenarios related to Direct Debit and Credit Transfer.
+      </li>
+      <li>
+Addition of "Relationship to Other Documents" section.
+      </li>
+      <li>
+Integration of a unified Web Payments Activity glossary.
+      </li>
+      <li>
+Addition of Escrow, Biometric, Know Your Customer (KYC), and
+Anti-Money Laundering (AML) use cases.
+      </li>
+      <li>
+Integration of feedback from the public, Web Payments Community Group, and
+Web Payments Interest Group.
+      </li>
+    </ul>
   </section>
 
   <section>
@@ -234,6 +268,44 @@ thus contributes to a greater net gain for society.
       </p>
     </section>
 
+    <section id="relationships">
+      <h2>Relationship to Other Documents</h2>
+      <p>
+This document is one part of a greater body of work around Web Payments that
+the <a href="https://www.w3.org/Payments/IG/">Web Payments Interest Group</a>
+at W3C is producing. These other documents include:
+      </p>
+
+      <ul>
+        <li>
+<a href="https://www.w3.org/Payments/IG/Vision">A Vision for Web Payments</a>
+describes the desirable properties of a Web Payments architecture.
+        </li>
+
+        <li>
+<a href="http://www.w3.org/TR/web-payments-use-cases/">Web Payments Use Cases
+1.0</a> (this document) is a prioritized list of all Web Payments scenarios
+that the Web Payments Interest Group expects the architecture to address
+in time.
+        </li>
+
+        <li>
+<a href="https://dvcs.w3.org/hg/webpayments/raw-file/default/latest/capabilities/index.html">
+Web Payments Capabilities 1.0</a>
+derives a set of capabilities from the use cases that, if standardized, will
+improve payments  on the Web.
+        </li>
+
+        <li>
+<a href="https://www.w3.org/Payments/IG/Roadmap">Web Payments Roadmap 1.0</a>
+proposes an implementation and deployment plan that will result in
+enhancements to the Open Web Platform that will achieve the scenarios outlined
+in the Use Cases document and the capabilities listed in the Capabilities
+document.
+        </li>
+      </ul>
+    </section>
+
     <section>
       <h3>How this Document is Organized</h3>
 
@@ -243,27 +315,29 @@ This document is organized as follows:
 
       <ul>
           <li>
-<a href="#terminology">Section 2</a> defines basic payment terms.
+<a href="#terminology">Section 2: Terminology</a> defines basic payment
+terminology.
         </li>
         <li>
-<a href="#an-overview-of-the-payment-phases">Section 3</a> describes a
-common payment flow at a high level. The group expects to work on additional
-payment flows in future work.
+<a href="#an-overview-of-the-payment-phases">Section 3: An Overview of the
+Payment Phases</a> describes a common payment flow at a high level. The group
+expects to work on additional payment flows in future work.
         </li>
         <li>
-<a href="#a-simple-example-of-the-payment-phases">Section 4</a> is a specific
+<a href="#a-simple-example-of-the-payment-phases">Section 4: A Simple
+Example of the Payment Phases</a> is a specific
 narrative, labeled according to the steps of section 3.
-<a href="#additional-examples-of-the-payment-phases">Section 7</a> describes
-additional familiar narratives to give a more complete picture
-of how the payment phases apply.
+<a href="#additional-examples-of-the-payment-phases">Section 7:
+Additional Examples of the Payment Phases</a> describes additional familiar
+narratives to give a more complete picture of how the payment phases apply.
         </li>
         <li>
-<a href="#assumptions">Section 5</a> highlights general assumptions that have
-been made about the use cases.
+<a href="#assumptions">Section 5: Assumptions</a> highlights general
+assumptions that have been made about the use cases.
         </li>
         <li>
-<a href="#use-cases-1">Section 6</a> lists the use cases - short scenarios
-that cover diverse aspects of each payment step.
+<a href="#use-cases-1">Section 6: Use Cases</a> lists the use cases - short
+scenarios that cover diverse aspects of each payment step.
         </li>
       </ul>
 
@@ -275,8 +349,9 @@ Each use case has:
 A title and short description.
         </li>
         <li>
-A <em>Target version</em> which specifies the intended version of the Web
-Payments Architecture that will enable the use case.
+A <em>Roadmap phase</em> which specifies the intended phase of the
+<a href="https://www.w3.org/Payments/IG/Roadmap">Web Payments Roadmap</a> that
+will enable the use case.
         </li>
         <li>
 A short <em>Motivation</em> statement to help explain why the use
@@ -737,8 +812,8 @@ use further be helpful in scanning the document more quickly?
           <dd>
 Penny uses the HobbyCo website to select a $15 model train for <a>purchase</a>.
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 A human being seeing a visual offer of sale on a website is the most common
@@ -753,7 +828,7 @@ Cory shops for groceries at his local ChowMart, scans his loyalty card and
 all of the items he wants to <a>purchase</a> at the automated kiosk, requests
 a cash back amount, and is presented with a total amount.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -802,7 +877,7 @@ from the store.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -829,7 +904,7 @@ outside the range of a mobile network).
 Chaoxiang plays his favorite native app game and wants to upgrade his avatar
 with a few extra "power-ups". Clicking on a power-up displays the price.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -846,7 +921,7 @@ developers more choices.
 A GroupBuyCo customer receives an offer by email to <a>purchase</a> the deal
 of the day.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -867,7 +942,7 @@ email application could lead to a wholly new category of phishing/fraud.
 Renne checks into a hotel and is asked for a deposit for any damages
 to the room.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -892,7 +967,7 @@ recognizes the station location and the pump. The pump communicates which
 fuels it has and their price in an offer. Krishna's car asks if he wants to
 approve a fill up for up to €35.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -926,7 +1001,7 @@ BigBoxCo expresses their entire product catalog online as machine-readable
 information so that SearchCo may index their content more easily and direct
 more customer traffic to BigBoxCo's website.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -942,7 +1017,7 @@ EnergyCo lists barrels of refined oil for sale on their website based on an
 algorithm that uses the cost of coal and crude oil as inputs. EnergyCo
 guarantees their prices for up to 24 hours from the posting date.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -963,7 +1038,7 @@ Amantha downloads the latest version of her favorite game and beats
 the first level. The game asks her if she'd like to buy the full game
 to play further levels.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -980,7 +1055,7 @@ Jeff listens to a lot of music on the way to work. The music station
 serves a digital offer along with the music stream. This enables Jeff to
 easily buy music that he really likes.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1005,7 +1080,7 @@ motion or if it requires the driver to look away from the road.
 Vern sends money to his friend Milena by typing in Milena's mobile phone number
 and the amount he wants to send.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1028,8 +1103,8 @@ person using direct bank to bank transfers.
           <dd>
 Jamie wishes to pay for a single article from a market analyst.
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>It should be clear to a
 <a title="payer">payer</a> whether a
@@ -1059,8 +1134,8 @@ needing to register with the coffee shop or the music service.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 There are a large number of "paywall" websites on the Web that require a
@@ -1085,8 +1160,8 @@ abandonment of the transaction.
 Larissa subscribes to a site that provides a monthly analysis of the world
 of finance.
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0 (if time permits)</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1 (if time permits)</dd>
           <dt>Motivation</dt>
           <dd>
 <a title="payer">Payers</a> should be able to understand if a
@@ -1127,7 +1202,7 @@ a credit score report and an audited finances report.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1161,7 +1236,7 @@ BoomCo that the shipper can decipher. Tibor's privacy is protected from the
 candy store, which did not require any personally identifying information to
 complete the <a>transaction</a>.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1186,7 +1261,7 @@ for anti-money laundering / know your customer regulatory purposes. When a
 would like to reduce the amount of information that's transmitted to the
 <a>payee</a> while ensuring that PayCo complies with regulations.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1215,7 +1290,7 @@ a technology website to pay for a new laptop.
   </li>
 </ul>
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1231,7 +1306,7 @@ the <a>payee</a> in order to initiate payment to the <a>payee</a>.
 Marge wishes to renew her passport online which requires transmission
 of a fee and a great deal of information about her real-world identity.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1257,7 +1332,7 @@ JustPopcorn sends Marco a special discount offer given Marco's past
 <a title="purchase">purchases</a>. The offer takes the form of a coupon that
 may be applied during payment.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1274,7 +1349,7 @@ Terry uses his FoodCo loyalty card when purchasing his weekly groceries, which
 gives him a discount on gas  <a title="purchase">purchases</a> performed at the
 FoodCo gas station.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1293,7 +1368,7 @@ if she makes the <a>purchase</a> using store credit. She accepts the offer and
 a new store credit card is placed in her payment application on her mobile
 phone.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1323,8 +1398,8 @@ store-specific line of credit.
 A game store Web site accepts payment via credit card, e-check, and
 operator billing.
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 Ubiquitous <a title="payment scheme">payment schemes</a> should be supported
@@ -1343,7 +1418,7 @@ scheme.
           <dd>
 CrowdFundCo supports Bitcoin, Ripple, Google Wallet, and PayPal.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1367,15 +1442,15 @@ Yanos has a multiple digital wallets: one on his mobile phone, two in the
 cloud (but on different websites), and one on his smart watch. Each one has
 a credit card that he may want to use for a credit card-based <a>purchase</a>.
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 A <a>payer</a> will most likely use multiple digital wallets over time. It is
 important to ensure that the wallets that they use are presented to them in a
 consistent manner across devices.
 <span class="issue">The amount of wallet/payment instrument discovery
-flexibility that version 1.0 should support is currently unknown.</span>
+flexibility that phase 1 should support is currently unknown.</span>
           </dd>
           <dt>Accessibility</dt>
           <dd>
@@ -1406,8 +1481,8 @@ merchants, so that information is not shared with any online merchants.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 Sharing or protecting data on the sorts of
@@ -1460,8 +1535,8 @@ credit card and provide a $5 tip with digital cash.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 There are scenarios, such as the first interaction/use of a payment instrument,
@@ -1499,7 +1574,7 @@ often to appear at top of the displayed list of available payment instruments.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1520,8 +1595,8 @@ Payment solutions providers can make payments easier and faster through automati
 When Suresh attempts to pay online, he is asked for a username and password
 by his payment service provider before the payment is approved.
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 The most common mechanism for protecting access to payment instruments on the
@@ -1564,8 +1639,8 @@ before she is allowed to withdraw $25,000.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>The payments architecture should support
 	    the authentication devices available today for
@@ -1613,7 +1688,7 @@ institution and merchant.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1659,7 +1734,7 @@ in winnings over the course of a day.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1697,7 +1772,7 @@ perform the authentication.
                 </li>
               </ul>
             </dd>
-            <dt>Target version</dt>
+            <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
             <dt>Motivation</dt>
             <dd>
@@ -1742,7 +1817,7 @@ Gao's payment processor service continuously monitor's his daily spending limit,
 daily withdrawal limit, and typical spending behavior and alerts him when a
 suspicious payment has been requested.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1760,7 +1835,7 @@ shared among multiple employees to make purchases. The account is protected
 by an access control list as well as limits on the amount that each
 employee can spend without authorization by management.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1815,8 +1890,8 @@ using the details in the QR Code.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 Payee-initiated payments, also known as "pull payments" or
@@ -1854,8 +1929,8 @@ transit.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 Payer-initiated payments, also known as "push payments",
@@ -1886,7 +1961,7 @@ Renne checks into a hotel and is asked for a deposit for any damages to the
 room. She uses her phone to provide a proof-of-hold until she checks out of
 the hotel, at which time the hold on her funds will be released.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1904,7 +1979,7 @@ When Mario wishes to <a>purchase</a> a race car through the manufacturer,
 the company that makes the car requires a proof of funds from Mario's bank
 in order for the customization of the car to proceed.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -1950,8 +2025,8 @@ originally bought from another provider.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 At times, it is safe to release a good
@@ -1998,7 +2073,7 @@ Funds in Euros are available to OnlineWorkClothes within a few minutes.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Exceptions</dt>
           <dd>
@@ -2039,7 +2114,7 @@ can access and use the funds.
             </ul>
             </ul>
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -2066,7 +2141,7 @@ Gavin sends an electronic check to WaveMart. WaveMart receives a notification
 that payment has been initiated almost immediately. Four days later, WaveMart
 receives a notification from their bank that payment has been received.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -2098,8 +2173,8 @@ received.
 Giralt orders a bicycle for his daughter through BikeSmart online and has it
 shipped to his home address.
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 The <a>purchase</a> and delivery of physical goods via an online marketplace
@@ -2115,8 +2190,8 @@ Web site to download additional content, no registration is required, just a
 proof of <a>purchase</a> that is sent to the band's website, after which
 MusicBox provides Lilith a link to download the additional content.
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
 Delivery of product can happen on any site that accepts a proof of purchase
@@ -2130,7 +2205,7 @@ that contains a recognized product identifier.
 Takeru orders a new backpack online and has it shipped to a nearby department
 store for pickup.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -2151,8 +2226,8 @@ credit card (via his phone). A machine-readable electronic receipt for
 the <a>purchase</a> from the gas station is transferred to his phone and
 displayed using his favorite expense tracking software.
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0 (very basic receipt container and delivery protocol)</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1 (very basic receipt container and delivery protocol)</dd>
           <dt>Motivation</dt>
           <dd>
 Standardized, machine-readable electronic receipts make it easier to
@@ -2187,7 +2262,7 @@ Bongani reserves a bus ticket online using his mobile phone. At the bus
 terminal he taps his phone to a kiosk and receives a printed physical receipt
 that he can use on the bus.
           </dd>
-          <dt>Target version</dt>
+          <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
@@ -2242,8 +2317,8 @@ payments sent to the fake identities.
               </li>
             </ul>
           </dd>
-          <dt>Target version</dt>
-          <dd>1.0 (if time permits)</dd>
+          <dt>Roadmap phase</dt>
+          <dd>1 (if time permits)</dd>
           <dt>Motivation</dt>
           <dd>
 Some <a>transaction</a>s are the result of human error or fault. In these
@@ -2666,7 +2741,7 @@ to Lenne and she receives them the next day.
       <p>
 The following scenario outlines an ideal payment experience using a
 Direct Debit (<a>payee-initiated payment</a>), also known as a
-<a>pull payment</a> in the context of a <a>four corner model</a> payment.
+pull payment in the context of a <a>four corner model</a> payment.
 In this scenario, Anna is signing up for electricity service via the
 service's website. During the payment process she will validate an electronic
 direct debit mandate.
@@ -2763,7 +2838,7 @@ if something goes wrong with the Direct Debit.
       <p>
 The following scenario outlines an ideal payment experience using a
 <a>payer-initiated payment</a>, also known as a
-<a>push payment</a> in the context of a <a>four corner model</a> payment. In
+push payment in the context of a <a>four corner model</a> payment. In
 this scenario, Anna is buying a very expensive piece of furniture that costs
 far more than the maximum amount allowed by her payment card. She pays
 using her bank account via her bank's website.
@@ -2859,9 +2934,24 @@ since the credit transfer cannot be reversed since she initiated it.
     <h2>Future Work</h2>
 
     <ul>
-      <li>Automatic Tax Payment</li>
-      <li>Person to Person Cash Payment</li>
-      <li>Government Entitlement Disbursement</li>
+      <li>
+Integration of US Federal Reserve Faster Payments Use Cases
+      </li>
+      <li>
+Integration of Bill and Melinda Gates Foundation Level One Project Use Cases
+      </li>
+      <li>
+Government Entitlement Disbursement
+      </li>
+      <li>
+Automatic Tax Payment
+      </li>
+      <li>
+Person to Person Cash Payment
+      </li>
+      <li>
+Government Entitlement Disbursement
+      </li>
     </ul>
 
   </section>
