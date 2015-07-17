@@ -81,9 +81,9 @@
         </tr>
         <tr>
             <th rowspan="1" colspan="1">Initial Team Contacts
-                <br/>(FTE %: 45%)
+                <br/>(FTE %: 50%)
             </th>
-            <td rowspan="1" colspan="1">Doug Schepers</td>
+            <td rowspan="1" colspan="1">Doug Schepers, Ian Jacobs</td>
         </tr>
         <tr>
             <th rowspan="1" colspan="1">Usual Meeting Schedule</th>
@@ -95,7 +95,7 @@
     <h2 id="goals">Goals</h2>
 
     <p>Under this initial charter, the Working Group defines standards that ease integration of the payments ecosystem
-      into the Web for a payment initiated by a Web application.</p>
+      into the Web for a payment initiated within a Web application.</p>
 
 
     <p>We anticipate the following benefits of this work:</p>
@@ -121,18 +121,6 @@
         </li>
         <li>Added value through machine-readable digital payment requests and payment responses.</li>
     </ul>
-    <p>
-        The Web Payments Interest Group will continue to guide the W3C in the Web Payments activity and may propose new
-        Working Groups to cover topics such as identity, credentials and commerce (including invoicing, receipts,
-        loyalty programs, coupons, discounts, and offers).</p>
-
-    <p>As part of this work the Web Payments Interest Group expects to provide technical input to this and other
-        relevant W3C Working Groups, based on a detailed analysis of the relevant <a
-                href="http://www.w3.org/TR/web-payments-use-cases/">Web Payments Use
-            Cases</a>.</p>
-
-    <p>The W3C is also planning other Working Groups to develop standards, covering topics such as security, that will
-        be important in facilitating payments on the Web.</p>
 
     <div class="scope">
         <h2 id="scope">Scope</h2>
@@ -141,12 +129,11 @@
             manually select a <strong>payment scheme</strong>, manually select their own <strong>payment instrument</strong> for that
             payment scheme, manually capture the details of that instrument into the page (along with any other
             essential data such as a shipping address) and then submit this data back to the <strong>payee.</strong> The
-            payment data briefly passes through the Web (from the payer's user agent to the payee's Website) on its way
+            payment data briefly passes through the Web (from the payer's user agent to the payee's server) on its way
             to a payment processor. At that point, much of the communication to complete a payment takes place among
             banks, card networks, and other parties in the payment ecosystem typically outside of the Web.</p>
 
-        <p>In an effort to improve upon this process, various parties have innovated ways to make the payment flow
-            easier, for example by caching payment instrument information in browsers, registering users on eCommerce
+        <p>Various parties have innovated ways to simplify this flow, for example by caching payment instrument information in browsers, registering users on eCommerce
             websites to facilitate re-use of customer data and/or payment credentials (increasingly through the use of
             tokenization), and even developing new payment schemes. Unfortunately, these efforts suffer from a lack
           of standardization in areas such as:</p>
@@ -160,8 +147,8 @@
 	      <p>The result is that users are led through entirely different flows and verification
             routines every time they make a payment on the Web.</p>
 
-        <p>This group will create open Web standards for the <em>interfaces</em> in and out of the Web context to
-            provide
+          <p>To reduce this fragmentation, this Working Group will create open Web standards for the interfaces in and out of the Web context. This
+	    will increase
             interoperability between payer and payee systems (for existing and future payment schemes), and encourage
             greater automation of the steps in a typical payment. The interfaces between the payment schemes and the Web
             are usually at the user agent and the Web application, therefore the scope of the initial charter is focused
@@ -169,32 +156,29 @@
           them. <strong>Note:</strong> These standards may also prove useful in a "native" application context, but this group is not focused on that use case.</p>
 
         <p>The group will focus primarily on standardisation of a set of messages and a message flow for the initiation,
-            confirmation and completion of a payment. By focusing on the message format and flow the group leaves open
+            confirmation and completion of a payment. By focusing on the message format and flow, the group leaves open
             the standardisation of the delivery mechanism for these messages as this will vary depending on the use case
             and technology stack. To support use cases where messages are proxied between payer and payee using
             different technologies, the group will standardize delivery mechanisms for common scenarios. This
             will include WebIDL APIs for the use cases where the messages are proxied between payer and payee via a Web
             browser or Web APIs where the messages are exchanged directly over the Web between two online entities in
-            the classic REST pattern.</p>
+          the classic REST pattern.</p>
 
-        <p><strong>Note:</strong> The W3C <a href="/Payments/IG/">Web Payments Interest Group</a> expects to continue to explore a wider variety of eCommerce scenarios, including digital receipts; loyalty programs and coupons; peer-to-peer payments; and harmonization of user
-            experience in-browser, in-app, and in-store. For more information, see the <a
-                    href="/TR/web-payments-use-cases/">Payments Use Cases</a> published by the W3C Web
-            Payments Interest Group. Through its liaison with the Web Payments Interest Group, this Working Group should remain aware of the evolution of the Web payments technology landscape.</p>
+	<p>For more information about Web Payments activities beyond the scope of this charter, see the <a href="#wpig">Web Payments Interest Group</a> description below.</p>
 
         <h3 id="payment_flow">Payment Flow</h3>
 
-        <p>The scope of work supports the following elements of a basic purchase triggered by user interaction with a
-            Web application initiating a new payment. These standards define a high-level message flow for a payment
+          <p>The scope of work supports the following elements of a basic purchase triggered by payment initiation through a
+            Web application. These standards define a high-level message flow for a payment
             from payer to payee either in the form of a credit push (payer initiated) or a debit pull (payee initiated)
-            payment, and can be used to facilitate a payment from any payment scheme.</p>
+            payment, and can be used to facilitate a payment from any payment scheme. They involve:</p>
         <dl>
             <dt>Pre-Payment</dt>
             <dd>
                 <ul>
                     <li>
                         <strong>Registration</strong>, by the payer with their <a href="#wallets">wallet</a>, of any
-                        conforming <strong>payment instrument</strong> they wish to use on the Web (e.g. a credit or
+                        conforming <strong>payment instrument</strong> they wish to use on the Web (a credit or
                         debit card, electronic cash, cryptocurrency, etc).
                     </li>
                 </ul>
@@ -254,9 +238,12 @@
             required security and authentication (e.g., encryption and digital signatures) to payment schemes, it is important to ensure that any additions to
             the Web platform are secure and tamper-proof. The ability to manipulate any message in a payment flow has
             potentially massive financial impact. Therefore the ability to prove message integrity and verification of
-            all message originators should be a key consideration for any work done by the group.</p>
+          all message originators should be a key consideration for any work done by the group.</p>
 
-        <p>The group will follow the work of other W3C groups working on hardware-based security standards to help ensure compatibility with the payment flow standards produced by this Working Group. In particular, this group will consider how hardware-based solutions may be used to generate
+	  <p>W3C is planning to charter other Working Groups to develop standards, covering topics such as security, that will
+            be important in facilitating payments on the Web. The current
+	    Working Group will follow that work  to help ensure compatibility with the payment flow standards produced by this Working Group.
+	    In particular, this group will consider how hardware-based solutions may be used to generate
             and store secrets for secure transactions, and how hardware devices may be used to verify a user's
           authenticity via biometry or other mechanisms.</p>
 
@@ -322,11 +309,10 @@
         <h3 id="rec_track">Recommendation-track deliverables</h3>
         <h4 id="Web_Payment_Vocabularies_1.0">Web Payment Vocabularies 1.0</h4>
 
-        <p>The Working Group will develop machine-readable vocabularies (and a mechanism to manage the lifecycle of
-            these vocabularies) that enable the following:</p>
+        <p>The Working Group will develop machine-readable vocabularies (that is, schemas) for the following:</p>
         <ul>
             <li>
-                <strong>Payment Scheme Description</strong>: this vocabulary is used by payees to represent accepted
+                <strong>Payment Scheme Description</strong>: used by payees to represent accepted
                 schemes, and by payers to represent their available payment schemes and instruments.
             </li>
             <li>
@@ -370,7 +356,7 @@
                 the user agent.
             </li>
             <li><strong>Web services API</strong>: Where request messages may be passed to a Cloud-based wallet service
-                via that service's REST API endpoint(s) and where HTTP callbacks may be used to pass responses to other
+                via that service's REST API endpoint(s) and where HTTP may be used to pass responses to other
                 Web services.
             </li>
             <li><strong>Inter-app on mobile devices (Optional)</strong>: If possible the group will standardize a
@@ -457,12 +443,16 @@
 
         <h3>W3C Groups</h3>
         <dl>
-            <dt>
+            <dt id="wpig">
                 <a href="/Payments/IG/">Web Payments Interest Group</a>
             </dt>
-            <dd>Discussion of the use cases and requirements that led to the creation of this group, as well as the
-                overall Web payment
-                landscape of which this group's work is a part.
+            <dd>The Web Payments Interest Group acts as the overall coordinator at W3C of a vision for Web Payments, by gathering <a
+                    href="/TR/web-payments-use-cases/">Web Payments Use Cases</a>, engaging in liaisons with other payments standards bodies, and developing a high-evel architecture. The group intends to explore more eCommerce scenarios than are represented in the current Working Group charter, such as digital receipts; loyalty programs and coupons; peer-to-peer payments; and harmonization of user
+              experience in-browser, in-app, and in-store. From time to time, the Interest Group will seek feedback from the Working Group on its evolving vision, and share information about the evolution of the Web payments technology landscape. The Interest Group may also propose new Working Groups to cover topics such as identity, credentials and commerce (including invoicing, receipts,
+        loyalty programs, coupons, discounts, and offers). The Web Payments Interest Group also expects to provide technical input to this and other
+        relevant W3C Working Groups, based on a detailed analysis of the relevant <a
+                href="http://www.w3.org/TR/web-payments-use-cases/">Web Payments Use
+		Cases</a>.
             </dd>
             <dt>
                 <a href="/community/webpayments/">Web Payments Community Group</a>
@@ -552,7 +542,7 @@
     <div class="patent">
         <h2 id="patentpolicy">Patent Policy</h2>
 
-        <p>This Working Group operates under the <a href="/2014/Process-20140801/">W3C Patent Policy</a>(1 August 2014
+        <p>This Working Group operates under the <a href="/2014/Process-20140801/">W3C Patent Policy</a> (1 August 2014
             Version). To promote the widest adoption of Web standards, W3C seeks to issue Recommendations that can be
             implemented, according to this policy, on a Royalty-Free basis.</p>
 
@@ -562,16 +552,15 @@
     <h2 id="about">About this Charter</h2>
 
     <p>This charter for the Web Payments Working Group has been created according to <a
-            href="/Consortium/Process/groups#GAGeneral">section 6.2</a>of the <a href="/Consortium/Process">Process
+            href="/Consortium/Process/groups#GAGeneral">section 6.2</a> of the <a href="/Consortium/Process">Process
         Document</a>. In the event of a conflict between this document or the provisions of any charter and the W3C
         Process, the W3C Process shall take precedence.</p>
     <hr/>
     <address>Participants of the Web Payments Interest Group</address>
     <p class="copyright">
-        <a rel="Copyright" href="/Consortium/Legal/ipr-notice#Copyright">Copyright</a>© 2015
+        <a rel="Copyright" href="/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2015
         <a href="/"><acronym title="World Wide Web Consortium">W3C</acronym></a>
-        <sup>®</sup>(
-        <a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>,
+        <sup>®</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>,
         <a href="http://www.ercim.org/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>,
         <a href="http://www.keio.ac.jp/">Keio</a>,
         <a href="http://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved.</p>
