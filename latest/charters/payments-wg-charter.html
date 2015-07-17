@@ -251,25 +251,20 @@
         <h3 id="security">Security and Privacy Considerations</h3>
 
         <p>Security is obviously critical in payments. While the initial work of the group will leave much of the
-            required security and authentication to the payment schemes it is important to ensure that any additions to
+            required security and authentication to payment schemes, it is important to ensure that any additions to
             the Web platform are secure and tamper-proof. The ability to manipulate any message in a payment flow has
             potentially massive financial impact. Therefore the ability to prove message integrity and verification of
             all message originators should be a key consideration for any work done by the group.</p>
 
-        <p>Protection of the privacy of all participants in a payment is essential to maintaining the trust that payment
+        <p>The group will follow the work of other W3C groups working on hardware-based security standards to help ensure compatibility with the payment flow standards produced by this Working Group. In particular, this group will consider how hardware-based solutions may be used to generate
+            and store secrets for secure transactions, and how hardware devices may be used to verify a user's
+          authenticity via biometry or other mechanisms.</p>
+
+	        <p>Protection of the privacy of all participants in a payment is essential to maintaining the trust that payment
             systems are dependent upon to function. Any payment process defined by the group should not require
             disclosure of private details of any of the participants' identity or other sensitive information without
             their explicit consent. The design of any public facing API should ensure it is not possible for such
             data to be leaked through exploitation of the API.</p>
-
-        <p>The group will also consider the work of other W3C groups working on hardware-based security standards.
-            Hardware-based security solutions can elevate security beyond that which pure software solutions are able to
-            provide. In particular the group will consider how hardware-based solutions may be used to securely generate
-            and store secrets for secure transactions and how hardware devices may be used to verify a user's
-            authenticity via biometry or other mechanisms. This hardware integration is outside the scope of the Web
-            Payments WG but will be an important part of the security models employed by wallets and payment schemes so
-            it is important to ensure the standards put forward by the group are considerate of how these hardware
-            integrations may fit into the payment flow.</p>
 
         <h3 id="wallets">Relation to Wallets</h3>
 
