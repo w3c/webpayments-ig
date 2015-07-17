@@ -295,21 +295,21 @@
             such as holding digital receipts and digital credentials.
 	   The definition of wallet in this charter is not intended to constrain W3C's future activities. Furthermore, the wallet metaphor appropriate to this charter may change in future charters or may become inappropriate.</p>
 
-        <p>This Working Group intends to create a standard interface from the Web to a user's wallet so that a user with any
+        <p>This Working Group intends to create a standard interface from the Web to a payer's wallet so that someone with any
             conforming wallet can seamlessly make payments with any conforming application running in a conforming
             user agent. The group may define APIs that will also be used outside of a user agent context (such as
             between
             Web services, or from within a native application, where the browser is not the proxy between wallet and
             payee application).</p>
 
-          <p>The group may also consider the use case where an aggregation service acts as a more sophisticated wallet service or providing a wider choice of payment solutions to the user. For example, the aggregator service might combine the functionality of multiple wallet services, or apply a more complex payment instrument discovery algorithm to collect the set of payment
-            instruments available to the user.</p>
+          <p>The group may also consider the use case where an aggregation service acts as a more sophisticated wallet service or providing a wider choice of payment solutions to the payer. For example, the aggregator service might combine the functionality of multiple wallet services, or apply more complex algorithms to discover and collect the set of payment
+            instruments available to the payer.</p>
 
         <p>
             <strong>Note:</strong> The Working Group anticipates a rich ecosystem of eCommerce and payment
             functionality, including loyalty schemes and coupons, digital receipts, location services, marketing
             additions, and so on. Some of this functionality may be provided by a digital wallet, or by other services
-            available to the user. This charter does not seek to preclude those additional services, and in the future
+            available to the payer. This charter does not seek to preclude those additional services, and in the future
             W3C may look for opportunities to standardize and increase interoperability of such services.</p>
         <h3 id="out_of_scope">Out of Scope</h3>
 
@@ -348,7 +348,7 @@
         <ul>
             <li>
                 <strong>Registration of a Payment Instrument</strong>: A payer wallet service processes a registration
-                request and, with user mediation as required, adds a new payment instrument to the user's wallet.
+                request and, with user mediation as required, adds a new payment instrument to the payer's wallet.
             </li>
             <li>
                 <strong>Web Payment Initiation</strong>: The payee passes a payment request to a payer wallet service
@@ -376,7 +376,7 @@
             </li>
             <li><strong>Inter-app on mobile devices (Optional)</strong>: If possible the group will standardize a
                 delivery mechanism for payment messages between apps on a mobile device so that wallet apps can
-                seamlessly interface with Websites running inside the mobile device's user agent (browser).
+                seamlessly interface with Websites running inside the mobile device's user agent.
             </li>
         </ul>
         <h4 id="Card_Payments_1.0">Card Payments 1.0 (optional)</h4>
@@ -446,10 +446,10 @@
             </tbody>
         </table>
 
-        <h3 id="best_practices">Instrument Discovery Best Practices</h3>
+        <h3 id="best_practices">Instrument Discovery Good Practices</h3>
 
-	<p>The Working Group may document best practices and recommended algorithms for the discovery of payer payment
-            instruments by wallet services. This involves best practice approaches for discovering the supported payer
+	<p>This charter does not include a deliverable for a standard mechanism to discover &mdash; via the payer's wallet(s)&mdash; available payment instruments. However, the Working Group may document good practices and recommend algorithms for the discovery of payer payment
+            instruments. This involves good practice approaches for discovering the supported payer
             payment instruments given the payer's configured payment instruments and those acceptable to a payee as
             listed in a payment initiation request.</p>
     </div>
