@@ -368,7 +368,7 @@ using an agile process; it is incomplete.
       
     
   
-</section><section id="toc"><h2 class="introductory" id="h-toc" resource="#h-toc"><span property="xhv:role" resource="xhv:heading">Table of Contents</span></h2><ul class="toc" role="directory" id="respecContents"><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a href="#terminology" class="tocxref"><span class="secno">2. </span>Terminology</a></li><li class="tocline"><a href="#coordination" class="tocxref"><span class="secno">3. </span>Coordination</a></li><li class="tocline"><a href="#web-payments-phase-1" class="tocxref"><span class="secno">4. </span>Web Payments Phase 1</a><ul class="toc"><li class="tocline"><a href="#goals" class="tocxref"><span class="secno">4.1 </span>Goals</a></li><li class="tocline"><a href="#use-cases" class="tocxref"><span class="secno">4.2 </span>Use Cases</a></li><li class="tocline"><a href="#capabilities" class="tocxref"><span class="secno">4.3 </span>Capabilities</a></li><li class="tocline"><a href="#groups-and-scope" class="tocxref"><span class="secno">4.4 </span>Groups and Scope</a></li><li class="tocline"><a href="#deployment-and-adoption" class="tocxref"><span class="secno">4.5 </span>Deployment and Adoption</a><ul class="toc"><li class="tocline"><a href="#goals-1" class="tocxref"><span class="secno">4.5.1 </span>Goals</a></li><li class="tocline"><a href="#strategies" class="tocxref"><span class="secno">4.5.2 </span>Strategies</a></li></ul></li><li class="tocline"><a href="#unresolved-issues" class="tocxref"><span class="secno">4.6 </span>Unresolved Issues</a></li></ul></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">A. </span>Acknowledgements</a></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">B. </span>References</a><ul class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">B.1 </span>Informative references</a></li></ul></li></ul></section>
+</section><section id="toc"><h2 class="introductory" id="h-toc" resource="#h-toc"><span property="xhv:role" resource="xhv:heading">Table of Contents</span></h2><ul class="toc" role="directory" id="respecContents"><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a><ul class="toc"><li class="tocline"><a href="#relationships" class="tocxref"><span class="secno">1.1 </span>Relationship to Other Documents</a></li></ul></li><li class="tocline"><a href="#terminology" class="tocxref"><span class="secno">2. </span>Terminology</a></li><li class="tocline"><a href="#coordination" class="tocxref"><span class="secno">3. </span>Coordination</a></li><li class="tocline"><a href="#web-payments-phase-1" class="tocxref"><span class="secno">4. </span>Web Payments Phase 1</a><ul class="toc"><li class="tocline"><a href="#goals" class="tocxref"><span class="secno">4.1 </span>Goals</a></li><li class="tocline"><a href="#use-cases" class="tocxref"><span class="secno">4.2 </span>Use Cases</a></li><li class="tocline"><a href="#groups-and-scope" class="tocxref"><span class="secno">4.3 </span>Groups and Scope</a></li><li class="tocline"><a href="#deployment-and-adoption" class="tocxref"><span class="secno">4.4 </span>Deployment and Adoption</a><ul class="toc"><li class="tocline"><a href="#goals-1" class="tocxref"><span class="secno">4.4.1 </span>Goals</a></li><li class="tocline"><a href="#strategies" class="tocxref"><span class="secno">4.4.2 </span>Strategies</a></li></ul></li><li class="tocline"><a href="#unresolved-issues" class="tocxref"><span class="secno">4.5 </span>Unresolved Issues</a></li></ul></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">A. </span>Acknowledgements</a></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">B. </span>References</a><ul class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">B.1 </span>Informative references</a></li></ul></li></ul></section>
 
   
 
@@ -401,6 +401,44 @@ in the phase as well as what they will be working on during the phase, and
           </li>
         </ul>
     
+
+    <section id="relationships" typeof="bibo:Chapter" resource="#relationships" property="bibo:hasPart">
+      <h3 id="h-relationships" resource="#h-relationships"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.1 </span>Relationship to Other Documents</span></h3>
+      <p>
+This document is one part of a greater body of work around Web Payments that
+the <a href="https://www.w3.org/Payments/IG/">Web Payments Interest Group</a>
+at <abbr title="World Wide Web Consortium">W3C</abbr> is producing. These other documents include:
+      </p>
+
+      <ul>
+        <li>
+<a href="https://www.w3.org/Payments/IG/Vision">A Vision for Web Payments</a>
+describes the desirable properties of a Web Payments architecture.
+        </li>
+
+        <li>
+<a href="http://www.w3.org/TR/web-payments-use-cases/">Web Payments Use Cases
+1.0</a> is a prioritized list of all Web Payments scenarios
+that the Web Payments Interest Group expects the architecture to address
+in time.
+        </li>
+
+        <li>
+<a href="https://dvcs.w3.org/hg/webpayments/raw-file/default/latest/capabilities/index.html">
+Web Payments Capabilities 1.0</a>
+derives a set of capabilities from the use cases that, if standardized, will
+improve payments  on the Web.
+        </li>
+
+        <li>
+<a href="https://www.w3.org/Payments/IG/Roadmap">Web Payments Roadmap 1.0</a>
+(this document) proposes an implementation and deployment plan that will result
+in enhancements to the Open Web Platform that will achieve the scenarios
+outlined in the Use Cases document and the capabilities listed in the
+Capabilities document.
+        </li>
+      </ul>
+    </section>
 
   </section>
 
@@ -819,150 +857,16 @@ Stretch goal for phase 1.
           </tr>
         </tbody>
       </table>
+      <p>
+The capabilities associated with each use case listed above can be found in
+the 
+<a href="https://dvcs.w3.org/hg/webpayments/raw-file/default/latest/capabilities/index.html">
+Web Payments Capabilities 1.0</a> document.
+      </p>
     </section>
 
-    <section id="capabilities" typeof="bibo:Chapter" resource="#capabilities" property="bibo:hasPart">
-      <h3 id="h-capabilities" resource="#h-capabilities"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.3 </span>Capabilities</span></h3>
-      <div class="issue"><div class="issue-title" aria-level="4" role="heading" id="h-issue1"><span>Issue 1</span></div><p class="">
-This section is out of date and needs to be re-aligned with the latest
-capabilities document.
-      </p></div>
-      <p>
-The following table shows the capabilities for this phase, with annotations
-about where those capabilities arise in the payment flow and which groups will
-work on them. As we progress, we will include links to definitions of these
-capabilities, descriptions of phases in the use cases document, and
-draft charters.
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th style="white-space: nowrap;">Capability</th>
-            <th style="white-space: nowrap;">Supports</th>
-            <th style="white-space: nowrap;">Responsible Group</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="align-left">
-Initiation of payment with invoice and payment instrument
-            </td>
-            <td>
-Phase 1: <a href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/#negotiation-of-payment-terms-1">Negotiation of Payment Terms</a>
-            </td>
-            <td>
-Payment WG
-            </td>
-          </tr>
-          <tr>
-            <td class="align-left">
-Discovery of payment instruments
-            </td>
-            <td>
-Phase 2: <a href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/#application-of-marketing-elements">Negotiation of Payment Instruments</a>
-            </td>
-            <td>
-Credentials WG
-            </td>
-          </tr>
-          <tr>
-            <td class="align-left">
-Selection of payment instrument
-            </td>
-            <td>
-Phase 2: <a href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/#application-of-marketing-elements">Negotiation of Payment Instruments</a>
-            </td>
-            <td>
-Payment WG
-            </td>
-          </tr>
-          <tr>
-            <td class="align-left">
-Routing of proof of purchase
-            </td>
-            <td>
-Phase 3: <a href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/#payment-processing-2">Payment Processing</a>
-            </td>
-            <td>
-Payment WG
-            </td>
-          </tr>
-          <tr>
-            <td class="align-left">
-Regulatory intervention
-            </td>
-            <td>
-Phase 3: <a href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/#payment-processing-2">Payment Processing</a>
-            </td>
-            <td>
-Payment WG
-            </td>
-          </tr>
-          <tr>
-            <td class="align-left">
-Routing of receipt
-            </td>
-            <td>
-Phase 4: <a href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/#delivery-of-product-receipt-and-refunds-2">Delivery of Product/Receipt</a>
-            </td>
-            <td>
-Payment WG
-            </td>
-          </tr>
-          <tr>
-            <td class="align-left">
-Provision and verification of credentials<br>
-(Know Your Customer / Anti-Money Laundering)
-            </td>
-            <td>
-<a href="#supporting-capabilities">Supporting</a>
-            </td>
-            <td>
-Credentials WG
-            </td>
-          </tr>
-          <tr>
-            <td class="align-left">
-Strong authentication of payer to account provider
-            </td>
-            <td>
-<a href="#supporting-capabilities">Supporting</a>
-            </td>
-            <td>
-Authentication WGs
-            </td>
-          </tr>
-          <tr>
-            <td class="align-left">
-Secure data and communications
-            </td>
-            <td>
-<a href="#supporting-capabilities">Supporting</a>
-            </td>
-            <td>
-Security WGs / Linked Data WGs
-            </td>
-          </tr>
-          <tr>
-            <td class="align-left">
-Digital signatures and key management
-            </td>
-            <td>
-<a href="#supporting-capabilities">Supporting</a>
-            </td>
-            <td>
-Security WGs / Linked Data WGs
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="note"><div class="note-title" aria-level="4" role="heading" id="h-note1"><span>Note</span></div><p class="">
-Supporting capabilities are those that may be reused during different phases of
-the payment flows.
-      </p></div>
-    </section>
     <section id="groups-and-scope" typeof="bibo:Chapter" resource="#groups-and-scope" property="bibo:hasPart">
-      <h3 id="h-groups-and-scope" resource="#h-groups-and-scope"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.4 </span>Groups and Scope</span></h3>
+      <h3 id="h-groups-and-scope" resource="#h-groups-and-scope"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.3 </span>Groups and Scope</span></h3>
       <p>
 A list of relevant groups that will participate in the first iteration of
 specification creation.
@@ -1032,7 +936,7 @@ No charter yet.
         </tbody>
       </table>
 
-      <div class="issue"><div class="issue-title" aria-level="4" role="heading" id="h-issue2"><span>Issue 2</span></div><p class="">
+      <div class="issue"><div class="issue-title" aria-level="4" role="heading" id="h-issue1"><span>Issue 1</span></div><p class="">
 It is currently unknown whether or not a Credentials WG or Linked Data
 Security WG will be created.
       </p></div>
@@ -1077,7 +981,7 @@ Web of Things
       
     </section>
     <section id="deployment-and-adoption" typeof="bibo:Chapter" resource="#deployment-and-adoption" property="bibo:hasPart">
-      <h3 id="h-deployment-and-adoption" resource="#h-deployment-and-adoption"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.5 </span>Deployment and Adoption</span></h3>
+      <h3 id="h-deployment-and-adoption" resource="#h-deployment-and-adoption"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.4 </span>Deployment and Adoption</span></h3>
       <p>
 Deployment in phase 1 will focus on enabling a few major online retailers
 to run Web Payment agents to issue Web Payment invoices for processing at
@@ -1086,7 +990,7 @@ institutions would then initiate the payment and send a proof of payment
 back to the retailer.
       </p>
       <section id="goals-1" typeof="bibo:Chapter" resource="#goals-1" property="bibo:hasPart">
-        <h4 id="h-goals-1" resource="#h-goals-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.5.1 </span>Goals</span></h4>
+        <h4 id="h-goals-1" resource="#h-goals-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.4.1 </span>Goals</span></h4>
           <ul>
             <li>
 3 major online retailers launching Web Payments support (for example:
@@ -1109,7 +1013,7 @@ Favorable reviews by the Web developer community
           </ul>
       </section>
       <section id="strategies" typeof="bibo:Chapter" resource="#strategies" property="bibo:hasPart">
-        <h4 id="h-strategies" resource="#h-strategies"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.5.2 </span>Strategies</span></h4>
+        <h4 id="h-strategies" resource="#h-strategies"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.4.2 </span>Strategies</span></h4>
         <ul>
           <li>
 Deployment strategy should be a pure software deployment. Do not require new hardware to be deployed.
@@ -1126,13 +1030,13 @@ support both cloud and local wallets due to a possible conflict around the
       </section>
     </section>
     <section id="unresolved-issues" typeof="bibo:Chapter" resource="#unresolved-issues" property="bibo:hasPart">
-      <h3 id="h-unresolved-issues" resource="#h-unresolved-issues"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.6 </span>Unresolved Issues</span></h3>
-      <div class="issue"><div class="issue-title" aria-level="4" role="heading" id="h-issue3"><span>Issue 3</span></div><p class="">
+      <h3 id="h-unresolved-issues" resource="#h-unresolved-issues"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.5 </span>Unresolved Issues</span></h3>
+      <div class="issue"><div class="issue-title" aria-level="4" role="heading" id="h-issue2"><span>Issue 2</span></div><p class="">
 Where we need an extensible message format, we will want to specify at least
 a data model. The hard question will be whether we can achieve a single
 serialization (e.g., JSON or JSON-LD or XML) or whether we need multiple.
       </p></div>
-      <div class="issue"><div class="issue-title" aria-level="4" role="heading" id="h-issue4"><span>Issue 4</span></div><p class="">
+      <div class="issue"><div class="issue-title" aria-level="4" role="heading" id="h-issue3"><span>Issue 3</span></div><p class="">
 What canonicalization (if any) is needed in our messages for the purpose of
 digital signatures.
       </p></div>
