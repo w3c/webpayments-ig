@@ -1,0 +1,49 @@
+This is a long description of this image:
+https://github.com/w3c/webpayments-ig/blob/master/latest/charters/images/WebPaymentsBasicPaymentFlow.png
+
+The purpose of the graphic is to illustrate (in a general sense)
+the sort of payment flow that the standards deliverables of this
+group intend to address.
+
+The graphic identifies a number of entities that play a role
+in the payment flow:
+
+ - Payee payment processor
+ - Web application
+ - User agent
+ - Wallet service
+ - User
+
+1. Payment begins with a Payment Initiation Request in the context of
+a Web application (running in a user agent). The Web application sends
+a "payment initiation request."
+
+2. Branching question: Is there a wallet service configured ot handle
+payment requests? If no, then the application redirects the payer
+to a traditional payments page or some other payment flow.
+
+3) Otherwise, if there is a wallet service, then "payment instrument
+discovery" takes place and the following branching question is asked:
+Does the payer have a payment instrument that can be used for this
+payment? If no, then the application redirects the payer
+to a traditional payments page or some other payment flow.
+
+4) Otherwise, the user is prompted to select a payment instrument, to
+confirm the terms of the transaction, and possibly to provide
+additional data.
+
+5) The wallet service then sends a "payment initiation response" to
+the Web application.
+
+6) The application validates the response and there is a branch at
+this point between credit pull and debit push transactions. If the
+selected payment instrument is "payee initiated" then payment
+processing begins. If not, the Web application sends a "payment
+completion request" to the wallet service.
+
+7) If the selected payment instrument is "payer initiated" then
+payment processing begins. After display of confirmation of payment,
+the wallet service sends a payment completion request to the Web
+Application.
+
+
