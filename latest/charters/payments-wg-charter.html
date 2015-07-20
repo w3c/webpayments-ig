@@ -144,8 +144,7 @@
 	    <li>the messages exchanged between these
               parties over the Web.</li>
 	    </ul>
-	      <p>The result is that users are led through entirely different flows and verification
-            routines every time they make a payment on the Web.</p>
+	      <p>The result is that users are led through entirely different flows every time they make a payment on the Web.</p>
 
           <p>To reduce this fragmentation, this Working Group will create open Web standards for the interfaces in and out of the Web context. This
 	    will increase
@@ -237,21 +236,24 @@
         <p>Security is obviously critical in payments. While the initial work of the group will leave much of the
             required security and authentication (e.g., encryption and digital signatures) to payment schemes, it is important to ensure that any additions to
             the Web platform are secure and tamper-proof. The ability to manipulate any message in a payment flow has
-            potentially massive financial impact. Therefore the ability to prove message integrity and verification of
+            potentially massive financial impact. Therefore the ability to prove message integrity and authentication of
           all message originators should be a key consideration for any work done by the group.</p>
 
-	  <p>W3C is planning to charter other Working Groups to develop standards, covering topics such as security, that will
-            be important in facilitating payments on the Web. The current
-	    Working Group will follow that work  to help ensure compatibility with the payment flow standards produced by this Working Group.
-	    In particular, this group will consider how hardware-based solutions may be used to generate
-            and store secrets for secure transactions, and how hardware devices may be used to verify a user's
-          authenticity via biometry or other mechanisms.</p>
+	<p>The Working Group will consider how existing payment
+schemes address security requirements. In addition, W3C is developing
+additional security-related specifications in other groups.  This
+Working Group will follow that work to help ensure compatibility with
+the payment flow standards described in this charter. In particular,
+this group may consider the role of hardware-based solutions in
+securing transactions, and the role of hardware devices in
+authenticating users via biometry or other mechanisms.</p>
 
 	        <p>Protection of the privacy of all participants in a payment is essential to maintaining the trust that payment
             systems are dependent upon to function. Any payment process defined by the group should not require
             disclosure of private details of any of the participants' identity or other sensitive information without
-            their explicit consent. The design of any public facing API should ensure it is not possible for such
-            data to be leaked through exploitation of the API.</p>
+		  their explicit consent. The design of any public facing API
+should guard against the unwanted leakage of such data through
+exploitation of the API.</p>
 
         <h3 id="wallets">Relation to Wallets</h3>
 
@@ -322,7 +324,7 @@
                 reference and any scheme-specific data that is required.
             </li>
             <li>
-                <strong>Proof of Payment</strong>: a verifiable payment authorization from the account provider to the
+                <strong>Proof of Payment</strong>: a payment authorization from the account provider to the
                 payee. The proof must include information about the payment request (a transaction reference or similar)
                 and the payer's payment instrument.
             </li>
@@ -471,10 +473,6 @@
             </dt>
             <dd>Internationalization and localization review.</dd>
             <dt>
-                <a href="/2012/webcrypto/">Web Cryptography Working Group</a>
-            </dt>
-            <dd>Consultation on encryption of messages that are part of these APIs.</dd>
-            <dt>
                 <a href="/WAI/PF/">Protocols and Formats Working Group</a> (and successor)
             </dt>
             <dd>To help ensure the protocols support accessibility.</dd>
@@ -485,6 +483,9 @@
         <dl>
 	   <dt><a href="http://www.emvco.com/">EMVCo</a></dt>
 	   <dd>EMVCo administers all the originial specifications known as EMV, including specifications about card tokenization.</dd>
+	   <dt>IETF</dt>
+            <dd>Consultations with the <a href="https://irtf.org/cfrg">IETF Crypto Forum Research Group (CFRG)</a> on cryptography, as well as the <a href="https://www.ietf.org/mailman/listinfo/saag">"IETF  Security Area Advisory Group</a>.</dd>
+
             <dt>
                 <a href="http://www.gsma.com/">GSMA</a>
             </dt>
@@ -536,7 +537,7 @@
 
         <p>Any resolution first taken in a face-to-face meeting or teleconference (i.e., that does not follow a 7 day
             call for consensus on the mailing list) is to be considered provisional until 5 working days after the
-            publication of the resolution in draft minutes, available from the WG's calendar or home page. If no
+            publication of the draft resolution. If no
             objections are raised on the mailing list within that time, the resolution will be considered to have
             consensus as a resolution of the Working Group.</p>
     </div>
