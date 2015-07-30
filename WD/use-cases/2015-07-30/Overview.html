@@ -1,108 +1,13 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en" dir="ltr" typeof="bibo:Document w3p:WD" prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#">
+<head><meta lang="" property="dc:language" content="en">
     <title>Web Payments Use Cases 1.0</title>
-    <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
-    <script src="../common/biblio.js" class="remove"></script>
-    <script src='../respec-w3c-common.js' class='remove'></script>
-    <script src='../respec-webpayments.js' class='remove'></script>
-    <script src="../common/script/resolveReferences.js" class="remove"></script>
-    <script class='remove'>
-      var respecConfig = {
-          // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
-          specStatus:           "ED",
-
-          // the specification's short name, as in http://www.w3.org/TR/short-name/
-          shortName:            "web-payments-use-cases",
-
-          // if you wish the publication date to be other than today, set this
-          //publishDate:  "2015-07-15",
-
-          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
-          // and its maturity status
-          // previousPublishDate:  "1977-03-15",
-          // previousMaturity:  "CG-DRAFT",
-
-          // if there a publicly available Editor's Draft, this is the link
-          edDraftURI:           "https://dvcs.w3.org/hg/webpayments/raw-file/default/latest/use-cases/index.html",
-
-          // if this is a LCWD, uncomment and set the end of its review period
-          // lcEnd: "2009-08-05",
-
-          // if you want to have extra CSS, append them to this list
-          // it is recommended that the respec.css stylesheet be kept
-          //extraCSS:             [],
-
-          // editors, add as many as you like
-          // only "name" is required
-          editors:  [
-              { name: "Manu Sporny", url: "https://manu.sporny.org/",
-                company: "Digital Bazaar", companyURL: "http://digitalbazaar.com/" },
-              { name: "Ian Jacobs", url: "http://www.w3.org/People/Jacobs/",
-                company: "W3C", companyURL: "http://www.w3.org/" },
-          ],
-
-          // authors, add as many as you like.
-          // This is optional, uncomment if you have authors as well as editors.
-          // only "name" is required. Same format as editors.
-
-          authors:  [
-              { name: "Ian Jacobs", url: "http://www.w3.org/People/Jacobs/",
-                company: "W3C", companyURL: "http://www.w3.org/" },
-              { name: "Manu Sporny", url: "https://manu.sporny.org/",
-                company: "Digital Bazaar", companyURL: "http://digitalbazaar.com/" },
-              { name: "Qian Sun", url: "",
-                company: "Alibaba", companyURL: "http://www.alibabagroup.com/" },
-              { name: "Cyril Vignet", url: "https://www.linkedin.com/pub/cyril-vignet/bb/704/423",
-                company: "Groupe BPCE", companyURL: "http://www.bpce.fr/" },
-              { name: "David Ezell", url: "http://example.org/",
-                company: "NACS", companyURL: "http://www.nacsonline.com/" },
-              { name: "David Jackson", url: "https://www.linkedin.com/in/davidjjackson",
-                company: "Oracle", companyURL: "http://www.oracle.com/" }
-          ],
-
-          otherLinks: [{
-            key: "Version control",
-            data: [{
-              value: "Github Repository",
-              href: "https://github.com/w3c/webpayments-ig"
-            }, {
-              value: "Issues",
-              href: "http://www.w3.org/Payments/IG/track/products/2"
-            }]
-          }],
-
-          // maximum level of table of contents
-          maxTocLevel: 3,
-
-          // name of the WG
-          wg:           "Web Payments Interest Group",
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 
 
-	  
-          // This is an IG so will become a Note
-          noRecTrack: true,
-      
-          // URI of the public WG page
-          wgURI:        "http://www.w3.org/Payments/IG/",
 
-          // name of the public mailing to which comments are due
-          wgPublicList: "public-webpayments-comments",
 
-          // URI of the patent status for this WG, for Rec-track documents
-          // !!!! IMPORTANT !!!!
-          // This is important for Rec-track documents, do not copy a patent URI from a random
-          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
-          // Team Contact.
-          wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/73816/status",
 
-          //preProcess: [ webpayments.preProcess ]
-          //,
-          //alternateFormats: [ {uri: "diff-20150416.html", label: "diff to previous version"} ],
-
-      };
-      //respecEvents.sub('start-all', webpayments.preProcess.apply);
-    </script>
     <style type="text/css">
 body {
   line-height: 1.4em;
@@ -144,23 +49,317 @@ dl > dt:first-of-type {
   }
 }
     </style>
-  </head>
-<body>
+  <style>/*****************************************************************
+ * ReSpec 3 CSS
+ * Robin Berjon - http://berjon.com/
+ *****************************************************************/
 
-  <section id='abstract'>
+/* --- INLINES --- */
+em.rfc2119 {
+    text-transform:     lowercase;
+    font-variant:       small-caps;
+    font-style:         normal;
+    color:              #900;
+}
+
+h1 acronym, h2 acronym, h3 acronym, h4 acronym, h5 acronym, h6 acronym, a acronym,
+h1 abbr, h2 abbr, h3 abbr, h4 abbr, h5 abbr, h6 abbr, a abbr {
+    border: none;
+}
+
+dfn {
+    font-weight:    bold;
+}
+
+a.internalDFN {
+    color:  inherit;
+    border-bottom:  1px solid #99c;
+    text-decoration:    none;
+}
+
+a.externalDFN {
+    color:  inherit;
+    border-bottom:  1px dotted #ccc;
+    text-decoration:    none;
+}
+
+a.bibref {
+    text-decoration:    none;
+}
+
+cite .bibref {
+    font-style: normal;
+}
+
+code {
+    color:  #C83500;
+}
+
+/* --- TOC --- */
+.toc a, .tof a {
+    text-decoration:    none;
+}
+
+a .secno, a .figno {
+    color:  #000;
+}
+
+ul.tof, ol.tof {
+    list-style: none outside none;
+}
+
+.caption {
+    margin-top: 0.5em;
+    font-style:   italic;
+}
+
+/* --- TABLE --- */
+table.simple {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    border-bottom:  3px solid #005a9c;
+}
+
+.simple th {
+    background: #005a9c;
+    color:  #fff;
+    padding:    3px 5px;
+    text-align: left;
+}
+
+.simple th[scope="row"] {
+    background: inherit;
+    color:  inherit;
+    border-top: 1px solid #ddd;
+}
+
+.simple td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+    background: #f0f6ff;
+}
+
+/* --- DL --- */
+.section dd > p:first-child {
+    margin-top: 0;
+}
+
+.section dd > p:last-child {
+    margin-bottom: 0;
+}
+
+.section dd {
+    margin-bottom:  1em;
+}
+
+.section dl.attrs dd, .section dl.eldef dd {
+    margin-bottom:  0;
+}
+
+@media print {
+    .removeOnSave {
+        display: none;
+    }
+}
+</style><style>/* --- ISSUES/NOTES --- */
+div.issue-title, div.note-title , div.warning-title {
+    padding-right:  1em;
+    min-width: 7.5em;
+    color: #b9ab2d;
+}
+div.issue-title { color: #e05252; }
+div.note-title { color: #2b2; }
+div.warning-title { color: #f22; }
+div.issue-title span, div.note-title span, div.warning-title span {
+    text-transform: uppercase;
+}
+div.note, div.issue, div.warning {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.note > p:first-child, .issue > p:first-child, .warning > p:first-child { margin-top: 0 }
+.issue, .note, .warning {
+    padding: .5em;
+    border-left-width: .5em;
+    border-left-style: solid;
+}
+div.issue, div.note , div.warning {
+    padding: 1em 1.2em 0.5em;
+    margin: 1em 0;
+    position: relative;
+    clear: both;
+}
+span.note, span.issue, span.warning { padding: .1em .5em .15em; }
+
+.issue {
+    border-color: #e05252;
+    background: #fbe9e9;
+}
+.note {
+    border-color: #52e052;
+    background: #e9fbe9;
+}
+
+.warning {
+    border-color: #f11;
+    border-right-width: .2em;
+    border-top-width: .2em;
+    border-bottom-width: .2em;
+    border-style: solid;
+    background: #fbe9e9;
+}
+
+.warning-title:before{
+    content: "⚠"; /*U+26A0 WARNING SIGN*/
+    font-size: 3em;
+    float: left;
+    height: 100%;
+    padding-right: .3em;
+    vertical-align: top;
+    margin-top: -0.5em;
+}
+</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/W3C-WD"><!--[if lt IE 9]><script src='https://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]--></head>
+<body class="h-entry" id="respecDocument"><div class="head" role="contentinfo" id="respecHeader">
+  <p>
+
+
+            <a href="http://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/Icons/w3c_home" alt="W3C"></a>
+
+
+  </p>
+  <h1 class="title p-name" id="title" property="dcterms:title">Web Payments Use Cases 1.0</h1>
+
+  <h2 id="w3c-working-draft-30-july-2015"><abbr title="World Wide Web Consortium">W3C</abbr> Working Draft <time property="dcterms:issued" class="dt-published" datetime="2015-07-30">30 July 2015</time></h2>
+  <dl>
+
+      <dt>This version:</dt>
+      <dd><a class="u-url" href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150730/">http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150730/</a></dd>
+      <dt>Latest published version:</dt>
+      <dd><a href="http://www.w3.org/TR/web-payments-use-cases/">http://www.w3.org/TR/web-payments-use-cases/</a></dd>
+
+
+      <dt>Latest editor's draft:</dt>
+      <dd><a href="https://dvcs.w3.org/hg/webpayments/raw-file/default/latest/use-cases/index.html">https://dvcs.w3.org/hg/webpayments/raw-file/default/latest/use-cases/index.html</a></dd>
+
+
+
+
+
+
+      <dt>Previous version:</dt>
+      <dd><a rel="dcterms:replaces" href="http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/">http://www.w3.org/TR/2015/WD-web-payments-use-cases-20150416/</a></dd>
+
+
+    <dt>Editors:</dt>
+    <dd class="p-author h-card vcard" property="bibo:editor" resource="_:editor0"><span property="rdf:first" typeof="foaf:Person"><meta property="foaf:name" content="Manu Sporny"><a class="u-url url p-name fn" property="foaf:homepage" href="https://manu.sporny.org/">Manu Sporny</a>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://digitalbazaar.com/">Digital Bazaar</a></span>
+<span property="rdf:rest" resource="_:editor1"></span>
+</dd>
+<dd class="p-author h-card vcard" resource="_:editor1"><span property="rdf:first" typeof="foaf:Person"><meta property="foaf:name" content="Ian Jacobs"><a class="u-url url p-name fn" property="foaf:homepage" href="http://www.w3.org/People/Jacobs/">Ian Jacobs</a>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a></span>
+<span property="rdf:rest" resource="rdf:nil"></span>
+</dd>
+
+
+      <dt>Authors:</dt>
+      <dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><meta property="foaf:name" content="Ian Jacobs"><a class="u-url url p-name fn" property="foaf:homepage" href="http://www.w3.org/People/Jacobs/">Ian Jacobs</a>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a></span>
+</dd>
+<dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><meta property="foaf:name" content="Manu Sporny"><a class="u-url url p-name fn" property="foaf:homepage" href="https://manu.sporny.org/">Manu Sporny</a>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://digitalbazaar.com/">Digital Bazaar</a></span>
+</dd>
+<dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Qian Sun</span>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.alibabagroup.com/">Alibaba</a></span>
+</dd>
+<dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><meta property="foaf:name" content="Cyril Vignet"><a class="u-url url p-name fn" property="foaf:homepage" href="https://www.linkedin.com/pub/cyril-vignet/bb/704/423">Cyril Vignet</a>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.bpce.fr/">Groupe BPCE</a></span>
+</dd>
+<dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><meta property="foaf:name" content="David Ezell"><a class="u-url url p-name fn" property="foaf:homepage" href="http://example.org/">David Ezell</a>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.nacsonline.com/">NACS</a></span>
+</dd>
+<dd class="p-author h-card vcard"><span property="dc:contributor" typeof="foaf:Person"><meta property="foaf:name" content="David Jackson"><a class="u-url url p-name fn" property="foaf:homepage" href="https://www.linkedin.com/in/davidjjackson">David Jackson</a>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.oracle.com/">Oracle</a></span>
+</dd>
+
+
+
+
+
+          <dt>Version control:</dt>
+
+
+
+                  <dd>
+                    <a href="https://github.com/w3c/webpayments-ig">
+                      Github Repository
+                    </a>
+                  </dd>
+
+
+
+                  <dd>
+                    <a href="http://www.w3.org/Payments/IG/track/products/2">
+                      Issues
+                    </a>
+                  </dd>
+
+
+
+
+
+
+  </dl>
+
+
+    <p>
+
+        This document is also available in this non-normative format:
+
+      <a rel="alternate" href="diff-20150416.html">diff to previous version</a>
+    </p>
+
+
+
+
+      <p class="copyright">
+        <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> ©
+        2015
+
+        <a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
+        (<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+        <a href="http://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+        <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).
+
+        <abbr title="World Wide Web Consortium">W3C</abbr> <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+        <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
+
+          <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a>
+
+        rules apply.
+      </p>
+
+
+  <hr>
+</div>
+
+  <section id="abstract" class="introductory" property="dc:abstract"><h2 id="h-abstract" resource="#h-abstract"><span property="xhv:role" resource="xhv:heading">Abstract</span></h2>
     <p>
 This document is a prioritized list of Web payments use cases.
-Guided by these use cases, the W3C Web Payments Interest Group
+Guided by these use cases, the <abbr title="World Wide Web Consortium">W3C</abbr> Web Payments Interest Group
 plans to derive architecture and associated technology
 requirements to integrate payments into the Open Web
-Platform. That work will form the basis of conversations with W3C
+Platform. That work will form the basis of conversations with <abbr title="World Wide Web Consortium">W3C</abbr>
 groups and the broader payments industry about what standards
-(from W3C or other organizations) will be necessary to fulfill the
+(from <abbr title="World Wide Web Consortium">W3C</abbr> or other organizations) will be necessary to fulfill the
 use cases and make payments over the Web easier and more secure.
     </p>
-  </section>
+  </section><section id="sotd" class="introductory"><h2 id="h-sotd" resource="#h-sotd"><span property="xhv:role" resource="xhv:heading">Status of This Document</span></h2>
 
-  <section id='sotd'>
+
+
+        <p>
+          <em>This section describes the status of this document at the time of its publication.
+          Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the
+          latest revision of this technical report can be found in the <a href="http://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at
+          http://www.w3.org/TR/.</em>
+        </p>
+
+
     <p>
 This document is a work in progress and is being released early and often
 using an agile process; it is incomplete.
@@ -207,15 +406,78 @@ Integration of feedback from the public, Web Payments Community Group, and
 Web Payments Interest Group.
       </li>
     </ul>
-  </section>
 
-  <section>
-    <h2>Introduction</h2>
+
+        <p>
+          This document was published by the <a href="http://www.w3.org/Payments/IG/">Web Payments Interest Group</a> as a Working Draft.
+
+            If you wish to make comments regarding this document, please send them to
+            <a href="mailto:public-webpayments-comments@w3.org">public-webpayments-comments@w3.org</a>
+            (<a href="mailto:public-webpayments-comments-request@w3.org?subject=subscribe">subscribe</a>,
+            <a href="http://lists.w3.org/Archives/Public/public-webpayments-comments/">archives</a>).
+
+
+
+
+
+
+            All comments are welcome.
+
+
+        </p>
+
+
+
+          <p>
+            Publication as a Working Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr>
+            Membership. This is a draft document and may be updated, replaced or obsoleted by other
+            documents at any time. It is inappropriate to cite this document as other than work in
+            progress.
+          </p>
+
+
+
+        <p>
+
+            This document was produced by a group operating under the
+            <a id="sotd_patent" property="w3p:patentRules" href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 <abbr title="World Wide Web Consortium">W3C</abbr> Patent
+            Policy</a>. The group does not expect this document to become a <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation.
+
+
+
+
+              <abbr title="World Wide Web Consortium">W3C</abbr> maintains a <a href="http://www.w3.org/2004/01/pp-impl/73816/status" rel="disclosure">public list of any patent
+              disclosures</a>
+
+            made in connection with the deliverables of the group; that page also includes
+            instructions for disclosing a patent. An individual who has actual knowledge of a patent
+            which the individual believes contains
+            <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential
+            Claim(s)</a> must disclose the information in accordance with
+            <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section
+            6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+
+
+        </p>
+
+          <p>This document is governed by the <a id="w3c_process_revision" href="http://www.w3.org/2014/Process-20140801/">1 August 2014 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+          </p>
+
+
+
+
+
+</section><section id="toc"><h2 class="introductory" id="h-toc" resource="#h-toc"><span property="xhv:role" resource="xhv:heading">Table of Contents</span></h2><ul class="toc" role="directory" id="respecContents"><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a><ul class="toc"><li class="tocline"><a href="#why-this-work-is-important" class="tocxref"><span class="secno">1.1 </span>Why This Work is Important</a></li><li class="tocline"><a href="#relationships" class="tocxref"><span class="secno">1.2 </span>Relationship to Other Documents</a></li><li class="tocline"><a href="#how-this-document-is-organized" class="tocxref"><span class="secno">1.3 </span>How this Document is Organized</a></li></ul></li><li class="tocline"><a href="#terminology" class="tocxref"><span class="secno">2. </span>Terminology</a></li><li class="tocline"><a href="#an-overview-of-the-payment-phases" class="tocxref"><span class="secno">3. </span>An Overview of the Payment Phases</a><ul class="toc"><li class="tocline"><a href="#negotiation-of-payment-terms" class="tocxref"><span class="secno">3.1 </span>Negotiation of Payment Terms</a></li><li class="tocline"><a href="#negotiation-of-payment-instruments" class="tocxref"><span class="secno">3.2 </span>Negotiation of Payment Instruments</a></li><li class="tocline"><a href="#payment-processing" class="tocxref"><span class="secno">3.3 </span>Payment Processing</a></li><li class="tocline"><a href="#delivery-of-product-receipt-and-refunds" class="tocxref"><span class="secno">3.4 </span>Delivery of Product/Receipt and Refunds</a></li></ul></li><li class="tocline"><a href="#a-simple-example-of-the-payment-phases" class="tocxref"><span class="secno">4. </span>A Simple Example of the Payment Phases</a><ul class="toc"><li class="tocline"><a href="#negotiation-of-purchase-terms" class="tocxref"><span class="secno">4.1 </span>Negotiation of Purchase Terms</a></li><li class="tocline"><a href="#negotiation-of-payment-instruments-1" class="tocxref"><span class="secno">4.2 </span>Negotiation of Payment Instruments</a></li><li class="tocline"><a href="#payment-processing-1" class="tocxref"><span class="secno">4.3 </span>Payment Processing</a></li><li class="tocline"><a href="#delivery-of-product-receipt-and-refunds-1" class="tocxref"><span class="secno">4.4 </span>Delivery of Product/Receipt and Refunds</a></li></ul></li><li class="tocline"><a href="#assumptions" class="tocxref"><span class="secno">5. </span>Assumptions</a></li><li class="tocline"><a href="#use-cases-1" class="tocxref"><span class="secno">6. </span>Use Cases</a><ul class="toc"><li class="tocline"><a href="#negotiation-of-payment-terms-1" class="tocxref"><span class="secno">6.1 </span>Negotiation of Payment Terms</a><ul class="toc"><li class="tocline"><a href="#discovery-of-offer" class="tocxref"><span class="secno">6.1.1 </span>Discovery of Offer</a></li><li class="tocline"><a href="#agreement-on-terms" class="tocxref"><span class="secno">6.1.2 </span>Agreement on Terms</a></li><li class="tocline"><a href="#application-of-marketing-elements" class="tocxref"><span class="secno">6.1.3 </span>Application of Marketing Elements</a></li></ul></li><li class="tocline"><a href="#negotiation-of-payment-instruments-2" class="tocxref"><span class="secno">6.2 </span>Negotiation of Payment Instruments</a><ul class="toc"><li class="tocline"><a href="#discovery-of-accepted-schemes" class="tocxref"><span class="secno">6.2.1 </span>Discovery of Accepted Schemes</a></li><li class="tocline"><a href="#selection-of-payment-instruments" class="tocxref"><span class="secno">6.2.2 </span>Selection of Payment Instruments</a></li><li class="tocline"><a href="#authentication-to-access-instruments" class="tocxref"><span class="secno">6.2.3 </span>Authentication to Access Instruments</a></li></ul></li><li class="tocline"><a href="#payment-processing-2" class="tocxref"><span class="secno">6.3 </span>Payment Processing</a><ul class="toc"><li class="tocline"><a href="#initiation-of-processing" class="tocxref"><span class="secno">6.3.1 </span>Initiation of Processing</a></li><li class="tocline"><a href="#verification-of-available-funds" class="tocxref"><span class="secno">6.3.2 </span>Verification of Available Funds</a></li><li class="tocline"><a href="#authorization-of-transfer" class="tocxref"><span class="secno">6.3.3 </span>Authorization of Transfer</a></li><li class="tocline"><a href="#completion-of-transfer" class="tocxref"><span class="secno">6.3.4 </span>Completion of Transfer</a></li></ul></li><li class="tocline"><a href="#delivery-of-product-receipt-and-refunds-2" class="tocxref"><span class="secno">6.4 </span>Delivery of Product/Receipt and Refunds</a><ul class="toc"><li class="tocline"><a href="#delivery-of-product" class="tocxref"><span class="secno">6.4.1 </span>Delivery of Product</a></li><li class="tocline"><a href="#delivery-of-receipt" class="tocxref"><span class="secno">6.4.2 </span>Delivery of Receipt</a></li><li class="tocline"><a href="#refunds" class="tocxref"><span class="secno">6.4.3 </span>Refunds</a></li></ul></li></ul></li><li class="tocline"><a href="#additional-examples-of-the-payment-phases" class="tocxref"><span class="secno">7. </span>Additional Examples of the Payment Phases</a><ul class="toc"><li class="tocline"><a href="#credit-card-payment-visa-mastercard" class="tocxref"><span class="secno">7.1 </span>Credit Card Payment (Visa, MasterCard)</a><ul class="toc"></ul></li><li class="tocline"><a href="#tokenized-payments-applepay-venmo-cybersource" class="tocxref"><span class="secno">7.2 </span>Tokenized Payments (ApplePay / Venmo / CyberSource)</a><ul class="toc"></ul></li><li class="tocline"><a href="#three-corner-model-payments-paypal-alipay-google-wallet" class="tocxref"><span class="secno">7.3 </span>Three Corner Model Payments (PayPal / Alipay / Google Wallet)</a><ul class="toc"></ul></li><li class="tocline"><a href="#cryptocurrency-payment-bitcoin-ripple" class="tocxref"><span class="secno">7.4 </span>Cryptocurrency Payment (Bitcoin, Ripple)</a><ul class="toc"></ul></li><li class="tocline"><a href="#electronic-check-payment" class="tocxref"><span class="secno">7.5 </span>Electronic Check Payment</a></li><li class="tocline"><a href="#direct-debit" class="tocxref"><span class="secno">7.6 </span>Direct Debit (SEPA Direct Debit)</a><ul class="toc"></ul></li><li class="tocline"><a href="#credit-transfer" class="tocxref"><span class="secno">7.7 </span>Credit Transfer (SEPAmail)</a><ul class="toc"></ul></li></ul></li><li class="tocline"><a href="#future-work" class="tocxref"><span class="secno">A. </span>Future Work</a></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgements</a></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ul class="toc"><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.1 </span>Informative references</a></li></ul></li></ul></section>
+
+
+
+  <section id="introduction" typeof="bibo:Chapter" resource="#introduction" property="bibo:hasPart">
+    <!--OddPage--><h2 id="h-introduction" resource="#h-introduction"><span property="xhv:role" resource="xhv:heading"><span class="secno">1. </span>Introduction</span></h2>
 
     <p>
 ECommerce is thriving and continues to expand. However,
 fragmentation of payment systems is limiting the growth potential
-as are problems &mdash; both real and perceived &mdash; such as
+as are problems — both real and perceived — such as
 fraud and usability.
     </p>
 
@@ -232,20 +494,20 @@ approaches or integrate new payment providers.
     </p>
 
     <p>
-The W3C Web Payments Interest Group is developing a roadmap for standards to
+The <abbr title="World Wide Web Consortium">W3C</abbr> Web Payments Interest Group is developing a roadmap for standards to
 improve the interoperability of payments using Web technologies for both
 online and brick-and-mortar (offline) scenarios. This will help achieve
 greater interoperability among merchants and their customers,
 payment providers, software vendors, mobile operators, native mobile
 apps, and payment networks. The roadmap will include
-<a title="payment scheme">payment schemes</a> in use
+<a title="payment scheme" href="#dfn-payment-scheme" class="internalDFN">payment schemes</a> in use
 today (such as electronic checks, credit cards, direct debit, and
 cryptocurrencies) and those of the future. The roadmap will be derived from
 the use cases listed below.
     </p>
 
-    <section>
-      <h3>Why This Work is Important</h3>
+    <section id="why-this-work-is-important" typeof="bibo:Chapter" resource="#why-this-work-is-important" property="bibo:hasPart">
+      <h3 id="h-why-this-work-is-important" resource="#h-why-this-work-is-important"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.1 </span>Why This Work is Important</span></h3>
       <p>
 The Web Payments work is not just about making payments easier, faster,
 more secure, and more innovative. There are many people around the world that
@@ -273,12 +535,12 @@ thus contributes to a greater net gain for society.
       </p>
     </section>
 
-    <section id="relationships">
-      <h2>Relationship to Other Documents</h2>
+    <section id="relationships" typeof="bibo:Chapter" resource="#relationships" property="bibo:hasPart">
+      <h3 id="h-relationships" resource="#h-relationships"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.2 </span>Relationship to Other Documents</span></h3>
       <p>
 This document is one part of a greater body of work around Web Payments that
 the <a href="https://www.w3.org/Payments/IG/">Web Payments Interest Group</a>
-at W3C is producing. These other documents include:
+at <abbr title="World Wide Web Consortium">W3C</abbr> is producing. These other documents include:
       </p>
 
       <ul>
@@ -311,8 +573,8 @@ document.
       </ul>
     </section>
 
-    <section>
-      <h3>How this Document is Organized</h3>
+    <section id="how-this-document-is-organized" typeof="bibo:Chapter" resource="#how-this-document-is-organized" property="bibo:hasPart">
+      <h3 id="h-how-this-document-is-organized" resource="#h-how-this-document-is-organized"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3 </span>How this Document is Organized</span></h3>
 
       <p>
 This document is organized as follows:
@@ -384,21 +646,21 @@ clearing, suspicious activity reporting, tax collection, trade compliance).
         </li>
         <li>
 Exceptions. Considerations in the case of specific exceptions (e.g., if a
-user pays with a voucher and the <a>transaction</a> fails, the user's voucher
+user pays with a voucher and the <a href="#dfn-transaction" class="internalDFN">transaction</a> fails, the user's voucher
 should be restored).
         </li>
       </ul>
 
-      <p class="issue">
+      <div class="issue"><div class="issue-title" aria-level="4" role="heading" id="h-issue1"><span>Issue 1</span></div><p class="">
 The group seeks input from security, privacy, and accessibility experts.
 Examples of desired groups to perform these reviews are, but are not
-limited to: W3C Privacy Interest Group,
-W3C Security Interest Group, W3C Web Accessibility Initiative and
+limited to: <abbr title="World Wide Web Consortium">W3C</abbr> Privacy Interest Group,
+<abbr title="World Wide Web Consortium">W3C</abbr> Security Interest Group, <abbr title="World Wide Web Consortium">W3C</abbr> Web Accessibility Initiative and
 Protocols and Formats Working Group, US Federal Reserve Security Panels,
 X9 Security subgroups, and ISO security subgroups.
-      </p>
+      </p></div>
 
-      <p class="note">
+      <div class="note"><div class="note-title" aria-level="4" role="heading" id="h-note1"><span>Note</span></div><p class="">
 All character names appearing in this document are fictitious. Any resemblance
 to real persons, living or dead, is purely coincidental. Some organizations,
 products, and services appearing in this document are real and are included
@@ -406,33 +668,198 @@ purely for pedagogic purposes and don't imply endorsement or approval of the
 Web Payments work in any way, shape, or form. For all other organizations,
 products, or services appearing in this document, any resemblance to real
 entities is purely coincidental.
-      </p>
+      </p></div>
 
     </section>
 
   </section>
 
-  <section>
-    <h2>Terminology</h2>
+  <section id="terminology" typeof="bibo:Chapter" resource="#terminology" property="bibo:hasPart">
+    <!--OddPage--><h2 id="h-terminology" resource="#h-terminology"><span property="xhv:role" resource="xhv:heading"><span class="secno">2. </span>Terminology</span></h2>
 
-    <div data-include="../common/terms.html"
-      data-oninclude="restrictReferences">
-    </div>
+    <div><p>
+This document attempts to communicate the concepts outlined in the Web
+Payments space by using specific terms to discuss particular concepts. This
+terminology is included below and linked to throughout the document to aid
+the reader:
+</p>
+
+<dl class="termlist">
+  <dt></dt>
+
+
+
+  <dt></dt>
+
+
+
+  <dt></dt>
+
+
+
+  <dt></dt>
+
+
+
+  <dt></dt>
+
+
+
+  <dt></dt>
+
+
+
+  <dt></dt>
+
+
+
+  <dt></dt>
+
+
+
+  <dt><dfn id="dfn-entity">entity</dfn></dt>
+
+  <dd>A person, organization, or software agent that is capable of
+  interacting with the world.</dd>
+
+  <dt><dfn id="dfn-four-corner-model">four corner model</dfn></dt>
+
+  <dd>A <a href="#dfn-payment-scheme" class="internalDFN">payment scheme</a> which includes the following stakeholders:
+  the <a href="#dfn-payer" class="internalDFN">payer</a> (also known as the Cardholder), the Issuer (who has a
+  relationship with the Cardholder), the Acceptor and the Acquirer
+  (which has a relationship with the Acceptor). The <a href="#dfn-payment-scheme" class="internalDFN">payment
+  scheme</a> defines the rules which apply to all parties; there are no
+  limitations as to who may join the scheme, as long as the requirements
+  of the scheme are met.</dd>
+
+  <dt></dt>
+
+
+
+  <dt></dt>
+
+
+
+  <dt></dt>
+
+
+
+  <dt><dfn id="dfn-payee">payee</dfn></dt>
+
+  <dd>An entity that receives funds as required by a transaction.</dd>
+
+  <dt><dfn id="dfn-payer">payer</dfn></dt>
+
+  <dd>An entity that provides a source of funds as required by a
+  transaction.</dd>
+
+  <dt></dt>
+
+
+
+  <dt><dfn id="dfn-payment-instrument">payment instrument</dfn></dt>
+
+  <dd>A mechanism used to transfer value from a <a href="#dfn-payer" class="internalDFN">payer</a> to a
+  <a href="#dfn-payee" class="internalDFN">payee</a>. Examples: Corporate Visa card, personal Visa card, a
+  bitcoin account, a PayPal account, and an Alipay account. [PSD2] any
+  personalized device(s) and/or set of procedures agreed between the
+  payment service user and the payment service provider and used in
+  order to initiate a payment order. [ECB] a tool or a set of procedures
+  enabling the transfer of funds from a payer to a payee.</dd>
+
+  <dt></dt>
+
+
+
+  <dt></dt>
+
+
+
+  <dt><dfn id="dfn-payment-processor">payment processor</dfn></dt>
+
+  <dd>An <a href="#dfn-entity" class="internalDFN">entity</a> that submits and processes payments using a
+  particular <a href="#dfn-payment-instrument" class="internalDFN">payment instrument</a> to a payment network. Examples:
+  Stripe, PayPal, Authorize.net, Atos, FedACH.</dd>
+
+  <dt><dfn id="dfn-payment-scheme">payment scheme</dfn></dt>
+
+  <dd>Sets of rules and technical standards for the execution of payment
+  <a title="transaction" href="#dfn-transaction" class="internalDFN">transactions</a> that have to be followed by
+  adhering entities (<a title="payment processor" href="#dfn-payment-processor" class="internalDFN">payment
+  processors</a>, <a title="payer" href="#dfn-payer" class="internalDFN">payers</a> and <a title="payee" href="#dfn-payee" class="internalDFN">payees</a>). Examples: Visa, MasterCard, Bitcoin, Ripple,
+  PayPal, Google Pay, Alipay, Yandex money, ACH, SEPA. [ECB] a set of
+  interbank rules, practices and standards necessary for the functioning
+  of payment services.</dd>
+
+  <dt></dt>
+
+
+
+  <dt><dfn id="dfn-payee-initiated-payment">payee-initiated payment</dfn></dt>
+
+  <dd>Also known as a pull payment, a type of <a href="#dfn-transaction" class="internalDFN">transaction</a> where
+  the <a href="#dfn-payee" class="internalDFN">payee</a> initiates the
+  funds transfer from the <a href="#dfn-payee" class="internalDFN">payee</a>. A credit card payment is an
+  example of a pull payment.</dd>
+
+  <dt><dfn id="dfn-purchase">purchase</dfn></dt>
+
+  <dd>Activities surrounding and including a transaction (e.g.,
+  discovery of an offer, negotiation of terms, selection of payment
+  instrument, delivery, etc.).</dd>
+
+  <dt><dfn id="dfn-payer-initiated-payment">payer-initiated payment</dfn></dt>
+
+  <dd>Also known as a push payment, a type of <a href="#dfn-transaction" class="internalDFN">transaction</a> where the
+  <a href="#dfn-payer" class="internalDFN">payer</a> initiates the
+  funds transfer to the <a href="#dfn-payee" class="internalDFN">payee</a>. PayPal is an example of a push
+  payment.</dd>
+
+  <dt></dt>
+
+
+
+  <dt></dt>
+
+
+
+  <dt></dt>
+
+
+
+  <dt><dfn id="dfn-transaction">transaction</dfn></dt>
+
+  <dd>An economic exchange between a <a href="#dfn-payer" class="internalDFN">payer</a> and one or more
+  <a title="payee" href="#dfn-payee" class="internalDFN">payees</a>. An agreement, communication, or movement
+  carried out between a buyer and a seller to exchange an asset for
+  payment.</dd>
+
+  <dt><dfn id="dfn-transfer-order">transfer order</dfn></dt>
+
+  <dd>[ECB] an order or message requesting the transfer of assets (e.g.
+  funds, securities, other financial instruments or commodities) from
+  the debtor to the creditor.</dd>
+
+
+
+
+</dl>
+</div>
 
   </section>
 
-  <section>
-    <h2>An Overview of the Payment Phases</h2>
+  <section id="an-overview-of-the-payment-phases" typeof="bibo:Chapter" resource="#an-overview-of-the-payment-phases" property="bibo:hasPart">
+    <!--OddPage--><h2 id="h-an-overview-of-the-payment-phases" resource="#h-an-overview-of-the-payment-phases"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>An Overview of the Payment Phases</span></h2>
 
-    <p>There are many types of <a>transaction</a>s in the world of payments,
+    <p>There are many types of <a href="#dfn-transaction" class="internalDFN">transaction</a>s in the world of payments,
 including person-to-business, business-to-business, business-to-person,
 government-to-person, person-to-government, and
 person-to-person. In this document we focus on the
-interactions between a <a>payer</a> and a <a>payee</a>,
+interactions between a <a href="#dfn-payer" class="internalDFN">payer</a> and a <a href="#dfn-payee" class="internalDFN">payee</a>,
 either of which could be a person, business, government, or software
 agent), which we organize into four phases:</p>
 
-    <p class="issue">
+    <div class="issue"><div class="issue-title" aria-level="3" role="heading" id="h-issue2"><span>Issue 2</span></div><p class="">
 The group would like feedback related to the general structure of the payment
 phases from individuals that worked on ISO20022, ISO12812, the
 European Payment Commission, and
@@ -440,7 +867,7 @@ various X9 documents to ensure that the phases reflect business processes
 outlined in financial standardization initiatives. Feedback from the general
 public is also requested to see if non-payment professionals can navigate and
 understand the document without prior payment industry knowledge.
-    </p>
+    </p></div>
 
     <ol>
         <li>
@@ -458,21 +885,21 @@ Delivery of Product/Receipt and Refunds
     </ol>
 
 <p>The descriptions below only discuss the interactions between the
-<a>payer</a> and the <a>payee</a>. We do not expose the low-level exchanges
+<a href="#dfn-payer" class="internalDFN">payer</a> and the <a href="#dfn-payee" class="internalDFN">payee</a>. We do not expose the low-level exchanges
 between banks, card associations, or other back-end "payment clearing" parties
-in a <a>transaction</a>. Those details will be discussed in the Interest
+in a <a href="#dfn-transaction" class="internalDFN">transaction</a>. Those details will be discussed in the Interest
 Group's work on architecture and
 requirements.</p>
 
  <p>Each phase below consists of a series of steps.
-The details of each step vary by <a>payment scheme</a>. Some steps may
+The details of each step vary by <a href="#dfn-payment-scheme" class="internalDFN">payment scheme</a>. Some steps may
 not be relevant at certain times (e.g., depending on
-<a>payment scheme</a> or <a>transaction</a> specifics).
-For example, some  <a title="purchase">purchases</a> do not involve a proof of
+<a href="#dfn-payment-scheme" class="internalDFN">payment scheme</a> or <a href="#dfn-transaction" class="internalDFN">transaction</a> specifics).
+For example, some  <a title="purchase" href="#dfn-purchase" class="internalDFN">purchases</a> do not involve a proof of
 funds or proof of hold. ACH and SEPA
-<a title="payment scheme">payment schemes</a> generally do not support the
+<a title="payment scheme" href="#dfn-payment-scheme" class="internalDFN">payment schemes</a> generally do not support the
 verification of available funds, thus in these
-<a title="payment scheme">payment schemes</a> the particular proof of funds
+<a title="payment scheme" href="#dfn-payment-scheme" class="internalDFN">payment schemes</a> the particular proof of funds
 step is skipped.
 In some cases, steps may happen in a slightly different order than described below.
   </p>
@@ -491,126 +918,126 @@ payments, those topics are not the current focus of the group.  We
 plan to address them directly in <a href="#future-work">future
 work</a>.</p>
 
-    <section>
-      <h3>Negotiation of Payment Terms</h3>
+    <section id="negotiation-of-payment-terms" typeof="bibo:Chapter" resource="#negotiation-of-payment-terms" property="bibo:hasPart">
+      <h3 id="h-negotiation-of-payment-terms" resource="#h-negotiation-of-payment-terms"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1 </span>Negotiation of Payment Terms</span></h3>
       <p>
-In the first phase of the payment process, the <a>payer</a> and the
-<a>payee</a> negotiate the terms of the payment.
+In the first phase of the payment process, the <a href="#dfn-payer" class="internalDFN">payer</a> and the
+<a href="#dfn-payee" class="internalDFN">payee</a> negotiate the terms of the payment.
       </p>
 
       <ul>
           <li>
-<strong>Discovery of Offer</strong>. The <a>payer</a> discovers the
-<a title="payee">payee's</a> offer (e.g., by browsing a Web page or
+<strong>Discovery of Offer</strong>. The <a href="#dfn-payer" class="internalDFN">payer</a> discovers the
+<a title="payee" href="#dfn-payee" class="internalDFN">payee's</a> offer (e.g., by browsing a Web page or
 from a native application).
         </li>
         <li>
-<strong>Agreement on Terms</strong>. The <a>payer</a> and the
-<a>payee</a> agree to what will be purchased, for how much,
-in what currency, which <a title="payment scheme">payment schemes</a>
-or loyalty programs are acceptable, etc. The <a>payee</a> may require the
-<a>payer</a> to authenticate themselves. The <a>payee</a> may generate an
-invoice for the <a>payer</a>.
+<strong>Agreement on Terms</strong>. The <a href="#dfn-payer" class="internalDFN">payer</a> and the
+<a href="#dfn-payee" class="internalDFN">payee</a> agree to what will be purchased, for how much,
+in what currency, which <a title="payment scheme" href="#dfn-payment-scheme" class="internalDFN">payment schemes</a>
+or loyalty programs are acceptable, etc. The <a href="#dfn-payee" class="internalDFN">payee</a> may require the
+<a href="#dfn-payer" class="internalDFN">payer</a> to authenticate themselves. The <a href="#dfn-payee" class="internalDFN">payee</a> may generate an
+invoice for the <a href="#dfn-payer" class="internalDFN">payer</a>.
         </li>
         <li>
-<strong>Application of Marketing Elements</strong>. The <a>payer</a>
+<strong>Application of Marketing Elements</strong>. The <a href="#dfn-payer" class="internalDFN">payer</a>
 discovers and applies any loyalty programs, coupons, and other special offers
 to the payment terms.
         </li>
       </ul>
     </section>
 
-    <section>
-      <h3>Negotiation of Payment Instruments</h3>
+    <section id="negotiation-of-payment-instruments" typeof="bibo:Chapter" resource="#negotiation-of-payment-instruments" property="bibo:hasPart">
+      <h3 id="h-negotiation-of-payment-instruments" resource="#h-negotiation-of-payment-instruments"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2 </span>Negotiation of Payment Instruments</span></h3>
       <p>
-In the second phase of the payment process, <a>payer</a> and
-<a>payee</a> determine which
-<a title="payment instrument">payment instruments</a> the
-<a>payer</a> will use to transfer funds to the <a>payee</a>.
+In the second phase of the payment process, <a href="#dfn-payer" class="internalDFN">payer</a> and
+<a href="#dfn-payee" class="internalDFN">payee</a> determine which
+<a title="payment instrument" href="#dfn-payment-instrument" class="internalDFN">payment instruments</a> the
+<a href="#dfn-payer" class="internalDFN">payer</a> will use to transfer funds to the <a href="#dfn-payee" class="internalDFN">payee</a>.
       </p>
 
       <ul>
           <li>
-<strong>Discovery of Accepted Schemes</strong>. The <a>payer</a>
-discovers the <a title="payment instrument">payment instruments</a> that
-are accepted by the <a>payee</a>.
+<strong>Discovery of Accepted Schemes</strong>. The <a href="#dfn-payer" class="internalDFN">payer</a>
+discovers the <a title="payment instrument" href="#dfn-payment-instrument" class="internalDFN">payment instruments</a> that
+are accepted by the <a href="#dfn-payee" class="internalDFN">payee</a>.
         </li>
         <li>
-<strong>Selection of Payment Instruments</strong>. The <a>payer</a>
-selects one or more <a title="payment instrument">payment instruments</a>
-that are available to the <a>payer</a> and are accepted by the
-<a>payee</a>.
+<strong>Selection of Payment Instruments</strong>. The <a href="#dfn-payer" class="internalDFN">payer</a>
+selects one or more <a title="payment instrument" href="#dfn-payment-instrument" class="internalDFN">payment instruments</a>
+that are available to the <a href="#dfn-payer" class="internalDFN">payer</a> and are accepted by the
+<a href="#dfn-payee" class="internalDFN">payee</a>.
         </li>
         <li>
 <strong>Authentication to Access Instruments</strong>. The
-<a title="payer">payer's</a> access to the <a>payment instrument</a>
-is authenticated. The <a>payer</a> consents to pay. Note: This authentication
-with the <a>payment processor</a> is distinct from any authentication required
-by the <a>payee</a> (such as when a merchant requires a customer to
+<a title="payer" href="#dfn-payer" class="internalDFN">payer's</a> access to the <a href="#dfn-payment-instrument" class="internalDFN">payment instrument</a>
+is authenticated. The <a href="#dfn-payer" class="internalDFN">payer</a> consents to pay. Note: This authentication
+with the <a href="#dfn-payment-processor" class="internalDFN">payment processor</a> is distinct from any authentication required
+by the <a href="#dfn-payee" class="internalDFN">payee</a> (such as when a merchant requires a customer to
 have an account and log in to the merchant's Web site).
         </li>
       </ul>
     </section>
 
-    <section>
-      <h3>Payment Processing</h3>
+    <section id="payment-processing" typeof="bibo:Chapter" resource="#payment-processing" property="bibo:hasPart">
+      <h3 id="h-payment-processing" resource="#h-payment-processing"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.3 </span>Payment Processing</span></h3>
       <p>
 The third phase of the payment process is used to initiate the transfer of
-funds. Depending on the <a>payment instrument</a>, the transfer of funds
+funds. Depending on the <a href="#dfn-payment-instrument" class="internalDFN">payment instrument</a>, the transfer of funds
 may be verified immediately or only after several days.
       </p>
        <ul>
           <li>
 <strong>Initiation of Processing</strong>. Depending on the
-<a>payment instrument</a>, the <a>payer</a> (e.g., when using
-PayPal or Yandex Money), the <a>payee</a> (e.g., when using a credit card), or other
+<a href="#dfn-payment-instrument" class="internalDFN">payment instrument</a>, the <a href="#dfn-payer" class="internalDFN">payer</a> (e.g., when using
+PayPal or Yandex Money), the <a href="#dfn-payee" class="internalDFN">payee</a> (e.g., when using a credit card), or other
 party (e.g., bank) initiates processing.
         </li>
         <li>
-<strong>Verification of Available Funds</strong>. The <a>payer</a> may
-need to provide a proof of funds or a proof of hold to the <a>payee</a>
+<strong>Verification of Available Funds</strong>. The <a href="#dfn-payer" class="internalDFN">payer</a> may
+need to provide a proof of funds or a proof of hold to the <a href="#dfn-payee" class="internalDFN">payee</a>
 before finalizing payment and delivery of the product.
         </li>
         <li>
-<strong>Authorization of Transfer</strong>. The <a>payee</a> receives
+<strong>Authorization of Transfer</strong>. The <a href="#dfn-payee" class="internalDFN">payee</a> receives
 proof that the transfer of funds has been authorized.
         </li>
         <li>
-<strong>Completion of Transfer</strong>. The <a>payment scheme</a>
+<strong>Completion of Transfer</strong>. The <a href="#dfn-payment-scheme" class="internalDFN">payment scheme</a>
 determines the details of payment clearing and settlement. Transfer times
-may vary from near-realtime to multiple days. The <a>payee</a>,
-the <a>payer</a>, and/or third parties (such as regulatory bodies) may be
+may vary from near-realtime to multiple days. The <a href="#dfn-payee" class="internalDFN">payee</a>,
+the <a href="#dfn-payer" class="internalDFN">payer</a>, and/or third parties (such as regulatory bodies) may be
 notified as each stage of the clearing and settlement process is completed.
         </li>
       </ul>
     </section>
 
-    <section>
-      <h3>Delivery of Product/Receipt and Refunds</h3>
+    <section id="delivery-of-product-receipt-and-refunds" typeof="bibo:Chapter" resource="#delivery-of-product-receipt-and-refunds" property="bibo:hasPart">
+      <h3 id="h-delivery-of-product-receipt-and-refunds" resource="#h-delivery-of-product-receipt-and-refunds"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.4 </span>Delivery of Product/Receipt and Refunds</span></h3>
       <p>
-In the fourth phase of the payment process, the <a>transaction</a> is completed
-by providing the <a>payer</a> with a receipt and/or the product that
+In the fourth phase of the payment process, the <a href="#dfn-transaction" class="internalDFN">transaction</a> is completed
+by providing the <a href="#dfn-payer" class="internalDFN">payer</a> with a receipt and/or the product that
 was purchased.
       </p>
 
       <ul>
           <li>
-<strong>Delivery of Product</strong>. The <a>payer</a> receives goods or
+<strong>Delivery of Product</strong>. The <a href="#dfn-payer" class="internalDFN">payer</a> receives goods or
 services immediately, at a later date, automatically on a recurring basis,
-etc. depending on the terms of the <a>purchase</a>. A digital proof of
+etc. depending on the terms of the <a href="#dfn-purchase" class="internalDFN">purchase</a>. A digital proof of
 payment may be required to access the product.
         </li>
         <li>
 <strong>Delivery of Receipt</strong>. Depending on the
-<a title="payment scheme">payment scheme(s)</a> chosen, there are
+<a title="payment scheme" href="#dfn-payment-scheme" class="internalDFN">payment scheme(s)</a> chosen, there are
 various ways and times that a receipt may be delivered (e.g., credit card
-receipt, digital proof of <a>purchase</a>, or encrypted line-item receipt).
+receipt, digital proof of <a href="#dfn-purchase" class="internalDFN">purchase</a>, or encrypted line-item receipt).
         </li>
         <li>
 <strong>Refunds</strong>. At times exceptions may occur (e.g., defective
 product or application of store return policy). In this case, the
-<a>payee</a> initiates payment to the <a>payer</a>. The refund may
-take different forms, including a refund to the <a title="payer">payer's</a>
+<a href="#dfn-payee" class="internalDFN">payee</a> initiates payment to the <a href="#dfn-payer" class="internalDFN">payer</a>. The refund may
+take different forms, including a refund to the <a title="payer" href="#dfn-payer" class="internalDFN">payer's</a>
 payment instrument, a refund using a different payment scheme, or store credit.
         </li>
       </ul>
@@ -618,8 +1045,8 @@ payment instrument, a refund using a different payment scheme, or store credit.
 
   </section>
 
-  <section>
-    <h2 id="phases-overview">A Simple Example of the Payment Phases</h2>
+  <section id="a-simple-example-of-the-payment-phases" typeof="bibo:Chapter" resource="#a-simple-example-of-the-payment-phases" property="bibo:hasPart">
+    <!--OddPage--><h2 id="phases-overview" resource="#phases-overview"><span property="xhv:role" resource="xhv:heading"><span class="secno">4. </span>A Simple Example of the Payment Phases</span></h2>
     <p>
 The following scenario is provided to aid the reader in understanding how the
 phases of the payment process apply to a real world situation. In this scenario,
@@ -634,18 +1061,18 @@ See the appendix for <a href="#additional-examples">additional examples of
 the payment phases</a>.
     </p>
 
-    <p class="issue">
+    <div class="issue"><div class="issue-title" aria-level="3" role="heading" id="h-issue3"><span>Issue 3</span></div><p class="">
 General feedback is requested on whether this section is helpful. We are
 attempting to ground the payment phases and steps in a real world use case.
 An alternative would be removing this section entirely if the preceding
 section suffices, or moving this narrative to section 7 with the other examples.
-    </p>
+    </p></div>
 
-    <section>
-      <h3>Negotiation of Purchase Terms</h3>
+    <section id="negotiation-of-purchase-terms" typeof="bibo:Chapter" resource="#negotiation-of-purchase-terms" property="bibo:hasPart">
+      <h3 id="h-negotiation-of-purchase-terms" resource="#h-negotiation-of-purchase-terms"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1 </span>Negotiation of Purchase Terms</span></h3>
       <ul>
         <li>
-<strong>Discovery of Offer</strong>: Jill begins her <a>purchase</a> at
+<strong>Discovery of Offer</strong>: Jill begins her <a href="#dfn-purchase" class="internalDFN">purchase</a> at
 home on her laptop, where she browses the items on the PayToParty Web
 site. On the way to work the next morning, she explores the catalog
 further from a native app on her smart phone. Jill can't decide
@@ -654,8 +1081,8 @@ whether the dress displayed online is
 blue with black stripes or white with gold stripes</a>,
 so during her lunch break, she drops into the
 PayToParty store near her office. She spots a few more items that
-she thinks she'd like to <a>purchase</a>, but decides to wait until later to
-make the <a>purchase</a>.
+she thinks she'd like to <a href="#dfn-purchase" class="internalDFN">purchase</a>, but decides to wait until later to
+make the <a href="#dfn-purchase" class="internalDFN">purchase</a>.
         </li>
 
         <li>
@@ -673,8 +1100,8 @@ the store's loyalty card to pay.
       </ul>
     </section>
 
-    <section>
-      <h3>Negotiation of Payment Instruments</h3>
+    <section id="negotiation-of-payment-instruments-1" typeof="bibo:Chapter" resource="#negotiation-of-payment-instruments-1" property="bibo:hasPart">
+      <h3 id="h-negotiation-of-payment-instruments-1" resource="#h-negotiation-of-payment-instruments-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2 </span>Negotiation of Payment Instruments</span></h3>
       <ul>
         <li>
 <strong>Discovery of Accepted Schemes</strong>: Given where Jill lives,
@@ -690,30 +1117,30 @@ to pay, including her
 credit card, her PayToParty loyalty card (which is highlighted to remind her
 of the discount), and a PayPal account. There is also a gift card from
 PayToParty that she received for her birthday, but she chooses not to
-use it for this <a>purchase</a>.
+use it for this <a href="#dfn-purchase" class="internalDFN">purchase</a>.
         </li>
 
         <li>
 <strong>Authentication to Access Instruments</strong>: Jill selects
 the PayToParty loyalty card, the use of which is protected by two-factor
 authentication, and is asked to input a code that is sent to her phone
-before the <a>purchase</a> can be completed.
+before the <a href="#dfn-purchase" class="internalDFN">purchase</a> can be completed.
         </li>
       </ul>
     </section>
 
-    <section>
-      <h3>Payment Processing</h3>
+    <section id="payment-processing-1" typeof="bibo:Chapter" resource="#payment-processing-1" property="bibo:hasPart">
+      <h3 id="h-payment-processing-1" resource="#h-payment-processing-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.3 </span>Payment Processing</span></h3>
       <ul>
         <li>
 <strong>Initiation of Processing</strong>. PayToParty receives a
 message from Jill's device authorizing the payment. PayToParty
-submits the message to their <a>payment processor</a>, requesting a
+submits the message to their <a href="#dfn-payment-processor" class="internalDFN">payment processor</a>, requesting a
 proof of hold for the funds.
         </li>
         <li>
 <strong>Verification of Available Funds</strong>. PayToParty
-receives a proof of hold on Jill's funds for the <a>purchase</a> price of
+receives a proof of hold on Jill's funds for the <a href="#dfn-purchase" class="internalDFN">purchase</a> price of
 the goods. The PayToParty night-shift employees begin packing her purchased
 items for delivery the next day.
         </li>
@@ -721,7 +1148,7 @@ items for delivery the next day.
 <strong>Authorization of Transfer</strong>. Once Jill's package is ready to
 go, PayToParty exchanges the proof of hold for a proof of payment by
 re-submitting the request to the payment network. They receive a proof of
-payment from the <a>payment processor</a>.
+payment from the <a href="#dfn-payment-processor" class="internalDFN">payment processor</a>.
         </li>
         <li>
 <strong>Completion of Transfer</strong>. Since Jill's PayToParty loyalty card
@@ -731,12 +1158,12 @@ end of week settlement.
       </ul>
     </section>
 
-    <section>
-      <h3>Delivery of Product/Receipt and Refunds</h3>
+    <section id="delivery-of-product-receipt-and-refunds-1" typeof="bibo:Chapter" resource="#delivery-of-product-receipt-and-refunds-1" property="bibo:hasPart">
+      <h3 id="h-delivery-of-product-receipt-and-refunds-1" resource="#h-delivery-of-product-receipt-and-refunds-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.4 </span>Delivery of Product/Receipt and Refunds</span></h3>
       <ul>
         <li>
 <strong>Delivery of Receipt</strong>. Jill's cloud-based wallet
-receives a detailed line-item digital receipt for the <a>purchase</a>.
+receives a detailed line-item digital receipt for the <a href="#dfn-purchase" class="internalDFN">purchase</a>.
         </li>
 
         <li>
@@ -747,8 +1174,8 @@ next morning and is on her doorstep before she leaves for work.
     </section>
   </section>
 
-  <section>
-    <h2>Assumptions</h2>
+  <section id="assumptions" typeof="bibo:Chapter" resource="#assumptions" property="bibo:hasPart">
+    <!--OddPage--><h2 id="h-assumptions" resource="#h-assumptions"><span property="xhv:role" resource="xhv:heading"><span class="secno">5. </span>Assumptions</span></h2>
 
     <p>
 The use cases below rely on a number of assumptions that are not
@@ -768,8 +1195,8 @@ network or a WiFi hotspot).
         </li>
         <li>
 <strong>Registered Payment Instruments</strong>. In order for the
-<a>payer</a> to select and utilize
-<a title="payment instrument">payment instruments</a>, they must be
+<a href="#dfn-payer" class="internalDFN">payer</a> to select and utilize
+<a title="payment instrument" href="#dfn-payment-instrument" class="internalDFN">payment instruments</a>, they must be
 registered in some way and discoverable by a browser, native application,
 or other software.
         </li>
@@ -777,7 +1204,7 @@ or other software.
 <strong>Security</strong>. Keys, encryption, and other security technology
 must be used to secure sensitive information. It is important that sensitive
 information is not transmitted to parties that do not absolutely need to
-know the information in order to complete the <a>transaction</a>.</li>
+know the information in order to complete the <a href="#dfn-transaction" class="internalDFN">transaction</a>.</li>
         <li>
 <strong>Identity</strong>. There will be an interoperable
 identifier used to identify the participants and accounts in a Web Payments
@@ -786,8 +1213,8 @@ transaction.
     </ul>
   </section>
 
-  <section>
-    <h2 id="use-cases">Use Cases</h2>
+  <section id="use-cases-1" typeof="bibo:Chapter" resource="#use-cases-1" property="bibo:hasPart">
+    <!--OddPage--><h2 id="use-cases" resource="#use-cases"><span property="xhv:role" resource="xhv:heading"><span class="secno">6. </span>Use Cases</span></h2>
 
     <p>
 This section examines the phases of payment, and the steps involved in each
@@ -796,26 +1223,26 @@ elaborate on the variety of scenarios present in each step of the payment
 process.
     </p>
 
-    <p class="issue">
+    <div class="issue"><div class="issue-title" aria-level="3" role="heading" id="h-issue4"><span>Issue 4</span></div><p class="">
 General feedback is requested related to the general structure of the
 use case snippets below. Are they focused enough to convey each topic listed?
 Is there information that should be added to each use case in general? Would
 more elaborate use cases be helpful? Would an attempt to minimize each existing
 use further be helpful in scanning the document more quickly?
-    </p>
+    </p></div>
 
-    <section>
-      <h3>Negotiation of Payment Terms</h3>
+    <section id="negotiation-of-payment-terms-1" typeof="bibo:Chapter" resource="#negotiation-of-payment-terms-1" property="bibo:hasPart">
+      <h3 id="h-negotiation-of-payment-terms-1" resource="#h-negotiation-of-payment-terms-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.1 </span>Negotiation of Payment Terms</span></h3>
       <p>
       </p>
 
-      <section>
-        <h4>Discovery of Offer</h4>
+      <section id="discovery-of-offer" typeof="bibo:Chapter" resource="#discovery-of-offer" property="bibo:hasPart">
+        <h4 id="h-discovery-of-offer" resource="#h-discovery-of-offer"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.1.1 </span>Discovery of Offer</span></h4>
 
         <dl id="uc-website" class="dl-horizontal">
           <dt>Website</dt>
           <dd>
-Penny uses the HobbyCo website to select a $15 model train for <a>purchase</a>.
+Penny uses the HobbyCo website to select a $15 model train for <a href="#dfn-purchase" class="internalDFN">purchase</a>.
           </dd>
           <dt>Roadmap phase</dt>
           <dd>1</dd>
@@ -830,7 +1257,7 @@ way offers are discovered on the Web today (2015).
           <dt>Point of Sale Kiosk</dt>
           <dd>
 Cory shops for groceries at his local ChowMart, scans his loyalty card and
-all of the items he wants to <a>purchase</a> at the automated kiosk, requests
+all of the items he wants to <a href="#dfn-purchase" class="internalDFN">purchase</a> at the automated kiosk, requests
 a cash back amount, and is presented with a total amount.
           </dd>
           <dt>Roadmap phase</dt>
@@ -855,7 +1282,7 @@ exist today.
           <dd>
 Cory should exercise control over how much he wants the merchant
 to be able to track his activities. Programs like loyalty cards will
-likely involve agreement to more data with the merchant.<br/>
+likely involve agreement to more data with the merchant.<br>
 Making kiosks that are used for financial transactions accessible introduces
 several challenges. Speech output may be overheard by people nearby, increased
 text size and/or visibility of content may make it easier for other people
@@ -923,7 +1350,7 @@ developers more choices.
         <dl id="uc-email" class="dl-horizontal">
           <dt>Email</dt>
           <dd>
-A GroupBuyCo customer receives an offer by email to <a>purchase</a> the deal
+A GroupBuyCo customer receives an offer by email to <a href="#dfn-purchase" class="internalDFN">purchase</a> the deal
 of the day.
           </dd>
           <dt>Roadmap phase</dt>
@@ -951,15 +1378,15 @@ to the room.
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
-Some <a title="transaction">transactions</a>, such as a hold of funds,
+Some <a title="transaction" href="#dfn-transaction" class="internalDFN">transactions</a>, such as a hold of funds,
 do not always reach completion and are primarily used
-to protect the <a>payee</a> from negligence on the part of the
-<a>payer</a> (e.g., such as a <a>payer</a> damaging a hotel room).
+to protect the <a href="#dfn-payee" class="internalDFN">payee</a> from negligence on the part of the
+<a href="#dfn-payer" class="internalDFN">payer</a> (e.g., such as a <a href="#dfn-payer" class="internalDFN">payer</a> damaging a hotel room).
           </dd>
           <dt>Exceptions</dt>
           <dd>
-Software acting on the <a title="payer">payer's</a> behalf may keep
-track of exactly how much money the <a>payer</a> has available and
+Software acting on the <a title="payer" href="#dfn-payer" class="internalDFN">payer's</a> behalf may keep
+track of exactly how much money the <a href="#dfn-payer" class="internalDFN">payer</a> has available and
 not allow them to process the offer.
           </dd>
         </dl>
@@ -977,23 +1404,23 @@ approve a fill up for up to €35.
           <dt>Motivation</dt>
           <dd>
 Some offers are not aware of the final price but would rather set limits on
-the amount of the <a>purchase</a> before a particular metered good or service is
+the amount of the <a href="#dfn-purchase" class="internalDFN">purchase</a> before a particular metered good or service is
 delivered.
           </dd>
           <dt>Privacy</dt>
           <dd>
 Due to the sensitivity of location data, individuals should be able to make
-small fuel <a title="purchase">purchases</a> in a way that respects their privacy.
+small fuel <a title="purchase" href="#dfn-purchase" class="internalDFN">purchases</a> in a way that respects their privacy.
           </dd>
           <dt>Security</dt>
           <dd>
-Automated <a title="purchase">purchases</a> (e.g,. by a vehicle) may involve
+Automated <a title="purchase" href="#dfn-purchase" class="internalDFN">purchases</a> (e.g,. by a vehicle) may involve
 increased logging and security (e.g., a second factor of authentication).
           </dd>
           <dt>Regulatory</dt>
           <dd>
 If a pre-authorization is initiated by a software agent (such as a vehicle)
-due to a <a title="payer">payer's</a> negligence, the regulatory environment
+due to a <a title="payer" href="#dfn-payer" class="internalDFN">payer's</a> negligence, the regulatory environment
 may assert that the software manufacturer is liable if the proper consent
 notifications were not displayed when the pre-authorization rule was activated.
           </dd>
@@ -1027,7 +1454,7 @@ guarantees their prices for up to 24 hours from the posting date.
           <dt>Motivation</dt>
           <dd>
 The ability to express a non-repudiable offer as the basis of a legally
-enforceable contract will reduce <a>transaction</a> friction.
+enforceable contract will reduce <a href="#dfn-transaction" class="internalDFN">transaction</a> friction.
           </dd>
           <dt>Regulatory</dt>
           <dd>
@@ -1098,8 +1525,8 @@ person using direct bank to bank transfers.
 
       </section>
 
-      <section>
-        <h4>Agreement on Terms</h4>
+      <section id="agreement-on-terms" typeof="bibo:Chapter" resource="#agreement-on-terms" property="bibo:hasPart">
+        <h4 id="h-agreement-on-terms" resource="#h-agreement-on-terms"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.1.2 </span>Agreement on Terms</span></h4>
         <p>
         </p>
 
@@ -1112,8 +1539,8 @@ Jamie wishes to pay for a single article from a market analyst.
           <dd>1</dd>
           <dt>Motivation</dt>
           <dd>It should be clear to a
-<a title="payer">payer</a> whether a
-<a>purchase</a> is one-time or recurring, prior to initiation of
+<a title="payer" href="#dfn-payer" class="internalDFN">payer</a> whether a
+<a href="#dfn-purchase" class="internalDFN">purchase</a> is one-time or recurring, prior to initiation of
 the payment.
           </dd>
         </dl>
@@ -1121,7 +1548,7 @@ the payment.
         <dl id="uc-registrationless" class="dl-horizontal">
           <dt>Registration-less</dt>
           <dd>
-Some <a title="payee">payees</a> would rather not require a <a>payer</a> to
+Some <a title="payee" href="#dfn-payee" class="internalDFN">payees</a> would rather not require a <a href="#dfn-payer" class="internalDFN">payer</a> to
 register at their site before initiating a purchase:
             <ul>
               <li>
@@ -1169,15 +1596,15 @@ of finance.
           <dd>1 (if time permits)</dd>
           <dt>Motivation</dt>
           <dd>
-<a title="payer">Payers</a> should be able to understand if a
-particular <a>purchase</a> is a recurring payment prior to initiating
+<a title="payer" href="#dfn-payer" class="internalDFN">Payers</a> should be able to understand if a
+particular <a href="#dfn-purchase" class="internalDFN">purchase</a> is a recurring payment prior to initiating
 the payment.
           </dd>
           <dt>Regulatory</dt>
           <dd>
 Some regulations may require that subscriptions should be automatically
 canceled after the subscription time span unless explicitly renewed by
-a <a>payer</a>.
+a <a href="#dfn-payer" class="internalDFN">payer</a>.
           </dd>
         </dl>
 
@@ -1186,7 +1613,7 @@ a <a>payer</a>.
           <dd>
 At times it is necessary to transmit personally identifiable information
 (e.g., about a qualification, achievement, personal quality, aspect of an
-<a>entity</a>'s background, or verifiable statement by an entity about
+<a href="#dfn-entity" class="internalDFN">entity</a>'s background, or verifiable statement by an entity about
 another entity) in order to be cleared to make a purchase:
             <ul>
                 <li>
@@ -1211,9 +1638,9 @@ a credit score report and an audited finances report.
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
-There are certain types of  <a title="purchase">purchases</a> that cannot
+There are certain types of  <a title="purchase" href="#dfn-purchase" class="internalDFN">purchases</a> that cannot
 be initiated without a proper set of credentials. While this isn't fundamental
-to the payment process, it is an integral part of some <a>transaction</a>
+to the payment process, it is an integral part of some <a href="#dfn-transaction" class="internalDFN">transaction</a>
 processes.
           </dd>
           <dt>Privacy / Security</dt>
@@ -1227,7 +1654,7 @@ or collect credentials must conform to all local and federal regulations
 related to identity and privacy.
           </dd>
           <dt>Exceptions</dt>
-          <dd>A <a>transaction</a> may fail if a required credential is not available.
+          <dd>A <a href="#dfn-transaction" class="internalDFN">transaction</a> may fail if a required credential is not available.
           </dd>
         </dl>
 
@@ -1239,15 +1666,15 @@ tokenized shipping address to send him the candy. With Tibor's
 authorization, his payment software transmits a tokenized shipping address to
 BoomCo that the shipper can decipher. Tibor's privacy is protected from the
 candy store, which did not require any personally identifying information to
-complete the <a>transaction</a>.
+complete the <a href="#dfn-transaction" class="internalDFN">transaction</a>.
           </dd>
           <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
-Certain low-value <a>transaction</a>s shouldn't require the
-<a>payer</a> to divulge personal information that is not necessary
-to complete the <a>transaction</a>.
+Certain low-value <a href="#dfn-transaction" class="internalDFN">transaction</a>s shouldn't require the
+<a href="#dfn-payer" class="internalDFN">payer</a> to divulge personal information that is not necessary
+to complete the <a href="#dfn-transaction" class="internalDFN">transaction</a>.
           </dd>
           <dt>Privacy</dt>
           <dd>
@@ -1262,16 +1689,16 @@ protected throughout the process.
 PayCo, a payment processor, is required to keep a certain amount of
 information on their customers
 for anti-money laundering / know your customer regulatory purposes. When a
-<a>payer</a> performs a <a>transaction</a> with a <a>payee</a>, PayCo
+<a href="#dfn-payer" class="internalDFN">payer</a> performs a <a href="#dfn-transaction" class="internalDFN">transaction</a> with a <a href="#dfn-payee" class="internalDFN">payee</a>, PayCo
 would like to reduce the amount of information that's transmitted to the
-<a>payee</a> while ensuring that PayCo complies with regulations.
+<a href="#dfn-payee" class="internalDFN">payee</a> while ensuring that PayCo complies with regulations.
           </dd>
           <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
 There are types of information, such as personally identifiable information,
-that <a title="payee">payees</a> do not need to know for some
+that <a title="payee" href="#dfn-payee" class="internalDFN">payees</a> do not need to know for some
 transactions. Limiting sensitive information to be transmitted to entities
 involved in a payment on a purely need-to-know basis increases security
 while ensuring regulatory compliance.
@@ -1299,9 +1726,9 @@ a technology website to pay for a new laptop.
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
-For certain <a title="payment scheme">payment schemes</a>, the <a>payer</a>
+For certain <a title="payment scheme" href="#dfn-payment-scheme" class="internalDFN">payment schemes</a>, the <a href="#dfn-payer" class="internalDFN">payer</a>
 will have to provide the payment service with a detailed digital invoice from
-the <a>payee</a> in order to initiate payment to the <a>payee</a>.
+the <a href="#dfn-payee" class="internalDFN">payee</a> in order to initiate payment to the <a href="#dfn-payee" class="internalDFN">payee</a>.
           </dd>
         </dl>
 
@@ -1315,8 +1742,8 @@ of a fee and a great deal of information about her real-world identity.
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
-Some <a>transaction</a>s will require very sensitive personally identifiable
-information to be transmitted by the <a>payer</a>.
+Some <a href="#dfn-transaction" class="internalDFN">transaction</a>s will require very sensitive personally identifiable
+information to be transmitted by the <a href="#dfn-payer" class="internalDFN">payer</a>.
           </dd>
           <dt>Privacy / Security</dt>
           <dd>We must ensure adequate security for these highly sensitive
@@ -1325,8 +1752,8 @@ information to be transmitted by the <a>payer</a>.
 
     </section>
 
-      <section>
-        <h4>Application of Marketing Elements</h4>
+      <section id="application-of-marketing-elements" typeof="bibo:Chapter" resource="#application-of-marketing-elements" property="bibo:hasPart">
+        <h4 id="h-application-of-marketing-elements" resource="#h-application-of-marketing-elements"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.1.3 </span>Application of Marketing Elements</span></h4>
         <p>
         </p>
 
@@ -1334,7 +1761,7 @@ information to be transmitted by the <a>payer</a>.
           <dt>Coupons</dt>
           <dd>
 JustPopcorn sends Marco a special discount offer given Marco's past
-<a title="purchase">purchases</a>. The offer takes the form of a coupon that
+<a title="purchase" href="#dfn-purchase" class="internalDFN">purchases</a>. The offer takes the form of a coupon that
 may be applied during payment.
           </dd>
           <dt>Roadmap phase</dt>
@@ -1351,7 +1778,7 @@ price sensitivity.
           <dt>Loyalty Cards</dt>
           <dd>
 Terry uses his FoodCo loyalty card when purchasing his weekly groceries, which
-gives him a discount on gas  <a title="purchase">purchases</a> performed at the
+gives him a discount on gas  <a title="purchase" href="#dfn-purchase" class="internalDFN">purchases</a> performed at the
 FoodCo gas station.
           </dd>
           <dt>Roadmap phase</dt>
@@ -1368,8 +1795,8 @@ particular good.
           <dd>
 When Fjörleif arrives as the self-checkout kiosk,
 she scans five dress shirts and two new pairs of dress pants.
-The kiosk mentions that Fjörleif could save 15% off of her <a>purchase</a>
-if she makes the <a>purchase</a> using store credit. She accepts the offer and
+The kiosk mentions that Fjörleif could save 15% off of her <a href="#dfn-purchase" class="internalDFN">purchase</a>
+if she makes the <a href="#dfn-purchase" class="internalDFN">purchase</a> using store credit. She accepts the offer and
 a new store credit card is placed in her payment application on her mobile
 phone.
           </dd>
@@ -1386,14 +1813,14 @@ store-specific line of credit.
 
     </section>
 
-    <section>
-      <h3>Negotiation of Payment Instruments</h3>
+    <section id="negotiation-of-payment-instruments-2" typeof="bibo:Chapter" resource="#negotiation-of-payment-instruments-2" property="bibo:hasPart">
+      <h3 id="h-negotiation-of-payment-instruments-2" resource="#h-negotiation-of-payment-instruments-2"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.2 </span>Negotiation of Payment Instruments</span></h3>
       <p>
       </p>
 
 
-      <section>
-        <h4>Discovery of Accepted Schemes</h4>
+      <section id="discovery-of-accepted-schemes" typeof="bibo:Chapter" resource="#discovery-of-accepted-schemes" property="bibo:hasPart">
+        <h4 id="h-discovery-of-accepted-schemes" resource="#h-discovery-of-accepted-schemes"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.2.1 </span>Discovery of Accepted Schemes</span></h4>
         <p>
         </p>
 
@@ -1407,7 +1834,7 @@ operator billing.
           <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
-Ubiquitous <a title="payment scheme">payment schemes</a> should be supported
+Ubiquitous <a title="payment scheme" href="#dfn-payment-scheme" class="internalDFN">payment schemes</a> should be supported
 without changes to how the schemes or payment instruments operate.
           </dd>
           <dt>Regulatory</dt>
@@ -1428,15 +1855,15 @@ CrowdFundCo supports Bitcoin, Ripple, Google Wallet, and PayPal.
           <dt>Motivation</dt>
           <dd>
 The same mechanism used to support existing
-<a title="payment scheme">payment schemes</a> should also
-support emerging <a title="payment scheme">payment schemes</a>.
+<a title="payment scheme" href="#dfn-payment-scheme" class="internalDFN">payment schemes</a> should also
+support emerging <a title="payment scheme" href="#dfn-payment-scheme" class="internalDFN">payment schemes</a>.
           </dd>
         </dl>
 
       </section>
 
-      <section>
-        <h4>Selection of Payment Instruments</h4>
+      <section id="selection-of-payment-instruments" typeof="bibo:Chapter" resource="#selection-of-payment-instruments" property="bibo:hasPart">
+        <h4 id="h-selection-of-payment-instruments" resource="#h-selection-of-payment-instruments"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.2.2 </span>Selection of Payment Instruments</span></h4>
         <p>
         </p>
 
@@ -1445,13 +1872,13 @@ support emerging <a title="payment scheme">payment schemes</a>.
           <dd>
 Yanos has a multiple digital wallets: one on his mobile phone, two in the
 cloud (but on different websites), and one on his smart watch. Each one has
-a credit card that he may want to use for a credit card-based <a>purchase</a>.
+a credit card that he may want to use for a credit card-based <a href="#dfn-purchase" class="internalDFN">purchase</a>.
           </dd>
           <dt>Roadmap phase</dt>
           <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
-A <a>payer</a> will most likely use multiple digital wallets over time. It is
+A <a href="#dfn-payer" class="internalDFN">payer</a> will most likely use multiple digital wallets over time. It is
 important to ensure that the wallets that they use are presented to them in a
 consistent manner across devices.
 <span class="issue">The amount of wallet/payment instrument discovery
@@ -1481,7 +1908,7 @@ TrustedMerchant, who provides a discount for access to his information.
               </li>
                 <li>
 Carla does not want to share information about the
-<a title="payment instrument">payment instruments</a> she uses with any
+<a title="payment instrument" href="#dfn-payment-instrument" class="internalDFN">payment instruments</a> she uses with any
 merchants, so that information is not shared with any online merchants.
               </li>
             </ul>
@@ -1491,22 +1918,22 @@ merchants, so that information is not shared with any online merchants.
           <dt>Motivation</dt>
           <dd>
 Sharing or protecting data on the sorts of
-<a title="payment instrument">payment instruments</a> available to
-a <a>payer</a> should be a decision made by the <a>payer</a>.
+<a title="payment instrument" href="#dfn-payment-instrument" class="internalDFN">payment instruments</a> available to
+a <a href="#dfn-payer" class="internalDFN">payer</a> should be a decision made by the <a href="#dfn-payer" class="internalDFN">payer</a>.
           </dd>
           <dt>Privacy / Security</dt>
           <dd>
-The types of <a title="payment instrument">payment instruments</a> available
-to a <a>payer</a> could be
-used to digitally fingerprint a <a>payer</a> even if they were using an
-pseudo-anonymous payment mechanism. Merchants and <a>payee</a>s may be legally
-obligated to protect this kind of <a>payer</a> payment information.
+The types of <a title="payment instrument" href="#dfn-payment-instrument" class="internalDFN">payment instruments</a> available
+to a <a href="#dfn-payer" class="internalDFN">payer</a> could be
+used to digitally fingerprint a <a href="#dfn-payer" class="internalDFN">payer</a> even if they were using an
+pseudo-anonymous payment mechanism. Merchants and <a href="#dfn-payee" class="internalDFN">payee</a>s may be legally
+obligated to protect this kind of <a href="#dfn-payer" class="internalDFN">payer</a> payment information.
           </dd>
         </dl>
 
         <dl id="uc-manual-selection" class="dl-horizontal">
           <dt>Manual Selection</dt>
-          <dd>In many cases, the <a>payer</a> will select a payment instrument manually:
+          <dd>In many cases, the <a href="#dfn-payer" class="internalDFN">payer</a> will select a payment instrument manually:
             <ul>
                 <li>
 Marie has credit cards from three different institutions:
@@ -1529,7 +1956,7 @@ can apply a variety of digital coupons when he visits the store.
               </li>
                 <li>
 David wants to be able to manually arrange available
-<a title="payment instrument">payment instruments</a> when they are presented
+<a title="payment instrument" href="#dfn-payment-instrument" class="internalDFN">payment instruments</a> when they are presented
 to him. <span class="issue">Why does this need to be standardized?
 Isn't this just a part of the wallet UI?</span>
               </li>
@@ -1553,18 +1980,18 @@ automatically.
         <dl id="uc-automatic-selection" class="dl-horizontal">
           <dt>Automatic Selection</dt>
           <dd>
-When a <a title="payer">payer's</a> personal preferences are known, it
+When a <a title="payer" href="#dfn-payer" class="internalDFN">payer's</a> personal preferences are known, it
 becomes possible to make selections for them automatically.
 
             <ul>
                 <li>
 Jonny's payment software on his smart watch chooses the payment instrument that
-will provide him with the biggest cost savings for each <a>purchase</a> he makes
+will provide him with the biggest cost savings for each <a href="#dfn-purchase" class="internalDFN">purchase</a> he makes
 throughout the week.
               </li>
                 <li>
 PayCo wants Elizabeth to know that if she pays with the debit card preferred
-by PayCo (because of a lower <a>transaction</a> fee for PayCo),
+by PayCo (because of a lower <a href="#dfn-transaction" class="internalDFN">transaction</a> fee for PayCo),
 she will benefit from a discount.
               </li>
                 <li>
@@ -1589,8 +2016,8 @@ Payment solutions providers can make payments easier and faster through automati
 
       </section>
 
-      <section>
-        <h4>Authentication to Access Instruments</h4>
+      <section id="authentication-to-access-instruments" typeof="bibo:Chapter" resource="#authentication-to-access-instruments" property="bibo:hasPart">
+        <h4 id="h-authentication-to-access-instruments" resource="#h-authentication-to-access-instruments"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.2.3 </span>Authentication to Access Instruments</span></h4>
         <p>
         </p>
 
@@ -1630,7 +2057,7 @@ authentication code, the payment proceeds.
               <li>
 Wes has configured his debit card to require a fingerprint scan from his
 mobile device and a Universal Two Factor (U2F) device to be used when
-performing a <a>purchase</a> over $1,000.
+performing a <a href="#dfn-purchase" class="internalDFN">purchase</a> over $1,000.
               </li>
               <li>
 Frederic taps his phone at the grocery store to pay, and BankA sends him a
@@ -1664,7 +2091,7 @@ such as strong two-factor verification.
           <dt>KYC</dt>
           <dd>
 A number of Know Your Customer (KYC) requirements must be met when a financial
-service provider authorizes access to a particular <a>payment instrument</a>:
+service provider authorizes access to a particular <a href="#dfn-payment-instrument" class="internalDFN">payment instrument</a>:
             <ul>
               <li>
 BigBank performs KYC clearing on a continuous basis to ensure that their
@@ -1698,7 +2125,7 @@ institution and merchant.
           <dt>Motivation</dt>
           <dd>
 Authorization to access an instrument depends on more than just authenticating
-with the payment service provider, it may also require the <a>payee</a> to
+with the payment service provider, it may also require the <a href="#dfn-payee" class="internalDFN">payee</a> to
 have other provable qualities before the transaction can proceed.
           </dd>
           <dt>Regulation</dt>
@@ -1750,7 +2177,7 @@ known bad actors.
           </dd>
           <dt>Exceptions</dt>
           <dd>
-If a <a>payee</a> detects that a <a>payer</a> is on an applicable blacklist, the
+If a <a href="#dfn-payee" class="internalDFN">payee</a> detects that a <a href="#dfn-payer" class="internalDFN">payer</a> is on an applicable blacklist, the
 transaction must not proceed.
           </dd>
         </dl>
@@ -1758,7 +2185,7 @@ transaction must not proceed.
           <dl id="uc-biometric" class="dl-horizontal">
             <dt>Biometric</dt>
             <dd>
-In current online and offline payment <a>transaction</a>s, biometric
+In current online and offline payment <a href="#dfn-transaction" class="internalDFN">transaction</a>s, biometric
 authentication can be used instead of password-based authentication:
               <ul>
                   <li>
@@ -1767,11 +2194,11 @@ just use a fingerprint to pay for low-value items.
                 </li>
                   <li>
 Ruba registers her voiceprint and face with her payment provider for use
-in <a>transaction</a>s greater than $1,000.
+in <a href="#dfn-transaction" class="internalDFN">transaction</a>s greater than $1,000.
                 </li>
                   <li>
 Rico buys a $5,000 car for his daughter through an online dealership. His
-<a>payment processor</a> requires a password plus two forms of biometric
+<a href="#dfn-payment-processor" class="internalDFN">payment processor</a> requires a password plus two forms of biometric
 identification. Rico doesn't have hands, so he uses a face and iris scan to
 perform the authentication.
                 </li>
@@ -1827,7 +2254,7 @@ suspicious payment has been requested.
           <dt>Motivation</dt>
           <dd>
 As financial services have moved online, the number of Internet-based attacks
-on <a>payer</a> financial accounts have increased. One way to protect against
+on <a href="#dfn-payer" class="internalDFN">payer</a> financial accounts have increased. One way to protect against
 these sorts of attacks is to perform continous risk monitoring.
           </dd>
         </dl>
@@ -1853,26 +2280,26 @@ are typically protected by one or more sets of authorization rules.
 
     </section>
 
-    <section>
-      <h3>Payment Processing</h3>
+    <section id="payment-processing-2" typeof="bibo:Chapter" resource="#payment-processing-2" property="bibo:hasPart">
+      <h3 id="h-payment-processing-2" resource="#h-payment-processing-2"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.3 </span>Payment Processing</span></h3>
       <p>
       </p>
 
-      <section>
-        <h4>Initiation of Processing</h4>
+      <section id="initiation-of-processing" typeof="bibo:Chapter" resource="#initiation-of-processing" property="bibo:hasPart">
+        <h4 id="h-initiation-of-processing" resource="#h-initiation-of-processing"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.3.1 </span>Initiation of Processing</span></h4>
         <p>
         </p>
 
-        <p class="note">
-Before subjecting a person or organization to any financial <a>transaction</a>
+        <div class="note"><div class="note-title" aria-level="5" role="heading" id="h-note2"><span>Note</span></div><p class="">
+Before subjecting a person or organization to any financial <a href="#dfn-transaction" class="internalDFN">transaction</a>
 commitment (such as a web payment), they should be presented with the option
 of reversing, checking, or confirming their choice or submission. It should
-also be noted that this does not preclude certain <a>transaction</a> operations
-from being automated once they have been authorized by an <a>entity</a>.
+also be noted that this does not preclude certain <a href="#dfn-transaction" class="internalDFN">transaction</a> operations
+from being automated once they have been authorized by an <a href="#dfn-entity" class="internalDFN">entity</a>.
 For more details, see the section on
 <a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#minimize-error-reversible">Error Prevention (Legal, Financial, Data)</a>
-in [[WCAG20]].
-        </p>
+in [<cite><a class="bibref" href="#bib-WCAG20">WCAG20</a></cite>].
+        </p></div>
 
         <dl id="uc-payee-initiated" class="dl-horizontal">
           <dt>Payee-initiated</dt>
@@ -1880,7 +2307,7 @@ in [[WCAG20]].
             <ul>
                 <li>
 Richard choses to pay using a credit card at FlowerFriends. FlowerFriends
-initiates payment processing using their <a>payment processor</a> to contact the
+initiates payment processing using their <a href="#dfn-payment-processor" class="internalDFN">payment processor</a> to contact the
 acquiring bank that handles credit card payments for FlowerFriends.
               </li>
                 <li>
@@ -1904,12 +2331,12 @@ Payee-initiated payments, also known as "pull payments" or
           </dd>
           <dt>Privacy / Security</dt>
           <dd>
-One of the biggest security flaws of <a>payee</a>-initiated payments is that
-all the information necessary to initiate a <a>transaction</a> from the
-<a title="payer">payer's</a> financial account is typically transmitted
-to the <a>payee</a>. For example, credit card information along with
+One of the biggest security flaws of <a href="#dfn-payee" class="internalDFN">payee</a>-initiated payments is that
+all the information necessary to initiate a <a href="#dfn-transaction" class="internalDFN">transaction</a> from the
+<a title="payer" href="#dfn-payer" class="internalDFN">payer's</a> financial account is typically transmitted
+to the <a href="#dfn-payee" class="internalDFN">payee</a>. For example, credit card information along with
 expiration date, name, and CVV2 code are transmitted and could be intercepted
-by rogue software running on the <a title="payer">payer's</a> servers.
+by rogue software running on the <a title="payer" href="#dfn-payer" class="internalDFN">payer's</a> servers.
 Special attention should be paid to ensuring that this risky security
 model isn't supported by a Web Payments solution. For example, at a minimum,
 credit card tokenization such as EMVCo's solution should be supported
@@ -1940,9 +2367,9 @@ transit.
           <dd>
 Payer-initiated payments, also known as "push payments",
 "three corner model payments", or "peer-to-peer payments", are fundamentally
-more secure as no information is given to the <a>payee</a> that would
-allow them or an attacker to replay the <a>transaction</a> for a different
-amount or to a different <a>payee</a> at a later date.
+more secure as no information is given to the <a href="#dfn-payee" class="internalDFN">payee</a> that would
+allow them or an attacker to replay the <a href="#dfn-transaction" class="internalDFN">transaction</a> for a different
+amount or to a different <a href="#dfn-payee" class="internalDFN">payee</a> at a later date.
           </dd>
           <dt>Regulatory</dt>
           <dd>
@@ -1954,8 +2381,8 @@ level.
 
       </section>
 
-      <section>
-        <h4>Verification of Available Funds</h4>
+      <section id="verification-of-available-funds" typeof="bibo:Chapter" resource="#verification-of-available-funds" property="bibo:hasPart">
+        <h4 id="h-verification-of-available-funds" resource="#h-verification-of-available-funds"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.3.2 </span>Verification of Available Funds</span></h4>
         <p>
         </p>
 
@@ -1973,14 +2400,14 @@ the hotel, at which time the hold on her funds will be released.
 Delivering services or products that are difficult to "undo," such
 as performing an oil change, dispensing fuel, or renting a car or hotel
 room are examples of situations which may require a two-part
-<a>transaction</a>.
+<a href="#dfn-transaction" class="internalDFN">transaction</a>.
           </dd>
         </dl>
 
         <dl id="uc-funds-verification" class="dl-horizontal">
           <dt>Funds Verification</dt>
           <dd>
-When Mario wishes to <a>purchase</a> a race car through the manufacturer,
+When Mario wishes to <a href="#dfn-purchase" class="internalDFN">purchase</a> a race car through the manufacturer,
 the company that makes the car requires a proof of funds from Mario's bank
 in order for the customization of the car to proceed.
           </dd>
@@ -1988,17 +2415,17 @@ in order for the customization of the car to proceed.
         <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
-A <a>payee</a> may want to limit access to certain services to only those
+A <a href="#dfn-payee" class="internalDFN">payee</a> may want to limit access to certain services to only those
 who they know can afford the good or service because the act of
-providing an acceptable level of service to the <a>payee</a> during the
+providing an acceptable level of service to the <a href="#dfn-payee" class="internalDFN">payee</a> during the
 pre-sale phase may be costly.
           </dd>
         </dl>
 
       </section>
 
-      <section>
-        <h4>Authorization of Transfer</h4>
+      <section id="authorization-of-transfer" typeof="bibo:Chapter" resource="#authorization-of-transfer" property="bibo:hasPart">
+        <h4 id="h-authorization-of-transfer" resource="#h-authorization-of-transfer"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.3.3 </span>Authorization of Transfer</span></h4>
         <p>
         </p>
 
@@ -2006,7 +2433,7 @@ pre-sale phase may be costly.
           <dt>Proofs</dt>
           <dd>
 Goods and services may be released at different times depending on the type of
-<a>transaction</a> being performed:
+<a href="#dfn-transaction" class="internalDFN">transaction</a> being performed:
             <ul>
                 <li>
 Sung-hyun provides a proof of initiation of funds transfer to get access to
@@ -2018,13 +2445,13 @@ Tianjin. He uses an escrow service to provide a proof of escrow to the
 online shop in order to get them to initiate the shipment.
               </li>
                 <li>
-To protect Tibor's privacy when he <a title="purchase">purchases</a> candy
+To protect Tibor's privacy when he <a title="purchase" href="#dfn-purchase" class="internalDFN">purchases</a> candy
 online, the store asks only for Tibor's verified shipping address and a
 proof of payment to send him the chocolates.
               </li>
                 <li>
 RockinRadio, SmoothSounds, and classicallyClassic are independent, specialized
-music streaming services. They accept proof of <a>purchase</a> from each other
+music streaming services. They accept proof of <a href="#dfn-purchase" class="internalDFN">purchase</a> from each other
 to provide a track that is in their online streaming catalogue even if it was
 originally bought from another provider.
               </li>
@@ -2037,27 +2464,27 @@ originally bought from another provider.
 At times, it is safe to release a good
 when the payment network acknowledges that the funds are on their way. At other
 times, it's not safe to release a good or service until it has been proven that
-the funds are sitting in the <a title="payee">payee's</a> financial
+the funds are sitting in the <a title="payee" href="#dfn-payee" class="internalDFN">payee's</a> financial
 account.
           </dd>
           <dt>Exceptions</dt>
           <dd>
-If a particular expected proof is not provided, the <a>transaction</a> will most
+If a particular expected proof is not provided, the <a href="#dfn-transaction" class="internalDFN">transaction</a> will most
 likely fail or transition into an alternate path.
           </dd>
         </dl>
 
       </section>
 
-      <section>
-        <h4>Completion of Transfer</h4>
+      <section id="completion-of-transfer" typeof="bibo:Chapter" resource="#completion-of-transfer" property="bibo:hasPart">
+        <h4 id="h-completion-of-transfer" resource="#h-completion-of-transfer"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.3.4 </span>Completion of Transfer</span></h4>
         <p>
         </p>
 
         <dl id="uc-delay-variation" class="dl-horizontal">
           <dt>Variation of Delay</dt>
-          <dd>When a <a>transaction</a> occurs, the time it takes to transmit and receive
-funds often vary according to the <a>payment scheme</a>:
+          <dd>When a <a href="#dfn-transaction" class="internalDFN">transaction</a> occurs, the time it takes to transmit and receive
+funds often vary according to the <a href="#dfn-payment-scheme" class="internalDFN">payment scheme</a>:
             <ul>
                 <li>
 Eman uses a credit card to buy some gifts for her parents. The shop has
@@ -2073,7 +2500,7 @@ that sells the glasses has almost guaranteed access to the funds within
 15 minutes.
               </li>
                 <li>
-Vanessa uses Ripple to <a>purchase</a> a new work outfit in US Dollars.
+Vanessa uses Ripple to <a href="#dfn-purchase" class="internalDFN">purchase</a> a new work outfit in US Dollars.
 Funds in Euros are available to OnlineWorkClothes within a few minutes.
               </li>
             </ul>
@@ -2082,8 +2509,8 @@ Funds in Euros are available to OnlineWorkClothes within a few minutes.
           <dd>Uncategorized</dd>
           <dt>Exceptions</dt>
           <dd>
-If the funds are sent but never received, then the <a>payee</a> will
-select a recourse mechanism that is included in the last <a>transaction</a>
+If the funds are sent but never received, then the <a href="#dfn-payee" class="internalDFN">payee</a> will
+select a recourse mechanism that is included in the last <a href="#dfn-transaction" class="internalDFN">transaction</a>
 message.
           </dd>
         </dl>
@@ -2092,7 +2519,7 @@ message.
           <dt>Escrow</dt>
           <dd>
 There are a number of considerations when providing escrow services to both
-<a title="payer">payers</a> and <a title="payee">payees</a>:
+<a title="payer" href="#dfn-payer" class="internalDFN">payers</a> and <a title="payee" href="#dfn-payee" class="internalDFN">payees</a>:
             <ul>
               <li>
 Jack has established an online store on a trusted third party website to
@@ -2108,27 +2535,27 @@ to Jack's account.
               </li>
               <li>
 Escrow services in China sometimes provide a virtual financial account to
-<a title="payer">payers</a>. Money is typically transferred from the
-<a title="payer">payer's</a> bank account to the escrow service provider's
-bank to hold, but where the funds are still legally owned by the <a>payer</a>.
+<a title="payer" href="#dfn-payer" class="internalDFN">payers</a>. Money is typically transferred from the
+<a title="payer" href="#dfn-payer" class="internalDFN">payer's</a> bank account to the escrow service provider's
+bank to hold, but where the funds are still legally owned by the <a href="#dfn-payer" class="internalDFN">payer</a>.
 When Hung transfers funds to an escrow service provider, his
 rights and responsibilities are exchanged with the escrow service provider
 at the same time as well as how various parties involved with the account
 can access and use the funds.
               </li>
             </ul>
-            </ul>
+
           </dd>
           <dt>Roadmap phase</dt>
           <dd>Uncategorized</dd>
           <dt>Motivation</dt>
           <dd>
 A trusted third party is typically helpful for non-instant transactions
-where neither the <a>payer</a> or the <a>payee</a> have an existing
-relationship. A trusted third party protects the <a>payer</a> by ensuring that
-the <a>payee</a> has been vetted and by guaranteeing product or a refund. The
-trusted third party protects the <a>payee</a> by ensuring that funds from the
-<a>payer</a> have been verified before releasing the product to them.
+where neither the <a href="#dfn-payer" class="internalDFN">payer</a> or the <a href="#dfn-payee" class="internalDFN">payee</a> have an existing
+relationship. A trusted third party protects the <a href="#dfn-payer" class="internalDFN">payer</a> by ensuring that
+the <a href="#dfn-payee" class="internalDFN">payee</a> has been vetted and by guaranteeing product or a refund. The
+trusted third party protects the <a href="#dfn-payee" class="internalDFN">payee</a> by ensuring that funds from the
+<a href="#dfn-payer" class="internalDFN">payer</a> have been verified before releasing the product to them.
           </dd>
           <dt>Regulatory</dt>
           <dd>
@@ -2165,10 +2592,10 @@ received.
 
     </section>
 
-    <section>
-      <h3>Delivery of Product/Receipt and Refunds</h3>
-      <section>
-        <h4>Delivery of Product</h4>
+    <section id="delivery-of-product-receipt-and-refunds-2" typeof="bibo:Chapter" resource="#delivery-of-product-receipt-and-refunds-2" property="bibo:hasPart">
+      <h3 id="h-delivery-of-product-receipt-and-refunds-2" resource="#h-delivery-of-product-receipt-and-refunds-2"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.4 </span>Delivery of Product/Receipt and Refunds</span></h3>
+      <section id="delivery-of-product" typeof="bibo:Chapter" resource="#delivery-of-product" property="bibo:hasPart">
+        <h4 id="h-delivery-of-product" resource="#h-delivery-of-product"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.4.1 </span>Delivery of Product</span></h4>
         <p>
         </p>
 
@@ -2182,7 +2609,7 @@ shipped to his home address.
           <dd>1</dd>
           <dt>Motivation</dt>
           <dd>
-The <a>purchase</a> and delivery of physical goods via an online marketplace
+The <a href="#dfn-purchase" class="internalDFN">purchase</a> and delivery of physical goods via an online marketplace
 is one of the cornerstones of online commerce.
           </dd>
         </dl>
@@ -2192,7 +2619,7 @@ is one of the cornerstones of online commerce.
           <dd>
 When Lilith buys music from a band at MusicBox and then goes to their
 Web site to download additional content, no registration is required, just a
-proof of <a>purchase</a> that is sent to the band's website, after which
+proof of <a href="#dfn-purchase" class="internalDFN">purchase</a> that is sent to the band's website, after which
 MusicBox provides Lilith a link to download the additional content.
           </dd>
           <dt>Roadmap phase</dt>
@@ -2221,14 +2648,14 @@ have them shipped to a nearby department store to save on shipping.
 
       </section>
 
-      <section>
-        <h4>Delivery of Receipt</h4>
+      <section id="delivery-of-receipt" typeof="bibo:Chapter" resource="#delivery-of-receipt" property="bibo:hasPart">
+        <h4 id="h-delivery-of-receipt" resource="#h-delivery-of-receipt"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.4.2 </span>Delivery of Receipt</span></h4>
         <dl id="uc-electronic-receipts" class="dl-horizontal">
           <dt>Electronic Receipts</dt>
           <dd>
 Ashraf pulls up to a pump at a petrol station. He pays electronically using a
 credit card (via his phone). A machine-readable electronic receipt for
-the <a>purchase</a> from the gas station is transferred to his phone and
+the <a href="#dfn-purchase" class="internalDFN">purchase</a> from the gas station is transferred to his phone and
 displayed using his favorite expense tracking software.
           </dd>
           <dt>Roadmap phase</dt>
@@ -2236,7 +2663,7 @@ displayed using his favorite expense tracking software.
           <dt>Motivation</dt>
           <dd>
 Standardized, machine-readable electronic receipts make it easier to
-track expenses, prove that certain <a title="purchase">purchases</a> were
+track expenses, prove that certain <a title="purchase" href="#dfn-purchase" class="internalDFN">purchases</a> were
 made, file tax returns, and simplify management of unnecessary paper.
           </dd>
           <dt>Privacy</dt>
@@ -2290,12 +2717,12 @@ large print lettering.
         </dl>
 
       </section>
-      <section>
-        <h4>Refunds</h4>
+      <section id="refunds" typeof="bibo:Chapter" resource="#refunds" property="bibo:hasPart">
+        <h4 id="h-refunds" resource="#h-refunds"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.4.3 </span>Refunds</span></h4>
         <dl id="uc-refund" class="dl-horizontal">
           <dt>Basic Refund</dt>
           <dd>
-At times, it becomes necessary to refund a <a title="payer">payer's</a>
+At times, it becomes necessary to refund a <a title="payer" href="#dfn-payer" class="internalDFN">payer's</a>
 payment:
             <ul>
               <li>
@@ -2317,7 +2744,7 @@ different payment scheme, e.g., cash?</span>
 A financial crimes regulator identifies a criminal syndicate that is
 operating via a number of fake identities. The fake identities are flagged
 and an electronic message is sent to all
-<a title="payment processor">payment processors</a> to reverse all
+<a title="payment processor" href="#dfn-payment-processor" class="internalDFN">payment processors</a> to reverse all
 payments sent to the fake identities.
               </li>
             </ul>
@@ -2326,8 +2753,8 @@ payments sent to the fake identities.
           <dd>1 (if time permits)</dd>
           <dt>Motivation</dt>
           <dd>
-Some <a>transaction</a>s are the result of human error or fault. In these
-cases, it is helpful to be able to reverse the <a>transaction</a> and provide
+Some <a href="#dfn-transaction" class="internalDFN">transaction</a>s are the result of human error or fault. In these
+cases, it is helpful to be able to reverse the <a href="#dfn-transaction" class="internalDFN">transaction</a> and provide
 a refund to the customer.
           </dd>
           <dt>Regulatory</dt>
@@ -2342,8 +2769,8 @@ request a refund for a defective product or service.
     </section>
   </section>
 
-  <section>
-    <h2 id="additional-examples">Additional Examples of the Payment Phases</h2>
+  <section id="additional-examples-of-the-payment-phases" typeof="bibo:Chapter" resource="#additional-examples-of-the-payment-phases" property="bibo:hasPart">
+    <!--OddPage--><h2 id="additional-examples" resource="#additional-examples"><span property="xhv:role" resource="xhv:heading"><span class="secno">7. </span>Additional Examples of the Payment Phases</span></h2>
     <p>
 Early in the document we provide an
 <a href="#a-simple-example-of-the-payment-phases">example of the payment
@@ -2351,23 +2778,23 @@ phases</a>. In this appendix we provide further examples to
 illustrate the phase steps.
     </p>
 
-    <p class="issue">
+    <div class="issue"><div class="issue-title" aria-level="3" role="heading" id="h-issue5"><span>Issue 5</span></div><p class="">
 Input is requested from experts at each organization providing services
 mentioned below as well as engineers and designers of technologies used below.
 Specifically, if the payment flows outlined below contain errors or omissions
 the group would like to be to ensure that the oversight is corrected as soon
 as possible.
-    </p>
+    </p></div>
 
-    <section>
-      <h3>Credit Card Payment (Visa, MasterCard)</h3>
+    <section id="credit-card-payment-visa-mastercard" typeof="bibo:Chapter" resource="#credit-card-payment-visa-mastercard" property="bibo:hasPart">
+      <h3 id="h-credit-card-payment-visa-mastercard" resource="#h-credit-card-payment-visa-mastercard"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.1 </span>Credit Card Payment (Visa, MasterCard)</span></h3>
       <p>
 This scenario outlines a typical card purchase using the "four corner model".
 Janet is buying an handbag online from a resale shop.
       </p>
 
-      <section class="notoc">
-        <h4>Negotiation of Purchase Terms</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#negotiation-of-purchase-terms-1" property="bibo:hasPart">
+        <h4 id="negotiation-of-purchase-terms-1" resource="#negotiation-of-purchase-terms-1"><span property="xhv:role" resource="xhv:heading">Negotiation of Purchase Terms</span></h4>
         <ul>
           <li>
 <strong>Discovery of Offer</strong>: Janet searches her favorite resale shop
@@ -2386,8 +2813,8 @@ the purse.
         </ul>
       </section>
 
-      <section class="notoc">
-        <h4>Negotiation of Payment Instruments</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#negotiation-of-payment-instruments-3" property="bibo:hasPart">
+        <h4 id="negotiation-of-payment-instruments-3" resource="#negotiation-of-payment-instruments-3"><span property="xhv:role" resource="xhv:heading">Negotiation of Payment Instruments</span></h4>
         <ul>
           <li>
 <strong>Discovery of Accepted Schemes</strong>: The site takes
@@ -2408,23 +2835,23 @@ for her zip code and the verification code on the back of the card.
         </ul>
       </section>
 
-      <section class="notoc">
-        <h4>Payment Processing</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#payment-processing-3" property="bibo:hasPart">
+        <h4 id="payment-processing-3" resource="#payment-processing-3"><span property="xhv:role" resource="xhv:heading">Payment Processing</span></h4>
         <ul>
           <li>
 <strong>Initiation of Processing</strong>: The merchant initiates an
-payment authorization request to their <a>payment processor</a>.
+payment authorization request to their <a href="#dfn-payment-processor" class="internalDFN">payment processor</a>.
           </li>
           <li>
 <strong>Verification of Available Funds</strong>: The payment authorization
-request is successful and the <a>payment processor</a> sends a response to the
+request is successful and the <a href="#dfn-payment-processor" class="internalDFN">payment processor</a> sends a response to the
 merchant acknowledging that the funds are now held until the merchant
 finalizes the payment.
           </li>
           <li>
 <strong>Authorization of Transfer</strong>: After the merchant has packed
 the bag for shipping, the merchant sends a message back to the
-<a>payment processor</a> to finalize the payment.
+<a href="#dfn-payment-processor" class="internalDFN">payment processor</a> to finalize the payment.
           </li>
           <li>
 <strong>Completion of Transfer</strong>: The funds are immediately deducted from
@@ -2434,8 +2861,8 @@ merchant's bank account.
         </ul>
       </section>
 
-      <section class="notoc">
-        <h4>Delivery of Product/Receipt and Refunds</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#delivery-of-product-receipt-and-refunds-3" property="bibo:hasPart">
+        <h4 id="delivery-of-product-receipt-and-refunds-3" resource="#delivery-of-product-receipt-and-refunds-3"><span property="xhv:role" resource="xhv:heading">Delivery of Product/Receipt and Refunds</span></h4>
         <ul>
           <li>
 <strong>Delivery of Receipt</strong>: The seller sends her a digital receipt,
@@ -2453,8 +2880,8 @@ and delivers the bag to the shipper, which then sends it to Janet.
       </section>
     </section>
 
-    <section>
-      <h3>Tokenized Payments (ApplePay / Venmo / CyberSource)</h3>
+    <section id="tokenized-payments-applepay-venmo-cybersource" typeof="bibo:Chapter" resource="#tokenized-payments-applepay-venmo-cybersource" property="bibo:hasPart">
+      <h3 id="h-tokenized-payments-applepay-venmo-cybersource" resource="#h-tokenized-payments-applepay-venmo-cybersource"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.2 </span>Tokenized Payments (ApplePay / Venmo / CyberSource)</span></h3>
       <p>
 The following scenario outlines payment using a mobile device and
 tokenization. The merchant has provided a mobile application that
@@ -2463,8 +2890,8 @@ various tokenization payment systems now in use, such as ApplePay,
 CyberSource, Venmo, and Square.
       </p>
 
-      <section class="notoc">
-        <h4>Negotiation of Purchase Terms</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#negotiation-of-purchase-terms-2" property="bibo:hasPart">
+        <h4 id="negotiation-of-purchase-terms-2" resource="#negotiation-of-purchase-terms-2"><span property="xhv:role" resource="xhv:heading">Negotiation of Purchase Terms</span></h4>
         <ul>
           <li>
 <strong>Discovery of Offer</strong>: Tom uses the Terrific-Tools mobile
@@ -2484,12 +2911,12 @@ this particular use case.</em>
         </ul>
       </section>
 
-      <section class="notoc">
-        <h4>Negotiation of Payment Instruments</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#negotiation-of-payment-instruments-4" property="bibo:hasPart">
+        <h4 id="negotiation-of-payment-instruments-4" resource="#negotiation-of-payment-instruments-4"><span property="xhv:role" resource="xhv:heading">Negotiation of Payment Instruments</span></h4>
         <ul>
           <li>
 <strong>Discovery of Accepted Schemes</strong>: The mobile app uses
-tokenized <a title="payment instrument">payment instruments</a> and the
+tokenized <a title="payment instrument" href="#dfn-payment-instrument" class="internalDFN">payment instruments</a> and the
 Terrific-Tools Application displays the options available.
           </li>
 
@@ -2505,8 +2932,8 @@ fingerprint recognition feature of his device to authenticate his payment.
         </ul>
       </section>
 
-      <section class="notoc">
-        <h4>Payment Processing</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#payment-processing-4" property="bibo:hasPart">
+        <h4 id="payment-processing-4" resource="#payment-processing-4"><span property="xhv:role" resource="xhv:heading">Payment Processing</span></h4>
         <ul>
           <li>
 <strong>Initiation of Processing</strong>: The mobile app creates an
@@ -2528,8 +2955,8 @@ transaction receipt to Terrific-Tools.
         </ul>
       </section>
 
-      <section class="notoc">
-        <h4>Delivery of Product/Receipt and Refunds</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#delivery-of-product-receipt-and-refunds-4" property="bibo:hasPart">
+        <h4 id="delivery-of-product-receipt-and-refunds-4" resource="#delivery-of-product-receipt-and-refunds-4"><span property="xhv:role" resource="xhv:heading">Delivery of Product/Receipt and Refunds</span></h4>
         <ul>
           <li>
 <strong>Delivery of Receipt</strong>: Terrific-Tools sends a transaction
@@ -2543,18 +2970,18 @@ receipt to the mobile app.
       </section>
     </section>
 
-    <section>
-      <h3>Three Corner Model Payments (PayPal / Alipay / Google Wallet)</h3>
+    <section id="three-corner-model-payments-paypal-alipay-google-wallet" typeof="bibo:Chapter" resource="#three-corner-model-payments-paypal-alipay-google-wallet" property="bibo:hasPart">
+      <h3 id="h-three-corner-model-payments-paypal-alipay-google-wallet" resource="#h-three-corner-model-payments-paypal-alipay-google-wallet"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.3 </span>Three Corner Model Payments (PayPal / Alipay / Google Wallet)</span></h3>
       <p>
 The following scenario outlines an ideal payment experience using a
-<a>payer</a>-initiated payment, also known as a "push-payment" or
+<a href="#dfn-payer" class="internalDFN">payer</a>-initiated payment, also known as a "push-payment" or
 "three corner model payment". In this scenario, Meihui is buying an airline
 ticket from a booking website and during the payment process she uses her
 fingerprint instead of a password to authorize the payment.
       </p>
 
-      <section class="notoc">
-        <h4>Negotiation of Purchase Terms</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#negotiation-of-purchase-terms-3" property="bibo:hasPart">
+        <h4 id="negotiation-of-purchase-terms-3" resource="#negotiation-of-purchase-terms-3"><span property="xhv:role" resource="xhv:heading">Negotiation of Purchase Terms</span></h4>
         <ul>
           <li>
 <strong>Discovery of Offer</strong>: Meihui searches for a flight on
@@ -2573,8 +3000,8 @@ this particular use case.</em>
         </ul>
       </section>
 
-      <section class="notoc">
-        <h4>Negotiation of Payment Instruments</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#negotiation-of-payment-instruments-5" property="bibo:hasPart">
+        <h4 id="negotiation-of-payment-instruments-5" resource="#negotiation-of-payment-instruments-5"><span property="xhv:role" resource="xhv:heading">Negotiation of Payment Instruments</span></h4>
         <ul>
           <li>
 <strong>Discovery of Accepted Schemes</strong>: The booking website takes
@@ -2595,12 +3022,12 @@ to approve the payment.
         </ul>
       </section>
 
-      <section class="notoc">
-        <h4>Payment Processing</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#payment-processing-5" property="bibo:hasPart">
+        <h4 id="payment-processing-5" resource="#payment-processing-5"><span property="xhv:role" resource="xhv:heading">Payment Processing</span></h4>
         <ul>
           <li>
 <strong>Initiation of Processing</strong>: Meihui's Alipay wallet initiates
-the <a>transaction</a>.
+the <a href="#dfn-transaction" class="internalDFN">transaction</a>.
           </li>
           <li>
 <strong>Verification of Available Funds</strong>: <em>Not applicable to
@@ -2617,8 +3044,8 @@ from Alipay that the transfer is complete.
         </ul>
       </section>
 
-      <section class="notoc">
-        <h4>Delivery of Product/Receipt and Refunds</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#delivery-of-product-receipt-and-refunds-5" property="bibo:hasPart">
+        <h4 id="delivery-of-product-receipt-and-refunds-5" resource="#delivery-of-product-receipt-and-refunds-5"><span property="xhv:role" resource="xhv:heading">Delivery of Product/Receipt and Refunds</span></h4>
         <ul>
           <li>
 <strong>Delivery of Receipt</strong>: The booking website sees that Meihui's
@@ -2635,8 +3062,8 @@ departure time, and gate number.
       </section>
     </section>
 
-    <section>
-      <h3>Cryptocurrency Payment (Bitcoin, Ripple)</h3>
+    <section id="cryptocurrency-payment-bitcoin-ripple" typeof="bibo:Chapter" resource="#cryptocurrency-payment-bitcoin-ripple" property="bibo:hasPart">
+      <h3 id="h-cryptocurrency-payment-bitcoin-ripple" resource="#h-cryptocurrency-payment-bitcoin-ripple"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.4 </span>Cryptocurrency Payment (Bitcoin, Ripple)</span></h3>
       <p>
 The following scenario outlines an ideal payment experience using Bitcoin, or a
 Bitcoin-like cryptocurrency. In this scenario, Lenne is buying a pair of
@@ -2644,8 +3071,8 @@ alpaca socks from an online retailer using a "buy one, get one free" coupon.
 The socks are shipped to her home address.
       </p>
 
-      <section class="notoc">
-        <h4>Negotiation of Purchase Terms</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#negotiation-of-purchase-terms-4" property="bibo:hasPart">
+        <h4 id="negotiation-of-purchase-terms-4" resource="#negotiation-of-purchase-terms-4"><span property="xhv:role" resource="xhv:heading">Negotiation of Purchase Terms</span></h4>
         <ul>
           <li>
 <strong>Discovery of Offer</strong>: Lenne searches for "warm socks,
@@ -2670,8 +3097,8 @@ with the checkout process.
         </ul>
       </section>
 
-      <section class="notoc">
-        <h4>Negotiation of Payment Instruments</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#negotiation-of-payment-instruments-6" property="bibo:hasPart">
+        <h4 id="negotiation-of-payment-instruments-6" resource="#negotiation-of-payment-instruments-6"><span property="xhv:role" resource="xhv:heading">Negotiation of Payment Instruments</span></h4>
         <ul>
           <li>
 <strong>Discovery of Accepted Schemes</strong>: The website takes Visa,
@@ -2687,17 +3114,17 @@ selects her cloud-based Bitcoin wallet.
           <li>
 <strong>Authentication to Access Instruments</strong>: Since the value of the
 payment is less than $50, Lenne isn't asked for her two-factor authentication
-device to approve the <a>purchase</a>.
+device to approve the <a href="#dfn-purchase" class="internalDFN">purchase</a>.
           </li>
         </ul>
       </section>
 
-      <section class="notoc">
-        <h4>Payment Processing</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#payment-processing-6" property="bibo:hasPart">
+        <h4 id="payment-processing-6" resource="#payment-processing-6"><span property="xhv:role" resource="xhv:heading">Payment Processing</span></h4>
         <ul>
           <li>
 <strong>Initiation of Processing</strong>: Lenne's cloud-based Bitcoin wallet
-provider initiates the <a>transaction</a>.
+provider initiates the <a href="#dfn-transaction" class="internalDFN">transaction</a>.
           </li>
           <li>
 <strong>Verification of Available Funds</strong>: <em>Not applicable to
@@ -2712,15 +3139,15 @@ item is shipped.
           <li>
 <strong>Completion of Transfer</strong>: AlpacaToesCo gets a message from the
 Bitcoin cloud wallet that the transfer is complete. A Bitcoin
-<a>transaction</a> ID is included in the message so that AlpacaToesCo can
+<a href="#dfn-transaction" class="internalDFN">transaction</a> ID is included in the message so that AlpacaToesCo can
 release the product when the appropriate number of verifications are made on
-the <a>transaction</a>.
+the <a href="#dfn-transaction" class="internalDFN">transaction</a>.
           </li>
         </ul>
       </section>
 
-      <section class="notoc">
-        <h4>Delivery of Product/Receipt and Refunds</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#delivery-of-product-receipt-and-refunds-6" property="bibo:hasPart">
+        <h4 id="delivery-of-product-receipt-and-refunds-6" resource="#delivery-of-product-receipt-and-refunds-6"><span property="xhv:role" resource="xhv:heading">Delivery of Product/Receipt and Refunds</span></h4>
         <ul>
           <li>
 <strong>Delivery of Receipt</strong>: AlpacaToesCo sees 6 verifications on the
@@ -2736,24 +3163,24 @@ to Lenne and she receives them the next day.
       </section>
     </section>
 
-    <section>
-      <h3>Electronic Check Payment</h3>
+    <section id="electronic-check-payment" typeof="bibo:Chapter" resource="#electronic-check-payment" property="bibo:hasPart">
+      <h3 id="h-electronic-check-payment" resource="#h-electronic-check-payment"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.5 </span>Electronic Check Payment</span></h3>
       <p><em>To be completed</em>.</p>
     </section>
 
-    <section id="direct-debit">
-      <h3>Direct Debit (SEPA Direct Debit)</h3>
+    <section id="direct-debit" typeof="bibo:Chapter" resource="#direct-debit" property="bibo:hasPart">
+      <h3 id="h-direct-debit" resource="#h-direct-debit"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.6 </span>Direct Debit (SEPA Direct Debit)</span></h3>
       <p>
 The following scenario outlines an ideal payment experience using a
-Direct Debit (<a>payee-initiated payment</a>), also known as a
-pull payment in the context of a <a>four corner model</a> payment.
+Direct Debit (<a href="#dfn-payee-initiated-payment" class="internalDFN">payee-initiated payment</a>), also known as a
+pull payment in the context of a <a href="#dfn-four-corner-model" class="internalDFN">four corner model</a> payment.
 In this scenario, Anna is signing up for electricity service via the
 service's website. During the payment process she will validate an electronic
 direct debit mandate.
       </p>
 
-      <section class="notoc">
-        <h4>Negotiation of Purchase Terms</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#negotiation-of-purchase-terms-5" property="bibo:hasPart">
+        <h4 id="negotiation-of-purchase-terms-5" resource="#negotiation-of-purchase-terms-5"><span property="xhv:role" resource="xhv:heading">Negotiation of Purchase Terms</span></h4>
         <ul>
           <li>
 <strong>Discovery of Offer</strong>: Anna connects to a utility website. She
@@ -2770,8 +3197,8 @@ particular use case.</em>
         </ul>
       </section>
 
-      <section class="notoc">
-        <h4>Negotiation of Payment Instruments</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#negotiation-of-payment-instruments-7" property="bibo:hasPart">
+        <h4 id="negotiation-of-payment-instruments-7" resource="#negotiation-of-payment-instruments-7"><span property="xhv:role" resource="xhv:heading">Negotiation of Payment Instruments</span></h4>
         <ul>
           <li>
 <strong>Discovery of Accepted Schemes</strong>: The utility website takes
@@ -2793,8 +3220,8 @@ entering her secret PIN.
         </ul>
       </section>
 
-      <section class="notoc">
-        <h4>Payment Processing</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#payment-processing-7" property="bibo:hasPart">
+        <h4 id="payment-processing-7" resource="#payment-processing-7"><span property="xhv:role" resource="xhv:heading">Payment Processing</span></h4>
         <ul>
           <li>
 <strong>Initiation of Processing</strong>: At the end of the month the utility
@@ -2817,8 +3244,8 @@ from its payment service provider that the transfer has been completed.
         </ul>
       </section>
 
-      <section class="notoc">
-        <h4>Delivery of Product/Receipt and Refunds</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#delivery-of-product-receipt-and-refunds-7" property="bibo:hasPart">
+        <h4 id="delivery-of-product-receipt-and-refunds-7" resource="#delivery-of-product-receipt-and-refunds-7"><span property="xhv:role" resource="xhv:heading">Delivery of Product/Receipt and Refunds</span></h4>
         <ul>
           <li>
 <strong>Delivery of Receipt</strong>: The utility website sees that Anna's
@@ -2838,19 +3265,19 @@ if something goes wrong with the Direct Debit.
       </section>
     </section>
 
-    <section id="credit-transfer">
-      <h3>Credit Transfer (SEPAmail)</h3>
+    <section id="credit-transfer" typeof="bibo:Chapter" resource="#credit-transfer" property="bibo:hasPart">
+      <h3 id="h-credit-transfer" resource="#h-credit-transfer"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.7 </span>Credit Transfer (SEPAmail)</span></h3>
       <p>
 The following scenario outlines an ideal payment experience using a
-<a>payer-initiated payment</a>, also known as a
-push payment in the context of a <a>four corner model</a> payment. In
+<a href="#dfn-payer-initiated-payment" class="internalDFN">payer-initiated payment</a>, also known as a
+push payment in the context of a <a href="#dfn-four-corner-model" class="internalDFN">four corner model</a> payment. In
 this scenario, Anna is buying a very expensive piece of furniture that costs
 far more than the maximum amount allowed by her payment card. She pays
 using her bank account via her bank's website.
       </p>
 
-      <section class="notoc">
-        <h4>Negotiation of Purchase Terms</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#negotiation-of-purchase-terms-6" property="bibo:hasPart">
+        <h4 id="negotiation-of-purchase-terms-6" resource="#negotiation-of-purchase-terms-6"><span property="xhv:role" resource="xhv:heading">Negotiation of Purchase Terms</span></h4>
         <ul>
           <li>
 <strong>Discovery of Offer</strong>: Anna browses a Furniture website.
@@ -2867,8 +3294,8 @@ particular use case.</em>
         </ul>
       </section>
 
-      <section class="notoc">
-        <h4>Negotiation of Payment Instruments</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#negotiation-of-payment-instruments-8" property="bibo:hasPart">
+        <h4 id="negotiation-of-payment-instruments-8" resource="#negotiation-of-payment-instruments-8"><span property="xhv:role" resource="xhv:heading">Negotiation of Payment Instruments</span></h4>
         <ul>
           <li>
 <strong>Discovery of Accepted Schemes</strong>: The furniture website takes
@@ -2887,8 +3314,8 @@ bank's website where the payment request is pending approval.
         </ul>
       </section>
 
-      <section class="notoc">
-        <h4>Payment Processing</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#payment-processing-8" property="bibo:hasPart">
+        <h4 id="payment-processing-8" resource="#payment-processing-8"><span property="xhv:role" resource="xhv:heading">Payment Processing</span></h4>
         <ul>
           <li>
 <strong>Initiation of Processing</strong>: Anna approves the payment request.
@@ -2913,8 +3340,8 @@ Credit Transfer outside Europe.
         </ul>
       </section>
 
-      <section class="notoc">
-        <h4>Delivery of Product/Receipt and Refunds</h4>
+      <section class="notoc" typeof="bibo:Chapter" resource="#delivery-of-product-receipt-and-refunds-8" property="bibo:hasPart">
+        <h4 id="delivery-of-product-receipt-and-refunds-8" resource="#delivery-of-product-receipt-and-refunds-8"><span property="xhv:role" resource="xhv:heading">Delivery of Product/Receipt and Refunds</span></h4>
         <ul>
           <li>
 <strong>Delivery of Receipt</strong>: The furniture website sees that Anna's
@@ -2935,8 +3362,8 @@ since the credit transfer cannot be reversed since she initiated it.
 
   </section>
 
-  <section class="appendix">
-    <h2>Future Work</h2>
+  <section class="appendix" id="future-work" typeof="bibo:Chapter" resource="#future-work" property="bibo:hasPart">
+    <!--OddPage--><h2 id="h-future-work" resource="#h-future-work"><span property="xhv:role" resource="xhv:heading"><span class="secno">A. </span>Future Work</span></h2>
 
     <ul>
       <li>
@@ -2961,8 +3388,8 @@ Government Entitlement Disbursement
 
   </section>
 
-  <section class="appendix">
-    <h2>Acknowledgements</h2>
+  <section class="appendix" id="acknowledgements" typeof="bibo:Chapter" resource="#acknowledgements" property="bibo:hasPart">
+    <!--OddPage--><h2 id="h-acknowledgements" resource="#h-acknowledgements"><span property="xhv:role" resource="xhv:heading"><span class="secno">B. </span>Acknowledgements</span></h2>
     <p>
 The editors wish to thank the participants of the
 <a href="http://www.w3.org/Payments/IG/">Web Payments Interest Group</a>
@@ -2972,5 +3399,7 @@ Group</a> for earlier work that informed this document.
     </p>
   </section>
 
-  </body>
-</html>
+
+
+<section id="references" class="appendix" typeof="bibo:Chapter" resource="#references" property="bibo:hasPart"><!--OddPage--><h2 id="h-references" resource="#h-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">C. </span>References</span></h2><section id="informative-references" typeof="bibo:Chapter" resource="#informative-references" property="bibo:hasPart"><h3 id="h-informative-references" resource="#h-informative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">C.1 </span>Informative references</span></h3><dl class="bibliography" resource=""><dt id="bib-WCAG20">[WCAG20]</dt><dd>Ben Caldwell; Michael Cooper; Loretta Guarino Reid; Gregg Vanderheiden et al. <a href="http://www.w3.org/TR/WCAG20/" property="dc:references"><cite>Web Content Accessibility Guidelines (WCAG) 2.0</cite></a>. 11 December 2008. W3C Recommendation. URL: <a href="http://www.w3.org/TR/WCAG20/" property="dc:references">http://www.w3.org/TR/WCAG20/</a>
+</dd></dl></section></section></body></html>
