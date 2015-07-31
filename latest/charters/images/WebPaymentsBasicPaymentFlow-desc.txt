@@ -5,28 +5,25 @@ The purpose of the graphic is to illustrate (in a general sense)
 the sort of payment flow that the standards deliverables of this
 group intend to address.
 
-The graphic identifies a number of entities that play a role
-in the payment flow:
+The principle entities involved in the flow defined by these
+APIs are the Web application, user agent, and digital wallet service.
 
- - Payee payment processor
- - Web application
- - User agent
- - Wallet service
- - User
+Here are the steps:
 
-1. Payment begins with a Payment Initiation Request in the context of
-a Web application (running in a user agent). The Web application sends
-a "payment initiation request."
+1. Payment begins with a Payment Initiation Request from a Web
+application (running in a user agent). The Web application sends a
+"payment initiation request."
 
-2. Branching question: Is there a wallet service configured ot handle
-payment requests? If no, then the application redirects the payer
-to a traditional payments page or some other payment flow.
+2. Branching question: Is there a wallet service configured to handle
+payment requests? If no, this is an exception. It may be handled
+a variety of ways (e.g., the Web application might redirect the payer
+to a traditional payments page or some other payment flow).
 
 3) Otherwise, if there is a wallet service, then "payment instrument
 discovery" takes place and the following branching question is asked:
 Does the payer have a payment instrument that can be used for this
-payment? If no, then the application redirects the payer
-to a traditional payments page or some other payment flow.
+payment? If no, this is an exception and may be handled in a variety
+of ways.
 
 4) Otherwise, the user is prompted to select a payment instrument, to
 confirm the terms of the transaction, and possibly to provide
@@ -38,12 +35,14 @@ the Web application.
 6) The application validates the response and there is a branch at
 this point between credit pull and debit push transactions. If the
 selected payment instrument is "payee initiated" then payment
-processing begins. If not, the Web application sends a "payment
-completion request" to the wallet service.
+processing begins and when complete, a notification is sent from
+the Web application to the wallet service, which replies to the
+Web application that it has received the notification and the
+protocol terminates.
 
-7) If the selected payment instrument is "payer initiated" then
-payment processing begins. After display of confirmation of payment,
-the wallet service sends a payment completion request to the Web
-Application.
-
+7) On the other hand, if the selected payment instrument is
+"payer initiated", then the Web application sends a request to the
+digital wallet service to complete payment processing. WHen complete,
+a notificaiton is sent from the Wallet service to the Web application
+and the protocol terminates.
 
