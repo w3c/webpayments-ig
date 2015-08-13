@@ -39,7 +39,7 @@ editors: [{
 name: "Pat Adler",
 url: "https://www.linkedin.com/pub/patrick-adler/2/730/2b4",
 company: "Federal Reserve Bank of Chicago",
-companyURL: "http://www.federalreserve.gov/"
+companyURL: "http://www.frbservices.org/"
   }, {
 name: "Adrian Hope-Bailie",
 url: "https://www.linkedin.com/in/adrianhopebailie",
@@ -67,10 +67,10 @@ companyURL: "http://digitalbazaar.com/"
   // only "name" is required. Same format as editors.
 
 authors: [{
-name: "Patrick Adler",
-url: "",
+name: "Pat Adler",
+url: "https://www.linkedin.com/pub/patrick-adler/2/730/2b4",
 company: "Federal Reserve Bank of Chicago",
-companyURL: ""
+companyURL: "http://www.frbservices.org/"
   }, {
 name: "Adrian Hope-Bailie",
 url: "",
@@ -103,9 +103,9 @@ company: "W3C",
 companyURL: ""
   }, {
 name: "Katie Haritos-Shea",
-url: "",
-company: "W3C Invited Expert",
-companyURL: ""
+url: "https://www.linkedin.com/in/katieharitosshea",
+company: "Knowability",
+companyURL: "http://www.knowbility.org/"
   }],
 
   // maximum level of table of contents
@@ -163,7 +163,7 @@ Payments and the ability to exchange value efficiently and securely over
 the web are critical to global commerce. Open standards for payments and
 value exchange help ensure open access and interoperability to financial
 systems for all the people that use the Web. This document describes
-aset of capabilities that, if standardized, will improve payments on the
+a set of capabilities and key top-level architectrual principles that, if standardized, will improve payments on the
 Web.
   </p>
 </section>
@@ -177,17 +177,45 @@ based on broad feedback and input from the Web Payments Interest Group.
 
 <section>
 <h2>Introduction</h2>
+<section>
+	<h2>Overview</h2>
 <p>
-This document needs an introduction! - SPM
+In October of 2014, the W3C  <a href="http://www.w3.org/2014/04/payments/webpayments_charter.html">chartered</a> the Web Payments Interest group with the goal of providing a forum for Web Payments technical discussions to identify use cases and requirements for existing and/or new specifications to ease payments on the Web, and to establish a common ground for organizations providing payment services on the Web Platform. The overall objective of this group is to identify and help create the conditions for greater uptake and wider use of Web Payments through the identification of standardization needs to increase interoperability between the different stakeholders and the different payment methods. </p>
+
+<p>
+The Web Payments Interest Group's scope covers payment transactions using Web technologies on all computer devices (desktop, laptop, mobile, tablet, etc.) running a Web user-agent (a Web browser, a hybrid app, or an installed Web application) and using all possible legal payments methods across a variety of scenarios including Web-mediated Business-to-Consumer (B2C), Business-to-Business (B2B), Business-to-Business to Consumer (B2B2C), and Person-to-Person (P2P) transactions in the case of physical (payment at physical shops) and online payments for physical or digital goods, including in-app payments. </p>
+
+<p>
+Due to the fundamental importance of payments to the web and the intricate relationship with other core aspects of the open web platform such as identity and commerce, the Web Payments IG created this document with the following goals in mind:
+<ul>
+<li>Provide a common place to capture and document key capabilities that are necessary for payments on the web</li>
+<li>Communcate important architectural principles related to payments on the web and how they relate to other standards such as identity and commerce</li>
+<li>Increasing visibility and improving coordination of various payments and related standardization efforts within the W3C Interest, Working, and Community groups and other standards bodies</li>
+</ul>
 </p>
+</section>
 
 <section>
-<h2>Relationship to Other Documents</h2>
+<h2>Audience of this document</h2>
 <p>
-This document is one part of a greater body of work around Web Payments
-that the <a href="https://www.w3.org/Payments/IG/">Web Payments Interest
-Group</a> at W3C is producing. These other documents include:
+This document is intended to broadly inform discussions on standardization of key capabilities and high level architecture of payments on the web. The intended audience for this document includes:
+	<ul>
+	    <li>Participants in W3C Activities</li>
+	    <li>Other groups and individuals designing technologies to be integrated into the Web</li>
+	    <li>Implementers of W3C specifications</li>
+	    <li>Web content authors and publishers</li>
+	</ul>
 </p>
+</section>
+
+<section>
+<h2>Scope of this document</h2>
+<p>
+This document presents the general capabilities and architecture of payments on the Web and is one part of a greater body of work around Web Payments
+that the W3C is producing. These other documents include:
+</p>
+<p>
+<h3>Web Payments Interest Group Documents</h3>
 <ul>
   <li>
 
@@ -219,8 +247,16 @@ scenarios outlined in the Use Cases document and the capabilities
 listed in the Capabilities document.
   </li>
 </ul>
+</p>
+<p>
+	<h3>Web Payments Community Group Documents</h3>
+	<ul>
+		<li><a href="https://dvcs.w3.org/hg/webpayments/raw-file/default/FCGS/use-cases/2014-11-29/index.html">Web Payments Community Group Use Cases - Final Report</a>, November 29, 2014</li>
+	</ul>
+</p>
 </section>
 </section>
+
 
 <section>
   <h2>Terminology</h2>
@@ -230,21 +266,31 @@ listed in the Capabilities document.
 </section>
 
 <section>
-<h1>Overview of Capabilities</h1>
+<h1>Capability Domains</h1>
 <p>
-Capabilities are functionalities necessary to implement payments on the
-Web. We include capabilities specific to payments but also capabilities
-that support payments (such as security) and capabilities more broadly
-related to commerce, as it is important to understand the full context
-in which payments occur.
+	In order to illustrate core aspects of payments on the web, this section of the document is organized by functional capability domains.  This is intended to help highlight specific areas that are needed for standardization of payments, and also to help communicate relationships and dependencies to adjacent standards work such as Identity and Commercial aspects of the web. 
 </p>
-<p>
-We organize capabilities into five groups.
-</p>
-<ol>
-  <li>
+The capabilities have been organized into course grained domains which were structured to help promote consistent and cohesive concepts in similar functional aspects, reduce coupling between core payments standards and those which are useful more broadly than payments, and to minimize redundant or overlapping work being done on standards in this space by providing visbility into cross cutting concerns and topics across each functional domain.
 
-    <strong>Security Core</strong> - These capabilities provide the
+<p>
+Each capability includes backgound context specific to its domain, key goals and architecural principles related to the capability and outlines significant relationships with other standards work and capability domains.  The five top level capability domains are represented in the diagram below:
+
+<p>
+  <span><img alt="PaymentsEcosystemV2.png" src="images/PaymentsEcosystemV2.png" title=
+  "Web Payment Ecosystem Cpability Domains"></span>
+</p>
+<p>
+
+
+</p>
+<p>
+
+</p>
+
+<section>
+	<h3>Core and Security</h3>
+
+These capabilities provide the
 security foundation for payments.
     <div class='group-capability'>
       <strong>Capabilities</strong>: Key Creation and Management,
@@ -255,10 +301,10 @@ Right now this group has only security capabilities in it. We may
 wish to have a more general purpose Core set. If so, what would this
 core set include?
     </div>
-  </li>
-  <li>
-
-    <strong>Trust and Identity -</strong> Includes features related to
+  </section>
+  <section>
+    <h3>Identity and Credentials</h3> 
+	Includes features related to
 establishing trust among parties, and credentialing or authorization
 of parties involved in a transaction.
     <div class='group-capability'>
@@ -266,10 +312,10 @@ of parties involved in a transaction.
 Authentication, Authorization, Privacy, Discovery, Registration,
 Enrollment, and Legal/Regulatory concerns.
     </div>
-  </li>
-  <li>
-
-    <strong>Accounts and Settlement -</strong> Includes capabilities
+  </section>
+  <section>
+    <h3>Accounts and Ownership</h3> 
+	Includes capabilities
 related to managing stores of value (such as Deposit Accounts) and
 recorded accounts of ownership (such as Ledger entries, Deeds, etc.)
 used as part of the settlement of payments or commercial exchanges.
@@ -278,14 +324,12 @@ participants and ledgers of the <a title="account provider">account
 providers</a> and capabilities to manage accounts and capture and
 monitor transactions in a ledger against those accounts.<br>
     <div class='group-capability'>
-      <strong>Capabilities</strong>: Accounts, Ledgers, and
-Legal/Regulatory concerns related to accounting and recorded
-ownership.
+      <strong>Capabilities</strong>: Accounts, Account Management and Legal/Regulatory concerns related to accounts and recorded ownership
     </div>
-  </li>
-  <li>
+  </section>
+  <section>
 
-    <strong>Payments and Clearing -</strong> These are the capabilities
+    <h3>Clearing and Settlement</h3> These are the capabilities
 that help parties in a transaction establish the mechanics of how the
 payment will be executed and the directly or indirectly make this
 happen. This involves the ability to discover and negotiate the
@@ -294,45 +338,29 @@ terms including facts such as the costs of making the payment, time
 between clearing of the payment and settlement into the payee's
 account, regulatory requirements and required authorisations.
     <div class='group-capability'>
-      <strong>Capabilities</strong>: Funding, Payment, Messaging,
-Clearing, Markets, Foreign/Currency Exchange, and Legal/regulatory
-concerns specific to Payments and Exchange of Value.
+      <strong>Capabilities</strong>: Messaging, Clearing, Markets, Foreign/Currency Exchange, and Legal/regulatory concerns specific to payment clearing, settlement and Exchange of Value.
     </div>
-  </li>
-  <li>
-
-    <strong>Commerce -</strong> Includes capabilities related to
+  </section>
+  <section>
+    <h3>Commerce</h3> Includes capabilities related to
 commercial and economic interactions.
     <div class='group-capability'>
       <strong>Capabilities</strong>: Offers, Invoicing, Receipts, Loyalty,
 Rewards, Contracts, Lending, Insurance, Taxation, Legal/Regulatory
 concerns related to aspects of commercial and economic interactions.
     </div>
-  </li>
-</ol>
-<p>
-The Interest Group anticipates that these groups will make it easier to
-define modules that may be reused at a variety of times in a payment
-transaction, to prioritize capabilities and craft charters for groups to
-standardize them, and to communicate the group's plans with other
-standards bodies and organizations.
-</p>
-<p class="note">
-Some of these capabilities are expected be useful outside of payment
-scenarios.
-</p>
-<h2>Digital Wallets and Payment Agents</h2>
-<p>
-Although the capabilities described in this document may be used and
-composed in a variety of ways to fulfill payments use cases, the
-Interest Group anticipates that in many cases, they will be packaged in
-  'payment agents' (or 'digital wallets') that act as a bridge between the
-merchant, the user, and the user's account providers.
-</p>
+</section>
+</section>
+<section>
+	<h2>Key Principles</section>
+	
 </section>
 
 <section>
 <h1>Capabilities in Context</h1>
+    <div class="issue">
+		We will be overhauling this section to move into Key principles section and simplify the intent of the interaction wheel - namely the key principle that activities related to payments and adjacent domains may take place asynchronously over an extended time horizon and that required standards may be best expressed as a discrete interactions between 2 parties which can be recombined to express larger payments "flows" or multi-step scenarios.
+    </div>
 <p>
 To simplify and harmonize the descriptions of capabilities necessary for
 payments and value exchange on the Web, it is helpful to understand the
@@ -666,7 +694,7 @@ Authentication Working Groups (W3C)
 </section>
 
 <section>
-<h2>Accounts and Settlement</h2>
+<h2>Accounts and Ownership</h2>
 <h3>Accounts</h3>
 <ol>
   <li>
@@ -839,7 +867,7 @@ Web Settlement Working Group (W3C)
 </section>
 
 <section>
-<h2>Payments and Exchange</h2>
+<h2>Clearing and Settlement</h2>
 <ol>
   <li>
 Payment Instrument Discovery and Selection
