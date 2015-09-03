@@ -680,6 +680,15 @@ adoption and innovation.
   </li>
   <li>
 Rights
+    <ol>
+      <li>
+An entity should be able to express what "allowable use" of a credential
+is when providing it to another entity such that there is recourse if a
+credential is misused. For example, when providing an email address credential
+an assertion is made such that the email address cannot be used as a
+destination for marketing material.
+      </li>
+    </ol>
   </li>
   <li>
 Authentication
@@ -706,6 +715,12 @@ accurately represent their claims throughout the lifetime of the credential.
   <li>
 Authorization
   </li>
+    <ol>
+      <li>
+Entities may use credentials to get access to protected resources or get
+approval to perform protected tasks.
+      </li>
+    </ol>
   <li>
 Privacy
     <ol>
@@ -760,7 +775,20 @@ associate it with an Account.
     </ol>
   </li>
   <li>
-Legal/Regulatory concerns related to Trust and Identity
+Regulatory and Legal
+    <ol>
+      <li>
+Entities should be able to detect when the collection of particular data
+would violate personally identifiable information regulations. For example,
+collecting the name and home address of a minor should be detectable and
+avoided in jurisdictions where that is not allowed.
+      </li>
+      <li>
+Entities should be able to easily request credentials and prove that they
+performed the required regulatory checks before allowing a transaction
+to complete. Ideally, this process should be automated.
+      </li>
+    </ol>
   </li>
 </ol>
 </section>
