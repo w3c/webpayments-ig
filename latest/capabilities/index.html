@@ -567,8 +567,50 @@ credentialing ecosystem as well as capabilities that would enable such
 and ecosystem to thrive.
 </p>
 
+<section>
+  <h3>Goals</h3>
+  <p>A healthy credentialing ecosystem should have a number of
+  qualities:</p>
 
+  <ul>
+    <li id="goal-interoperable">Credentials should be
+    <strong>interoperable and portable</strong>. Credentials should be
+    used by as broad of a range of organizations as possible. The
+    recipient of a credential should be able to store, manage, and share
+    credentials throughout their lifetime with relative ease.</li>
 
+    <li id="goal-scalable">The ecosystem <strong>should scale to the 3
+    billion people</strong> using the Web today and then to the 6 billion
+    people that will be using the Web by the year 2020.</li>
+
+    <li id="goal-privacy">The process of exchanging a credential should be
+    <strong>privacy enhancing</strong> and <strong>recipient
+    controlled</strong> such that the system protects the privacy of the
+    individual or organization using the credential by placing the
+    recipient in control of who is allowed to access their
+    credential.</li>
+
+    <li id="goal-implementation-ease">Implementing systems that issue and
+    consume credentials should be <strong>easy for Web developers</strong>
+    in order to lower barriers to entry and increase the amount of
+    software solutions in the ecosystem.</li>
+
+    <li id="goal-accessible">Creating systems that are
+    <strong>accessible</strong> should be a fundamental design criteria,
+    as 10% of the worldâ€™s population have disabilities and the solution
+    should be usable by as many people as possible.</li>
+
+    <li id="goal-open">The solution should follow a number of core Web
+    principles such as being <strong>patent and royalty-free</strong>,
+    adhering to Web architecture fundamentals, supporting <strong>network
+    and device independence</strong>, and being
+    <strong>machine-readable</strong> where possible to <strong>enable
+    automation</strong> and engagement of non-human actors.</li>
+  </ul>
+</section>
+
+<section>
+  <h3>Capabilities</h3>
 <ol>
   <li>
 Identity
@@ -582,8 +624,8 @@ law, or if consented to by owner of the information
 Identity and credentials of an entity are able to be
 linked/associated with Accounts and payments to satisfy requirements
 for <a title="account provider">Account Providers</a> and
-        <a title="payment service provider">Payments Service
-Providers</a> to comply with KYC/AML requirements.
+<a title="payment service provider">Payments Service Providers</a>
+to comply with KYC/AML requirements.
       </li>
     </ol>
   </li>
@@ -595,16 +637,46 @@ Entities in the system are able to be associated with 1 or more
 credentials. A credential is a qualification, achievement, quality,
 or piece of information about an entity's background such as a name,
 home address, government ID, professional license, or university
-degree, typically used to indicate suitability. Thisallows for the
+degree, typically used to indicate suitability. This allows for the
 exchange of suitable qualities of the entity (ex. over age 21)
 without divulging sensitive attributes/details about the entity (ex.
 date of birth)
       </li>
       <li>
-<a>Payer</a> is able to exchange standard format credentials with<a>Payee</a> to validate attributes necessary to complete the
-payment
+<a>Payer</a> is able to exchange standard format credentials with<a>Payee</a>
+to validate attributes necessary to complete the payment
+      </li>
+      <li>
+Entities in the system may store a credential at an arbitrary identity
+provider after it has been issued by an arbitrary issuer. This helps create a
+level playing field for all actors in the ecosystem.
+      </li>
+      <li>
+A protocol for migrating from one identity provider to another without
+the need to reissue each credential. This promotes a healthy identity
+provider ecosystem.
       </li>
     </ol>
+  </li>
+  <li>
+Data Model
+<ol>
+  <li>
+The data model should be extensible such that it supports an entity making
+an unbounded set of claims about another entity. This enables a very
+broad applicability of credentials to different use cases and market verticals.
+  </li>
+  <li>
+The data model should be capable of being expressed in a variety of data
+syntaxes. This increases interoperability between disparate credentialing
+systems and increases the long-term viability of the technology.
+  </li>
+  <li>
+A formal mechanism of expressing new types of claims without
+centralized coordination. This promotes a high degree of parallel
+adoption and innovation.
+  </li>
+</ol>
   </li>
   <li>
 Rights
@@ -615,6 +687,19 @@ Authentication
       <li>
 Participants are able to authenticate the validity of
 identifiers presented by entities that they are interacting with
+      </li>
+      <li>
+A digital signature mechanism that does not require out-of-band information to
+verify the authenticity of claims; instead it should enable public
+keys to be automatically fetched via the Web during verification. It
+should not render the signed data opaque because opaque data is harder
+to learn from, program to, and debug. This makes the digital signature
+mechanism easier to use for developers and system integrators.
+      </li>
+      <li>
+An issuer should be able to revoke a previously issued credential. This
+enables issuers to ensure that the credentials they have issued
+accurately represent their claims throughout the lifetime of the credential.
       </li>
     </ol>
   </li>
@@ -630,6 +715,11 @@ way that minimizes the inclusion/exchange of personal or other
 sensitive metadata that are part of the payments process unless
 specifically required by law, or consented to by the owner of the
 information.
+      </li>
+      <li>
+A protocol that enables the recipient to share their credentials without
+revealing the intended destination to their identity provider. This
+enhances privacy.
       </li>
     </ol>
   </li>
@@ -673,6 +763,7 @@ associate it with an Account.
 Legal/Regulatory concerns related to Trust and Identity
   </li>
 </ol>
+</section>
 <h4>Key Concepts:</h4>
 <p>
 TO DISCUSS: Trust Agent???
@@ -708,6 +799,12 @@ Protocol to discover entity's credential service
 </ul>
 <h4>Related Specifications:</h4>
 <ul>
+  <li>
+SAML (OASIS)
+  </li>
+  <li>
+OpenID Connect (IETF)
+  </li>
   <li>
 Identity Credentials (Credentials WG)
   </li>
