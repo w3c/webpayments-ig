@@ -283,9 +283,9 @@ completion of a payment, and</li>
     <div>
         <h2 id="deliverables">Deliverables</h2>
 
-        <h3 id="Web_Payments_APIs">Web Payments APIs Recommendation</h3>
+        <h3 id="Web_Payments_Terms">Web Payments Messages Recommendation</h3>
 
-        <p>This Recommendation will include the following functionality:</p>
+        <p>This Recommendation will define message formats for:</p>
         <ul>
             <li>
                 <strong>Digital Payment Scheme Description</strong>: used by payees to represent accepted
@@ -304,7 +304,11 @@ completion of a payment, and</li>
             </li>
         </ul>
 
-        <p>It will specify request and response messages for:</p>
+	<p>These messages will be exchanged by the APIs described below, but can also be used without them (e.g., for server-to-server communication).</p>
+
+        <h3 id="Web_Payments_APIs">Web Payments APIs Recommendation</h3>	
+
+        <p>This Recommendation will specify request and response messages for:</p>
         <ul>
             <li>
                 <strong>Registration of a Digital Payment Instrument</strong>: A payer digital wallet processes a registration
@@ -361,6 +365,13 @@ completion of a payment, and</li>
                 <th rowspan="1" colspan="1">
                     <abbr title="Recommendation">Rec</abbr>
                 </th>
+            </tr>
+            <tr>
+                <th rowspan="1" colspan="1">Web Payments Messages</th>
+                <td class="WD1" rowspan="1" colspan="1">March 2016</td>
+                <td class="CR" rowspan="1" colspan="1">November 2016</td>
+                <td class="PR" rowspan="1" colspan="1">September 2017</td>
+                <td class="REC" rowspan="1" colspan="1">November 2017</td>
             </tr>
             <tr>
                 <th rowspan="1" colspan="1">Web Payments APIs</th>
@@ -426,7 +437,7 @@ completion of a payment, and</li>
             <dt>
                 <a href="http://www.w3.org/2011/webappsec/">Web Application Security</a>
             </dt>
-            <dd>For security reviews.</dd>
+            <dd>For security reviews. If the Working Group perceives the need for IETF review, W3C will arrange discussion through its IETF liaison.</dd>
 	    <dt><a href="http://www.w3.org/2008/webapps/">Web Applications Working Group</a> (and successor)</dt>
 		      <dd>For review of JavaScript APIs.</dd>
 		                  <dt>
