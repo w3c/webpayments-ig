@@ -37,6 +37,9 @@
             <a href="#patentpolicy">Patent Policy</a>
         </li>
         <li>
+            <a href="#licensing">Licensing</a>
+        </li>
+        <li>
             <a href="#about">About this Charter</a>
         </li>
     </ul>
@@ -49,54 +52,10 @@
 
     <h1 id="title">[DRAFT] Web Payments Working Group Charter</h1>
 
-    <p class="mission">The mission of the Web Payments Working Group is to make payments easier and more secure on the
-      Web, through incremental improvements to Web infrastructure that support and facilitate payments.   </p>
+        <p class="mission">The mission of the Web Payments Working Group is to make payments easier and more secure on the
+      Web.   </p>
 
-   <p> Fragmentation of the payment landscape is limiting the
-   full potential of the Web, including lack of standards in areas
-   such as:</p>
 
-	<ul>
-	  <li>the high level flow of a Web payment;</li>
-	    <li>the programming interfaces between the
-            various parties (such as between user agent and Web application);</li>
-	    <li>the messages exchanged between these
-              parties over the Web.</li>
-	</ul>
-
-    <p>The standards from this Working Group will reduce some areas
-      of fragmentation, producing benefits such as:</p>
-
-        <ul>
-        <li>Streamlined <a href="#payment_flow">payment flow</a>, which is expected to reduce the percentage of
-            transactions abandoned prior to completion ("shopping cart abandonment").
-        </li>
-        <li>Increased customer satisfaction due to additional payment options available to users (achieved by decoupling the payer's user agents, <a href="#digital-wallet">digital wallets</a>, and <a href="#digital-payment-instrument">digital payment instruments</a>).</li>
-        <li>Improved transparency and confidence in digital payments for consumers as a result of increased choice and
-            standardized flows and experiences.
-        </li>
-        <li>Improved security and privacy by providing information only to those parties that require it to complete a transaction.
-        </li>
-        <li>Easier integration of new digital payment schemes by payment service providers, increasing the variety of digital payment instruments accepted by payees.
-        </li>
-	   <li>Easier deployment of <a href="#digital_wallets">digital wallets</a> from banks, retailers, mobile operators,
-            card networks, and other providers, enabling innovation and differentiation from value-added services based on location, mobile banking, marketing relationships, and so on.
-        </li>
-        <li>Lower costs for merchants due to easier adoption of new instruments.
-        </li>
-        <li>Added value through machine-readable digital payment requests and payment responses.</li>
-    </ul>
-    
-    <p>For more background information about this group, please see
-the <a href="https://www.w3.org/Payments/IG/wiki/Web_Payments_WG_Charter_FAQ">Web
-Payments Working Group Charter FAQ</a>. For more information about Web
-Payments activities beyond the scope of this charter, see
-the <a href="#wpig">Web Payments Interest Group</a> description below.
-</p>
-
-    <div class="noprint">
-        <p class="join">@@Join the Web Payments Working Group.</p>
-    </div>
     <table class="summary-table">
         <tr id="Duration">
             <th rowspan="1" colspan="1">End date</th>
@@ -112,8 +71,7 @@ the <a href="#wpig">Web Payments Interest Group</a> description below.
         </tr>
         <tr>
             <th rowspan="1" colspan="1">Initial Chairs</th>
-            <td rowspan="1" colspan="1">
-                <span class="toadd">CHAIR INFO</span>
+            <td rowspan="1" colspan="1">Nick Telford-Reed, Worldpay, Co-Chairs TBD
             </td>
         </tr>
         <tr>
@@ -129,33 +87,66 @@ the <a href="#wpig">Web Payments Interest Group</a> description below.
             </td>
         </tr>
     </table>
+
+        <div class="noprint">
+        <p class="join">@@Join the Web Payments Working Group.</p>
+    </div>
+
     <h2 id="goals">Goals</h2>
 
-    <p>Under this charter, the Working Group defines standards that ease integration of the payments ecosystem
-      into the Web for a payment initiated within a Web application.</p>
+   <p> Fragmentation of the payment landscape is limiting the
+   full potential of the Web, including lack of standards in areas
+   such as:</p>
+
+	<ul>
+	  <li>the high level flow of a Web payment;</li>
+	    <li>the programming interfaces between the
+            various parties (such as between user agent and Web application);</li>
+	    <li>the messages exchanged between these
+              parties over the Web.</li>
+	</ul>
+
+    <p>If successful, the Recommendations from this Working Group will
+increase some areas of interoperability between payer and payee
+systems, producing benefits such as:</p>
+
+        <ul>
+        <li>A better checkout experience for users, particularly on mobile devices. The standards should facilitate automation, one approach to improving the user experience.</li>
+        <li>Streamlined <a href="#payment_flow">payment flow</a>, which is expected to reduce the percentage of
+            transactions abandoned prior to completion ("shopping cart abandonment").
+        </li>
+        <li>Easier adoption of payment instrument improvements (e.g., related to security) or new payment instruments.
+        </li>
+        <li>Added value through machine-readable digital payment requests and payment responses.</li>
+    </ul>
+
+    <p>For more background information about this group, please see
+the <a href="https://www.w3.org/Payments/IG/wiki/Web_Payments_WG_Charter_FAQ">Web
+Payments Working Group Charter FAQ</a>. For more information about Web
+Payments activities beyond the scope of this charter, see
+the <a href="#wpig">Web Payments Interest Group</a> description below.
+</p>
+
+    <p>Under this charter, the Working Group defines Recommendations that allow for a payment to be initiated within a Web application.</p>
 
     <div class="scope">
         <h2 id="scope">Scope</h2>
 
-	<p>The Working Group will standardize a set of messages and a
-message flow for the initiation, confirmation, and completion of a
-payment. Deliverables from this group
-will increase interoperability between payer and payee systems (for
-existing and future <a href="#digital-payment-scheme">digital payment schemes</a>), and encourage greater
-automation of the steps in a typical payment.</p>
+	<p>The Working Group will Recommend:</p>
 
-	<p>By addressing message format and flow, the group
-leaves open the standardization of the delivery mechanism for these
-messages as this will vary depending on the use case and technology
-stack. To support use cases where messages are proxied between payer
-and payee using different technologies, the group will standardize
-delivery mechanisms for common scenarios. This will include JavaScript
-APIs for the use cases where the messages are proxied between payer
-and payee via a Web browser and additional APIs where the messages
-are exchanged directly over the Web between two online entities.
+  <ol>
+    <li>a set of messages,</li>
+    <li>message flows for the initiation and, where scheme-permitting, confirmation or
+completion of a payment, and</li>
+    <li>an API to allow Web applications to participate in these flows.</li>
+  </ol>
 
-	<p>This group is chartered to standardize programming
-	interfaces; not user interfaces. This group will not define a
+  <p>The Working Group will also standardize how digital wallets and Web applications exchange these messages through a mediating user agent; see the <a href="#deliverables">deliverables</a> section for further detail.</p>
+
+	<p>This Working Group is chartered to Recommend programming
+	  interfaces; not user interfaces.</p>
+
+	<p>This Working Group will not define a
 	new <a href="#digital-payment-scheme">digital payment
 	    scheme</a>.</p>
 
@@ -163,33 +154,27 @@ are exchanged directly over the Web between two online entities.
 
 	<dl>
 	  <dt id="digital-payment-scheme"><strong>digital payment scheme</strong></dt>
-	  <dd>A payment scheme is a set of rules and technical standards for the execution of payment transactions that are followed by adhering entities (payment processors, payers and payees). A digital payment scheme is one where transactions take place over digital networks (such as the Web). Some digital payment schemes make use internally of payment instruments from other payment schemes. How they register and communicate with internal payment instruments is beyond the scope of this charter. </dd>
+	  <dd>A set of rules for the execution of payment transactions that are followed by adhering entities (payment processors, payers and payees), where transactions take place over networks (such as the Web). Some digital payment schemes make use internally of payment instruments from other payment schemes. How they register and communicate with internal payment instruments is beyond the scope of this charter. </dd>
 	  <dt id="digital-payment-instrument"><strong>digital payment instrument</strong></dt>
-	  <dd>A payment instrument is an account, token or other means of
-	    conducting a transaction according to a payment scheme. A digital
-	    payment instrument is one that is associated with a digital
-	    payment scheme.</dd>
+	  <dd>An account, token or other means of conducting a transaction according to a payment scheme, that is associated with a digital payment scheme.</dd>
 	  <dt id="digital-wallet"><strong>digital wallet</strong></dt>
-	  <dd>A wallet is a container for payment instruments that affords access
-	    to them. A digital wallet holds digital payment instruments.</dd>
+	  <dd>A container for digital payment instruments that affords access
+	    to them.</dd>
 </dl>
 
-        <h3 id="payment_flow">Payment Flow</h3>
+        <h3 id="payment_flow">Required Message Flows</h3>
 
-          <p>The scope of work supports the following elements of a
-            basic purchase triggered by payment initiation through a
-            Web application. These standards define a high-level
-            message flow for a payment from payer to payee either in
-            the form of a credit push (payer initiated) or a debit
-            pull (payee initiated) payment, and can be used to
-            facilitate a payment from any <a href="#digital-payment-scheme">digital payment scheme</a>. They involve:</p>
+          <p>The Working Group will define message flows for the following payment tasks, in order to
+            support a payment from a payer to a payee, whether a credit push (payer initiated)
+            and a debit pull (payee initiated):</p>
+
         <dl>
             <dt>Pre-Payment</dt>
             <dd>
                 <ul>
                     <li>
-                        <strong>Registration</strong>, by the payer with their <a href="#digital-wallet">digital wallet</a>, of any
-                        conforming <a href="#digital-payment-instrument">digital payment instrument</a>.
+                        <strong>Registration</strong>, by the payer with their <a href="#digital-wallet">digital wallet</a>, which includes one more more
+                        <a href="#digital-payment-instrument">digital payment instruments</a>.
                     </li>
                 </ul>
             </dd>
@@ -199,7 +184,7 @@ are exchanged directly over the Web between two online entities.
                     <li>
                         <strong>Payment Initiation Request</strong>, by the payee to the payer providing the terms of
                         the payment including elements such as the accepted <a href="#digital-payment-scheme">digital payment schemes</a>, price, currency,
-                        recurrence, transaction type (purchase, refund, etc.), timeout and requests for any additional
+                        recurrence, transaction type, timeout and requests for any additional
                         data that is required from the payee.
                     </li>
                 </ul>
@@ -220,141 +205,129 @@ are exchanged directly over the Web between two online entities.
                     </li>
                 </ul>
             </dd>
-            <dt>Payment Processing and Completion</dt>
+            <dt>Payment Instrument Response</dt>
             <dd>
                 <ul>
-                    <li>Execution of the payment by either payer or payee.</li>
-                    <li>Delivery of a <strong>Payment Completion</strong> generated by the entity that executed the
-                        payment. This may contain a <strong>Proof of Payment</strong> if supported by the payment
-                        scheme.
+                    <li>A response returned via the selected digital instrument that may contain information necessary for
+                        the payee to finalize a transaction, or a proof of payment if supported by the digital payment scheme.
                     </li>
                 </ul>
             </dd>
         </dl>
 
-        <p>The group will also address exceptions that may occur during these steps, including payment authorization
-          failure, lack of available digital wallet service, and lack of suitable
+        <p>The Working Group will also address exceptions that may occur during these steps, including payment authorization
+          failure, lack of available digital wallet, and lack of suitable
    registered <a href="#digital-payment-instrument">digital payment instruments</a>.</p>
 
-		<h3 id="digital_wallets">Relation to Digital Wallets</h3>
+		<h3 id="digital_wallets">Digital Wallet APIs</h3>
 
-		<p> This Working Group intends to create a standard
-  programming interface from the Web to a payer's digital wallet so
-  that someone with a conforming digital wallet can seamlessly make
-  payments with a conforming application running in a conforming user
-  agent.  Because the "digital wallet" concept means different things
-  to different audiences this charter includes
-  the <a href="#digital-wallet">above definition</a> to clarify the
-  intent of this group.</p>
+		<p>The Working Group will Recommend an
+		  API to a payer's <a href="#digital-wallet">digital wallet</a> to
+		  enable payments from Web applications.</p>
 
-		        <p>This group is not developing standards for loyalty
+		        <p>Recommendations for loyalty
   schemes and coupons, digital receipts, digital credentials,
-  tickets, and location services.  Future W3C activities may seek to
+  tickets, and location services are out of scope.  Future W3C activities may seek to
   increase interoperability of these or other additional digital wallet
   capabilities.</p>
 
-		<p>The group may define APIs that will also be used
+	  <p>The Working Group may define APIs that will also be used
    outside of a user agent context, such as between Web services, or
-   from within a native application (where the browser is not the
-   proxy between digital wallet and payee application).</p>
+	    from within a native application (where the proxy between the payer's digital wallet and the payee's application is not a browser).</p>
 
-	<h4>On Multiple Digital Wallets</h4>
+	  <p>The Working Group will assure that users are able to use more than one digital wallet. The phrase "the payer's digital wallet" is shorthand for "the payer's digital wallet(s)."</p>
 
-	  <p>In the design of these standards, the Working Group will not assume that each user has only one digital wallet. In this charter, the phrase "the payer's digital wallet" is shorthand for "the payer's digital wallet(s)" as the payer may have multiple digital wallets.</p>
-
-	   <p>The Working Group may consider the use case where an aggregation service acts as a more sophisticated digital wallet service or provides a wider choice of payment solutions to the payer. For example, the aggregator service might combine the functionality of multiple digital wallet services, or apply more complex algorithms to discover and collect the set of <a href="#digital-payment-instrument">digital payment
+	   <p>The Working Group may consider the use case where an aggregation service acts as a more sophisticated digital wallet or provides a wider choice of payment solutions to the payer. For example, the aggregator service might combine the functionality of multiple digital wallets, or apply more complex algorithms to discover and collect the set of <a href="#digital-payment-instrument">digital payment
             instruments</a> available to the payer.</p>
 
         <h3 id="security">Security and Privacy Considerations</h3>
 
 	<p>Security is obviously critical in payments.</p>
 
-	<p>For the APIs defined by this group, a key consideration is
+	<p>A key consideration is
  the ability to prove message integrity and authentication of all
- message originators. This group will work with the organizations
+ message originators. The Working Group will work with the organizations
  listed in the liaisons section of the charter to help ensure API
  security.</p>
 
        <p> There are other aspects of security (e.g., authentication
- of payer identity) that this group will leave to the <a href="#digital-payment-scheme">digital payment schemes</a>.
- This group will not define authentication standards (e.g.,
+ of payer identity) that the Working Group will leave to individual <a href="#digital-payment-scheme">digital payment schemes</a>.
+ The Working Group will not define authentication mechanisms (e.g.,
  hardware-based solutions in securing transactions, or authenticating
  users via biometry or other mechanisms) but should be aware of
  industry developments to help ensure compatibility with the flows
  defined by this group.</p>
 
-       <p>In addition, W3C is developing additional security-related
+       <p>In addition, W3C might develop additional security-related
  specifications in other groups that may be adopted in <a href="#digital-payment-scheme">digital payment
- schemes</a>. This group will follow that work to help ensure
- compatibility with the payment flow standards described in this
+ schemes</a>. This group will follow any such work to help ensure
+ compatibility with the payment flows described in this
  charter.</p>
 
        <p>Protection of the privacy of all participants in a payment
  is essential to maintaining the trust that payment systems are
  dependent upon to function. A payment process defined by this group
- should not disclose private details of the participants identity or
- other sensitive information as part of the payment process unless
- required by operational, legal or jurisdictional rules, or when
+ should not disclose private details of the participants' identity or
+ other sensitive information unless
+ required for operational purposes, by legal or jurisdictional rules, or when
  deliberately consented to (e.g. as part of a loyalty program) by the
- owner of the information. The design of any public facing API should
+ owner of the information. The design of any API should
  guard against the unwanted leakage of such data through exploitation
  of the API.</p>
 
 	   <h3>Relation to Regulatory Requirements</h3>
 
 	<p><a href="#digital-payment-scheme">Digital payment schemes</a> define how various parties meet relevant regulatory obligations. The deliverables of this group should not prevent parties from meeting those obligations.</p>
-	
+
     </div>
     <div>
         <h2 id="deliverables">Deliverables</h2>
 
         <h3 id="Web_Payments_APIs">Web Payments APIs Recommendation</h3>
 
-        <p>Web Payments APIs will seek to increase interoperability for the following:</p>
+        <p>This Recommendation will include the following functionality:</p>
         <ul>
             <li>
-                <strong>Digital Payment Scheme Description</strong>: used by payees to represent accepted 
+                <strong>Digital Payment Scheme Description</strong>: used by payees to represent accepted
                 schemes, and by payers to represent their available schemes and instruments.
             </li>
             <li>
-                <strong>Payment Terms Description</strong>: used to define the terms requested by the payee in the
-                payment initiation request and the terms accepted by the payer in the payment initiation response. It
-                includes information such as amount, currency, payee account information, recurrence, transaction
+                <strong>Payment Terms Description</strong>: used to define the terms requested by the payee in
+                the payment initiation request and the terms accepted by the payer in the payment initiation response.
+                It includes information such as amount, currency, payee account information, recurrence, transaction
                 reference and any scheme-specific data that is required.
             </li>
             <li>
-                <strong>Proof of Payment</strong>: a payment authorization from the account provider to the
-                payee. The proof must include information about the payment request (a transaction reference or similar)
-                and the payer's <a href="#digital-payment-instrument">digital payment instrument</a>.
+                <strong>Proof of Payment</strong>: scheme and instrument permitting, a payment authorization from the account provider to the payee. The
+                proof must include information about the payment request (a transaction reference or similar) and the
+                payer's <a href="#digital-payment-instrument">digital payment instrument</a>.
             </li>
         </ul>
 
-        <p>It will include standard request and response messages for:</p>
+        <p>It will specify request and response messages for:</p>
         <ul>
             <li>
-                <strong>Registration of a Digital Payment Instrument</strong>: A payer digital wallet service processes a registration
+                <strong>Registration of a Digital Payment Instrument</strong>: A payer digital wallet processes a registration
                 request and, with user mediation as required, adds a new <a href="#digital-payment-instrument">digital payment instrument</a> to the payer's digital wallet.
             </li>
             <li>
-                <strong>Web Payment Initiation</strong>: The payee passes a payment request to a payer digital wallet service
+                <strong>Web Payment Initiation</strong>: The payee passes a payment request to a payer digital wallet
                 which returns the details of the payment initiation response. The payer should be presented with a set
                 of <a href="#digital-payment-instrument">digital payment instruments</a> for selection and prompted to provide any other required data to pass back to the
                 payee.
             </li>
             <li>
-                <strong>Web Payment Completion</strong>: The payee passes a payment completion request to a payer digital wallet
-                service which returns the details of the payment completion response. If the payment was payer-initiated,
-                this is the trigger for the digital wallet service to execute the payment; otherwise this is a message
-                advising of the result of a payee initiated payment.
+                <strong>Instrument Response</strong>: After a payer has selected their chosen payment instrument, the payment instrument sends back data necessary that allows
+                a merchant to finalize a transaction or, scheme permitting, proof of an already executed payment.
             </li>
         </ul>
         <p>It will specify the delivery mechanism for these messages in at least the following scenarios:</p>
         <ul>
-            <li><strong>Web application to user agent integration</strong>: Where the payment messages may be proxied between a Web application and the payer's digital wallet service via a JavaScript API hosted by the user agent.
+            <li><strong>Web application to user agent integration</strong>: Where the payment messages may be proxied between a Web application and the payer's digital wallet via a JavaScript API hosted by the user agent.
             </li>
-            <li><strong>User agent to server-side wallet communication</strong>: Where request messages are passed to a server-side wallet service, for example via HTTP, JavaScript, or some other approach.
+            <li><strong>User agent to server-side wallet communication</strong>: Where request messages are passed to a server-side wallet, for example via HTTP, JavaScript, or some other approach.
             </li>
-            <li><strong>Inter-app on mobile devices (Optional)</strong>: If possible the group will standardize a delivery mechanism for payment messages between apps on a mobile device so that digital wallet apps can seamlessly interface with Websites running inside the mobile device's user agent.
+            <li><strong>Inter-app on mobile devices (Optional)</strong>: If possible the group will Recommend a delivery mechanism for payment messages between apps on a mobile device so that digital wallet apps can seamlessly interface with Websites running inside the mobile device's user agent.
             </li>
         </ul>
 
@@ -403,7 +376,7 @@ are exchanged directly over the Web between two online entities.
         <h4 id="Card_Payments">Card Payments Recommendation</h4>
 
         <p>A very large proportion of payments on the Web are conducted using payment cards from one of the global card
-            schemes. The group should attempt to define a standardized specialization of the payment flow specifically
+            schemes. The group should attempt to define a specialization of the payment flow specifically
             for payment cards.</p>
 
         <p>A generic card payment Recommendation could:</p>
@@ -413,14 +386,14 @@ are exchanged directly over the Web between two online entities.
             <li>Take advantage of new security technologies such as EMVco Tokenization to improve on the existing
                 methods of using cards on the Web.
             </li>
-            <li>Standardize a common approach for payment card schemes
+            <li>Recommend a common approach for payment card schemes
  globally to kick-start adoption of Web Payments APIs.
             </li>
         </ul>
 
         <h4 id="best_practices">Instrument Discovery Good Practices</h4>
 
-	<p>This charter does not include a deliverable for a standard mechanism to discover &mdash;via the payer's digital wallet&mdash; available <a href="#digital-payment-instrument">digital payment instruments</a>. However, the Working Group may document good practices and recommend algorithms for the discovery of payer digital payment instruments.</p>
+	<p>This charter does not include a deliverable for a mechanism to discover available <a href="#digital-payment-instrument">digital payment instruments</a>. However, the Working Group may document good practices and recommend algorithms for the discovery of payer digital payment instruments.</p>
 
 	<h3>Test Suites</h3>
 
@@ -432,14 +405,7 @@ are exchanged directly over the Web between two online entities.
       <h3 id="wpig">Web Payments Interest Group</h3>
 
       <p>The <a href="/Payments/IG/">Web Payments Interest Group</a> acts as the overall coordinator at W3C of a vision for Web Payments, by gathering <a
-                    href="/TR/web-payments-use-cases/">Web Payments Use Cases</a>, engaging in liaisons with other payments standards bodies, and developing a high-level architecture. The group intends to explore more eCommerce scenarios than are represented in the current Working Group charter, such as digital receipts; loyalty programs and coupons; peer-to-peer payments; and harmonization of user
-      experience in-browser, in-app, and in-store.</p>
-
-<p>From time to time, the Interest Group will seek feedback from the Working Group on its evolving vision, and share information about the evolution of the Web payments technology landscape. The Interest Group may also propose new Working Groups to cover topics such as identity, credentials and commerce (including invoicing, receipts,
-        loyalty programs, coupons, discounts, and offers). The Web Payments Interest Group also expects to provide technical input to this and other
-        relevant W3C Working Groups, based on a detailed analysis of the relevant <a
-                href="http://www.w3.org/TR/web-payments-use-cases/">Web Payments Use
-		Cases</a>.</p>
+                    href="/TR/web-payments-use-cases/">Web Payments Use Cases</a>, engaging in liaisons with other payments standards bodies, and developing a high-level architecture. From time to time, the Interest Group will seek feedback from the Working Group on its evolving vision, and share information about the evolution of the Web payments technology landscape. The Web Payments Interest Group also expects to provide technical input to this and other relevant W3C Working Groups, based on a detailed analysis of the relevant Web Payments Use Cases.</p>
 
         <h3>Other W3C Groups</h3>
         <dl>
@@ -487,12 +453,6 @@ are exchanged directly over the Web between two online entities.
             </dd>
  	   <dt><a href="http://www.emvco.com/">EMVCo</a></dt>
 	   <dd>EMVCo administers all the original specifications known as EMV, including specifications about card tokenization.</dd>
-           <dt>
-                <a href="http://www.gsma.com/">GSMA</a>
-            </dt>
-            <dd>GSMA is an industry association of mobile network operators with near global coverage.</dd>
-	   <dt>IETF</dt>
-            <dd>Consultations with the <a href="https://irtf.org/cfrg">IETF Crypto Forum Research Group (CFRG)</a> on cryptography, as well as the <a href="https://www.ietf.org/mailman/listinfo/saag">"IETF  Security Area Advisory Group</a>.</dd>
 
              <dt>
                 <a href="http://www.iso.org/iso/iso_technical_committee?commid=49650">ISO TC 68</a>
@@ -547,6 +507,12 @@ are exchanged directly over the Web between two online entities.
         <p>For more information about disclosure obligations for this group, please see the <a href="/2004/01/pp-impl/">W3C
             Patent Policy Implementation</a>.</p>
     </div>
+
+    <div class="licensing">
+      <h2 id="licensing">Licensing</h2>
+              <p>This Working Group will use the <a href='http://www.w3.org/Consortium/Legal/copyright-software'>W3C Software and Document license</a> for all its deliverables.</p>
+    </div>
+
     <h2 id="about">About this Charter</h2>
 
     <p>This charter for the Web Payments Working Group has been created according to <a
@@ -570,7 +536,7 @@ are exchanged directly over the Web between two online entities.
         <a href="http://www.keio.ac.jp/">Keio</a>,
         <a href="http://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved.</p>
 
-    <p>$Date: 2015/06/30 18:42:23 $</p>
+    <p>$Date: 2015/09/14 20:25:44 $</p>
 </div>
 </body>
 
