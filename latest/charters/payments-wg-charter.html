@@ -170,9 +170,9 @@ completion of a payment, and</li>
 	    to them. The digital wallet may be part of the user agent.</dd>
 </dl>
 
-        <h3 id="payment_flow">Required Message Flows</h3>
+        <h3 id="payment_flow">Required Capabilities</h3>
 
-          <p>The Working Group will define message flows for the following payment tasks, in order to
+          <p>The Working Group will specify the following capabilities, in order to
             support a payment from a payer to a payee, whether a credit push (payer initiated)
             and a debit pull (payee initiated):</p>
 
@@ -188,7 +188,7 @@ completion of a payment, and</li>
             <dd>
                 <ul>
                     <li>
-                        <strong>Payment Initiation Request</strong>, by the payee to the payer providing the terms of
+                        <strong>Payment Request</strong>, by the payee to the payer providing the terms of
                         the payment including elements such as the accepted <a href="#digital-payment-scheme">digital payment schemes</a>, price, currency,
                         recurrence, transaction type, timeout and requests for any additional
                         data that is required from the payee.
@@ -201,25 +201,19 @@ completion of a payment, and</li>
                     <li>
                         <strong>Discovery</strong>, by the payer, of their available <a href="#digital-payment-instrument">digital payment instruments</a> that can be
                         used to make the payment. This is done by matching those registered by the payer with those
-                        supported by the payee (as defined in the Payment Initiation Request), while keeping information
+                        supported by the payee (as defined in the Payment Request), while keeping information
                         local to
                         the payer.
                     </li>
                     <li>
-                        <strong>Selection of a digital payment instrument</strong> by the payer, confirmation of the terms, and
-                        sending of any requested data back to the payee for validation.
-                    </li>
-                </ul>
-            </dd>
-            <dt>Digital Payment Instrument Response</dt>
-            <dd>
-                <ul>
-                    <li><strong>Response</strong>, returned via the selected digital payment instrument, which may contain information necessary for
-                        the payee to finalize a transaction, or a proof of payment if supported by the digital payment scheme.
-                    </li>
+                        <strong>Selection of a digital payment instrument</strong> by the payer and confirmation of the terms.</li>
+		    <li><strong>Payment Response</strong>, from the digital payment instrument, which may vary according to digital payment scheme. For example, for a credit push instrument, the response may include a notification or proof of payment. For a debit pull instrument, the response may include
+the information necessary for the payee to execute the payment.</li>
                 </ul>
             </dd>
         </dl>
+
+	<p>The Working Group will consider support for deferred payment execution to enable flexibility in the timing of negotiation of terms and execution of payment.</p>
 
         <p>The Working Group will also address exceptions that may occur during these steps, including payment authorization
           failure, lack of available digital wallet, and lack of suitable
@@ -299,7 +293,7 @@ completion of a payment, and</li>
             </li>
             <li>
                 <strong>Payment Terms Description</strong>: used to define the terms requested by the payee in
-                the payment initiation request and the terms accepted by the payer in the payment initiation response.
+                the payment request and the terms accepted by the payer in the payment response.
                 It includes information such as amount, currency, payee account information, recurrence, transaction
                 reference and any scheme-specific data that is required.
             </li>
@@ -321,8 +315,8 @@ completion of a payment, and</li>
                 request and, with user mediation as required, adds a new <a href="#digital-payment-instrument">digital payment instrument</a> to the payer's digital wallet.
             </li>
             <li>
-                <strong>Web Payment Initiation</strong>: The payee passes a payment request to a payer digital wallet
-                which returns the details of the payment initiation response. The payer should be presented with a set
+                <strong>Web Payment Request</strong>: The payee passes a payment request to a payer digital wallet
+                which returns the details of the payment response. The payer should be presented with a set
                 of <a href="#digital-payment-instrument">digital payment instruments</a> for selection and prompted to provide any other required data to pass back to the
                 payee.
             </li>
