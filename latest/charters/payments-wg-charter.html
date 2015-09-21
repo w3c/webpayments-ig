@@ -167,7 +167,7 @@ completion of a payment, and</li>
 	  <dd>An account, token or other means of conducting a transaction according to a payment scheme, that is associated with a digital payment scheme.</dd>
 	  <dt id="digital-wallet"><strong>digital wallet</strong></dt>
 	  <dd>A container for digital payment instruments that affords access
-	    to them.</dd>
+	    to them. The digital wallet may be part of the user agent.</dd>
 </dl>
 
         <h3 id="payment_flow">Required Message Flows</h3>
@@ -181,9 +181,7 @@ completion of a payment, and</li>
             <dd>
                 <ul>
                     <li>
-                        <strong>Registration</strong>, by the payer with their <a href="#digital-wallet">digital wallet</a>, which includes one more more
-                        <a href="#digital-payment-instrument">digital payment instruments</a>.
-                    </li>
+                      <strong>Registration</strong> of the payer's <a href="#digital-payment-instrument">digital payment instruments</a> with the user agent (e.g., via the payer's  <a href="#digital-wallet">digital wallet</a>).</li>
                 </ul>
             </dd>
             <dt>Negotiation of Terms</dt>
@@ -213,10 +211,10 @@ completion of a payment, and</li>
                     </li>
                 </ul>
             </dd>
-            <dt>Payment Instrument Response</dt>
+            <dt>Digital Payment Instrument Response</dt>
             <dd>
                 <ul>
-                    <li><strong>Response</strong>, returned via the selected digital instrument, which may contain information necessary for
+                    <li><strong>Response</strong>, returned via the selected digital payment instrument, which may contain information necessary for
                         the payee to finalize a transaction, or a proof of payment if supported by the digital payment scheme.
                     </li>
                 </ul>
@@ -339,6 +337,7 @@ completion of a payment, and</li>
             </li>
             <li><strong>User agent to server-side wallet communication</strong>: Where request messages are passed to a server-side wallet, for example via HTTP, JavaScript, or some other approach.
             </li>
+	    <li><strong>User agent to digital payment instrument communication</strong> : For the request and response messages for the digital payment instrument response, the payment messages are sent between the user agent (possibly via the digital wallet) and the digital payment instrument using information from the digital payment instrument's registration.</li>
             <li><strong>Inter-app on mobile devices (Optional)</strong>: If possible the group will Recommend a delivery mechanism for payment messages between apps on a mobile device so that digital wallet apps can seamlessly interface with Websites running inside the mobile device's user agent.
             </li>
         </ul>
