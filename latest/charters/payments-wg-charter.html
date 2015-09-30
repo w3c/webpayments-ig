@@ -149,7 +149,7 @@ completion of a payment, and</li>
     <li>an API to allow Web applications to participate in these flows.</li>
   </ol>
 
-  <p>The Working Group will also standardize how digital wallets and Web applications exchange these messages through a mediating user agent; see the <a href="#deliverables">deliverables</a> section for further detail.</p>
+  <p>The Working Group will also standardize how Web applications and digital payment instruments exchange these messages through a mediating user agent; see the <a href="#deliverables">deliverables</a> section for further detail.</p>
 
 	<p>This Working Group is chartered to Recommend programming
 	  interfaces; not user interfaces.</p>
@@ -166,8 +166,7 @@ completion of a payment, and</li>
 	  <dt id="digital-payment-instrument"><strong>digital payment instrument</strong></dt>
 	  <dd>An account, token or other means of conducting a transaction according to a payment scheme, that is associated with a digital payment scheme.</dd>
 	  <dt id="digital-wallet"><strong>digital wallet</strong></dt>
-	  <dd>A container for digital payment instruments that affords access
-	    to them. The digital wallet may be part of the user agent.</dd>
+	  <dd>A container for digital payment instruments. A digital wallet affords access to digital payment instruments, but may not be the sole means of access. In this charter, a digital wallet is the means of registration and discovery of digital payment instruments. Whether digital wallets are used to implement other functionality described by this charter is an implementation detail. A digital wallet may be part of the user agent.</dd>
 </dl>
 
         <h3 id="capabilities">Required Capabilities</h3>
@@ -181,7 +180,7 @@ completion of a payment, and</li>
             <dd>
                 <ul>
                     <li>
-                      <strong>Registration</strong> of the payer's <a href="#digital-payment-instrument">digital payment instruments</a> with the user agent (e.g., via the payer's  <a href="#digital-wallet">digital wallet</a>).</li>
+                      <strong>Registration</strong> of the payer's <a href="#digital-payment-instrument">digital payment instruments</a> with the user agent.</li>
                 </ul>
             </dd>
             <dt>Negotiation of Terms</dt>
@@ -213,35 +212,34 @@ completion of a payment, and</li>
         </dl>
 
 		<p>The Working Group will consider support for
-	  deferred payment execution to enable use cases where
-	  "Selection of a digital payment instrument" should not be
-	  considered an implicit instruction to execute the payment
-	  using that instrument.</p>
+		  deferred payment execution to enable use cases where
+		  additional payee action is required or desired between
+		  "Payee selection of a digital payment instrument" and
+		  "Execution of payment."</p>
 
         <p>The Working Group will also address exceptions that may occur during these steps, including payment authorization
-          failure, lack of available digital wallet, and lack of suitable
-   registered <a href="#digital-payment-instrument">digital payment instruments</a>.</p>
+          failure, lack of available <a href="#digital-payment-instrument">digital payment instruments</a>, and lack of suitable
+    <a href="#digital-payment-instrument">digital payment instruments</a>.</p>
 
-		<h3 id="digital_wallets">Digital Wallet APIs</h3>
+		<h3 id="digital_wallets">Digital Wallets</h3>
 
 		<p>The Working Group will Recommend an
-		  API to a payer's <a href="#digital-wallet">digital wallet</a> to
-		  enable payments from Web applications.</p>
+		  API to make it easier for a payer to choose a digital payment instrument (e.g., via a digital wallet) to make a payment from a Web application.</p>
+
+	  <p>The Working Group may define APIs that will also be used
+   outside of a user agent context, such as between Web services, or
+	    from within a native application (where the proxy between the payer's digital payment instruments and the payee's application is not a browser).</p>
+
+	  <p>If the Working Group specifies interactions with a digital wallet, the Working Group will assure that users are able to use more than one digital wallet. The phrase "the payer's digital wallet" is shorthand for "the payer's digital wallet(s)."</p>
+
+	   <p>The Working Group may consider the use case where an aggregation service acts as a more sophisticated digital wallet or provides a wider choice of payment solutions to the payer. For example, the aggregator service might combine the functionality of multiple digital wallets, or apply more complex algorithms to discover and collect the set of <a href="#digital-payment-instrument">digital payment
+               instruments</a> available to the payer.</p>
 
 		        <p>Recommendations for loyalty
   schemes and coupons, digital receipts, digital credentials,
   tickets, and location services are out of scope.  Future W3C activities may seek to
   increase interoperability of these or other additional digital wallet
   capabilities.</p>
-
-	  <p>The Working Group may define APIs that will also be used
-   outside of a user agent context, such as between Web services, or
-	    from within a native application (where the proxy between the payer's digital wallet and the payee's application is not a browser).</p>
-
-	  <p>The Working Group will assure that users are able to use more than one digital wallet. The phrase "the payer's digital wallet" is shorthand for "the payer's digital wallet(s)."</p>
-
-	   <p>The Working Group may consider the use case where an aggregation service acts as a more sophisticated digital wallet or provides a wider choice of payment solutions to the payer. For example, the aggregator service might combine the functionality of multiple digital wallets, or apply more complex algorithms to discover and collect the set of <a href="#digital-payment-instrument">digital payment
-            instruments</a> available to the payer.</p>
 
         <h3 id="security">Security and Privacy Considerations</h3>
 
@@ -314,28 +312,24 @@ completion of a payment, and</li>
         <p>This Recommendation will specify request and response messages for:</p>
         <ul>
             <li>
-                <strong>Registration of a Digital Payment Instrument</strong>: A payer digital wallet processes a registration
-                request and, with user mediation as required, adds a new <a href="#digital-payment-instrument">digital payment instrument</a> to the payer's digital wallet.
+              <strong>Registration of a Digital Payment Instrument</strong>: A payer makes a <a href="#digital-payment-instrument">digital payment instrument</a> available to the user agent (via the payer's digital wallet).
             </li>
             <li>
-                <strong>Web Payment Request</strong>: The payee passes a payment request to a payer digital wallet
-                which returns the details of the payment response. The payer should be presented with a set
-                of <a href="#digital-payment-instrument">digital payment instruments</a> for selection and prompted to provide any other required data to pass back to the
-                payee.
+                <strong>Web Payment Request</strong>: The payee passes a payment request through the user agent, causing the payer to be presented with a set
+                of <a href="#digital-payment-instrument">digital payment instruments</a> for selection, and prompting the payer to provide any other required data to pass back to the payee.
             </li>
             <li>
-                <strong>Instrument Response</strong>: After a payer has selected their chosen payment instrument, the payment instrument sends back data necessary that allows
-                a merchant to finalize a transaction or, scheme permitting, proof of an already executed payment.
+                <strong>Instrument Response</strong>: After a payer has selected their chosen payment instrument, the payment instrument sends data back to the payee (either indicating payment has completed, or with information to enable the payee to cause the payment to be completed).
             </li>
         </ul>
         <p>It will specify the delivery mechanism for these messages in at least the following scenarios:</p>
         <ul>
-            <li><strong>Web application to user agent integration</strong>: Where the payment messages may be proxied between a Web application and the payer's digital wallet via a JavaScript API hosted by the user agent.
+            <li><strong>Web application to user agent integration</strong>: Where the payment messages may be proxied between a Web application and the payer's digital payment instruments via a JavaScript API hosted by the user agent.
             </li>
             <li><strong>User agent to server-side wallet communication</strong>: Where request messages are passed to a server-side wallet, for example via HTTP, JavaScript, or some other approach.
             </li>
-	    <li><strong>User agent to digital payment instrument communication</strong> : For the request and response messages for the digital payment instrument response, the payment messages are sent between the user agent (possibly via the digital wallet) and the digital payment instrument using information from the digital payment instrument's registration.</li>
-            <li><strong>Inter-app on mobile devices (Optional)</strong>: If possible the group will Recommend a delivery mechanism for payment messages between apps on a mobile device so that digital wallet apps can seamlessly interface with Websites running inside the mobile device's user agent.
+	    <li><strong>User agent to digital payment instrument communication</strong> : For the request and response messages for the digital payment instrument response, the payment messages are sent between the user agent and a registered digital payment instrument.</li>
+            <li><strong>Inter-app on mobile devices (Optional)</strong>: If possible the group will Recommend a delivery mechanism for payment messages between apps on a mobile device so that digital wallet applications can seamlessly interface with Websites running inside the mobile device's user agent.
             </li>
         </ul>
 
