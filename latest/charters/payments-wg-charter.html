@@ -149,7 +149,7 @@ completion of a payment, and</li>
     <li>an API to allow Web applications to participate in these flows.</li>
   </ol>
 
-  <p>The Working Group will also standardize how Web applications and digital payment instruments exchange these messages through a mediating user agent; see the <a href="#deliverables">deliverables</a> section for further detail.</p>
+  <p>The Working Group will also Recommend how Web applications and digital payment instruments exchange these messages through a mediating user agent; see the <a href="#deliverables">deliverables</a> section for further detail.</p>
 
 	<p>This Working Group is chartered to Recommend programming
 	  interfaces; not user interfaces.</p>
@@ -172,7 +172,7 @@ completion of a payment, and</li>
 	  payment instruments. In this charter, a digital wallet is an
 	  entity that provides these functions by fulfilling the
 	  specified APIs for registration and discovery. The entity
-	  fulfilling the APIs may be a user agent, or the user agent
+	  fulfilling the APIs may be a user agent, or a user agent
 	  may ultimately locate payment instruments via other more
 	  specialized digital wallets.</dd>
 	</dl>
@@ -188,10 +188,10 @@ completion of a payment, and</li>
             <dd>
                 <ul>
                     <li>
-                      <strong>Registration</strong> of the payer's <a href="#digital-payment-instrument">digital payment instruments</a> with the user agent.</li>
+                      <strong>Registration</strong> of the payer's <a href="#digital-payment-instrument">digital payment instruments</a> with a user agent.</li>
                 </ul>
             </dd>
-            <dt>Negotiation of Terms</dt>
+            <dt><a href="//www.w3.org/TR/web-payments-use-cases/#negotiation-of-payment-terms">Negotiation of Terms</a></dt>
             <dd>
                 <ul>
                     <li>
@@ -202,7 +202,7 @@ completion of a payment, and</li>
                     </li>
                 </ul>
             </dd>
-            <dt>Negotiation of Payment Instruments</dt>
+            <dt><a href="//www.w3.org/TR/web-payments-use-cases/#negotiation-of-payment-instruments">Negotiation of Payment Instruments</a></dt>
             <dd>
                 <ul>
                     <li>
@@ -317,10 +317,10 @@ completion of a payment, and</li>
         <p>This Recommendation will specify request and response messages for:</p>
         <ul>
             <li>
-              <strong>Registration of a Digital Payment Instrument</strong>: A payer makes a <a href="#digital-payment-instrument">digital payment instrument</a> available to the user agent (via the payer's digital wallet).
+              <strong>Registration of a Digital Payment Instrument</strong>: A payer makes a <a href="#digital-payment-instrument">digital payment instrument</a> available to a user agent (via the payer's digital wallet).
             </li>
             <li>
-                <strong>Web Payment Request</strong>: The payee passes a payment request through the user agent, causing the payer to be presented with a set
+                <strong>Web Payment Request</strong>: The payee passes a payment request through a user agent, causing the payer to be presented with a set
                 of <a href="#digital-payment-instrument">digital payment instruments</a> for selection, and prompting the payer to provide any other required data to pass back to the payee.
             </li>
             <li>
@@ -329,12 +329,12 @@ completion of a payment, and</li>
         </ul>
         <p>It will specify the delivery mechanism for these messages in at least the following scenarios:</p>
         <ul>
-            <li><strong>Web application to user agent integration</strong>: Where the payment messages may be proxied between a Web application and the payer's digital payment instruments via a JavaScript API hosted by the user agent.
+            <li><strong>Web application to user agent integration</strong>: Where the payment messages may be proxied between a Web application and the payer's digital payment instruments via a JavaScript API hosted by a user agent.
             </li>
             <li><strong>User agent to server-side wallet communication</strong>: Where request messages are passed to a server-side wallet, for example via HTTP, JavaScript, or some other approach.
             </li>
-	    <li><strong>User agent to digital payment instrument communication</strong> : For the request and response messages for the digital payment instrument response, the payment messages are sent between the user agent and a registered digital payment instrument.</li>
-            <li><strong>Inter-app on mobile devices (Optional)</strong>: If possible the group will Recommend a delivery mechanism for payment messages between apps on a mobile device so that digital wallet applications can seamlessly interface with Websites running inside the mobile device's user agent.
+	    <li><strong>User agent to digital payment instrument communication</strong> : For the request and response messages for the digital payment instrument response, the payment messages are sent between a user agent and a registered digital payment instrument.</li>
+            <li><strong>Inter-app on mobile devices (Optional)</strong>: If possible the group will Recommend a delivery mechanism for payment messages between apps on a mobile device so that digital wallet applications can seamlessly interface with Websites running inside a mobile device's user agent.
             </li>
         </ul>
 
