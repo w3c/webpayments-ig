@@ -143,7 +143,7 @@ the <a href="#wpig">Web Payments Interest Group</a> description below.
 	<p>The Working Group will Recommend:</p>
 
   <ol>
-    <li>a set of messages,</li>
+    <li>a set of messages that can be used to accomplish a payment,</li>
     <li>message flows for the initiation and, where scheme-permitting, confirmation or
 completion of a payment, and</li>
     <li>an API to allow Web applications to participate in these flows.</li>
@@ -164,16 +164,24 @@ completion of a payment, and</li>
 	  <dt id="digital-payment-scheme"><strong>digital payment scheme</strong></dt>
 	  <dd>A set of rules for the execution of payment transactions that are followed by adhering entities (payment processors, payers and payees), where transactions take place over networks (such as the Web). Some digital payment schemes make use internally of payment instruments from other payment schemes. How they register and communicate with internal payment instruments is beyond the scope of this charter. </dd>
 	  <dt id="digital-payment-instrument"><strong>digital payment instrument</strong></dt>
-	  <dd>An account, token or other means of conducting a transaction according to a payment scheme, that is associated with a digital payment scheme.</dd>
+	  <dd>An account, token, or other means of fulfilling the payment provider's role in a digital payment scheme.</dd>
 	  <dt id="digital-wallet"><strong>digital wallet</strong></dt>
-	  <dd>A container for digital payment instruments. A digital wallet affords access to digital payment instruments, but may not be the sole means of access. In this charter, a digital wallet is the means of registration and discovery of digital payment instruments. Whether digital wallets are used to implement other functionality described by this charter is an implementation detail. A digital wallet may be part of the user agent.</dd>
-</dl>
+	  <dd>A logical container for digital payment instruments. A
+	  digital wallet affords access to digital payment
+	  instruments, providing registration and discovery of digital
+	  payment instruments. In this charter, a digital wallet is an
+	  entity that provides these functions by fulfilling the
+	  specified APIs for registration and discovery. The entity
+	  fulfilling the APIs may be a user agent, or the user agent
+	  may ultimately locate payment instruments via other more
+	  specialized digital wallets.</dd>
+	</dl>
 
         <h3 id="capabilities">Required Capabilities</h3>
 
           <p>The Working Group will specify the following capabilities, in order to
             support a payment from a payer to a payee, whether a credit push (payer initiated)
-            and a debit pull (payee initiated):</p>
+            or a debit pull (payee initiated):</p>
 
         <dl>
             <dt>Pre-Payment</dt>
@@ -205,11 +213,16 @@ completion of a payment, and</li>
                         the payer.
                     </li>
                     <li>
-                        <strong>Selection of a digital payment instrument</strong> by the payer and confirmation of the terms.</li>
 		    <li><strong>Payment Response</strong> from the digital payment instrument, which may vary according to digital payment scheme. For example, for a credit push instrument, the response may include a notification or proof of execution of the payment. For a debit pull instrument, the response may include the information necessary for the payee to execute the payment.</li>
                 </ul>
             </dd>
         </dl>
+
+	<p>In addition to these capabilities, user agents and digital
+	wallets are expected to fulfill a variety of roles (e.g.,
+	displaying a selection of payment instruments and enabling the
+	user to select one) that will not be specified in the
+	deliverables of this Working Group.</p>
 
 		<p>The Working Group will consider support for
 		  deferred payment execution to enable use cases where
@@ -222,9 +235,6 @@ completion of a payment, and</li>
     <a href="#digital-payment-instrument">digital payment instruments</a>.</p>
 
 		<h3 id="digital_wallets">Digital Wallets</h3>
-
-		<p>The Working Group will Recommend an
-		  API to make it easier for a payer to choose a digital payment instrument (e.g., via a digital wallet) to make a payment from a Web application.</p>
 
 	  <p>The Working Group may define APIs that will also be used
    outside of a user agent context, such as between Web services, or
