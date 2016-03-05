@@ -3,6 +3,16 @@ var opencreds = {
   // Add as the respecConfig localBiblio variable
   // Extend or override global respec references
   localBiblio: {
+    "CCG-USE-CASES": {
+      title: "Credentials Use Cases",
+      date: "2016",
+      href: "http://www.opencreds.org/specs/source/use-cases/",
+      authors: [
+        "Lee, Sunny",
+        "Otto, Nate"
+      ],
+      publisher: "W3C Credentials Community Group"
+    },
     "REST": {
       title: "Architectural Styles and the Design of Network-based Software Architectures",
       date: "2000",
