@@ -7,7 +7,7 @@ Autonumber
 Actor "Jane" as Holder
 Participant "User Agent" as UA
 Participant "Credential Curator" as CS
-Participant "Certifying Authority" as Issuer
+Participant "Issuer" as Issuer
 
 Holder->UA: Navigate to\nweb site
 UA->Issuer: Request Credential
