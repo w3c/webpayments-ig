@@ -8,7 +8,7 @@ Recommendations in the area of Verifiable Claims.
 
 # Repository Layout
 
-THere are only a few documents being developed by the task force thus far:
+There are only a few documents being developed by the task force thus far:
 
 * [Charter](http://w3c.github.io/webpayments-ig/VCTF/charter/vcwg-draft.html) - Live version of draft charter.
 * [Use Cases](http://w3c.github.io/webpayments-ig/VCTF/use-cases/index.html) - Live version of use cases document.
