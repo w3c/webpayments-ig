@@ -113,15 +113,16 @@ These problems exist today:
 There is no standard that makes it easy for users to assert their verifiable
 qualifications to a service provider (e.g. my loyalty card number is X, I
 have an account at Bank Y, I am over the age of 21, I am a citizen of the USA,
-I am a Chartered Financial Analyst, etc.).
+I am a Chartered Financial Analyst, etc.). As a result, manual input and
+fraud on the Web are higher than desired.
        </li>
        <li>
 In existing attribute exchange architectures (like SAML, OpenID Connect, Login
-with SuperProviderX, etc.), users do not independently exist from service
-providers. This means users can't easily change their service provider without
-losing their digital identity. This leads to vendor lock-in, identity
-fragility, reduced competition in the marketplace, and reduced privacy for
-all stakeholders.
+with SuperProviderX, etc.), users, and their verifiable claims, do not
+independently exist from service providers. This means users can't easily
+change their service provider without losing their digital identity. This
+leads to vendor lock-in, identity fragility, reduced competition in the
+marketplace, and reduced privacy for all stakeholders.
        </li>
        <li>
 There is no interoperable standard capable of expressing and transmitting
@@ -137,33 +138,58 @@ their digital identities in a cohesive way.
   <p>
 If successful, the Recommendations from this Working Group will
 increase some areas of interoperability between the entities that issue,
-store, and inspect verifiable claims, producing benefits such as:
+store, and inspect verifiable claims.
+  </p>
+
+  <p>
+The first goal is to create a standard way for users to assert their verifiable
+qualifications to a service provider, producing benefits such as:
   </p>
 
   <ul>
     <li>
 Enhancing website usability by removing the need to manually enter
-verifiable claims.
+verifiable claims, and
     </li>
     <li>
 Improving the detection of fraud, such as false claims and identity theft, by
 establishing a standard way to cryptographically verify 3rd party claims.
     </li>
+  </ul>
+
+  <p>
+The second goal is to ensure that users can move their verifiable claims from
+one service provider to another, producing benefits such as:
+  </p>
+
+  <ul>
     <li>
 Improving operational efficiency, by reducing operating costs (for example),
 for verifiable claim issuers and inspectors as a result of a common set of
 technology for expressing and verifying claims.
     </li>
     <li>
-Ensuring that the machine-readable language that expresses verifiable
-claims (aka vocabularies) are 1) reusable, so that a single vocabulary
-may suit the needs of a broad set of stakeholders, and 2) extensible, so
-that particular industry verticals may build extensions on top of
-existing vocabularies to suit their needs.
-    </li>
-    <li>
 Enhancing some aspects of privacy and unlinkability for the subject of a
 verifiable claim.
+    </li>
+  </ul>
+
+  <p>
+The third goal is to ensure that there is an interoperable standard capable of
+expressing and transmitting rich verifiable claims that cuts across industries,
+producing benefits such as:
+  </p>
+
+  <ul>
+    <li>
+Reusability of the machine-readable language that expresses verifiable
+claims (aka vocabularies) so that a single vocabulary
+may suit the needs of a broad set of stakeholders, and
+    </li>
+    <li>
+Extensibility of the vocabularies so that a particular industry vertical may
+build extensions on top of existing vocabularies to suit their 
+industry-specific needs.
     </li>
   </ul>
 
