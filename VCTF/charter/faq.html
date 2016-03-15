@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>[EDITOR'S DRAFT] Verifiable Claims Working Group Frequently Asked Questions</title>
+    <link rel="stylesheet" href="//www.w3.org/2005/10/w3cdoc.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="//www.w3.org/Guide/pubrules-style.css"/>
+    <link rel="stylesheet" type="text/css" href="//www.w3.org/2006/02/charter-style.css"/>
+</head>
+
+<body>
+  <p>
+      <a href="http://www.w3.org/"><img alt="W3C" height="48" src="//www.w3.org/Icons/w3c_home"
+                                                     width="72"/></a>
+      <a class="domainlogo" href="/TandS/"><img src="http://www.w3.org/Icons/tands"
+                                                alt="Technology and Society Domain"/></a>
+  </p>
+
+  <h1 id="title">[EDITOR'S DRAFT] Verifiable Claims Working Group Frequently Asked Questions</h1>
+
+      <p class="mission">The mission of the Verifiable Claims Working Group is to make expressing, exchanging, and verifying claims easier and more secure on the Web. Please review the <a href="vcwg-draft.html">draft charter</a> if you have not already done so.</p>
+
+  <h2 id="problem">What problem is this work attempting to address?</h3>
+
+   <p>
+There is currently no widely used user-centric and privacy-enhancing standard
+for expressing and transacting verifiable claims (aka: credentials,
+attestations) via the Web.
+   </p>
+   <p>
+These problems exist today:
+   </p>
+   <ul>
+       <li>
+There is no standard that makes it easy for users to assert their verifiable
+qualifications to a service provider (e.g. my loyalty card number is X, I
+have an account at Bank Y, I am over the age of 21, I am a citizen of the USA,
+I am a Chartered Financial Analyst, etc.). As a result, manual input and
+fraud on the Web are higher than desired.
+       </li>
+       <li>
+In existing attribute exchange architectures (like SAML, OpenID Connect, Login
+with SuperProviderX, etc.), users, and their verifiable claims, do not
+independently exist from service providers. This means users can't easily
+change their service provider without losing their digital identity. This
+leads to vendor lock-in, identity fragility, reduced competition in the
+marketplace, and reduced privacy for all stakeholders.
+       </li>
+       <li>
+There is no interoperable standard capable of expressing and transmitting
+rich verifiable claims that cuts across industries (e.g., finance, retail,
+education, and healthcare). This leads to industry-specific solutions that
+are costly, inefficient, proprietary, and inhibit users' ability to manage
+their digital identities in a cohesive way.
+       </li>
+   </ul>
+
+  <h2 id="real-problem">Is there agreement that this is a problem?</h2>
+
+    <p>
+Forty-three (43) organizations that either issue verifiable claims or
+consume verifiable claims were surveyed to determine their needs in this space.
+Extensive interviews were conducted among industry experts that have worked
+in this space over the past 15 years. A Community Group of 77 people have
+been incubating this work for almost 2 years. There is general consensus
+that this is a problem that should be, and can be, addressed.
+    </p>
+
+    <p>
+There is a <a href="VCTF-final-report.html">Verifiable Claims Final Report</a> summarizing the
+findings and consensus around the problem statement.
+    </p>
+
+  <h2 id="requirements">What kind of requirements have been identified for a user-centric, privacy-enhancing verifiable claims ecosystem?</h2>
+
+<p>
+A user-centric, privacy-enhancing, verifiable claims ecosystem is defined as having the following requirements:
+</p>
+
+<ul>
+  <li>The subject (e.g. a user) of a verifiable claim has independent existence; users can control and own their identifiers.</li>
+  <li>Verifiable claims are a mechanism for transferring the trust issuers have in users to third parties; the trust model does not directly involve software agents or services.</li>
+  <li>Users may ask issuers to make verifiable claims about them. Users can be given these claims in digital form, store them at a location of their choosing, and control with whom they are shared.</li>
+  <li>Users may decide how to aggregate claims and manage their own digital identities.</li>
+  <li>Users may use software agents to help them store claims, but these agents are not party to the claims; users may freely change agents without losing or affecting the meaning of their claims.</li>
+  <li>Users may share verifiable claims without revealing the intended recipient to the software agent they use to store the claims.</li>
+  <li>Consumers of verifiable claims may independently verify them without revealing their identity to the issuers of the claims.</li>
+  <li>Users may be guaranteed basic unlinkability when sharing pseudo-anonymous verifiable claims with multiple parties.</li>
+  <li>Semantics are decentralized. Vocabularies for verifiable claims may evolve independently in the communities that use them. Issuers may use these to indicate the meaning of their verifiable claims.</li>
+  <li>Trust is decentralized. Consumers of verifiable claims decide which issuers to trust.</li>
+</ul>
+
+  <h2 id="user-centric">What is meant by "user-centric"?</h3>
+
+  <p>
+In a <strong id="user-centric">user-centric</strong> system, users exist
+independently from services. To contrast, in a service centric system
+users are tightly bound to a particular service.
+  </p>
+
+   <p>
+A verifiable claims ecosystem that is <a href="#user-centric">user-centric</a>
+has the following qualities:
+  </p>
+
+  <ul>
+    <li>
+Users are positioned in the middle between claims issuers and
+claims inspectors.
+    </li>
+    <li>
+Users receive and store verifiable claims from issuers through an agent that
+the issuer does not need to trust.
+    </li>
+    <li>
+Users provide verifiable claims to inspectors through an agent that inspectors
+needn't trust; they only need to trust issuers.
+    </li>
+    <li>
+Verifiable claims are associated with users, not particular services; users
+can decide how to aggregate claims and manage their own digital identities.
+    </li>
+    <li>
+Users can control and own their own identifiers.
+    </li>
+    <li>
+Users can control which verifiable claims to use and when.
+    </li>
+    <li>
+Users may freely choose and swap out the agents they employ to help them
+manage and share their verifiable claims.
+    </li>
+    <li>
+Does not require users that share verifiable claims to reveal the identity of
+the consumer to their agent or to issuers.
+    </li>
+  </ul>
+
+  <h2 id="service-centric">What is meant by "service-centric"?</h3>
+
+    <p>
+A <strong id="service-centric">service-centric</strong> system, users
+are tightly bound to services. To contrast, in a user-centric
+system, users exist independently from services.
+    </p>
+
+    <p>
+A verifiable claims ecosystem that is
+<a href="#service-centric">service-centric</a> (LDAP, SAML, OpenID Connect) has
+the following qualities:
+    </p>
+
+    <ul>
+      <li>
+Services are positioned in the middle between issuers, users, and consumers.
+      </li>
+      <li>
+Users receive and store verifiable claims from issuers through an agent that
+the issuer must trust, or they must be the same entity.
+      </li>
+      <li>
+Users provide verifiable claims to consumers through an agent that consumers
+must trust.
+      </li>
+      <li>
+Verifiable claims must be associated with services, fracturing a user's
+digital identity potentially against their desire.
+      </li>
+      <li>
+Services control and own their user's identifiers.
+      </li>
+      <li>
+User's verifiable claims are locked in agent silos.
+      </li>
+      <li>
+Requires users that share verifiable claims to reveal the identity of the
+consumer to their agent and issuers.
+      </li>
+      <li>
+Consumers may have to register with user's agents to consume verifiable claims.
+      </li>
+    </ul>
+
+  <h2 id="saml-openid">How is this work different from LDAP, SAML, or OpenID Connect?</h3>
+
+  <p>
+LDAP, SAML, and OpenID Connect are attribute exchange systems that are
+service-centric. The proposed work is attempting to create a user-centric,
+privacy-enhancing system, but there is overlap.
+  </p>
+
+  <p>
+The proposed work is focusing first on data formats, vocabularies, and
+syntaxes for the expression of verifiable claims. If successful, the
+work could be re-used via SAML and OpenID Connect-based systems (and,
+in fact, a document explaining how that should happen is one of the
+proposed outputs of the group).
+  </p>
+
+  <h2 id="protocol">Why isn't work on a privacy-enhancing attribute exchange protocol in the charter?</h3>
+
+  <p>
+Attribute exchange protocols such as SAML and OpenID Connect exist and it
+is unclear if those protocols could address the problem statement or not.
+So, working on a protocol was controversial as some asserted that the protocol
+is a solved problem while others asserted that a new protocol would be
+necessary. There was, however, no real controversy around a data model,
+vocabularies, and syntax(es) for the expression of verifiable claims. It
+may be that this output could be married with existing attribute exchange
+systems to achieve a solution to the problem statement noted earlier in the
+FAQ. If not, work on a new privacy-enhancing attribute exchange protocol
+may be suggested by the yet-to-be created Working Group.
+  </p>
+
+</div>
+</body>
+
+</html>
