@@ -128,6 +128,28 @@ the reader:
   order to initiate a payment order. [ECB] a tool or a set of procedures
   enabling the transfer of funds from a payer to a payee.</dd>
 
+  <dt><dfn lt="payment mediator|payment mediators">payment mediator</dfn></dt>
+
+  <dd>[EXPERIMENTAL] The payment mediator fulfills a number of roles:
+
+    <ul>
+      <li>
+        It helps determine which payer payment apps can be used to fulfill
+        the payment request given the payee's accepted payment methods.
+      </li>
+      <li>
+        It helps the payer choose a payment app (typically with explicit
+        interaction or prior consent).
+      </li>
+      <li>
+        It passes payment request data to the payer's selected payment app.
+      </li>
+    <ul>
+
+    A payment mediator thus co-ordinates the flow of messages between the
+    payee, payer, and selected payment app.
+  </dd>
+
   <dt><dfn lt="payment method|payment methods">payment method</dfn></dt>
 
   <dd>[EXPERIMENTAL] A way of paying. A system and set of rules for payments.
