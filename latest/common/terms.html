@@ -113,6 +113,11 @@ the reader:
   However, in a technical or statistical sense, it is often used as a
   synonym for <a>transfer order</a></dd>
 
+  <dt><dfn lt="payment app|payment apps">payment app</dfn></dt>
+
+  <dd>A payment app is a component able to process a <a>payment
+  request</a> and return a <a>payment response</a>.</dd>
+
   <dt><dfn lt="payment instrument|payment instruments">payment instrument</dfn></dt>
 
   <dd>A mechanism used to transfer value from a <a>payer</a> to a
@@ -122,6 +127,48 @@ the reader:
   payment service user and the payment service provider and used in
   order to initiate a payment order. [ECB] a tool or a set of procedures
   enabling the transfer of funds from a payer to a payee.</dd>
+
+  <dt><dfn lt="payment mediator|payment mediators">payment mediator</dfn></dt>
+
+  <dd>The payment mediator sits between the <a>payee</a>'s system and the
+  <a>payer</a>'s <a>payment app</a>(s) and performs a number of functions:
+    <ol>
+      <li>It determines which <a>payment apps</a> can be used to fulfill a
+      <a>payment request</a> given the <a>payee</a>'s accepted <a>payment
+      methods</a>.</li>
+
+      <li>It helps the <a>payer</a> choose one <a>payment app</a> (typically
+      with explicit interaction or prior consent).</li>
+
+      <li>It passes the <a>payment request</a> from the <a>payee</a> to the
+      <a>payer</a>'s selected <a>payment app</a> and passes the <a>payment
+      response</a> from the <a>payment app</a> back to the <a>payee</a>.</li>
+    </ol>
+  </dd>
+
+  <dt><dfn lt="payment method|payment methods">payment method</dfn></dt>
+
+  <dd>A payment method defines how a <a>payment request</a> must be processed.
+  It defines the format and content of the <a>payment request</a> and
+  <a>payment response</a> messages that are exchanged with a <a>payment app</a>.
+  A <a>payment app</a> can process <a>payment requests</a> for one or more
+  <a>payment methods</a>.</dd>
+
+  <dt><dfn lt="payment method data">payment method data</dfn></dt>
+
+  <dd><a>Payment requests</a> and <a>payment responses</a> have a limited set
+  of data elements that are common to all payments, irrespective of the
+  <a>payment method</a>. However, <a>payment methods</a> can define additional
+  custom data that is specific to that <a>payment method</a>. This custom data
+  is called payment method data.</dd>
+
+  <dt><dfn lt="payment method specification|payment method specifications">
+  payment method specification</dfn></dt>
+
+  <dd>A payment method specification defines what <a>payment method data</a>
+  is required in <a>payment requests</a> and <a>payment responses</a> for a
+  particular <a>payment method</a>. It also lists the <a>payment method</a>
+  identifiers that are defined for that <a>payment method</a>.</dd>
 
   <dt><dfn lt="payment orchestrator|payment orchestrators">payment orchestrator</dfn></dt>
 
@@ -139,6 +186,22 @@ the reader:
   <dd>An <a>entity</a> that submits and processes payments using a
   particular <a>payment instrument</a> to a payment network. Examples:
   Stripe, PayPal, Authorize.net, Atos, FedACH.</dd>
+
+  <dt><dfn data-lt="payment request|payment requests">payment request</dfn></dt>
+
+  <dd>A request from a <a>payee</a> to be paid. It contains the
+  details of what to pay and how the payment can be made. How the
+  payment can be made is specified as a list of <a>payment method
+  identifiers</a>. The payment request MUST contain all of the
+  <a>payment method data</a> required for each <a>payment method</a>
+  identified in it's set of supported payment methods.</dd>
+
+  <dt><dfn data-lt="payment response|payment responses">payment response</dfn></dt>
+
+  <dd>A response to a <a>payment request</a> (normally the result of
+  processing by a <a>payment app</a>). The content of a payment
+  response will be dependant on how the <a>payment</a> is being
+  processed.</dd>
 
   <dt><dfn lt="payment scheme|payment schemes">payment scheme</dfn></dt>
 
