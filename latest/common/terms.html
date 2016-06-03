@@ -118,6 +118,11 @@ the reader:
   <dd>[EXPERIMENTAL] A piece of software that enables a payer to make
   payments. A payment app will one or more payment methods.</dd>
 
+  <dt><dfn lt="payment app|payment apps">payment app</dfn></dt>
+
+  <dd>A payment app is a component able to process a <a>payment
+  request</a> and return a <a>payment response</a>.</dd>
+
   <dt><dfn lt="payment instrument|payment instruments">payment instrument</dfn></dt>
 
   <dd>A mechanism used to transfer value from a payer to a
@@ -162,6 +167,14 @@ the reader:
   For example, for the Visa payment method this might be the card primary
   account number (PAN), expiry date, and CVV.</dd>
 
+  <dt><dfn lt="payment method specification|payment method specifications">
+  payment method specification</dfn></dt>
+
+  <dd>A payment method specification defines what <a>payment method data</a>
+  is required in <a>payment requests</a> and <a>payment responses</a> for a
+  particular <a>payment method</a>. It also lists the <a>payment method</a>
+  identifiers that are defined for that <a>payment method</a>.</dd>
+
   <dt><dfn lt="payment orchestrator|payment orchestrators">payment orchestrator</dfn></dt>
 
   <dd>The payment orchestrator is the entity or entities (payer, payee
@@ -178,6 +191,22 @@ the reader:
   <dd>An entity that submits and processes payments using a
   particular payment instrument to a payment network. Examples:
   Stripe, PayPal, Authorize.net, Atos, FedACH.</dd>
+
+  <dt><dfn data-lt="payment request|payment requests">payment request</dfn></dt>
+
+  <dd>A request from a <a>payee</a> to be paid. It contains the
+  details of what to pay and how the payment can be made. How the
+  payment can be made is specified as a list of <a>payment method
+  identifiers</a>. The payment request MUST contain all of the
+  <a>payment method data</a> required for each <a>payment method</a>
+  identified in it's set of supported payment methods.</dd>
+
+  <dt><dfn data-lt="payment response|payment responses">payment response</dfn></dt>
+
+  <dd>A response to a <a>payment request</a> (normally the result of
+  processing by a <a>payment app</a>). The content of a payment
+  response will be dependant on how the <a>payment</a> is being
+  processed.</dd>
 
   <dt><dfn lt="payment scheme|payment schemes">payment scheme</dfn></dt>
 
