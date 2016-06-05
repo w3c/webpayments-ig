@@ -55,10 +55,17 @@
 
     <h1 id="title">[EDITOR'S DRAFT] Verifiable Claims Working Group Charter</h1>
 
-        <p class="mission">The mission of the Verifiable Claims Working Group is to make expressing, exchanging, and verifying claims easier and more secure on the Web.</p>
+        <p class="mission">
+It is currently difficult to transmit banking account information,
+education qualifications, healthcare data, and other sorts of personal
+information that has been verified by a 3rd party via the Web. These sorts
+of data are often referred to as <strong>verifiable claims</strong>. The
+mission of the Verifiable Claims Working Group is to make expressing,
+exchanging, and verifying claims easier and more secure on the Web.
+        </p>
 
         <p class="todo">
-This charter is for discussion with the Verifiable Claims Task Force of the
+This draft charter is intended for discussion within the
 Web Payments Interest Group. It is not yet under consideration by the
 W3C Membership.
         </p>
@@ -69,7 +76,7 @@ Please send comments to <a href="mailto:public-webpayments-comments@w3.org">publ
     <table class="summary-table">
         <tr id="StartDate">
             <th rowspan="1" colspan="1">Start date</th>
-            <td rowspan="1" colspan="1">1 August 2016</td>
+            <td rowspan="1" colspan="1">1 September 2016</td>
         </tr>
         <tr id="Duration">
             <th rowspan="1" colspan="1">End date</th>
@@ -135,7 +142,7 @@ reduced privacy for all stakeholders.
        </li>
        <li>
 There is no interoperable standard capable of expressing and transmitting
-rich verifiable claims that cuts across industries (e.g., finance, retail,
+verifiable claims that cuts across industries (e.g., finance, retail,
 education, and healthcare). This leads to industry-specific solutions that
 are costly, inefficient, proprietary, and inhibit users' ability to manage
 their digital identities in a cohesive way.
@@ -189,7 +196,7 @@ verifiable claim.
 
   <p>
 The third goal is to ensure that there is an interoperable standard capable of
-expressing and transmitting rich verifiable claims that cuts across industries,
+expressing and transmitting verifiable claims that cuts across industries,
 producing benefits such as:
   </p>
 
@@ -231,7 +238,7 @@ focused use cases</a> that are suggested as input to the group.
 
   <ol>
     <li>
-a data model and syntax(es) for the expression of rich verifiable claims,
+a data model and syntax(es) for the expression of verifiable claims,
 including one or more core vocabularies.
     </li>
     <li>
@@ -245,7 +252,8 @@ address the problems stated earlier in this document.
 	<p>The Working Group will not:</p>
 
   <ol>
-    <li>Define a new protocol for attribute exchange.</li>
+    <li>Define browser-based APIs for interacting with verifiable claims. This work may be performed by a future Working Group if there is interest, but is not required for the Working Group to be successful.</li>
+    <li>Define a new protocol for attribute exchange. This work may be performed by a future Working Group if there is interest, but is not required for the Working Group to be successful</li>
   </ol>
 
 	<h3 id="definitions">Definitions</h3>
@@ -318,7 +326,7 @@ considered.
         <p>This Recommendation will define or identify a:</p>
         <ul>
             <li>
-                <strong>Data Model and Core Vocabularies</strong>: for expressing rich verifiable claims in a semantically extensible way.
+                <strong>Data Model and Core Vocabularies</strong>: for expressing verifiable claims in a semantically extensible way.
             </li>
             <li>
                 <strong>Syntax(es)</strong>: that are machine-readable and capable of expressing the data model across a variety of formats.
@@ -406,8 +414,6 @@ as <a href="http://www.w3.org/Submission/">W3C Member
     <div class="dependencies">
       <h2 id="coordination">Dependencies and Liaisons</h2>
 
-      <h3 id="wpig">Web Payments Interest Group</h3>
-
         <h3 id="w3c-groups">W3C Groups</h3>
         <dl>
             <dt>
@@ -433,9 +439,7 @@ as <a href="http://www.w3.org/Submission/">W3C Member
                 <a href="http://www.w3.org/2011/webappsec/">Web Application Security</a>
             </dt>
             <dd>For security reviews. If the Working Group perceives the need for IETF review, W3C will arrange discussion through its IETF liaison.</dd>
-	    <dt><a href="http://www.w3.org/2008/webapps/">Web Applications Working Group</a> (and successor)</dt>
-		      <dd>For review of JavaScript APIs.</dd>
-		                  <dt>
+            <dt>
                 <a href="http://www.w3.org/community/credentials/">Credentials Community Group</a>
             </dt>
             <dd>Research and incubation of ideas for consideration by this group.
@@ -446,7 +450,7 @@ as <a href="http://www.w3.org/Submission/">W3C Member
             <dd>For security reviews.</dd>
 
             <dt>
-                <a href="https://www.w3.org/community/odrl/">Open Digital Rights Language Community Group</a>
+                <a href="hhttps://www.w3.org/2016/poe/">Permissions and Obligations Expression Working Group</a>
             </dt>
             <dd>To help ensure that data rights around verifiable claims can be expressed and properly enforced.</dd>
 
@@ -461,6 +465,19 @@ as <a href="http://www.w3.org/Submission/">W3C Member
             <dd>Coordination with X9 will help achieve broad interoperability of payment systems (e.g., through
                 alignment between Web protocols
                 and ISO 12812).
+            </dd>
+           <dt>
+                <a href="http://www.credentialtransparencyinitiative.org/">Credentials Transparency Initiative</a>
+            </dt>
+            <dd>Ensure that the credentials being modeled and expressed by
+                CTI are compatible with the work of the Verifiable Claims WG.
+            </dd>
+           <dt>
+                <a href="http://openbadges.org/">Mozilla Open Badges</a>
+            </dt>
+            <dd>Ensure that the badges being modeled and expressed by
+                the Open Badges community are compatible with the Verifiable
+                Claims WG.
             </dd>
         </dl>
 
