@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>[EDITOR'S DRAFT] Proposed Verifiable Claims Architecture</title>
+    <link rel="stylesheet" href="//www.w3.org/2005/10/w3cdoc.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="//www.w3.org/Guide/pubrules-style.css"/>
+    <link rel="stylesheet" type="text/css" href="//www.w3.org/2006/02/charter-style.css"/>
+</head>
+
+<body>
+  <p>
+      <a href="http://www.w3.org/"><img alt="W3C" height="48" src="//www.w3.org/Icons/w3c_home"
+                                                     width="72"/></a>
+      <a class="domainlogo" href="/TandS/"><img src="http://www.w3.org/Icons/tands"
+                                                alt="Technology and Society Domain"/></a>
+  </p>
+
+  <h1 id="title">[EDITOR'S DRAFT] Proposed Verifiable Claims Architecture</h1>
+
+  <p>
+<strong>self-sovereign</strong> - an architectural principle where the holder
+of a verifiable claim is in complete control of their identifier and
+where their verifiable claims are stored.
+  </p>
+
+  <p>
+There is currently no widely used self-sovereign, privacy-enhancing
+standard for expressing and transacting verifiable claims (aka:
+credentials, attestations) via the Web. This a summary of a proposed
+architecture to address part of this problem.
+  </p>
+
+  <h2>Proposed Verifiable Claims Architecture Goals</h2>
+
+  <ol>
+    <li>
+Create a standard way for users to assert their verifiable qualifications to a
+service provider in a way that reduces fraud and enhances website
+usability by removing the need to manually enter verifiable claims.
+    </li>
+    <li>
+Ensure that holders and their verifiable claims may be independent from
+service providers.
+    </li>
+    <li>
+Ensure that there is an interoperable standard capable of expressing
+verifiable claims that works in the same way across different market
+verticals.
+    </li>
+    <li>
+Re-use existing attribute-exchange protocols or create new protocols that are
+capable of transmitting the data in a privacy-enhancing way.
+    </li>
+  </ol>
+
+  <h2>Architecture Block Diagram</h2>
+
+  <img style="margin: auto; display: block;" width="50%" src="architecture.svg">
+
+  <h2>Architecture Terminology</h2>
+
+  <dl>
+    <dt><strong><em>Verifiable Claim</em></strong></dt>
+    <dd>
+A claim that can be cryptographically proven to be non-repudiable, authentic,
+and unaltered by bad actors.
+    </dd>
+    <dt><strong><em>Issuers</em></strong></dt>
+    <dd>
+Provide verifiable claims to people and organizations.
+    </dd>
+    <dt><strong><em>Repositories</em></strong></dt>
+    <dd>
+Store and curate verifiable claims on behalf of people and organizations.
+    </dd>
+    <dt><strong><em>Inspectors</em></strong></dt>
+    <dd>
+Request verifiable claims from people and organizations in order to give
+them access to protected resources.
+    </dd>
+    <dt><strong><em>Holders</em></strong></dt>
+    <dd>
+Receive verifiable claims from issuers, store them at repositories that
+they trust, and provide them to inspectors in order to get access to
+protected resources.
+    </dd>
+    <dt><strong><em>Decentralized Identifier Registry</em></strong></dt>
+    <dd>
+Decentralized Identifiers are the mechanism by which users are able to
+control their identifiers. They store self-sovereign identifier documents
+for the purpose of claiming self-sovereign identifiers, updating the basic
+management information associated with a self-sovereign identifier, and
+verifying the cryptographic authenticity of verifiable claims associated
+with a self-sovereign identifiers.
+    </dd>
+  </dl>
+
+  <h2>Architecture Benefits to Stakeholders</h2>
+
+
+  <dl>
+    <dt><strong><em>Issuers</em></strong></dt>
+    <dd>
+      <ul>
+        <li>
+Levels competitive playing field (not just a few super-providers)
+        </li>
+        <li>
+Ability to participate in broader ecosystem resulting in common tooling to 
+issue verifiable claims
+        </li>
+        <li>
+Avoidance of vendor-specific solutions and lock-in
+        </li>
+        <li>
+Potential for reduced infrastructure needs due to self-sovereign architecture
+        </li>
+      </ul>
+    </dd>
+    <dt><strong><em>Repositories</em></strong></dt>
+    <dd>
+      <ul>
+        <li>
+Level competitive playing field (not just a few super-providers)
+        </li>
+        <li>
+Ability to participate in a broader ecosystem of common tooling to store 
+verifiable claims
+        </li>
+        <li>
+Higher-stakes verifiable claims being stored resulting in more value-added 
+services
+        </li>
+      </ul>
+    </dd>
+    <dt><strong><em>Inspectors</em></strong></dt>
+    <dd>
+      <ul>
+        <li>
+Ability to participate in a broader ecosystem of common tooling to inspect 
+verifiable claims
+        </li>
+        <li>
+Richer set of verifiable claims to choose from, resulting in better 
+understanding of the user
+        </li>
+        <li>
+Increased ability and choice to trust authenticity of verifiable claims
+        </li>
+      </ul>
+    </dd>
+    <dt><strong><em>Holders</em></strong></dt>
+    <dd>
+      <ul>
+        <li>
+No identity provider lock-in
+        </li>
+        <li>
+Digital claims that can be used in more than one location
+        </li>
+        <li>
+Ability to aggregate verifiable claims as cohesive digital identities
+        </li>
+        <li>
+Privacy-enhanced sharing mechanism
+        </li>
+        <li>
+Control of confidential information
+        </li>
+        <li>
+Elimination of repetitive input at websites
+        </li>
+        <li>
+Reduction in the need to input personally identifiable information (PII)
+        </li>
+      </ul>
+    </dd>
+  </dl>
+</body>
+
+</html>
