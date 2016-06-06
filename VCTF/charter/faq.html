@@ -18,7 +18,11 @@
 
   <h1 id="title">[EDITOR'S DRAFT] Verifiable Claims Working Group Frequently Asked Questions</h1>
 
-      <p class="mission">The mission of the Verifiable Claims Working Group is to make expressing, exchanging, and verifying claims easier and more secure on the Web. Please review the <a href="vcwg-draft.html">draft charter</a> if you have not already done so.</p>
+  <p class="mission">
+The mission of the Verifiable Claims Working Group is to make expressing,
+exchanging, and verifying claims easier and more secure on the Web. Please
+review the <a href="./">draft charter</a> if you have not already done so.
+  </p>
 
   <h2 id="problem">What problem is this work attempting to address?</h2>
 
@@ -89,6 +93,189 @@ A user-centric, privacy-enhancing, verifiable claims ecosystem is defined as hav
   <li>Semantics are decentralized. Vocabularies for verifiable claims may evolve independently in the communities that use them. Issuers may use these to indicate the meaning of their verifiable claims.</li>
   <li>Trust is decentralized. Consumers of verifiable claims decide which issuers to trust.</li>
 </ul>
+
+  <h2 id="js-api">Why is there no Javascript API for Web Browsers?</h2>
+
+    <p>
+An early version of the Verifiable Claims Working Group charter included a
+Javascript browser API, but the proposal raised concern among W3C members that
+doing so would be controversial.
+    </p>
+    <p>
+It was asserted that OpenID Connect or potentially the FIDO, Web Authentication,
+or Credential Management API should be the protocol that carries verifiable
+claims. This resulted in strong opinions on either side of the debate on
+exactly what a verifiable claims browser API should standardize (a new
+protocol, or a protocol based on existing protocols).
+    </p>
+    <p>
+In the end, there was consensus that having a standard data model and a few
+syntaxes for expressing that data model would increase interoperability and
+allow for experimentation in the use of verifiable claims in a variety of
+existing protocols to see if those existing protocols would be capable of
+achieving the
+<a href="../use-cases/">use cases</a> and
+<a href="../architecture/">verifiable claims architecture</a>
+that has been proposed.
+    </p>
+
+  <h2 id="incubation">Has this work been incubated in a Community Group?</h2>
+
+    <p>
+Yes. The proposed
+<a href="../charter/">charter</a>,
+<a href="../architecture/">architecture</a>,
+<a href="../specification/">specification</a>,
+and all
+<a href="../">supporting documentation</a>
+has been incubating for 2+ years in the
+<a href="https://www.w3.org/community/credentials/">Credentials Community Group</a>,
+<a href="https://www.w3.org/community/webpayments/">Web Payments Community Group</a>,
+and the
+<a href="http://w3c.github.io/vctf/">Verifiable Claims Task Force</a>.
+The work has been reviewed by over 50 organizations with strong support for
+the identified problem statement, goals, and general direction of the work.
+    </p>
+
+  <h2 id="blockchains">How does Blockchain or Decentralized Ledger Technology relate to this work?</h2>
+
+    <p>
+In general, Verifiable Claims can be stored or referenced by Blockchain and
+Decentralied Ledger technology. The proposed data model and syntaxes are
+designed to be storage system and transaction protocol agnostic and thus
+complimentary to Blockchain and Decentralized Ledger Technology.
+    </p>
+
+  <h2 id="confidence">How is confidence/level of assurance guaranteed?</h2>
+
+  <p>
+Verifiable Claims are designed to have a flexible trust model where the
+inspector of a verifiable claim can apply local confidence/LoA rules to a
+set of claims, or delegate that responsibility to a third party (much like
+trust is delegated to third parties via the Certificate Authority system
+today). The important point to remember is that there may be many different
+types of confidence/LoA guarantees related to Verifiable Claims and all of
+them may co-exist in the proposed architecture.
+  </p>
+
+  <h2 id="architecture">Is there a proposed architecture where these verifiable claims are used?</h2>
+
+  <p>
+Yes, there is a
+<a href="../architecture/">proposed Verifiable Claims Architecture</a>. Note
+that all parts of the architecture are not going to be achieved with the first
+iteration of the Verifiable Claims Working Group. Instead, a minimal first
+step is being proposed. Understanding the long-term vision/architecture of
+where some of the community would like to end up is captured in the previously
+linked document.
+  </p>
+
+  <h2 id="strategy">Wouldn't starting in a single industry vertical, like education, be a better strategy?</h2>
+
+  <p>
+It has been proposed that starting the Verifiable Claims work in a single
+industry vertical, like education, would help focus the work on a specific
+solution. Then, if the work is successful, it could be generalized to other
+market verticals.
+  </p>
+
+  <p>
+Survey responses to the charter, interviews, and ad-hoc conversations on the
+matter show that this approach is not desirable for at least two reasons.
+The first is that responses indicate that there are already point solutions
+in the marketplace and because each approach was hyper focused on a
+specific vertical that the solutions tended to make assumptions on the
+market vertical in which they were operating leading to solutions that
+don't scale outside of the vertical. The second is that there are already
+organizations from finance, education, healthcare, and government involved with
+use cases that they would like to have addressed in the first iteration.
+These same organizations have noted that it would be a mistake to start in
+any specific vertical rather than a more generalized approach.
+  </p>
+
+  <h2 id="identity">Is this yet another attempt to "solve the Identity problem" on the Internet?</h2>
+
+  <p>
+No, "Identity" is a standardization tar pit and the proposers of the
+Verifiable Claims Working Group would like to stay as far away from trying to
+"solve Identity" as possible. What is being proposed by the
+Verifiable Claims Working Group Charter is to address a very specific
+problem: How does entity X make a statement about entity Y in a verifiable
+manner? A side-effect of solving that problem may result in eating away at
+the "Identity Problem" but that is certainly not the primary goal of the
+Verifiable Claims Working Group.
+  </p>
+
+  <h2 id="business-models">What are the economic incentives for using verifiable claims?</h2>
+
+  <p>
+There are a number of economic incentives and business models that have
+been identified to ensure that there is an incentive for all actors
+to participate in the ecosystem. These incentives are broken down by actor
+below:
+  </p>
+
+  <ul>
+    <li>
+Issuers
+      <ul>
+        <li>
+Pay-to-issue - issuers charge test takers (holders) for qualifying exams and
+then issue digital credentials if the test taker passes the exam.
+        </li>
+        <li>
+Pay-to-check - issuers charge holders or inspectors when a credential is
+checked.
+        </li>
+        <li>
+Pay-to-deep-verify - issuers charge inspectors to access more pertinent
+details associated with a credential, such as analytics information on a
+test score.
+        </li>
+      </ul>
+    </li>
+    <li>
+Repositories
+      <ul>
+        <li>
+Enterprise storage - repositories charge holders yearly service fees to store
+credentials, ensure regular backups, provide alerts when credentials
+lapse, etc.
+        </li>
+        <li>
+Career advice - repositories charge holders for making career
+advancement recommendations.
+        </li>
+      </ul>
+    </li>
+    <li>
+Inspectors
+      <ul>
+        <li>
+Fraud/error reduction - being able to cryptographically verify claims
+provided by entities and asserted by third parties reduces the likelyhood
+of false self-reporting by people and organizations.
+        </li>
+        <li>
+Cost savings - fully digital credentials enable access and authorization to
+services to be automated, reducing operational costs.
+        </li>
+      </ul>
+    </li>
+    <li>
+Holders
+      <ul>
+        <li>
+Reduced friction - easier to do more complex tasks, such as
+self-education or opening a bank account via the Web.
+        </li>
+        <li>
+Career advancement - having a standard mechanism to express one's skillset
+enables more automated help when it comes to career advancement.
+        </li>
+      </ul>
+    </li>
+  </ul>
 
   <h2 id="user-centric">What is meant by "user-centric"?</h2>
 
