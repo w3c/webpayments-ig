@@ -39,6 +39,11 @@ the reader:
   acting on behalf of that participant) in order to transfer funds or
   securities.</dd>
 
+  <dt><dfn lt="browser-based payment app|browser-based payment apps">
+  browser-based payment app</dfn></dt>
+
+  <dd>A <a>payment app</a> that runs in a <a>browser</a>.</dd>
+
   <dt><dfn>clearing</dfn></dt>
 
   <dd>[ECB] the process of transmitting, reconciling and, in some cases,
@@ -58,6 +63,12 @@ the reader:
   <dd>An entity paying to receive goods, services, or other things of
   value; abstractly known as a payer.</dd>
 
+  <dt><dfn lt="displayed payment app|displayed payment apps">displayed
+  payment app</dfn></dt>
+
+  <dd>A <a title="matching payment app">matching</a> or <a>recommended
+  payment app</a> presented by the <a>browser</a> for user selection.</dd>
+
   <dt><dfn lt="electronic money institution|electronic money institutions">electronic money institution</dfn></dt>
 
   <dd>[ECB] a term used in EU legislation to designate credit
@@ -65,6 +76,19 @@ the reader:
   because their activity is limited to the issuance of electronic money
   and the provision of financial and non-financial services closely
   related to the issuance of electronic money.</dd>
+
+  <dt><dfn lt="enabled payment app|enabled payment apps">enabled payment
+  app</dfn></dt>
+
+  <dd>A <a>registered payment app</a> with at least one <a>enabled
+  payment method</a>.</dd>
+
+  <dt><dfn lt="enabled payment method|enabled payment methods">enabled
+  payment method</dfn></dt>
+
+  <dd>For a given <a>payment app</a>, an enabled <a>payment method</a>
+  is a <a>payment method</a> the user has configured the <a>payment
+  app</a> to support.</dd>
 
   <dt><dfn lt="entity|entities">entity</dfn></dt>
 
@@ -81,21 +105,66 @@ the reader:
   limitations as to who may join the scheme, as long as the requirements
   of the scheme are met.</dd>
 
+  <dt><dfn lt="headless payment app|headless payment apps">headless
+  payment app</dfn></dt>
+
+  <dd>A <a>payment app</a> that has no user interface but communicates
+  using Web technology (such as HTTP). For example, one could set up an
+  HTTP server that receives <a>payment requests</a> via an HTTP request
+  and returns a <a>payment response</a> via HTTP. User experiences include
+  using a native mobile app with out-of-band communication via HTTP, IOT
+  payments, and configuration by the user to make payments automatically.</dd>
+
   <dt><dfn lt="identity|identities">identity</dfn></dt>
 
   <dd>A set of information that can be used to identify a particular
   entity such as a person, software agent, or organization. An entity
   may have multiple identities associated with it.</dd>
 
+  <dt><dfn lt="ignored payment app|ignored payment apps">ignored payment
+  app</dfn></dt>
+
+  <dd>A <a>payment app</a> that, per user configuration, the <a>user
+  agent</a> does not display as matching and does not invoke for
+  <a>payment</a>. A <a>payment app</a> may be ignored for some
+  <a>transactions</a> and not ignored for others. For instance, if a
+  <a>browser</a>allows a user to configure a default <a>payment app</a>
+  for a particular Web site, other <a>payment apps</a> are considered
+  ignored for that site.</dd>
+
+  <dt><dfn lt="invoked payment app|invoked payment apps">invoked payment
+  app</dfn></dt>
+
+  <dd>A <a>selected payment app</a> that the <a>browser</a> has invoked by
+  passing it a <a>payment request</a>.</dd>
+
   <dt><dfn lt="ledger|ledgers">ledger</dfn></dt>
 
   <dd>[Merriam-Webster] a book containing accounts to which debits and
   credits are posted from books of original entry</dd>
 
+  <dt><dfn lt="matching payment app|matching payment apps">matching
+  payment app</dfn></dt>
+
+  <dd>An <a>enabled payment app</a> that:
+    <ul>
+      <li>has at least one <a>enabled payment method</a> that the
+      <a>payee</a> accepts.</li>
+
+      <li>is not an <a>ignored payment app</a>.</li>
+    </ul>
+  </dd>
+
   <dt><dfn lt="merchant|merchants">merchant</dfn></dt>
 
   <dd>An entity receiving payment for goods, services, or other things
   of value; abstractly known as a payee.</dd>
+
+  <dt><dfn lt="native payment app|native payment apps">native payment
+  apps</dfn></dt>
+
+  <dd>A <a>payment app</a> built with the operating system default
+  technology stack that uses non-Web technologies.</dd>
 
   <dt><dfn lt="payee|payees">payee</dfn></dt>
 
@@ -113,6 +182,22 @@ the reader:
   However, in a technical or statistical sense, it is often used as a
   synonym for <a>transfer order</a></dd>
 
+  <dt><dfn lt="payment app|payment apps">payment app</dfn></dt>
+
+  <dd>A payment app is a component able to process a <a>payment
+  request</a> and return a <a>payment response</a>.</dd>
+
+  <dt><dfn>payment app input</dfn></dt>
+
+  <dd>Data provided to the <a>invoked payment app</a> by the <a>browser</a>.
+  This data is likely to be a subset of the <a>payment request API input</a>
+  (e.g., <a>payment method</a>, <a title="payment method data">payment method
+  specific data</a>, and <a>transaction</a> specific data).</dd>
+
+  <dt><dfn>payment app response</dfn></dt>
+
+  <dd>Data provided by the <a>invoked payment app</a> to the <a>browser</a>.</dd>
+
   <dt><dfn lt="payment instrument|payment instruments">payment instrument</dfn></dt>
 
   <dd>A mechanism used to transfer value from a <a>payer</a> to a
@@ -122,6 +207,54 @@ the reader:
   payment service user and the payment service provider and used in
   order to initiate a payment order. [ECB] a tool or a set of procedures
   enabling the transfer of funds from a payer to a payee.</dd>
+
+  <dt><dfn lt="payment mediator|payment mediators">payment mediator</dfn></dt>
+
+  <dd>The payment mediator sits between the <a>payee</a>'s system and the
+  <a>payer</a>'s <a>payment app</a>(s) and performs a number of functions:
+    <ol>
+      <li>It determines which <a>payment apps</a> can be used to fulfill a
+      <a>payment request</a> given the <a>payee</a>'s accepted <a>payment
+      methods</a>.</li>
+
+      <li>It helps the <a>payer</a> choose one <a>payment app</a> (typically
+      with explicit interaction or prior consent).</li>
+
+      <li>It passes the <a>payment request</a> from the <a>payee</a> to the
+      <a>payer</a>'s selected <a>payment app</a> and passes the <a>payment
+      response</a> from the <a>payment app</a> back to the <a>payee</a>.</li>
+    </ol>
+  </dd>
+
+  <dt><dfn lt="payment method|payment methods">payment method</dfn></dt>
+
+  <dd>A payment method defines how a <a>payment request</a> must be processed.
+  It defines the format and content of the <a>payment request</a> and
+  <a>payment response</a> messages that are exchanged with a <a>payment app</a>.
+  A <a>payment app</a> can process <a>payment requests</a> for one or more
+  <a>payment methods</a>.</dd>
+
+  <dt><dfn lt="payment method data">payment method data</dfn></dt>
+
+  <dd><a>Payment requests</a> and <a>payment responses</a> have a limited set
+  of data elements that are common to all payments, irrespective of the
+  <a>payment method</a>. However, <a>payment methods</a> can define additional
+  custom data that is specific to that <a>payment method</a>. This custom data
+  is called payment method data.</dd>
+
+  <dt><dfn lt="payment method identifier|payment method identifiers">
+  payment method identifier</dfn></dt>
+
+  <dd>A string that uniquely identifies a <a>payment method</a> that a user
+  can use to complete a transaction.</dd>
+
+  <dt><dfn lt="payment method specification|payment method specifications">
+  payment method specification</dfn></dt>
+
+  <dd>A payment method specification defines what <a>payment method data</a>
+  is required in <a>payment requests</a> and <a>payment responses</a> for a
+  particular <a>payment method</a>. It also lists the <a>payment method
+  identifiers</a> that are defined for that <a>payment method</a>.</dd>
 
   <dt><dfn lt="payment orchestrator|payment orchestrators">payment orchestrator</dfn></dt>
 
@@ -139,6 +272,41 @@ the reader:
   <dd>An <a>entity</a> that submits and processes payments using a
   particular <a>payment instrument</a> to a payment network. Examples:
   Stripe, PayPal, Authorize.net, Atos, FedACH.</dd>
+
+  <dt><dfn data-lt="payment request|payment requests">payment request</dfn></dt>
+
+  <dd>A request from a <a>payee</a> to be paid. It contains the
+  details of what to pay and how the payment can be made. How the
+  payment can be made is specified as a list of <a>payment method
+  identifiers</a>. The payment request MUST contain all of the
+  <a>payment method data</a> required for each <a>payment method</a>
+  identified in it's set of supported payment methods.</dd>
+
+  <dt><dfn>payment request API</dfn></dt>
+
+  <dd>The javascript API specified in the
+  <a href="https://w3c.github.io/browser-payment-api/specs/paymentrequest.html">
+  Payment Request API</a> specification. This API can be used by
+  <a>merchants</a> to trigger a payment flow in the <a>user agent</a> or by
+  <a>payment apps</a> to register or update their information in the <a>user
+  agent</a>.</dd>
+
+  <dt><dfn>payment request API input</dfn></dt>
+
+  <dd>Data provided by the <a>payee</a>'s Web application to the <a>browser</a>
+  via the <a>payment request API</a>.</dd>
+
+  <dt><dfn>payment request API response</dfn></dt>
+
+  <dd>Data provided to the <a>payee</a>'s Web application by the <a>browser</a>
+  after completion of the <a>payment request API</a>.</dd>
+
+  <dt><dfn data-lt="payment response|payment responses">payment response</dfn></dt>
+
+  <dd>A response to a <a>payment request</a> (normally the result of
+  processing by a <a>payment app</a>). The content of a payment
+  response will be dependant on how the <a>payment</a> is being
+  processed.</dd>
 
   <dt><dfn lt="payment scheme|payment schemes">payment scheme</dfn></dt>
 
@@ -194,10 +362,28 @@ the reader:
   funds transfer to the <a>payee</a>. PayPal is an example of a push
   payment.</dd>
 
+  <dt><dfn lt="recommended payment app|recommended payment apps">
+  recommended payment app</dfn></dt>
+
+  <dd>An <a>unregistered payment app</a> recommended by the <a>payee</a>
+  or <a>browser</a>.</dd>
+
+  <dt><dfn lt="registered payment app|registered payment apps">registered
+  payment app</dfn></dt>
+
+  <dd>A <a>payment app</a> that the user has successfully registered with
+  the <a>browser</a>.</dd>
+
   <dt><dfn lt="regulator|regulators">regulator</dfn></dt>
 
   <dd>The regulator is responsible for monitoring some payments
   activities and enforcing legal requirements.</dd>
+
+  <dt><dfn lt="selected payment app|selected payment apps">selected payment
+  app</dfn></dt>
+
+  <dd>A <a>displayed payment app</a> selected by the user to process a
+  <a>payment request</a> for a given <a>transaction</a>.</dd>
 
   <dt><dfn>settlement</dfn></dt>
 
@@ -205,6 +391,13 @@ the reader:
   aim of discharging participantsï¿½ obligations through the transfer of
   funds and/or securities. A settlement may be final or
   provisional.</dd>
+
+  <dt><dfn lt="supported payment method|supported payment methods">
+  supported payment method</dfn></dt>
+
+  <dd>For a given <a>payment app</a>, a supported <a>payment method</a> is
+  a <a>payment method</a> the user can configure the <a>payment app</a> to
+  support.</dd>
 
   <dt><dfn>three corner model</dfn></dt>
 
@@ -227,6 +420,24 @@ the reader:
   funds, securities, other financial instruments or commodities) from
   the debtor to the creditor.</dd>
 
+  <dt><dfn lt="unregistered payment app|unregistered payment apps">
+  unregistered payment app</dfn></dt>
+
+  <dd>A <a>payment app</a> that is unknown to the <a>browser</a>, either
+  because it has never been registered, or it has been
+  <a title="unregistered payment app">unregistered</a>.</dd>
+
+  <dt><dfn lt="unsupported payment method|unsupported payment methods">
+  unsupported payment method</dfn></dt>
+
+  <dd>For a given <a>payment app</a>, an unsupported <a>payment method</a>
+  is a <a>payment method</a> the user cannot configure the <a>payment app</a>
+  to support.</dd>
+
+  <dt><dfn lt="user agent|user agents">user agent</dfn></dt>
+
+  <dd>A piece of software that acts on behalf of the user.</dd>
+
   <dt><dfn lt="wallet|wallets">wallet</dfn></dt>
 
   <dd>
@@ -248,4 +459,15 @@ the reader:
     receipts, coupons, and identification.
   </dd>
 
+  <dt><dfn lt="web browser|web browsers|browser|browsers">web browser</dfn></dt>
+
+  <dd>A <a>user agent</a> that allows the user to render and view HTML
+  documents, and navigate the World Wide Web.</dd>
+
+  <dt><dfn lt="web-based payment app|web-based payment apps">web-based
+  payment app</dfn></dt>
+
+  <dd>A <a>payment app</a> built using Open Web Platform technology. This
+  includes both <a>browser-based payment apps</a>i and <a>headless payment
+  apps</a>.</dd>
 </dl>
