@@ -1,4 +1,7 @@
 /* Web Payments Community Group common spec JavaScript */
+/* globals respecConfig, $, require */
+/* exported linkCrossReferences, restrictReferences, fixIncludes */
+
 var opencreds = {
   // Add as the respecConfig localBiblio variable
   // Extend or override global respec references
@@ -105,6 +108,7 @@ var termLists = [] ;
 var termsReferencedByTerms = [] ;
 
 function restrictReferences(utils, content) {
+    "use strict";
     var base = document.createElement("div");
     base.innerHTML = content;
 
@@ -133,8 +137,13 @@ function restrictReferences(utils, content) {
     // also within a 'dl' element of class 'termlist', then
     // consider it an internal reference and ignore it.
 
+    return (base.innerHTML);
+}
+
+require(["core/pubsubhub"], function(respecEvents) {
+    "use strict";
     respecEvents.sub('end', function(message) {
-        if (message == 'core/link-to-dfn') {
+        if (message === 'core/link-to-dfn') {
             // all definitions are linked; find any internal references
             $(".termlist a.internalDFN").each(function() {
                 var $r = $(this);
@@ -169,7 +178,7 @@ function restrictReferences(utils, content) {
                             clearRefs(item);
                         }
                     });
-                };
+                }
                 // make sure this term doesn't get removed
                 if (termNames[theTerm]) {
                     delete termNames[theTerm];
@@ -205,5 +214,4 @@ function restrictReferences(utils, content) {
             });
         }
     });
-    return (base.innerHTML);
-}
+});
