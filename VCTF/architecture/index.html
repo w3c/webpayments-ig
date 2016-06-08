@@ -19,16 +19,13 @@
   <h1 id="title">[EDITOR'S DRAFT] Proposed Verifiable Claims Architecture</h1>
 
   <p>
-<strong>self-sovereign</strong> - an architectural principle where the holder
-of a verifiable claim is in complete control of their identifier and
-where their verifiable claims are stored.
-  </p>
-
-  <p>
-There is currently no widely used self-sovereign, privacy-enhancing
-standard for expressing and transacting verifiable claims (aka:
-credentials, attestations) via the Web. This a summary of a proposed
-architecture to address part of this problem.
+A <strong>self-sovereign</strong> architecture for verifiable claims is one
+where the holder of a verifiable claim is in complete control of their
+identifier, where their verifiable claims are stored, and how they are used.
+There is currently no widely used self-sovereign, privacy-enhancing standard
+for expressing and transacting verifiable claims (aka: credentials,
+attestations) via the Web. This a summary of a proposed architecture to
+address part of this problem.
   </p>
 
   <h2>Proposed Verifiable Claims Architecture Goals</h2>
@@ -99,7 +96,7 @@ proprietary service username, etc.).
 
 
   <dl>
-    <dt><strong><em>Issuers</em></strong></dt>
+    <dt><strong><em>All Stakeholders</em></strong></dt>
     <dd>
       <ul>
         <li>
@@ -107,45 +104,10 @@ Levels competitive playing field (not just a few super-providers)
         </li>
         <li>
 Ability to participate in broader ecosystem resulting in common tooling to
-issue verifiable claims
+process verifiable claims
         </li>
         <li>
 Avoidance of vendor-specific solutions and lock-in
-        </li>
-        <li>
-Potential for reduced infrastructure needs due to self-sovereign architecture
-        </li>
-      </ul>
-    </dd>
-    <dt><strong><em>Repositories</em></strong></dt>
-    <dd>
-      <ul>
-        <li>
-Level competitive playing field (not just a few super-providers)
-        </li>
-        <li>
-Ability to participate in a broader ecosystem of common tooling to store
-verifiable claims
-        </li>
-        <li>
-Higher-stakes verifiable claims being stored resulting in more value-added
-services
-        </li>
-      </ul>
-    </dd>
-    <dt><strong><em>Inspectors</em></strong></dt>
-    <dd>
-      <ul>
-        <li>
-Ability to participate in a broader ecosystem of common tooling to inspect
-verifiable claims
-        </li>
-        <li>
-Richer set of verifiable claims to choose from, resulting in better
-understanding of the user
-        </li>
-        <li>
-Increased ability and choice to trust authenticity of verifiable claims
         </li>
       </ul>
     </dd>
@@ -172,6 +134,58 @@ Elimination of repetitive input at websites
         </li>
         <li>
 Reduction in the need to input personally identifiable information (PII)
+        </li>
+      </ul>
+    </dd>
+    <dt><strong><em>Issuers</em></strong></dt>
+    <dd>
+      <ul>
+        <li>
+Any person or organization may issue verifiable claims, not just a select few.
+        </li>
+        <li>
+Reduced software costs via standards-based, off-the-shelf verifiable claim
+issuing software.
+        </li>
+        <li>
+Reduced infrastructure costs due generalized claim issuing software.
+        </li>
+      </ul>
+    </dd>
+    <dt><strong><em>Repositories</em></strong></dt>
+    <dd>
+      <ul>
+        <li>
+Higher-stakes verifiable claims being stored resulting in more value-added
+services on top of storage services
+        </li>
+        <li>
+Any person or organization may provide verifiable claims storage and management
+solutions, not just a few super providers
+        </li>
+        <li>
+Reduced software costs via standards-based, off-the-shelf verifiable
+claim repository software.
+        </li>
+      </ul>
+    </dd>
+    <dt><strong><em>Inspectors</em></strong></dt>
+    <dd>
+      <ul>
+        <li>
+Better understanding of the user due to a richer set of verifiable claims 
+to choose from
+        </li>
+        <li>
+Increased ability and choice to trust authenticity of verifiable claims
+        </li>
+        <li>
+Any person or organization may inspect and verify the validity of a set of
+verifiable claims.
+        </li>
+        <li>
+Reduced software costs via standards-based, off-the-shelf verifiable claim
+inspection software.
         </li>
       </ul>
     </dd>
