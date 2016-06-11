@@ -27,7 +27,9 @@ review the <a href="./">draft charter</a> if you have not already done so.
   <h2 id="problem">What problem is this work attempting to address?</h2>
 
    <p>
-There is currently no widely used user-centric and privacy-enhancing standard
+There is currently no widely used
+<a href="#self-sovereign">self-sovereign</a>
+and privacy-enhancing standard
 for expressing and transacting verifiable claims (aka: credentials,
 attestations) via the Web.
    </p>
@@ -62,23 +64,76 @@ their digital identities in a cohesive way.
   <h2 id="real-problem">Is there agreement that this is a problem?</h2>
 
     <p>
-Forty-three (43) organizations that either issue verifiable claims or
-consume verifiable claims were surveyed to determine their needs in this space.
-Extensive interviews were conducted among industry experts that have worked
-in this space over the past 15 years. A Community Group of 77 people have
-been incubating this work for almost 2 years. There is general consensus
-that this is a problem that should be, and can be, addressed.
+Yes, there is broad consensus on the problem statement and how to address it.
     </p>
 
     <p>
-There is a <a href="VCTF-final-report.html">Verifiable Claims Final Report</a> summarizing the
-findings and consensus around the problem statement.
+A Community Group of 77 people have been incubating this work for almost 2
+years, performing market research as well as researching technical
+approaches to the problem. In September 2015, forty-three (43) organizations
+that either issue verifiable claims or consume verifiable claims were surveyed
+to determine their needs in this space. In January 2016, extensive interviews
+were conducted among industry experts that have worked in this space over
+the past 15 years. There is a
+<a href="../charter/VCTF-final-report.html">Verifiable Claims Final Report</a>
+summarizing the findings and consensus around the problem statement.
     </p>
 
-  <h2 id="requirements">What kind of requirements have been identified for a user-centric, privacy-enhancing verifiable claims ecosystem?</h2>
+    <p>
+In May 2016,
+<a href="../support/">an industry survey</a>
+was performed. These are the findings from that industry survey:
+    </p>
+
+  <ul>
+    <li>
+56 organizations responded (out of 91 that were polled).
+    </li>
+    <li>
+93% supported the Verifiable Claims
+<a href="http://w3c.github.io/webpayments-ig/VCTF/charter/#problem">Problem Statement</a> and its accuracy.
+    </li>
+    <li>
+96% supported the
+<a href="http://w3c.github.io/webpayments-ig/VCTF/charter/#scope">Goals</a>
+proposed by the Verifiable Claims work and asserted that they were good
+goals to pursue.
+    </li>
+    <li>
+87.5% agreed that the
+<a href="http://w3c.github.io/webpayments-ig/VCTF/charter/#scope">Scope of Work</a>
+and
+<a href="http://w3c.github.io/webpayments-ig/VCTF/charter/#deliverables">Deliverables</a>
+would help address the Problem Statement.
+    </li>
+    <li>
+64% felt that their organizations <a href="../use-cases">use cases</a> were
+included in the highly focused list of use cases that the Working Group should
+consider.
+    </li>
+    <li>
+35 organizations said that they would actively participate in the work. The
+breakdown of those organizations are:
+      <ul>
+        <li>
+17 W3C Members committed to participating in the work (out of around 40 that
+were selected to be contacted).
+        </li>
+        <li>
+10 organizations committed to joining W3C if the work was started.
+        </li>
+        <li>
+8 organizations said that they would perform periodic technical reviews of the
+work but would not join W3C (due to budget/bandwidth concerns).
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2 id="requirements">What kind of requirements have been identified for a self-sovereign, privacy-enhancing verifiable claims ecosystem?</h2>
 
 <p>
-A user-centric, privacy-enhancing, verifiable claims ecosystem is defined as having the following requirements:
+A self-sovereign, privacy-enhancing, verifiable claims ecosystem is defined as having the following requirements:
 </p>
 
 <ul>
@@ -206,6 +261,109 @@ the "Identity Problem" but that is certainly not the primary goal of the
 Verifiable Claims Working Group.
   </p>
 
+  <h2 id="benefits">What are the ecosystem benefits for stakeholders?</h2>
+
+  <p>
+At least the following benefits have been documented by organizations
+participating in the pre-standardization activity:
+  </p>
+
+  <dl>
+    <dt><strong><em>All Stakeholders</em></strong></dt>
+    <dd>
+      <ul>
+        <li>
+Levels competitive playing field (not just a few super-providers)
+        </li>
+        <li>
+Ability to participate in broader ecosystem resulting in common tooling to
+process verifiable claims
+        </li>
+        <li>
+Avoidance of vendor-specific solutions and lock-in
+        </li>
+      </ul>
+    </dd>
+    <dt><strong><em>Holders</em></strong></dt>
+    <dd>
+      <ul>
+        <li>
+No identity provider lock-in
+        </li>
+        <li>
+Digital claims that can be used in more than one location
+        </li>
+        <li>
+Ability to aggregate verifiable claims as cohesive digital identities
+        </li>
+        <li>
+Privacy-enhanced sharing mechanism
+        </li>
+        <li>
+Control of confidential information
+        </li>
+        <li>
+Elimination of repetitive input at websites
+        </li>
+        <li>
+Reduction in the need to input personally identifiable information (PII)
+        </li>
+      </ul>
+    </dd>
+    <dt><strong><em>Issuers</em></strong></dt>
+    <dd>
+      <ul>
+        <li>
+Any person or organization may issue verifiable claims, not just a select few.
+        </li>
+        <li>
+Reduced software costs via standards-based, off-the-shelf verifiable claim
+issuing software.
+        </li>
+        <li>
+Reduced infrastructure costs due generalized claim issuing software.
+        </li>
+      </ul>
+    </dd>
+    <dt><strong><em>Repositories</em></strong></dt>
+    <dd>
+      <ul>
+        <li>
+Higher-stakes verifiable claims being stored resulting in more value-added
+services on top of storage services
+        </li>
+        <li>
+Any person or organization may provide verifiable claims storage and management
+solutions, not just a few super providers
+        </li>
+        <li>
+Reduced software costs via standards-based, off-the-shelf verifiable
+claim repository software.
+        </li>
+      </ul>
+    </dd>
+    <dt><strong><em>Inspectors</em></strong></dt>
+    <dd>
+      <ul>
+        <li>
+Better understanding of the user due to a richer set of verifiable claims
+to choose from
+        </li>
+        <li>
+Increased ability and choice to trust authenticity of verifiable claims
+        </li>
+        <li>
+Any person or organization may inspect and verify the validity of a set of
+verifiable claims.
+        </li>
+        <li>
+Reduced software costs via standards-based, off-the-shelf verifiable claim
+inspection software.
+        </li>
+      </ul>
+    </dd>
+  </dl>
+
   <h2 id="business-models">What are the economic incentives for using verifiable claims?</h2>
 
   <p>
@@ -238,12 +396,12 @@ test score.
 Repositories
       <ul>
         <li>
-Enterprise storage - repositories charge holders yearly service fees to store
+Enterprise plans - repositories charge holders yearly service fees to store
 credentials, ensure regular backups, provide alerts when credentials
 lapse, etc.
         </li>
         <li>
-Career advice - repositories charge holders for making career
+Value-added services - repositories charge holders for making career
 advancement recommendations.
         </li>
       </ul>
@@ -277,16 +435,16 @@ enables more automated help when it comes to career advancement.
     </li>
   </ul>
 
-  <h2 id="user-centric">What is meant by "user-centric"?</h2>
+  <h2 id="self-sovereign">What does "self-sovereign" mean?</h2>
 
   <p>
-In a <strong id="user-centric">user-centric</strong> system, users exist
+In a <strong id="self-sovereign">self-sovereign</strong> system, users exist
 independently from services. To contrast, in a service centric system
 users are tightly bound to a particular service.
   </p>
 
    <p>
-A verifiable claims ecosystem that is <a href="#user-centric">user-centric</a>
+A verifiable claims ecosystem that is <a href="#self-sovereign">self-sovereign</a>
 has the following qualities:
   </p>
 
@@ -327,7 +485,7 @@ the consumer to their agent or to issuers.
 
     <p>
 A <strong id="service-centric">service-centric</strong> system, users
-are tightly bound to services. To contrast, in a user-centric
+are tightly bound to services. To contrast, in a self-sovereign
 system, users exist independently from services.
     </p>
 
@@ -372,7 +530,7 @@ Consumers may have to register with user's agents to consume verifiable claims.
 
   <p>
 LDAP, SAML, and OpenID Connect are attribute exchange systems that are
-service-centric. The proposed work is attempting to create a user-centric,
+service-centric. The proposed work is attempting to create a self-sovereign,
 privacy-enhancing system, but there is overlap.
   </p>
 
