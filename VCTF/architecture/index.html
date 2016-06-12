@@ -24,76 +24,129 @@ where the holder of a verifiable claim is in complete control of their
 identifier, where their verifiable claims are stored, and how they are used.
 There is currently no widely used self-sovereign, privacy-enhancing standard
 for expressing and transacting verifiable claims (aka: credentials,
-attestations) via the Web. This a summary of a proposed architecture to
+attestations) via the Web. This a summary of an architecture that aspires to
 address part of this problem.
   </p>
 
-  <h2>Proposed Verifiable Claims Architecture Goals</h2>
+  <h2 id="goals">Proposed Verifiable Claims Architecture Goals</h2>
 
-  <ol>
-    <li>
-Create a standard way for users to assert their verifiable qualifications to a
-service provider in a way that reduces fraud and enhances website
-usability by removing the need to manually enter verifiable claims.
-    </li>
-    <li>
-Ensure that holders and their verifiable claims may be independent from
-service providers.
-    </li>
-    <li>
-Ensure that there is an interoperable standard capable of expressing
-verifiable claims that works in the same way across different market
-verticals.
-    </li>
-    <li>
-Re-use existing attribute-exchange protocols or create new protocols that are
-capable of transmitting the data in a privacy-enhancing way.
-    </li>
-  </ol>
+  <ul>
+    <li>Enhance website usability by removing the need to manually enter verifiable claims</li>
+    <li>Reduce fraud by creating a standard way to share verifiable qualifications</li>
+    <li>Ensure maximum privacy in claims sharing mechanism</li>
+    <li>Separate production and control of an identifier from the production of claims associated with the identifier</li>
+    <li>Separate control of claims sharing from creation of claims</li>
+    <li>Develop standards for interactions between architectural roles, independent of market vertical</li>
+    <li>Re-use existing protocols where appropriate</li>
+  </ul>
 
-  <h2>Architecture Block Diagram</h2>
+  <h2 id="basic-architecture">Basic Architecture Block Diagram</h2>
 
-  <img style="margin: auto; display: block;" width="50%" src="architecture.svg">
+  <p>
+A basic architecture for verifiable claims must distinguish the essential
+roles of core actors and the relationships between then; how do they interact?
+A role is an abstraction that might be implemented in many different ways. The
+separation of roles suggests likely interfaces and/or protocols for
+standardization. The basic verifiable claims architecture separates the
+basis for identification, the generation of claims associated with an
+identifier, and the processes for managing and using claims:
+  </p>
 
-  <h2>Architecture Terminology</h2>
+  <figure>
+    <img style="margin: auto; display: block;" width="50%" src="basic.svg">
+    <figcaption style="text-align: center;">
+Fig. 1 - The basic Verifiable Claims architecture
+    </figcaption>
+  </figure>
+  <p>
+Although claims mechanisms already exist, they suffer a
+number of inherent limitations, mostly caused by tight integration between
+the production of an identifier and the production of claims, and/or the
+production of claims and the storage of claims. The proposed basic architecture
+decouples the production of an identifier, the production of claims, and the
+storage/usage of claims. This ensures a more modular, flexible, and
+competitive ecosystem.
+  </p>
+
+  <h3 id="basic-terminology">Basic Architecture Terminology</h3>
 
   <dl>
+    <dt><strong><em>Claim</em></strong></dt>
+    <dd>
+A statement made by an entity about a subject. For example: "Jane is a doctor."
+    </dd>
     <dt><strong><em>Verifiable Claim</em></strong></dt>
     <dd>
-A claim that can be cryptographically proven to be non-repudiable, authentic,
+A Claim that can be cryptographically proven to be non-repudiable, authentic,
 and unaltered by bad actors.
     </dd>
-    <dt><strong><em>Holders</em></strong></dt>
+    <dt><strong><em>Subject</em></strong></dt>
     <dd>
-Receive verifiable claims from issuers, store them at repositories that
-they trust, and provide them to inspectors in order to get access to
+The entity that a verifiable claim is about.
+    </dd>
+    <dt><strong><em>Holder</em></strong></dt>
+    <dd>
+Obtain verifiable claims from an Issuer and selectively provide them to
+Requesters. The Holder is often, but not always, the Subject of the claims.
+    </dd>
+    <dt><strong><em>Issuer</em></strong></dt>
+    <dd>
+Provide verifiable claims to Holders.
+    </dd>
+    <dt><strong><em>Requester</em></strong></dt>
+    <dd>
+Request verifiable claims from Holders in order to give them access to
 protected resources.
     </dd>
-    <dt><strong><em>Issuers</em></strong></dt>
+    <dt><strong><em>Identifier Registry</em></strong></dt>
     <dd>
-Provide verifiable claims to holders.
+Mediate creation and verification of globally-unique identifiers
     </dd>
-    <dt><strong><em>Inspectors</em></strong></dt>
+  </dl>
+
+
+  <h2 id="enhanced-architecture">Enhanced Architecture Block Diagram</h2>
+
+  <p>
+The basic architecture separates identifier management from claims management.
+Services such as the Domain Name System (DNS) demonstrate that an independent
+identifier service is feasible and scalable. The enhanced architecture permits
+exploration of the nascent "self-sovereign identifier" concept that is
+essential in some scenarios and some environments. It further decouples
+delegation of claims storage from claims management and provides for claims
+evaluation to be a separate service from an entity that uses the results of
+the evaluation.
+  </p>
+
+  <figure>
+    <img style="margin: auto; display: block;" width="50%" src="enhanced.svg">
+    <figcaption style="text-align: center;">
+Fig. 2 - The enhanced Verifiable Claims architecture
+    </figcaption>
+  </figure>
+
+  <h3 id="enhanced-terminology">Enhanced Architecture Terminology</h3>
+
+  <dl>
+    <dt><strong><em>Repository</em></strong></dt>
     <dd>
-Request verifiable claims from holders in order to give them access to
-protected resources.
+Store and curate verifiable claims on behalf of Holders.
     </dd>
-    <dt><strong><em>Repositories</em></strong></dt>
+    <dt><strong><em>Inspector</em></strong></dt>
     <dd>
-Store and curate verifiable claims on behalf of holders.
+Evaluate the validity of claims using complex business logic, if necessary.
     </dd>
     <dt><strong><em>Decentralized Identifier Registry</em></strong></dt>
     <dd>
-A decentralized registry that enables users to register self-sovereign
-identifiers such that the user is ultimately in control of the identifier.
-This is in contrast to most identifier systems today where the identifier is
-rented or leased from an authority (domain name system, email system,
-proprietary service username, etc.).
+A registry that enables Subjects to register identifiers that are not
+dependent upon a government or any specific service provider. This permits the
+owner/administrator of the identifier to be self-sovereign about its use. This
+is in contrast to systems that merely lease use of the identifier
+(domain name system, email system, proprietary service username, etc.).
     </dd>
   </dl>
 
   <h2>Architecture Benefits to Stakeholders</h2>
-
 
   <dl>
     <dt><strong><em>All Stakeholders</em></strong></dt>
@@ -173,7 +226,7 @@ claim repository software.
     <dd>
       <ul>
         <li>
-Better understanding of the user due to a richer set of verifiable claims 
+Better understanding of the user due to a richer set of verifiable claims
 to choose from
         </li>
         <li>
