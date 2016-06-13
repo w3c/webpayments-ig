@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>[EDITOR'S DRAFT] Proposed Verifiable Claims Architecture</title>
+    <link rel="stylesheet" href="//www.w3.org/2005/10/w3cdoc.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="//www.w3.org/Guide/pubrules-style.css"/>
+    <link rel="stylesheet" type="text/css" href="//www.w3.org/2006/02/charter-style.css"/>
+</head>
+
+<body>
+  <p>
+      <a href="http://www.w3.org/"><img alt="W3C" height="48" src="//www.w3.org/Icons/w3c_home"
+                                                     width="72"/></a>
+      <a class="domainlogo" href="/TandS/"><img src="http://www.w3.org/Icons/tands"
+                                                alt="Technology and Society Domain"/></a>
+  </p>
+
+  <h1 id="title">[EDITOR'S DRAFT] Proposed Verifiable Claims Architecture</h1>
+
+  <p>
+A <strong>self-sovereign</strong> architecture for verifiable claims is one
+where the holder of a verifiable claim is in complete control of their
+identifier, where their verifiable claims are stored, and how they are used.
+There is currently no widely used self-sovereign, privacy-enhancing standard
+for expressing and transacting verifiable claims (aka: credentials,
+attestations) via the Web. This a summary of an architecture that aspires to
+address part of this problem.
+  </p>
+
+  <h2 id="goals">Proposed Verifiable Claims Architecture Goals</h2>
+
+  <ul>
+    <li>Enhance website usability by removing the need to manually enter verifiable claims</li>
+    <li>Reduce fraud by creating a standard way to share verifiable qualifications</li>
+    <li>Ensure maximum privacy in claims sharing mechanism</li>
+    <li>Separate production and control of an identifier from the production of claims associated with the identifier</li>
+    <li>Separate control of claims sharing from creation of claims</li>
+    <li>Develop standards for interactions between architectural roles, independent of market vertical</li>
+    <li>Re-use existing protocols where appropriate</li>
+  </ul>
+
+  <h2 id="verifiable-claim">The Structure of a Verifiable Claim</h2>
+
+  <p>
+In order to understand the Verifiable Claims Architecture, we propose the
+following terminology:
+  </p>
+
+  <dl>
+    <dt><strong><em>Claim</em></strong></dt>
+    <dd>
+A statement made by an entity about a subject.
+    </dd>
+    <dt><strong><em>Verifiable Claim</em></strong></dt>
+    <dd>
+A Claim that can be cryptographically proven to be non-repudiable, authentic,
+and unaltered by bad actors.
+    </dd>
+    <dt><strong><em>Subject</em></strong></dt>
+    <dd>
+The entity that a verifiable claim is about. The subject is identified by
+an identifier.
+    </dd>
+  </dl>
+
+  <p>
+A set of verifiable claims are composed of four parts:
+  </p>
+
+  <ul>
+    <li>A subject identifier, which identifies the subject.</li>
+    <li>A set of verifiable claims about the subject.</li>
+    <li>Metadata about the claims themselves, such as expiration date.</li>
+    <li>A digital signature by the issuer of the verifiable claims.</li>
+  </ul>
+
+  <figure>
+    <img style="margin: auto; display: block;" width="25%" src="verifiable-claim.svg">
+    <figcaption style="text-align: center;">
+Fig. 1 - The structure of a Verifiable Claim
+    </figcaption>
+  </figure>
+
+  <h2 id="basic-architecture">Architecture Block Diagram</h2>
+
+  <p>
+A basic architecture for verifiable claims must distinguish the essential
+roles of core actors and the relationships between them; how do they interact?
+A role is an abstraction that might be implemented in many different ways. The
+separation of roles suggests likely interfaces and/or protocols for
+standardization. The following roles exist in the Verifiable Claims
+Architecture:
+  </p>
+
+  <dl>
+    <dt><strong><em>Holder</em></strong></dt>
+    <dd>
+Obtain verifiable claims from an Issuer and selectively provide them to
+Requesters. The Holder is often, but not always, the Subject of the claims.
+    </dd>
+    <dt><strong><em>Issuer</em></strong></dt>
+    <dd>
+Provide verifiable claims to Holders.
+    </dd>
+    <dt><strong><em>Requester</em></strong></dt>
+    <dd>
+Request verifiable claims from Holders in order to give them access to
+protected resources.
+    </dd>
+    <dt><strong><em>Identifier Registry</em></strong></dt>
+    <dd>
+Mediate creation and verification of globally-unique identifiers
+    </dd>
+  </dl>
+
+  <figure>
+    <img style="margin: auto; display: block;" width="50%" src="architecture.svg">
+    <figcaption style="text-align: center;">
+Fig. 2 - The basic Verifiable Claims architecture
+    </figcaption>
+  </figure>
+
+  <p>
+As the diagram above depicts, the basic verifiable claims architecture
+separates the basis for identification, the generation of claims associated
+with an identifier, and the processes for managing and using claims.
+  </p>
+
+  </p>
+  <p>
+Although other claims mechanisms already exist, they suffer a
+number of inherent limitations, mostly caused by tight integration between
+the production of an identifier and the production of claims, and/or the
+production of claims and the storage of claims. The proposed basic architecture
+decouples the production of an identifier, the production of claims, and the
+storage/usage of claims. This ensures a more modular, flexible, and
+competitive ecosystem.
+  </p>
+
+  <h2 id="use-case">An Exemplary Use Case</h2>
+
+  <p>
+In order to understand how all of the actors and roles in the ecosystem
+interact, consider the following use case:
+  </p>
+
+  <p>
+Jane wants to apply to graduate school at multiple universities. To do so,
+she must take an exam and send the results of that exam to each university.
+  </p>
+
+  <h3>Holder Registers Subject Identifier</h3>
+
+  <p>
+In order for Jane (Holder and Subject) to have information assigned to her,
+she must get an identifier (Subject Identifier).
+  </p>
+
+  <figure>
+    <img style="margin: auto; display: block;" width="33%" src="flow-get-identifier.svg">
+    <figcaption style="text-align: center;">
+Fig. 3 - The Holder Registers Subject Identifier
+    </figcaption>
+  </figure>
+
+  <h3>Holder Requests Claim from Issuer</h3>
+
+  <p>
+Jane (Holder) then takes a university entrance exam at a testing facility
+(Issuer) and receives proof (Verifiable Claim Set) that she achieved a
+good score.
+  </p>
+
+  <figure>
+    <img style="margin: auto; display: block;" width="50%" src="flow-issue-claim.svg">
+    <figcaption style="text-align: center;">
+Fig. 4 - Holder Requests Claim from Issuer
+    </figcaption>
+  </figure>
+
+
+  <h3>Holder Presents Claim to Requester</h3>
+
+  <p>
+Jane (Holder) applies to a university (Requester) which asks her to provide
+proof (Verifiable Claims) that she got a good score on the entrance exam.
+  </p>
+
+  <figure>
+    <img style="margin: auto; display: block;" width="50%" src="flow-present-claim.svg">
+    <figcaption style="text-align: center;">
+Fig. 5 - Holder Presents Claim to Requester
+    </figcaption>
+  </figure>
+
+  <p>
+The university checks Jane's claims and verifies that she qualifies to apply
+to graduate school.
+  </p>
+
+  <h2 id="benefits">Architecture Benefits to Stakeholders</h2>
+
+  <dl>
+    <dt><strong><em>All Stakeholders</em></strong></dt>
+    <dd>
+      <ul>
+        <li>
+Levels competitive playing field (not just a few super-providers)
+        </li>
+        <li>
+Ability to participate in broader ecosystem resulting in common tooling to
+process verifiable claims
+        </li>
+        <li>
+Avoidance of vendor-specific solutions and lock-in
+        </li>
+      </ul>
+    </dd>
+    <dt><strong><em>Holders</em></strong></dt>
+    <dd>
+      <ul>
+        <li>
+No identity provider lock-in
+        </li>
+        <li>
+Digital claims that can be used in more than one location
+        </li>
+        <li>
+Ability to aggregate verifiable claims as cohesive digital identities
+        </li>
+        <li>
+Privacy-enhanced sharing mechanism
+        </li>
+        <li>
+Control of confidential information
+        </li>
+        <li>
+Elimination of repetitive input at websites
+        </li>
+        <li>
+Reduction in the need to input personally identifiable information (PII)
+        </li>
+      </ul>
+    </dd>
+    <dt><strong><em>Issuers</em></strong></dt>
+    <dd>
+      <ul>
+        <li>
+Any person or organization may issue verifiable claims, not just a select few.
+        </li>
+        <li>
+Reduced software costs via standards-based, off-the-shelf verifiable claim
+issuing software.
+        </li>
+        <li>
+Reduced infrastructure costs due generalized claim issuing software.
+        </li>
+      </ul>
+    </dd>
+    <dt><strong><em>Repositories</em></strong></dt>
+    <dd>
+      <ul>
+        <li>
+Higher-stakes verifiable claims being stored resulting in more value-added
+services on top of storage services
+        </li>
+        <li>
+Any person or organization may provide verifiable claims storage and management
+solutions, not just a few super providers
+        </li>
+        <li>
+Reduced software costs via standards-based, off-the-shelf verifiable
+claim repository software.
+        </li>
+      </ul>
+    </dd>
+    <dt><strong><em>Inspectors</em></strong></dt>
+    <dd>
+      <ul>
+        <li>
+Better understanding of the user due to a richer set of verifiable claims
+to choose from
+        </li>
+        <li>
+Increased ability and choice to trust authenticity of verifiable claims
+        </li>
+        <li>
+Any person or organization may inspect and verify the validity of a set of
+verifiable claims.
+        </li>
+        <li>
+Reduced software costs via standards-based, off-the-shelf verifiable claim
+inspection software.
+        </li>
+      </ul>
+    </dd>
+  </dl>
+</body>
+
+</html>
