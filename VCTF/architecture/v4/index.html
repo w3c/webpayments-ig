@@ -50,17 +50,16 @@ following terminology:
   <dl>
     <dt><strong><em>Claim</em></strong></dt>
     <dd>
-A statement made by an entity about a subject.
-    </dd>
-    <dt><strong><em>Verifiable Claim</em></strong></dt>
-    <dd>
-A Claim that can be cryptographically proven to be non-repudiable, authentic,
-and unaltered by bad actors.
+A statement about a Subject.
     </dd>
     <dt><strong><em>Subject</em></strong></dt>
     <dd>
-The entity that a verifiable claim is about. The subject is identified by
-an identifier.
+The entity that a Claim is about. The Subject is identified by an identifier.
+    </dd>
+    <dt><strong><em>Verifiable Claim</em></strong></dt>
+    <dd>
+A Claim with cryptographically protected authenticity, integrity, and
+non-repudiability.
     </dd>
   </dl>
 
@@ -70,15 +69,18 @@ A set of verifiable claims are composed of four parts:
 
   <ul>
     <li>A subject identifier, which identifies the subject.</li>
-    <li>A set of verifiable claims about the subject.</li>
-    <li>Metadata about the claims themselves, such as expiration date.</li>
-    <li>A digital signature by the issuer of the verifiable claims.</li>
+    <li>A set of claims about the subject.</li>
+    <li>
+Metadata about the claims themselves, such as the entity that made them
+and an expiration date.
+    </li>
+    <li>A digital signature by the issuer of the claims.</li>
   </ul>
 
   <figure>
     <img style="margin: auto; display: block;" width="25%" src="verifiable-claim.svg">
     <figcaption style="text-align: center;">
-Fig. 1 - The structure of a Verifiable Claim
+Fig. 1 - The structure of a set of verifiable claims
     </figcaption>
   </figure>
 
@@ -96,17 +98,16 @@ Architecture:
   <dl>
     <dt><strong><em>Holder</em></strong></dt>
     <dd>
-Obtain verifiable claims from an Issuer and selectively provide them to
+Acquire verifiable claims from an Issuer and selectively provide them to
 Requesters. The Holder is often, but not always, the Subject of the claims.
     </dd>
     <dt><strong><em>Issuer</em></strong></dt>
     <dd>
-Provide verifiable claims to Holders.
+Issue verifiable claims to Holders.
     </dd>
     <dt><strong><em>Requester</em></strong></dt>
     <dd>
-Request verifiable claims from Holders in order to give them access to
-protected resources.
+Request verifiable claims from Holders in order to authenticate them.
     </dd>
     <dt><strong><em>Identifier Registry</em></strong></dt>
     <dd>
@@ -199,6 +200,17 @@ The university checks Jane's claims and verifies that she qualifies to apply
 to graduate school.
   </p>
 
+  <h2 id="detail">Detailed Verifiable Claims Architecture Details</h2>
+
+  <p>
+This document attempts to provide a high-level overview of the Verifiable
+Claims Architecture. While the authors have tried to ensure that it is
+an accurate representation of the architecture, details have been omitted
+that may be interesting to those that want to dive in a bit deeper by
+reading the
+<a href="detailed/">Detailed Verifiable Claims Architecture</a>.
+  </p>
+
   <h2 id="benefits">Architecture Benefits to Stakeholders</h2>
 
   <dl>
@@ -241,6 +253,18 @@ Elimination of repetitive input at websites
         <li>
 Reduction in the need to input personally identifiable information (PII)
         </li>
+        <li>
+Higher-stakes verifiable claims being stored resulting in more value-added
+services on top of storage services
+        </li>
+        <li>
+Any person or organization may provide verifiable claims storage and management
+solutions, not just a few super providers
+        </li>
+        <li>
+Reduced software costs via standards-based, off-the-shelf verifiable
+claim repository software.
+        </li>
       </ul>
     </dd>
     <dt><strong><em>Issuers</em></strong></dt>
@@ -258,24 +282,7 @@ Reduced infrastructure costs due generalized claim issuing software.
         </li>
       </ul>
     </dd>
-    <dt><strong><em>Repositories</em></strong></dt>
-    <dd>
-      <ul>
-        <li>
-Higher-stakes verifiable claims being stored resulting in more value-added
-services on top of storage services
-        </li>
-        <li>
-Any person or organization may provide verifiable claims storage and management
-solutions, not just a few super providers
-        </li>
-        <li>
-Reduced software costs via standards-based, off-the-shelf verifiable
-claim repository software.
-        </li>
-      </ul>
-    </dd>
-    <dt><strong><em>Inspectors</em></strong></dt>
+    <dt><strong><em>Requester</em></strong></dt>
     <dd>
       <ul>
         <li>
