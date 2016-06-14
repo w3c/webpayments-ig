@@ -19,21 +19,35 @@
   <h1 id="title">[EDITOR'S DRAFT] Proposed Verifiable Claims Architecture</h1>
 
   <p>
-A <strong>self-sovereign</strong> architecture for verifiable claims is one
-where the holder of a verifiable claim is in complete control of their
-identifier, where their verifiable claims are stored, and how they are used.
-There is currently no widely used self-sovereign, privacy-enhancing standard
-for expressing and transacting verifiable claims (aka: credentials,
-attestations) via the Web. This a summary of an architecture that aspires to
-address part of this problem.
+It is currently difficult to transmit banking account information, proof of
+age, education qualifications, healthcare data, and other sorts of verified
+information via the Web. These sorts of data are often referred to as
+<strong>verifiable claims</strong>. This a summary of an architecture that
+aspires to address part of this problem.
   </p>
 
-  <h2 id="goals">Proposed Verifiable Claims Architecture Goals</h2>
+  <p>
+Long-term goals for the Verifiable Claims work include:
+  </p>
 
   <ul>
+    <li>
+Establish an architecture where the holder of a verifiable claim is in
+complete control of their identifier, where their claims are stored, and
+how they are used.
+    </li>
     <li>Enhance website usability by removing the need to manually enter verifiable claims</li>
     <li>Reduce fraud by creating a standard way to share verifiable qualifications</li>
     <li>Ensure maximum privacy in claims sharing mechanism</li>
+  </ul>
+
+  <h2 id="goals">Proposed Verifiable Claims Architecture Goals</h2>
+
+  <p>
+Architectural goals for the Verifiable Claims work include:
+  </p>
+
+  <ul>
     <li>Separate production and control of an identifier from the production of claims associated with the identifier</li>
     <li>Separate control of claims sharing from creation of claims</li>
     <li>Develop standards for interactions between architectural roles, independent of market vertical</li>
