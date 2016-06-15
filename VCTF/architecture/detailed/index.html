@@ -98,10 +98,10 @@ Fig. 1 - The structure of a set of verifiable claims
     </figcaption>
   </figure>
 
-  <h2 id="basic-architecture">Architecture Block Diagram</h2>
+  <h2 id="detailed-architecture">Architecture Block Diagram</h2>
 
   <p>
-A basic architecture for verifiable claims must distinguish the essential
+An architecture for verifiable claims must distinguish the essential
 roles of core actors and the relationships between them; how do they interact?
 A role is an abstraction that might be implemented in many different ways. The
 separation of roles suggests likely interfaces and/or protocols for
@@ -125,14 +125,25 @@ Request verifiable claims from Holders in order to authenticate them.
     </dd>
     <dt><strong><em>Identifier Registry</em></strong></dt>
     <dd>
-Mediate creation and verification of globally-unique identifiers
+Mediate creation and verification of globally-unique identifiers. The
+registry MUST manage identifiers in a self-sovereign way.
+    </dd>
+    <dt><strong><em>Repository</em></strong></dt>
+    <dd>
+Store and curate verifiable claims on behalf of Holders.
+    </dd>
+    <dt><strong><em>Inspector</em></strong></dt>
+    <dd>
+Validate verifiable claims on behalf of Requesters. For example, Inspectors may
+provide deeper verification by applying certain industry-specific business
+rules on claims.
     </dd>
   </dl>
 
   <figure>
-    <img style="margin: auto; display: block;" width="50%" src="architecture.svg">
+    <img style="margin: auto; display: block;" width="60%" src="architecture.svg">
     <figcaption style="text-align: center;">
-Fig. 2 - Roles in the basic Verifiable Claims architecture
+Fig. 2 - Roles in the Verifiable Claims architecture
     </figcaption>
   </figure>
 
@@ -188,7 +199,7 @@ good score.
   </p>
 
   <figure>
-    <img style="margin: auto; display: block;" width="50%" src="flow-issue-claim.svg">
+    <img style="margin: auto; display: block;" width="75%" src="flow-issue-claim.svg">
     <figcaption style="text-align: center;">
 Fig. 4 - Holder Requests Claim from Issuer
     </figcaption>
@@ -203,7 +214,7 @@ proof (Verifiable Claims) that she got a good score on the entrance exam.
   </p>
 
   <figure>
-    <img style="margin: auto; display: block;" width="50%" src="flow-present-claim.svg">
+    <img style="margin: auto; display: block;" width="85%" src="flow-present-claim.svg">
     <figcaption style="text-align: center;">
 Fig. 5 - Holder Presents Claim to Requester
     </figcaption>
@@ -212,17 +223,6 @@ Fig. 5 - Holder Presents Claim to Requester
   <p>
 The university checks Jane's claims and verifies that she qualifies to apply
 to graduate school.
-  </p>
-
-  <h2 id="detail">Detailed Verifiable Claims Architecture Details</h2>
-
-  <p>
-This document attempts to provide a high-level overview of the Verifiable
-Claims Architecture. While the authors have tried to ensure that it is
-an accurate representation of the architecture, details have been omitted
-that may be interesting to those that want to dive in a bit deeper by
-reading the
-<a href="detailed/">Detailed Verifiable Claims Architecture</a>.
   </p>
 
   <h2 id="benefits">Architecture Benefits to Stakeholders</h2>
@@ -267,6 +267,11 @@ Elimination of repetitive input at websites
         <li>
 Reduction in the need to input personally identifiable information (PII)
         </li>
+      </ul>
+    </dd>
+    <dt><strong><em>Repositories</em></strong></dt>
+    <dd>
+      <ul>
         <li>
 Higher-stakes verifiable claims being stored resulting in more value-added
 services on top of storage services
