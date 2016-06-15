@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>[EDITOR'S DRAFT] Verifiable Claims Working Group Primer</title>
+    <link rel="stylesheet" href="//www.w3.org/2005/10/w3cdoc.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="//www.w3.org/Guide/pubrules-style.css"/>
+    <link rel="stylesheet" type="text/css" href="//www.w3.org/2006/02/charter-style.css"/>
+</head>
+
+<body>
+  <p>
+      <a href="http://www.w3.org/"><img alt="W3C" height="48" src="//www.w3.org/Icons/w3c_home"
+                                                     width="72"/></a>
+      <a class="domainlogo" href="/TandS/"><img src="http://www.w3.org/Icons/tands"
+                                                alt="Technology and Society Domain"/></a>
+  </p>
+
+  <h1 id="title">[EDITOR'S DRAFT] Verifiable Claims Working Group Primer</h1>
+
+  <p>
+It is currently difficult to transmit banking account information, proof of
+age, education qualifications, healthcare data, and other sorts of verified
+personal information via the Web. These sorts of data are often referred to as
+<strong>verifiable claims</strong>. The mission of the Verifiable Claims
+Working Group is to make expressing, exchanging, and verifying claims easier
+and more secure on the Web.
+  </p>
+
+  <h2 id="problem">Problem Statement</h2>
+
+  <p>
+In existing attribute exchange architectures (like SAML, OpenID Connect,
+Login with SuperProviderX, etc.) users, and their verifiable claims, do not
+independently exist from service providers. This leads to vendor lock-in,
+fragmentation of identity across different services, reduced competition in
+the marketplace, and reduced privacy for all stakeholders. There is no
+interoperable standard capable of expressing and transmitting verifiable
+claims that works the same across industries (e.g., finance, retail,
+education, and healthcare). This leads to fragmented industry-specific
+solutions that are costly and inefficient.
+  </p>
+
+  <h2 id="proposal">The Proposal</h2>
+
+  <p>
+The Credentials Community Group and the Verifiable Claims Task Force of
+Web Payments Interest Group have extensively researched the problem and
+proposed an architecture and specification to enable the interoperable
+expression, exchange, and verification of claims. The narrow scope of work
+in the draft Verifiable Claims Working Group Charter proposes that the first
+step toward broad interoperability is standardizing a data model and
+syntaxes for the expression and verification of verifiable claims.
+  </p>
+
+  <p>
+Specifically, the Verifiable Claims Working Group will Recommend:
+  </p>
+
+  <ul>
+    <li>
+a data model and syntax(es) for the expression of rich verifiable claims,
+including one or more core vocabularies.
+    </li>
+    <li>
+a note specifying how these data models should be used with existing
+attribute exchange protocols, a suggestion that existing protocols should
+be modified, or a suggestion that a new protocol is required to address the
+problems stated earlier in this document.
+    </li>
+  </ul>
+
+  <p>
+The Working Group will NOT define a new protocol for attribute exchange or
+JavaScript browser APIs. These work items may be proposed at a future date
+if there is support for them, but are not necessary to successfully achieve
+the first step of interoperability.
+  </p>
+
+  <h3 id="maturity">Is the proposal mature enough for standardization?</h3>
+
+  <p>
+<strong>Yes</strong>. The work on this proposal has been incubated in multiple
+W3C Community Groups for several years and has benefited from wide review
+during that time period. There are commercial pilot projects underway that
+utilize the technology.
+  </p>
+
+  <h3 id="scope">Is the scope narrow?</h3>
+
+  <p>
+<strong>Yes</strong>. The groups that have put forward the proposal went to
+great lengths to reduce the scope as much as possible to a clearly achievable
+first step.
+  </p>
+
+  <h3 id="support">Is the proposal supported by Industry?</h3>
+
+  <p>
+<strong>Yes</strong>. A recent survey of 56 organizations from diverse
+industries show strong support for the problem statement, goals, scope of
+work, and use cases.
+  </p>
+
+  <h3 id="why-w3c">Why is a W3C standard necessary?</h3>
+
+  <p>
+<strong>Cross-industry interoperability</strong>. Proprietary industry-specific
+solutions for verifiable claims exist but due to their narrow nature they
+often fail to scale outside of a particular industry. A number of survey
+respondents observed that the W3C tends to offer more robust solutions that
+work across industries. In addition, the Verifiable Claims specification is
+built on top of technologies standardized at W3C. For these reasons the
+majority of survey respondents believe that W3C is the right place to do this
+work.
+</p>
+
+  <h3 id="traction">Has support for the proposal gained traction in the last year?</h3>
+
+  <p>
+<strong>Yes</strong>. A survey of organizations involved with verifiable claims
+was performed last year and received 38 supportive responses. The most recent
+survey garnered 52 supportive responses, some from multiple multi-billion
+dollar corporations and government bodies, showing significant and increasing
+support for the work. After changes to the charter, a few large organizations
+changed their position from not supporting or ambivalence to moderate or strong
+support.
+  </p>
+
+  <h3 id="learn">Where can I read a more complete proposal?</h3>
+
+  <p>
+Supporting documentation for the proposal can be found here:
+<a href="http://w3c.github.io/webpayments-ig/VCTF/">http://w3c.github.io/webpayments-ig/VCTF/</a>.
+  </p>
+
+  <p>
+The following documents provide summaries of different aspects of the proposal,
+listed in order of importance:
+  </p>
+
+<ul>
+  <li>
+<a href="../charter/">
+Verifiable Claims Working Group Draft Charter</a>
+- The draft charter that is being proposed for approval by
+W3C membership. 15 minute read.
+  </li>
+  <li>
+<a href="../architecture/">
+Verifiable Claims Architecture</a>
+- A proposed architecture for verifiable claims. 5 minute read.
+  </li>
+  <li>
+<a href="../support/">
+Demonstration of Support for Verifiable Claims
+</a>
+- Survey results proving that the Verifiable Claims work is widely
+supported by industry. 10 minute read.
+  </li>
+  <li>
+<a href="../charter/faq.html">
+Verifiable Claims FAQ
+</a>
+- Frequently asked questions related to the Verifiable Claims work.
+15 minute read.
+  </li>
+  <li>
+<a href="../use-cases/">
+Verifiable Claims Use Cases
+</a>
+- A selection of Verifiable Claims use cases that are representative
+of the work. 30 minute read.
+  </li>
+  <li>
+<a href="http://opencreds.org/specs/source/claims-data-model/">
+Proposed Verifiable Claims Data Model Specification</a>
+- The input specification that the
+Verifiable Claims Working Group will attempt to standardize. 30 minute read.
+  </li>
+  <li>
+<a href="../implementers/">
+Preliminary Implementer Commitments
+</a>
+- A list of companies that have registered their interest in
+deploying the proposed Verifiable Claims solution. 3 minute read.
+  </li>
+</ul>
+
+</body>
+
+</html>
