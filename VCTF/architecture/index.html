@@ -78,18 +78,8 @@ non-repudiability.
   </dl>
 
   <p>
-A set of verifiable claims are composed of four parts:
+A set of verifiable claims is composed of four parts:
   </p>
-
-  <ul>
-    <li>A subject identifier, which identifies the subject.</li>
-    <li>A set of claims about the subject.</li>
-    <li>
-Metadata about the claims themselves, such as the entity that made them
-and an expiration date.
-    </li>
-    <li>A digital signature by the issuer of the claims.</li>
-  </ul>
 
   <figure>
     <img style="margin: auto; display: block;" width="25%" src="verifiable-claim.svg">
@@ -97,6 +87,11 @@ and an expiration date.
 Fig. 1 - The structure of a set of verifiable claims
     </figcaption>
   </figure>
+
+  <p>
+Claim set metadata covers associated information, such as the entity
+that made the claims and an expiration date for the claims.
+  </p>
 
   <h2 id="basic-architecture">Architecture Block Diagram</h2>
 
