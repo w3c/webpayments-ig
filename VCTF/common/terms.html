@@ -8,7 +8,7 @@
 <dl class="termlist">
   <dt><dfn data-lt="verifiable claims|verifiable claim|claims">claim</dfn></dt>
   <dd>
-A statement made by an <a>entity</a> about an <a>identity</a>.
+A statement made by an <a>entity</a> about an <a>identity profile</a>.
   </dd>
   <dt><dfn data-lt="repository|credential repositories|credential repository's">credential repository</dfn></dt>
   <dd>
@@ -17,19 +17,15 @@ claim wallet, that stores and protects access to a <a>holder's</a>
 credentials and verifiable claims.</dd>
   <dt><dfn data-lt="creators">creator</dfn></dt>
   <dd>
-The <a>identity</a> that is associated with creating a particular resource.
+The <a>identity profile</a> that is associated with creating a particular resource.
 For example, the key that created a <a>digital signature</a>.
   </dd>
   <dt><dfn data-lt="credential|credentials">credential</dfn></dt>
   <dd>
 A set of claims that refer to a qualification, achievement, personal quality,
-aspect of an <a>identity</a> such as a name, government ID, preferred payment
+aspect of an <a>identity profile</a> such as a name, government ID, preferred payment
 processor, home address, or university degree typically used to indicate
 suitability.
-  </dd>
-  <dt><dfn data-lt="consumer|consumers|consumer's|credential consumers|credential consumer's">credential consumer</dfn></dt>
-  <dd>
-An <a>entity</a> that requests a <a>credential</a> for processing.
   </dd>
   <dt><dfn data-lt="credential services">credential service</dfn></dt>
   <dd>
@@ -82,17 +78,17 @@ Typically a holder's identity is also the primary subject of the information
 in a credential. A holder is often the <a>entity</a> that initiates the
 transmission of a credential.
   </dd>
-  <dt><dfn data-lt="identities|identity's">identity</dfn></dt>
+  <dt><dfn data-lt="identity profiles|identity profile's">identity profile</dfn></dt>
   <dd>
 A set of information that can be used to identify a particular
 <a>entity</a> such as a person, organization, concept, or device. An
-<a>entity</a> may have multiple identities associated with it.
+<a>entity</a> may have multiple identity profiles.
   </dd>
   <dt><dfn data-lt="identity documents">identity document</dfn></dt>
   <dd>
 A Web-based document that contains statements about a
-particular <a>identity</a>. Identity documents MUST be accessible in
-JSON-LD [[!JSON-LD]] format and MAY be accessible in other RDF-compatible formats.
+particular <a>identity profile</a>. Identity documents MUST be accessible in
+JSON-LD [[JSON-LD]] format and MAY be accessible in other RDF-compatible formats.
   </dd>
   <dt><dfn data-lt="identity owner's">identity owner</dfn></dt>
   <dd>
@@ -100,11 +96,15 @@ An <a>entity</a> that is in control of a particular <a>identity document</a>.
   </dd>
   <dt><dfn data-lt="identity provider's|IdP|IdP's">identity provider</dfn></dt>
   <dd>
-A software service that manages one or more <a>identities</a> and their
+A software service that manages one or more <a>identity profiles</a> and their
 associated <a>credentials</a> on behalf of an <a>entity</a>. It typically
 handles requests to store <a>credentials</a> issued by an
 <a>issuer</a> and to retrieve <a>credentials</a> when requested by a
-<a>credential consumer</a>.
+<a>credential inspector</a>.
+  </dd>
+  <dt><dfn data-lt="credential inspector|credential inspectors|credential inspector's|inspector's|inspectors">inspector</dfn></dt>
+  <dd>
+An <a>entity</a> that requests a <a>credential</a> and then evalutates it.
   </dd>
   <dt><dfn data-lt="issuers|issuer's">issuer</dfn></dt>
   <dd>
@@ -119,7 +119,7 @@ with a particular <a>subject</a>.
   <dd>
 A program, such as a browser or other Web client, that mediates the
 communication between <a>holders</a>, <a>issuers</a> and
-<a>credential consumers</a>.
+<a>credential inspectors</a>.
   </dd>
   <dt><dfn>WebDHT</dfn></dt>
   <dd>
