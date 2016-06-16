@@ -108,13 +108,13 @@ Architecture:
     <dt><strong><em>Holder</em></strong></dt>
     <dd>
 Acquire verifiable claims from an Issuer and selectively provide them to
-Requesters. The Holder is often, but not always, the Subject of the claims.
+Inspectors. The Holder is often, but not always, the Subject of the claims.
     </dd>
     <dt><strong><em>Issuer</em></strong></dt>
     <dd>
 Issue verifiable claims to Holders.
     </dd>
-    <dt><strong><em>Requester</em></strong></dt>
+    <dt><strong><em>Inspector</em></strong></dt>
     <dd>
 Request verifiable claims from Holders in order to authenticate them.
     </dd>
@@ -125,9 +125,9 @@ Mediate creation and verification of globally-unique identifiers
   </dl>
 
   <figure>
-    <img style="margin: auto; display: block;" width="50%" src="architecture.svg">
+    <img style="margin: auto; display: block;" width="60%" src="architecture.svg">
     <figcaption style="text-align: center;">
-Fig. 2 - Roles in the basic Verifiable Claims architecture
+Fig. 2 - Roles and information flows in the basic Verifiable Claims architecture
     </figcaption>
   </figure>
 
@@ -190,17 +190,17 @@ Fig. 4 - Holder Requests Claim from Issuer
   </figure>
 
 
-  <h3>Holder Presents Claim to Requester</h3>
+  <h3>Holder Presents Claim to Inspector</h3>
 
   <p>
-Jane (Holder) applies to a university (Requester) which asks her to provide
+Jane (Holder) applies to a university (Inspector) which asks her to provide
 proof (Verifiable Claims) that she got a good score on the entrance exam.
   </p>
 
   <figure>
     <img style="margin: auto; display: block;" width="50%" src="flow-present-claim.svg">
     <figcaption style="text-align: center;">
-Fig. 5 - Holder Presents Claim to Requester
+Fig. 5 - Holder Presents Claim to Inspector
     </figcaption>
   </figure>
 
@@ -291,7 +291,7 @@ Reduced infrastructure costs due generalized claim issuing software.
         </li>
       </ul>
     </dd>
-    <dt><strong><em>Requester</em></strong></dt>
+    <dt><strong><em>Inspectors</em></strong></dt>
     <dd>
       <ul>
         <li>
