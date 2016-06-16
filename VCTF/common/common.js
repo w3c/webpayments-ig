@@ -133,6 +133,11 @@ function restrictReferences(utils, content) {
     // also within a 'dl' element of class 'termlist', then
     // consider it an internal reference and ignore it.
 
+    return (base.innerHTML);
+}
+
+require(["core/pubsubhub"], function(respecEvents) {
+    "use strict";
     respecEvents.sub('end', function(message) {
         if (message == 'core/link-to-dfn') {
             // all definitions are linked; find any internal references
@@ -205,5 +210,4 @@ function restrictReferences(utils, content) {
             });
         }
     });
-    return (base.innerHTML);
-}
+});
