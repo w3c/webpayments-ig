@@ -18,7 +18,7 @@ Autonumber
 Actor Jane
 Participant "Credential Repository" as CV
 Participant "User Agent" as UA
-Participant "Credential Consumer" as merchant
+Participant "Credential Inspector" as merchant
 
 Jane->merchant: Navigate to web site
 
