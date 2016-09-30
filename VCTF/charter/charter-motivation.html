@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>[EDITOR'S DRAFT] Motiviation for Verifiable Claims Working Group Charter Proposal</title>
+    <link rel="stylesheet" href="//www.w3.org/2005/10/w3cdoc.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="//www.w3.org/Guide/pubrules-style.css"/>
+    <link rel="stylesheet" type="text/css" href="//www.w3.org/2006/02/charter-style.css"/>
+</head>
+
+<body>
+  <p>
+      <a href="http://www.w3.org/"><img alt="W3C" height="48" src="//www.w3.org/Icons/w3c_home"
+                                                     width="72"/></a>
+      <a class="domainlogo" href="/TandS/"><img src="http://www.w3.org/Icons/tands"
+                                                alt="Technology and Society Domain"/></a>
+  </p>
+
+  <h1 id="title">[EDITOR'S DRAFT] Motivation for Verifiable Claims Working Group Charter</h1>
+
+  <p class="mission">
+The proposed mission of the Verifiable Claims Working Group is to make
+expressing, exchanging, and verifying claims easier and more secure on the Web.
+This document outlines the larger problem statement and goals that motivated the
+creation of the Verifiable Claims Working Group charter proposal.
+  </p>
+
+    <h2 id="problem">Problem Statement</h2>
+
+    <p>
+There is currently no self-sovereign and privacy-enhancing standard
+for expressing verifiable claims (aka: credentials, attestations)
+via the Web.
+    </p>
+    <p>
+These problems exist today:
+    </p>
+    <ul>
+      <li>
+There is no standard that makes it easy for users to assert their verifiable
+qualifications to a service provider (e.g. my loyalty card number is X, I
+have an account at Bank Y, I am over the age of 21, I am a citizen of the USA,
+I am a Chartered Financial Analyst, etc.). As a result, manual input and
+fraud on the Web are higher than desired.
+      </li>
+      <li>
+In existing attribute exchange architectures (like SAML, OpenID Connect, Login
+with SuperProviderX, etc.), users, and their verifiable claims, do not
+independently exist from service providers. This means users can't easily
+change their service provider without losing or fragmenting their digital
+identity. This leads to vendor lock-in, identity fragility (duplication,
+confusion, and inaccuracy), reduced competition in the marketplace, and
+reduced privacy for all stakeholders.
+      </li>
+      <li>
+There is no interoperable standard capable of expressing
+verifiable claims that cuts across industries (e.g., finance, retail,
+education, and healthcare). This leads to industry-specific solutions that
+are costly, inefficient, proprietary, and inhibit users' ability to manage
+their digital identities in a cohesive way.
+      </li>
+    </ul>
+
+    <p>
+Note that while the problem statement above is meant to provide the motivation
+for the work, that the asserted scope of this proposed charter is more narrow,
+focusing on the data model and syntax(es). Specifically, the scope has been
+narrowed by:
+    </p>
+
+    <ul>
+      <li>
+Asserting that new transaction protocols for verfiaible claims are out of scope.
+      </li>
+      <li>
+Acknowledging that the creation of supporting infrastructure for self-sovereign
+verifiable claims, other than data model and syntax(es), is out of scope.
+      </li>
+      <li>
+Focusing the group on Working Group participant use cases which are expected
+to center on the education and payments industries.
+      </li>
+    </ul>
+
+    <p>
+While the scope is narrow, the Working Group is also expected to not prevent
+future work that may more fully address the Problem Statement.
+    </p>
+
+    <h2 id="goals">Goals</h2>
+
+  <p>
+If successful, the Recommendations from this Working Group will
+increase some areas of interoperability between the entities that issue,
+store, and inspect verifiable claims.
+  </p>
+
+  <p>
+The first goal is to create a standard way for users to assert their verifiable
+qualifications to a service provider, producing benefits such as:
+  </p>
+
+  <ul>
+    <li>
+Enhancing website usability by removing the need to manually enter
+verifiable claims.
+    </li>
+    <li>
+Improving the detection of fraud, such as false claims and identity theft, by
+establishing a standard way to cryptographically verify 3rd party claims
+with respect to the identified
+<a href="../use-cases/">use cases</a>.
+    </li>
+  </ul>
+
+  <p>
+The second goal is to ensure that users and their claims can be independent
+from service providers, producing benefits such as:
+  </p>
+
+  <ul>
+    <li>
+Improving operational efficiency, by reducing operating costs (for example),
+for verifiable claim issuers and inspectors as a result of a common set of
+technology for expressing and verifying claims.
+    </li>
+    <li>
+Reducing vendor lock-in by ensuring that verifiable claims are portable from
+one claims repository to another.
+    </li>
+    <li>
+Enhancing some aspects of privacy and unlinkability for the subject of a
+verifiable claim.
+    </li>
+  </ul>
+
+  <p>
+The third goal is to ensure that there is an interoperable standard capable of
+expressing verifiable claims that cuts across at least two industries,
+producing benefits such as:
+  </p>
+
+  <ul>
+    <li>
+Reusability of the machine-readable language that expresses verifiable
+claims (aka vocabularies) so that a single vocabulary
+may suit the needs of a broader set of stakeholders, and
+    </li>
+    <li>
+Extensibility of the vocabularies so that a particular industry vertical may
+build extensions on top of existing vocabularies to suit their
+industry-specific needs.
+    </li>
+    <li>
+Composability of verifiable claims to express an aspect of one's identity in
+a granular way.
+    </li>
+  </ul>
+
+   <p>
+The standardized technologies will, to the extent to which it is
+technically feasible, level the playing field for verifiable claims so
+that small actors or individuals can make use of the technology on the
+same basis as larger corporations, government, or institutions, without
+undue or unnecessary barriers.
+   </p>
+
+   <p>
+For more background information about this group, please see
+<a href="faq.html">the FAQ</a>. There are also <a href="../use-cases/">a set of
+focused use cases</a> that are suggested as input to the group.
+   </p>
+
+</body>
+
+</html>

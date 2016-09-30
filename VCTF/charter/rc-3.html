@@ -13,10 +13,7 @@
     <ul id="navbar" style="font-size:
 			     small">
         <li>
-            <a href="#problem">Problem Statement</a>
-        </li>
-        <li>
-            <a href="#goals">Goals</a>
+            <a href="#introduction">Introduction</a>
         </li>
         <li>
             <a href="#scope">Scope</a>
@@ -65,13 +62,21 @@ Working Group is to make expressing, exchanging, and verifying claims easier
 and more secure on the Web.
         </p>
 
-        <p class="todo">
-This draft charter is intended for discussion within the
-Web Payments Interest Group. It is not yet under consideration by the
-W3C Membership.
+        <p class="motivation">
+Readers that are new to this work should examine the
+<a href="charter-motivation.html">motivations that led to this charter</a>.
+The
+<a href="../primer/">Verifiable Claims Working Group Primer</a>
+may be particularly helpful to W3C Members.
         </p>
+
         <p class="todo">
-Please send comments to <a href="mailto:public-webpayments-comments@w3.org">public-webpayments-comments@w3.org</a>
+This draft charter is intended for discussion within the W3C Management. It
+is not yet under consideration by the W3C Membership.
+        </p>
+
+        <p class="todo">
+Please send comments to <a href="mailto:@w3.org">@@@</a>.
         </p>
 
     <table class="summary-table">
@@ -114,167 +119,49 @@ Please send comments to <a href="mailto:public-webpayments-comments@w3.org">publ
         <p class="join"><a href="">Join the Verifiable Claims Working Group</a>.</p>
     </div>
 
-    <h2 id="problem">Problem Statement</h2>
+    <div class="introduction">
+        <h2 id="introduction">Introduction</h2>
 
-    <p>
-There is currently no self-sovereign and privacy-enhancing standard
-for expressing verifiable claims (aka: credentials, attestations)
-via the Web.
-    </p>
-    <p>
-These problems exist today:
-    </p>
-    <ul>
-      <li>
-There is no standard that makes it easy for users to assert their verifiable
-qualifications to a service provider (e.g. my loyalty card number is X, I
-have an account at Bank Y, I am over the age of 21, I am a citizen of the USA,
-I am a Chartered Financial Analyst, etc.). As a result, manual input and
-fraud on the Web are higher than desired.
-      </li>
-      <li>
-In existing attribute exchange architectures (like SAML, OpenID Connect, Login
-with SuperProviderX, etc.), users, and their verifiable claims, do not
-independently exist from service providers. This means users can't easily
-change their service provider without losing or fragmenting their digital
-identity. This leads to vendor lock-in, identity fragility (duplication,
-confusion, and inaccuracy), reduced competition in the marketplace, and
-reduced privacy for all stakeholders.
-      </li>
-      <li>
-There is no interoperable standard capable of expressing
-verifiable claims that cuts across industries (e.g., finance, retail,
-education, and healthcare). This leads to industry-specific solutions that
-are costly, inefficient, proprietary, and inhibit users' ability to manage
-their digital identities in a cohesive way.
-      </li>
-    </ul>
+      <p>
+This working group is tasked with the standardization of a data model and
+syntax for the expression of verifiable claims. The work proposed by this
+charter has been incubated for over two years and has been demonstrated to
+be
+<a href="../support/">broadly supported by various industries</a>.
+The
+<a href="https://www.w3.org/Payments/IG/">Web Payments Interest Group</a> 
+has identified this work as being critical to achieving specific
+<a href="../use-cases/">use cases</a>
+related to commerce, education, and healthcare on the Web. 
+A document is available to those that wish to understand the 
+<a href="charter-motivation.html">motivations behind the creation of this charter</a>
+and how this work fits into a broader vision for a 
+<a href="../architecture/">verifiable claims ecosystem</a>.
+	    </p>
 
-    <p>
-Note that while the problem statement above is meant to provide the motivation
-for the work, that the asserted scope of this proposed charter is more narrow,
-focusing on the data model and syntax(es). Specifically, the scope has been
-narrowed by:
-    </p>
-
-    <ul>
-      <li>
-Asserting that new transaction protocols for verfiaible claims are out of scope.
-      </li>
-      <li>
-Acknowledging that the creation of supporting infrastructure for self-sovereign
-verifiable claims, other than data model and syntax(es), is out of scope.
-      </li>
-      <li>
-Focusing the group on Working Group participant use cases which are expected
-to center on the education and payments industries.
-      </li>
-    </ul>
-
-    <p>
-While the scope is narrow, the Working Group is also expected to not prevent
-future work that may more fully address the Problem Statement.
-    </p>
-
-    <h2 id="goals">Goals</h2>
-
-  <p>
-If successful, the Recommendations from this Working Group will
-increase some areas of interoperability between the entities that issue,
-store, and inspect verifiable claims.
-  </p>
-
-  <p>
-The first goal is to create a standard way for users to assert their verifiable
-qualifications to a service provider, producing benefits such as:
-  </p>
-
-  <ul>
-    <li>
-Enhancing website usability by removing the need to manually enter
-verifiable claims.
-    </li>
-    <li>
-Improving the detection of fraud, such as false claims and identity theft, by
-establishing a standard way to cryptographically verify 3rd party claims
-with respect to the identified
-<a href="../use-cases/">use cases</a>.
-    </li>
-  </ul>
-
-  <p>
-The second goal is to ensure that users and their claims can be independent
-from service providers, producing benefits such as:
-  </p>
-
-  <ul>
-    <li>
-Improving operational efficiency, by reducing operating costs (for example),
-for verifiable claim issuers and inspectors as a result of a common set of
-technology for expressing and verifying claims.
-    </li>
-    <li>
-Reducing vendor lock-in by ensuring that verifiable claims are portable from
-one claims repository to another.
-    </li>
-    <li>
-Enhancing some aspects of privacy and unlinkability for the subject of a
-verifiable claim.
-    </li>
-  </ul>
-
-  <p>
-The third goal is to ensure that there is an interoperable standard capable of
-expressing verifiable claims that cuts across at least two industries,
-producing benefits such as:
-  </p>
-
-  <ul>
-    <li>
-Reusability of the machine-readable language that expresses verifiable
-claims (aka vocabularies) so that a single vocabulary
-may suit the needs of a broader set of stakeholders, and
-    </li>
-    <li>
-Extensibility of the vocabularies so that a particular industry vertical may
-build extensions on top of existing vocabularies to suit their
-industry-specific needs.
-    </li>
-    <li>
-Composability of verifiable claims to express an aspect of one's identity in
-a granular way.
-    </li>
-  </ul>
-
-   <p>
-The standardized technologies will, to the extent to which it is
-technically feasible, level the playing field for verifiable claims so
-that small actors or individuals can make use of the technology on the
-same basis as larger corporations, government, or institutions, without
-undue or unnecessary barriers.
-   </p>
-
-   <p>
-For more background information about this group, please see
-<a href="faq.html">the FAQ</a>. There are also <a href="../use-cases/">a set of
-focused use cases</a> that are suggested as input to the group.
-   </p>
+    </div>
 
     <div class="scope">
         <h2 id="scope">Scope</h2>
 
-	<p>The Working Group will Recommend:</p>
+	<p>The Working Group will:</p>
 
   <ol>
     <li>
-a data model and syntax(es) for the expression of verifiable claims,
+Recommend a data model and syntax(es) for the expression of verifiable claims,
 including one or more core vocabularies.
     </li>
     <li>
-a note specifying how these data models should be used with existing
-attribute exchange protocols, a recommendation that existing protocols
-should be modified, or a recommendation that a new protocol is required to
+Create a note specifying how these data models should be used with existing
+attribute exchange protocols, a suggestion that existing protocols
+should be modified, or a suggestion that a new protocol is required to
 address the problems stated earlier in this document.
+    </li>
+    <li>
+Focus their efforts on the identified  
+<a href="../use-cases/">use cases</a> with a particular focus on the
+payments and education sectors. Use cases from other industries may be
+included if there is significant industry participation.
     </li>
   </ol>
 
@@ -283,7 +170,7 @@ address the problems stated earlier in this document.
   <ol>
     <li>Define browser-based APIs for interacting with verifiable claims. This work may be performed by a future Working Group if there is interest, but is not required for the Working Group to be successful.</li>
     <li>Define a new protocol for attribute exchange. This work may be performed by a future Working Group if there is interest, but is not required for the Working Group to be successful.</li>
-    <li>Attempt to create supporting infrastructure, other than a data model and syntax(es), for a self-soverign verifiable claims ecosystem.</li>
+    <li>Attempt to create supporting infrastructure, other than a data model and syntax(es), for a verifiable claims ecosystem.</li>
     <li>Attempt to address the larger problem of "Identity on the Web/Internet".</li>
   </ol>
 
@@ -294,8 +181,6 @@ address the problems stated earlier in this document.
       <dd>A machine-readable statement made by an entity that is cryptographically authentic (non-repudiable).</dd>
 	  <dt id="credential"><strong>credential (aka attestation)</strong></dt>
 	  <dd>A set of verifiable claims that refer to a qualification, achievement, personal quality, aspect of an identity such as a name, government ID, preferred payment processor, home address, or university degree typically used to indicate suitability.</dd>
-	  <dt id="self-sovereign"><strong>self-sovereign</strong></dt>
-      <dd>A design principle for verifiable claims where the holder of a verifiable claim is in complete control of their identifier, where their verifiable claims are stored, and how they are used.</dd>
 	</dl>
 
     <h3 id="security">Security and Privacy Considerations</h3>
