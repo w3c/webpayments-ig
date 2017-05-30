@@ -1,7 +1,7 @@
 # The W3C Web Payments Interest Group
 
 The mission of the [Web Payments Interest Group](http://www.w3.org/blog/wpig/), 
-part of the [Web Payments Activity](http://www.w3.org/Payments/Activity.html), 
+part of the [Web Payments Activity](https://www.w3.org/Payments/), 
 is to provide a forum for Web Payments technical discussions to identify 
 use cases and requirements for existing and/or new specifications to ease 
 payments on the Web for users (payers) and merchants (payees), and to 
